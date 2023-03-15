@@ -34,7 +34,7 @@ const STAGE = process.env.STAGE || 'all';
 const mainCode = fs.readFileSync(`${scriptDir}/main.js`, 'utf-8');
 
 const plugins = LegacyJavascript.getTransformPatterns().map(pattern => pattern.name);
-const polyfills = LegacyJavascript.getPolyfillData();
+const polyfills = LegacyJavascript.getCoreJsPolyfillData();
 
 /**
  * @param {string} command
