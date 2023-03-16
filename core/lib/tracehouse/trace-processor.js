@@ -506,14 +506,22 @@ class TraceProcessor {
     const pidToTid = new Map();
 
     for (const pid of new Set(mainFramePids)) {
-      // While renderer tids are generally predictable, we'll doublecheck it
-      const threadNameEvt = keyEvents.find(e =>
+      const threadEvents = keyEvents.filter(e =>
         e.cat === '__metadata' &&
         e.pid === pid &&
         e.ph === 'M' &&
-        e.name === 'thread_name' &&
-        e.args.name === 'CrRendererMain'
+        e.name === 'thread_name'
       );
+
+      // While renderer tids are generally predictable, we'll doublecheck it
+      let threadNameEvt = threadEvents.find(e => e.args.name === 'CrRendererMain');
+
+      // `CrRendererMain` can be missing if chrome is launched with the `--single-process` flag.
+      // In this case, page tasks will be run in the browser thread.
+      if (!threadNameEvt) {
+        threadNameEvt = threadEvents.find(e => e.args.name === 'CrBrowserMain');
+      }
+
       const tid = threadNameEvt?.tid;
 
       if (!tid) {
