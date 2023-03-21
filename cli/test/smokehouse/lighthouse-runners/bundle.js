@@ -63,7 +63,7 @@ async function runBundledLighthouse(url, config, testRunnerOptions) {
   }
 
   // Load bundle, which creates a `global.runBundledLighthouse`.
-  eval(fs.readFileSync(LH_ROOT + '/dist/lighthouse-dt-bundle.js', 'utf-8'));
+  await import(LH_ROOT + '/dist/lighthouse-dt-bundle.js');
 
   global.require = originalRequire;
   global.Buffer = originalBuffer;
