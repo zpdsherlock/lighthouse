@@ -17,17 +17,6 @@ const config = {
       'bf-cache',
     ],
   },
-  audits: [
-    'metrics/first-contentful-paint-3g',
-  ],
-  categories: {
-    // TODO(bckenny): type extended Config where e.g. category.title isn't required
-    performance: /** @type {LH.Config.CategoryJson} */({
-      auditRefs: [
-        {id: 'first-contentful-paint-3g', weight: 0},
-      ],
-    }),
-  },
 };
 
 export default config;
