@@ -225,7 +225,7 @@ class Audit {
       const lineNumber = lineIndex + 1;
       /** @type LH.Audit.Details.SnippetValue['lines'][0] */
       const lineDetail = {
-        content: line.slice(0, maxLineLength),
+        content: Util.truncate(line, maxLineLength),
         lineNumber,
       };
       if (line.length > maxLineLength) {

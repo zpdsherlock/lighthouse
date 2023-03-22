@@ -154,6 +154,39 @@ class Util {
   }
 
   /**
+   * @param {string} string
+   * @param {number} characterLimit
+   * @param {string} ellipseSuffix
+   */
+  static truncate(string, characterLimit, ellipseSuffix = '…') {
+    // Early return for the case where there are fewer bytes than the character limit.
+    if (string.length <= characterLimit) {
+      return string;
+    }
+
+    const segmenter = new Intl.Segmenter(undefined, {granularity: 'grapheme'});
+    const iterator = segmenter.segment(string)[Symbol.iterator]();
+
+    let lastSegmentIndex = 0;
+    for (let i = 0; i <= characterLimit - ellipseSuffix.length; i++) {
+      const result = iterator.next();
+      if (result.done) {
+        return string;
+      }
+
+      lastSegmentIndex = result.value.index;
+    }
+
+    for (let i = 0; i < ellipseSuffix.length; i++) {
+      if (iterator.next().done) {
+        return string;
+      }
+    }
+
+    return string.slice(0, lastSegmentIndex) + ellipseSuffix;
+  }
+
+  /**
    * @param {URL} parsedUrl
    * @param {{numPathParts?: number, preserveQuery?: boolean, preserveHost?: boolean}=} options
    * @return {string}

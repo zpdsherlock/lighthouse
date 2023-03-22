@@ -192,12 +192,12 @@ const expectations = {
             },
             {
               // /some-custom-url.js,
-              url: 'inline: \n  function unusedFunction() {\n    // Un...',
+              url: 'inline: \n  function unusedFunction() {\n    // U…',
               wastedBytes: '6690 +/- 100',
               wastedPercent: '99.6 +/- 0.1',
             },
             {
-              url: 'inline: \n  // Used block #1\n  // FILLER DATA JUS...',
+              url: 'inline: \n  // Used block #1\n  // FILLER DATA JU…',
               wastedBytes: '6569 +/- 100',
               wastedPercent: 100,
             },

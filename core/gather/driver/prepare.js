@@ -167,8 +167,21 @@ async function prepareTargetForTimespanMode(driver, settings) {
     disableThrottling: false,
     blockedUrlPatterns: undefined,
   });
+  await warmUpIntlSegmenter(driver);
 
   log.timeEnd(status);
+}
+
+/**
+ * Ensure the `Intl.Segmenter` created in `pageFunctions.truncate` is cached by v8 before
+ * recording the trace begins.
+ *
+ * @param {LH.Gatherer.FRTransitionalDriver} driver
+ */
+async function warmUpIntlSegmenter(driver) {
+  await driver.executionContext.evaluate(pageFunctions.truncate, {
+    args: ['aaa', 2],
+  });
 }
 
 /**
@@ -196,6 +209,8 @@ async function prepareTargetForNavigationMode(driver, settings) {
   if (settings.throttlingMethod === 'simulate') {
     await shimRequestIdleCallbackOnNewDocument(driver, settings);
   }
+
+  await warmUpIntlSegmenter(driver);
 
   log.timeEnd(status);
 }

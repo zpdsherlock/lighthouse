@@ -211,4 +211,26 @@ describe('util helpers', () => {
       ]);
     });
   });
+
+  describe('truncate', () => {
+    it('truncates based on visual characters', () => {
+      expect(Util.truncate('aaa', 30)).toEqual('aaa');
+      expect(Util.truncate('aaa', 3)).toEqual('aaa');
+      expect(Util.truncate('aaa', 2)).toEqual('a…');
+      expect(Util.truncate('aaa🥳', 4)).toEqual('aaa🥳');
+      expect(Util.truncate('aaa🥳', 3)).toEqual('aa…');
+      expect(Util.truncate('aaa👨‍👨‍👦‍👦', 4)).toEqual('aaa👨‍👨‍👦‍👦');
+      expect(Util.truncate('aaa👨‍👨‍👦‍👦', 3)).toEqual('aa…');
+      expect(Util.truncate('देवनागरी', 5)).toEqual('देवनागरी');
+      expect(Util.truncate('देवनागरी', 4)).toEqual('देवना…');
+
+      expect(Util.truncate('aaa', 3, '')).toEqual('aaa');
+      expect(Util.truncate('aaa', 2, '')).toEqual('aa');
+
+      expect(Util.truncate('aaaaa', 5, '...')).toEqual('aaaaa');
+      expect(Util.truncate('aaaaa', 4, '...')).toEqual('a...');
+      expect(Util.truncate('aaaaa', 3, '...')).toEqual('...');
+      expect(Util.truncate('aaaaa', 1, '...')).toEqual('...');
+    });
+  });
 });

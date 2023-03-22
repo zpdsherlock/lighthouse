@@ -6,6 +6,8 @@
 
 import assert from 'assert/strict';
 
+import {expect} from 'expect';
+
 import {UnusedCSS} from '../../computed/unused-css.js';
 
 describe('UnusedCSS computed artifact', () => {
@@ -22,7 +24,7 @@ describe('UnusedCSS computed artifact', () => {
   describe('#determineContentPreview', () => {
     function assertLinesContained(actual, expected) {
       expected.split('\n').forEach(line => {
-        assert.ok(actual.includes(line.trim()), `${line} is found in preview`);
+        expect(actual).toContain(line.trim());
       });
     }
 
@@ -50,7 +52,7 @@ describe('UnusedCSS computed artifact', () => {
       assertLinesContained(preview(longContent), `
             body {
               color: white;
-            } ...
+            } …
           `.trim());
     });
 
@@ -66,7 +68,7 @@ describe('UnusedCSS computed artifact', () => {
       assertLinesContained(preview(longContent), `
             body {
               color: white;
-              font-size: 20px; ... } ...
+              font-size: 20px; … } …
           `.trim());
     });
 
@@ -77,7 +79,7 @@ describe('UnusedCSS computed artifact', () => {
            */
           `.trim();
 
-      assert.ok(/aaa\.\.\./.test(preview(longContent)));
+      assert.ok(/aaa…/.test(preview(longContent)));
     });
   });
 

@@ -7,6 +7,7 @@
 import {makeComputedArtifact} from './computed-artifact.js';
 import {ByteEfficiencyAudit} from '../audits/byte-efficiency/byte-efficiency-audit.js';
 import {NetworkRecords} from './network-records.js';
+import {Util} from '../../shared/util.js';
 
 const PREVIEW_LENGTH = 100;
 
@@ -87,8 +88,7 @@ class UnusedCSS {
    * @return {string}
    */
   static determineContentPreview(content) {
-    let preview = (content || '')
-        .slice(0, PREVIEW_LENGTH * 5)
+    let preview = Util.truncate(content || '', PREVIEW_LENGTH * 5, '')
         .replace(/( {2,}|\t)+/g, '  ') // remove leading indentation if present
         .replace(/\n\s+}/g, '\n}') // completely remove indentation of closing braces
         .trim(); // trim the leading whitespace
@@ -101,16 +101,17 @@ class UnusedCSS {
           firstRuleStart > firstRuleEnd ||
           firstRuleStart > PREVIEW_LENGTH) {
         // We couldn't determine the first rule-set or it's not within the preview
-        preview = preview.slice(0, PREVIEW_LENGTH) + '...';
+        preview = Util.truncate(preview, PREVIEW_LENGTH);
       } else if (firstRuleEnd < PREVIEW_LENGTH) {
         // The entire first rule-set fits within the preview
-        preview = preview.slice(0, firstRuleEnd + 1) + ' ...';
+        preview = preview.slice(0, firstRuleEnd + 1) + ' …';
       } else {
         // The first rule-set doesn't fit within the preview, just show as many as we can
-        const lastSemicolonIndex = preview.slice(0, PREVIEW_LENGTH).lastIndexOf(';');
+        const truncated = Util.truncate(preview, PREVIEW_LENGTH, '');
+        const lastSemicolonIndex = truncated.lastIndexOf(';');
         preview = lastSemicolonIndex < firstRuleStart ?
-            preview.slice(0, PREVIEW_LENGTH) + '... } ...' :
-            preview.slice(0, lastSemicolonIndex + 1) + ' ... } ...';
+            truncated + '… } …' :
+            preview.slice(0, lastSemicolonIndex + 1) + ' … } …';
       }
     }
 

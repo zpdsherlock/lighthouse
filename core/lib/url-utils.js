@@ -138,7 +138,7 @@ class UrlUtils {
   static elideDataURI(url) {
     try {
       const parsed = new URL(url);
-      return parsed.protocol === 'data:' ? url.slice(0, 100) : url;
+      return parsed.protocol === 'data:' ? Util.truncate(url, 100) : url;
     } catch (e) {
       return url;
     }
