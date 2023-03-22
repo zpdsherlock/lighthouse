@@ -21,6 +21,7 @@ describe('DOBETTERWEB: doctype audit', () => {
   it('fails when document does not contain a doctype', async () => {
     const auditResult = await runAudit({
       Doctype: null,
+      traces: {},
     });
     assert.equal(auditResult.score, 0);
     expect(auditResult.explanation).toBeDisplayString('Document must contain a doctype');
@@ -35,6 +36,7 @@ describe('DOBETTERWEB: doctype audit', () => {
         systemId: '',
         documentCompatMode: 'BackCompat',
       },
+      traces: {},
     });
     assert.equal(auditResult.score, 0);
     expect(auditResult.explanation)
@@ -85,6 +87,7 @@ describe('DOBETTERWEB: doctype audit', () => {
         systemId: '',
         documentCompatMode: 'BackCompat',
       },
+      traces: {},
     });
     assert.equal(auditResult.score, 0);
     expect(auditResult.explanation).toBeDisplayString(
@@ -99,6 +102,7 @@ describe('DOBETTERWEB: doctype audit', () => {
         systemId: '',
         documentCompatMode: 'BackCompat',
       },
+      traces: {},
     });
     assert.equal(auditResult.score, 0);
     expect(auditResult.explanation).toBeDisplayString('Expected publicId to be an empty string');
@@ -112,6 +116,7 @@ describe('DOBETTERWEB: doctype audit', () => {
         systemId: '189655',
         documentCompatMode: 'BackCompat',
       },
+      traces: {},
     });
     assert.equal(auditResult.score, 0);
     expect(auditResult.explanation).toBeDisplayString('Expected systemId to be an empty string');
@@ -125,6 +130,7 @@ describe('DOBETTERWEB: doctype audit', () => {
         systemId: '',
         documentCompatMode: 'CSS1Compat',
       },
+      traces: {},
     });
     assert.equal(auditResult.score, 1);
   });
@@ -138,6 +144,7 @@ describe('DOBETTERWEB: doctype audit', () => {
         systemId: 'http://www.w3.org/TR/html4/loose.dtd',
         documentCompatMode: 'CSS1Compat',
       },
+      traces: {},
     });
     assert.equal(auditResult.score, 1);
   });
