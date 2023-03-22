@@ -39,12 +39,14 @@ const WASTED_MS_FOR_SCORE_OF_ZERO = 5000;
 class ByteEfficiencyAudit extends Audit {
   /**
    * Creates a score based on the wastedMs value using linear interpolation between control points.
+   * A negative wastedMs is scored as 1, assuming time is not being wasted with respect to the
+   * opportunity being measured.
    *
    * @param {number} wastedMs
    * @return {number}
    */
   static scoreForWastedMs(wastedMs) {
-    if (wastedMs === 0) {
+    if (wastedMs <= 0) {
       return 1;
     } else if (wastedMs < WASTED_MS_FOR_AVERAGE) {
       return linearInterpolation(0, 1, WASTED_MS_FOR_AVERAGE, 0.75, wastedMs);
@@ -214,6 +216,8 @@ class ByteEfficiencyAudit extends Audit {
 
     const wastedBytes = results.reduce((sum, item) => sum + item.wastedBytes, 0);
 
+    // `wastedMs` may be negative, if making the opportunity change could be detrimental.
+    // This is useful information in the LHR and should be preserved.
     let wastedMs;
     if (gatherContext.gatherMode === 'navigation') {
       if (!graph) throw Error('Page dependency graph should always be computed in navigation mode');
