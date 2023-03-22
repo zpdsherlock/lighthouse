@@ -974,6 +974,7 @@ export interface TraceEvent {
     };
     data?: {
       frame?: string;
+      frameID?: string;
       processId?: number;
       isLoadingMainFrame?: boolean;
       documentLoaderURL?: string;

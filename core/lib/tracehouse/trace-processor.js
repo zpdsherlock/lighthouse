@@ -568,6 +568,19 @@ class TraceProcessor {
   }
 
   /**
+   * The associated frame ID is set in different locations for different trace events.
+   * This function checks all known locations for the frame ID and returns `undefined` if it's not found.
+   *
+   * @param {LH.TraceEvent} evt
+   * @return {string|undefined}
+   */
+  static getFrameId(evt) {
+    return evt.args?.data?.frame ||
+      evt.args.data?.frameID ||
+      evt.args.frame;
+  }
+
+  /**
    * Returns the maximum LCP event across all frames in `events`.
    * Sets `invalidated` flag if LCP of every frame is invalidated.
    *
@@ -712,13 +725,13 @@ class TraceProcessor {
     // Filter to just events matching the main frame ID, just to make sure.
     /** @param {LH.TraceEvent} e */
     function associatedToMainFrame(e) {
-      const frameId = e.args?.data?.frame || e.args.frame;
+      const frameId = TraceProcessor.getFrameId(e);
       return frameId === mainFrameInfo.frameId;
     }
 
     /** @param {LH.TraceEvent} e */
     function associatedToAllFrames(e) {
-      const frameId = e.args?.data?.frame || e.args.frame;
+      const frameId = TraceProcessor.getFrameId(e);
       return frameId ? inspectedTreeFrameIds.includes(frameId) : false;
     }
     const frameEvents = keyEvents.filter(e => associatedToMainFrame(e));
