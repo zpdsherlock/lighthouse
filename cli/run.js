@@ -241,7 +241,7 @@ async function runLighthouse(url, flags, config) {
     if (flags.legacyNavigation) {
       log.warn('CLI', 'Legacy navigation CLI is deprecated');
       flags.channel = 'legacy-navigation-cli';
-    } else {
+    } else if (!flags.channel) {
       flags.channel = 'cli';
     }
 
