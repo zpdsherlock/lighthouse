@@ -1,3 +1,71 @@
+<a name="10.1.0"></a>
+# 10.1.0 (2023-03-23)
+[Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.0.2...v10.1.0)
+
+We expect this release to ship in the DevTools of [Chrome 114](https://chromiumdash.appspot.com/schedule), and to PageSpeed Insights within 2 weeks.
+
+## New Contributors
+
+Thanks to our new contributors 👽🐷🐰🐯🐻!
+
+- Do Thanh Hai @dothanhhai
+- Jongwoo Han @jongwooo
+- Henry Lim @limhenry
+- Sepehr Safari @sepehr-safari
+
+## Notable Changes
+
+* report: group third-party entities ([#14655](https://github.com/GoogleChrome/lighthouse/pull/14655))
+
+## Core
+
+* cap byte-efficiency-audit scores to a max of 1 ([#14921](https://github.com/GoogleChrome/lighthouse/pull/14921))
+* correctly truncate unicode strings ([#14911](https://github.com/GoogleChrome/lighthouse/pull/14911))
+* allow any audit details type to be used in an opportunity ([#14903](https://github.com/GoogleChrome/lighthouse/pull/14903))
+* audit: update link for source maps to chrome developer docs ([#14855](https://github.com/GoogleChrome/lighthouse/pull/14855))
+* cls: ignore `had_recent_input` by timing window ([#14402](https://github.com/GoogleChrome/lighthouse/pull/14402))
+* doctype: handle optional trace correctly ([#14918](https://github.com/GoogleChrome/lighthouse/pull/14918))
+* legacy-javascript: add focus-visible polyfill ([#14827](https://github.com/GoogleChrome/lighthouse/pull/14827))
+* tap-targets: update audit description ([#14869](https://github.com/GoogleChrome/lighthouse/pull/14869))
+* trace-processor: support single process trace ([#14901](https://github.com/GoogleChrome/lighthouse/pull/14901))
+* uses-responsive-images-snapshot: ignore CSS images ([#14890](https://github.com/GoogleChrome/lighthouse/pull/14890))
+
+## CLI
+
+* fix `--channel` flag ([#14924](https://github.com/GoogleChrome/lighthouse/pull/14924))
+
+## Report
+
+* update table hover shades ([#14873](https://github.com/GoogleChrome/lighthouse/pull/14873))
+* consistently use our monospace font stack ([#14842](https://github.com/GoogleChrome/lighthouse/pull/14842))
+
+## Deps
+
+* upgrade `http-link-header` and node polyfills ([#14889](https://github.com/GoogleChrome/lighthouse/pull/14889))
+* upgrade soft navigation plugin ([#14883](https://github.com/GoogleChrome/lighthouse/pull/14883))
+* testdouble: update, move off forked quibble ([#14863](https://github.com/GoogleChrome/lighthouse/pull/14863))
+
+## Clients
+
+* bundled: include soft navigation plugin ([#14874](https://github.com/GoogleChrome/lighthouse/pull/14874))
+* lr: remove FCP 3G from config ([#14910](https://github.com/GoogleChrome/lighthouse/pull/14910))
+* viewer: link to diff tool's new URL ([#14865](https://github.com/GoogleChrome/lighthouse/pull/14865))
+* viewer: rework landing with link to lhci diff tool ([#14851](https://github.com/GoogleChrome/lighthouse/pull/14851))
+
+## Docs
+
+* fix various typos ([#14209](https://github.com/GoogleChrome/lighthouse/pull/14209))
+
+## Tests
+
+* fix seo-tap-targets in high DPI ([#14866](https://github.com/GoogleChrome/lighthouse/pull/14866))
+* devtools: reenable `issues-mixed-content` ([#14862](https://github.com/GoogleChrome/lighthouse/pull/14862))
+
+## Misc
+
+* replace deprecated command with environment file ([#14751](https://github.com/GoogleChrome/lighthouse/pull/14751))
+* fix typos of overridden ([#14877](https://github.com/GoogleChrome/lighthouse/pull/14877))
+
 <a name="10.0.2"></a>
 # 10.0.2 (2023-02-28)
 [Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.0.1...v10.0.2)
