@@ -9454,6 +9454,7 @@
         "snippet": "<img src=\"lighthouse-1024x680.jpg?iar1\" width=\"120\" height=\"15\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": "120px",
         "height": "15px",
@@ -9498,9 +9499,10 @@
           "width": 120,
           "height": 80
         },
-        "snippet": "<img loading=\"lazy\" src=\"lighthouse-1024x680.jpg?iar2\" width=\"120\" height=\"80\">",
+        "snippet": "<img loading=\"lazy\" src=\"lighthouse-1024x680.jpg?iar2\" width=\"120\" height=\"80\" fetchpriority=\"low\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "low",
       "cssEffectiveRules": {
         "width": "120px",
         "height": "80px",
@@ -9548,6 +9550,7 @@
         "snippet": "<img src=\"lighthouse-1024x680.jpg?isr2\" width=\"120\" height=\"80\" style=\"position: absolute;\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": "120px",
         "height": "80px",
@@ -9595,6 +9598,7 @@
         "snippet": "<img src=\"lighthouse-1024x680.jpg?isr3\" width=\"360\" height=\"240\" style=\"image-rendering: pixelated; position: absolute;\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": "360px",
         "height": "240px",
@@ -9642,6 +9646,7 @@
         "snippet": "<img src=\"lighthouse-rotating.gif\" width=\"811\" height=\"462\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": "811px",
         "height": "462px",
@@ -9689,6 +9694,7 @@
         "snippet": "<img src=\"lighthouse-480x318.jpg?isr1\" width=\"400\" height=\"360\" style=\"position: absolute;\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": "400px",
         "height": "360px",
@@ -9732,6 +9738,7 @@
         "snippet": "<img src=\"http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg\" srcset=\"lighthouse-1024x680.jpg 2x\" width=\"360\" height=\"240\" style=\"position: absolute;\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": "360px",
         "height": "240px",
@@ -9820,6 +9827,7 @@
         "snippet": "<img src=\"blob:http://localhost:10200/8081f274-a0c6-440f-a9cc-be826a0e01d5\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": null,
         "height": null,
@@ -9867,6 +9875,7 @@
         "snippet": "<img src=\"filesystem:http://localhost:10200/temporary/empty-0.30045073591260474.png\">",
         "nodeLabel": "body > img"
       },
+      "fetchPriority": "auto",
       "cssEffectiveRules": {
         "width": null,
         "height": null,
@@ -9883,6 +9892,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_tester.css?delay=100",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-11-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,9,LINK",
@@ -9907,6 +9917,7 @@
       "crossOrigin": null,
       "hrefRaw": "./unknown404.css?delay=200",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-12-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,10,LINK",
@@ -9931,6 +9942,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_tester.css?delay=2200",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-13-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,12,LINK",
@@ -9955,6 +9967,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_disabled.css?delay=200&isdisabled",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-14-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,14,LINK",
@@ -9979,6 +9992,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_tester.css?delay=3000&capped",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-15-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,17,LINK",
@@ -10003,6 +10017,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_tester.css?delay=2000&async=true",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-16-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,19,LINK",
@@ -10027,6 +10042,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_tester.css?delay=3000&async=true",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-17-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,21,LINK",
@@ -10051,6 +10067,7 @@
       "crossOrigin": null,
       "hrefRaw": "./empty.css",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-18-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,23,LINK",
@@ -10075,6 +10092,7 @@
       "crossOrigin": null,
       "hrefRaw": "./dbw_tester.css?scriptActivated&delay=200",
       "source": "head",
+      "fetchPriority": "auto",
       "node": {
         "lhId": "5-19-LINK",
         "devtoolsNodePath": "3,HTML,0,HEAD,40,LINK",

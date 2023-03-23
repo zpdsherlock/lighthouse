@@ -219,8 +219,7 @@
 <!-- FAIL(image-aspect-ratio): image is naturally 1024x680 -->
 <img src="lighthouse-1024x680.jpg?iar1" width="120" height="15">
 <!-- PASS(image-aspect-ratio) -->
-<!-- FAIL(lcp-lazy-loaded) -->
-<img loading="lazy" src="lighthouse-1024x680.jpg?iar2" width="120" height="80">
+<img loading="lazy" src="lighthouse-1024x680.jpg?iar2" width="120" height="80" fetchpriority="low">
 
 <!-- FAIL(image-size-responsive): image is naturally 480x318 -->
 <img src="lighthouse-480x318.jpg?isr1" width="400" height="360" style="position: absolute;">

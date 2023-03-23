@@ -35,9 +35,22 @@ declare global {
 
     /** Injected into the page when the `--debug` flag is used. */
     continueLighthouseRun(): void;
+  }
 
-    // Not defined in tsc yet: https://github.com/microsoft/TypeScript/issues/40807
-    requestIdleCallback(callback: (deadline: {didTimeout: boolean, timeRemaining: () => DOMHighResTimeStamp}) => void, options?: {timeout: number}): number;
+  // `fetchPriority` not defined in tsc as of 4.9.4.
+  interface HTMLImageElement {
+    /**
+     * Sets the priority for fetches initiated by the element.
+     * @see https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-fetchpriority
+     */
+    fetchPriority: string;
+  }
+  interface HTMLLinkElement {
+    /**
+     * Sets the priority for fetches initiated by the element.
+     * @see https://html.spec.whatwg.org/multipage/semantics.html#dom-link-fetchpriority
+     */
+    fetchPriority: string;
   }
 }
 

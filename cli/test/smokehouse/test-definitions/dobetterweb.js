@@ -242,6 +242,25 @@ const expectations = {
         },
       ],
     },
+    ImageElements: {
+      _includes: [{
+        src: 'http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?iar2',
+        srcset: '',
+        displayedWidth: 120,
+        displayedHeight: 80,
+        attributeWidth: '120',
+        attributeHeight: '80',
+        naturalDimensions: {
+          width: 1024,
+          height: 678,
+        },
+        isCss: false,
+        isPicture: false,
+        isInShadowDOM: false,
+        loading: 'lazy',
+        fetchPriority: 'low',
+      }],
+    },
   },
   lhr: {
     requestedUrl: 'http://localhost:10200/dobetterweb/dbw_tester.html',

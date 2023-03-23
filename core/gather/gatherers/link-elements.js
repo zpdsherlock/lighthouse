@@ -70,6 +70,7 @@ function getLinkElementsInDOM() {
       crossOrigin: link.crossOrigin,
       hrefRaw,
       source,
+      fetchPriority: link.fetchPriority,
       // @ts-expect-error - put into scope via stringification
       node: getNodeDetails(link),
     });
@@ -134,6 +135,7 @@ class LinkElements extends FRGatherer {
           as: link.as || '',
           crossOrigin: getCrossoriginFromHeader(link.crossorigin),
           source: 'headers',
+          fetchPriority: link.fetchpriority,
           node: null,
         });
       }

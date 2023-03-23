@@ -308,6 +308,8 @@ declare module Artifacts {
     /** Where the link was found, either in the DOM or in the headers of the main document */
     source: 'head'|'body'|'headers'
     node: NodeDetails | null
+    /** The fetch priority hint for preload links. */
+    fetchPriority?: string;
   }
 
   interface Script extends Omit<Crdp.Debugger.ScriptParsedEvent, 'url'|'embedderName'> {
@@ -534,6 +536,8 @@ declare module Artifacts {
     node: NodeDetails;
     /** The loading attribute of the image. */
     loading?: string;
+    /** The fetch priority hint for HTMLImageElements. */
+    fetchPriority?: string;
   }
 
   interface OptimizedImage {
