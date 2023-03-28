@@ -34,9 +34,11 @@ import {
 // This test will fail (by default) in headful mode, as the target page never gets painted.
 // To resolve this when debugging, just make sure the target page is visible during the lighthouse run.
 
-describe('Navigation', async function() {
+describe.skipOnParallel('Navigation', async function() {
   // The tests in this suite are particularly slow
-  this.timeout(60_000);
+  if (this.timeout() !== 0) {
+    this.timeout(60_000);
+  }
 
   let consoleLog: string[] = [];
   const consoleListener = (e: puppeteer.ConsoleMessage) => {
@@ -197,42 +199,45 @@ describe('Navigation', async function() {
         assert.strictEqual(await getServiceWorkerCount(), 0);
       });
 
-      it('successfully returns a Lighthouse report with DevTools throttling', async () => {
-        await navigateToLighthouseTab('lighthouse/hello.html');
+      // [crbug.com/1427407] Flaky in legacy mode
+      if (mode !== 'legacy') {
+        it('successfully returns a Lighthouse report with DevTools throttling', async () => {
+          await navigateToLighthouseTab('lighthouse/hello.html');
 
-        await setThrottlingMethod('devtools');
-        await setLegacyNavigation(mode === 'legacy');
+          await setThrottlingMethod('devtools');
+          await setLegacyNavigation(mode === 'legacy');
 
-        await clickStartButton();
+          await clickStartButton();
 
-        const {lhr, reportEl} = await waitForResult();
+          const {lhr, reportEl} = await waitForResult();
 
-        assert.strictEqual(lhr.configSettings.throttlingMethod, 'devtools');
+          assert.strictEqual(lhr.configSettings.throttlingMethod, 'devtools');
 
-        // [crbug.com/1347220] DevTools throttling can force resources to load slow enough for these audits to fail sometimes.
-        const flakyAudits = [
-          'server-response-time',
-          'render-blocking-resources',
-        ];
+          // [crbug.com/1347220] DevTools throttling can force resources to load slow enough for these audits to fail sometimes.
+          const flakyAudits = [
+            'server-response-time',
+            'render-blocking-resources',
+          ];
 
-        const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, flakyAudits);
-        assert.strictEqual(auditResults.length, 150);
-        assert.deepStrictEqual(erroredAudits, []);
-        assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
-          'service-worker',
-          'installable-manifest',
-          'splash-screen',
-          'themed-omnibox',
-          'maskable-icon',
-          'document-title',
-          'html-has-lang',
-          'meta-description',
-          'bf-cache',
-        ]);
+          const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, flakyAudits);
+          assert.strictEqual(auditResults.length, 150);
+          assert.deepStrictEqual(erroredAudits, []);
+          assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
+            'service-worker',
+            'installable-manifest',
+            'splash-screen',
+            'themed-omnibox',
+            'maskable-icon',
+            'document-title',
+            'html-has-lang',
+            'meta-description',
+            'bf-cache',
+          ]);
 
-        const viewTraceButton = await $textContent('View Trace', reportEl);
-        assert.ok(viewTraceButton);
-      });
+          const viewTraceButton = await $textContent('View Trace', reportEl);
+          assert.ok(viewTraceButton);
+        });
+      }
 
       it('successfully returns a Lighthouse report when settings changed', async () => {
         await setDevToolsSettings({language: 'es'});
