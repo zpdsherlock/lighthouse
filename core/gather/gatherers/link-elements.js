@@ -10,6 +10,8 @@ import FRGatherer from '../base-gatherer.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 import DevtoolsLog from './devtools-log.js';
 import {MainResource} from '../../computed/main-resource.js';
+import {Util} from '../../../shared/util.js';
+import * as i18n from '../../lib/i18n/i18n.js';
 
 /* globals HTMLLinkElement getNodeDetails */
 
@@ -18,6 +20,17 @@ import {MainResource} from '../../computed/main-resource.js';
  * This gatherer collects all the effect `link` elements, both in the page and declared in the
  * headers of the main resource.
  */
+
+const UIStrings = {
+  /**
+   * @description Warning message explaining that there was an error parsing a link header in an HTTP response. `error` will be an english string with more details on the error. `header` will be the value of the header that caused the error. `link` is a type of HTTP header and should not be translated.
+   * @example {Expected attribute delimiter at offset 94} error
+   * @example {<https://assets.calendly.com/assets/booking/css/booking-d0ac32b1.css>; rel=preload; as=style; nopush} error
+   */
+  headerParseWarning: 'Error parsing `link` header ({error}): `{header}`',
+};
+
+const str_ = i18n.createIcuMessageFn(import.meta.url, UIStrings);
 
 /**
  *
@@ -126,7 +139,21 @@ class LinkElements extends FRGatherer {
     for (const header of mainDocument.responseHeaders) {
       if (header.name.toLowerCase() !== 'link') continue;
 
-      for (const link of LinkHeader.parse(header.value).refs) {
+      /** @type {LinkHeader.Reference[]} */
+      let parsedRefs = [];
+
+      try {
+        parsedRefs = LinkHeader.parse(header.value).refs;
+      } catch (err) {
+        const truncatedHeader = Util.truncate(header.value, 100);
+        const warning = str_(UIStrings.headerParseWarning, {
+          error: err.message,
+          header: truncatedHeader,
+        });
+        context.baseArtifacts.LighthouseRunWarnings.push(warning);
+      }
+
+      for (const link of parsedRefs) {
         linkElements.push({
           rel: link.rel || '',
           href: normalizeUrlOrNull(link.uri, context.baseArtifacts.URL.finalDisplayedUrl),
@@ -181,3 +208,4 @@ class LinkElements extends FRGatherer {
 }
 
 export default LinkElements;
+export {UIStrings};

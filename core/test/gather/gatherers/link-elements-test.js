@@ -52,6 +52,7 @@ describe('Link Elements gatherer', () => {
       URL: {
         finalDisplayedUrl: url,
       },
+      LighthouseRunWarnings: [],
     };
     const passContext = {driver, url, baseArtifacts, computedCache: new Map()};
     return [passContext, {}];
@@ -106,5 +107,20 @@ describe('Link Elements gatherer', () => {
       link({source: 'body', rel: 'icon', href: 'https://example.com/a.png'}),
       link({source: 'headers', rel: 'prefetch', href: 'https://example.com/', as: 'image'}),
     ]);
+  });
+
+  it('adds toplevel warning on parser error', async () => {
+    const linkElementsInDOM = [];
+    const headers = [
+      {name: 'Link', value: '<https://example.com/>a'},
+    ];
+
+    const passData = getPassData({linkElementsInDOM, headers});
+    const result = await new LinkElements().afterPass(...passData);
+    expect(result).toEqual([]);
+    expect(passData[0].baseArtifacts.LighthouseRunWarnings).toHaveLength(1);
+    expect(passData[0].baseArtifacts.LighthouseRunWarnings[0]).toBeDisplayString(
+      'Error parsing `link` header (Unexpected character "a" at offset 22): `<https://example.com/>a`'
+    );
   });
 });
