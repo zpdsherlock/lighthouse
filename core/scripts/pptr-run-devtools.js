@@ -267,7 +267,7 @@ async function installCustomLighthouseConfig(inspectorSession, config) {
 
   await evaluateInSession(
     inspectorSession,
-    `UI.panels.lighthouse.protocolService.configForTesting = ${JSON.stringify(config)}`
+    `UI.panels.lighthouse.controller.protocolService.configForTesting = ${JSON.stringify(config)}`
   );
 }
 
