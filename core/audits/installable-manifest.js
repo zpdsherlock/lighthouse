@@ -97,6 +97,7 @@ const UIStrings = {
   /** Message logged when the web app has been uninstalled o desktop, signalling that the install banner state is being reset. */
   'pipeline-restarted': 'PWA has been uninstalled and installability checks resetting.',
   /**
+   * TODO: This error was removed in M114, we can remove this message when it hits stable.
    * @description Error message explaining that the URL of the manifest uses a scheme that is not supported on Android.
    * @example {data:} scheme
    */
