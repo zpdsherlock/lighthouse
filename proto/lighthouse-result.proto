@@ -651,10 +651,10 @@ message LhrEntity {
   optional string category = 3;
 
   // An optional flag indicating if the entity is the first party.
-  optional bool isFirstParty = 4;
+  optional bool is_first_party = 4;
 
   // An optional flag indicating if the entity is not recognized.
-  optional bool isUnrecognized = 5;
+  optional bool is_unrecognized = 5;
 
   // A list of URL origin strings that belong to this entity.
   repeated string origins = 6;
