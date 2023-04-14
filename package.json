@@ -142,7 +142,6 @@
     "cpy": "^8.1.2",
     "cross-env": "^7.0.2",
     "csv-validator": "^0.0.3",
-    "devtools-protocol": "0.0.1081726",
     "es-main": "^1.0.2",
     "eslint": "^8.4.1",
     "eslint-config-google": "^0.14.0",
@@ -191,6 +190,7 @@
     "chrome-launcher": "^0.15.1",
     "configstore": "^5.0.1",
     "csp_evaluator": "1.1.1",
+    "devtools-protocol": "0.0.1130274",
     "enquirer": "^2.3.6",
     "http-link-header": "^1.1.0",
     "intl-messageformat": "^4.4.0",
@@ -214,8 +214,8 @@
     "yargs-parser": "^21.0.0"
   },
   "resolutions": {
-    "puppeteer/**/devtools-protocol": "0.0.1081726",
-    "puppeteer-core/**/devtools-protocol": "0.0.1081726"
+    "puppeteer/**/devtools-protocol": "0.0.1130274",
+    "puppeteer-core/**/devtools-protocol": "0.0.1130274"
   },
   "repository": "GoogleChrome/lighthouse",
   "keywords": [

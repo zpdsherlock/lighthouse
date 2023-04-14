@@ -44,6 +44,7 @@ const UIStrings = {
   'manifest-display-not-supported': `Manifest 'display' property must be one of 'standalone', 'fullscreen', or 'minimal-ui'`,
   /** Error message explaining that the manifest could not be fetched, might be empty, or could not be parsed. */
   'manifest-empty': `Manifest could not be fetched, is empty, or could not be parsed`,
+  // TODO: This error was removed in M114, we can remove this message when it hits stable.
   /** Error message explaining that no matching service worker was detected,
    * and provides a suggestion to reload the page or check whether the scope of the service worker
    * for the current page encloses the scope and start URL from the manifest. */

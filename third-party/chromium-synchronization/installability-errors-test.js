@@ -57,7 +57,6 @@ Array [
   "no-icon-available",
   "no-id-specified",
   "no-manifest",
-  "no-matching-service-worker",
   "no-url-for-service-worker",
   "not-from-secure-origin",
   "not-offline-capable",

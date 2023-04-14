@@ -603,6 +603,7 @@ declare module Artifacts {
   interface InspectorIssues {
     attributionReportingIssue: Crdp.Audits.AttributionReportingIssueDetails[];
     blockedByResponseIssue: Crdp.Audits.BlockedByResponseIssueDetails[];
+    bounceTrackingIssue: Crdp.Audits.BounceTrackingIssueDetails[];
     clientHintIssue: Crdp.Audits.ClientHintIssueDetails[];
     contentSecurityPolicyIssue: Crdp.Audits.ContentSecurityPolicyIssueDetails[];
     corsIssue: Crdp.Audits.CorsIssueDetails[];
