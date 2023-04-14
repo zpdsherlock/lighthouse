@@ -1,3 +1,30 @@
+<a name="10.1.1"></a>
+# 10.1.1 (2023-04-14)
+[Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.1.0...v10.1.1)
+
+We expect this release to ship in the DevTools of [Chrome 114](https://chromiumdash.appspot.com/schedule), and to PageSpeed Insights within 2 weeks.
+
+## Core
+
+* collect fetchpriority for images and rel=preload links ([#14925](https://github.com/GoogleChrome/lighthouse/pull/14925))
+* installability: deprecate scheme support warning ([#14960](https://github.com/GoogleChrome/lighthouse/pull/14960))
+* link-elements: gracefully handle header parser error ([#14936](https://github.com/GoogleChrome/lighthouse/pull/14936))
+
+## Deps
+
+* upgrade `http-link-header` ([#14973](https://github.com/GoogleChrome/lighthouse/pull/14973))
+* upgrade `devtools-protocol` & deprecate SW install error ([#14974](https://github.com/GoogleChrome/lighthouse/pull/14974))
+
+## Tests
+
+* remove cross origin timespan test ([#14932](https://github.com/GoogleChrome/lighthouse/pull/14932))
+* devtools: fix config for testing ([#14962](https://github.com/GoogleChrome/lighthouse/pull/14962))
+* devtools: sync e2e ([#14931](https://github.com/GoogleChrome/lighthouse/pull/14931))
+
+## Misc
+
+* proto: fix case in entities fields ([#14959](https://github.com/GoogleChrome/lighthouse/pull/14959))
+
 <a name="10.1.0"></a>
 # 10.1.0 (2023-03-23)
 [Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.0.2...v10.1.0)
