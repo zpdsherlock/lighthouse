@@ -88,6 +88,13 @@ class Runner {
       log.timeEnd(resultsStatus);
       log.timeEnd(runnerStatus);
 
+      /** @type {LH.Artifacts['FullPageScreenshot']|undefined} */
+      let fullPageScreenshot = artifacts.FullPageScreenshot;
+      if (resolvedConfig.settings.disableFullPageScreenshot ||
+          fullPageScreenshot instanceof Error) {
+        fullPageScreenshot = undefined;
+      }
+
       /** @type {LH.RawIcu<LH.Result>} */
       const i18nLhr = {
         lighthouseVersion,
@@ -113,8 +120,7 @@ class Runner {
         categoryGroups: resolvedConfig.groups || undefined,
         stackPacks: stackPacks.getStackPacks(artifacts.Stacks),
         entities: await Runner.getEntityClassification(artifacts, {computedCache}),
-        fullPageScreenshot: resolvedConfig.settings.disableFullPageScreenshot ?
-          undefined : artifacts.FullPageScreenshot,
+        fullPageScreenshot,
         timing: this._getTiming(artifacts),
         i18n: {
           rendererFormattedStrings: format.getRendererFormattedStrings(settings.locale),

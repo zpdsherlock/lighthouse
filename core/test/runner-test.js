@@ -195,6 +195,19 @@ describe('Runner', () => {
       });
     });
 
+    it('omits full page screenshot if it is erroneous', async () => {
+      const opts = {resolvedConfig: await generateConfig(), driverMock, computedCache: new Map()};
+      const baseGatherFn = createGatherFn(url);
+      const badFpsGatherFn = async (...args) => {
+        const artifacts = await baseGatherFn(...args);
+        artifacts.FullPageScreenshot = new Error('Bad FPS');
+        return artifacts;
+      };
+      const result = await runGatherAndAudit(badFpsGatherFn, opts);
+      expect(result.artifacts.FullPageScreenshot).toBeInstanceOf(Error);
+      expect(result.lhr.fullPageScreenshot).toBeUndefined();
+    });
+
     it('serializes IcuMessages in gatherMode and is able to use them in auditMode', async () => {
       // Can use this to access shared UIStrings in i18n.js.
       // For future changes: exact messages aren't important, just choose ones with replacements.
