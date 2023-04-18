@@ -2,7 +2,7 @@
 
 Lighthouse is built into browser-friendly bundles for two clients:
 
-* Chrome DevTools Audits Panel
+* Chrome DevTools Lighthouse Panel
 * Lightrider, the backend of PageSpeed Insights
 
 Additionally, there are build processes for:
