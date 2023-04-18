@@ -18,7 +18,7 @@ export interface Flags extends SharedFlagsSettings {
   /** The hostname to use for the debugging protocol, if manually connecting. */
   hostname?: string;
   /** The level of logging to enable. */
-  logLevel?: 'silent'|'error'|'info'|'verbose';
+  logLevel?: 'silent'|'error'|'warn'|'info'|'verbose';
   /** The path to the config JSON. */
   configPath?: string;
   /** Run the specified plugins. */

@@ -89,6 +89,9 @@ class Log {
       case 'verbose':
         debug.enable('LH:*');
         break;
+      case 'warn':
+        debug.enable('-LH:*, LH:*:warn, LH:*:error');
+        break;
       case 'error':
         debug.enable('-LH:*, LH:*:error');
         break;
