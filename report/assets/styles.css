@@ -1431,10 +1431,6 @@
   margin: 0 auto;
 
   scroll-margin-top: var(--sticky-header-buffer);
-
-  /* Faster recalc style & layout of the report. https://web.dev/content-visibility/ */
-  content-visibility: auto;
-  contain-intrinsic-size: 1000px;
 }
 
 .lh-category-wrapper {
