@@ -353,7 +353,7 @@ async function navigationGather(page, requestor, options = {}) {
       // therefore we connect to the browser in the gatherFn callback.
       if (!page) {
         const {hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT} = flags;
-        lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`});
+        lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`, defaultViewport: null});
         lhPage = await lhBrowser.newPage();
         page = lhPage;
       }
