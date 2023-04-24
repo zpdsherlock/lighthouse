@@ -123,8 +123,8 @@ describe('Entity Classification computed artifact', () => {
     // Make sure only valid network urls with a domain is recognized.
     expect(entities).toEqual(['third-party.com']);
     expect(result.entityByUrl.size).toBe(1);
-    // A url that's not present in devtoolsLogs would throw an exception.
-    expect(() => result.isFirstParty('chrome://version'))
-      .toThrow('A url not in devtoolsLog was used for first-party check.');
+    // First party check fails for non-DT-log URLs.
+    expect(result.isFirstParty('chrome-extension://abcdefghijklmnopqrstuvwxyz/foo/bar.js')).toEqual(false);
+    expect(result.isFirstParty('chrome://new-tab-page')).toEqual(false);
   });
 });

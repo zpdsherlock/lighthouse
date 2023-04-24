@@ -85,7 +85,6 @@ class EntityClassification {
      */
     function isFirstParty(url) {
       const entityUrl = entityByUrl.get(url);
-      if (!entityUrl) throw new Error('A url not in devtoolsLog was used for first-party check.');
       return entityUrl === firstParty;
     }
 

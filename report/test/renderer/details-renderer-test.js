@@ -571,6 +571,42 @@ describe('DetailsRenderer', () => {
           );
         });
 
+        it(`marks chrome:// and chrome-extension:// urls as unattributable`, () => {
+          const el = renderer.render({
+            type: tableType,
+            headings: [
+              {key: 'url', valueType: 'url', label: 'URL'},
+              {key: 'totalBytes', valueType: 'bytes', label: 'Size (KiB)'},
+              {key: 'wastedBytes', valueType: 'bytes', label: 'Potential Savings (KiB)'},
+            ],
+            items: [
+              {url: 'https://example.com/1', totalBytes: 100, wastedBytes: 500, entity: 'example.com'},
+              {url: 'https://cdn.com/1', totalBytes: 300, wastedBytes: 700, entity: 'cdn.com'},
+              {url: 'https://cdn.com/2', totalBytes: 400, wastedBytes: 800, entity: 'cdn.com'},
+              {url: 'chrome-extension://abcdefghijklmnopqrstuvwxyz/foo/bar.js', totalBytes: 300, wastedBytes: 700},
+              {url: 'chrome://new-tab-page', totalBytes: 300, wastedBytes: 700},
+              {url: 'Unattributable', totalBytes: 500, wastedBytes: 500}, // entity not marked.
+            ],
+          });
+
+          assert.deepStrictEqual(
+            [...el.querySelectorAll('.lh-row--group')[0].children].map(td => td.textContent),
+            ['example.com Cat 1st party', '0.1 KiB', '0.5 KiB'],
+            'did not render 1st party grouped row correctly'
+          );
+          assert.deepStrictEqual(
+            [...el.querySelectorAll('.lh-row--group')[1].children].map(td => td.textContent),
+            ['cdn.com CDN', '0.7 KiB', '1.5 KiB'],
+            'did not render CDN category row correctly'
+          );
+          assert.deepStrictEqual(
+            [...el.querySelectorAll('.lh-row--group')[2].children].map(td => td.textContent),
+            ['Unattributable', '1.1 KiB', '1.9 KiB'],
+            'did not render all Unattributable row'
+          );
+          assert.equal(el.querySelectorAll('tr').length, 10, `did not render ${tableType} rows`);
+        });
+
         it('does not group if entity classification is absent', () => {
           const el = renderer.render({
             type: tableType,
