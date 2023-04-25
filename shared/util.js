@@ -221,6 +221,8 @@ class Util {
 
     const MAX_LENGTH = 64;
     if (parsedUrl.protocol !== 'data:') {
+      // Even non-data uris can be 10k characters long.
+      name = name.slice(0, 200);
       // Always elide hexadecimal hash
       name = name.replace(/([a-f0-9]{7})[a-f0-9]{13}[a-f0-9]*/g, `$1${ELLIPSIS}`);
       // Also elide other hash-like mixed-case strings
