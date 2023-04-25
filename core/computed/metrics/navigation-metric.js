@@ -14,7 +14,7 @@ class NavigationMetric extends Metric {
   /**
    * @param {LH.Artifacts.NavigationMetricComputationData} data
    * @param {LH.Artifacts.ComputedContext} context
-   * @return {Promise<LH.Artifacts.LanternMetric>}
+   * @return {Promise<LH.Artifacts.LanternMetric|LH.Artifacts.Metric>}
    */
   static computeSimulatedMetric(data, context) { // eslint-disable-line no-unused-vars
     throw new Error('Unimplemented');

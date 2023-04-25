@@ -40,7 +40,7 @@ class Metric {
   /**
    * @param {LH.Artifacts.MetricComputationData} data
    * @param {LH.Artifacts.ComputedContext} context
-   * @return {Promise<LH.Artifacts.LanternMetric>}
+   * @return {Promise<LH.Artifacts.LanternMetric|LH.Artifacts.Metric>}
    */
   static computeSimulatedMetric(data, context) { // eslint-disable-line no-unused-vars
     throw new Error('Unimplemented');

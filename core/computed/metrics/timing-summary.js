@@ -18,6 +18,8 @@ import {SpeedIndex} from './speed-index.js';
 import {MaxPotentialFID} from './max-potential-fid.js';
 import {TotalBlockingTime} from './total-blocking-time.js';
 import {makeComputedArtifact} from '../computed-artifact.js';
+import {TimeToFirstByte} from './time-to-first-byte.js';
+import {LCPBreakdown} from './lcp-breakdown.js';
 
 class TimingSummary {
   /**
@@ -57,6 +59,8 @@ class TimingSummary {
     const maxPotentialFID = await requestOrUndefined(MaxPotentialFID, metricComputationData);
     const speedIndex = await requestOrUndefined(SpeedIndex, metricComputationData);
     const totalBlockingTime = await requestOrUndefined(TotalBlockingTime, metricComputationData);
+    const lcpBreakdown = await requestOrUndefined(LCPBreakdown, metricComputationData);
+    const ttfb = await requestOrUndefined(TimeToFirstByte, metricComputationData);
 
     const {
       cumulativeLayoutShift,
@@ -86,6 +90,12 @@ class TimingSummary {
       cumulativeLayoutShift,
       cumulativeLayoutShiftMainFrame,
       totalCumulativeLayoutShift,
+
+      lcpLoadStart: lcpBreakdown?.loadStart,
+      lcpLoadEnd: lcpBreakdown?.loadEnd,
+
+      timeToFirstByte: ttfb?.timing,
+      timeToFirstByteTs: ttfb?.timestamp,
 
       // Include all timestamps of interest from the processed trace
       observedTimeOrigin: processedTrace.timings.timeOrigin,

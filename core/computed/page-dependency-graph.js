@@ -12,6 +12,7 @@ import {NetworkRequest} from '../lib/network-request.js';
 import {ProcessedTrace} from './processed-trace.js';
 import {NetworkRecords} from './network-records.js';
 import {NetworkAnalyzer} from '../lib/dependency-graph/simulator/network-analyzer.js';
+import {DocumentUrls} from './document-urls.js';
 
 /** @typedef {import('../lib/dependency-graph/base-node.js').Node} Node */
 /** @typedef {Omit<LH.Artifacts['URL'], 'finalDisplayedUrl'>} URLArtifact */
@@ -460,37 +461,6 @@ class PageDependencyGraph {
   }
 
   /**
-   * Recalculate `artifacts.URL` for clients that don't provide it.
-   *
-   * @param {LH.DevtoolsLog} devtoolsLog
-   * @param {LH.Artifacts.NetworkRequest[]} networkRecords
-   * @param {LH.Artifacts.ProcessedTrace} processedTrace
-   * @return {URLArtifact}
-   */
-  static getDocumentUrls(devtoolsLog, networkRecords, processedTrace) {
-    const mainFrameId = processedTrace.mainFrameInfo.frameId;
-
-    /** @type {string|undefined} */
-    let requestedUrl;
-    /** @type {string|undefined} */
-    let mainDocumentUrl;
-    for (const event of devtoolsLog) {
-      if (event.method === 'Page.frameNavigated' && event.params.frame.id === mainFrameId) {
-        const {url} = event.params.frame;
-        // Only set requestedUrl on the first main frame navigation.
-        if (!requestedUrl) requestedUrl = url;
-        mainDocumentUrl = url;
-      }
-    }
-    if (!requestedUrl || !mainDocumentUrl) throw new Error('No main frame navigations found');
-
-    const initialRequest = NetworkAnalyzer.findResourceForUrl(networkRecords, requestedUrl);
-    if (initialRequest?.redirects?.length) requestedUrl = initialRequest.redirects[0].url;
-
-    return {requestedUrl, mainDocumentUrl};
-  }
-
-  /**
    * @param {{trace: LH.Trace, devtoolsLog: LH.DevtoolsLog, URL: LH.Artifacts['URL']}} data
    * @param {LH.Artifacts.ComputedContext} context
    * @return {Promise<Node>}
@@ -504,8 +474,7 @@ class PageDependencyGraph {
 
     // COMPAT: Backport for pre-10.0 clients that don't pass the URL artifact here (e.g. pubads).
     // Calculates the URL artifact from the processed trace and DT log.
-    const URL = data.URL ||
-      PageDependencyGraph.getDocumentUrls(devtoolsLog, networkRecords, processedTrace);
+    const URL = data.URL || await DocumentUrls.request(data, context);
 
     return PageDependencyGraph.createGraph(processedTrace, networkRecords, URL);
   }

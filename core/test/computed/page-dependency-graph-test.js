@@ -10,8 +10,6 @@ import {PageDependencyGraph} from '../../computed/page-dependency-graph.js';
 import {BaseNode} from '../../lib/dependency-graph/base-node.js';
 import {NetworkRequest} from '../../lib/network-request.js';
 import {getURLArtifactFromDevtoolsLog, readJson} from '../test-utils.js';
-import {NetworkRecorder} from '../../lib/network-recorder.js';
-import {networkRecordsToDevtoolsLog} from '../network-records-to-devtools-log.js';
 
 const sampleTrace = readJson('../fixtures/traces/iframe-m79.trace.json', import.meta);
 const sampleDevtoolsLog = readJson('../fixtures/traces/iframe-m79.devtoolslog.json', import.meta);
@@ -86,49 +84,6 @@ describe('PageDependencyGraph computed artifact:', () => {
         const dependents = output.getDependents();
         const nodeWithNestedDependents = dependents.find(node => node.getDependents().length);
         assert.ok(nodeWithNestedDependents, 'did not link initiators');
-      });
-    });
-  });
-
-  describe('#getDocumentUrls', () => {
-    it('should resolve redirects', () => {
-      const processedTrace = {
-        mainFrameInfo: {
-          frameId: 'FRAMEID',
-        },
-      };
-      const devtoolsLog = networkRecordsToDevtoolsLog([
-        {requestId: '0', url: 'http://example.com/'},
-        {requestId: '0:redirect', url: 'https://example.com/'},
-        {requestId: '0:redirect:redirect', url: 'https://www.example.com/'},
-        {requestId: '1', url: 'https://page.example.com/'},
-      ]);
-      devtoolsLog.push({
-        method: 'Page.frameNavigated',
-        params: {
-          frame: {
-            id: 'FRAMEID',
-            url: 'https://www.example.com/',
-          },
-        },
-      });
-      devtoolsLog.push({
-        method: 'Page.frameNavigated',
-        params: {
-          frame: {
-            id: 'FRAMEID',
-            url: 'https://page.example.com/',
-          },
-        },
-      });
-
-      // Round trip the network records to fill in redirect info.
-      const networkRecords = NetworkRecorder.recordsFromLogs(devtoolsLog);
-
-      const URL = PageDependencyGraph.getDocumentUrls(devtoolsLog, networkRecords, processedTrace);
-      expect(URL).toEqual({
-        requestedUrl: 'http://example.com/',
-        mainDocumentUrl: 'https://page.example.com/',
       });
     });
   });

@@ -11,8 +11,7 @@ import {MainResource} from '../computed/main-resource.js';
 import {LanternLargestContentfulPaint} from '../computed/metrics/lantern-largest-contentful-paint.js';
 import {LoadSimulator} from '../computed/load-simulator.js';
 import {ByteEfficiencyAudit} from './byte-efficiency/byte-efficiency-audit.js';
-import {ProcessedNavigation} from '../computed/processed-navigation.js';
-import {NetworkRecords} from '../computed/network-records.js';
+import {LCPImageRecord} from '../computed/lcp-image-record.js';
 
 const UIStrings = {
   /** Title of a lighthouse audit that tells a user to preload an image in order to improve their LCP time. */
@@ -141,55 +140,6 @@ class PrioritizeLcpImage extends Audit {
   }
 
   /**
-   * Match the LCP event with the paint event to get the request of the image actually painted.
-   * This could differ from the `ImageElement` associated with the nodeId if e.g. the LCP
-   * was a pseudo-element associated with a node containing a smaller background-image.
-   * @param {LH.Trace} trace
-   * @param {LH.Artifacts.ProcessedNavigation} processedNavigation
-   * @param {Array<NetworkRequest>} networkRecords
-   * @return {NetworkRequest|undefined}
-   */
-  static getLcpRecord(trace, processedNavigation, networkRecords) {
-    // Use main-frame-only LCP to match the metric value.
-    const lcpEvent = processedNavigation.largestContentfulPaintEvt;
-    if (!lcpEvent) return;
-
-    const lcpImagePaintEvent = trace.traceEvents.filter(e => {
-      return e.name === 'LargestImagePaint::Candidate' &&
-          e.args.frame === lcpEvent.args.frame &&
-          e.args.data?.DOMNodeId === lcpEvent.args.data?.nodeId &&
-          e.args.data?.size === lcpEvent.args.data?.size;
-    // Get last candidate, in case there was more than one.
-    }).sort((a, b) => b.ts - a.ts)[0];
-
-    const lcpUrl = lcpImagePaintEvent?.args.data?.imageUrl;
-    if (!lcpUrl) return;
-
-    const candidates = networkRecords.filter(record => {
-      return record.url === lcpUrl &&
-          record.finished &&
-          // Same frame as LCP trace event.
-          record.frameId === lcpImagePaintEvent.args.frame &&
-          record.networkRequestTime < (processedNavigation.timestamps.largestContentfulPaint || 0);
-    }).map(record => {
-      // Follow any redirects to find the real image request.
-      while (record.redirectDestination) {
-        record = record.redirectDestination;
-      }
-      return record;
-    }).filter(record => {
-      // Don't select if also loaded by some other means (xhr, etc). `resourceType`
-      // isn't set on redirect _sources_, so have to check after following redirects.
-      return record.resourceType === 'Image';
-    });
-
-    // If there are still multiple candidates, at this point it appears the page
-    // simply made multiple requests for the image. The first loaded is the best
-    // guess of the request that made the image available for use.
-    return candidates.sort((a, b) => a.networkEndTime - b.networkEndTime)[0];
-  }
-
-  /**
    * Computes the estimated effect of preloading the LCP image.
    * @param {LH.Artifacts.TraceElement} lcpElement
    * @param {LH.Gatherer.Simulation.GraphNetworkNode|undefined} lcpNode
@@ -297,17 +247,15 @@ class PrioritizeLcpImage extends Audit {
       return {score: null, notApplicable: true};
     }
 
-    const networkRecords = await NetworkRecords.request(devtoolsLog, context);
-    const processedNavigation = await ProcessedNavigation.request(trace, context);
     const mainResource = await MainResource.request({devtoolsLog, URL}, context);
     const lanternLCP = await LanternLargestContentfulPaint.request(metricData, context);
     const simulator = await LoadSimulator.request({devtoolsLog, settings}, context);
 
-    const lcpRecord = PrioritizeLcpImage.getLcpRecord(trace, processedNavigation, networkRecords);
+    const lcpImageRecord = await LCPImageRecord.request({trace, devtoolsLog}, context);
     const graph = lanternLCP.pessimisticGraph;
     // Note: if moving to LCPAllFrames, mainResource would need to be the LCP frame's main resource.
     const {lcpNodeToPreload, initiatorPath} = PrioritizeLcpImage.getLCPNodeToPreload(mainResource,
-        graph, lcpRecord);
+        graph, lcpImageRecord);
 
     const {results, wastedMs} =
       PrioritizeLcpImage.computeWasteWithGraph(lcpElement, lcpNodeToPreload, graph, simulator);

@@ -5,7 +5,7 @@
  */
 
 import {TimingSummary} from '../../../computed/metrics/timing-summary.js';
-import {readJson} from '../../test-utils.js';
+import {getURLArtifactFromDevtoolsLog, readJson} from '../../test-utils.js';
 
 const trace = readJson('../../fixtures/traces/frame-metrics-m90.json', import.meta);
 const devtoolsLog = readJson('../../fixtures/traces/frame-metrics-m90.devtools.log.json', import.meta);
@@ -13,8 +13,10 @@ const devtoolsLog = readJson('../../fixtures/traces/frame-metrics-m90.devtools.l
 describe('Timing summary', () => {
   it('contains the correct data', async () => {
     const gatherContext = {gatherMode: 'navigation'};
-    const artifacts = {settings: {throttlingMethod: 'devtools'}, trace, devtoolsLog, gatherContext};
     const context = {computedCache: new Map()};
+    const URL = getURLArtifactFromDevtoolsLog(devtoolsLog);
+    const artifacts =
+      {URL, settings: {throttlingMethod: 'devtools'}, trace, devtoolsLog, gatherContext};
     const result = await TimingSummary.request(artifacts, context);
 
     expect(result.metrics).toMatchInlineSnapshot(`
@@ -33,6 +35,8 @@ describe('Timing summary', () => {
         "largestContentfulPaintAllFrames": 697.751,
         "largestContentfulPaintAllFramesTs": 10327885660,
         "largestContentfulPaintTs": 10332856184,
+        "lcpLoadEnd": undefined,
+        "lcpLoadStart": undefined,
         "maxPotentialFID": 51.056,
         "observedCumulativeLayoutShift": 0.026463014612806653,
         "observedCumulativeLayoutShiftMainFrame": 0.0011656245471340055,
@@ -67,6 +71,8 @@ describe('Timing summary', () => {
         "observedTraceEndTs": 10341402222,
         "speedIndex": 1335,
         "speedIndexTs": 10328522909,
+        "timeToFirstByte": 570.329,
+        "timeToFirstByteTs": 10327758238,
         "totalBlockingTime": 2.7429999999994834,
         "totalCumulativeLayoutShift": 0.0011656245471340055,
       }

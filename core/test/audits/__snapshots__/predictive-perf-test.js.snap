@@ -15,7 +15,10 @@ Object {
   "roughEstimateOfFCP": 2289,
   "roughEstimateOfFMP": 2758,
   "roughEstimateOfLCP": 2758,
+  "roughEstimateOfLCPLoadEnd": undefined,
+  "roughEstimateOfLCPLoadStart": undefined,
   "roughEstimateOfSI": 3681,
+  "roughEstimateOfTTFB": 609,
   "roughEstimateOfTTI": 4367,
 }
 `;

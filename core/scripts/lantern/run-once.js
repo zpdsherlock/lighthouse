@@ -13,6 +13,7 @@ import {Simulator} from '../../lib/dependency-graph/simulator/simulator.js';
 import traceSaver from '../../lib/lantern-trace-saver.js';
 import {LH_ROOT} from '../../../root.js';
 import {readJson} from '../../test/test-utils.js';
+import {DocumentUrls} from '../../computed/document-urls.js';
 
 if (process.argv.length !== 4) throw new Error('Usage $0 <trace file> <devtools file>');
 
@@ -20,8 +21,18 @@ async function run() {
   const tracePath = path.resolve(process.cwd(), process.argv[2]);
   const traces = {defaultPass: readJson(tracePath)};
   const devtoolsLogs = {defaultPass: readJson(path.resolve(process.cwd(), process.argv[3]))};
-  const artifacts = {traces, devtoolsLogs, GatherContext: {gatherMode: 'navigation'}};
   const context = {computedCache: new Map(), settings: {locale: 'en-us'}};
+
+  const trace = traces.defaultPass;
+  const devtoolsLog = devtoolsLogs.defaultPass;
+  const URL = await DocumentUrls.request({trace, devtoolsLog}, context);
+
+  const artifacts = {
+    traces,
+    devtoolsLogs,
+    GatherContext: {gatherMode: 'navigation'},
+    URL,
+  };
 
   // @ts-expect-error - We don't need the full artifacts or context.
   const result = await PredictivePerf.audit(artifacts, context);

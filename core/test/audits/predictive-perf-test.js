@@ -28,7 +28,7 @@ describe('Performance: predictive performance audit', () => {
     expect(output.displayValue).toBeDisplayString('4,370 ms');
     const metrics = output.details.items[0];
     for (const [key, value] of Object.entries(metrics)) {
-      metrics[key] = Math.round(value);
+      metrics[key] = value === undefined ? value : Math.round(value);
     }
     expect(metrics).toMatchSnapshot();
   });

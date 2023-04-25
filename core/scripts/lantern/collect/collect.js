@@ -20,6 +20,7 @@ import {LH_ROOT} from '../../../../root.js';
 const execFileAsync = promisify(execFile);
 
 const SAMPLES = process.env.SAMPLES ? Number(process.env.SAMPLES) : 9;
+const WPT_URL = process.env.WPT_URL || 'https://www.webpagetest.org';
 const TEST_URLS = process.env.TEST_URLS ? process.env.TEST_URLS.split(' ') : defaultTestUrls;
 
 if (!process.env.WPT_KEY) throw new Error('missing WPT_KEY');
@@ -63,14 +64,15 @@ async function fetchString(url) {
  * @param {string} url
  */
 async function startWptTest(url) {
-  const apiUrl = new URL('https://www.webpagetest.org/runtest.php');
+  const apiUrl = new URL('/runtest.php', WPT_URL);
   apiUrl.search = new URLSearchParams({
     k: WPT_KEY,
     f: 'json',
     url,
-    location: 'Dulles_MotoG4:Motorola G (gen 4) - Chrome.3G',
+    location: 'gce-us-east4-linux:Chrome.3GFast',
     runs: '1',
     lighthouse: '1',
+    mobile: '1',
     // Make the trace file available over /getgzip.php.
     lighthouseTrace: '1',
     lighthouseScreenshots: '1',
@@ -151,7 +153,7 @@ async function runForWpt(url) {
     }
   }
 
-  const traceUrl = new URL('https://www.webpagetest.org/getgzip.php');
+  const traceUrl = new URL('/getgzip.php', WPT_URL);
   traceUrl.searchParams.set('test', testId);
   traceUrl.searchParams.set('file', 'lighthouse_trace.json');
   const traceJson = await fetchString(traceUrl.href);
