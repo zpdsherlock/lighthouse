@@ -22,6 +22,7 @@ const NON_NETWORK_SCHEMES = [
   'intent', // @see https://developer.chrome.com/docs/multidevice/android/intents/
   'file', // @see https://en.wikipedia.org/wiki/File_URI_scheme
   'filesystem', // @see https://developer.mozilla.org/en-US/docs/Web/API/FileSystem
+  'chrome-extension',
 ];
 
 /**

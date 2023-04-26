@@ -332,6 +332,7 @@ describe('UrlUtils', () => {
     assert.ok(UrlUtils.isNonNetworkProtocol('file:'));
     assert.ok(UrlUtils.isNonNetworkProtocol('filesystem:'));
     assert.ok(UrlUtils.isNonNetworkProtocol('filesystem'));
+    assert.ok(UrlUtils.isNonNetworkProtocol('chrome-extension'));
 
     assert.ok(!UrlUtils.isNonNetworkProtocol('https:'));
     assert.ok(!UrlUtils.isNonNetworkProtocol('http'));
