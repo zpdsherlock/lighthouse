@@ -221,7 +221,7 @@ function doModification(modification) {
       }
 
       if (removeNode) {
-        return ts.createNode(ts.SyntaxKind.Unknown);
+        return ts.factory.createNotEmittedStatement(node);
       }
 
       return node;
