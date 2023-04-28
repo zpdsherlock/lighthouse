@@ -78,19 +78,27 @@ async function collectPhaseArtifacts(options) {
   } = options;
   const priorPhase = phaseToPriorPhase[phase];
   const priorPhaseArtifacts = (priorPhase && artifactState[priorPhase]) || {};
+  const isFinalPhase = phase === 'getArtifact';
 
   for (const artifactDefn of artifactDefinitions) {
-    const logLevel = phase === 'getArtifact' ? 'log' : 'verbose';
-    log[logLevel](`artifacts:${phase}`, artifactDefn.id);
+    log.verbose(`artifacts:${phase}`, artifactDefn.id);
     const gatherer = artifactDefn.gatherer.instance;
 
     const priorArtifactPromise = priorPhaseArtifacts[artifactDefn.id] || Promise.resolve();
     const artifactPromise = priorArtifactPromise.then(async () => {
-      const dependencies = phase === 'getArtifact'
+      const dependencies = isFinalPhase
         ? await collectArtifactDependencies(artifactDefn, artifactState.getArtifact)
         : /** @type {Dependencies} */ ({});
 
-      return gatherer[phase]({
+      const status = {
+        msg: `Getting artifact: ${artifactDefn.id}`,
+        id: `lh:gather:getArtifact:${artifactDefn.id}`,
+      };
+      if (isFinalPhase) {
+        log.time(status);
+      }
+
+      const artifact = await gatherer[phase]({
         gatherMode,
         driver,
         page,
@@ -99,6 +107,12 @@ async function collectPhaseArtifacts(options) {
         computedCache,
         settings,
       });
+
+      if (isFinalPhase) {
+        log.timeEnd(status);
+      }
+
+      return artifact;
     });
 
     await artifactPromise.catch(() => {});

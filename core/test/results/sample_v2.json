@@ -7077,7 +7077,103 @@
       },
       {
         "startTime": 0,
+        "name": "lh:gather:getArtifact:DevtoolsLog",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Trace",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:computed:NetworkRecords",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:DevtoolsLog",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Trace",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Accessibility",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:AnchorElements",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:ConsoleMessages",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:CSSUsage",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Doctype",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:DOMStats",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:EmbeddedContent",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:FontSize",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Inputs",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:GlobalListeners",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:ImageElements",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:InstallabilityErrors",
         "duration": 100,
         "entryType": "measure"
       },
@@ -7089,25 +7185,109 @@
       },
       {
         "startTime": 0,
+        "name": "lh:gather:getArtifact:InspectorIssues",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:JsUsage",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:LinkElements",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:computed:MainResource",
         "duration": 100,
         "entryType": "measure"
       },
       {
         "startTime": 0,
-        "name": "lh:gather:getVersion",
+        "name": "lh:gather:getArtifact:MainDocumentContent",
         "duration": 100,
         "entryType": "measure"
       },
       {
         "startTime": 0,
-        "name": "lh:gather:getVersion",
+        "name": "lh:gather:getArtifact:MetaElements",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:NetworkUserAgent",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:OptimizedImages",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:ResponseCompression",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:RobotsTxt",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:ServiceWorker",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Scripts",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:SourceMaps",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:Stacks",
         "duration": 100,
         "entryType": "measure"
       },
       {
         "startTime": 0,
         "name": "lh:gather:collectStacks",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:TagsBlockingFirstPaint",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:TapTargets",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:TraceElements",
         "duration": 100,
         "entryType": "measure"
       },
@@ -7120,6 +7300,48 @@
       {
         "startTime": 0,
         "name": "lh:computed:ProcessedNavigation",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:computed:Responsiveness",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:ViewportDimensions",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:WebAppManifest",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:devtoolsLogs",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:traces",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:FullPageScreenshot",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:gather:getArtifact:BFCacheFailures",
         "duration": 100,
         "entryType": "measure"
       },
