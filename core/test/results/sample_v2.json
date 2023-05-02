@@ -1265,6 +1265,7 @@
         "items": [
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.html",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 0,
             "networkRequestTime": 1.0220000017434359,
@@ -1280,6 +1281,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=100",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 602.3440000005066,
             "networkRequestTime": 603.5050000008196,
@@ -1295,6 +1297,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/unknown404.css?delay=200",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 603.4030000008643,
             "networkRequestTime": 604.5170000009239,
@@ -1310,6 +1313,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=2200",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 604.4429999999702,
             "networkRequestTime": 605.3250000011176,
@@ -1325,6 +1329,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_disabled.css?delay=200&isdisabled",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 605.8090000003576,
             "networkRequestTime": 606.7750000003725,
@@ -1340,6 +1345,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=3000&capped",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 607.1239999998361,
             "networkRequestTime": 607.7380000017583,
@@ -1355,6 +1361,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=2000&async=true",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 608.2609999999404,
             "networkRequestTime": 609.1710000000894,
@@ -1371,6 +1378,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=3000&async=true",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 609.1250000018626,
             "networkRequestTime": 609.8880000021309,
@@ -1386,6 +1394,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.js",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 610.5200000014156,
             "networkRequestTime": 611.1189999990165,
@@ -1401,6 +1410,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/empty_module.js?delay=500",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 611.4500000011176,
             "networkRequestTime": 612.7220000009984,
@@ -1416,6 +1426,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/empty.css",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 620.672000002116,
             "networkRequestTime": 8073.07300000079,
@@ -1431,6 +1442,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/fcp-delayer.js?delay=5000",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 659.1260000001639,
             "networkRequestTime": 660.0280000008643,
@@ -1446,6 +1458,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?iar1",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 660.9970000013709,
             "networkRequestTime": 6385.375,
@@ -1461,6 +1474,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?isr1",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 661.8369999993593,
             "networkRequestTime": 6764.208000000566,
@@ -1476,6 +1490,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?isr2",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 661.945000000298,
             "networkRequestTime": 6766.048000000417,
@@ -1491,6 +1506,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?isr3",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 662.6960000004619,
             "networkRequestTime": 6766.428999999538,
@@ -1506,6 +1522,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 662.9379999991506,
             "networkRequestTime": 6766.955000001937,
@@ -1521,6 +1538,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-rotating.gif",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 663.3130000010133,
             "networkRequestTime": 6767.415000000969,
@@ -1536,6 +1554,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/third_party/aggressive-promise-polyfill.js",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 664.0730000007898,
             "networkRequestTime": 4181.699000000954,
@@ -1551,6 +1570,7 @@
           },
           {
             "url": "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 664.51600000076,
             "networkRequestTime": 5635.895999999717,
@@ -1566,6 +1586,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?iar2",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 6841.868000000715,
             "networkRequestTime": 8009.196000002325,
@@ -1581,6 +1602,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?scriptActivated&delay=200",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 6866.316999999806,
             "networkRequestTime": 6867.3460000008345,
@@ -1596,6 +1618,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.html",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 6868.923000000417,
             "networkRequestTime": 6870.570000002161,
@@ -1611,6 +1634,7 @@
           },
           {
             "url": "blob:http://localhost:10200/3f2bc9df-684b-4541-837c-1590152ef65d",
+            "sessionTargetType": "page",
             "protocol": "blob",
             "rendererStartTime": 8017.373000001535,
             "networkRequestTime": 8017.373000001535,
@@ -1626,6 +1650,7 @@
           },
           {
             "url": "filesystem:http://localhost:10200/temporary/empty-0.43448333410631723.png",
+            "sessionTargetType": "page",
             "protocol": "filesystem",
             "rendererStartTime": 8339.742000000551,
             "networkRequestTime": 8339.742000000551,
@@ -1641,6 +1666,7 @@
           },
           {
             "url": "http://localhost:10200/favicon.ico",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 13105.274000000209,
             "networkRequestTime": 13106.621999999508,
@@ -1656,6 +1682,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?lcp&redirect=lighthouse-1024x680.jpg%3Fredirected-lcp",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 7098.611999999732,
             "networkRequestTime": 7113.1310000009835,
@@ -1670,6 +1697,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?redirected-lcp",
+            "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 10847.134999999776,
             "networkRequestTime": 10847.29600000009,

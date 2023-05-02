@@ -25,6 +25,8 @@ class Connection {
     this._lastCommandId = 0;
     /** @type {Map<number, CommandCallback>} */
     this._callbacks = new Map();
+    /** @type {Map<string, LH.Protocol.TargetType>} */
+    this._sessionIdToTargetType = new Map();
 
     this._eventEmitter = /** @type {?CrdpEventMessageEmitter} */ (new EventEmitter());
   }
@@ -129,6 +131,18 @@ class Connection {
     if (!('id' in object)) {
       log.formatProtocol('<= event',
           {method: object.method, params: object.params}, 'verbose');
+      if (object.method === 'Target.attachedToTarget') {
+        const type = object.params.targetInfo.type;
+        if (type === 'page' || type === 'iframe') {
+          this._sessionIdToTargetType.set(object.params.sessionId, type);
+        }
+      }
+      if (object.sessionId) {
+        const type = this._sessionIdToTargetType.get(object.sessionId);
+        if (type) {
+          object.targetType = type;
+        }
+      }
       this.emitProtocolEvent(object);
       return;
     }
@@ -175,6 +189,7 @@ class Connection {
       this._eventEmitter.removeAllListeners();
       this._eventEmitter = null;
     }
+    this._sessionIdToTargetType.clear();
   }
 }
 

@@ -119,7 +119,7 @@ class TargetManager extends ProtocolEventEmitter {
       const targetName = target.targetInfo.url || target.targetInfo.targetId;
       log.verbose('target-manager', `target ${targetName} attached`);
 
-      const trueProtocolListener = this._getProtocolEventListener(newSession.id());
+      const trueProtocolListener = this._getProtocolEventListener(targetType, newSession.id());
       /** @type {(event: unknown) => void} */
       // @ts-expect-error - pptr currently typed only for single arg emits.
       const protocolListener = trueProtocolListener;
@@ -156,9 +156,10 @@ class TargetManager extends ProtocolEventEmitter {
   /**
    * Returns a listener for all protocol events from session, and augments the
    * event with the sessionId.
+   * @param {LH.Protocol.TargetType} targetType
    * @param {string} sessionId
    */
-  _getProtocolEventListener(sessionId) {
+  _getProtocolEventListener(targetType, sessionId) {
     /**
      * @template {keyof LH.Protocol.RawEventMessageRecord} EventName
      * @param {EventName} method
@@ -166,7 +167,8 @@ class TargetManager extends ProtocolEventEmitter {
      */
     const onProtocolEvent = (method, params) => {
       // Cast because tsc 4.7 still can't quite track the dependent parameters.
-      const payload = /** @type {LH.Protocol.RawEventMessage} */ ({method, params, sessionId});
+      const payload = /** @type {LH.Protocol.RawEventMessage} */ (
+        {method, params, targetType, sessionId});
       this.emit('protocolevent', payload);
     };
 

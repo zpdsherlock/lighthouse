@@ -6,6 +6,7 @@
 
 import TagsBlockingFirstPaint from
   '../../../../gather/gatherers/dobetterweb/tags-blocking-first-paint.js';
+import {NetworkRequest} from '../../../../lib/network-request.js';
 import {createMockContext} from '../../../gather/mock-driver.js';
 
 let tagsBlockingFirstPaint;
@@ -91,7 +92,7 @@ const traceData = {
       isLinkPreload: false,
       initiator: {type: 'parser'},
     },
-  ],
+  ].map((record) => Object.assign(new NetworkRequest(), record)),
 };
 
 describe('First paint blocking tags', () => {

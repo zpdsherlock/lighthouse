@@ -55,8 +55,7 @@ class ResponseCompression extends FRGatherer {
     const unoptimizedResponses = [];
 
     networkRecords.forEach(record => {
-      // Ignore records from child targets (OOPIFS).
-      if (record.sessionId) return;
+      if (record.isOutOfProcessIframe) return;
 
       const mimeType = record.mimeType;
       const resourceType = record.resourceType || NetworkRequest.TYPES.Other;

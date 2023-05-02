@@ -10,6 +10,8 @@ type CrdpEvents = CrdpMappings.Events;
 type CrdpCommands = CrdpMappings.Commands;
 
 declare module Protocol {
+  type TargetType = 'page' | 'iframe' | 'worker';
+
   /**
    * An intermediate type, used to create a record of all possible Crdp raw event
    * messages, keyed on method. e.g. {
@@ -22,6 +24,7 @@ declare module Protocol {
       method: K,
       // Drop [] for `undefined` (so a JS value is valid).
       params: CrdpEvents[K] extends [] ? undefined: CrdpEvents[K][number]
+      targetType: TargetType;
       // If sessionId is not set, it means the event was from the root target.
       sessionId?: string;
     };

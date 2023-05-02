@@ -4,6 +4,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
+import {NetworkRequest} from '../../../../lib/network-request.js';
 import {createMockContext, mockDriverSubmodules} from '../../../gather/mock-driver.js';
 
 const mocks = await mockDriverSubmodules();
@@ -55,7 +56,7 @@ const networkRecords = [
     finished: true,
   },
   {
-    url: 'http://google.com/index.json',
+    url: 'http://google.com/index-oopif.json',
     statusCode: 200,
     mimeType: 'application/json',
     requestId: 27,
@@ -65,7 +66,7 @@ const networkRecords = [
     responseHeaders: [],
     content: '1234567',
     finished: true,
-    sessionId: 'oopif', // ignore for being from oopif
+    sessionTargetType: 'iframe', // ignore for being from oopif
   },
   {
     url: 'http://google.com/index.json',
@@ -115,7 +116,7 @@ const networkRecords = [
     content: 'bbbbbbbb',
     finished: true,
   },
-];
+].map((record) => Object.assign(new NetworkRequest(), record));
 
 describe('Optimized responses', () => {
   let context;

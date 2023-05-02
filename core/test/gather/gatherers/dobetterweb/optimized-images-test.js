@@ -5,6 +5,7 @@
  */
 
 import OptimizedImages from '../../../../gather/gatherers/dobetterweb/optimized-images.js';
+import {NetworkRequest} from '../../../../lib/network-request.js';
 import {createMockContext} from '../../../gather/mock-driver.js';
 
 let context = createMockContext();
@@ -68,13 +69,13 @@ const traceData = {
     },
     {
       requestId: '1',
-      url: 'http://gmail.com/image.jpg',
+      url: 'http://gmail.com/image-oopif.jpg',
       mimeType: 'image/jpeg',
       resourceSize: 15000,
       transferSize: 20000,
       resourceType: 'Image',
       finished: true,
-      sessionId: 'oopif', // ignore for being an oopif
+      sessionTargetType: 'iframe', // ignore for being an oopif
     },
     {
       requestId: '1',
@@ -103,7 +104,7 @@ const traceData = {
       transferSize: 20000,
       finished: true,
     },
-  ],
+  ].map((record) => Object.assign(new NetworkRequest(), record)),
 };
 
 describe('Optimized images', () => {
@@ -186,7 +187,7 @@ describe('Optimized images', () => {
           resourceType: 'Image',
           finished: true,
         },
-      ],
+      ].map((record) => Object.assign(new NetworkRequest(), record)),
     };
 
     const artifact = await optimizedImages.afterPass(context, traceData);
@@ -205,7 +206,7 @@ describe('Optimized images', () => {
           resourceType: 'Image',
           finished: true,
         },
-      ],
+      ].map((record) => Object.assign(new NetworkRequest(), record)),
     };
 
     const artifact = await optimizedImages.afterPass(context, traceData);

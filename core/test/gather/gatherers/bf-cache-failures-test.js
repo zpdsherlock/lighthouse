@@ -155,6 +155,7 @@ describe('BFCacheFailures', () => {
     context.dependencies.DevtoolsLog = [{
       method: 'Page.backForwardCacheNotUsed',
       params: createMockBfCacheEvent(),
+      targetType: 'page',
     }];
 
     const gatherer = new BFCacheFailures();

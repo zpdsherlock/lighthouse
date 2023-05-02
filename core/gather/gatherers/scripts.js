@@ -59,9 +59,6 @@ class Scripts extends FRGatherer {
   /** @type {Array<string | undefined>} */
   _scriptContents = [];
 
-  /** @type {string|null|undefined} */
-  _mainSessionId = null;
-
   constructor() {
     super();
     this.onScriptParsed = this.onScriptParsed.bind(this);

@@ -244,6 +244,8 @@ function getRequestWillBeSentEvent(networkRecord, index, normalizedTiming) {
       frameId: networkRecord.frameId || `${idBase}.1`,
       redirectResponse: networkRecord.redirectResponse,
     },
+    targetType: 'sessionTargetType' in networkRecord ? networkRecord.sessionTargetType : 'page',
+    sessionId: networkRecord.sessionId,
   };
 }
 
@@ -257,6 +259,8 @@ function getRequestServedFromCacheEvent(networkRecord, index) {
     params: {
       requestId: getBaseRequestId(networkRecord) || `${idBase}.${index}`,
     },
+    targetType: 'sessionTargetType' in networkRecord ? networkRecord.sessionTargetType : 'page',
+    sessionId: networkRecord.sessionId,
   };
 }
 
@@ -291,6 +295,8 @@ function getResponseReceivedEvent(networkRecord, index, normalizedTiming) {
       },
       frameId: networkRecord.frameId || `${idBase}.1`,
     },
+    targetType: 'sessionTargetType' in networkRecord ? networkRecord.sessionTargetType : 'page',
+    sessionId: networkRecord.sessionId,
   };
 }
 
@@ -307,6 +313,8 @@ function getDataReceivedEvent(networkRecord, index) {
       encodedDataLength: networkRecord.transferSize === undefined ?
         0 : networkRecord.transferSize,
     },
+    targetType: 'sessionTargetType' in networkRecord ? networkRecord.sessionTargetType : 'page',
+    sessionId: networkRecord.sessionId,
   };
 }
 
@@ -325,6 +333,8 @@ function getLoadingFinishedEvent(networkRecord, index, normalizedTiming) {
       encodedDataLength: networkRecord.transferSize === undefined ?
         0 : networkRecord.transferSize,
     },
+    targetType: 'sessionTargetType' in networkRecord ? networkRecord.sessionTargetType : 'page',
+    sessionId: networkRecord.sessionId,
   };
 }
 
@@ -343,6 +353,8 @@ function getLoadingFailedEvent(networkRecord, index, normalizedTiming) {
       type: networkRecord.resourceType || undefined,
       errorText: networkRecord.localizedFailDescription || 'Request failed',
     },
+    targetType: 'sessionTargetType' in networkRecord ? networkRecord.sessionTargetType : 'page',
+    sessionId: networkRecord.sessionId,
   };
 }
 

@@ -65,8 +65,7 @@ class ScriptElements extends FRGatherer {
 
     const scriptRecords = networkRecords
       .filter(record => record.resourceType === NetworkRequest.TYPES.Script)
-      // Ignore records from OOPIFs
-      .filter(record => !record.sessionId);
+      .filter(record => !record.isOutOfProcessIframe);
 
     for (let i = 0; i < scriptRecords.length; i++) {
       const record = scriptRecords[i];

@@ -306,16 +306,19 @@ describe('TargetManager', () => {
         method: 'DOM.documentUpdated',
         params: undefined,
         sessionId: 'root',
+        targetType: 'page',
       });
       expect(allListener).toHaveBeenCalledWith({
         method: 'Debugger.scriptParsed',
         params: {script: 'details'},
         sessionId: 'root',
+        targetType: 'page',
       });
       expect(allListener).toHaveBeenCalledWith({
         method: 'Animation.animationCreated',
         params: {id: 'animated'},
         sessionId: 'iframe',
+        targetType: 'iframe',
       });
     });
 

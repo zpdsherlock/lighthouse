@@ -84,7 +84,7 @@ describe('_getArtifact', () => {
     networkRecords = [
       mainDocument,
       mockRecord({url: 'https://example.com/script.js', requestId: '1'}),
-      mockRecord({url: 'https://oopif.com/script.js', requestId: '2', sessionId: 'OOPIF'}),
+      mockRecord({url: 'https://oopif.com/script.js', requestId: '2', sessionTargetType: 'iframe'}),
     ];
     // OOPIF would not produce script element
     scriptElements = [

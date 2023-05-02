@@ -744,6 +744,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 0,
                   "networkRequestTime": 1.3729999959468842,
@@ -759,6 +760,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/fonts/danielbd.woff2",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 211.1089999973774,
                   "networkRequestTime": 212.9370000064373,
@@ -775,6 +777,7 @@
                 },
                 {
                   "url": "https://events.mikescerealshack.co/js/index.js",
+                  "sessionTargetType": "page",
                   "protocol": "http/1.1",
                   "rendererStartTime": 212.625,
                   "networkRequestTime": 213.18099999427795,
@@ -790,6 +793,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/css/08dcb440d7d83b488817.css",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 212.87900000810623,
                   "networkRequestTime": 214.08300000429153,
@@ -806,6 +810,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/main-1f8481d632114a408557.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 213.7660000026226,
                   "networkRequestTime": 214.3289999961853,
@@ -822,6 +827,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/webpack-657a8433bac0aabd564e.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 214.0290000140667,
                   "networkRequestTime": 214.58300000429153,
@@ -838,6 +844,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 214.24799999594688,
                   "networkRequestTime": 214.9389999806881,
@@ -854,6 +861,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 214.44100001454353,
                   "networkRequestTime": 215.14599999785423,
@@ -870,6 +878,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/_app-ef508c97234d1af96c47.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 214.69799998402596,
                   "networkRequestTime": 215.4990000128746,
@@ -886,6 +895,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 214.87099999189377,
                   "networkRequestTime": 215.7180000245571,
@@ -902,6 +912,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 215.05300000309944,
                   "networkRequestTime": 215.88400000333786,
@@ -918,6 +929,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/logo-text.svg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 215.23900002241135,
                   "networkRequestTime": 232.64200001955032,
@@ -933,6 +945,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_buildManifest.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 215.49300000071526,
                   "networkRequestTime": 232.96400001645088,
@@ -948,6 +961,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_ssgManifest.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 215.58100000023842,
                   "networkRequestTime": 233.22900000214577,
@@ -963,6 +977,7 @@
                 },
                 {
                   "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 230.8730000257492,
                   "networkRequestTime": 233.49599999189377,
@@ -978,6 +993,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 388.6060000061989,
                   "networkRequestTime": 389.19600000977516,
@@ -993,6 +1009,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/9ea7d3ba8dd80c65c50028121847762825088b49.dc477066508a83415fce.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 388.89800000190735,
                   "networkRequestTime": 389.40000000596046,
@@ -1008,6 +1025,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/scenes/%5Bseason%5D/%5Bepisode%5D/%5Bscene%5D-526fe33be891a56314a3.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 389.1260000169277,
                   "networkRequestTime": 389.6380000114441,
@@ -1023,6 +1041,7 @@
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 513.7750000059605,
                   "networkRequestTime": 516.3720000088215,
@@ -1038,6 +1057,7 @@
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 515.016999989748,
                   "networkRequestTime": 516.6100000143051,
@@ -1053,6 +1073,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/9ea7d3ba8dd80c65c50028121847762825088b49.dc477066508a83415fce.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 561.9870000183582,
                   "networkRequestTime": 562.608000010252,
@@ -1068,6 +1089,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/scenes/%5Bseason%5D/%5Bepisode%5D/%5Bscene%5D-526fe33be891a56314a3.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 562.5320000052452,
                   "networkRequestTime": 563.0640000104904,
@@ -1083,6 +1105,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/favicon.png",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 920.8770000040531,
                   "networkRequestTime": 921.8449999988079,
@@ -8293,6 +8316,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/search-915c07eb7d90925bcf29.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 0,
                   "networkRequestTime": 1.0349999964237213,
@@ -8307,6 +8331,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/logo-text.svg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 628.4039999842644,
                   "networkRequestTime": 629.9700000286102,
@@ -8321,6 +8346,7 @@
                 },
                 {
                   "url": "https://mnl4bjjsnz-dsn.algolia.net/1/indexes/dev_OFFICE_SCENES/query",
+                  "sessionTargetType": "page",
                   "protocol": "http/1.1",
                   "rendererStartTime": 662.1890000104904,
                   "networkRequestTime": 662.136000007391,
@@ -8335,6 +8361,7 @@
                 },
                 {
                   "url": "https://mnl4bjjsnz-dsn.algolia.net/1/indexes/dev_OFFICE_SCENES/query",
+                  "sessionTargetType": "page",
                   "protocol": "http/1.1",
                   "rendererStartTime": 660.1769999861717,
                   "networkRequestTime": 926.9200000166893,
@@ -8349,6 +8376,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 676.0000000298023,
                   "networkRequestTime": 677.0890000164509,
@@ -8363,6 +8391,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/terms-0236318e86139dd7d7f2.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 677.4530000090599,
                   "networkRequestTime": 678.9580000042915,
@@ -8377,6 +8406,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/privacy-864d3895f3c3722acef2.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 686.1900000274181,
                   "networkRequestTime": 686.6560000181198,
@@ -8391,6 +8421,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/privacy-864d3895f3c3722acef2.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1276.261000007391,
                   "networkRequestTime": 1277.975999981165,
@@ -8405,6 +8436,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/terms-0236318e86139dd7d7f2.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1327.3969999849796,
                   "networkRequestTime": 1328.5049999952316,
@@ -8419,6 +8451,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e13/128w/81d89db1bf3d43b5b21f813d2f2a9777.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1803.9340000152588,
                   "networkRequestTime": 1804.8250000178814,
@@ -8433,6 +8466,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s3/e3/128w/9b3031eb3988ba363fe946929a79e016.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1804.6439999938011,
                   "networkRequestTime": 1805.761000007391,
@@ -8447,6 +8481,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s3/e3/128w/793a408ca63a660b5d7aa1a41ac126ca.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1806.08599999547,
                   "networkRequestTime": 1806.3939999938011,
@@ -8461,6 +8496,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s7/e11/128w/5d1df07b1741f4c3e66ed20ef00265f5.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1806.6739999949932,
                   "networkRequestTime": 1807.3720000088215,
@@ -8475,6 +8511,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e13/128w/b997cdb40263ff124e2a245c5e86a9a3.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1807.1290000081062,
                   "networkRequestTime": 1808.3920000195503,
@@ -8489,6 +8526,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e3/128w/08b3049589ca7ae688b0f771f9730caf.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1808.511000007391,
                   "networkRequestTime": 1808.972000002861,
@@ -8503,6 +8541,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s8/e13/128w/f5c5012a2afa2ac6b190dcd68306dbac.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1809.1910000145435,
                   "networkRequestTime": 2538.8779999911785,
@@ -8517,6 +8556,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s9/e9/128w/5fbc916d0fffb01af1225d4ec2ab001d.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1809.32800000906,
                   "networkRequestTime": 2539.0060000121593,
@@ -8531,6 +8571,7 @@
                 },
                 {
                   "url": "https://cdn.mikescerealshack.co/frames/s9/e9/128w/558dc2f7d9c947e5445fb3f1838cb62c.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 1810.6270000040531,
                   "networkRequestTime": 2539.043000012636,
@@ -17093,6 +17134,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/corrections",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 0,
                   "networkRequestTime": 2.5069999992847443,
@@ -17108,6 +17150,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/fonts/danielbd.woff2",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 19.991999983787537,
                   "networkRequestTime": 20.42800000309944,
@@ -17124,6 +17167,7 @@
                 },
                 {
                   "url": "https://events.mikescerealshack.co/js/index.js",
+                  "sessionTargetType": "page",
                   "protocol": "http/1.1",
                   "rendererStartTime": 20.250999987125397,
                   "networkRequestTime": 21.04399999976158,
@@ -17139,6 +17183,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/css/08dcb440d7d83b488817.css",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 20.854000002145767,
                   "networkRequestTime": 21.41600000858307,
@@ -17155,6 +17200,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/main-1f8481d632114a408557.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 21.12900000810623,
                   "networkRequestTime": 21.819999992847443,
@@ -17171,6 +17217,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/webpack-657a8433bac0aabd564e.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 21.44200000166893,
                   "networkRequestTime": 22.039000004529953,
@@ -17187,6 +17234,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 21.631999999284744,
                   "networkRequestTime": 22.1870000064373,
@@ -17203,6 +17251,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 21.83399999141693,
                   "networkRequestTime": 22.57099997997284,
@@ -17219,6 +17268,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/_app-ef508c97234d1af96c47.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 22.13899999856949,
                   "networkRequestTime": 23.02199998497963,
@@ -17235,6 +17285,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 22.348999977111816,
                   "networkRequestTime": 23.38299998641014,
@@ -17251,6 +17302,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/corrections-7a620a51252fe2c2f77b.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 22.527999997138977,
                   "networkRequestTime": 23.590999990701675,
@@ -17267,6 +17319,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/logo-text.svg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 22.692999988794327,
                   "networkRequestTime": 34.983999997377396,
@@ -17282,6 +17335,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/oscar-actually.jpg",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 22.78099998831749,
                   "networkRequestTime": 35.453000009059906,
@@ -17297,6 +17351,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_buildManifest.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 23,
                   "networkRequestTime": 35.81099998950958,
@@ -17312,6 +17367,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/t5QnfQSErVZVsTAuFcBWI/_ssgManifest.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 23.074000000953674,
                   "networkRequestTime": 36.0789999961853,
@@ -17327,6 +17383,7 @@
                 },
                 {
                   "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 33.612999975681305,
                   "networkRequestTime": 36.31400001049042,
@@ -17342,6 +17399,7 @@
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 62.04899999499321,
                   "networkRequestTime": 62.474999994039536,
@@ -17357,6 +17415,7 @@
                 },
                 {
                   "url": "https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 62.282999992370605,
                   "networkRequestTime": 62.68400001525879,
@@ -17372,6 +17431,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/1aeab0175d4c4d823d7a78205bceb5dd9cd36d32.a629f28ec97ae6e480bf.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 118.96099999547005,
                   "networkRequestTime": 119.55099999904633,
@@ -17387,6 +17447,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 119.27399998903275,
                   "networkRequestTime": 119.74500000476837,
@@ -17402,6 +17463,7 @@
                 },
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/pages/index-37980adf97404e76e41a.js",
+                  "sessionTargetType": "page",
                   "protocol": "h2",
                   "rendererStartTime": 122.39899998903275,
                   "networkRequestTime": 122.84199997782707,

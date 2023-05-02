@@ -144,6 +144,55 @@ describe('Fraggle Rock API', function() {
 
       expect(erroredAudits).toHaveLength(0);
     });
+
+    // eslint-disable-next-line max-len
+    it('should know target type of network requests from frames created before timespan', async () => {
+      state.server.baseDir = `${LH_ROOT}/cli/test/fixtures`;
+      const {page, serverBaseUrl} = state;
+
+      await page.goto(`${serverBaseUrl}/oopif-scripts-timespan.html`);
+
+      const run = await api.startTimespan(state.page);
+      for (const iframe of page.frames()) {
+        if (iframe.url().includes('/oopif-simple-page.html')) {
+          iframe.click('button');
+        }
+      }
+      await page.waitForNetworkIdle();
+      const result = await run.endTimespan();
+
+      if (!result) throw new Error('Lighthouse failed to produce a result');
+
+      const networkRequestsDetails = /** @type {LH.Audit.Details.Table} */ (
+        result.lhr.audits['network-requests'].details);
+      const networkRequests = networkRequestsDetails?.items
+        .map((r) => ({url: r.url, sessionTargetType: r.sessionTargetType}))
+        // @ts-expect-error
+        .sort((a, b) => a.url.localeCompare(b.url));
+      expect(networkRequests).toHaveLength(4);
+      expect(networkRequests.filter(r => r.sessionTargetType === 'page')).toHaveLength(2);
+      expect(networkRequests.filter(r => r.sessionTargetType === 'iframe')).toHaveLength(2);
+      expect(networkRequests).toMatchInlineSnapshot(`
+Array [
+  Object {
+    "sessionTargetType": "page",
+    "url": "http://localhost:10200/simple-script.js",
+  },
+  Object {
+    "sessionTargetType": "page",
+    "url": "http://localhost:10200/simple-worker.js",
+  },
+  Object {
+    "sessionTargetType": "iframe",
+    "url": "http://localhost:10503/simple-script.js",
+  },
+  Object {
+    "sessionTargetType": "iframe",
+    "url": "http://localhost:10503/simple-worker.js",
+  },
+]
+`);
+    });
   });
 
   describe('navigation', () => {

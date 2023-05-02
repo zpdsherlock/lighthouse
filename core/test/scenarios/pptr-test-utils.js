@@ -40,7 +40,7 @@ function createTestState() {
      * @param {number=} port
      * @param {number=} secondaryPort
      */
-    installServerHooks(port = 0, secondaryPort = 0) {
+    installServerHooks(port = 10200, secondaryPort = 10503) {
       before(async () => {
         this.server = new Server(port);
         this.secondaryServer = new Server(secondaryPort);

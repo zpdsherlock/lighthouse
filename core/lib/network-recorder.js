@@ -31,8 +31,6 @@ class NetworkRecorder extends RequestEventEmitter {
     this._records = [];
     /** @type {Map<string, NetworkRequest>} */
     this._recordsById = new Map();
-    /** @type {string|null|undefined} */
-    this._mainSessionId = null;
   }
 
   /**
@@ -71,11 +69,12 @@ class NetworkRecorder extends RequestEventEmitter {
   // DevTools SDK network layer.
 
   /**
-   * @param {{params: LH.Crdp.Network.RequestWillBeSentEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.RequestWillBeSentEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onRequestWillBeSent(event) {
     const data = event.params;
-    const originalRequest = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const originalRequest = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     // This is a simple new request, create the NetworkRequest object and finish.
     if (!originalRequest) {
       const request = new NetworkRequest();
@@ -114,44 +113,48 @@ class NetworkRecorder extends RequestEventEmitter {
   }
 
   /**
-   * @param {{params: LH.Crdp.Network.RequestServedFromCacheEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.RequestServedFromCacheEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onRequestServedFromCache(event) {
     const data = event.params;
-    const request = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const request = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     if (!request) return;
     log.verbose('network', `${request.url} served from cache`);
     request.onRequestServedFromCache();
   }
 
   /**
-   * @param {{params: LH.Crdp.Network.ResponseReceivedEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.ResponseReceivedEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onResponseReceived(event) {
     const data = event.params;
-    const request = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const request = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     if (!request) return;
     log.verbose('network', `${request.url} response received`);
     request.onResponseReceived(data);
   }
 
   /**
-   * @param {{params: LH.Crdp.Network.DataReceivedEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.DataReceivedEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onDataReceived(event) {
     const data = event.params;
-    const request = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const request = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     if (!request) return;
     log.verbose('network', `${request.url} data received`);
     request.onDataReceived(data);
   }
 
   /**
-   * @param {{params: LH.Crdp.Network.LoadingFinishedEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.LoadingFinishedEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onLoadingFinished(event) {
     const data = event.params;
-    const request = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const request = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     if (!request) return;
     log.verbose('network', `${request.url} loading finished`);
     request.onLoadingFinished(data);
@@ -159,11 +162,12 @@ class NetworkRecorder extends RequestEventEmitter {
   }
 
   /**
-   * @param {{params: LH.Crdp.Network.LoadingFailedEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.LoadingFailedEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onLoadingFailed(event) {
     const data = event.params;
-    const request = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const request = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     if (!request) return;
     log.verbose('network', `${request.url} loading failed`);
     request.onLoadingFailed(data);
@@ -171,11 +175,12 @@ class NetworkRecorder extends RequestEventEmitter {
   }
 
   /**
-   * @param {{params: LH.Crdp.Network.ResourceChangedPriorityEvent, sessionId?: string}} event
+   * @param {{params: LH.Crdp.Network.ResourceChangedPriorityEvent, targetType: LH.Protocol.TargetType, sessionId?: string}} event
    */
   onResourceChangedPriority(event) {
     const data = event.params;
-    const request = this._findRealRequestAndSetSession(data.requestId, event.sessionId);
+    const request = this._findRealRequestAndSetSession(
+      data.requestId, event.targetType, event.sessionId);
     if (!request) return;
     request.onResourceChangedPriority(data);
   }
@@ -204,24 +209,11 @@ class NetworkRecorder extends RequestEventEmitter {
    * message is referring.
    *
    * @param {string} requestId
+   * @param {LH.Protocol.TargetType} targetType
    * @param {string|undefined} sessionId
    * @return {NetworkRequest|undefined}
    */
-  _findRealRequestAndSetSession(requestId, sessionId) {
-    // The very first sessionId processed is always the main sessionId. In all but DevTools,
-    // this sessionId is undefined. However, in DevTools the main Lighthouse protocol connection
-    // does send events with sessionId set to a string, because of how DevTools routes the protocol
-    // to Lighthouse.
-    // Many places in Lighthouse use `record.sessionId === undefined` to mean that the session is not
-    // an OOPIF. To maintain this property, we intercept sessionId here and set it to undefined if
-    // it matches the first value seen.
-    if (this._mainSessionId === null) {
-      this._mainSessionId = sessionId;
-    }
-    if (this._mainSessionId === sessionId) {
-      sessionId = undefined;
-    }
-
+  _findRealRequestAndSetSession(requestId, targetType, sessionId) {
     let request = this._recordsById.get(requestId);
     if (!request || !request.isValid) return undefined;
 
@@ -230,6 +222,7 @@ class NetworkRecorder extends RequestEventEmitter {
     }
 
     request.setSession(sessionId);
+    request.sessionTargetType = targetType;
 
     return request;
   }
