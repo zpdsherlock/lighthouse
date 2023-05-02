@@ -35,7 +35,7 @@ function verify(artifacts) {
 await updateTestFixture({
   name: 'animation',
   about: 'Page with an animated elements that are composited and non-composited',
-  saveTrace: 'animation.json',
+  saveTrace: true,
   saveDevtoolsLog: false,
   runUserFlow,
   verify,

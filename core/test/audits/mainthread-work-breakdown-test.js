@@ -10,9 +10,9 @@ import PageExecutionTimings from '../../audits/mainthread-work-breakdown.js';
 import {readJson} from '../test-utils.js';
 
 const acceptableTrace = readJson('../fixtures/traces/progressive-app-m60.json', import.meta);
-const siteWithRedirectTrace = readJson('../fixtures/traces/site-with-redirect.json', import.meta);
+const siteWithRedirectTrace = readJson('../fixtures/artifacts/redirect/trace.json', import.meta);
 const loadTraceOld = readJson('../fixtures/traces/load.json', import.meta);
-const loadTrace = readJson('../fixtures/traces/animation.json', import.meta);
+const loadTrace = readJson('../fixtures/artifacts/animation/trace.json', import.meta);
 const errorTrace = readJson('../fixtures/traces/no_fmp_event.json', import.meta);
 
 const options = PageExecutionTimings.defaultOptions;

@@ -9,7 +9,7 @@ import assert from 'assert/strict';
 import UserTimingsAudit from '../../audits/user-timings.js';
 import {readJson} from '../test-utils.js';
 
-const trace = readJson('../fixtures/traces/trace-user-timings.json', import.meta);
+const trace = readJson('../fixtures/artifacts/user-timing/trace.json', import.meta);
 
 function generateArtifactsWithTrace(trace) {
   return {

@@ -11,8 +11,8 @@ import {getURLArtifactFromDevtoolsLog, readJson} from '../test-utils.js';
 
 const pwaTrace = readJson('../fixtures/traces/progressive-app-m60.json', import.meta);
 const pwaDevtoolsLog = readJson('../fixtures/traces/progressive-app-m60.devtools.log.json', import.meta);
-const videoEmbedsTrace = readJson('../fixtures/traces/video-embeds-m84.json', import.meta);
-const videoEmbedsDevtolsLog = readJson('../fixtures/traces/video-embeds-m84.devtools.log.json', import.meta);
+const videoEmbedsTrace = readJson('../fixtures/artifacts/video-embed/trace.json', import.meta);
+const videoEmbedsDevtolsLog = readJson('../fixtures/artifacts/video-embed/devtoolslog.json', import.meta);
 const noThirdPartyTrace = readJson('../fixtures/traces/no-tracingstarted-m74.json', import.meta);
 
 function intercomProductUrl(id) {

@@ -47,8 +47,8 @@ function verify(artifacts) {
 await updateTestFixture({
   name: 'redirect',
   about: 'Page with a multiple navigation-initiated redirects and a JS reload',
-  saveTrace: 'site-with-redirect.json',
-  saveDevtoolsLog: 'site-with-redirect.devtools.log.json',
+  saveTrace: true,
+  saveDevtoolsLog: true,
   runUserFlow,
   verify,
 });

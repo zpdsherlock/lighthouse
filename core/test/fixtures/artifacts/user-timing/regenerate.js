@@ -44,7 +44,7 @@ function verify(artifacts) {
 await updateTestFixture({
   name: 'user-timing',
   about: 'Page with calls to the performance user timings API',
-  saveTrace: 'trace-user-timings.json',
+  saveTrace: true,
   saveDevtoolsLog: false,
   runUserFlow,
   verify,

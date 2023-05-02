@@ -18,19 +18,18 @@ import {saveTrace, saveDevtoolsLog} from '../../../lib/asset-saver.js';
  * @property {string} about
  * @property {(page: puppeteer.Page, port: number) => Promise<LH.UserFlow>} runUserFlow
  * @property {(artifacts: LH.Artifacts) => void} verify
- * @property {string|false} saveTrace
- * @property {string|false} saveDevtoolsLog
+ * @property {boolean} saveTrace
+ * @property {boolean} saveDevtoolsLog
  */
 
 /**
  * @param {CollectMeta} collectMeta
 */
 export async function updateTestFixture(collectMeta) {
-  const fixturesDir = `${LH_ROOT}/core/test/fixtures/traces`;
-
   const browser = await puppeteer.launch();
   const server = new Server(0);
-  server.baseDir = `${LH_ROOT}/core/test/fixtures/artifacts/${collectMeta.name}/page`;
+  const dir = `${LH_ROOT}/core/test/fixtures/artifacts/${collectMeta.name}`;
+  server.baseDir = `${dir}/page`;
   await server.listen(0, 'localhost');
   const port = server.getPort();
 
@@ -40,10 +39,10 @@ export async function updateTestFixture(collectMeta) {
     const {artifacts} = flow.createArtifactsJson().gatherSteps[0];
     collectMeta.verify(artifacts);
     if (collectMeta.saveTrace) {
-      await saveTrace(artifacts.Trace, `${fixturesDir}/${collectMeta.saveTrace}`);
+      await saveTrace(artifacts.Trace, `${dir}/trace.json`);
     }
     if (collectMeta.saveDevtoolsLog) {
-      await saveDevtoolsLog(artifacts.DevtoolsLog, `${fixturesDir}/${collectMeta.saveDevtoolsLog}`);
+      await saveDevtoolsLog(artifacts.DevtoolsLog, `${dir}/devtoolslog.json`);
     }
   } finally {
     await server.close();

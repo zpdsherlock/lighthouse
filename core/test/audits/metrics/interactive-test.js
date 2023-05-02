@@ -12,8 +12,8 @@ import {readJson} from '../../test-utils.js';
 
 const acceptableTrace = readJson('../../fixtures/traces/progressive-app-m60.json', import.meta);
 const acceptableDevToolsLog = readJson('../../fixtures/traces/progressive-app-m60.devtools.log.json', import.meta);
-const redirectTrace = readJson('../../fixtures/traces/site-with-redirect.json', import.meta);
-const redirectDevToolsLog = readJson('../../fixtures/traces/site-with-redirect.devtools.log.json', import.meta);
+const redirectTrace = readJson('../../fixtures/artifacts/redirect/trace.json', import.meta);
+const redirectDevToolsLog = readJson('../../fixtures/artifacts/redirect/devtoolslog.json', import.meta);
 
 const options = Interactive.defaultOptions;
 

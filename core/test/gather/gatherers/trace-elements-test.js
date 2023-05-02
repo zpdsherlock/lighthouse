@@ -11,7 +11,7 @@ import {createTestTrace, rootFrame} from '../../create-test-trace.js';
 import {createMockSendCommandFn, createMockOnFn} from '../mock-commands.js';
 import {flushAllTimersAndMicrotasks, fnAny, readJson, timers} from '../../test-utils.js';
 
-const animationTrace = readJson('../../fixtures/traces/animation.json', import.meta);
+const animationTrace = readJson('../../fixtures/artifacts/animation/trace.json', import.meta);
 
 function makeLayoutShiftTraceEvent(score, impactedNodes, had_recent_input = false) { // eslint-disable-line camelcase
   return {

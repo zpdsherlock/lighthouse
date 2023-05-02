@@ -38,9 +38,8 @@ function verify(artifacts) {
 await updateTestFixture({
   name: 'video-embed',
   about: 'Page with a YouTube and Vimeo video',
-  // TODO: drop m84 suffix
-  saveTrace: 'video-embeds-m84.json',
-  saveDevtoolsLog: 'video-embeds-m84.devtools.log.json',
+  saveTrace: true,
+  saveDevtoolsLog: true,
   runUserFlow,
   verify,
 });
