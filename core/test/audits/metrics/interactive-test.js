@@ -65,9 +65,8 @@ describe('Performance: interactive audit', () => {
 
     const context = getFakeContext({formFactor: 'mobile', throttlingMethod: 'provided'});
     return Interactive.audit(artifacts, context).then(output => {
-      assert.equal(output.score, 0.97);
-      assert.equal(Math.round(output.numericValue), 2712);
-      expect(output.displayValue).toBeDisplayString('2.7\xa0s');
+      assert.equal(output.score, 0.98);
+      expect(output.numericValue).toMatchInlineSnapshot(`2381.989`);
     });
   });
 });

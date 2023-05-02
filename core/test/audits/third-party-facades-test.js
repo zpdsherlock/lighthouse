@@ -267,106 +267,124 @@ describe('Third party facades audit', () => {
     expect(results.displayValue).toBeDisplayString('2 facade alternatives available');
     expect(results.details.items[0].product).toBeDisplayString('YouTube Embedded Player (Video)');
     expect(results.details.items[1].product).toBeDisplayString('Vimeo Embedded Player (Video)');
-    expect(results.details.items).toMatchObject(
-      [
-        {
-          entity: 'YouTube',
-          transferSize: 651350,
-          blockingTime: 0,
-          subItems: {
-            items: [
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 459603,
-                url: 'https://www.youtube.com/s/player/e0d83c30/player_ias.vflset/en_US/base.js',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 66273,
-                url: 'https://i.ytimg.com/vi/tgbNymZ7vqY/maxresdefault.jpg',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 50213,
-                url: 'https://www.youtube.com/s/player/e0d83c30/www-embed-player.vflset/www-embed-player.js',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 46813,
-                url: 'https://www.youtube.com/s/player/e0d83c30/www-player.css',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 11477,
-                url: 'https://www.youtube.com/s/player/e0d83c30/player_ias.vflset/en_US/embed.js',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 16971,
-                url: {
-                  formattedDefault: 'Other resources',
-                },
-              },
-            ],
-            type: 'subitems',
+    expect(results.details.items).toMatchInlineSnapshot(`
+Array [
+  Object {
+    "blockingTime": 0,
+    "entity": "YouTube",
+    "product": Object {
+      "formattedDefault": "YouTube Embedded Player (Video)",
+      "i18nId": "core/audits/third-party-facades.js | categoryVideo",
+      "values": Object {
+        "productName": "YouTube Embedded Player",
+      },
+    },
+    "subItems": Object {
+      "items": Array [
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 459603,
+          "url": "https://www.youtube.com/s/player/e0d83c30/player_ias.vflset/en_US/base.js",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 66273,
+          "url": "https://i.ytimg.com/vi/tgbNymZ7vqY/maxresdefault.jpg",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 50213,
+          "url": "https://www.youtube.com/s/player/e0d83c30/www-embed-player.vflset/www-embed-player.js",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 46813,
+          "url": "https://www.youtube.com/s/player/e0d83c30/www-player.css",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 11477,
+          "url": "https://www.youtube.com/s/player/e0d83c30/player_ias.vflset/en_US/embed.js",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 16971,
+          "url": Object {
+            "formattedDefault": "Other resources",
+            "i18nId": "core/lib/i18n/i18n.js | otherResourcesLabel",
+            "values": undefined,
           },
         },
-        {
-          entity: 'Vimeo',
-          transferSize: 184495,
-          blockingTime: 0,
-          subItems: {
-            items: [
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 145772,
-                url: 'https://f.vimeocdn.com/p/3.22.3/js/player.js',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 17633,
-                url: 'https://f.vimeocdn.com/p/3.22.3/css/player.css',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 9313,
-                url: 'https://i.vimeocdn.com/video/784397921.webp?mw=1200&mh=675&q=70',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 8300,
-                url: 'https://player.vimeo.com/video/336812660',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 1474,
-                url: 'https://f.vimeocdn.com/js_opt/modules/utils/vuid.min.js',
-              },
-              {
-                blockingTime: 0,
-                mainThreadTime: 0,
-                transferSize: 2003,
-                url: {
-                  formattedDefault: 'Other resources',
-                },
-              },
-            ],
-            type: 'subitems',
+      ],
+      "type": "subitems",
+    },
+    "transferSize": 651350,
+  },
+  Object {
+    "blockingTime": 0,
+    "entity": "Vimeo",
+    "product": Object {
+      "formattedDefault": "Vimeo Embedded Player (Video)",
+      "i18nId": "core/audits/third-party-facades.js | categoryVideo",
+      "values": Object {
+        "productName": "Vimeo Embedded Player",
+      },
+    },
+    "subItems": Object {
+      "items": Array [
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 145772,
+          "url": "https://f.vimeocdn.com/p/3.22.3/js/player.js",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 17633,
+          "url": "https://f.vimeocdn.com/p/3.22.3/css/player.css",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 9313,
+          "url": "https://i.vimeocdn.com/video/784397921.webp?mw=1200&mh=675&q=70",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 8300,
+          "url": "https://player.vimeo.com/video/336812660",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 1474,
+          "url": "https://f.vimeocdn.com/js_opt/modules/utils/vuid.min.js",
+        },
+        Object {
+          "blockingTime": 0,
+          "mainThreadTime": 0,
+          "transferSize": 2003,
+          "url": Object {
+            "formattedDefault": "Other resources",
+            "i18nId": "core/lib/i18n/i18n.js | otherResourcesLabel",
+            "values": undefined,
           },
         },
-      ]
-    );
+      ],
+      "type": "subitems",
+    },
+    "transferSize": 184495,
+  },
+]
+`);
   });
 
   describe('.condenseItems', () => {

@@ -11,7 +11,8 @@ import {readJson} from '../test-utils.js';
 
 const acceptableTrace = readJson('../fixtures/traces/progressive-app-m60.json', import.meta);
 const siteWithRedirectTrace = readJson('../fixtures/traces/site-with-redirect.json', import.meta);
-const loadTrace = readJson('../fixtures/traces/load.json', import.meta);
+const loadTraceOld = readJson('../fixtures/traces/load.json', import.meta);
+const loadTrace = readJson('../fixtures/traces/animation.json', import.meta);
 const errorTrace = readJson('../fixtures/traces/no_fmp_event.json', import.meta);
 
 const options = PageExecutionTimings.defaultOptions;
@@ -24,15 +25,6 @@ const acceptableTraceExpectations = {
   scriptParseCompile: 25,
   garbageCollection: 48,
   other: 663,
-};
-const siteWithRedirectTraceExpectations = {
-  parseHTML: 84,
-  styleLayout: 275,
-  paintCompositeRender: 12,
-  scriptEvaluation: 145,
-  scriptParseCompile: 38,
-  garbageCollection: 46,
-  other: 184,
 };
 const loadTraceExpectations = {
   parseHTML: 25,
@@ -85,18 +77,49 @@ describe('Performance: page execution timings audit', () => {
     const artifacts = {traces: {defaultPass: siteWithRedirectTrace}};
 
     const output = await PageExecutionTimings.audit(artifacts, {options, computedCache: new Map()});
-    assert.deepStrictEqual(keyOutput(output), siteWithRedirectTraceExpectations);
-    assert.equal(Math.round(output.numericValue), 784);
+    expect(keyOutput(output)).toMatchInlineSnapshot(`
+Object {
+  "garbageCollection": 14,
+  "other": 188,
+  "paintCompositeRender": 11,
+  "parseHTML": 52,
+  "scriptEvaluation": 577,
+  "scriptParseCompile": 67,
+  "styleLayout": 70,
+}
+`);
+    expect(Math.round(output.numericValue)).toMatchInlineSnapshot(`979`);
     assert.equal(output.details.items.length, 7);
     assert.equal(output.score, 1);
   });
 
-  it('should compute the correct values for the load trace', async () => {
-    const artifacts = {traces: {defaultPass: {traceEvents: loadTrace}}};
+  it('should compute the correct values for the load trace (legacy)', async () => {
+    assert(loadTraceOld.find(e => e.name === 'TracingStartedInPage'));
+    const artifacts = {traces: {defaultPass: {traceEvents: loadTraceOld}}};
 
     const output = await PageExecutionTimings.audit(artifacts, {options, computedCache: new Map()});
     assert.deepStrictEqual(keyOutput(output), loadTraceExpectations);
     assert.equal(Math.round(output.numericValue), 933);
+    assert.equal(output.details.items.length, 6);
+    assert.equal(output.score, 1);
+  });
+
+  it('should compute the correct values for the load trace', async () => {
+    assert(loadTrace.traceEvents.find(e => e.name === 'TracingStartedInBrowser'));
+    const artifacts = {traces: {defaultPass: loadTrace}};
+
+    const output = await PageExecutionTimings.audit(artifacts, {options, computedCache: new Map()});
+    expect(keyOutput(output)).toMatchInlineSnapshot(`
+Object {
+  "other": 59,
+  "paintCompositeRender": 48,
+  "parseHTML": 3,
+  "scriptEvaluation": 11,
+  "scriptParseCompile": 1,
+  "styleLayout": 103,
+}
+`);
+    expect(Math.round(output.numericValue)).toMatchInlineSnapshot(`224`);
     assert.equal(output.details.items.length, 6);
     assert.equal(output.score, 1);
   });
