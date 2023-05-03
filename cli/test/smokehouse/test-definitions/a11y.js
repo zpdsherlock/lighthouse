@@ -199,7 +199,7 @@ const expectations = {
                 'type': 'node',
                 'selector': 'body > section > div#aria-required-children',
                 'snippet': '<div id="aria-required-children" role="list">',
-                'explanation': 'Fix any of the following:\n  Required ARIA child role not present: listitem\n  Element has no aria-busy="true" attribute',
+                'explanation': 'Fix any of the following:\n  Required ARIA child role not present: listitem\n  Element uses aria-busy="true" while showing a loader',
                 'nodeLabel': 'Item',
               },
             },
