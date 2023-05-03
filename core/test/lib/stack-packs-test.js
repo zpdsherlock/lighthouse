@@ -7,7 +7,7 @@
 import lighthouseStackPacksDep from 'lighthouse-stack-packs';
 
 import {initializeConfig} from '../../config/config.js';
-import {stackPacksToInclude} from '../../lib/stack-packs.js';
+import {stackPacksToInclude, getStackPacks} from '../../lib/stack-packs.js';
 
 async function getAuditIds() {
   const {resolvedConfig} = await initializeConfig('navigation');
@@ -20,6 +20,27 @@ describe('stack-packs lib', () => {
       .filter(p => !stackPacksToInclude.find(p2 => p2.packId === p.id))
       .map(p => p.id);
     expect(result).toEqual([]);
+  });
+
+  it('returns packs from page stacks', () => {
+    expect(getStackPacks([])).toEqual([]);
+    expect(getStackPacks([{detector: 'js', id: 'i-dont-know-you'}])).toEqual([]);
+
+    const packs = getStackPacks([
+      {detector: 'js', id: 'wordpress'},
+      {detector: 'js', id: 'react'},
+    ]);
+
+    expect(packs.map(pack => pack.id)).toEqual(['wordpress', 'react']);
+  });
+
+  it('returns packs from page stacks in order defined by us', () => {
+    const packs = getStackPacks([
+      {detector: 'js', id: 'react'},
+      {detector: 'js', id: 'wordpress'},
+    ]);
+
+    expect(packs.map(pack => pack.id)).toEqual(['wordpress', 'react']);
   });
 });
 
