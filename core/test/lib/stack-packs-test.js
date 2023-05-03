@@ -53,6 +53,7 @@ Array [
   "angular",
   "drupal",
   "ezoic",
+  "gatsby",
   "joomla",
   "magento",
   "next.js",
@@ -130,6 +131,20 @@ Array [
       "uses-rel-preconnect",
       "uses-rel-preload",
       "font-display",
+    ],
+  },
+  Object {
+    "id": "gatsby",
+    "keys": Array [
+      "unused-css-rules",
+      "modern-image-formats",
+      "offscreen-images",
+      "render-blocking-resources",
+      "unused-javascript",
+      "uses-long-cache-ttl",
+      "uses-optimized-images",
+      "uses-responsive-images",
+      "prioritize-lcp-image",
     ],
   },
   Object {

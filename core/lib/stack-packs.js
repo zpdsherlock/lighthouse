@@ -16,6 +16,10 @@ import * as i18n from './i18n/i18n.js';
  */
 const stackPacksToInclude = [
   {
+    packId: 'gatsby',
+    requiredStacks: ['js:gatsby'],
+  },
+  {
     packId: 'wordpress',
     requiredStacks: ['js:wordpress'],
   },

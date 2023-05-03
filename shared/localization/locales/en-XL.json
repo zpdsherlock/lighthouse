@@ -2759,6 +2759,33 @@
   "node_modules/lighthouse-stack-packs/packs/ezoic.js | uses-responsive-images": {
     "message": "Ûśê [Éẑóîć L̂éâṕ](https://pubdash.ezoic.com/speed) âńd̂ én̂áb̂ĺê `Resize Images` t́ô ŕêśîźê ím̂áĝéŝ t́ô á d̂év̂íĉé âṕp̂ŕôṕr̂íât́ê śîźê, ŕêd́ûćîńĝ ńêt́ŵór̂ḱ p̂áŷĺôád̂ śîźêś."
   },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
+    "message": "Ûśê t́ĥé `gatsby-plugin-image` ĉóm̂ṕôńêńt̂ ín̂śt̂éâd́ ôf́ `<img>` t̂ó âút̂óm̂át̂íĉál̂ĺŷ óp̂t́îḿîźê ím̂áĝé f̂ór̂ḿât́. [L̂éâŕn̂ ḿôŕê](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
+    "message": "Ûśê t́ĥé `gatsby-plugin-image` ĉóm̂ṕôńêńt̂ ín̂śt̂éâd́ ôf́ `<img>` t̂ó âút̂óm̂át̂íĉál̂ĺŷ ĺâźŷ-ĺôád̂ ím̂áĝéŝ. [Ĺêár̂ń m̂ór̂é](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
+    "message": "Ûśê t́ĥé `gatsby-plugin-image` ĉóm̂ṕôńêńt̂ án̂d́ ŝét̂ t́ĥé `loading` p̂ŕôṕ t̂ó `eager`. [L̂éâŕn̂ ḿôŕê](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
+    "message": "Ûśê t́ĥé `Gatsby Script API` t̂ó d̂éf̂ér̂ ĺôád̂ín̂ǵ ôf́ n̂ón̂-ćr̂ít̂íĉál̂ t́ĥír̂d́-p̂ár̂t́ŷ śĉŕîṕt̂ś. [L̂éâŕn̂ ḿôŕê](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
+    "message": "Ûśê t́ĥé `PurgeCSS` `Gatsby` p̂ĺûǵîń t̂ó r̂ém̂óv̂é ûńûśêd́ r̂úl̂éŝ f́r̂óm̂ śt̂ýl̂éŝh́êét̂ś. [L̂éâŕn̂ ḿôŕê](https://purgecss.com/plugins/gatsby.html)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
+    "message": "Ûśê `Webpack Bundle Analyzer` t́ô d́êt́êćt̂ ún̂úŝéd̂ J́âv́âŚĉŕîṕt̂ ćôd́ê. [Ĺêár̂ń m̂ór̂é](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
+    "message": "Ĉón̂f́îǵûŕê ćâćĥín̂ǵ f̂ór̂ ím̂ḿût́âb́l̂é âśŝét̂ś. [L̂éâŕn̂ ḿôŕê](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
+    "message": "Ûśê t́ĥé `gatsby-plugin-image` ĉóm̂ṕôńêńt̂ ín̂śt̂éâd́ ôf́ `<img>` t̂ó âd́ĵúŝt́ îḿâǵê q́ûál̂ít̂ý. [L̂éâŕn̂ ḿôŕê](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
+    "message": "Ûśê t́ĥé `gatsby-plugin-image` ĉóm̂ṕôńêńt̂ t́ô śêt́ âṕp̂ŕôṕr̂íât́ê `sizes`. [Ĺêár̂ń m̂ór̂é](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Ĉón̂śîd́êŕ ûṕl̂óâd́îńĝ ýôúr̂ ǴÎF́ t̂ó â śêŕv̂íĉé ŵh́îćĥ ẃîĺl̂ ḿâḱê ít̂ áv̂áîĺâb́l̂é t̂ó êḿb̂éd̂ áŝ án̂ H́T̂ḾL̂5 v́îd́êó."
   },
