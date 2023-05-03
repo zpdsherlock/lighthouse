@@ -980,8 +980,29 @@
   "core/audits/is-on-https.js | warning": {
     "message": "Âĺl̂óŵéd̂ ẃît́ĥ ẃâŕn̂ín̂ǵ"
   },
+  "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
+    "message": "% ôf́ L̂ĆP̂"
+  },
+  "core/audits/largest-contentful-paint-element.js | columnPhase": {
+    "message": "P̂h́âśê"
+  },
+  "core/audits/largest-contentful-paint-element.js | columnTiming": {
+    "message": "T̂ím̂ín̂ǵ"
+  },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "T̂h́îś îś t̂h́ê ĺâŕĝéŝt́ ĉón̂t́êńt̂f́ûĺ êĺêḿêńt̂ ṕâín̂t́êd́ ŵít̂h́îń t̂h́ê v́îéŵṕôŕt̂. [Ĺêár̂ń m̂ór̂é âb́ôút̂ t́ĥé L̂ár̂ǵêśt̂ Ćôńt̂én̂t́f̂úl̂ Ṕâín̂t́ êĺêḿêńt̂](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
+    "message": "L̂óâd́ D̂él̂áŷ"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
+    "message": "L̂óâd́ T̂ím̂é"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
+    "message": "R̂én̂d́êŕ D̂él̂áŷ"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemTTFB": {
+    "message": "T̂T́F̂B́"
   },
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "L̂ár̂ǵêśt̂ Ćôńt̂én̂t́f̂úl̂ Ṕâín̂t́ êĺêḿêńt̂"

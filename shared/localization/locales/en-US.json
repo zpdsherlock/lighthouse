@@ -980,8 +980,29 @@
   "core/audits/is-on-https.js | warning": {
     "message": "Allowed with warning"
   },
+  "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
+    "message": "% of LCP"
+  },
+  "core/audits/largest-contentful-paint-element.js | columnPhase": {
+    "message": "Phase"
+  },
+  "core/audits/largest-contentful-paint-element.js | columnTiming": {
+    "message": "Timing"
+  },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
+    "message": "Load Delay"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
+    "message": "Load Time"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
+    "message": "Render Delay"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemTTFB": {
+    "message": "TTFB"
   },
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Largest Contentful Paint element"

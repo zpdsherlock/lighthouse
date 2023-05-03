@@ -2285,32 +2285,79 @@
       "scoreDisplayMode": "informative",
       "displayValue": "1 element found",
       "details": {
-        "type": "table",
-        "headings": [
-          {
-            "key": "node",
-            "valueType": "node",
-            "label": "Element"
-          }
-        ],
+        "type": "list",
         "items": [
           {
-            "node": {
-              "type": "node",
-              "lhId": "page-13-H2",
-              "path": "3,HTML,1,BODY,9,DIV,0,H2",
-              "selector": "body > div > h2#toppy",
-              "boundingRect": {
-                "top": 336,
-                "bottom": 364,
-                "left": 8,
-                "right": 352,
-                "width": 344,
-                "height": 28
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": "Element"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-13-H2",
+                  "path": "3,HTML,1,BODY,9,DIV,0,H2",
+                  "selector": "body > div > h2#toppy",
+                  "boundingRect": {
+                    "top": 336,
+                    "bottom": 364,
+                    "left": 8,
+                    "right": 352,
+                    "width": 344,
+                    "height": 28
+                  },
+                  "snippet": "<h2 id=\"toppy\" style=\"background-image:url('');\">",
+                  "nodeLabel": "Do better web tester page"
+                }
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "phase",
+                "valueType": "text",
+                "label": "Phase"
               },
-              "snippet": "<h2 id=\"toppy\" style=\"background-image:url('');\">",
-              "nodeLabel": "Do better web tester page"
-            }
+              {
+                "key": "percent",
+                "valueType": "text",
+                "label": "% of LCP"
+              },
+              {
+                "key": "timing",
+                "valueType": "ms",
+                "label": "Timing"
+              }
+            ],
+            "items": [
+              {
+                "phase": "TTFB",
+                "timing": 571.7680000019074,
+                "percent": "4%"
+              },
+              {
+                "phase": "Load Delay",
+                "timing": 10277.099999996944,
+                "percent": "77%"
+              },
+              {
+                "phase": "Load Time",
+                "timing": 2050.6490000002086,
+                "percent": "15%"
+              },
+              {
+                "phase": "Render Delay",
+                "timing": 420.4440000009381,
+                "percent": "3%"
+              }
+            ]
           }
         ]
       }
@@ -9284,10 +9331,31 @@
         }
       ],
       "core/lib/i18n/i18n.js | columnElement": [
-        "audits[largest-contentful-paint-element].details.headings[0].label",
+        "audits[largest-contentful-paint-element].details.items[0].headings[0].label",
         "audits[layout-shift-elements].details.headings[0].label",
         "audits[non-composited-animations].details.headings[0].label",
         "audits[dom-size].details.headings[1].label"
+      ],
+      "core/audits/largest-contentful-paint-element.js | columnPhase": [
+        "audits[largest-contentful-paint-element].details.items[1].headings[0].label"
+      ],
+      "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": [
+        "audits[largest-contentful-paint-element].details.items[1].headings[1].label"
+      ],
+      "core/audits/largest-contentful-paint-element.js | columnTiming": [
+        "audits[largest-contentful-paint-element].details.items[1].headings[2].label"
+      ],
+      "core/audits/largest-contentful-paint-element.js | itemTTFB": [
+        "audits[largest-contentful-paint-element].details.items[1].items[0].phase"
+      ],
+      "core/audits/largest-contentful-paint-element.js | itemLoadDelay": [
+        "audits[largest-contentful-paint-element].details.items[1].items[1].phase"
+      ],
+      "core/audits/largest-contentful-paint-element.js | itemLoadTime": [
+        "audits[largest-contentful-paint-element].details.items[1].items[2].phase"
+      ],
+      "core/audits/largest-contentful-paint-element.js | itemRenderDelay": [
+        "audits[largest-contentful-paint-element].details.items[1].items[3].phase"
       ],
       "core/audits/lcp-lazy-loaded.js | title": [
         "audits[lcp-lazy-loaded].title"
