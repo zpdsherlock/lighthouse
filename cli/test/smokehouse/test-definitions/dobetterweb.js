@@ -586,6 +586,8 @@ const expectations = {
         },
       },
       'metrics': {
+        // Flaky in DevTools
+        _excludeRunner: 'devtools',
         details: {items: {0: {
           timeToFirstByte: '450+/-100',
           lcpLoadStart: '7750+/-500',

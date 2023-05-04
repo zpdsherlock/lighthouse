@@ -17,5 +17,33 @@ const legacyNavigation = async function legacyNavigation(...args) {
   return legacyNavigation(...args);
 };
 
+/** @type {import('./index.js')['startFlow']} */
+const startFlow = async function startFlow(...args) {
+  const {startFlow} = await import('./index.js');
+  return startFlow(...args);
+};
+
+/** @type {import('./index.js')['navigation']} */
+const navigation = async function navigation(...args) {
+  const {navigation} = await import('./index.js');
+  return navigation(...args);
+};
+
+/** @type {import('./index.js')['startTimespan']} */
+const startTimespan = async function startTimespan(...args) {
+  const {startTimespan} = await import('./index.js');
+  return startTimespan(...args);
+};
+
+/** @type {import('./index.js')['snapshot']} */
+const snapshot = async function snapshot(...args) {
+  const {snapshot} = await import('./index.js');
+  return snapshot(...args);
+};
+
 module.exports = lighthouse;
 module.exports.legacyNavigation = legacyNavigation;
+module.exports.startFlow = startFlow;
+module.exports.navigation = navigation;
+module.exports.startTimespan = startTimespan;
+module.exports.snapshot = snapshot;
