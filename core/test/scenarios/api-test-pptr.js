@@ -158,7 +158,7 @@ describe('Fraggle Rock API', function() {
           iframe.click('button');
         }
       }
-      await page.waitForNetworkIdle();
+      await page.waitForNetworkIdle().catch(() => {});
       const result = await run.endTimespan();
 
       if (!result) throw new Error('Lighthouse failed to produce a result');

@@ -1,3 +1,66 @@
+<a name="10.2.0"></a>
+# 10.2.0 (2023-05-04)
+[Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.1.1...v10.2.0)
+
+We expect this release to ship in the DevTools of [Chrome 115](https://chromiumdash.appspot.com/schedule), and to PageSpeed Insights within 2 weeks.
+
+## New Contributors
+
+Thanks to our new contributors 👽🐷🐰🐯🐻!
+
+- Eric K @doteric
+
+## Notable Changes
+
+* largest-contentful-paint-element: add phases table ([#14891](https://github.com/GoogleChrome/lighthouse/pull/14891))
+
+## Core
+
+* add flow methods to cjs entry ([#15045](https://github.com/GoogleChrome/lighthouse/pull/15045))
+* use target type instead of session for oopif ([#15006](https://github.com/GoogleChrome/lighthouse/pull/15006))
+* create timing entries for `getArtifact` ([#15024](https://github.com/GoogleChrome/lighthouse/pull/15024))
+* classify extension urls as non-network ([#15022](https://github.com/GoogleChrome/lighthouse/pull/15022))
+* add time-to-first-byte and lcp-breakdown ([#14941](https://github.com/GoogleChrome/lighthouse/pull/14941))
+* fix viewport when running over adb ([#14937](https://github.com/GoogleChrome/lighthouse/pull/14937))
+* driver: warn about remaining inflight requests urls ([#14963](https://github.com/GoogleChrome/lighthouse/pull/14963))
+* entity-classification: classify unknown urls as "unattributable" ([#15009](https://github.com/GoogleChrome/lighthouse/pull/15009))
+* predictive-perf: add URL as requiredArtifact ([#15028](https://github.com/GoogleChrome/lighthouse/pull/15028))
+* runner: handle erroneous screenshot ([#14981](https://github.com/GoogleChrome/lighthouse/pull/14981))
+* stack-packs: sort packs in order we defined them ([#15039](https://github.com/GoogleChrome/lighthouse/pull/15039))
+
+## Report
+
+* avoid really slow regexes for long urls ([#14745](https://github.com/GoogleChrome/lighthouse/pull/14745))
+* remove content-visibility from lh-category ([#14994](https://github.com/GoogleChrome/lighthouse/pull/14994))
+
+## Deps
+
+* update to typescript 5.0.4 ([#15023](https://github.com/GoogleChrome/lighthouse/pull/15023))
+* upgrade puppeteer and puppeteer-core ([#15000](https://github.com/GoogleChrome/lighthouse/pull/15000))
+* axe-core: upgrade to 4.7.0 ([#15033](https://github.com/GoogleChrome/lighthouse/pull/15033))
+* chrome-launcher: update to 0.15.2 ([#14983](https://github.com/GoogleChrome/lighthouse/pull/14983))
+* lighthouse-stack-packs: upgrade to 1.10.0 ([#15038](https://github.com/GoogleChrome/lighthouse/pull/15038))
+* puppeteer: upgrade to 20.1.0 ([#15037](https://github.com/GoogleChrome/lighthouse/pull/15037))
+
+## I18n
+
+* import ([#15041](https://github.com/GoogleChrome/lighthouse/pull/15041))
+
+## Docs
+
+* update throttling methods ([#14993](https://github.com/GoogleChrome/lighthouse/pull/14993))
+* update pptr options example ([#14978](https://github.com/GoogleChrome/lighthouse/pull/14978))
+
+## Tests
+
+* devtools: sync e2e ([#14995](https://github.com/GoogleChrome/lighthouse/pull/14995))
+* move regenerated fixtures to new folders ([#15031](https://github.com/GoogleChrome/lighthouse/pull/15031))
+* add user flows to generate some fixtures ([#15005](https://github.com/GoogleChrome/lighthouse/pull/15005))
+
+## Misc
+
+* logger: add warn level ([#14964](https://github.com/GoogleChrome/lighthouse/pull/14964))
+
 <a name="10.1.1"></a>
 # 10.1.1 (2023-04-14)
 [Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.1.0...v10.1.1)
