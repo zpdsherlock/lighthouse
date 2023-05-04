@@ -487,6 +487,18 @@ async function waitForFullyLoaded(session, networkMonitor, options) {
         throw new LighthouseError(LighthouseError.errors.PAGE_HUNG);
       }
 
+      // Log remaining inflight requests if any.
+      const inflightRequestUrls = networkMonitor
+        .getInflightRequests()
+        .map((request) => request.url);
+      if (inflightRequestUrls.length > 0) {
+        log.warn(
+          'waitFor',
+          'Remaining inflight requests URLs',
+          inflightRequestUrls
+        );
+      }
+
       return {timedOut: true};
     };
   });
