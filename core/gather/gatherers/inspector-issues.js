@@ -75,7 +75,6 @@ class InspectorIssues extends FRGatherer {
       quirksModeIssue: [],
       cookieIssue: [],
       sharedArrayBufferIssue: [],
-      twaQualityEnforcement: [],
     };
     const keys = /** @type {Array<keyof LH.Artifacts['InspectorIssues']>} */(Object.keys(artifact));
     for (const key of keys) {

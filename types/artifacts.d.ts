@@ -617,7 +617,6 @@ declare module Artifacts {
     quirksModeIssue: Crdp.Audits.QuirksModeIssueDetails[];
     cookieIssue: Crdp.Audits.CookieIssueDetails[];
     sharedArrayBufferIssue: Crdp.Audits.SharedArrayBufferIssueDetails[];
-    twaQualityEnforcement: Crdp.Audits.TrustedWebActivityIssueDetails[];
   }
 
   // Computed artifact types below.

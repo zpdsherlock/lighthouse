@@ -12045,8 +12045,7 @@
     ],
     "quirksModeIssue": [],
     "cookieIssue": [],
-    "sharedArrayBufferIssue": [],
-    "twaQualityEnforcement": []
+    "sharedArrayBufferIssue": []
   },
   "SourceMaps": [],
   "FullPageScreenshot": {

@@ -48,7 +48,6 @@ Array [
   "navigatorUserAgentIssueDetails",
   "quirksModeIssueDetails",
   "sharedArrayBufferIssueDetails",
-  "twaQualityEnforcementDetails",
 ]
 `);
   });

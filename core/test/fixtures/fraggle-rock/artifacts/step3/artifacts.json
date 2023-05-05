@@ -2020,8 +2020,7 @@
     ],
     "quirksModeIssue": [],
     "cookieIssue": [],
-    "sharedArrayBufferIssue": [],
-    "twaQualityEnforcement": []
+    "sharedArrayBufferIssue": []
   },
   "JsUsage": {
     "16": {
