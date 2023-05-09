@@ -17,7 +17,7 @@ describe('ViewportDimensions gatherer', () => {
   });
 
   it('returns an artifact', () => {
-    return gatherer.afterPass({
+    return gatherer.getArtifact({
       driver: {
         executionContext: {
           async evaluate() {

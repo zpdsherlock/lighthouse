@@ -53,7 +53,7 @@ describe('Global Listener Gatherer', () => {
     connectionStub.sendCommand = sendCommandMock;
     const driver = new Driver(connectionStub);
 
-    const globalListeners = await globalListenerGatherer.afterPass({driver});
+    const globalListeners = await globalListenerGatherer.getArtifact({driver});
     return expect(globalListeners).toMatchObject(expectedOutput);
   });
 });

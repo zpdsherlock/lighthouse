@@ -5,109 +5,13 @@
  */
 
 import OptimizedImages from '../../../../gather/gatherers/dobetterweb/optimized-images.js';
-import {NetworkRequest} from '../../../../lib/network-request.js';
 import {createMockContext} from '../../../gather/mock-driver.js';
-
-let context = createMockContext();
-let optimizedImages;
-
-const traceData = {
-  networkRecords: [
-    {
-      requestId: '1',
-      url: 'http://google.com/image.jpg',
-      mimeType: 'image/jpeg',
-      resourceSize: 10000000,
-      transferSize: 20000000,
-      resourceType: 'Image',
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://google.com/transparent.png',
-      mimeType: 'image/png',
-      resourceSize: 11000,
-      transferSize: 20000,
-      resourceType: 'Image',
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://google.com/image.bmp',
-      mimeType: 'image/bmp',
-      resourceSize: 12000,
-      transferSize: 9000, // bitmap was compressed another way
-      resourceType: 'Image',
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://google.com/image.bmp',
-      mimeType: 'image/bmp',
-      resourceSize: 12000,
-      transferSize: 20000,
-      resourceType: 'Image',
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://google.com/vector.svg',
-      mimeType: 'image/svg+xml',
-      resourceSize: 13000,
-      transferSize: 20000,
-      resourceType: 'Image',
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://gmail.com/image.jpg',
-      mimeType: 'image/jpeg',
-      resourceSize: 15000,
-      transferSize: 20000,
-      resourceType: 'Image',
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://gmail.com/image-oopif.jpg',
-      mimeType: 'image/jpeg',
-      resourceSize: 15000,
-      transferSize: 20000,
-      resourceType: 'Image',
-      finished: true,
-      sessionTargetType: 'iframe', // ignore for being an oopif
-    },
-    {
-      requestId: '1',
-      url: 'data: image/jpeg ; base64 ,SgVcAT32587935321...',
-      mimeType: 'image/jpeg',
-      resourceType: 'Image',
-      resourceSize: 14000,
-      transferSize: 20000,
-      finished: true,
-    },
-    {
-      requestId: '1',
-      url: 'http://google.com/big-image.bmp',
-      mimeType: 'image/bmp',
-      resourceType: 'Image',
-      resourceSize: 12000,
-      transferSize: 20000,
-      finished: false, // ignore for not finishing
-    },
-    {
-      requestId: '1',
-      url: 'http://google.com/not-an-image.bmp',
-      mimeType: 'image/bmp',
-      resourceType: 'Document', // ignore for not really being an image
-      resourceSize: 12000,
-      transferSize: 20000,
-      finished: true,
-    },
-  ].map((record) => Object.assign(new NetworkRequest(), record)),
-};
+import {networkRecordsToDevtoolsLog} from '../../../network-records-to-devtools-log.js';
 
 describe('Optimized images', () => {
+  let context = createMockContext();
+  let optimizedImages;
+
   // Reset the Gatherer before each test.
   beforeEach(() => {
     optimizedImages = new OptimizedImages();
@@ -117,10 +21,102 @@ describe('Optimized images', () => {
       const encodedSize = params.encoding === 'webp' ? 60 : 80;
       return Promise.resolve({encodedSize});
     });
+
+    context.dependencies.DevtoolsLog = networkRecordsToDevtoolsLog([
+      {
+        requestId: '1',
+        url: 'http://google.com/image.jpg',
+        mimeType: 'image/jpeg',
+        resourceSize: 10000000,
+        transferSize: 20000000,
+        resourceType: 'Image',
+        finished: true,
+      },
+      {
+        requestId: '2',
+        url: 'http://google.com/transparent.png',
+        mimeType: 'image/png',
+        resourceSize: 11000,
+        transferSize: 20000,
+        resourceType: 'Image',
+        finished: true,
+      },
+      {
+        requestId: '3',
+        url: 'http://google.com/image.bmp',
+        mimeType: 'image/bmp',
+        resourceSize: 12000,
+        transferSize: 9000, // bitmap was compressed another way
+        resourceType: 'Image',
+        finished: true,
+      },
+      {
+        requestId: '4',
+        url: 'http://google.com/image.bmp',
+        mimeType: 'image/bmp',
+        resourceSize: 12000,
+        transferSize: 20000,
+        resourceType: 'Image',
+        finished: true,
+      },
+      {
+        requestId: '5',
+        url: 'http://google.com/vector.svg',
+        mimeType: 'image/svg+xml',
+        resourceSize: 13000,
+        transferSize: 20000,
+        resourceType: 'Image',
+        finished: true,
+      },
+      {
+        requestId: '6',
+        url: 'http://gmail.com/image.jpg',
+        mimeType: 'image/jpeg',
+        resourceSize: 15000,
+        transferSize: 20000,
+        resourceType: 'Image',
+        finished: true,
+      },
+      {
+        requestId: '7',
+        url: 'http://gmail.com/image-oopif.jpg',
+        mimeType: 'image/jpeg',
+        resourceSize: 15000,
+        transferSize: 20000,
+        resourceType: 'Image',
+        finished: true,
+        sessionTargetType: 'iframe', // ignore for being an oopif
+      },
+      {
+        requestId: '8',
+        url: 'data: image/jpeg ; base64 ,SgVcAT32587935321...',
+        mimeType: 'image/jpeg',
+        resourceType: 'Image',
+        resourceSize: 14000,
+        transferSize: 20000,
+        finished: true,
+      },
+      {
+        requestId: '9',
+        url: 'http://google.com/big-image.bmp',
+        mimeType: 'image/bmp',
+        resourceType: 'Image',
+        finished: false, // ignore for not finishing
+      },
+      {
+        requestId: '10',
+        url: 'http://google.com/not-an-image.bmp',
+        mimeType: 'image/bmp',
+        resourceType: 'Document', // ignore for not really being an image
+        resourceSize: 12000,
+        transferSize: 20000,
+        finished: true,
+      },
+    ]);
   });
 
   it('returns all images, sorted with sizes', async () => {
-    const artifact = await optimizedImages.afterPass(context, traceData);
+    const artifact = await optimizedImages.getArtifact(context);
     expect(artifact).toHaveLength(5);
     expect(artifact).toMatchObject([
       {
@@ -167,7 +163,7 @@ describe('Optimized images', () => {
       }
     });
 
-    return optimizedImages.afterPass(context, traceData).then(artifact => {
+    return optimizedImages.getArtifact(context).then(artifact => {
       const failed = artifact.find(record => record.failed);
 
       expect(artifact).toHaveLength(5);
@@ -176,40 +172,34 @@ describe('Optimized images', () => {
   });
 
   it('handles non-standard mime types too', async () => {
-    const traceData = {
-      networkRecords: [
-        {
-          requestId: '1',
-          url: 'http://google.com/image.bmp?x-ms',
-          mimeType: 'image/x-ms-bmp',
-          resourceSize: 12000,
-          transferSize: 0,
-          resourceType: 'Image',
-          finished: true,
-        },
-      ].map((record) => Object.assign(new NetworkRequest(), record)),
-    };
-
-    const artifact = await optimizedImages.afterPass(context, traceData);
+    context.dependencies.DevtoolsLog = networkRecordsToDevtoolsLog([
+      {
+        requestId: '1',
+        url: 'http://google.com/image.bmp?x-ms',
+        mimeType: 'image/x-ms-bmp',
+        resourceSize: 12000,
+        transferSize: 0,
+        resourceType: 'Image',
+        finished: true,
+      },
+    ]);
+    const artifact = await optimizedImages.getArtifact(context);
     expect(artifact).toHaveLength(1);
   });
 
   it('handles cached images', async () => {
-    const traceData = {
-      networkRecords: [
-        {
-          requestId: '1',
-          url: 'http://google.com/image.jpg',
-          mimeType: 'image/jpeg',
-          resourceSize: 10000000,
-          transferSize: 0,
-          resourceType: 'Image',
-          finished: true,
-        },
-      ].map((record) => Object.assign(new NetworkRequest(), record)),
-    };
-
-    const artifact = await optimizedImages.afterPass(context, traceData);
+    context.dependencies.DevtoolsLog = networkRecordsToDevtoolsLog([
+      {
+        requestId: '1',
+        url: 'http://google.com/image.jpg',
+        mimeType: 'image/jpeg',
+        resourceSize: 10000000,
+        transferSize: 0,
+        resourceType: 'Image',
+        finished: true,
+      },
+    ]);
+    const artifact = await optimizedImages.getArtifact(context);
     expect(artifact).toHaveLength(1);
   });
 });

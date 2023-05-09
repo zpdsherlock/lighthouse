@@ -144,7 +144,7 @@ describe('Font size gatherer', () => {
     };
     const driver = {defaultSession: session};
 
-    const artifact = await fontSizeGather.afterPass({driver});
+    const artifact = await fontSizeGather.getArtifact({driver});
     const expectedFailingTextLength = Array.from(smallText.trim()).length;
     const expectedTotalTextLength =
       Array.from(smallText.trim()).length +

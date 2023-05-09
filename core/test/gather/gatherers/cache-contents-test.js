@@ -17,7 +17,7 @@ describe('Cache Contents gatherer', () => {
   });
 
   it('throws an error when cache getter returns nothing', () => {
-    return cacheContentGather.afterPass({
+    return cacheContentGather.getArtifact({
       driver: {
         evaluateAsync() {
           return Promise.resolve();
