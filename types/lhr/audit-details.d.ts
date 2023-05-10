@@ -15,6 +15,8 @@ interface BaseDetails {
   overallSavingsBytes?: number;
   /** Additional information, usually used for including debug or meta information in the LHR */
   debugData?: Details.DebugData;
+  /** Estimates of how much this audit affects various performance metrics. Values will be in the unit of the respective metrics. */
+  metricSavings?: Details.MetricSavings;
 }
 
 type Details =
@@ -302,6 +304,14 @@ declare module Details {
     type: 'numeric',
     value: number,
     granularity?: number,
+  }
+
+  interface MetricSavings {
+    LCP?: number;
+    FCP?: number;
+    CLS?: number;
+    TBT?: number;
+    INP?: number;
   }
 }
 
