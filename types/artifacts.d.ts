@@ -948,6 +948,12 @@ declare module Artifacts {
     // Convenience methods.
     isFirstParty: (url: string) => boolean;
   }
+
+  interface TraceImpactedNode {
+    node_id: number;
+    old_rect?: Array<number>;
+    new_rect?: Array<number>;
+  }
 }
 
 export interface Trace {
@@ -1017,11 +1023,7 @@ export interface TraceEvent {
       nodeId?: number;
       DOMNodeId?: number;
       imageUrl?: string;
-      impacted_nodes?: Array<{
-        node_id: number,
-        old_rect?: Array<number>,
-        new_rect?: Array<number>,
-      }>;
+      impacted_nodes?: Artifacts.TraceImpactedNode[];
       score?: number;
       weighted_score_delta?: number;
       had_recent_input?: boolean;

@@ -22,6 +22,7 @@ import {ProcessedTrace} from '../../computed/processed-trace.js';
 import {ProcessedNavigation} from '../../computed/processed-navigation.js';
 import {LighthouseError} from '../../lib/lh-error.js';
 import {Responsiveness} from '../../computed/metrics/responsiveness.js';
+import {CumulativeLayoutShift} from '../../computed/metrics/cumulative-layout-shift.js';
 
 /** @typedef {{nodeId: number, score?: number, animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[], type?: string}} TraceElementData */
 
@@ -80,34 +81,24 @@ class TraceElements extends FRGatherer {
    * We calculate the score per element by taking the 'score' of each layout shift event and
    * distributing it between all the nodes that were shifted, proportianal to the impact region of
    * each shifted element.
-   * @param {Array<LH.TraceEvent>} mainThreadEvents
+   * @param {LH.Artifacts.ProcessedTrace} processedTrace
    * @return {Array<TraceElementData>}
    */
-  static getTopLayoutShiftElements(mainThreadEvents) {
+  static getTopLayoutShiftElements(processedTrace) {
     /** @type {Map<number, number>} */
     const clsPerNode = new Map();
-    const shiftEvents = mainThreadEvents
-      .filter(e => e.name === 'LayoutShift')
-      .map(e => e.args?.data);
-    const indexFirstEventWithoutInput =
-      shiftEvents.findIndex(event => event && !event.had_recent_input);
+    const shiftEvents = CumulativeLayoutShift.getLayoutShiftEvents(processedTrace);
 
-    shiftEvents.forEach((event, index) => {
-      if (!event || !event.impacted_nodes || !event.score) {
+    shiftEvents.forEach((event) => {
+      if (!event || !event.impactedNodes) {
         return;
-      }
-
-      // Ignore events with input, unless it's one of the initial events.
-      // See comment in computed/metrics/cumulative-layout-shift.js.
-      if (indexFirstEventWithoutInput !== -1 && index >= indexFirstEventWithoutInput) {
-        if (event.had_recent_input) return;
       }
 
       let totalAreaOfImpact = 0;
       /** @type {Map<number, number>} */
       const pixelsMovedPerNode = new Map();
 
-      event.impacted_nodes.forEach(node => {
+      event.impactedNodes.forEach(node => {
         if (!node.node_id || !node.old_rect || !node.new_rect) {
           return;
         }
@@ -124,7 +115,7 @@ class TraceElements extends FRGatherer {
 
       for (const [nodeId, pixelsMoved] of pixelsMovedPerNode.entries()) {
         let clsContribution = clsPerNode.get(nodeId) || 0;
-        clsContribution += (pixelsMoved / totalAreaOfImpact) * event.score;
+        clsContribution += (pixelsMoved / totalAreaOfImpact) * event.weightedScore;
         clsPerNode.set(nodeId, clsContribution);
       }
     });
@@ -272,7 +263,7 @@ class TraceElements extends FRGatherer {
     const {mainThreadEvents} = processedTrace;
 
     const lcpNodeData = await TraceElements.getLcpElement(trace, context);
-    const clsNodeData = TraceElements.getTopLayoutShiftElements(mainThreadEvents);
+    const clsNodeData = TraceElements.getTopLayoutShiftElements(processedTrace);
     const animatedElementData = await this.getAnimatedElements(mainThreadEvents);
     const responsivenessElementData = await TraceElements.getResponsivenessElement(trace, context);
 

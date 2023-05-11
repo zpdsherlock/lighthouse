@@ -10,6 +10,7 @@ import {Connection} from '../../../legacy/gather/connections/connection.js';
 import {createTestTrace, rootFrame} from '../../create-test-trace.js';
 import {createMockSendCommandFn, createMockOnFn} from '../mock-commands.js';
 import {flushAllTimersAndMicrotasks, fnAny, readJson, timers} from '../../test-utils.js';
+import {ProcessedTrace} from '../../../computed/processed-trace.js';
 
 const animationTrace = readJson('../../fixtures/artifacts/animation/trace.json', import.meta);
 
@@ -23,11 +24,13 @@ function makeLayoutShiftTraceEvent(score, impactedNodes, had_recent_input = fals
     ts: 1200,
     args: {
       data: {
+        is_main_frame: true,
         had_recent_input, // eslint-disable-line camelcase
         impacted_nodes: impactedNodes,
         score: score,
+        weighted_score_delta: score,
       },
-      frame: '3C4CBF06AF1ED5B9EAA59BECA70111F4',
+      frame: 'ROOT_FRAME',
     },
   };
 }
@@ -87,8 +90,9 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
     expect(diff).toBeLessThanOrEqual(Number.EPSILON);
   }
 
-  it('returns layout shift data sorted by impact area', () => {
-    const traceEvents = [
+  it('returns layout shift data sorted by impact area', async () => {
+    const trace = createTestTrace({});
+    trace.traceEvents.push(
       makeLayoutShiftTraceEvent(1, [
         {
           new_rect: [0, 0, 200, 200],
@@ -100,10 +104,11 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
           node_id: 25,
           old_rect: [0, 100, 200, 100],
         },
-      ]),
-    ];
+      ])
+    );
+    const processedTrace = await ProcessedTrace.request(trace, {computedCache: new Map()});
 
-    const result = TraceElementsGatherer.getTopLayoutShiftElements(traceEvents);
+    const result = TraceElementsGatherer.getTopLayoutShiftElements(processedTrace);
     expect(result).toEqual([
       {nodeId: 25, score: 0.6},
       {nodeId: 60, score: 0.4},
@@ -112,8 +117,9 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
     expectEqualFloat(total, 1.0);
   });
 
-  it('does not ignore initial trace events with input', () => {
-    const traceEvents = [
+  it('does not ignore initial trace events with input', async () => {
+    const trace = createTestTrace({});
+    trace.traceEvents.push(
       makeLayoutShiftTraceEvent(1, [
         {
           new_rect: [0, 0, 200, 200],
@@ -127,18 +133,20 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
           node_id: 2,
           old_rect: [0, 0, 200, 100],
         },
-      ], true),
-    ];
+      ], true)
+    );
+    const processedTrace = await ProcessedTrace.request(trace, {computedCache: new Map()});
 
-    const result = TraceElementsGatherer.getTopLayoutShiftElements(traceEvents);
+    const result = TraceElementsGatherer.getTopLayoutShiftElements(processedTrace);
     expect(result).toEqual([
       {nodeId: 1, score: 1},
       {nodeId: 2, score: 1},
     ]);
   });
 
-  it('does ignore later trace events with input', () => {
-    const traceEvents = [
+  it('does ignore later trace events with input', async () => {
+    const trace = createTestTrace({});
+    trace.traceEvents.push(
       makeLayoutShiftTraceEvent(1, [
         {
           new_rect: [0, 0, 200, 200],
@@ -152,17 +160,19 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
           node_id: 2,
           old_rect: [0, 0, 200, 100],
         },
-      ], true),
-    ];
+      ], true)
+    );
+    const processedTrace = await ProcessedTrace.request(trace, {computedCache: new Map()});
 
-    const result = TraceElementsGatherer.getTopLayoutShiftElements(traceEvents);
+    const result = TraceElementsGatherer.getTopLayoutShiftElements(processedTrace);
     expect(result).toEqual([
       {nodeId: 1, score: 1},
     ]);
   });
 
-  it('correctly ignores trace events with input (complex)', () => {
-    const traceEvents = [
+  it('correctly ignores trace events with input (complex)', async () => {
+    const trace = createTestTrace({});
+    trace.traceEvents.push(
       makeLayoutShiftTraceEvent(1, [
         {
           new_rect: [0, 0, 200, 200],
@@ -211,10 +221,11 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
           node_id: 7,
           old_rect: [0, 0, 200, 100],
         },
-      ]),
-    ];
+      ])
+    );
+    const processedTrace = await ProcessedTrace.request(trace, {computedCache: new Map()});
 
-    const result = TraceElementsGatherer.getTopLayoutShiftElements(traceEvents);
+    const result = TraceElementsGatherer.getTopLayoutShiftElements(processedTrace);
     expect(result).toEqual([
       {nodeId: 1, score: 1},
       {nodeId: 2, score: 1},
@@ -224,8 +235,9 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
     ]);
   });
 
-  it('combines scores for the same nodeId accross multiple shift events', () => {
-    const traceEvents = [
+  it('combines scores for the same nodeId accross multiple shift events', async () => {
+    const trace = createTestTrace({});
+    trace.traceEvents.push(
       makeLayoutShiftTraceEvent(1, [
         {
           new_rect: [0, 0, 200, 200],
@@ -244,10 +256,11 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
           node_id: 60,
           old_rect: [0, 0, 200, 200],
         },
-      ]),
-    ];
+      ])
+    );
+    const processedTrace = await ProcessedTrace.request(trace, {computedCache: new Map()});
 
-    const result = TraceElementsGatherer.getTopLayoutShiftElements(traceEvents);
+    const result = TraceElementsGatherer.getTopLayoutShiftElements(processedTrace);
     expect(result).toEqual([
       {nodeId: 60, score: 0.7},
       {nodeId: 25, score: 0.6},
@@ -256,8 +269,9 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
     expectEqualFloat(total, 1.3);
   });
 
-  it('returns only the top five values', () => {
-    const traceEvents = [
+  it('returns only the top five values', async () => {
+    const trace = createTestTrace({});
+    trace.traceEvents.push(
       makeLayoutShiftTraceEvent(1, [
         {
           new_rect: [0, 100, 100, 100],
@@ -298,10 +312,11 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
           node_id: 7,
           old_rect: [0, 0, 100, 100],
         },
-      ]),
-    ];
+      ])
+    );
+    const processedTrace = await ProcessedTrace.request(trace, {computedCache: new Map()});
 
-    const result = TraceElementsGatherer.getTopLayoutShiftElements(traceEvents);
+    const result = TraceElementsGatherer.getTopLayoutShiftElements(processedTrace);
     expect(result).toEqual([
       {nodeId: 3, score: 1.0},
       {nodeId: 1, score: 0.5},

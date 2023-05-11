@@ -7,7 +7,7 @@
 import {makeComputedArtifact} from '../computed-artifact.js';
 import {ProcessedTrace} from '../processed-trace.js';
 
-/** @typedef {{ts: number, isMainFrame: boolean, weightedScore: number}} LayoutShiftEvent */
+/** @typedef {{ts: number, isMainFrame: boolean, weightedScore: number, impactedNodes?: LH.Artifacts.TraceImpactedNode[]}} LayoutShiftEvent */
 
 const RECENT_INPUT_WINDOW = 500;
 
@@ -65,6 +65,7 @@ class CumulativeLayoutShift {
         ts: event.ts,
         isMainFrame: event.args.data.is_main_frame,
         weightedScore: event.args.data.weighted_score_delta,
+        impactedNodes: event.args.data.impacted_nodes,
       });
     }
 
