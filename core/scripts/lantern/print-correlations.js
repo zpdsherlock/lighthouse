@@ -100,7 +100,7 @@ function evaluateAndPrintAccuracy(metric, lanternMetric) {
   const baselineOptions = {alwaysGray: !lanternMetric.includes('roughEstimate')};
 
   const strings = [
-    lanternMetric.padEnd(25),
+    lanternMetric.padEnd(28),
     `${toPercentString(actualAccuracy.p50)} ${toBaselineDiffString(
       actualAccuracy.p50,
       baselineAccuracy.p50,
@@ -216,7 +216,7 @@ function findAndPrintFixesRegressions() {
 
 console.log(
   chalk.bold(
-    'Metric'.padEnd(25),
+    'Metric'.padEnd(28),
     'p50 (% Error)'.padEnd(20),
     'p90 (% Error)'.padEnd(20),
     'p95 (% Error)'.padEnd(20)
@@ -242,6 +242,11 @@ evaluateAndPrintAccuracy('speedIndex', 'roughEstimateOfSI');
 evaluateAndPrintAccuracy('largestContentfulPaint', 'optimisticLCP');
 evaluateAndPrintAccuracy('largestContentfulPaint', 'pessimisticLCP');
 evaluateAndPrintAccuracy('largestContentfulPaint', 'roughEstimateOfLCP');
+
+// TODO: enable when new traces are collected (also, do calls to findAndPrintWorst10Sites)
+// evaluateAndPrintAccuracy('timeToFirstByte', 'roughEstimateOfTTFB');
+// evaluateAndPrintAccuracy('largestContentfulPaintLoadStart', 'roughEstimateOfLCPLoadStart');
+// evaluateAndPrintAccuracy('largestContentfulPaintLoadEnd', 'roughEstimateOfLCPLoadEnd');
 
 const estimates = allEvaluations.filter(entry => entry.lanternMetric.includes('roughEstimate'));
 const baselineEstimates = baselineEvaluations.filter(entry =>

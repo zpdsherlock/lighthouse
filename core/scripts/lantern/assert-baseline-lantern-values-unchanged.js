@@ -39,6 +39,8 @@ for (const entry of computedResults.sites) {
   /** @type {DiffForSite[]} */
   const diffsForSite = [];
   Object.keys(actualLantern).forEach(metricName => {
+    if (!(metricName in expectedLantern)) throw new Error(`missing metric ${metricName}`);
+
     const actual = Math.round(actualLantern[metricName]);
     const expected = Math.round(expectedLantern[metricName]);
     const diff = actual - expected;

@@ -44,10 +44,10 @@ fs.writeFileSync(OUTPUT_PATH, prettyJSONStringify({sites}, {
   spaceBeforeColon: '',
   spaceInsideObject: '',
   shouldExpand: (_, level) => level < 2,
-}));
+}) + '\n');
 
 fs.writeFileSync(OUTPUT_ACCURACY_PATH, JSON.stringify(
   constants.evaluateAllMetrics(computedResults, {sites}),
   null,
   2
-));
+) + '\n');
