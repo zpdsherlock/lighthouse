@@ -698,6 +698,22 @@ const expectations = {
           ],
         },
       },
+      'td-has-header': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > table#td-has-header',
+                'snippet': '<table id="td-has-header">',
+                'explanation': 'Fix all of the following:\n  Some non-empty data cells do not have table headers',
+                'nodeLabel': 'FOO\tFOO\tFOO\tFOO\nfoo\tfoo\tfoo\tfoo\nfoo\tfoo\tfoo\tfoo\nfoo\tfoo\tfoo\tfoo',
+              },
+            },
+          ],
+        },
+      },
       'td-headers-attr': {
         score: 0,
         details: {

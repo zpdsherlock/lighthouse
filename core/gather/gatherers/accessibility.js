@@ -45,7 +45,7 @@ async function runA11yChecks() {
       'meta-viewport': {enabled: true},
       'duplicate-id': {enabled: false},
       'table-fake-caption': {enabled: false},
-      'td-has-header': {enabled: false},
+      'td-has-header': {enabled: true},
       'marquee': {enabled: false},
       'area-alt': {enabled: false},
       'html-xml-lang-mismatch': {enabled: false},

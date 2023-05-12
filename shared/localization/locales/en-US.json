@@ -362,6 +362,15 @@
   "core/audits/accessibility/tabindex.js | title": {
     "message": "No element has a `[tabindex]` value greater than 0"
   },
+  "core/audits/accessibility/td-has-header.js | description": {
+    "message": "Screen readers have features to make navigating tables easier. Ensuring that `<td>` elements in a large table (3 or more cells in width and height) have an associated table header may improve the experience for screen reader users. [Learn more about table headers](https://dequeuniversity.com/rules/axe/4.7/td-has-header)."
+  },
+  "core/audits/accessibility/td-has-header.js | failureTitle": {
+    "message": "`<td>` elements in a large `<table>` do not have table headers."
+  },
+  "core/audits/accessibility/td-has-header.js | title": {
+    "message": "`<td>` elements in a large `<table>` have one or more table headers."
+  },
   "core/audits/accessibility/td-headers-attr.js | description": {
     "message": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the `headers` attribute](https://dequeuniversity.com/rules/axe/4.7/td-headers-attr)."
   },
