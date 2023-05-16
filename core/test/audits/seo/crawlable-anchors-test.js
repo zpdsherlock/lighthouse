@@ -13,6 +13,7 @@ function runAudit({
   role = '',
   onclick = '',
   name = '',
+  id = '',
   listeners = onclick.trim().length ? [{type: 'click'}] : [],
   node = {
     snippet: '',
@@ -30,6 +31,7 @@ function runAudit({
       onclick,
       role,
       node,
+      id,
     }],
     URL: {
       finalDisplayedUrl: 'http://example.com',
@@ -57,6 +59,10 @@ describe('SEO: Crawlable anchors audit', () => {
     }), 1, 'relative link which specifies a query string');
 
     assert.equal(runAudit({rawHref: 'ftp://'}), 0, 'invalid FTP links fails');
+  });
+
+  it('allows anchors acting as an ID anchor', () => {
+    assert.equal(runAudit({rawHref: '', id: 'example'}), 1, 'anchor link as ID anchor');
   });
 
   it('allows anchors which use a name attribute', () => {

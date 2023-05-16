@@ -43,6 +43,7 @@ class CrawlableAnchors extends Audit {
       rawHref,
       name = '',
       role = '',
+      id,
     }) => {
       rawHref = rawHref.replace( /\s/g, '');
       name = name.trim();
@@ -51,6 +52,9 @@ class CrawlableAnchors extends Audit {
       if (role.length > 0) return;
       // Ignore mailto links even if they use one of the failing patterns. See https://github.com/GoogleChrome/lighthouse/issues/11443#issuecomment-694898412
       if (rawHref.startsWith('mailto:')) return;
+
+      // Ignore `<a id="something">` elements acting as an anchor.
+      if (rawHref === '' && id) return;
 
       const javaScriptVoidRegExp = /javascript:void(\(|)0(\)|)/;
 

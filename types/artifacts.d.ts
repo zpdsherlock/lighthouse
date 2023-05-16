@@ -410,6 +410,7 @@ declare module Artifacts {
     target: string
     node: NodeDetails
     onclick: string
+    id: string
     listeners?: Array<{
       type: Crdp.DOMDebugger.EventListener['type']
     }>

@@ -53,6 +53,7 @@ function collectAnchorElements() {
         text: node.innerText, // we don't want to return hidden text, so use innerText
         rel: node.rel,
         target: node.target,
+        id: node.getAttribute('id') || '',
         // @ts-expect-error - getNodeDetails put into scope via stringification
         node: getNodeDetails(node),
       };
@@ -66,6 +67,7 @@ function collectAnchorElements() {
       text: node.textContent || '',
       rel: '',
       target: node.target.baseVal || '',
+      id: node.getAttribute('id') || '',
       // @ts-expect-error - getNodeDetails put into scope via stringification
       node: getNodeDetails(node),
     };
