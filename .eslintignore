@@ -4,7 +4,7 @@
 
 cli/test/fixtures/byte-efficiency/bundle.js
 
-/dist/**
+dist
 
 coverage/**
 
