@@ -261,6 +261,16 @@ class Util {
   }
 
   /**
+   * Returns the origin portion of a Chrome extension URL.
+   * @param {string} url
+   * @return {string}
+   */
+  static getChromeExtensionOrigin(url) {
+    const parsedUrl = new URL(url);
+    return parsedUrl.protocol + '//' + parsedUrl.host;
+  }
+
+  /**
    * Split a URL into a file, hostname and origin for easy display.
    * @param {string} url
    * @return {{file: string, hostname: string, origin: string}}
@@ -270,7 +280,10 @@ class Util {
     return {
       file: Util.getURLDisplayName(parsedUrl),
       hostname: parsedUrl.hostname,
-      origin: parsedUrl.origin,
+      // Node's URL parsing behavior is different than Chrome and returns 'null'
+      // for chrome-extension:// URLs. See https://github.com/nodejs/node/issues/21955.
+      origin: parsedUrl.protocol === 'chrome-extension:' ?
+        Util.getChromeExtensionOrigin(url) : parsedUrl.origin,
     };
   }
 

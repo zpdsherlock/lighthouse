@@ -87,6 +87,10 @@ class UrlUtils {
   static getOrigin(url) {
     try {
       const urlInfo = new URL(url);
+      if (urlInfo.protocol === 'chrome-extension:') {
+        // Chrome extensions return string "null" as origin, so we reconstruct the extension origin.
+        return Util.getChromeExtensionOrigin(url);
+      }
       // check for both host and origin since some URLs schemes like data and file set origin to the
       // string "null" instead of the object
       return (urlInfo.host && urlInfo.origin) || null;
