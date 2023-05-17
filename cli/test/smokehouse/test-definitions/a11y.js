@@ -35,7 +35,7 @@ const expectations = {
                 'type': 'node',
                 'selector': 'body > section > div#aria-allowed-attr',
                 'snippet': '<div id="aria-allowed-attr" role="alert" aria-checked="true">',
-                'explanation': 'Fix any of the following:\n  ARIA attribute is not allowed: aria-checked="true"',
+                'explanation': 'Fix all of the following:\n  ARIA attribute is not allowed: aria-checked="true"',
                 'nodeLabel': 'body > section > div#aria-allowed-attr',
               },
             },
