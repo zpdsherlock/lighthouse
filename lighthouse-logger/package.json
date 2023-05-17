@@ -1,8 +1,9 @@
 {
   "type": "module",
   "name": "lighthouse-logger",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "license": "Apache-2.0",
+  "main": "./dist/index.cjs",
   "exports": {
     "require": "./dist/index.cjs",
     "import": "./index.js"
