@@ -24,6 +24,14 @@ interface ScoreDisplayModes {
 
 type ScoreDisplayMode = ScoreDisplayModes[keyof ScoreDisplayModes];
 
+interface MetricSavings {
+  LCP?: number;
+  FCP?: number;
+  CLS?: number;
+  TBT?: number;
+  INP?: number;
+}
+
 /** Audit result returned in Lighthouse report. All audits offer a description and score of 0-1. */
 export interface Result {
   displayValue?: string;
@@ -50,8 +58,6 @@ export interface Result {
   id: string;
   /** A more detailed description that describes why the audit is important and links to Lighthouse documentation on the audit; markdown links supported. */
   description: string;
-  /** Estimates of how much this audit affects various performance metrics. Values will be in the unit of the respective metrics. */
-  metricSavings?: AuditDetails.MetricSavings;
   /** A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present. */
   numericValue?: number;
   /** The unit of `numericValue`, used when the consumer wishes to convert numericValue to a display string. */

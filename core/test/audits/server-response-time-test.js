@@ -29,6 +29,10 @@ describe('Performance: server-response-time audit', () => {
         overallSavingsMs: 530,
         items: [{url: 'https://example.com/', responseTime: 630}],
       },
+      metricSavings: {
+        FCP: 530,
+        LCP: 530,
+      },
     });
   });
 
@@ -50,6 +54,10 @@ describe('Performance: server-response-time audit', () => {
     expect(result).toMatchObject({
       numericValue: 200,
       score: 1,
+      metricSavings: {
+        FCP: 100,
+        LCP: 100,
+      },
     });
   });
 

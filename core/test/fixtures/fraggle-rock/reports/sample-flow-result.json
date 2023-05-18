@@ -233,11 +233,7 @@
                   "responseTime": 19.687999999999988
                 }
               ],
-              "overallSavingsMs": 0,
-              "metricSavings": {
-                "FCP": 0,
-                "LCP": 0
-              }
+              "overallSavingsMs": 0
             }
           },
           "interactive": {
@@ -16747,11 +16743,7 @@
                   "responseTime": 10.263
                 }
               ],
-              "overallSavingsMs": 0,
-              "metricSavings": {
-                "FCP": 0,
-                "LCP": 0
-              }
+              "overallSavingsMs": 0
             }
           },
           "interactive": {
