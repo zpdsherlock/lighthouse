@@ -105,6 +105,7 @@ async function main() {
       unthrottled: {
         tracePath: medianUnthrottled.trace,
         devtoolsLogPath: medianUnthrottled.devtoolsLog,
+        lhrPath: medianUnthrottled.lhr,
       },
     });
   }
@@ -118,6 +119,7 @@ async function main() {
     log.progress('making site-index-plus-golden-expectations.json');
     copyToGolden(result.unthrottled.devtoolsLogPath);
     copyToGolden(result.unthrottled.tracePath);
+    copyToGolden(result.unthrottled.lhrPath);
   }
 
   log.progress('archiving ...');
