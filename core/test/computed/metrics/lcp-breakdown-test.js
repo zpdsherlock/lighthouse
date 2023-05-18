@@ -102,8 +102,8 @@ describe('LCPBreakdown', () => {
     const result = await LCPBreakdown.request(data, {computedCache: new Map()});
 
     expect(result.ttfb).toBeCloseTo(2393.7, 0.1);
-    expect(result.loadStart).toBeCloseTo(5407.1, 0.1);
-    expect(result.loadEnd).toBeCloseTo(5529.3, 0.1);
+    expect(result.loadStart).toBeCloseTo(5449.0, 0.1);
+    expect(result.loadEnd).toBeCloseTo(5572.1, 0.1);
   });
 
   it('returns breakdown for a real trace with text LCP', async () => {
