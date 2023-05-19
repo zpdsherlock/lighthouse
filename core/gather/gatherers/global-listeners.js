@@ -11,6 +11,8 @@
  * around page unload, but this can be expanded in the future.
  */
 
+import log from 'lighthouse-logger';
+
 import FRGatherer from '../base-gatherer.js';
 
 class GlobalListeners extends FRGatherer {
@@ -61,30 +63,45 @@ class GlobalListeners extends FRGatherer {
   async getArtifact(passContext) {
     const session = passContext.driver.defaultSession;
 
-    // Get a RemoteObject handle to `window`.
-    const {result: {objectId}} = await session.sendCommand('Runtime.evaluate', {
-      expression: 'window',
-      returnByValue: false,
-    });
-    if (!objectId) {
-      throw new Error('Error fetching information about the global object');
+    /** @type {Array<LH.Artifacts.GlobalListener>} */
+    const listeners = [];
+
+    for (const executionContext of passContext.driver.targetManager.mainFrameExecutionContexts()) {
+      // Get a RemoteObject handle to `window`.
+      let objectId;
+      try {
+        const {result} = await session.sendCommand('Runtime.evaluate', {
+          expression: 'window',
+          returnByValue: false,
+          uniqueContextId: executionContext.uniqueId,
+        });
+        if (!result.objectId) {
+          throw new Error('Error fetching information about the global object');
+        }
+        objectId = result.objectId;
+      } catch (err) {
+        // Execution context is no longer valid, but don't let that fail the gatherer.
+        log.warn('Execution context is no longer valid', executionContext, err);
+        continue;
+      }
+
+      // And get all its listeners of interest.
+      const response = await session.sendCommand('DOMDebugger.getEventListeners', {objectId});
+      for (const listener of response.listeners) {
+        if (GlobalListeners._filterForAllowlistedTypes(listener)) {
+          const {type, scriptId, lineNumber, columnNumber} = listener;
+          listeners.push({
+            type,
+            scriptId,
+            lineNumber,
+            columnNumber,
+          });
+        }
+      }
     }
 
-    // And get all its listeners of interest.
-    const {listeners} = await session.sendCommand('DOMDebugger.getEventListeners', {objectId});
-    const filteredListeners = listeners.filter(GlobalListeners._filterForAllowlistedTypes)
-    .map(listener => {
-      const {type, scriptId, lineNumber, columnNumber} = listener;
-      return {
-        type,
-        scriptId,
-        lineNumber,
-        columnNumber,
-      };
-    });
-
     // Dedupe listeners with same underlying data.
-    return this.dedupeListeners(filteredListeners);
+    return this.dedupeListeners(listeners);
   }
 }
 

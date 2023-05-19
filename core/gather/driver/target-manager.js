@@ -40,6 +40,7 @@ class TargetManager extends ProtocolEventEmitter {
 
     this._enabled = false;
     this._rootCdpSession = cdpSession;
+    this._mainFrameId = '';
 
     /**
      * A map of target id to target/session information. Used to ensure unique
@@ -47,9 +48,14 @@ class TargetManager extends ProtocolEventEmitter {
      * @type {Map<string, TargetWithSession>}
      */
     this._targetIdToTargets = new Map();
+    /** @type {Map<string, LH.Crdp.Runtime.ExecutionContextDescription>} */
+    this._executionContextIdToDescriptions = new Map();
 
     this._onSessionAttached = this._onSessionAttached.bind(this);
     this._onFrameNavigated = this._onFrameNavigated.bind(this);
+    this._onExecutionContextCreated = this._onExecutionContextCreated.bind(this);
+    this._onExecutionContextDestroyed = this._onExecutionContextDestroyed.bind(this);
+    this._onExecutionContextsCleared = this._onExecutionContextsCleared.bind(this);
   }
 
   /**
@@ -95,6 +101,12 @@ class TargetManager extends ProtocolEventEmitter {
   rootSession() {
     const rootSessionId = this._rootCdpSession.id();
     return this._findSession(rootSessionId);
+  }
+
+  mainFrameExecutionContexts() {
+    return [...this._executionContextIdToDescriptions.values()].filter(executionContext => {
+      return executionContext.auxData.frameId === this._mainFrameId;
+    });
   }
 
   /**
@@ -154,6 +166,27 @@ class TargetManager extends ProtocolEventEmitter {
   }
 
   /**
+   * @param {LH.Crdp.Runtime.ExecutionContextCreatedEvent} event
+   */
+  _onExecutionContextCreated(event) {
+    if (event.context.name === '__puppeteer_utility_world__') return;
+    if (event.context.name === 'lighthouse_isolated_context') return;
+
+    this._executionContextIdToDescriptions.set(event.context.uniqueId, event.context);
+  }
+
+  /**
+   * @param {LH.Crdp.Runtime.ExecutionContextDestroyedEvent} event
+   */
+  _onExecutionContextDestroyed(event) {
+    this._executionContextIdToDescriptions.delete(event.executionContextUniqueId);
+  }
+
+  _onExecutionContextsCleared() {
+    this._executionContextIdToDescriptions.clear();
+  }
+
+  /**
    * Returns a listener for all protocol events from session, and augments the
    * event with the sessionId.
    * @param {LH.Protocol.TargetType} targetType
@@ -183,10 +216,17 @@ class TargetManager extends ProtocolEventEmitter {
 
     this._enabled = true;
     this._targetIdToTargets = new Map();
+    this._executionContextIdToDescriptions = new Map();
 
     this._rootCdpSession.on('Page.frameNavigated', this._onFrameNavigated);
+    this._rootCdpSession.on('Runtime.executionContextCreated', this._onExecutionContextCreated);
+    this._rootCdpSession.on('Runtime.executionContextDestroyed', this._onExecutionContextDestroyed);
+    this._rootCdpSession.on('Runtime.executionContextsCleared', this._onExecutionContextsCleared);
 
     await this._rootCdpSession.send('Page.enable');
+    await this._rootCdpSession.send('Runtime.enable');
+
+    this._mainFrameId = (await this._rootCdpSession.send('Page.getFrameTree')).frameTree.frame.id;
 
     // Start with the already attached root session.
     await this._onSessionAttached(this._rootCdpSession);
@@ -197,14 +237,23 @@ class TargetManager extends ProtocolEventEmitter {
    */
   async disable() {
     this._rootCdpSession.off('Page.frameNavigated', this._onFrameNavigated);
+    this._rootCdpSession.off('Runtime.executionContextCreated', this._onExecutionContextCreated);
+    this._rootCdpSession.off('Runtime.executionContextDestroyed',
+      this._onExecutionContextDestroyed);
+    this._rootCdpSession.off('Runtime.executionContextsCleared', this._onExecutionContextsCleared);
 
     for (const {cdpSession, protocolListener} of this._targetIdToTargets.values()) {
       cdpSession.off('*', protocolListener);
       cdpSession.off('sessionattached', this._onSessionAttached);
     }
 
+    await this._rootCdpSession.send('Page.disable');
+    await this._rootCdpSession.send('Runtime.disable');
+
     this._enabled = false;
     this._targetIdToTargets = new Map();
+    this._executionContextIdToDescriptions = new Map();
+    this._mainFrameId = '';
   }
 }
 

@@ -27,6 +27,10 @@ beforeEach(() => {
   const puppeteerSession = createMockCdpSession();
   puppeteerSession.send
       .mockResponse('Page.enable')
+      .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: 'mainFrameId'}}})
+      .mockResponse('Runtime.enable')
+      .mockResponse('Page.disable')
+      .mockResponse('Runtime.disable')
       .mockResponse('Target.getTargetInfo', {targetInfo: {type: 'page', targetId: 'page'}})
       .mockResponse('Network.enable')
       .mockResponse('Target.setAutoAttach')
