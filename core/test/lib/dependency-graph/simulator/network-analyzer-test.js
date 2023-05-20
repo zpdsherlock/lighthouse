@@ -147,7 +147,7 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
       const timing = {connectStart: 1, connectEnd: 100, sslStart: 50, sslEnd: 100};
       const record = createRecord({networkRequestTime: 0, networkEndTime: 1, timing});
       const result = NetworkAnalyzer.estimateRTTByOrigin([record]);
-      const expected = {min: 49, max: 50, avg: 49.5, median: 49};
+      const expected = {min: 49, max: 50, avg: 49.5, median: 49.5};
       assert.deepStrictEqual(result.get('https://example.com'), expected);
     });
 

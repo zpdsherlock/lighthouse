@@ -25,10 +25,10 @@ Map {
 `);
     expect(result.serverResponseTimeByOrigin).toMatchInlineSnapshot(`
 Map {
-  "https://pwa.rocks" => 159.42199996789026,
+  "https://pwa.rocks" => 159.70249997917608,
   "https://www.googletagmanager.com" => 153.03200000198592,
   "https://www.google-analytics.com" => 159.5549999910874,
-  "__SUMMARY__" => 159.42199996789026,
+  "__SUMMARY__" => 159.48849997948884,
 }
 `);
   });

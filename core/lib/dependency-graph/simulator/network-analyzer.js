@@ -52,11 +52,22 @@ class NetworkAnalyzer {
   static getSummary(values) {
     values.sort((a, b) => a - b);
 
+    let median;
+    if (values.length === 0) {
+      median = values[0];
+    } else if (values.length % 2 === 0) {
+      const a = values[Math.floor((values.length - 1) / 2)];
+      const b = values[Math.floor((values.length - 1) / 2) + 1];
+      median = (a + b) / 2;
+    } else {
+      median = values[Math.floor((values.length - 1) / 2)];
+    }
+
     return {
       min: values[0],
       max: values[values.length - 1],
       avg: values.reduce((a, b) => a + b, 0) / values.length,
-      median: values[Math.floor((values.length - 1) / 2)],
+      median,
     };
   }
 

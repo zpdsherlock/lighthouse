@@ -21,12 +21,12 @@ describe('Network Server Latency audit', () => {
     // artifical response time = Math.max(real response time, 150ms)
     expect(result.details.items).toEqual([
       {
-        origin: 'https://www.google-analytics.com',
-        serverResponseTime: 159.55,
+        origin: 'https://pwa.rocks',
+        serverResponseTime: 159.7,
       },
       {
-        origin: 'https://pwa.rocks',
-        serverResponseTime: 159.42,
+        origin: 'https://www.google-analytics.com',
+        serverResponseTime: 159.55,
       },
       {
         origin: 'https://www.googletagmanager.com',

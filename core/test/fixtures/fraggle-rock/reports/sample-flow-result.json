@@ -1204,7 +1204,7 @@
                 },
                 {
                   "origin": "https://fonts.gstatic.com",
-                  "serverResponseTime": 16.217999999999993
+                  "serverResponseTime": 17.328999999999994
                 },
                 {
                   "origin": "https://www.mikescerealshack.co",
@@ -8766,7 +8766,7 @@
                 },
                 {
                   "origin": "https://mnl4bjjsnz-dsn.algolia.net",
-                  "serverResponseTime": 0
+                  "serverResponseTime": 263.2025
                 }
               ],
               "sortedBy": [
@@ -17696,7 +17696,7 @@
                 },
                 {
                   "origin": "https://fonts.gstatic.com",
-                  "serverResponseTime": 0.874
+                  "serverResponseTime": 0.9365
                 }
               ],
               "sortedBy": [

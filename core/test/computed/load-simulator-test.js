@@ -66,9 +66,7 @@ describe('Simulator artifact', () => {
     expect(additionalRttByOrigin.get('https://pwa.rocks')).toMatchInlineSnapshot(
       `0.3960000176447025`
     );
-    expect(serverResponseTimeByOrigin.get('https://pwa.rocks')).toMatchInlineSnapshot(
-      `159.42199996789026`
-    );
+    expect(serverResponseTimeByOrigin.get('https://pwa.rocks')).toMatchInlineSnapshot(`159.70249997917608`);
   });
 
   it('returns a simulator with precomputed lantern data', async () => {

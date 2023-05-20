@@ -23,7 +23,7 @@ describe('Diagnostics audit', () => {
     const result = await Diagnostics.audit(artifacts, {computedCache: new Map()});
     expect(result.details.items[0]).toEqual({
       maxRtt: 3.6660000041592014,
-      maxServerLatency: 159.5549999910874,
+      maxServerLatency: 159.70249997917608,
       numFonts: 1,
       numRequests: 66,
       numScripts: 6,
