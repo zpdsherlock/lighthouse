@@ -89,7 +89,9 @@ export class CategoryRenderer {
         packElmImg.src = pack.iconDataURL;
         packElmImg.alt = pack.title;
 
-        const snippets = this.dom.convertMarkdownLinkSnippets(pack.description);
+        const snippets = this.dom.convertMarkdownLinkSnippets(pack.description, {
+          alwaysAppendUtmSource: true,
+        });
         const packElm = this.dom.createElement('div', 'lh-audit__stackpack');
         packElm.append(packElmImg, snippets);
 
