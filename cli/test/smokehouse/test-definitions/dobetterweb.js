@@ -594,6 +594,31 @@ const expectations = {
           lcpLoadEnd: '7750+/-500',
         }}},
       },
+      'largest-contentful-paint-element': {
+        score: null,
+        displayValue: '1 element found',
+        details: {
+          items: [
+            {
+              items: [{
+                node: {
+                  type: 'node',
+                  nodeLabel: 'Do better web tester page',
+                  path: '2,HTML,1,BODY,9,DIV,2,H2',
+                },
+              }],
+            },
+            {
+              items: [
+                {timing: '>0'},
+                {timing: '>0'},
+                {timing: '>0'},
+                {timing: '>0'},
+              ],
+            },
+          ],
+        },
+      },
     },
     fullPageScreenshot: {
       screenshot: {
