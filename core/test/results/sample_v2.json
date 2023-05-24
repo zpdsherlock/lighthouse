@@ -3254,6 +3254,18 @@
       "score": null,
       "scoreDisplayMode": "notApplicable"
     },
+    "html-xml-lang-mismatch": {
+      "id": "html-xml-lang-mismatch",
+      "title": "`<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.",
+      "description": "If the webpage does not specify a consistent language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.7/html-xml-lang-mismatch).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
     "image-alt": {
       "id": "image-alt",
       "title": "Image elements do not have `[alt]` attributes",
@@ -3459,6 +3471,13 @@
           ]
         }
       }
+    },
+    "input-button-name": {
+      "id": "input-button-name",
+      "title": "Input buttons have discernible text.",
+      "description": "Adding discernable and accessible text to input buttons may help screen reader users understand the purpose of the input button. [Learn more about input buttons](https://dequeuniversity.com/rules/axe/4.7/input-button-name).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
     },
     "input-image-alt": {
       "id": "input-image-alt",
@@ -3745,6 +3764,18 @@
       "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.7/tabindex).",
       "score": null,
       "scoreDisplayMode": "notApplicable"
+    },
+    "table-fake-caption": {
+      "id": "table-fake-caption",
+      "title": "Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.",
+      "description": "Screen readers have features to make navigating tables easier. Ensuring that tables use the actual caption element instead of cells with the `[colspan]` attribute may improve the experience for screen reader users. [Learn more about captions](https://dequeuniversity.com/rules/axe/4.7/table-fake-caption).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
     },
     "td-has-header": {
       "id": "td-has-header",
@@ -5970,8 +6001,18 @@
           "group": "a11y-language"
         },
         {
+          "id": "html-xml-lang-mismatch",
+          "weight": 2,
+          "group": "a11y-language"
+        },
+        {
           "id": "image-alt",
           "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "input-button-name",
+          "weight": 0,
           "group": "a11y-names-labels"
         },
         {
@@ -6018,6 +6059,11 @@
           "id": "tabindex",
           "weight": 0,
           "group": "a11y-navigation"
+        },
+        {
+          "id": "table-fake-caption",
+          "weight": 3,
+          "group": "a11y-tables-lists"
         },
         {
           "id": "td-has-header",
@@ -6086,7 +6132,7 @@
         }
       ],
       "id": "accessibility",
-      "score": 0.79
+      "score": 0.8
     },
     "best-practices": {
       "title": "Best Practices",
@@ -8303,7 +8349,19 @@
       },
       {
         "startTime": 0,
+        "name": "lh:audit:html-xml-lang-mismatch",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:image-alt",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:input-button-name",
         "duration": 100,
         "entryType": "measure"
       },
@@ -8358,6 +8416,12 @@
       {
         "startTime": 0,
         "name": "lh:audit:tabindex",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:table-fake-caption",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9690,11 +9754,23 @@
       "core/audits/accessibility/html-lang-valid.js | description": [
         "audits[html-lang-valid].description"
       ],
+      "core/audits/accessibility/html-xml-lang-mismatch.js | title": [
+        "audits[html-xml-lang-mismatch].title"
+      ],
+      "core/audits/accessibility/html-xml-lang-mismatch.js | description": [
+        "audits[html-xml-lang-mismatch].description"
+      ],
       "core/audits/accessibility/image-alt.js | failureTitle": [
         "audits[image-alt].title"
       ],
       "core/audits/accessibility/image-alt.js | description": [
         "audits[image-alt].description"
+      ],
+      "core/audits/accessibility/input-button-name.js | title": [
+        "audits[input-button-name].title"
+      ],
+      "core/audits/accessibility/input-button-name.js | description": [
+        "audits[input-button-name].description"
       ],
       "core/audits/accessibility/input-image-alt.js | title": [
         "audits[input-image-alt].title"
@@ -9749,6 +9825,12 @@
       ],
       "core/audits/accessibility/tabindex.js | description": [
         "audits.tabindex.description"
+      ],
+      "core/audits/accessibility/table-fake-caption.js | title": [
+        "audits[table-fake-caption].title"
+      ],
+      "core/audits/accessibility/table-fake-caption.js | description": [
+        "audits[table-fake-caption].description"
       ],
       "core/audits/accessibility/td-has-header.js | title": [
         "audits[td-has-header].title"
