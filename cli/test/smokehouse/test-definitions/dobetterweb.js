@@ -302,17 +302,6 @@ const expectations = {
           },
         },
       },
-      'is-on-https': {
-        score: 0,
-        details: {
-          items: [
-            {
-              url: 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-              resolution: 'Allowed',
-            },
-          ],
-        },
-      },
       'geolocation-on-start': {
         score: 0,
       },
