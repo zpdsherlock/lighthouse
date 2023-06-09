@@ -3002,10 +3002,10 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-devtools-protocol@0.0.1120988, devtools-protocol@0.0.1130274:
-  version "0.0.1130274"
-  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1130274.tgz#1cd0c472a84fc9a09becaaed35a247a6eab9310c"
-  integrity sha512-kIozBWajgsi1g0W8yzALI4ZdCp6KG1yWaq8NN1ehQM3zX6JRegLSzfexz7XT5eFjmq1RkpMYgeKmfi3GsHrCLw==
+devtools-protocol@0.0.1120988, devtools-protocol@0.0.1154250:
+  version "0.0.1154250"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1154250.tgz#cb3a06e2c8bb07f977c1dc08a781e14a9dd1b3e8"
+  integrity sha512-ETduFBWzd+g4WL8iVpMTmeMDI0NfkjURd3rhO2mTKkL6wM54xNeIXBlIrsG3LPfxltQU7YRICvO++LHIflPXSQ==
 
 diff-sequences@^28.0.2:
   version "28.0.2"
