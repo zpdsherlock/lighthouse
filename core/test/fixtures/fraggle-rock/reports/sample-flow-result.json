@@ -186,8 +186,7 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "totalCumulativeLayoutShift": 0.002631263732910156
+                  "cumulativeLayoutShiftMainFrame": 0.002631263732910156
                 }
               ]
             }
@@ -1318,7 +1317,6 @@
                   "maxPotentialFID": 193,
                   "cumulativeLayoutShift": 0.002631263732910156,
                   "cumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "totalCumulativeLayoutShift": 0.002631263732910156,
                   "lcpLoadStart": 985,
                   "lcpLoadEnd": 1062,
                   "timeToFirstByte": 615,
@@ -1346,7 +1344,6 @@
                   "observedDomContentLoadedTs": 183713237485,
                   "observedCumulativeLayoutShift": 0.002631263732910156,
                   "observedCumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "observedTotalCumulativeLayoutShift": 0.002631263732910156,
                   "observedFirstVisualChange": 341,
                   "observedFirstVisualChangeTs": 183713323617,
                   "observedLastVisualChange": 575,
@@ -8071,8 +8068,7 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0.13125,
-                  "totalCumulativeLayoutShift": 0.13125
+                  "cumulativeLayoutShiftMainFrame": 0.13125
                 }
               ]
             }
@@ -16911,8 +16907,7 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0,
-                  "totalCumulativeLayoutShift": 0
+                  "cumulativeLayoutShiftMainFrame": 0
                 }
               ]
             }
@@ -18007,7 +18002,6 @@
                   "maxPotentialFID": 76,
                   "cumulativeLayoutShift": 0,
                   "cumulativeLayoutShiftMainFrame": 0,
-                  "totalCumulativeLayoutShift": 0,
                   "lcpLoadStart": 603,
                   "lcpLoadEnd": 837,
                   "timeToFirstByte": 603,
@@ -18035,7 +18029,6 @@
                   "observedDomContentLoadedTs": 183729805229,
                   "observedCumulativeLayoutShift": 0,
                   "observedCumulativeLayoutShiftMainFrame": 0,
-                  "observedTotalCumulativeLayoutShift": 0,
                   "observedFirstVisualChange": 89,
                   "observedFirstVisualChangeTs": 183729849318,
                   "observedLastVisualChange": 505,
