@@ -57,7 +57,7 @@ import UrlUtils from './url-utils.js';
 
 // Lightrider X-Header names for timing information.
 // See: _updateTransferSizeForLightrider and _updateTimingsForLightrider.
-const HEADER_TCP = 'X-TCPMs';
+const HEADER_TCP = 'X-TCPMs'; // Note: this should have been called something like ConnectMs, as it includes SSL.
 const HEADER_SSL = 'X-SSLMs';
 const HEADER_REQ = 'X-RequestMs';
 const HEADER_RES = 'X-ResponseMs';
@@ -80,14 +80,10 @@ const HEADER_PROTOCOL_IS_H2 = 'X-ProtocolIsH2';
 
 /**
  * @typedef LightriderStatistics
- * The difference in networkEndTime between the observed Lighthouse networkEndTime and Lightrider's derived networkEndTime.
- * @property {number} endTimeDeltaMs
- * The time spent making a TCP connection (connect + SSL).
- * @property {number} TCPMs
- * The time spent requesting a resource from a remote server, we use this to approx RTT.
- * @property {number} requestMs
- * The time spent transferring a resource from a remote server.
- * @property {number} responseMs
+ * @property {number} endTimeDeltaMs The difference in networkEndTime between the observed Lighthouse networkEndTime and Lightrider's derived networkEndTime.
+ * @property {number} TCPMs The time spent making a TCP connection (connect + SSL). Note: this is poorly named.
+ * @property {number} requestMs The time spent requesting a resource from a remote server, we use this to approx RTT. Note: this is poorly names, it really should be "server response time".
+ * @property {number} responseMs Time to receive the entire response payload starting the clock on receiving the first fragment (first non-header byte).
  */
 
 /** @type {LH.Util.SelfMap<LH.Crdp.Network.ResourceType>} */
@@ -501,6 +497,7 @@ class NetworkRequest {
 
     // Make sure all times are initialized and are non-negative.
     const TCPMs = TCPMsHeader ? Math.max(0, parseInt(TCPMsHeader.value)) : 0;
+    // This is missing for h2 requests, but present for h1. See b/283843975
     const SSLMs = SSLMsHeader ? Math.max(0, parseInt(SSLMsHeader.value)) : 0;
     const requestMs = requestMsHeader ? Math.max(0, parseInt(requestMsHeader.value)) : 0;
     const responseMs = responseMsHeader ? Math.max(0, parseInt(responseMsHeader.value)) : 0;
