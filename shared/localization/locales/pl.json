@@ -981,25 +981,25 @@
     "message": "Dozwolony z ostrzeżeniem"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% LCP"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Faza"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Czas"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "To największa część treści wyrenderowana w widocznym obszarze. [Więcej informacji o renderowaniu największej części treści](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Opóźnienie wczytywania"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Czas wczytywania"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Opóźnienie renderowania"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "Użyj zestawu narzędzi [Ezoic Leap](https://pubdash.ezoic.com/speed) i włącz ustawienie `Resize Images`, aby dostosować rozmiar obrazów odpowiednio do danego urządzenia, zmniejszając ładunki sieciowe."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Aby automatycznie zoptymalizować format obrazu, użyj komponentu `gatsby-plugin-image` zamiast `<img>`. [Więcej informacji](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Aby automatycznie była używana funkcja leniwego ładowania obrazów, użyj komponentu `gatsby-plugin-image` zamiast `<img>`. [Więcej informacji](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Użyj komponentu `gatsby-plugin-image` i ustaw właściwość `loading` na `eager`. [Więcej informacji](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Aby opóźnić wczytywanie niekrytycznych skryptów spoza witryny, użyj komponentu `Gatsby Script API`. [Więcej informacji](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Aby usunąć nieużywane reguły z arkuszy stylów, użyj wtyczki `PurgeCSS` `Gatsby`. [Więcej informacji](https://purgecss.com/plugins/gatsby.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Użyj narzędzia `Webpack Bundle Analyzer`, aby wykryć nieużywany kod JavaScript. [Więcej informacji](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Skonfiguruj buforowanie zasobów niezmiennych. [Więcej informacji](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Aby dostosować jakość obrazów, użyj komponentu `gatsby-plugin-image` zamiast `<img>`. [Więcej informacji](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Aby ustawić odpowiednią wartość `sizes`, użyj komponentu `gatsby-plugin-image`. [Więcej informacji](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Możesz przesłać plik GIF do usługi, która umożliwi umieszczanie go jako pliku wideo HTML5."
@@ -2715,10 +2715,10 @@
     "message": "Tagi `<link rel=preload>` można dodać, [modyfikując układ motywu](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Aby automatycznie zoptymalizować format obrazu, użyj komponentu `next/image` zamiast `<img>`. [Więcej informacji](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Aby automatycznie była używana funkcja leniwego ładowania obrazów, użyj komponentu `next/image` zamiast `<img>`. [Więcej informacji](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Użyj komponentu `next/image` i ustaw wartość Prawda dla elementu „priority”, aby wstępnie wczytać obraz LCP. [Więcej informacji](https://nextjs.org/docs/api-reference/next/image#priority)"
@@ -2733,7 +2733,7 @@
     "message": "Możesz skonfigurować wtyczkę `PurgeCSS` w konfiguracji `Next.js`, aby usunąć nieużywane reguły z arkuszy stylów. [Więcej informacji](https://purgecss.com/guides/next.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Użyj narzędzia `Webpack Bundle Analyzer`, aby wykryć nieużywany kod JavaScript. [Więcej informacji](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Możesz użyć narzędzia `Next.js Analytics`, żeby zmierzyć rzeczywistą szybkość aplikacji. [Więcej informacji](https://nextjs.org/docs/advanced-features/measuring-performance)"
@@ -2742,7 +2742,7 @@
     "message": "Skonfiguruj buforowanie zasobów niezmiennych i stron `Server-side Rendered` (SSR). [Więcej informacji](https://nextjs.org/docs/going-to-production#caching)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Aby dostosować jakość obrazów, użyj komponentu `next/image` zamiast `<img>`. [Więcej informacji](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Użyj komponentu `next/image`, aby ustawić odpowiednią wartość `sizes`. [Więcej informacji](https://nextjs.org/docs/api-reference/next/image#sizes)"

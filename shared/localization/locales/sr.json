@@ -981,25 +981,25 @@
     "message": "Дозвољен уз упозорење"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% LCP-а"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Фаза"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Време"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "Ово је највећи елемент садржаја који је приказан у области приказа. [Сазнајте више о елементу са највећим приказивањем садржаја](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Кашњење учитавања"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Брзина учитавања"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Кашњење рендеровања"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "Користите [Ezoic Leap](https://pubdash.ezoic.com/speed) и омогућите `Resize Images` да бисте променили величину слика тако да одговара уређају и тиме смањили величине мрежних ресурса."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Користите компоненту `gatsby-plugin-image`, а не `<img>`, да бисте аутоматски оптимизовали формат слика. [Сазнајте више](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Користите компоненту `gatsby-plugin-image`, а не `<img>`, да бисте аутоматски споро учитавали слике. [Сазнајте више](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Користите компоненту `gatsby-plugin-image` и подесите упит `loading` на `eager`. [Сазнајте више](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Користите `Gatsby Script API` да бисте одложили учитавање скрипта треће стране које нису толико важне. [Сазнајте више](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Користите додатну компоненту `PurgeCSS` `Gatsby` да бисте уклонили неискоришћена правила из описа стилова. [Сазнајте више](https://purgecss.com/plugins/gatsby.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Користите `Webpack Bundle Analyzer` да бисте открили неискоришћени JavaScript кôд. [Сазнајте више](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Конфигуришите кеширање за непроменљиве елементе. [Сазнајте више](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Користите компоненту `gatsby-plugin-image`, а не `<img>`, да бисте подесили квалитет слике. [Сазнајте више](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Користите компоненту `gatsby-plugin-image` да бисте подесили одговарајуће `sizes`. [Сазнајте више](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Предлажемо да отпремите GIF у услугу која ће га кодирати за уградњу као HTML5 видео."
@@ -2715,10 +2715,10 @@
     "message": "Ознаке `<link rel=preload>` могу да се додају [изменом изгледа теме](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Користите компоненту `next/image`, а не `<img>`, да бисте аутоматски оптимизовали формат слика. [Сазнајте више](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Користите компоненту `next/image`, а не `<img>`, да бисте аутоматски споро учитавали слике. [Сазнајте више](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Користите компоненту `next/image` и поставите „priority“ на „true“ да бисте унапред учитали LCP слику. [Сазнајте више](https://nextjs.org/docs/api-reference/next/image#priority)."
@@ -2733,7 +2733,7 @@
     "message": "Препоручујемо вам да подесите `PurgeCSS` у конфигурацији компоненте `Next.js` да бисте уклонили неискоришћена правила из описа стилова. [Сазнајте више](https://purgecss.com/guides/next.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Користите `Webpack Bundle Analyzer` да бисте открили неискоришћени JavaScript кôд. [Сазнајте више](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Препоручујемо вам да користите `Next.js Analytics` за мерење учинка апликације у стварном свету. [Сазнајте више](https://nextjs.org/docs/advanced-features/measuring-performance)."
@@ -2742,7 +2742,7 @@
     "message": "Конфигуришите кеширање за непроменљиве елементе и `Server-side Rendered` (SSR) странице. [Сазнајте више](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Користите компоненту `next/image`, а не `<img>`, да бисте подесили квалитет слике. [Сазнајте више](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Користите компоненту `next/image` да бисте подесили одговарајуће `sizes`. [Сазнајте више](https://nextjs.org/docs/api-reference/next/image#sizes)."

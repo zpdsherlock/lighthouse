@@ -981,25 +981,25 @@
     "message": "허용됨(경고 포함)"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "LCP 비율"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "단계"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "타이밍"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "표시 영역에 페인팅된 가장 큰 콘텐츠 포함 요소입니다. [최대 콘텐츠 렌더링 시간 요소에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "로드 지연"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "로드 시간"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "렌더링 지연"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "[Ezoic Leap](https://pubdash.ezoic.com/speed)을 사용하고 `Resize Images`를 사용 설정하여 기기에 적절한 크기로 이미지 크기를 조절하고 네트워크 페이로드 크기를 줄이세요."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "`<img>` 대신 `gatsby-plugin-image` 구성요소를 사용하여 이미지 형식을 자동으로 최적화하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "`<img>` 대신 `gatsby-plugin-image` 구성요소를 사용하여 이미지를 자동으로 지연 로드하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "`gatsby-plugin-image` 구성요소를 사용하여 `loading` 속성을 `eager`로 설정하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "`Gatsby Script API`를 사용하여 중요하지 않은 서드 파티 스크립트의 로드를 지연하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "`PurgeCSS` `Gatsby` 플러그인을 사용하여 스타일시트에서 사용되지 않는 규칙을 삭제하세요. [자세히 알아보기](https://purgecss.com/plugins/gatsby.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "`Webpack Bundle Analyzer`를 사용하여 사용되지 않는 JavaScript 코드를 감지하세요. [자세히 알아보기](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "변경할 수 없는 애셋의 캐싱을 구성하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "`<img>` 대신 `gatsby-plugin-image` 구성요소를 사용하여 이미지 품질을 조정하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "`gatsby-plugin-image` 구성요소를 사용하여 적절한 `sizes`를 설정하세요. [자세히 알아보기](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "GIF를 HTML5 동영상으로 삽입할 수 있게 해 주는 서비스에 GIF를 업로드해 보세요."
@@ -2715,10 +2715,10 @@
     "message": "[테마의 레이아웃을 수정](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)하여 `<link rel=preload>` 태그를 추가할 수 있습니다."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "`<img>` 대신 `next/image` 구성요소를 사용하여 이미지 형식을 자동으로 최적화하세요. [자세히 알아보기](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "`<img>` 대신 `next/image` 구성요소를 사용하여 이미지를 자동으로 지연 로드하세요. [자세히 알아보기](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "`next/image` 구성요소를 사용하고 '우선순위'를 True로 설정하여 LCP 이미지를 미리 로드하세요. [자세히 알아보기](https://nextjs.org/docs/api-reference/next/image#priority)"
@@ -2733,7 +2733,7 @@
     "message": "`Next.js` 구성에 `PurgeCSS`를 설정하여 스타일시트에서 사용되지 않는 규칙을 삭제해 보세요. [자세히 알아보기](https://purgecss.com/guides/next.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "`Webpack Bundle Analyzer`를 사용하여 사용되지 않는 JavaScript 코드를 감지하세요. [자세히 알아보기](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "`Next.js Analytics`를 사용하여 앱의 실제 성능을 측정해 보세요. [자세히 알아보기](https://nextjs.org/docs/advanced-features/measuring-performance)"
@@ -2742,7 +2742,7 @@
     "message": "변경 불가능한 애셋 및 `Server-side Rendered`(SSR) 페이지의 캐싱을 구성하세요. [자세히 알아보기](https://nextjs.org/docs/going-to-production#caching)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "`<img>` 대신 `next/image` 구성요소를 사용하여 이미지 품질을 조정하세요. [자세히 알아보기](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "`next/image` 구성요소를 사용해 적절한 `sizes`를 설정하세요. [자세히 알아보기](https://nextjs.org/docs/api-reference/next/image#sizes)"

@@ -981,25 +981,25 @@
     "message": "Επιτρέπεται με προειδοποίηση"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% LCP"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Φάση"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Χρονισμός"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "Αυτό είναι το στοιχείο με τη μεγαλύτερη σχεδίαση με περιεχόμενο στη θύρα προβολής. [Μάθετε περισσότερα σχετικά με το στοιχείο Μεγαλύτερη σχεδίαση με περιεχόμενο](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Καθυστέρηση φόρτωσης"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Χρόνος φόρτωσης"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Καθυστέρηση απόδοσης"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "Χρησιμοποιήστε το [Ezoic Leap](https://pubdash.ezoic.com/speed) και ενεργοποιήστε το `Resize Images` για να αλλάξετε το μέγεθος των εικόνων στο κατάλληλο μέγεθος μιας συσκευής, μειώνοντας τα μεγέθη φορτίων δικτύου."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Χρησιμοποιήστε το στοιχείο `gatsby-plugin-image` αντί του `<img>` για την αυτόματη βελτιστοποίηση της μορφής εικόνας. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Χρησιμοποιήστε το στοιχείο `gatsby-plugin-image` αντί του `<img>` για την αυτόματη αργή φόρτωση των εικόνων. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Χρησιμοποιήστε το στοιχείο `gatsby-plugin-image` και ορίστε την ιδιότητα `loading` σε `eager`. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Χρησιμοποιήστε το στοιχείο `Gatsby Script API` για να αναβάλετε τη φόρτωση των σεναρίων τρίτου μέρους δευτερεύουσας σημασίας. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Χρησιμοποιήστε την προσθήκη `PurgeCSS` `Gatsby` για να καταργήσετε τους κανόνες που δεν χρησιμοποιούνται από τα φύλλα στιλ. [Μάθετε περισσότερα](https://purgecss.com/plugins/gatsby.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Χρησιμοποιήστε το στοιχείο `Webpack Bundle Analyzer` για ανίχνευση κώδικα JavaScript που δεν χρησιμοποιείται. [Μάθετε περισσότερα](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Διαμόρφωση κρυφής μνήμης για αμετάβλητα στοιχεία. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Χρησιμοποιήστε το στοιχείο `gatsby-plugin-image` αντί του `<img>` για να προσαρμόσετε την ποιότητα εικόνας. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Χρησιμοποιήστε το στοιχείο `gatsby-plugin-image` για να ορίσετε το κατάλληλο `sizes`. [Μάθετε περισσότερα](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Εξετάστε το ενδεχόμενο να ανεβάσετε το GIF σε μια υπηρεσία η οποία θα το διαθέσει για ενσωμάτωση ως βίντεο HTML5."
@@ -2715,10 +2715,10 @@
     "message": "Οι ετικέτες `<link rel=preload>` μπορούν να προστεθούν [τροποποιώντας τη διάταξη ενός θέματος](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Χρησιμοποιήστε το στοιχείο `next/image` αντί του `<img>` για την αυτόματη βελτιστοποίηση της μορφής εικόνας. [Μάθετε περισσότερα](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Χρησιμοποιήστε το στοιχείο `next/image` αντί του `<img>` για την αυτόματη αργή φόρτωση των εικόνων. [Μάθετε περισσότερα](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Χρησιμοποιήστε το στοιχείο `next/image` και ορίστε το πεδίο προτεραιότητα σε αληθές για την προφόρτωση της εικόνας LCP. [Μάθετε περισσότερα](https://nextjs.org/docs/api-reference/next/image#priority)."
@@ -2733,7 +2733,7 @@
     "message": "Εξετάστε το ενδεχόμενο να ρυθμίσετε το στοιχείο `PurgeCSS` στη διαμόρφωση `Next.js` για να καταργήσετε τους κανόνες που δεν χρησιμοποιούνται από τα φύλλα στιλ. [Μάθετε περισσότερα](https://purgecss.com/guides/next.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Χρησιμοποιήστε το στοιχείο `Webpack Bundle Analyzer` για ανίχνευση κώδικα JavaScript που δεν χρησιμοποιείται. [Μάθετε περισσότερα](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Εξετάστε το ενδεχόμενο να χρησιμοποιήσετε το στοιχείο `Next.js Analytics` για να μετράτε την πραγματική απόδοση της εφαρμογής σας. [Μάθετε περισσότερα](https://nextjs.org/docs/advanced-features/measuring-performance)."
@@ -2742,7 +2742,7 @@
     "message": "Διαμόρφωση κρυφής μνήμης για αμετάβλητα στοιχεία και σελίδες `Server-side Rendered` (SSR). [Μάθετε περισσότερα](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Χρησιμοποιήστε το στοιχείο `next/image` αντί του `<img>` για να προσαρμόσετε την ποιότητα εικόνας. [Μάθετε περισσότερα](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Χρησιμοποιήστε το στοιχείο `next/image` για να ρυθμίσετε το κατάλληλο `sizes`. [Μάθετε περισσότερα](https://nextjs.org/docs/api-reference/next/image#sizes)."

@@ -981,25 +981,25 @@
     "message": "Diizinkan dengan peringatan"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% LCP"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Fase"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Pengaturan Waktu"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "Ini adalah elemen contentful terbesar yang di-paint dalam area pandang. [Pelajari lebih lanjut elemen Largest Contentful Paint (LCP)](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Penundaan Pemuatan"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Waktu Pemuatan"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Penundaan Render"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "Gunakan [Ezoic Leap](https://pubdash.ezoic.com/speed) dan aktifkan `Resize Images` untuk mengubah ukuran gambar menjadi ukuran yang sesuai dengan perangkat, sehingga mengurangi ukuran payload jaringan."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Gunakan komponen `gatsby-plugin-image`, bukan `<img>`, untuk mengoptimalkan format gambar secara otomatis. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Gunakan komponen `gatsby-plugin-image`, bukan `<img>`, untuk otomatis memuat gambar secara lambat. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Gunakan komponen `gatsby-plugin-image` dan setel properti `loading` ke `eager`. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Gunakan `Gatsby Script API` untuk menunda pemuatan skrip pihak ketiga yang tidak penting. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Gunakan plugin `PurgeCSS` `Gatsby` untuk menghapus aturan yang tidak digunakan dari stylesheet. [Pelajari lebih lanjut](https://purgecss.com/plugins/gatsby.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Gunakan `Webpack Bundle Analyzer` untuk mendeteksi kode JavaScript yang tidak digunakan. [Pelajari lebih lanjut](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Mengonfigurasi cache untuk aset yang tidak dapat diubah. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Gunakan komponen `gatsby-plugin-image`, bukan `<img>`, untuk menyesuaikan kualitas gambar. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Gunakan komponen `gatsby-plugin-image` untuk menyetel `sizes` yang benar. [Pelajari lebih lanjut](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Sebaiknya upload GIF ke layanan yang akan menyediakannya untuk disematkan sebagai video HTML5."
@@ -2715,10 +2715,10 @@
     "message": "Tag `<link rel=preload>` dapat ditambahkan dengan [mengubah tata letak tema](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Gunakan komponen `next/image`, bukan `<img>`, untuk mengoptimalkan format gambar secara otomatis. [Pelajari lebih lanjut](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Gunakan komponen `next/image`, bukan `<img>`, untuk otomatis memuat gambar secara lambat. [Pelajari lebih lanjut](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Gunakan komponen `next/image` dan setel \"priority\" ke benar (true) untuk melakukan pramuat gambar LCP. [Pelajari lebih lanjut](https://nextjs.org/docs/api-reference/next/image#priority)."
@@ -2733,7 +2733,7 @@
     "message": "Sebaiknya siapkan `PurgeCSS` di konfigurasi `Next.js` untuk menghapus aturan yang tidak digunakan dari stylesheet. [Pelajari lebih lanjut](https://purgecss.com/guides/next.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Gunakan `Webpack Bundle Analyzer` untuk mendeteksi kode JavaScript yang tidak digunakan. [Pelajari lebih lanjut](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Sebaiknya gunakan `Next.js Analytics` untuk mengukur performa aplikasi Anda yang sebenarnya. [Pelajari lebih lanjut](https://nextjs.org/docs/advanced-features/measuring-performance)."
@@ -2742,7 +2742,7 @@
     "message": "Konfigurasi cache untuk aset dan halaman `Server-side Rendered` (SSR) yang tidak dapat diubah. [Pelajari lebih lanjut](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Gunakan komponen `next/image`, bukan `<img>`, untuk menyesuaikan kualitas gambar. [Pelajari lebih lanjut](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Gunakan komponen `next/image` untuk menyetel `sizes` yang benar. [Pelajari lebih lanjut](https://nextjs.org/docs/api-reference/next/image#sizes)."

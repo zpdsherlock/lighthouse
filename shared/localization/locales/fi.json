@@ -981,25 +981,25 @@
     "message": "Sallittu varoituksen kanssa"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% LCP:stä"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Vaihe"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Ajoitus"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "Tämä on näkymän suurin renderöity sisältö. [Lue lisää Sivun latautumisaika ‐mittarista](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)."
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Latautumisen viive"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Latautumisaika"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Renderöinnin viive"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "Käytä [Ezoic Leapia](https://pubdash.ezoic.com/speed) ja ota `Resize Images` käyttöön muuttaaksesi kuvien kokoa laitteisiin sopivaksi, jotta voit vähentää verkkoresurssien kokoja."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Optimoi kuvamuoto automaattisesti käyttämällä `gatsby-plugin-image`-komponenttia `<img>`-komponentin sijaan. [Lue lisää](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Lataa kuvat automaattisesti laiskasti käyttämällä `gatsby-plugin-image`-komponenttia `<img>`-komponentin sijaan. [Lue lisää](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Käytä `gatsby-plugin-image`-komponenttia ja aseta `loading`-omaisuuden arvoksi `eager`. [Lue lisää](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Lykkää ei-kriittisten kolmannen osapuolen skriptien lataamista suorittamalla `Gatsby Script API`. [Lue lisää](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Poista tyyliarkkien käyttämättömät säännöt `PurgeCSS` `Gatsby` ‐liitännäisellä. [Lue lisää](https://purgecss.com/plugins/gatsby.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Valitse `Webpack Bundle Analyzer`, jotta voit havaita käyttämättömän JavaScript-ohjelmakoodin. [Lue lisää](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Määritä muuttumattomien kohteiden välimuistiin tallentaminen. [Lue lisää](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Säädä kuvanlaatua käyttämällä `gatsby-plugin-image`-komponenttia `<img>`-komponentin sijaan. [Lue lisää](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Käytä `gatsby-plugin-image`-komponenttia, jotta `sizes` saa sopivan arvon. [Lue lisää](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "GIF kannattaa ehkä ladata palveluun, jonka avulla se voidaan upottaa HTML5-videona."
@@ -2715,10 +2715,10 @@
     "message": "`<link rel=preload>`-tagit voidaan lisätä [muuttamalla teeman asettelua](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Optimoi kuvamuoto automaattisesti käyttämällä `next/image`-komponenttia `<img>`-komponentin sijaan. [Lue lisää](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Lataa kuvat automaattisesti laiskasti käyttämällä `next/image`-komponenttia `<img>`-komponentin sijaan. [Lue lisää](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Käytä `next/image`-komponenttia ja aseta prioriteetti todeksi, jotta voit esiladata LCP-kuvan. [Lue lisää](https://nextjs.org/docs/api-reference/next/image#priority)."
@@ -2733,7 +2733,7 @@
     "message": "Ota `PurgeCSS` käyttöön määrityksessä (`Next.js`), jotta voit poistaa tyyliarkkien käyttämättömät säännöt. [Lue lisää](https://purgecss.com/guides/next.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Valitse `Webpack Bundle Analyzer`, jotta voit havaita käyttämättömän JavaScript-ohjelmakoodin. [Lue lisää](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Sinun kannattaa ehkä valita `Next.js Analytics`, jotta voit mitata sovelluksen todellista toimivuutta. [Lue lisää](https://nextjs.org/docs/advanced-features/measuring-performance)."
@@ -2742,7 +2742,7 @@
     "message": "Määritä muuttumattomien kohteiden ja `Server-side Rendered` (SSR) ‑sivujen välimuistiin siirtäminen. [Lue lisää](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Säädä kuvanlaatua käyttämällä `next/image`-komponenttia `<img>`-komponentin sijaan. [Lue lisää](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Suorita `next/image`, jotta `sizes` voi saada sopivan arvon. [Lue lisää](https://nextjs.org/docs/api-reference/next/image#sizes)."

@@ -981,28 +981,28 @@
     "message": "Được phép nhưng có cảnh báo"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% LCP (Nội dung lớn nhất hiển thị)"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Giai đoạn"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Thời gian"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "Đây là thành phần nội dung lớn nhất hiển thị trong khung nhìn. [Tìm hiểu thêm về thành phần Thời gian hiển thị nội dung lớn nhất](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Độ trễ khi tải"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Thời gian tải"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Độ trễ khi hiển thị"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
-    "message": "TTFB"
+    "message": "TTFB (Thời gian cho byte đầu tiên)"
   },
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Thành phần Thời gian hiển thị nội dung lớn nhất"
@@ -2610,31 +2610,31 @@
     "message": "Dùng [Ezoic Leap](https://pubdash.ezoic.com/speed) và bật `Resize Images` để thay đổi kích thước hình ảnh sao cho phù hợp với thiết bị, qua đó làm giảm dung lượng dữ liệu truyền qua mạng."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Sử dụng thành phần `gatsby-plugin-image` thay cho `<img>` để tự động tối ưu hoá định dạng hình ảnh. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Sử dụng thành phần `gatsby-plugin-image` thay cho `<img>` để tự động tải từng phần của hình ảnh. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Sử dụng thành phần `gatsby-plugin-image` và đặt thuộc tính `loading` thành `eager`. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Sử dụng `Gatsby Script API` để trì hoãn việc tải các tập lệnh không quan trọng của bên thứ ba. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Sử dụng trình bổ trợ `PurgeCSS` `Gatsby` để xoá các quy tắc không sử dụng khỏi biểu định kiểu. [Tìm hiểu thêm](https://purgecss.com/plugins/gatsby.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Sử dụng `Webpack Bundle Analyzer` để phát hiện mã JavaScript không được sử dụng. [Tìm hiểu thêm](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Định cấu hình bộ nhớ đệm cho các nội dung không thay đổi được. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Sử dụng thành phần `gatsby-plugin-image` thay cho `<img>` để điều chỉnh chất lượng ảnh. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Sử dụng thành phần `gatsby-plugin-image` để đặt `sizes` phù hợp. [Tìm hiểu thêm](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Hãy cân nhắc tải ảnh GIF lên một dịch vụ để có thể nhúng ảnh đó ở dạng video HTML5."
@@ -2715,10 +2715,10 @@
     "message": "Có thể thêm thẻ `<link rel=preload>` bằng cách [sửa đổi bố cục của một giao diện](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Sử dụng thành phần `next/image` thay cho `<img>` để tự động tối ưu hoá định dạng hình ảnh. [Tìm hiểu thêm](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Sử dụng thành phần `next/image` thay cho `<img>` để tự động tải từng phần của hình ảnh. [Tìm hiểu thêm](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Dùng thành phần `next/image` và thiết lập giá trị \"mức độ ưu tiên\" thành đúng (true) để tải trước hình ảnh LCP. [Tìm hiểu thêm](https://nextjs.org/docs/api-reference/next/image#priority)."
@@ -2733,7 +2733,7 @@
     "message": "Hãy cân nhắc đặt `PurgeCSS` trong cấu hình `Next.js` để xoá các quy tắc không sử dụng khỏi biểu định kiểu. [Tìm hiểu thêm](https://purgecss.com/guides/next.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Sử dụng `Webpack Bundle Analyzer` để phát hiện mã JavaScript không được sử dụng. [Tìm hiểu thêm](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Hãy cân nhắc dùng `Next.js Analytics` để đo lường hiệu suất của ứng dụng trong thực tế. [Tìm hiểu thêm](https://nextjs.org/docs/advanced-features/measuring-performance)."
@@ -2742,7 +2742,7 @@
     "message": "Định cấu hình bộ nhớ đệm cho các trang `Server-side Rendered` (SSR) và thành phần không thay đổi được. [Tìm hiểu thêm](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Sử dụng thành phần `next/image` thay cho `<img>` để điều chỉnh chất lượng ảnh. [Tìm hiểu thêm](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Hãy dùng phần tử `next/image` để đặt `sizes` phù hợp. [Tìm hiểu thêm](https://nextjs.org/docs/api-reference/next/image#sizes)."

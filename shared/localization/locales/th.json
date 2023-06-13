@@ -981,25 +981,25 @@
     "message": "อนุญาตแบบมีคำเตือน"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% ของ LCP"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "ระยะ"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "ช่วงเวลา"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "นี่คือองค์ประกอบเนื้อหาขนาดใหญ่สุดซึ่งแสดงผลภายในวิวพอร์ต [ดูข้อมูลเพิ่มเติมเกี่ยวกับองค์ประกอบ Largest Contentful Paint](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "ความล่าช้าในการโหลด"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "เวลาที่ใช้ในการโหลด"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "ความล่าช้าในการแสดงผล"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "ใช้ [Ezoic Leap](https://pubdash.ezoic.com/speed) และเปิดใช้งาน `Resize Images` เพื่อปรับขนาดรูปภาพให้เหมาะสมกับอุปกรณ์ ซึ่งจะทำให้ขนาดเพย์โหลดของเครือข่ายเล็กลง"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "ใช้คอมโพเนนต์ `gatsby-plugin-image` แทน `<img>` เพื่อเพิ่มประสิทธิภาพรูปแบบรูปภาพโดยอัตโนมัติ [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "ใช้คอมโพเนนต์ `gatsby-plugin-image` แทน `<img>` เพื่อโหลดรูปภาพแบบ Lazy Loading โดยอัตโนมัติ [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "ใช้คอมโพเนนต์ `gatsby-plugin-image` และตั้งค่าพร็อพเพอร์ตี้ `loading` เป็น `eager` [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "ใช้ `Gatsby Script API` เพื่อเลื่อนการโหลดสคริปต์บุคคลที่สามที่ไม่สำคัญ [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "ใช้ปลั๊กอิน `PurgeCSS` `Gatsby` เพื่อนำกฎที่ไม่ได้ใช้ออกจากสไตล์ชีต [ดูข้อมูลเพิ่มเติม](https://purgecss.com/plugins/gatsby.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "ใช้ `Webpack Bundle Analyzer` เพื่อตรวจหาโค้ด JavaScript ที่ไม่ได้ใช้ [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "กำหนดค่าการแคชสำหรับเนื้อหาที่เปลี่ยนแปลงไม่ได้ [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "ใช้คอมโพเนนต์ `gatsby-plugin-image` แทน `<img>` เพื่อปรับคุณภาพของรูป [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "ใช้คอมโพเนนต์ `gatsby-plugin-image` เพื่อกำหนด `sizes` ที่เหมาะสม [ดูข้อมูลเพิ่มเติม](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)"
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "ลองอัปโหลด GIF ไปยังบริการซึ่งจะทำให้ใช้ GIF เพื่อฝังเป็นวิดีโอ HTML5 ได้"
@@ -2715,10 +2715,10 @@
     "message": "เพิ่มแท็ก `<link rel=preload>` ได้โดย[แก้ไขเลย์เอาต์ของธีม](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "ใช้คอมโพเนนต์ `next/image` แทน `<img>` เพื่อเพิ่มประสิทธิภาพรูปแบบรูปภาพโดยอัตโนมัติ [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "ใช้คอมโพเนนต์ `next/image` แทน `<img>` เพื่อโหลดรูปภาพแบบ Lazy Loading โดยอัตโนมัติ [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "ใช้คอมโพเนนต์ `next/image` และตั้ง \"ลำดับความสำคัญ\" เป็น \"จริง\" เพื่อโหลดรูปภาพ LCP ไว้ล่วงหน้า [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/api-reference/next/image#priority)"
@@ -2733,7 +2733,7 @@
     "message": "พิจารณาตั้งค่า `PurgeCSS` ในการกำหนดค่า `Next.js` เพื่อนำกฎที่ไม่ได้ใช้ออกจากสไตล์ชีต [ดูข้อมูลเพิ่มเติม](https://purgecss.com/guides/next.html)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "ใช้ `Webpack Bundle Analyzer` เพื่อตรวจหาโค้ด JavaScript ที่ไม่ได้ใช้ [ดูข้อมูลเพิ่มเติม](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "พิจารณาใช้ `Next.js Analytics` เพื่อวัดประสิทธิภาพแอปในการใช้งานจริง [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/advanced-features/measuring-performance)"
@@ -2742,7 +2742,7 @@
     "message": "กำหนดค่าการแคชสำหรับเนื้อหาและหน้า `Server-side Rendered` (SSR) ที่เปลี่ยนแปลงไม่ได้ [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/going-to-production#caching)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "ใช้คอมโพเนนต์ `next/image` แทน `<img>` เพื่อปรับคุณภาพของรูป [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/basic-features/image-optimization)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "ใช้คอมโพเนนต์ `next/image` เพื่อกำหนด `sizes` ที่เหมาะสม [ดูข้อมูลเพิ่มเติม](https://nextjs.org/docs/api-reference/next/image#sizes)"

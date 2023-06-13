@@ -981,28 +981,28 @@
     "message": "[Åļļöŵéð ŵîţĥ ŵåŕñîñĝ one two three]"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "[% oƒ ĻÇÞ one]"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "[Þĥåšé one]"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "[Ţîmîñĝ one]"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "[Ţĥîš îš ţĥé ļåŕĝéšţ çöñţéñţƒûļ éļéméñţ þåîñţéð ŵîţĥîñ ţĥé vîéŵþöŕţ. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ţĥé Ļåŕĝéšţ Çöñţéñţƒûļ Þåîñţ éļéméñţᐅ](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)ᐊ one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty]"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "[Ļöåð Ðéļåý one two]"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "[Ļöåð Ţîmé one two]"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "[Ŕéñðéŕ Ðéļåý one two]"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
-    "message": "TTFB"
+    "message": "[ŢŢFБ one]"
   },
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "[Ļåŕĝéšţ Çöñţéñţƒûļ Þåîñţ éļéméñţ one two three four five six seven]"
@@ -2610,31 +2610,31 @@
     "message": "[Ûšé ᐅ[ᐊÉžöîç Ļéåþᐅ](https://pubdash.ezoic.com/speed)ᐊ åñð éñåбļé ᐅ`Resize Images`ᐊ ţö ŕéšîžé îmåĝéš ţö å ðévîçé åþþŕöþŕîåţé šîžé, ŕéðûçîñĝ ñéţŵöŕķ þåýļöåð šîžéš. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "[Ûšé ţĥé ᐅ`gatsby-plugin-image`ᐊ çömþöñéñţ îñšţéåð öƒ ᐅ`<img>`ᐊ ţö åûţömåţîçåļļý öþţîmîžé îmåĝé ƒöŕmåţ. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "[Ûšé ţĥé ᐅ`gatsby-plugin-image`ᐊ çömþöñéñţ îñšţéåð öƒ ᐅ`<img>`ᐊ ţö åûţömåţîçåļļý ļåžý-ļöåð îmåĝéš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "[Ûšé ţĥé ᐅ`gatsby-plugin-image`ᐊ çömþöñéñţ åñð šéţ ţĥé ᐅ`loading`ᐊ þŕöþ ţö ᐅ`eager`ᐊ. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "[Ûšé ţĥé ᐅ`Gatsby Script API`ᐊ ţö ðéƒéŕ ļöåðîñĝ öƒ ñöñ-çŕîţîçåļ ţĥîŕð-þåŕţý šçŕîþţš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "[Ûšé ţĥé ᐅ`PurgeCSS`ᐊ ᐅ`Gatsby`ᐊ þļûĝîñ ţö ŕémövé ûñûšéð ŕûļéš ƒŕöm šţýļéšĥééţš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://purgecss.com/plugins/gatsby.html)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "[Ûšé ᐅ`Webpack Bundle Analyzer`ᐊ ţö ðéţéçţ ûñûšéð ĴåvåŠçŕîþţ çöðé. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)ᐊ one two three four five six seven eight nine ten eleven twelve]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "[Çöñƒîĝûŕé çåçĥîñĝ ƒöŕ îmmûţåбļé åššéţš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)ᐊ. one two three four five six seven eight nine ten eleven twelve]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "[Ûšé ţĥé ᐅ`gatsby-plugin-image`ᐊ çömþöñéñţ îñšţéåð öƒ ᐅ`<img>`ᐊ ţö åðĵûšţ îmåĝé qûåļîţý. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "[Ûšé ţĥé ᐅ`gatsby-plugin-image`ᐊ çömþöñéñţ ţö šéţ åþþŕöþŕîåţé ᐅ`sizes`ᐊ. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)ᐊ. one two three four five six seven eight nine ten eleven twelve]"
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "[Çöñšîðéŕ ûþļöåðîñĝ ýöûŕ ĜÎF ţö å šéŕvîçé ŵĥîçĥ ŵîļļ måķé îţ åvåîļåбļé ţö émбéð åš åñ ĤŢMĻ5 vîðéö. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen]"
@@ -2715,10 +2715,10 @@
     "message": "[ᐅ`<link rel=preload>`ᐊ ţåĝš çåñ бé åððéð бý ᐅ[ᐊmöðîƒýîñĝ å ţĥéméš'š ļåýöûţᐅ](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)ᐊ. one two three four five six seven eight nine ten eleven twelve]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "[Ûšé ţĥé ᐅ`next/image`ᐊ çömþöñéñţ îñšţéåð öƒ ᐅ`<img>`ᐊ ţö åûţömåţîçåļļý öþţîmîžé îmåĝé ƒöŕmåţ. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/basic-features/image-optimization)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "[Ûšé ţĥé ᐅ`next/image`ᐊ çömþöñéñţ îñšţéåð öƒ ᐅ`<img>`ᐊ ţö åûţömåţîçåļļý ļåžý-ļöåð îmåĝéš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/basic-features/image-optimization)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "[Ûšé ţĥé ᐅ`next/image`ᐊ çömþöñéñţ åñð šéţ \"þŕîöŕîţý\" ţö ţŕûé ţö þŕéļöåð ĻÇÞ îmåĝé. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/api-reference/next/image#priority)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen]"
@@ -2733,7 +2733,7 @@
     "message": "[Çöñšîðéŕ šéţţîñĝ ûþ ᐅ`PurgeCSS`ᐊ îñ ᐅ`Next.js`ᐊ çöñƒîĝûŕåţîöñ ţö ŕémövé ûñûšéð ŕûļéš ƒŕöm šţýļéšĥééţš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://purgecss.com/guides/next.html)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "[Ûšé ᐅ`Webpack Bundle Analyzer`ᐊ ţö ðéţéçţ ûñûšéð ĴåvåŠçŕîþţ çöðé. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)ᐊ one two three four five six seven eight nine ten eleven twelve]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "[Çöñšîðéŕ ûšîñĝ ᐅ`Next.js Analytics`ᐊ ţö méåšûŕé ýöûŕ åþþ'š ŕéåļ-ŵöŕļð þéŕƒöŕmåñçé. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/advanced-features/measuring-performance)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen]"
@@ -2742,7 +2742,7 @@
     "message": "[Çöñƒîĝûŕé çåçĥîñĝ ƒöŕ îmmûţåбļé åššéţš åñð ᐅ`Server-side Rendered`ᐊ (ŠŠŔ) þåĝéš. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/going-to-production#caching)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "[Ûšé ţĥé ᐅ`next/image`ᐊ çömþöñéñţ îñšţéåð öƒ ᐅ`<img>`ᐊ ţö åðĵûšţ îmåĝé qûåļîţý. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/basic-features/image-optimization)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "[Ûšé ţĥé ᐅ`next/image`ᐊ çömþöñéñţ ţö šéţ ţĥé åþþŕöþŕîåţé ᐅ`sizes`ᐊ. ᐅ[ᐊĻéåŕñ möŕéᐅ](https://nextjs.org/docs/api-reference/next/image#sizes)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen]"

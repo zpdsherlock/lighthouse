@@ -981,25 +981,25 @@
     "message": "允许（附带警告）"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "LCP 占比 (%)"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "阶段"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "用时"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "这是此视口内绘制的最大内容元素。[详细了解 Largest Contentful Paint 元素](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "加载延迟"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "加载时间"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "渲染延迟"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
     "message": "TTFB"
@@ -2610,31 +2610,31 @@
     "message": "您只需使用 [Ezoic Leap](https://pubdash.ezoic.com/speed) 并启用“`Resize Images`”设置，即可调整图片大小以适合设备的大小，从而减少网络载荷量。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "请使用 `gatsby-plugin-image` 组件（而非 `<img>`）自动优化图片格式。[了解详情](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "请使用 `gatsby-plugin-image` 组件（而非 `<img>`）自动延迟加载图片。[了解详情](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "请使用 `gatsby-plugin-image` 组件并将 `loading` 属性设为 `eager`。[了解详情](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "请使用 `Gatsby Script API` 推迟加载非关键第三方脚本。[了解详情](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "请使用 `PurgeCSS` `Gatsby` 插件从样式表中移除未使用的规则。[了解详情](https://purgecss.com/plugins/gatsby.html)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "请使用 `Webpack Bundle Analyzer` 检测未使用的 JavaScript 代码。[了解详情](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "请为不可变资源配置缓存。[了解详情](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "请使用 `gatsby-plugin-image` 组件（而非 `<img>`）调整图片质量。[了解详情](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)。"
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "请使用 `gatsby-plugin-image` 组件设置适当的 `sizes`。[了解详情](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)。"
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "建议您将 GIF 上传到可让其作为 HTML5 视频嵌入的服务。"
@@ -2715,10 +2715,10 @@
     "message": "您可以通过[修改主题背景的布局](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)来添加 `<link rel=preload>` 标记。"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "请使用 `next/image` 组件（而非 `<img>`）自动优化图片格式。[了解详情](https://nextjs.org/docs/basic-features/image-optimization)。"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "请使用 `next/image` 组件（而非 `<img>`）自动延迟加载图片。[了解详情](https://nextjs.org/docs/basic-features/image-optimization)。"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "您只需使用 `next/image` 组件并将“priority”设为 true，即可预加载 LCP 图片。[了解详情](https://nextjs.org/docs/api-reference/next/image#priority)。"
@@ -2733,7 +2733,7 @@
     "message": "建议您在 `Next.js` 配置中设置 `PurgeCSS` 以从样式表中移除未使用的规则。[了解详情](https://purgecss.com/guides/next.html)。"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "请使用 `Webpack Bundle Analyzer` 检测未使用的 JavaScript 代码。[了解详情](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "建议您使用 `Next.js Analytics` 衡量应用的实际性能。[了解详情](https://nextjs.org/docs/advanced-features/measuring-performance)。"
@@ -2742,7 +2742,7 @@
     "message": "请为不可变资源和`Server-side Rendered` (SSR) 网页配置缓存。[了解详情](https://nextjs.org/docs/going-to-production#caching)。"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "请使用 `next/image` 组件（而非 `<img>`）调整图片质量。[了解详情](https://nextjs.org/docs/basic-features/image-optimization)。"
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "请使用 `next/image` 组件设置适当的 `sizes`。[了解详情](https://nextjs.org/docs/api-reference/next/image#sizes)。"

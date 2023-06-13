@@ -981,28 +981,28 @@
     "message": "Atļauts ar brīdinājumu"
   },
   "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
-    "message": "% of LCP"
+    "message": "% no LSA"
   },
   "core/audits/largest-contentful-paint-element.js | columnPhase": {
-    "message": "Phase"
+    "message": "Posms"
   },
   "core/audits/largest-contentful-paint-element.js | columnTiming": {
-    "message": "Timing"
+    "message": "Laiks"
   },
   "core/audits/largest-contentful-paint-element.js | description": {
     "message": "Tas ir lielākais skatvietā atveidotais satura elements. [Uzziniet vairāk par lielāko satura atveidojuma elementu](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)."
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
-    "message": "Load Delay"
+    "message": "Ielādes aizkave"
   },
   "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
-    "message": "Load Time"
+    "message": "Ielādes laiks"
   },
   "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
-    "message": "Render Delay"
+    "message": "Atveidošanas aizkave"
   },
   "core/audits/largest-contentful-paint-element.js | itemTTFB": {
-    "message": "TTFB"
+    "message": "LLPB"
   },
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Lielākais satura atveidojuma elements"
@@ -2610,31 +2610,31 @@
     "message": "Izmantojiet [Ezoic Leap](https://pubdash.ezoic.com/speed) un iespējojiet `Resize Images`, lai mainītu attēlu izmērus atbilstoši ierīcei, tādējādi samazinot tīkla lietderīgo slodzi."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically optimize image format. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Lai automātiski optimizētu attēlu formātu, izmantojiet komponentu `gatsby-plugin-image`, nevis `<img>`. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Lai automātiski atliktu attēlu ielādi, izmantojiet komponentu `gatsby-plugin-image`, nevis `<img>`. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
-    "message": "Use the `gatsby-plugin-image` component and set the `loading` prop to `eager`. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+    "message": "Izmantojiet komponentu `gatsby-plugin-image` un iestatiet elementa `loading` vērtību `eager`. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
-    "message": "Use the `Gatsby Script API` to defer loading of non-critical third-party scripts. [Learn more](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+    "message": "Izmantojiet `Gatsby Script API`, lai atliktu mazāk svarīgu trešās puses skriptu ielādi. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
-    "message": "Use the `PurgeCSS` `Gatsby` plugin to remove unused rules from stylesheets. [Learn more](https://purgecss.com/plugins/gatsby.html)."
+    "message": "Izmantojiet `PurgeCSS` `Gatsby` spraudni, lai noņemtu neizmantotas stilu lapu kārtulas. [Uzziniet vairāk](https://purgecss.com/plugins/gatsby.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+    "message": "Lai noteiktu neizmantotu JavaScript kodu, izmantojiet `Webpack Bundle Analyzer`. [Uzziniet vairāk](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
-    "message": "Configure caching for immutable assets. [Learn more](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+    "message": "Konfigurējiet nemainīgu līdzekļu saglabāšanu kešatmiņā. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
-    "message": "Use the `gatsby-plugin-image` component instead of `<img>` to adjust image quality. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Lai pielāgotu attēlu kvalitāti, izmantojiet komponentu `gatsby-plugin-image`, nevis `<img>`. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
-    "message": "Use the `gatsby-plugin-image` component to set appropriate `sizes`. [Learn more](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+    "message": "Lai iestatītu atbilstošās elementa `sizes` vērtības, izmantojiet komponentu `gatsby-plugin-image`. [Uzziniet vairāk](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Ieteicams augšupielādēt GIF failu pakalpojumā, kuru varēs izmantot, lai iegultu GIF failu kā HTML5 videoklipu."
@@ -2715,10 +2715,10 @@
     "message": "Varat pievienot `<link rel=preload>` tagus, [modificējot motīva izkārtojumu](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically optimize image format. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Lai automātiski optimizētu attēlu formātu, izmantojiet komponentu `next/image`, nevis `<img>`. [Uzziniet vairāk](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Use the `next/image` component instead of `<img>` to automatically lazy-load images. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Lai automātiski atliktu attēlu ielādi, izmantojiet komponentu `next/image`, nevis `<img>`. [Uzziniet vairāk](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
     "message": "Izmantojiet komponentu `next/image` un iestatiet opcijai “priority” vērtību “true”, lai iepriekš ielādētu LCP attēlu. [Uzziniet vairāk](https://nextjs.org/docs/api-reference/next/image#priority)."
@@ -2733,7 +2733,7 @@
     "message": "Lai noņemtu neizmantotas stilu lapu kārtulas, `Next.js` konfigurācijā ieteicams iestatīt spraudni `PurgeCSS`. [Uzziniet vairāk](https://purgecss.com/guides/next.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-javascript": {
-    "message": "Use `Webpack Bundle Analyzer` to detect unused JavaScript code. [Learn more](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)"
+    "message": "Lai noteiktu neizmantotu JavaScript kodu, izmantojiet `Webpack Bundle Analyzer`. [Uzziniet vairāk](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | user-timings": {
     "message": "Lai novērtētu lietotnes faktisko veiktspēju ieteicams izmantot `Next.js Analytics`. [Uzziniet vairāk](https://nextjs.org/docs/advanced-features/measuring-performance)."
@@ -2742,7 +2742,7 @@
     "message": "Konfigurējiet nemainīgu līdzekļu un `Server-side Rendered` (SSR) lapu saglabāšanu kešatmiņā. [Uzziniet vairāk](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Use the `next/image` component instead of `<img>` to adjust image quality. [Learn more](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Lai pielāgotu attēlu kvalitāti, izmantojiet komponentu `next/image`, nevis `<img>`. [Uzziniet vairāk](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Lai iestatītu atbilstošās elementa `sizes` vērtības, izmantojiet komponentu `next/image`. [Uzziniet vairāk](https://nextjs.org/docs/api-reference/next/image#sizes)."
