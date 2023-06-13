@@ -2432,10 +2432,10 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-chrome-devtools-frontend@1.0.1070764:
-  version "1.0.1070764"
-  resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.1070764.tgz#aa0726ef8b38c20bb48fcd72a1c941d9e6b91b68"
-  integrity sha512-MJCZgLZlKgIpE+gemtc1a9ejPopTA2Rj1iEdRnxl8YON7V13Po4W1vKo+YrVcqUbNpVAaQ5NnZLQQOmnIRTXZg==
+chrome-devtools-frontend@1.0.1153166:
+  version "1.0.1153166"
+  resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.1153166.tgz#dea2625a9e5404f26d466ac2bd4f6b0f6d554c57"
+  integrity sha512-oMzyDtW9tj6lbccWUV9BH4NoUNuM7TUmpJbHMObIQdsr2MwbRDHuvjnOE1+7ITQeWudRnM0n1ZD6Efu9m+qjfw==
 
 chrome-launcher@^0.15.2:
   version "0.15.2"
