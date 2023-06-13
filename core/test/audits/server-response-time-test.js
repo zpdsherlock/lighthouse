@@ -7,6 +7,10 @@
 import ServerResponseTime from '../../audits/server-response-time.js';
 import {networkRecordsToDevtoolsLog} from '../network-records-to-devtools-log.js';
 describe('Performance: server-response-time audit', () => {
+  afterEach(() => {
+    global.isLightrider = undefined;
+  });
+
   it('fails when response time of root document is higher than 600ms', async () => {
     const mainResource = {
       url: 'https://example.com/',
@@ -57,6 +61,37 @@ describe('Performance: server-response-time audit', () => {
       metricSavings: {
         FCP: 100,
         LCP: 100,
+      },
+    });
+  });
+
+  it('use timing from lrStatistics when available', async () => {
+    global.isLightrider = true;
+    const mainResource = {
+      url: 'https://example.com/',
+      requestId: '0',
+      responseHeaders: [
+        {name: 'X-RequestMs', value: '1000'},
+        // Only to pass the checksum in _updateTimingsForLightrider.
+        {name: 'X-ResponseMs', value: '4000'},
+        {name: 'X-TotalMs', value: '5000'},
+      ],
+    };
+    const devtoolsLog = networkRecordsToDevtoolsLog([mainResource]);
+
+    const artifacts = {
+      devtoolsLogs: {[ServerResponseTime.DEFAULT_PASS]: devtoolsLog},
+      URL: {mainDocumentUrl: 'https://example.com/'},
+      GatherContext: {gatherMode: 'navigation'},
+    };
+
+    const result = await ServerResponseTime.audit(artifacts, {computedCache: new Map()});
+    expect(result).toMatchObject({
+      numericValue: 1000,
+      score: 0,
+      metricSavings: {
+        FCP: 900,
+        LCP: 900,
       },
     });
   });
