@@ -3062,6 +3062,21 @@
   "node_modules/lighthouse-stack-packs/packs/react.js | user-timings": {
     "message": "Use the React DevTools Profiler, which makes use of the Profiler API, to measure the rendering performance of your components. [Learn more.](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)"
   },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | efficient-animated-content": {
+    "message": "Place videos inside `VideoBoxes`, customize them using `Video Masks` or add `Transparent Videos`. [Learn more](https://support.wix.com/en/article/wix-video-about-wix-video)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | modern-image-formats": {
+    "message": "Upload images using `Wix Media Manager` to ensure they are automatically served as WebP. Find [more ways to optimize](https://support.wix.com/en/article/site-performance-optimizing-your-media) your site's media."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | render-blocking-resources": {
+    "message": "When [adding third-party code](https://support.wix.com/en/article/site-performance-using-third-party-code-on-your-site) in the `Custom Code` tab of your site's dashboard, make sure it's deferred or loaded at the end of the code body. Where possible, use Wix’s [integrations](https://support.wix.com/en/article/about-marketing-integrations) to embed marketing tools on your site. "
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | server-response-time": {
+    "message": "Wix utilizes CDNs and caching to serve responses as fast as possible for most visitors. Consider [manually enabling caching](https://support.wix.com/en/article/site-performance-caching-pages-to-optimize-loading-speed) for your site, especially if using `Velo`."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | unused-javascript": {
+    "message": "Review any third-party code you've added to your site in the `Custom Code` tab of your site's dashboard and only keep the services that are necessary to your site. [Find out more](https://support.wix.com/en/article/site-performance-removing-unused-javascript)."
+  },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | efficient-animated-content": {
     "message": "Consider uploading your GIF to a service which will make it available to embed as an HTML5 video."
   },

@@ -5210,10 +5210,10 @@ lighthouse-plugin-soft-navigation@^1.0.1:
   resolved "https://registry.yarnpkg.com/lighthouse-plugin-soft-navigation/-/lighthouse-plugin-soft-navigation-1.0.1.tgz#82fb2008991458d753a819dd3e1f076d55eb2bfb"
   integrity sha512-lvwiC9Bp/kzx7WTsPw/tjv1MkeRnvX2rKNTHDBSOOPYLsvaPrnaCk+6n+1sfinwLM6LAAWp5B9mTdi+G/31iDQ==
 
-lighthouse-stack-packs@1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/lighthouse-stack-packs/-/lighthouse-stack-packs-1.10.0.tgz#1036db27deb27506012e767202489689524a26e9"
-  integrity sha512-5nvJS+IkZUbnDpIeJLi1xdnCfftBFMkxXfA5HHlEC1EQFQ2a8YPos6vl11oERHuIlDFEnVkaOeNaSIrL2K/9Gg==
+lighthouse-stack-packs@1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/lighthouse-stack-packs/-/lighthouse-stack-packs-1.11.0.tgz#9b17b24651b60242581abf2086ea34ff1c869f58"
+  integrity sha512-sRr0z1S/I26VffRLq9KJsKtLk856YrJlNGmcJmbLX8dFn3MuzVPUbstuChEhqnSxZb8TZmVfthuXuwhG9vRoSw==
 
 lines-and-columns@^1.1.6:
   version "1.2.4"

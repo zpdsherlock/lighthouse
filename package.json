@@ -198,7 +198,7 @@
     "jpeg-js": "^0.4.4",
     "js-library-detector": "^6.6.0",
     "lighthouse-logger": "^1.4.1",
-    "lighthouse-stack-packs": "1.10.0",
+    "lighthouse-stack-packs": "1.11.0",
     "lodash": "^4.17.21",
     "lookup-closest-locale": "6.2.0",
     "metaviewport-parser": "0.3.0",

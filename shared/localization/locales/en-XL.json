@@ -3062,6 +3062,21 @@
   "node_modules/lighthouse-stack-packs/packs/react.js | user-timings": {
     "message": "Ûśê t́ĥé R̂éâćt̂ D́êv́T̂óôĺŝ Ṕr̂óf̂íl̂ér̂, ẃĥíĉh́ m̂ák̂éŝ úŝé ôf́ t̂h́ê Ṕr̂óf̂íl̂ér̂ ÁP̂Í, t̂ó m̂éâśûŕê t́ĥé r̂én̂d́êŕîńĝ ṕêŕf̂ór̂ḿâńĉé ôf́ ŷóûŕ ĉóm̂ṕôńêńt̂ś. [L̂éâŕn̂ ḿôŕê.](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)"
   },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | efficient-animated-content": {
+    "message": "P̂ĺâćê v́îd́êóŝ ín̂śîd́ê `VideoBoxes`, ćûśt̂óm̂íẑé t̂h́êḿ ûśîńĝ `Video Masks` ór̂ ád̂d́ `Transparent Videos`. [L̂éâŕn̂ ḿôŕê](https://support.wix.com/en/article/wix-video-about-wix-video)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | modern-image-formats": {
+    "message": "Ûṕl̂óâd́ îḿâǵêś ûśîńĝ `Wix Media Manager` t́ô én̂śûŕê t́ĥéŷ ár̂é âút̂óm̂át̂íĉál̂ĺŷ śêŕv̂éd̂ áŝ Ẃêb́P̂. F́îńd̂ [ḿôŕê ẃâýŝ t́ô óp̂t́îḿîźê](https://support.wix.com/en/article/site-performance-optimizing-your-media) ýôúr̂ śît́ê'ś m̂éd̂íâ."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | render-blocking-resources": {
+    "message": "Ŵh́êń [âd́d̂ín̂ǵ t̂h́îŕd̂-ṕâŕt̂ý ĉód̂é](https://support.wix.com/en/article/site-performance-using-third-party-code-on-your-site) îń t̂h́ê `Custom Code` t́âb́ ôf́ ŷóûŕ ŝít̂é'ŝ d́âśĥb́ôár̂d́, m̂ák̂é ŝúr̂é ît́'ŝ d́êf́êŕr̂éd̂ ór̂ ĺôád̂éd̂ át̂ t́ĥé êńd̂ óf̂ t́ĥé ĉód̂é b̂ód̂ý. Ŵh́êŕê ṕôśŝíb̂ĺê, úŝé Ŵíx̂’ś [îńt̂éĝŕât́îón̂ś](https://support.wix.com/en/article/about-marketing-integrations) t̂ó êḿb̂éd̂ ḿâŕk̂ét̂ín̂ǵ t̂óôĺŝ ón̂ ýôúr̂ śît́ê. "
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | server-response-time": {
+    "message": "Ŵíx̂ út̂íl̂íẑéŝ ĆD̂Ńŝ án̂d́ ĉáĉh́îńĝ t́ô śêŕv̂é r̂éŝṕôńŝéŝ áŝ f́âśt̂ áŝ ṕôśŝíb̂ĺê f́ôŕ m̂óŝt́ v̂íŝít̂ór̂ś. Ĉón̂śîd́êŕ [m̂án̂úâĺl̂ý êńâb́l̂ín̂ǵ ĉáĉh́îńĝ](https://support.wix.com/en/article/site-performance-caching-pages-to-optimize-loading-speed) f́ôŕ ŷóûŕ ŝít̂é, êśp̂éĉíâĺl̂ý îf́ ûśîńĝ `Velo`."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wix.js | unused-javascript": {
+    "message": "R̂év̂íêẃ âńŷ t́ĥír̂d́-p̂ár̂t́ŷ ćôd́ê ýôú'v̂é âd́d̂éd̂ t́ô ýôúr̂ śît́ê ín̂ t́ĥé `Custom Code` t̂áb̂ óf̂ ýôúr̂ śît́ê'ś d̂áŝh́b̂óâŕd̂ án̂d́ ôńl̂ý k̂éêṕ t̂h́ê śêŕv̂íĉéŝ t́ĥát̂ ár̂é n̂éĉéŝśâŕŷ t́ô ýôúr̂ śît́ê. [F́îńd̂ óût́ m̂ór̂é](https://support.wix.com/en/article/site-performance-removing-unused-javascript)."
+  },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | efficient-animated-content": {
     "message": "Ĉón̂śîd́êŕ ûṕl̂óâd́îńĝ ýôúr̂ ǴÎF́ t̂ó â śêŕv̂íĉé ŵh́îćĥ ẃîĺl̂ ḿâḱê ít̂ áv̂áîĺâb́l̂é t̂ó êḿb̂éd̂ áŝ án̂ H́T̂ḾL̂5 v́îd́êó."
   },
