@@ -24,6 +24,14 @@
         aria-checked="true">
       </div>
     </section>
+    <p>aria-command-name</p>
+    <section>
+      <div id="aria-command-name" role="button"></div>
+    </section>
+    <p>aria-dialog-name</p>
+    <section>
+      <div role="alertdialog" id="aria-dialog-name" aria-label=""></div>
+    </section>
     <p>aria-hidden-focus</p>
     <section>
       <div id="aria-hidden-focus" aria-hidden="true">
@@ -43,10 +51,6 @@
       <div role="tree">
         <div id="aria-treeitem-name" role="treeitem"></div>
       </div>
-    </section>
-    <p>aria-command-name</p>
-    <section>
-      <div id="aria-command-name" role="button"></div>
     </section>
     <p>aria-tooltip-name</p>
     <section>
@@ -83,6 +87,12 @@
     <p>aria-roles</p>
     <section>
       <div role="foo"></div>
+    </section>
+    <p>aria-text</p>
+    <section>
+      <span role="text" id="aria-text">
+        <a href="google.com">Not announced</a>
+      </span>
     </section>
     <p>aria-valid-attr</p>
     <section>
@@ -180,6 +190,19 @@
       <table id="layout-table">
       </table>
     </section>
+    <p>link-in-text-block</p>
+    <section>
+      <p>
+          paragraph text
+          <a
+            style="text-decoration: none; color: blue"
+            href="#"
+            id="link-in-text-block">
+            link text
+          </a>
+          paragraph text
+      </p>
+    </section>
     <p>link-name</p>
     <section>
       <a id="link-name" href="google.com"></a>
@@ -197,6 +220,10 @@
     <p>object-alt</p>
     <section>
       <object id="object-alt" data="data:text/html,data"></object>
+    </section>
+    <p>select-name</p>
+    <section>
+      <select id="select-name"></select>
     </section>
     <p>tabindex</p>
     <section>

@@ -2993,6 +2993,18 @@
       "score": null,
       "scoreDisplayMode": "notApplicable"
     },
+    "aria-dialog-name": {
+      "id": "aria-dialog-name",
+      "title": "Elements with `role=\"dialog\"` or `role=\"alertdialog\"` have accessible names.",
+      "description": "ARIA dialog elements without accessible names may prevent screen readers users from discerning the purpose of these elements. [Learn how to make ARIA dialog elements more accessible](https://dequeuniversity.com/rules/axe/4.7/aria-dialog-name).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
     "aria-hidden-body": {
       "id": "aria-hidden-body",
       "title": "`[aria-hidden=\"true\"]` is not present on the document `<body>`",
@@ -3063,6 +3075,18 @@
       "id": "aria-roles",
       "title": "`[role]` values are valid",
       "description": "ARIA roles must have valid values in order to perform their intended accessibility functions. [Learn more about valid ARIA roles](https://dequeuniversity.com/rules/axe/4.7/aria-roles).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
+    "aria-text": {
+      "id": "aria-text",
+      "title": "Elements with the `role=text` attribute do not have focusable descendents.",
+      "description": "Adding `role=text` around a text node split by markup enables VoiceOver to treat it as one phrase, but the element's focusable descendents will not be announced. [Learn more about the `role=text` attribute](https://dequeuniversity.com/rules/axe/4.7/aria-text).",
       "score": 1,
       "scoreDisplayMode": "binary",
       "details": {
@@ -3676,6 +3700,18 @@
         }
       }
     },
+    "link-in-text-block": {
+      "id": "link-in-text-block",
+      "title": "Links are distinguishable without relying on color.",
+      "description": "Low-contrast text is difficult or impossible for many users to read. Link text that is discernible improves the experience for users with low vision. [Learn how to make links distinguishable](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
     "list": {
       "id": "list",
       "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
@@ -3780,6 +3816,13 @@
           ]
         }
       }
+    },
+    "select-name": {
+      "id": "select-name",
+      "title": "Select elements have associated label elements.",
+      "description": "Form elements without effective labels can create frustrating experiences for screen reader users. [Learn more about the `select` element](https://dequeuniversity.com/rules/axe/4.7/select-name).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
     },
     "tabindex": {
       "id": "tabindex",
@@ -5889,6 +5932,11 @@
           "group": "a11y-aria"
         },
         {
+          "id": "aria-dialog-name",
+          "weight": 3,
+          "group": "a11y-aria"
+        },
+        {
           "id": "aria-hidden-body",
           "weight": 10,
           "group": "a11y-aria"
@@ -5931,6 +5979,11 @@
         {
           "id": "aria-roles",
           "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-text",
+          "weight": 3,
           "group": "a11y-aria"
         },
         {
@@ -6049,6 +6102,11 @@
           "group": "a11y-names-labels"
         },
         {
+          "id": "link-in-text-block",
+          "weight": 3,
+          "group": "a11y-color-contrast"
+        },
+        {
           "id": "link-name",
           "weight": 3,
           "group": "a11y-names-labels"
@@ -6076,6 +6134,11 @@
         {
           "id": "object-alt",
           "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "select-name",
+          "weight": 0,
           "group": "a11y-names-labels"
         },
         {
@@ -6155,7 +6218,7 @@
         }
       ],
       "id": "accessibility",
-      "score": 0.8
+      "score": 0.81
     },
     "best-practices": {
       "title": "Best Practices",
@@ -8210,6 +8273,12 @@
       },
       {
         "startTime": 0,
+        "name": "lh:audit:aria-dialog-name",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:aria-hidden-body",
         "duration": 100,
         "entryType": "measure"
@@ -8259,6 +8328,12 @@
       {
         "startTime": 0,
         "name": "lh:audit:aria-roles",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:aria-text",
         "duration": 100,
         "entryType": "measure"
       },
@@ -8408,6 +8483,12 @@
       },
       {
         "startTime": 0,
+        "name": "lh:audit:link-in-text-block",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:list",
         "duration": 100,
         "entryType": "measure"
@@ -8433,6 +8514,12 @@
       {
         "startTime": 0,
         "name": "lh:audit:object-alt",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:select-name",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9607,6 +9694,12 @@
       "core/audits/accessibility/aria-command-name.js | description": [
         "audits[aria-command-name].description"
       ],
+      "core/audits/accessibility/aria-dialog-name.js | title": [
+        "audits[aria-dialog-name].title"
+      ],
+      "core/audits/accessibility/aria-dialog-name.js | description": [
+        "audits[aria-dialog-name].description"
+      ],
       "core/audits/accessibility/aria-hidden-body.js | title": [
         "audits[aria-hidden-body].title"
       ],
@@ -9660,6 +9753,12 @@
       ],
       "core/audits/accessibility/aria-roles.js | description": [
         "audits[aria-roles].description"
+      ],
+      "core/audits/accessibility/aria-text.js | title": [
+        "audits[aria-text].title"
+      ],
+      "core/audits/accessibility/aria-text.js | description": [
+        "audits[aria-text].description"
       ],
       "core/audits/accessibility/aria-toggle-field-name.js | title": [
         "audits[aria-toggle-field-name].title"
@@ -9813,6 +9912,12 @@
       "core/audits/accessibility/link-name.js | description": [
         "audits[link-name].description"
       ],
+      "core/audits/accessibility/link-in-text-block.js | title": [
+        "audits[link-in-text-block].title"
+      ],
+      "core/audits/accessibility/link-in-text-block.js | description": [
+        "audits[link-in-text-block].description"
+      ],
       "core/audits/accessibility/list.js | title": [
         "audits.list.title"
       ],
@@ -9842,6 +9947,12 @@
       ],
       "core/audits/accessibility/object-alt.js | description": [
         "audits[object-alt].description"
+      ],
+      "core/audits/accessibility/select-name.js | title": [
+        "audits[select-name].title"
+      ],
+      "core/audits/accessibility/select-name.js | description": [
+        "audits[select-name].description"
       ],
       "core/audits/accessibility/tabindex.js | title": [
         "audits.tabindex.title"
