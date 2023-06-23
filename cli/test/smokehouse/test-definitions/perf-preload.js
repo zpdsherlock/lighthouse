@@ -92,8 +92,8 @@ const expectations = {
         score: '>=0.90', // primarily just making sure it didn't fail/go crazy, specific value isn't that important
       },
       'server-response-time': {
-        // Can be flaky, so test float numericValue instead of binary score
-        numericValue: '<1000',
+        // Assert greater than 0 but not more than 1000.
+        numericValue: '500 +/- 499.99',
       },
       'network-requests': {
         details: {
