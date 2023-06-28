@@ -25,6 +25,14 @@ describe('Fraggle Rock Config Filtering', () => {
       ...auditMeta,
     };
   }
+  class OptionalAudit extends BaseAudit {
+    static meta = {
+      id: 'optional',
+      requiredArtifacts: /** @type {any} */ (['Snapshot']),
+      __internalOptionalArtifacts: /** @type {any} */ (['Timespan']),
+      ...auditMeta,
+    };
+  }
   class ManualAudit extends BaseAudit {
     static meta = {
       id: 'manual',
@@ -227,6 +235,16 @@ describe('Fraggle Rock Config Filtering', () => {
       expect(filters.filterAuditsByAvailableArtifacts(audits, partialArtifacts)).toEqual([
         {implementation: SnapshotAudit, options: {}},
         {implementation: ManualAudit, options: {}},
+      ]);
+    });
+
+    it('should keep audits only missing optional artifacts', () => {
+      const partialArtifacts = [{id: 'Snapshot', gatherer: {instance: snapshotGatherer}}];
+      audits.push({implementation: OptionalAudit, options: {}});
+      expect(filters.filterAuditsByAvailableArtifacts(audits, partialArtifacts)).toEqual([
+        {implementation: SnapshotAudit, options: {}},
+        {implementation: ManualAudit, options: {}},
+        {implementation: OptionalAudit, options: {}},
       ]);
     });
 
@@ -506,6 +524,27 @@ describe('Fraggle Rock Config Filtering', () => {
         audits: [{implementation: SnapshotAudit}],
         categories: {
           mixed: {},
+        },
+      });
+    });
+
+    it('should combine category and audit filters additively', () => {
+      const filtered = filters.filterConfigByExplicitFilters(resolvedConfig, {
+        onlyCategories: ['navigation'],
+        onlyAudits: ['snapshot', 'timespan'],
+        skipAudits: [],
+      });
+      expect(filtered).toMatchObject({
+        artifacts: [{id: 'Snapshot'}, {id: 'Timespan'}],
+        audits: [
+          {implementation: SnapshotAudit},
+          {implementation: TimespanAudit},
+          {implementation: NavigationAudit},
+        ],
+        categories: {
+          navigation: {
+            auditRefs: [{id: 'navigation'}],
+          },
         },
       });
     });

@@ -145,12 +145,28 @@ describe('Fraggle Rock Config Validation', () => {
       expect(invocation).toThrow(/has no audit.*method/);
     });
 
+    it('should throw if audit id is missing', () => {
+      // @ts-expect-error - We are intentionally creating a malformed input.
+      ExampleAudit.meta.id = undefined;
+      const audit = {implementation: ExampleAudit, options: {}};
+      const invocation = () => validation.assertValidAudit(audit);
+      expect(invocation).toThrow(/has no meta.id/);
+    });
+
     it('should throw if title is missing', () => {
       // @ts-expect-error - We are intentionally creating a malformed input.
       ExampleAudit.meta.title = undefined;
       const audit = {implementation: ExampleAudit, options: {}};
       const invocation = () => validation.assertValidAudit(audit);
       expect(invocation).toThrow(/has no meta.title/);
+    });
+
+    it('should throw if audit description is missing', () => {
+      // @ts-expect-error - We are intentionally creating a malformed input.
+      ExampleAudit.meta.description = undefined;
+      const audit = {implementation: ExampleAudit, options: {}};
+      const invocation = () => validation.assertValidAudit(audit);
+      expect(invocation).toThrow(/has no meta.description/);
     });
 
     it('should throw if failureTitle is missing', () => {
