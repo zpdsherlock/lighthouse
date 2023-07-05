@@ -989,7 +989,11 @@ export interface TraceEvent {
     };
     data?: {
       frame?: string;
+      parent?: string;
       frameID?: string;
+      frameTreeNodeId?: number;
+      isMainFrame?: boolean;
+      persistentIds?: boolean,
       processId?: number;
       isLoadingMainFrame?: boolean;
       documentLoaderURL?: string;
@@ -999,6 +1003,7 @@ export interface TraceEvent {
         url: string;
         parent?: string;
         processId?: number;
+        name?: string;
       }[];
       page?: string;
       readyState?: number;
@@ -1035,6 +1040,8 @@ export interface TraceEvent {
       interactionType?: 'drag'|'keyboard'|'tapOrClick';
       maxDuration?: number;
       type?: string;
+      functionName?: string;
+      name?: string;
     };
     frame?: string;
     name?: string;
