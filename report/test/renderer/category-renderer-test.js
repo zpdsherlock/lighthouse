@@ -323,7 +323,8 @@ describe('CategoryRenderer', () => {
       const categoryDOM = renderer.render(categoryClone, sampleResults.categoryGroups);
 
       // All the group names in the config.
-      const groupNames = Array.from(new Set(auditRefs.map(ref => ref.group))).filter(Boolean);
+      const groupNames = Array.from(
+        new Set(auditRefs.map(ref => ref.group))).filter(n => Boolean(n) && n !== 'hidden');
       assert.ok(groupNames.length > 5, `not enough groups found in category for test`);
 
       // All the group roots in the DOM.
@@ -399,8 +400,10 @@ describe('CategoryRenderer', () => {
 
       categoryGroupIds.forEach(groupId => {
         const selector = `.lh-audit-group--${groupId}`;
-        assert.equal(categoryElem.querySelectorAll(selector).length, 1,
-          `could not find '${selector}'`);
+        if (groupId !== 'hidden') {
+          assert.equal(categoryElem.querySelectorAll(selector).length, 1,
+            `could not find '${selector}'`);
+        }
       });
     });
   });

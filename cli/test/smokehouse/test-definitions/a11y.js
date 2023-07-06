@@ -498,6 +498,22 @@ const expectations = {
           ],
         },
       },
+      'empty-heading': {
+        score: null,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > h1#empty-heading',
+                'snippet': '<h1 id="empty-heading">',
+                'explanation': 'Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute',
+                'nodeLabel': 'body > section > h1#empty-heading',
+              },
+            },
+          ],
+        },
+      },
       'form-field-multiple-labels': {
         score: null,
         scoreDisplayMode: 'informative',
@@ -507,7 +523,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > input#form-field-multiple-labels',
-                'path': '2,HTML,1,BODY,47,SECTION,2,INPUT',
+                'path': '2,HTML,1,BODY,49,SECTION,2,INPUT',
                 'snippet': '<input type="checkbox" id="form-field-multiple-labels">',
                 'explanation': 'Fix all of the following:\n  Multiple label elements is not widely supported in assistive technologies. Ensure the first label contains all necessary information.',
                 'nodeLabel': 'body > section > input#form-field-multiple-labels',
@@ -518,7 +534,7 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,47,SECTION,0,LABEL',
+                      'path': '2,HTML,1,BODY,49,SECTION,0,LABEL',
                       'selector': 'body > section > label#label1',
                       'snippet': '<label for="form-field-multiple-labels" id="label1">',
                       'nodeLabel': 'label1',
@@ -527,7 +543,7 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,47,SECTION,1,LABEL',
+                      'path': '2,HTML,1,BODY,49,SECTION,1,LABEL',
                       'selector': 'body > section > label',
                       'snippet': '<label for="form-field-multiple-labels">',
                       'nodeLabel': 'label2',
@@ -563,7 +579,7 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > h3',
-                'path': '2,HTML,1,BODY,51,SECTION,1,H3',
+                'path': '2,HTML,1,BODY,53,SECTION,1,H3',
                 'snippet': '<h3>',
                 'explanation': 'Fix any of the following:\n  Heading order invalid',
                 'nodeLabel': 'sub-sub-header',
@@ -591,6 +607,22 @@ const expectations = {
       'html-xml-lang-mismatch': {
         score: null,
         scoreDisplayMode: 'notApplicable',
+      },
+      'identical-links-same-purpose': {
+        score: null,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > a#identical-links-same-purpose-1',
+                'snippet': '<a id="identical-links-same-purpose-1" href="https://example.com/" aria-label="a link">',
+                'explanation': 'Fix all of the following:\n  Check that links have the same purpose, or are intentionally ambiguous.',
+                'nodeLabel': 'a link',
+              },
+            },
+          ],
+        },
       },
       'image-alt': {
         score: 0,
@@ -658,6 +690,22 @@ const expectations = {
       //     ],
       //   },
       // },
+      'landmark-one-main': {
+        score: null,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'html',
+                'snippet': '<html>',
+                'explanation': 'Fix all of the following:\n  Document does not have a main landmark',
+                'nodeLabel': 'html',
+              },
+            },
+          ],
+        },
+      },
       'link-in-text-block': {
         score: 0,
         details: {
@@ -797,6 +845,22 @@ const expectations = {
                 'snippet': '<table id="table-fake-caption" role="grid">',
                 'explanation': 'Fix all of the following:\n  The first child of the table should be a caption instead of a table cell',
                 'nodeLabel': 'FOO\nfoo\tfoo\n',
+              },
+            },
+          ],
+        },
+      },
+      'target-size': {
+        score: null,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > span#target-size-2',
+                'snippet': '<span role="button" tabindex="0" id="target-size-2">',
+                'explanation': 'Fix any of the following:\n  Target has insufficient size (8px by 17px, should be at least 24px by 24px)\n  Target has insufficient offset from its closest neighbor (12px should be at least 24px)',
+                'nodeLabel': 'o',
               },
             },
           ],

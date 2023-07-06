@@ -245,6 +245,15 @@
   "core/audits/accessibility/duplicate-id-aria.js | title": {
     "message": "ARIA IDs are unique"
   },
+  "core/audits/accessibility/empty-heading.js | description": {
+    "message": "A heading with no content or inaccessible text prevent screen reader users from accessing information on the page's structure. [Learn more about headings](https://dequeuniversity.com/rules/axe/4.7/empty-heading)."
+  },
+  "core/audits/accessibility/empty-heading.js | failureTitle": {
+    "message": "Heading elements do not contain content."
+  },
+  "core/audits/accessibility/empty-heading.js | title": {
+    "message": "All heading elements contain content."
+  },
   "core/audits/accessibility/form-field-multiple-labels.js | description": {
     "message": "Form fields with multiple labels can be confusingly announced by assistive technologies like screen readers which use either the first, the last, or all of the labels. [Learn how to use form labels](https://dequeuniversity.com/rules/axe/4.7/form-field-multiple-labels)."
   },
@@ -299,6 +308,15 @@
   "core/audits/accessibility/html-xml-lang-mismatch.js | title": {
     "message": "`<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute."
   },
+  "core/audits/accessibility/identical-links-same-purpose.js | description": {
+    "message": "Links with the same destination should have the same description, to help users understand the link's purpose and decide whether to follow it. [Learn more about identical links](https://dequeuniversity.com/rules/axe/4.7/identical-links-same-purpose)."
+  },
+  "core/audits/accessibility/identical-links-same-purpose.js | failureTitle": {
+    "message": "Identical links do not have the same purpose."
+  },
+  "core/audits/accessibility/identical-links-same-purpose.js | title": {
+    "message": "Identical links have the same purpose."
+  },
   "core/audits/accessibility/image-alt.js | description": {
     "message": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.7/image-alt)."
   },
@@ -334,6 +352,15 @@
   },
   "core/audits/accessibility/label.js | title": {
     "message": "Form elements have associated labels"
+  },
+  "core/audits/accessibility/landmark-one-main.js | description": {
+    "message": "One main landmark helps screen reader users navigate a web page. [Learn more about landmarks](https://dequeuniversity.com/rules/axe/4.7/landmark-one-main)."
+  },
+  "core/audits/accessibility/landmark-one-main.js | failureTitle": {
+    "message": "Document does not have a main landmark."
+  },
+  "core/audits/accessibility/landmark-one-main.js | title": {
+    "message": "Document has a main landmark."
   },
   "core/audits/accessibility/link-in-text-block.js | description": {
     "message": "Low-contrast text is difficult or impossible for many users to read. Link text that is discernible improves the experience for users with low vision. [Learn how to make links distinguishable](https://dequeuniversity.com/rules/axe/4.7/link-in-text-block)."
@@ -424,6 +451,15 @@
   },
   "core/audits/accessibility/table-fake-caption.js | title": {
     "message": "Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption."
+  },
+  "core/audits/accessibility/target-size.js | description": {
+    "message": "Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls activate the targets. [Learn more about touch targets](https://dequeuniversity.com/rules/axe/4.7/target-size)."
+  },
+  "core/audits/accessibility/target-size.js | failureTitle": {
+    "message": "Touch targets do not have sufficient size or spacing."
+  },
+  "core/audits/accessibility/target-size.js | title": {
+    "message": "Touch targets have sufficient size and spacing."
   },
   "core/audits/accessibility/td-has-header.js | description": {
     "message": "Screen readers have features to make navigating tables easier. Ensuring that `<td>` elements in a large table (3 or more cells in width and height) have an associated table header may improve the experience for screen reader users. [Learn more about table headers](https://dequeuniversity.com/rules/axe/4.7/td-has-header)."
