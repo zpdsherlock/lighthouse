@@ -154,6 +154,10 @@ class Redirects extends Audit {
         str_(i18n.UIStrings.displayValueMsSavings, {wastedMs: totalWastedMs}) :
         '',
       details,
+      metricSavings: {
+        LCP: totalWastedMs,
+        FCP: totalWastedMs,
+      },
     };
   }
 }

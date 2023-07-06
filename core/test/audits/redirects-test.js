@@ -164,6 +164,7 @@ describe('Performance: Redirects audit', () => {
     expect(output.details.items).toHaveLength(3);
     expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.29`);
     expect(output.numericValue).toMatchInlineSnapshot(`2000`);
+    expect(output.metricSavings).toEqual({LCP: 2000, FCP: 2000});
   });
 
   it('uses lantern timings when throttlingMethod is simulate', async () => {
@@ -192,6 +193,7 @@ describe('Performance: Redirects audit', () => {
       ]
     `);
     expect(output.numericValue).toMatchInlineSnapshot(`1890`);
+    expect(output.metricSavings).toEqual({LCP: 1890, FCP: 1890});
   });
 
   it('fails when 3 redirects detected', () => {
@@ -201,6 +203,7 @@ describe('Performance: Redirects audit', () => {
       expect(output.details.items).toHaveLength(4);
       expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.2`);
       expect(output.numericValue).toMatchInlineSnapshot(`3000`);
+      expect(output.metricSavings).toEqual({LCP: 3000, FCP: 3000});
     });
   });
 
@@ -211,6 +214,7 @@ describe('Performance: Redirects audit', () => {
       expect(output.details.items).toHaveLength(3);
       expect(Math.round(output.score * 100) / 100).toMatchInlineSnapshot(`0.29`);
       expect(output.numericValue).toMatchInlineSnapshot(`2000`);
+      expect(output.metricSavings).toEqual({LCP: 2000, FCP: 2000});
     });
   });
 
@@ -223,6 +227,7 @@ describe('Performance: Redirects audit', () => {
       expect(output.details.items).toHaveLength(2);
       expect(output.score).toEqual(1);
       expect(output.numericValue).toMatchInlineSnapshot(`1000`);
+      expect(output.metricSavings).toEqual({LCP: 1000, FCP: 1000});
     });
   });
 
@@ -233,6 +238,7 @@ describe('Performance: Redirects audit', () => {
       assert.equal(output.score, 1);
       assert.equal(output.details.items.length, 0);
       assert.equal(output.numericValue, 0);
+      assert.deepStrictEqual(output.metricSavings, {LCP: 0, FCP: 0});
     });
   });
 
@@ -261,6 +267,10 @@ describe('Performance: Redirects audit', () => {
           {url: 'https://redirect.test/', wastedMs: 2000},
           {url: 'https://redirect.test/', wastedMs: 0},
         ],
+      },
+      metricSavings: {
+        LCP: 3000,
+        FCP: 3000,
       },
     });
   });
