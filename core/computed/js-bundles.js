@@ -99,7 +99,7 @@ class JSBundles {
 
       const compiledUrl = SourceMap.scriptUrl || 'compiled.js';
       const mapUrl = SourceMap.sourceMapUrl || 'compiled.js.map';
-      const map = new SDK.TextSourceMap(compiledUrl, mapUrl, rawMap);
+      const map = new SDK.SourceMap(compiledUrl, mapUrl, rawMap);
 
       const sizes = computeGeneratedFileSizes(map, script.length || 0, script.content || '');
 

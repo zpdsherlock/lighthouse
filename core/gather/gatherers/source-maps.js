@@ -4,6 +4,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
+import SDK from '../../lib/cdt/SDK.js';
 import FRGatherer from '../base-gatherer.js';
 
 /**
@@ -32,7 +33,7 @@ class SourceMaps extends FRGatherer {
     if (response.content === null) {
       throw new Error(`Failed fetching source map (${response.status})`);
     }
-    return JSON.parse(response.content);
+    return SDK.SourceMap.parseSourceMap(response.content);
   }
 
   /**
@@ -41,7 +42,7 @@ class SourceMaps extends FRGatherer {
    */
   parseSourceMapFromDataUrl(sourceMapURL) {
     const buffer = Buffer.from(sourceMapURL.split(',')[1], 'base64');
-    return JSON.parse(buffer.toString());
+    return SDK.SourceMap.parseSourceMap(buffer.toString());
   }
 
   /**

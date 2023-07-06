@@ -11,7 +11,7 @@ import {Simulator} from '../core/lib/dependency-graph/simulator/simulator.js';
 import {LighthouseError} from '../core/lib/lh-error.js';
 import {NetworkRequest as _NetworkRequest} from '../core/lib/network-request.js';
 import speedline from 'speedline-core';
-import * as TextSourceMap from '../core/lib/cdt/generated/SourceMap.js';
+import * as CDTSourceMap from '../core/lib/cdt/generated/SourceMap.js';
 import {ArbitraryEqualityMap} from '../core/lib/arbitrary-equality-map.js';
 import type { TaskNode as _TaskNode } from '../core/lib/tracehouse/main-thread-tasks.js';
 import AuditDetails from './lhr/audit-details.js'
@@ -388,7 +388,7 @@ declare module Artifacts {
   interface Bundle {
     rawMap: RawSourceMap;
     script: Artifacts.Script;
-    map: TextSourceMap;
+    map: CDTSourceMap;
     sizes: {
       // TODO(cjamcl): Rename to `sources`.
       files: Record<string, number>;
