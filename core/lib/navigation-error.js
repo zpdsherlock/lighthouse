@@ -110,7 +110,7 @@ function getNonHtmlError(finalRecord) {
  * Returns an error if the page load should be considered failed, e.g. from a
  * main document request failure, a security issue, etc.
  * @param {LH.LighthouseError|undefined} navigationError
- * @param {{url: string, loadFailureMode: LH.Gatherer.PassContext['passConfig']['loadFailureMode'], networkRecords: Array<LH.Artifacts.NetworkRequest>, warnings: Array<string | LH.IcuMessage>}} context
+ * @param {{url: string, loadFailureMode: LH.Config.SharedPassNavigationJson['loadFailureMode'], networkRecords: Array<LH.Artifacts.NetworkRequest>, warnings: Array<string | LH.IcuMessage>}} context
  * @return {LH.LighthouseError|undefined}
  */
 function getPageLoadError(navigationError, context) {

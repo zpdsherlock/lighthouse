@@ -5,28 +5,21 @@
  */
 
 import {Fetcher} from '../../gather/fetcher.js';
-import {Driver} from '../../legacy/gather/driver.js';
-import {Connection} from '../../legacy/gather/connections/connection.js';
-import {fnAny, mockCommands} from '../test-utils.js';
+import {fnAny} from '../test-utils.js';
+import {createMockSession} from './mock-driver.js';
 
-const {createMockSendCommandFn} = mockCommands;
-
-/** @type {Connection} */
-let connectionStub;
-/** @type {Driver} */
-let driver;
+let mockSession = createMockSession();
 /** @type {Fetcher} */
 let fetcher;
 
 beforeEach(() => {
-  connectionStub = new Connection();
-  driver = new Driver(connectionStub);
-  fetcher = new Fetcher(driver.defaultSession);
+  mockSession = createMockSession();
+  fetcher = new Fetcher(mockSession.asSession());
 });
 
 describe('._readIOStream', () => {
   it('reads contents of stream', async () => {
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('IO.read', {data: 'Hello World!', eof: true, base64Encoded: false});
 
     const data = await fetcher._readIOStream('1');
@@ -34,7 +27,7 @@ describe('._readIOStream', () => {
   });
 
   it('combines multiple reads', async () => {
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('IO.read', {data: 'Hello ', eof: false, base64Encoded: false})
       .mockResponse('IO.read', {data: 'World', eof: false, base64Encoded: false})
       .mockResponse('IO.read', {data: '!', eof: true, base64Encoded: false});
@@ -45,7 +38,7 @@ describe('._readIOStream', () => {
 
   it('decodes if base64', async () => {
     const buffer = Buffer.from('Hello World!').toString('base64');
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('IO.read', {data: buffer, eof: true, base64Encoded: true});
 
     const data = await fetcher._readIOStream('1');
@@ -55,7 +48,7 @@ describe('._readIOStream', () => {
   it('decodes multiple base64 reads', async () => {
     const buffer1 = Buffer.from('Hello ').toString('base64');
     const buffer2 = Buffer.from('World!').toString('base64');
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('IO.read', {data: buffer1, eof: false, base64Encoded: true})
       .mockResponse('IO.read', {data: buffer2, eof: true, base64Encoded: true});
 
@@ -64,7 +57,7 @@ describe('._readIOStream', () => {
   });
 
   it('throws on timeout', async () => {
-    connectionStub.sendCommand = fnAny()
+    mockSession.sendCommand
       .mockReturnValue(Promise.resolve({data: 'No stop', eof: false, base64Encoded: false}));
 
     const dataPromise = fetcher._readIOStream('1', {timeout: 50});
@@ -84,7 +77,7 @@ describe('._fetchResourceOverProtocol', () => {
   });
 
   it('fetches a file', async () => {
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: 'FRAME'}}})
       .mockResponse('Network.loadNetworkResource', {
         resource: {success: true, httpStatusCode: 200, stream: '1'},
@@ -95,7 +88,7 @@ describe('._fetchResourceOverProtocol', () => {
   });
 
   it('returns null when resource could not be fetched', async () => {
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: 'FRAME'}}})
       .mockResponse('Network.loadNetworkResource', {
         resource: {success: false, httpStatusCode: 404},
@@ -106,7 +99,7 @@ describe('._fetchResourceOverProtocol', () => {
   });
 
   it('throws on timeout', async () => {
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: 'FRAME'}}})
       .mockResponse('Network.loadNetworkResource', {
         resource: {success: false, httpStatusCode: 404},
@@ -117,7 +110,7 @@ describe('._fetchResourceOverProtocol', () => {
   });
 
   it('uses remaining time on _readIOStream', async () => {
-    connectionStub.sendCommand = createMockSendCommandFn()
+    mockSession.sendCommand
       .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: 'FRAME'}}})
       .mockResponse('Network.loadNetworkResource', {
         resource: {success: true, httpStatusCode: 200, stream: '1'},

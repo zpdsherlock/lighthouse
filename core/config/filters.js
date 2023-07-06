@@ -169,9 +169,9 @@ function filterAuditsByGatherMode(audits, mode) {
 /**
  * Optional `supportedModes` property can explicitly exclude a category even if some audits are available.
  *
- * @param {LH.Config.LegacyResolvedConfig['categories']} categories
+ * @param {LH.Config.ResolvedConfig['categories']} categories
  * @param {LH.Gatherer.GatherMode} mode
- * @return {LH.Config.LegacyResolvedConfig['categories']}
+ * @return {LH.Config.ResolvedConfig['categories']}
  */
 function filterCategoriesByGatherMode(categories, mode) {
   if (!categories) return null;
@@ -186,9 +186,9 @@ function filterCategoriesByGatherMode(categories, mode) {
 /**
  * Filters a categories object and their auditRefs down to the specified category ids.
  *
- * @param {LH.Config.LegacyResolvedConfig['categories']} categories
+ * @param {LH.Config.ResolvedConfig['categories']} categories
  * @param {string[] | null | undefined} onlyCategories
- * @return {LH.Config.LegacyResolvedConfig['categories']}
+ * @return {LH.Config.ResolvedConfig['categories']}
  */
 function filterCategoriesByExplicitFilters(categories, onlyCategories) {
   if (!categories || !onlyCategories) return categories;
@@ -202,7 +202,7 @@ function filterCategoriesByExplicitFilters(categories, onlyCategories) {
  * Logs a warning if any specified onlyCategory is not a known category that can
  * be included.
  *
- * @param {LH.Config.LegacyResolvedConfig['categories']} allCategories
+ * @param {LH.Config.ResolvedConfig['categories']} allCategories
  * @param {string[] | null} onlyCategories
  * @return {void}
  */
@@ -220,9 +220,9 @@ function warnOnUnknownOnlyCategories(allCategories, onlyCategories) {
  * Filters a categories object and their auditRefs down to the set that can be computed using
  * only the specified audits.
  *
- * @param {LH.Config.LegacyResolvedConfig['categories']} categories
+ * @param {LH.Config.ResolvedConfig['categories']} categories
  * @param {Array<LH.Config.AuditDefn>} availableAudits
- * @return {LH.Config.LegacyResolvedConfig['categories']}
+ * @return {LH.Config.ResolvedConfig['categories']}
  */
 function filterCategoriesByAvailableAudits(categories, availableAudits) {
   if (!categories) return categories;
