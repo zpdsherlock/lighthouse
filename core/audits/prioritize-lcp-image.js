@@ -244,7 +244,7 @@ class PrioritizeLcpImage extends Audit {
       .find(element => element.traceEventType === 'largest-contentful-paint');
 
     if (!lcpElement || lcpElement.type !== 'image') {
-      return {score: null, notApplicable: true};
+      return {score: null, notApplicable: true, metricSavings: {LCP: 0}};
     }
 
     const mainResource = await MainResource.request({devtoolsLog, URL}, context);
@@ -286,6 +286,7 @@ class PrioritizeLcpImage extends Audit {
       numericUnit: 'millisecond',
       displayValue: wastedMs ? str_(i18n.UIStrings.displayValueMsSavings, {wastedMs}) : '',
       details,
+      metricSavings: {LCP: wastedMs},
     };
   }
 }

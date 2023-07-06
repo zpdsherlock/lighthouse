@@ -112,6 +112,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
     expect(result).toEqual({
       score: null,
       notApplicable: true,
+      metricSavings: {LCP: 0},
     });
   });
 
@@ -123,6 +124,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
     expect(result).toEqual({
       score: null,
       notApplicable: true,
+      metricSavings: {LCP: 0},
     });
   });
 
@@ -139,6 +141,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
     expect(results.score).toEqual(1);
     expect(results.details.overallSavingsMs).toEqual(0);
     expect(results.details.items).toHaveLength(0);
+    expect(results.metricSavings).toEqual({LCP: 0});
   });
 
   it('shouldn\'t be applicable if the lcp is already preloaded', async () => {
@@ -149,6 +152,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
     expect(results.score).toEqual(1);
     expect(results.details.overallSavingsMs).toEqual(0);
     expect(results.details.items).toHaveLength(0);
+    expect(results.metricSavings).toEqual({LCP: 0});
 
     // debugData should be included even if image shouldn't be preloaded.
     expect(results.details.debugData).toMatchObject({
@@ -169,6 +173,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
     expect(results.score).toEqual(1);
     expect(results.details.overallSavingsMs).toEqual(0);
     expect(results.details.items).toHaveLength(0);
+    expect(results.metricSavings).toEqual({LCP: 0});
   });
 
   it('should suggest preloading a lcp image if all criteria is met', async () => {
@@ -179,6 +184,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
     expect(results.details.overallSavingsMs).toEqual(30);
     expect(results.details.items[0].url).toEqual(imageUrl);
     expect(results.details.items[0].wastedMs).toEqual(30);
+    expect(results.metricSavings).toEqual({LCP: 30});
 
     expect(results.details.debugData).toMatchObject({
       initiatorPath: [
@@ -207,6 +213,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
       ],
       pathLength: 3,
     });
+    expect(results.metricSavings).toEqual({LCP: 180});
   });
 
   it('should use the initiator path of the first image instance loaded', async () => {
@@ -235,6 +242,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
           pathLength: 2,
         },
       },
+      metricSavings: {LCP: 0},
     });
   });
 
@@ -267,6 +275,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
           pathLength: 3,
         },
       },
+      metricSavings: {LCP: 180},
     });
   });
 
@@ -298,6 +307,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
           pathLength: 3,
         },
       },
+      metricSavings: {LCP: 180},
     });
   });
 
@@ -337,6 +347,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
           pathLength: 4,
         },
       },
+      metricSavings: {LCP: 210},
     });
   });
 
@@ -359,6 +370,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
           pathLength: 2,
         },
       },
+      metricSavings: {LCP: 0},
     });
   });
 });
