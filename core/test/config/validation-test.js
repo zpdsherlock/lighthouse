@@ -10,6 +10,7 @@ import {Audit as BaseAudit} from '../../audits/audit.js';
 import BaseFRGatherer from '../../gather/base-gatherer.js';
 import {Gatherer as BaseLegacyGatherer} from '../../gather/gatherers/gatherer.js';
 import * as validation from '../../config/validation.js';
+import {initializeConfig} from '../../config/config.js';
 
 /** @typedef {LH.Gatherer.GathererMeta['supportedModes']} SupportedModes */
 
@@ -30,6 +31,20 @@ beforeEach(() => {
 });
 
 describe('Fraggle Rock Config Validation', () => {
+  describe('assertValidConfig', () => {
+    it('should throw if multiple artifacts have the same id', async () => {
+      const {resolvedConfig} = await initializeConfig('navigation');
+      if (!resolvedConfig.artifacts) throw new Error('No config artifacts');
+
+      const imageElArtifact = resolvedConfig.artifacts.find(a => a.id === 'ImageElements');
+      if (!imageElArtifact) throw new Error('Could not find ImageElements artifact');
+
+      resolvedConfig.artifacts.push(imageElArtifact);
+
+      expect(() => validation.assertValidConfig(resolvedConfig)).toThrow(/Config defined multiple/);
+    });
+  });
+
   describe('isFRGathererDefn', () => {
     it('should identify fraggle rock gatherer definitions', () => {
       expect(validation.isFRGathererDefn({instance: new BaseFRGatherer()})).toBe(true);
@@ -250,6 +265,13 @@ describe('Fraggle Rock Config Validation', () => {
       const settings = {...defaultSettings};
       // @ts-expect-error - We are intentionally creating a malformed input.
       delete settings.formFactor;
+      expect(() => validation.assertValidSettings(settings)).toThrow();
+    });
+
+    it('should throw if an audit in onlyAudits is also in skipAudits', () => {
+      const settings = {...defaultSettings};
+      settings.onlyAudits = ['viewport'];
+      settings.skipAudits = ['viewport', 'is-on-https'];
       expect(() => validation.assertValidSettings(settings)).toThrow();
     });
 

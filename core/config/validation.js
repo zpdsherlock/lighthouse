@@ -223,6 +223,12 @@ function assertValidSettings(settings) {
       throw new Error(`Screen emulation mobile setting (${settings.screenEmulation.mobile}) does not match formFactor setting (${settings.formFactor}). See https://github.com/GoogleChrome/lighthouse/blob/main/docs/emulation.md`);
     }
   }
+
+  const skippedAndOnlyAuditId =
+    settings.skipAudits?.find(auditId => settings.onlyAudits?.includes(auditId));
+  if (skippedAndOnlyAuditId) {
+    throw new Error(`${skippedAndOnlyAuditId} appears in both skipAudits and onlyAudits`);
+  }
 }
 
 /**
@@ -253,7 +259,13 @@ function assertArtifactTopologicalOrder(navigations) {
 function assertValidConfig(resolvedConfig) {
   const {warnings} = assertValidFRNavigations(resolvedConfig.navigations);
 
+  /** @type {Set<string>} */
+  const artifactIds = new Set();
   for (const artifactDefn of resolvedConfig.artifacts || []) {
+    if (artifactIds.has(artifactDefn.id)) {
+      throw new Error(`Config defined multiple artifacts with id '${artifactDefn.id}'`);
+    }
+    artifactIds.add(artifactDefn.id);
     assertValidFRGatherer(artifactDefn.gatherer);
   }
 
