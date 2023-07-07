@@ -80,6 +80,7 @@ class NetworkRecorder extends RequestEventEmitter {
       const request = new NetworkRequest();
       request.onRequestWillBeSent(data);
       request.sessionId = event.sessionId;
+      request.sessionTargetType = event.targetType;
       this.onRequestStarted(request);
       log.verbose('network', `request will be sent to ${request.url}`);
       return;

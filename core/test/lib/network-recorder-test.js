@@ -195,6 +195,19 @@ describe('network recorder', function() {
     ]);
   });
 
+  it('should set sessionId and sessionTargetType of from just request event', () => {
+    const devtoolsLogs = networkRecordsToDevtoolsLog([
+      {url: 'http://iframe.com', sessionId: 'session2', sessionTargetType: 'iframe'},
+    ]);
+    const requestWillBeSentLog =
+      devtoolsLogs.filter(entry => entry.method === 'Network.requestWillBeSent');
+
+    const records = NetworkRecorder.recordsFromLogs(requestWillBeSentLog);
+    expect(records).toMatchObject([
+      {url: 'http://iframe.com', sessionTargetType: 'iframe', sessionId: 'session2'},
+    ]);
+  });
+
   it('should handle prefetch requests', () => {
     const records = NetworkRecorder.recordsFromLogs(prefetchedScriptDevtoolsLog);
     expect(records).toHaveLength(5);
