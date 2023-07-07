@@ -27,6 +27,8 @@ function createMockSession() {
     setTargetInfo: fnAny(),
     sendCommand: createMockSendCommandFn({useSessionId: false}),
     setNextProtocolTimeout: fnAny(),
+    hasNextProtocolTimeout: fnAny(),
+    getNextProtocolTimeout: fnAny(),
     once: createMockOnceFn(),
     on: createMockOnFn(),
     off: fnAny(),
@@ -36,7 +38,6 @@ function createMockSession() {
 
     /** @return {LH.Gatherer.FRProtocolSession} */
     asSession() {
-      // @ts-expect-error - We'll rely on the tests passing to know this matches.
       return this;
     },
   };
@@ -135,6 +136,7 @@ function createMockExecutionContext() {
 function createMockTargetManager(session) {
   return {
     rootSession: () => session,
+    mainFrameExecutionContexts: () => [{uniqueId: 'EXECUTION_CTX_ID'}],
     enable: fnAny(),
     disable: fnAny(),
     on: createMockOnFn(),
@@ -164,6 +166,9 @@ function createMockDriver() {
     disconnect: fnAny(),
     executionContext: context.asExecutionContext(),
     targetManager: targetManager.asTargetManager(),
+    fetcher: {
+      fetchResource: fnAny(),
+    },
 
     /** @return {Driver} */
     asDriver() {

@@ -5,12 +5,10 @@
  */
 
 import TraceElementsGatherer from '../../../gather/gatherers/trace-elements.js';
-import {Driver} from '../../../legacy/gather/driver.js';
-import {Connection} from '../../../legacy/gather/connections/connection.js';
 import {createTestTrace, rootFrame} from '../../create-test-trace.js';
-import {createMockSendCommandFn, createMockOnFn} from '../mock-commands.js';
 import {flushAllTimersAndMicrotasks, fnAny, readJson, timers} from '../../test-utils.js';
 import {ProcessedTrace} from '../../../computed/processed-trace.js';
+import {createMockDriver} from '../mock-driver.js';
 
 const animationTrace = readJson('../../fixtures/artifacts/animation/trace.json', import.meta);
 
@@ -464,8 +462,9 @@ describe('Trace Elements gatherer - Animated Elements', () => {
       },
       type: 'text',
     };
-    const connectionStub = new Connection();
-    connectionStub.sendCommand = createMockSendCommandFn()
+
+    const driver = createMockDriver();
+    driver._session.sendCommand
       // nodeId: 6
       .mockResponse('DOM.resolveNode', {object: {objectId: 1}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: LCPNodeData}})
@@ -479,7 +478,6 @@ describe('Trace Elements gatherer - Animated Elements', () => {
       // nodeId: 5
       .mockResponse('DOM.resolveNode', {object: {objectId: 3}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: animationNodeData}});
-    const driver = new Driver(connectionStub);
 
     const trace = createTestTrace({timeOrigin: 0, traceEnd: 2000});
     trace.traceEvents.push(
@@ -576,8 +574,8 @@ describe('Trace Elements gatherer - Animated Elements', () => {
         height: 100,
       },
     };
-    const connectionStub = new Connection();
-    connectionStub.sendCommand = createMockSendCommandFn()
+    const driver = createMockDriver();
+    driver._session.sendCommand
       // LCP node
       .mockResponse('DOM.resolveNode', {object: {objectId: 1}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: LCPNodeData}})
@@ -588,7 +586,6 @@ describe('Trace Elements gatherer - Animated Elements', () => {
       .mockResponse('DOM.resolveNode', {object: {objectId: 7}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: compositedNodeData}});
 
-    const driver = new Driver(connectionStub);
     const gatherer = new TraceElementsGatherer();
     gatherer.animationIdToName.set('2', 'alpha');
     gatherer.animationIdToName.set('3', 'beta');
@@ -640,8 +637,8 @@ describe('Trace Elements gatherer - Animated Elements', () => {
       },
       type: 'text',
     };
-    const connectionStub = new Connection();
-    connectionStub.sendCommand = createMockSendCommandFn()
+    const driver = createMockDriver();
+    driver._session.sendCommand
       .mockResponse('DOM.resolveNode', {object: {objectId: 1}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: LCPNodeData}})
       // Animation 1
@@ -651,7 +648,6 @@ describe('Trace Elements gatherer - Animated Elements', () => {
       // Animation 2
       .mockResponse('DOM.resolveNode', {object: {objectId: 5}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: animationNodeData}});
-    const driver = new Driver(connectionStub);
 
     const trace = createTestTrace({timeOrigin: 0, traceEnd: 2000});
     trace.traceEvents.push(makeAnimationTraceEvent('0x363db876c8', 'b', {id: '1', nodeId: 5}));
@@ -704,12 +700,11 @@ describe('Trace Elements gatherer - Animated Elements', () => {
         height: 140,
       },
     };
-    const connectionStub = new Connection();
-    connectionStub.sendCommand = createMockSendCommandFn()
+    const driver = createMockDriver();
+    driver._session.sendCommand
       // Animation 1
       .mockResponse('DOM.resolveNode', {object: {objectId: 5}})
       .mockResponse('Runtime.callFunctionOn', {result: {value: animationNodeData}});
-    const driver = new Driver(connectionStub);
 
     const trace = createTestTrace({timeOrigin: 0, traceEnd: 2000});
     trace.traceEvents = trace.traceEvents.filter(event => event.name !== 'firstContentfulPaint');
@@ -745,16 +740,12 @@ describe('instrumentation', () => {
   after(() => timers.dispose());
 
   it('resolves animation name', async () => {
-    const connectionStub = new Connection();
-    connectionStub.on = createMockOnFn()
-      .mockEvent('protocolevent', {
-        method: 'Animation.animationStarted',
-        params: {animation: {id: '1', name: 'example'}},
-      });
-    connectionStub.sendCommand = createMockSendCommandFn()
+    const driver = createMockDriver();
+    driver._session.on
+      .mockEvent('Animation.animationStarted', {animation: {id: '1', name: 'example'}});
+    driver._session.sendCommand
       .mockResponse('Animation.enable')
       .mockResponse('Animation.disable');
-    const driver = new Driver(connectionStub);
     const gatherer = new TraceElementsGatherer();
     await gatherer.startInstrumentation({driver, computedCache: new Map()});
 
@@ -767,16 +758,12 @@ describe('instrumentation', () => {
   });
 
   it('ignores empty name', async () => {
-    const connectionStub = new Connection();
-    connectionStub.on = createMockOnFn()
-      .mockEvent('protocolevent', {
-        method: 'Animation.animationStarted',
-        params: {animation: {id: '1', name: ''}},
-      });
-    connectionStub.sendCommand = createMockSendCommandFn()
+    const driver = createMockDriver();
+    driver._session.on
+      .mockEvent('Animation.animationStarted', {animation: {id: '1', name: ''}});
+    driver._session.sendCommand
       .mockResponse('Animation.enable')
       .mockResponse('Animation.disable');
-    const driver = new Driver(connectionStub);
     const gatherer = new TraceElementsGatherer();
     await gatherer.startInstrumentation({driver, computedCache: new Map()});
 

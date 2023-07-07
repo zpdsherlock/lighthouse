@@ -5,9 +5,7 @@
  */
 
 import GlobalListenerGatherer from '../../../gather/gatherers/global-listeners.js';
-import {createMockSendCommandFn} from '../mock-commands.js';
-import {Connection} from '../../../legacy/gather/connections/connection.js';
-import {Driver} from '../../../legacy/gather/driver.js';
+import {createMockDriver} from '../mock-driver.js';
 
 describe('Global Listener Gatherer', () => {
   it('remove duplicate listeners from artifacts', async () => {
@@ -39,19 +37,16 @@ describe('Global Listener Gatherer', () => {
       },
     ];
 
-    const sendCommandMock = createMockSendCommandFn()
-        .mockResponse('Runtime.evaluate', {result: {objectId: 10}})
-        .mockResponse('DOMDebugger.getEventListeners', {listeners: mockListeners.slice(0)});
-
     const expectedOutput = [
       mockListeners[0],
       mockListeners[2],
       mockListeners[3],
     ];
 
-    const connectionStub = new Connection();
-    connectionStub.sendCommand = sendCommandMock;
-    const driver = new Driver(connectionStub);
+    const driver = createMockDriver();
+    driver._session.sendCommand
+      .mockResponse('Runtime.evaluate', {result: {objectId: 10}})
+      .mockResponse('DOMDebugger.getEventListeners', {listeners: mockListeners.slice(0)});
 
     const globalListeners = await globalListenerGatherer.getArtifact({driver});
     return expect(globalListeners).toMatchObject(expectedOutput);

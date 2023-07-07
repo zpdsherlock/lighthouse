@@ -4,11 +4,9 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {Driver} from '../../../legacy/gather/driver.js';
-import {Connection} from '../../../legacy/gather/connections/connection.js';
 import SourceMaps from '../../../gather/gatherers/source-maps.js';
-import {createMockSendCommandFn, createMockOnFn} from '../mock-commands.js';
-import {flushAllTimersAndMicrotasks, fnAny, timers} from '../../test-utils.js';
+import {flushAllTimersAndMicrotasks, timers} from '../../test-utils.js';
+import {createMockDriver} from '../mock-driver.js';
 
 const mapJson = JSON.stringify({
   version: 3,
@@ -40,12 +38,11 @@ describe('SourceMaps gatherer', () => {
       }
     }
 
-    const onMock = createMockOnFn();
-    const sendCommandMock = createMockSendCommandFn()
+    const driver = createMockDriver();
+    driver._session.sendCommand
       .mockResponse('Debugger.enable', {})
       .mockResponse('Debugger.disable', {})
       .mockResponse('Network.enable', {});
-    const fetchMock = fnAny();
 
     for (const mapAndEvents of mapsAndEvents) {
       const {
@@ -55,17 +52,14 @@ describe('SourceMaps gatherer', () => {
         resolvedSourceMapUrl,
         fetchError,
       } = mapAndEvents;
-      onMock.mockEvent('protocolevent', {
-        method: 'Debugger.scriptParsed',
-        params: scriptParsedEvent,
-      });
+      driver._session.on.mockEvent('Debugger.scriptParsed', scriptParsedEvent);
 
       if (scriptParsedEvent.sourceMapURL.startsWith('data:')) {
         // Only the source maps that need to be fetched use the `fetchMock` code path.
         continue;
       }
 
-      fetchMock.mockImplementationOnce(async (sourceMapUrl) => {
+      driver.fetcher.fetchResource.mockImplementationOnce(async (sourceMapUrl) => {
         // Check that the source map url was resolved correctly.
         if (resolvedSourceMapUrl) {
           expect(sourceMapUrl).toBe(resolvedSourceMapUrl);
@@ -78,12 +72,6 @@ describe('SourceMaps gatherer', () => {
         return {content: map, status};
       });
     }
-    const connectionStub = new Connection();
-    connectionStub.sendCommand = sendCommandMock;
-    connectionStub.on = onMock;
-
-    const driver = new Driver(connectionStub);
-    driver.fetcher.fetchResource = fetchMock;
 
     const sourceMaps = new SourceMaps();
 
