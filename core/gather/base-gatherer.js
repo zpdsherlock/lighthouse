@@ -9,9 +9,7 @@ import * as LH from '../../types/lh.js';
 /* eslint-disable no-unused-vars */
 
 /**
- * Base class for all gatherers supporting both Fraggle Rock and the legacy flow.
- * Most extending classes should implement the Fraggle Rock API and let this class handle translation.
- * See core/gather/gatherers/gatherer.js for legacy method explanations.
+ * Base class for all gatherers.
  *
  * @implements {LH.Gatherer.GathererInstance}
  * @implements {LH.Gatherer.FRGathererInstance}
