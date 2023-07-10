@@ -75,7 +75,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: Smokehouse (ubuntu; chrome ${{ matrix.chrome-channel }})
-        path: .tmp/smokehouse-ci-failures/
+        path: .tmp/smokehouse-failures/
 
   smoke-windows:
     strategy:
@@ -118,7 +118,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: Smokehouse (windows)
-        path: .tmp/smokehouse-ci-failures/
+        path: .tmp/smokehouse-failures/
 
   smoke-legacy:
     strategy:
@@ -166,7 +166,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: Smokehouse (legacy)
-        path: .tmp/smokehouse-ci-failures/
+        path: .tmp/smokehouse-failures/
 
   smoke-bundle:
     strategy:
@@ -214,7 +214,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: Smokehouse (bundled)
-        path: .tmp/smokehouse-ci-failures/
+        path: .tmp/smokehouse-failures/
 
   smoke-bundle-legacy:
     strategy:
@@ -262,4 +262,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: Smokehouse (bundled)
-        path: .tmp/smokehouse-ci-failures/
+        path: .tmp/smokehouse-failures/

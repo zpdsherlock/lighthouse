@@ -82,7 +82,7 @@ async function runBundledLighthouse(url, config, testRunnerOptions) {
 
   // Run Lighthouse.
   try {
-    const logLevel = testRunnerOptions.isDebug ? 'info' : undefined;
+    const logLevel = testRunnerOptions.isDebug ? 'verbose' : 'info';
     let runnerResult;
     if (testRunnerOptions.useLegacyNavigation) {
       const connection = new CriConnection(port);
@@ -124,12 +124,10 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
   worker.stdout.setEncoding('utf8');
   worker.stderr.setEncoding('utf8');
   worker.stdout.addListener('data', (data) => {
-    process.stdout.write(data);
-    logs.push(`STDOUT: ${data}`);
+    logs.push(`[STDOUT] ${data}`);
   });
   worker.stderr.addListener('data', (data) => {
-    process.stderr.write(data);
-    logs.push(`STDERR: ${data}`);
+    logs.push(`[STDERR] ${data}`);
   });
   const [workerResponse] = await once(worker, 'message');
   const log = logs.join('') + '\n';

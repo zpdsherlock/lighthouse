@@ -25,6 +25,8 @@ import {runSmokehouse, getShardedDefinitions} from '../smokehouse.js';
 import {updateTestDefnFormat} from './back-compat-util.js';
 import {LH_ROOT} from '../../../../root.js';
 import exclusions from '../config/exclusions.js';
+import {saveArtifacts} from '../../../../core/lib/asset-saver.js';
+import {saveLhr} from '../../../../core/lib/asset-saver.js';
 
 const coreTestDefnsPath =
   path.join(LH_ROOT, 'cli/test/smokehouse/core-tests.js');
@@ -230,19 +232,23 @@ async function begin() {
   if (!smokehouseResult.success) {
     const failedTestResults = smokehouseResult.testResults.filter(r => r.failed);
 
-    // For CI, save failed runs to directory to be uploaded.
-    if (process.env.CI) {
-      const failuresDir = `${LH_ROOT}/.tmp/smokehouse-ci-failures`;
-      fs.mkdirSync(failuresDir, {recursive: true});
+    // Save failed runs to directory. In CI, this is uploaded as an artifact.
+    const failuresDir = `${LH_ROOT}/.tmp/smokehouse-failures`;
+    fs.rmSync(failuresDir, {recursive: true, force: true});
+    fs.mkdirSync(failuresDir);
 
-      for (const testResult of failedTestResults) {
-        for (let i = 0; i < testResult.runs.length; i++) {
-          const run = testResult.runs[i];
-          fs.writeFileSync(`${failuresDir}/${testResult.id}-${i}.json`, JSON.stringify({
-            ...run,
-            lighthouseLog: run.lighthouseLog.split('\n'),
-            assertionLog: run.assertionLog.split('\n'),
-          }, null, 2));
+    for (const testResult of failedTestResults) {
+      for (let i = 0; i < testResult.runs.length; i++) {
+        const runDir = `${failuresDir}/${i}/${testResult.id}`;
+        fs.mkdirSync(runDir, {recursive: true});
+
+        const run = testResult.runs[i];
+        await saveArtifacts(run.artifacts, runDir);
+        await saveLhr(run.lhr, runDir);
+        fs.writeFileSync(`${runDir}/assertionLog.txt`, run.assertionLog);
+        fs.writeFileSync(`${runDir}/lighthouseLog.txt`, run.lighthouseLog);
+        if (run.networkRequests) {
+          fs.writeFileSync(`${runDir}/networkRequests.txt`, run.networkRequests.join('\n'));
         }
       }
     }
