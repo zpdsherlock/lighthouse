@@ -11,22 +11,22 @@
 const expectations = {
   artifacts: {
     InspectorIssues: {
-      mixedContentIssue: [
-        {
+      mixedContentIssue: {
+        0: {
           resourceType: 'Image',
           resolutionStatus: 'MixedContentAutomaticallyUpgraded',
-          insecureURL: 'http://www.mixedcontentexamples.com/Content/Test/steveholt.jpg',
-          mainResourceURL: 'https://www.mixedcontentexamples.com/Test/NonSecureImage',
+          insecureURL: 'http://cdn.glitch.com/446ca0ec-cc52-4774-889a-6dc040eac6ef%2Fpuppy.jpg?v=1600261043278',
+          mainResourceURL: 'https://passive-mixed-content.glitch.me/',
           request: {
-            url: 'http://www.mixedcontentexamples.com/Content/Test/steveholt.jpg',
+            url: 'http://cdn.glitch.com/446ca0ec-cc52-4774-889a-6dc040eac6ef%2Fpuppy.jpg?v=1600261043278',
           },
         },
-      ],
+      },
     },
   },
   lhr: {
-    requestedUrl: 'https://www.mixedcontentexamples.com/Test/NonSecureImage',
-    finalDisplayedUrl: 'https://www.mixedcontentexamples.com/Test/NonSecureImage',
+    requestedUrl: 'https://passive-mixed-content.glitch.me/',
+    finalDisplayedUrl: 'https://passive-mixed-content.glitch.me/',
     audits: {
       'is-on-https': {
         score: 0,
