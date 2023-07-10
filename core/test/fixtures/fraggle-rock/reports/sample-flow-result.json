@@ -1825,7 +1825,38 @@
               ],
               "skipSumming": [
                 "startTime"
-              ]
+              ],
+              "debugData": {
+                "type": "debugdata",
+                "urls": [
+                  "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
+                  "https://www.mikescerealshack.co/"
+                ],
+                "tasks": [
+                  {
+                    "urlIndex": 0,
+                    "startTime": 2135.7,
+                    "duration": 193,
+                    "other": 193,
+                    "scriptEvaluation": 0
+                  },
+                  {
+                    "urlIndex": 1,
+                    "startTime": 769.8,
+                    "duration": 127,
+                    "other": 127,
+                    "scriptEvaluation": 0
+                  },
+                  {
+                    "urlIndex": 1,
+                    "startTime": 965.8,
+                    "duration": 96,
+                    "other": 96,
+                    "paintCompositeRender": 0,
+                    "styleLayout": 0
+                  }
+                ]
+              }
             }
           },
           "no-unload-listeners": {
@@ -9573,7 +9604,24 @@
               ],
               "skipSumming": [
                 "startTime"
-              ]
+              ],
+              "debugData": {
+                "type": "debugdata",
+                "urls": [
+                  "https://www.mikescerealshack.co/"
+                ],
+                "tasks": [
+                  {
+                    "urlIndex": 0,
+                    "startTime": 1903.2,
+                    "duration": 172.8,
+                    "other": 2,
+                    "parseHTML": 0.1,
+                    "scriptEvaluation": 150.2,
+                    "styleLayout": 20.5
+                  }
+                ]
+              }
             }
           },
           "no-unload-listeners": {
@@ -18964,7 +19012,30 @@
               ],
               "skipSumming": [
                 "startTime"
-              ]
+              ],
+              "debugData": {
+                "type": "debugdata",
+                "urls": [
+                  "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
+                  "https://www.mikescerealshack.co/_next/static/chunks/main-1f8481d632114a408557.js"
+                ],
+                "tasks": [
+                  {
+                    "urlIndex": 0,
+                    "startTime": 907.7,
+                    "duration": 76,
+                    "other": 76,
+                    "scriptEvaluation": 0
+                  },
+                  {
+                    "urlIndex": 1,
+                    "startTime": 752.7,
+                    "duration": 63,
+                    "other": 63,
+                    "scriptEvaluation": 0
+                  }
+                ]
+              }
             }
           },
           "no-unload-listeners": {

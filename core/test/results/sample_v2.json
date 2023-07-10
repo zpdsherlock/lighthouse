@@ -2558,7 +2558,36 @@
         ],
         "skipSumming": [
           "startTime"
-        ]
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "urls": [
+            "http://localhost:10200/dobetterweb/dbw_tester.html",
+            "http://localhost:10200/dobetterweb/third_party/aggressive-promise-polyfill.js"
+          ],
+          "tasks": [
+            {
+              "urlIndex": 0,
+              "startTime": 6845.8,
+              "duration": 1174.9,
+              "other": 0.8,
+              "parseHTML": 0.6,
+              "scriptEvaluation": 1170.7,
+              "scriptParseCompile": 2.5,
+              "styleLayout": 0.2
+            },
+            {
+              "urlIndex": 1,
+              "startTime": 8044.8,
+              "duration": 145.8,
+              "other": 0.1,
+              "parseHTML": 13.5,
+              "scriptEvaluation": 120.7,
+              "scriptParseCompile": 10.4,
+              "styleLayout": 1.2
+            }
+          ]
+        }
       }
     },
     "no-unload-listeners": {
