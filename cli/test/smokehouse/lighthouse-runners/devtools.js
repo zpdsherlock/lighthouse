@@ -8,8 +8,6 @@
  * @fileoverview A runner that launches Chrome and executes Lighthouse via DevTools.
  */
 
-import fs from 'fs';
-import os from 'os';
 import {execFileSync} from 'child_process';
 
 import {LH_ROOT} from '../../../../root.js';
@@ -54,13 +52,6 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
     chromeFlags,
     useLegacyNavigation: testRunnerOptions.useLegacyNavigation,
   });
-
-  if (testRunnerOptions.isDebug) {
-    const outputDir = fs.mkdtempSync(os.tmpdir() + '/lh-smoke-cdt-runner-');
-    fs.writeFileSync(`${outputDir}/lhr.json`, JSON.stringify(lhr));
-    fs.writeFileSync(`${outputDir}/artifacts.json`, JSON.stringify(artifacts));
-    console.log(`${url} results saved at ${outputDir}`);
-  }
 
   const log = logs.join('') + '\n';
   return {lhr, artifacts, log};

@@ -229,17 +229,25 @@ async function begin() {
     servers?.forEach(s => s.close());
   }
 
+  let smokehouseOutputDir;
+  let testResultsToOutput;
   if (!smokehouseResult.success) {
-    const failedTestResults = smokehouseResult.testResults.filter(r => r.failed);
-
     // Save failed runs to directory. In CI, this is uploaded as an artifact.
-    const failuresDir = `${LH_ROOT}/.tmp/smokehouse-failures`;
-    fs.rmSync(failuresDir, {recursive: true, force: true});
-    fs.mkdirSync(failuresDir);
+    smokehouseOutputDir = `${LH_ROOT}/.tmp/smokehouse-failures`;
+    testResultsToOutput = smokehouseResult.testResults.filter(r => r.failed);
+  } else if (!process.env.CI) {
+    // Otherwise, only write to disk in debug mode.
+    smokehouseOutputDir = `${LH_ROOT}/.tmp/smokehouse-output`;
+    testResultsToOutput = smokehouseResult.testResults;
+  }
 
-    for (const testResult of failedTestResults) {
+  if (smokehouseOutputDir && testResultsToOutput) {
+    fs.rmSync(smokehouseOutputDir, {recursive: true, force: true});
+    fs.mkdirSync(smokehouseOutputDir);
+
+    for (const testResult of testResultsToOutput) {
       for (let i = 0; i < testResult.runs.length; i++) {
-        const runDir = `${failuresDir}/${i}/${testResult.id}`;
+        const runDir = `${smokehouseOutputDir}/${i}/${testResult.id}`;
         fs.mkdirSync(runDir, {recursive: true});
 
         const run = testResult.runs[i];
@@ -250,10 +258,18 @@ async function begin() {
         if (run.networkRequests) {
           fs.writeFileSync(`${runDir}/networkRequests.txt`, run.networkRequests.join('\n'));
         }
+        const config = testDefns.find(test => test.id === testResult.id)?.config;
+        if (config) {
+          fs.writeFileSync(`${runDir}/config.json`, JSON.stringify(config, null, 2));
+        }
       }
     }
 
-    const cmd = `yarn smoke ${failedTestResults.map(r => r.id).join(' ')}`;
+    console.log(`smokehouse artifacts written to ${smokehouseOutputDir}`);
+  }
+
+  if (!smokehouseResult.success && testResultsToOutput) {
+    const cmd = `yarn smoke ${testResultsToOutput.map(r => r.id).join(' ')}`;
     console.log(`rerun failures: ${cmd}`);
   }
 
