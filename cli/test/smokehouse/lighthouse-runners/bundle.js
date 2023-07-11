@@ -39,7 +39,7 @@ if (!isMainThread && parentPort) {
       parentPort?.postMessage({type: 'result', value});
     } catch (err) {
       console.error(err);
-      parentPort?.postMessage({type: 'error', value: err});
+      parentPort?.postMessage({type: 'error', value: err.toString()});
     }
   })();
 }
