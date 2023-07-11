@@ -1,3 +1,67 @@
+<a name="10.4.0"></a>
+# 10.4.0 (2023-07-10)
+[Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.3.0...v10.4.0)
+
+We expect this release to ship in the DevTools of [Chrome 117](https://chromiumdash.appspot.com/schedule), and to PageSpeed Insights within 2 weeks.
+
+## New Contributors
+
+Thanks to our new contributors 👽🐷🐰🐯🐻!
+
+- Sanjaiyan Parthipan @sanjaiyan-dev
+
+## New Audits
+
+* add hidden, 0-weight a11y audits ([#15216](https://github.com/GoogleChrome/lighthouse/pull/15216))
+* aria-dialog-name, aria-text, link-in-text-block, select-name ([#15159](https://github.com/GoogleChrome/lighthouse/pull/15159))
+
+## Core
+
+* remove unnecessary references to legacy gatherer ([#15236](https://github.com/GoogleChrome/lighthouse/pull/15236))
+* update residual usages of legacy runner ([#15227](https://github.com/GoogleChrome/lighthouse/pull/15227))
+* compute TBT impact for main thread tasks ([#15175](https://github.com/GoogleChrome/lighthouse/pull/15175))
+* support ts targets before es2022 ([#15189](https://github.com/GoogleChrome/lighthouse/pull/15189))
+* byte-efficiency: compute FCP & LCP savings ([#15104](https://github.com/GoogleChrome/lighthouse/pull/15104))
+* config: add more validation from legacy ([#15211](https://github.com/GoogleChrome/lighthouse/pull/15211))
+* link-text: add tamil keywords to blocklist ([#15152](https://github.com/GoogleChrome/lighthouse/pull/15152))
+* long-tasks: add more task information to debugData ([#15198](https://github.com/GoogleChrome/lighthouse/pull/15198))
+* network-recorder: set target type of unfinished request ([#15232](https://github.com/GoogleChrome/lighthouse/pull/15232))
+* non-composited-animations: add CLS savings as always 0 ([#15099](https://github.com/GoogleChrome/lighthouse/pull/15099))
+* prioritize-lcp-image: add LCP savings ([#15229](https://github.com/GoogleChrome/lighthouse/pull/15229))
+* proto: add errorStack to AuditResult ([#15187](https://github.com/GoogleChrome/lighthouse/pull/15187))
+* redirects: add FCP and LCP savings ([#15228](https://github.com/GoogleChrome/lighthouse/pull/15228))
+* source-maps: support BOM markers and CORB prefix ([#15224](https://github.com/GoogleChrome/lighthouse/pull/15224))
+* stacks: add wix ([#15171](https://github.com/GoogleChrome/lighthouse/pull/15171))
+* unsized-images: add CLS savings as always 0 ([#15196](https://github.com/GoogleChrome/lighthouse/pull/15196))
+* viewport: add INP savings ([#15071](https://github.com/GoogleChrome/lighthouse/pull/15071))
+* work-during-interaction: add INP savings ([#15176](https://github.com/GoogleChrome/lighthouse/pull/15176))
+
+## Report
+
+* use fixed position for hidden radios ([#15181](https://github.com/GoogleChrome/lighthouse/pull/15181))
+
+## Deps
+
+* upgrade puppeteer to 20.8 ([#15226](https://github.com/GoogleChrome/lighthouse/pull/15226))
+* upgrade third-party-web to 0.23.3 ([#15213](https://github.com/GoogleChrome/lighthouse/pull/15213))
+
+## I18n
+
+* import ([#15243](https://github.com/GoogleChrome/lighthouse/pull/15243))
+
+## Tests
+
+* save smokehouse failures, improve bundle runner logging ([#15235](https://github.com/GoogleChrome/lighthouse/pull/15235))
+* remove usages of legacy driver ([#15230](https://github.com/GoogleChrome/lighthouse/pull/15230))
+* a11y: use regex for target size explanation ([#15231](https://github.com/GoogleChrome/lighthouse/pull/15231))
+* ci: skip puppeteer Chrome download ([#15177](https://github.com/GoogleChrome/lighthouse/pull/15177))
+* config: add unit tests from legacy config ([#15209](https://github.com/GoogleChrome/lighthouse/pull/15209))
+* devtools: fix e2e compile error ([#15210](https://github.com/GoogleChrome/lighthouse/pull/15210))
+* devtools: remove parallel modifier from e2e tests ([#15172](https://github.com/GoogleChrome/lighthouse/pull/15172))
+* issues-mixed-content: use new site for testing ([#15241](https://github.com/GoogleChrome/lighthouse/pull/15241))
+* runner: drop usages of legacy runner ([#15047](https://github.com/GoogleChrome/lighthouse/pull/15047))
+* smoke: expect server-response-time to be greater than 0 ([#15188](https://github.com/GoogleChrome/lighthouse/pull/15188))
+
 <a name="10.3.0"></a>
 # 10.3.0 (2023-06-13)
 [Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v10.2.0...v10.3.0)
