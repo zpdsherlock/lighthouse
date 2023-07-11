@@ -136,11 +136,6 @@ async function begin() {
         default: false,
         describe: 'Save test artifacts and output verbose logs',
       },
-      'legacy-navigation': {
-        type: 'boolean',
-        default: false,
-        describe: 'Use the legacy navigation runner',
-      },
       'jobs': {
         type: 'number',
         alias: 'j',
@@ -218,7 +213,6 @@ async function begin() {
       jobs,
       retries,
       isDebug: argv.debug,
-      useLegacyNavigation: argv.legacyNavigation,
       lighthouseRunner: runLighthouse,
       takeNetworkRequestUrls,
       setup,

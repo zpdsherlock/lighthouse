@@ -230,16 +230,6 @@ function enableDevToolsThrottling() {
   toolbarRoot.querySelector('option[value="devtools"]').selected = true;
   toolbarRoot.querySelector('select').dispatchEvent(new Event('change'));
 }
-
-function disableLegacyNavigation() {
-  // @ts-expect-error global
-  const panel = UI.panels.lighthouse || UI.panels.audits;
-  const toolbarRoot = panel.contentElement.querySelector('.lighthouse-settings-pane .toolbar').shadowRoot;
-  const checkboxRoot = toolbarRoot.querySelector('span[is="dt-checkbox"]').shadowRoot;
-  const checkboxEl = checkboxRoot.querySelector('input');
-  checkboxEl.checked = false;
-  checkboxEl.dispatchEvent(new Event('change'));
-}
 /* eslint-enable */
 
 /**
@@ -296,11 +286,11 @@ function dismissDialog(dialog) {
 
 /**
  * @param {string} url
- * @param {{config?: LH.Config, chromeFlags?: string[], useLegacyNavigation?: boolean}} [options]
+ * @param {{config?: LH.Config, chromeFlags?: string[]}} [options]
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, logs: string[]}>}
  */
 async function testUrlFromDevtools(url, options = {}) {
-  const {config, chromeFlags, useLegacyNavigation} = options;
+  const {config, chromeFlags} = options;
 
   const browser = await puppeteer.launch({
     executablePath: getChromePath(),
@@ -329,10 +319,6 @@ async function testUrlFromDevtools(url, options = {}) {
     await waitForFunction(inspectorSession, waitForLighthouseReady);
 
     page.off('dialog', dismissDialog);
-
-    if (!useLegacyNavigation) {
-      await evaluateInSession(inspectorSession, disableLegacyNavigation);
-    }
 
     if (config) {
       await installCustomLighthouseConfig(inspectorSession, config);

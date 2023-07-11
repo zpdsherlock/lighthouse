@@ -53,7 +53,6 @@ const DEFAULT_RETRIES = 0;
 async function runSmokehouse(smokeTestDefns, smokehouseOptions) {
   const {
     isDebug,
-    useLegacyNavigation,
     jobs = DEFAULT_CONCURRENT_RUNS,
     retries = DEFAULT_RETRIES,
     lighthouseRunner = Object.assign(cliLighthouseRunner, {runnerName: 'cli'}),
@@ -76,7 +75,6 @@ async function runSmokehouse(smokeTestDefns, smokehouseOptions) {
 
   const testOptions = {
     isDebug,
-    useLegacyNavigation,
     retries,
     lighthouseRunner,
     takeNetworkRequestUrls,
@@ -134,38 +132,17 @@ function purpleify(str) {
 }
 
 /**
- * @param {LH.Config=} config
- * @return {LH.Config|undefined}
- */
-function convertToLegacyConfig(config) {
-  if (!config) return config;
-
-  return {
-    ...config,
-    passes: [{
-      passName: 'defaultPass',
-      pauseAfterFcpMs: config.settings?.pauseAfterFcpMs,
-      pauseAfterLoadMs: config.settings?.pauseAfterLoadMs,
-      networkQuietThresholdMs: config.settings?.networkQuietThresholdMs,
-      cpuQuietThresholdMs: config.settings?.cpuQuietThresholdMs,
-      blankPage: config.settings?.blankPage,
-    }],
-  };
-}
-
-/**
  * Run Lighthouse in the selected runner.
  * @param {Smokehouse.TestDfn} smokeTestDefn
- * @param {{isDebug?: boolean, useLegacyNavigation?: boolean, retries: number, lighthouseRunner: Smokehouse.LighthouseRunner, takeNetworkRequestUrls?: () => string[]}} testOptions
+ * @param {{isDebug?: boolean, retries: number, lighthouseRunner: Smokehouse.LighthouseRunner, takeNetworkRequestUrls?: () => string[]}} testOptions
  * @return {Promise<SmokehouseResult>}
  */
 async function runSmokeTest(smokeTestDefn, testOptions) {
-  const {id, expectations} = smokeTestDefn;
+  const {id, expectations, config} = smokeTestDefn;
   const {
     lighthouseRunner,
     retries,
     isDebug,
-    useLegacyNavigation,
     takeNetworkRequestUrls,
   } = testOptions;
   const requestedUrl = expectations.lhr.requestedUrl;
@@ -184,15 +161,10 @@ async function runSmokeTest(smokeTestDefn, testOptions) {
       bufferedConsole.log(`  Retrying run (${i} out of ${retries} retries)…`);
     }
 
-    let config = smokeTestDefn.config;
-    if (useLegacyNavigation) {
-      config = convertToLegacyConfig(config);
-    }
-
     // Run Lighthouse.
     try {
       result = {
-        ...await lighthouseRunner(requestedUrl, config, {isDebug, useLegacyNavigation}),
+        ...await lighthouseRunner(requestedUrl, config, {isDebug}),
         networkRequests: takeNetworkRequestUrls ? takeNetworkRequestUrls() : undefined,
       };
 
@@ -213,7 +185,6 @@ async function runSmokeTest(smokeTestDefn, testOptions) {
     report = getAssertionReport(result, expectations, {
       runner: lighthouseRunner.runnerName,
       isDebug,
-      useLegacyNavigation,
     });
 
     runs.push({

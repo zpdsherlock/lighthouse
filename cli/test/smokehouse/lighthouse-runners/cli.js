@@ -28,7 +28,7 @@ const execFileAsync = promisify(execFile);
  * Launch Chrome and do a full Lighthouse run via the Lighthouse CLI.
  * @param {string} url
  * @param {LH.Config=} config
- * @param {{isDebug?: boolean, useFraggleRock?: boolean}=} testRunnerOptions
+ * @param {{isDebug?: boolean}=} testRunnerOptions
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, log: string}>}
  */
 async function runLighthouse(url, config, testRunnerOptions = {}) {
@@ -46,11 +46,11 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
  * @param {string} url
  * @param {string} tmpPath
  * @param {LH.Config=} config
- * @param {{isDebug?: boolean, useLegacyNavigation?: boolean}=} options
+ * @param {{isDebug?: boolean}=} options
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, log: string}>}
  */
 async function internalRun(url, tmpPath, config, options) {
-  const {isDebug = false, useLegacyNavigation = false} = options || {};
+  const {isDebug = false} = options || {};
   const localConsole = new LocalConsole();
 
   const outputPath = `${tmpPath}/smokehouse.report.json`;
@@ -66,10 +66,6 @@ async function internalRun(url, tmpPath, config, options) {
     '--port=0',
     '--quiet',
   ];
-
-  if (useLegacyNavigation) {
-    args.push('--legacy-navigation');
-  }
 
   // Config can be optionally provided.
   if (config) {

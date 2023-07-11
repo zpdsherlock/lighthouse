@@ -53,13 +53,11 @@ declare global {
       {expectations: Smokehouse.ExpectedRunnerResult | Array<Smokehouse.ExpectedRunnerResult>}
 
     export type LighthouseRunner =
-      {runnerName?: string} & ((url: string, config?: Config, runnerOptions?: {isDebug?: boolean; useLegacyNavigation?: boolean}) => Promise<{lhr: LHResult, artifacts: Artifacts, log: string}>);
+      {runnerName?: string} & ((url: string, config?: Config, runnerOptions?: {isDebug?: boolean}) => Promise<{lhr: LHResult, artifacts: Artifacts, log: string}>);
 
     export interface SmokehouseOptions {
       /** If true, performs extra logging from the test runs. */
       isDebug?: boolean;
-      /** If true, use the legacy navigation runner. */
-      useLegacyNavigation?: boolean;
       /** Manually set the number of jobs to run at once. `1` runs all tests serially. */
       jobs?: number;
       /** The number of times to retry failing tests before accepting. Defaults to 0. */

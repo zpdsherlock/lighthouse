@@ -44,12 +44,10 @@ const expectations = {
   artifacts: {
     PageLoadError: {code: 'PAGE_HUNG'},
     devtoolsLogs: {
-      'pageLoadError-defaultPass': {...NONEMPTY_ARRAY, _legacyOnly: true},
-      'pageLoadError-default': {...NONEMPTY_ARRAY, _fraggleRockOnly: true},
+      'pageLoadError-default': {...NONEMPTY_ARRAY},
     },
     traces: {
-      'pageLoadError-defaultPass': {traceEvents: NONEMPTY_ARRAY, _legacyOnly: true},
-      'pageLoadError-default': {traceEvents: NONEMPTY_ARRAY, _fraggleRockOnly: true},
+      'pageLoadError-default': {traceEvents: NONEMPTY_ARRAY},
     },
   },
 };

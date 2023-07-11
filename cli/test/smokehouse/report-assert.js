@@ -237,11 +237,9 @@ function makeComparison(name, actualResult, expectedResult) {
  * @param {LocalConsole} localConsole
  * @param {LH.Result} lhr
  * @param {Smokehouse.ExpectedRunnerResult} expected
- * @param {{runner?: string, useLegacyNavigation?: boolean}=} reportOptions
+ * @param {{runner?: string}=} reportOptions
  */
 function pruneExpectations(localConsole, lhr, expected, reportOptions) {
-  const isLegacyNavigation = reportOptions?.useLegacyNavigation;
-
   /**
    * Lazily compute the Chrome version because some reports are explicitly asserting error conditions.
    * @returns {string}
@@ -295,19 +293,6 @@ function pruneExpectations(localConsole, lhr, expected, reportOptions) {
           `Actual Chromium version: ${getChromeVersionString()}`,
         ].join(' '));
         remove(key);
-      } else if (value._legacyOnly && !isLegacyNavigation) {
-        localConsole.log([
-          `[${key}] marked legacy only but run is Fraggle Rock, pruning expectation:`,
-          JSON.stringify(value, null, 2),
-        ].join(' '));
-        remove(key);
-      } else if (value._fraggleRockOnly && isLegacyNavigation) {
-        localConsole.log([
-          `[${key}] marked Fraggle Rock only but run is legacy, pruning expectation:`,
-          JSON.stringify(value, null, 2),
-          `Actual channel: ${lhr.configSettings.channel}`,
-        ].join(' '));
-        remove(key);
       } else if (value._runner && reportOptions?.runner !== value._runner) {
         localConsole.log([
           `[${key}] is only for runner ${value._runner}, pruning expectation:`,
@@ -325,8 +310,6 @@ function pruneExpectations(localConsole, lhr, expected, reportOptions) {
       }
     }
 
-    delete obj._legacyOnly;
-    delete obj._fraggleRockOnly;
     delete obj._skipInBundled;
     delete obj._minChromiumVersion;
     delete obj._maxChromiumVersion;
@@ -483,7 +466,7 @@ function reportAssertion(localConsole, assertion) {
  * summary. Returns count of passed and failed tests.
  * @param {{lhr: LH.Result, artifacts: LH.Artifacts, networkRequests?: string[]}} actual
  * @param {Smokehouse.ExpectedRunnerResult} expected
- * @param {{runner?: string, isDebug?: boolean, useLegacyNavigation?: boolean}=} reportOptions
+ * @param {{runner?: string, isDebug?: boolean}=} reportOptions
  * @return {{passed: number, failed: number, log: string}}
  */
 function getAssertionReport(actual, expected, reportOptions = {}) {
