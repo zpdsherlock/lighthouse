@@ -237,7 +237,7 @@ async function begin() {
 
   if (smokehouseOutputDir && testResultsToOutput) {
     fs.rmSync(smokehouseOutputDir, {recursive: true, force: true});
-    fs.mkdirSync(smokehouseOutputDir);
+    fs.mkdirSync(smokehouseOutputDir, {recursive: true});
 
     for (const testResult of testResultsToOutput) {
       for (let i = 0; i < testResult.runs.length; i++) {
