@@ -136,7 +136,6 @@ async function inlineFs(code, filepath) {
  */
 function parseExpressionAt(input, offset, options) {
   const parser = new acorn.Parser(options, input, offset);
-  // @ts-expect-error - Not part of the current acorn types.
   parser.nextToken();
   // @ts-expect-error - Not part of the current acorn types.
   return parser.parseMaybeAssign();
