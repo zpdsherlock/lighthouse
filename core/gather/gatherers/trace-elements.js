@@ -12,7 +12,7 @@
  * We take the backend nodeId from the trace and use it to find the corresponding element in the DOM.
  */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {resolveNodeIdToObjectId} from '../driver/dom.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 import * as RectHelpers from '../../lib/rect-helpers.js';
@@ -41,7 +41,7 @@ function getNodeDetailsData() {
 }
 /* c8 ignore stop */
 
-class TraceElements extends FRGatherer {
+class TraceElements extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'Trace'>} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -135,7 +135,7 @@ class TraceElements extends FRGatherer {
 
   /**
    * @param {LH.Trace} trace
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<TraceElementData|undefined>}
    */
   static async getResponsivenessElement(trace, context) {
@@ -205,7 +205,7 @@ class TraceElements extends FRGatherer {
 
   /**
    * @param {LH.Trace} trace
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<{nodeId: number, type: string} | undefined>}
    */
   static async getLcpElement(trace, context) {
@@ -233,7 +233,7 @@ class TraceElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async startInstrumentation(context) {
     await context.driver.defaultSession.sendCommand('Animation.enable');
@@ -241,7 +241,7 @@ class TraceElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async stopInstrumentation(context) {
     context.driver.defaultSession.off('Animation.animationStarted', this._onAnimationStarted);
@@ -249,7 +249,7 @@ class TraceElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'Trace'>} context
+   * @param {LH.Gatherer.Context<'Trace'>} context
    * @return {Promise<LH.Artifacts.TraceElement[]>}
    */
   async getArtifact(context) {

@@ -6,7 +6,7 @@
 
 /* global window, document, getNodeDetails */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {axeSource} from '../../lib/axe.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 
@@ -169,7 +169,7 @@ function createAxeRuleResultArtifact(result) {
 }
 /* c8 ignore stop */
 
-class Accessibility extends FRGatherer {
+class Accessibility extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
@@ -181,7 +181,7 @@ class Accessibility extends FRGatherer {
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts.Accessibility>}
    */
   getArtifact(passContext) {

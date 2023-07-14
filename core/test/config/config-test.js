@@ -157,9 +157,9 @@ describe('Fraggle Rock Config', () => {
   });
 
   describe('resolveArtifactDependencies', () => {
-    /** @type {LH.Gatherer.FRGathererInstance} */
+    /** @type {LH.Gatherer.GathererInstance} */
     let dependencyGatherer;
-    /** @type {LH.Gatherer.FRGathererInstance<'ImageElements'>} */
+    /** @type {LH.Gatherer.GathererInstance<'ImageElements'>} */
     let dependentGatherer;
     /** @type {LH.Config} */
     let config;

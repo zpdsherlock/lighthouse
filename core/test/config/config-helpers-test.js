@@ -21,7 +21,7 @@ import {
   mergeConfigFragmentArrayByKey,
 } from '../../config/config-helpers.js';
 import {Runner} from '../../runner.js';
-import Gatherer from '../../gather/base-gatherer.js';
+import BaseGatherer from '../../gather/base-gatherer.js';
 import ImageElementsGatherer from '../../gather/gatherers/image-elements.js';
 import UserTimingsAudit from '../../audits/user-timings.js';
 import {LH_ROOT} from '../../../root.js';
@@ -142,7 +142,7 @@ describe('.deepClone', () => {
 
 describe('.deepCloneConfigJson', () => {
   it('should clone a config deeply', () => {
-    const TimingGatherer = new Gatherer();
+    const TimingGatherer = new BaseGatherer();
     const input = {
       artifacts: [{id: 'Timing', gatherer: TimingGatherer}],
       audits: [{path: 'user-timings'}],
@@ -161,7 +161,7 @@ describe('.deepCloneConfigJson', () => {
   });
 
   it('should preserve gatherer implementations in artifacts', () => {
-    const TimingGatherer = new Gatherer();
+    const TimingGatherer = new BaseGatherer();
     const input = {
       artifacts: [{id: 'Timing', gatherer: TimingGatherer}],
     };
@@ -495,7 +495,7 @@ describe('.resolveAuditsToDefns', () => {
   });
 
   it('throws for invalid auditDefns', async () => {
-    await expect(resolveAuditsToDefns([new Gatherer()])).rejects.toThrow(/Invalid Audit type/);
+    await expect(resolveAuditsToDefns([new BaseGatherer()])).rejects.toThrow(/Invalid Audit type/);
   });
 
   it('throws but not for missing audit when it has a node dependency error', async () => {

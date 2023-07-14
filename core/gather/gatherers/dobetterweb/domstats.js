@@ -12,7 +12,7 @@
 /* global getNodeDetails document */
 
 
-import FRGatherer from '../../base-gatherer.js';
+import BaseGatherer from '../../base-gatherer.js';
 import {pageFunctions} from '../../../lib/page-functions.js';
 
 /**
@@ -75,14 +75,14 @@ function getDOMStats(element = document.body, deep = true) {
 }
 /* c8 ignore stop */
 
-class DOMStats extends FRGatherer {
+class DOMStats extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts['DOMStats']>}
    */
   async getArtifact(passContext) {

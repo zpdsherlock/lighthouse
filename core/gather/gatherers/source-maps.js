@@ -5,12 +5,12 @@
  */
 
 import SDK from '../../lib/cdt/SDK.js';
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
 /**
  * @fileoverview Gets JavaScript source maps.
  */
-class SourceMaps extends FRGatherer {
+class SourceMaps extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -24,7 +24,7 @@ class SourceMaps extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalDriver} driver
+   * @param {LH.Gatherer.Driver} driver
    * @param {string} sourceMapUrl
    * @return {Promise<LH.Artifacts.RawSourceMap>}
    */
@@ -68,7 +68,7 @@ class SourceMaps extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalDriver} driver
+   * @param {LH.Gatherer.Driver} driver
    * @param {LH.Crdp.Debugger.ScriptParsedEvent} event
    * @return {Promise<LH.Artifacts.SourceMap>}
    */
@@ -125,7 +125,7 @@ class SourceMaps extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async startSensitiveInstrumentation(context) {
     const session = context.driver.defaultSession;
@@ -134,7 +134,7 @@ class SourceMaps extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async stopSensitiveInstrumentation(context) {
     const session = context.driver.defaultSession;
@@ -143,7 +143,7 @@ class SourceMaps extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Artifacts['SourceMaps']>}
    */
   async getArtifact(context) {

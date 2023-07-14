@@ -13,7 +13,7 @@
 import {Buffer} from 'buffer';
 import {gzip} from 'zlib';
 
-import FRGatherer from '../../base-gatherer.js';
+import BaseGatherer from '../../base-gatherer.js';
 import UrlUtils from '../../../lib/url-utils.js';
 import {Sentry} from '../../../lib/sentry.js';
 import {NetworkRequest} from '../../../lib/network-request.js';
@@ -39,7 +39,7 @@ const textResourceTypes = [
   NetworkRequest.TYPES.EventSource,
 ];
 
-class ResponseCompression extends FRGatherer {
+class ResponseCompression extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'DevtoolsLog'>} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -91,7 +91,7 @@ class ResponseCompression extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @param {LH.Artifacts.NetworkRequest[]} networkRecords
    * @return {Promise<LH.Artifacts['ResponseCompression']>}
    */
@@ -132,7 +132,7 @@ class ResponseCompression extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['ResponseCompression']>}
    */
   async getArtifact(context) {

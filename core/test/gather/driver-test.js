@@ -8,7 +8,7 @@ import {Driver} from '../../gather/driver.js';
 import {fnAny} from '../test-utils.js';
 import {createMockCdpSession} from './mock-driver.js';
 
-/** @type {Array<keyof LH.Gatherer.FRProtocolSession>} */
+/** @type {Array<keyof LH.Gatherer.ProtocolSession>} */
 const DELEGATED_FUNCTIONS = [
   'hasNextProtocolTimeout',
   'getNextProtocolTimeout',

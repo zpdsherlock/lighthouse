@@ -9,7 +9,7 @@ import {NetworkRequest} from '../../lib/network-request.js';
 /**
  * Return the body of the response with the given ID. Rejects if getting the
  * body times out.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {string} requestId
  * @param {number} [timeout]
  * @return {Promise<string>}

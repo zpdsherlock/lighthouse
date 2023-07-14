@@ -14,7 +14,7 @@ const DEFAULT_PROTOCOL_TIMEOUT = 30000;
 /** @typedef {LH.Protocol.StrictEventEmitterClass<LH.CrdpEvents>} CrdpEventMessageEmitter */
 const CrdpEventEmitter = /** @type {CrdpEventMessageEmitter} */ (EventEmitter);
 
-/** @implements {LH.Gatherer.FRProtocolSession} */
+/** @implements {LH.Gatherer.ProtocolSession} */
 class ProtocolSession extends CrdpEventEmitter {
   /**
    * @param {LH.Puppeteer.CDPSession} cdpSession

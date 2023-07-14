@@ -10,13 +10,13 @@
 
 import log from 'lighthouse-logger';
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {Sentry} from '../../lib/sentry.js';
 
-class CSSUsage extends FRGatherer {
+class CSSUsage extends BaseGatherer {
   constructor() {
     super();
-    /** @type {LH.Gatherer.FRProtocolSession|undefined} */
+    /** @type {LH.Gatherer.ProtocolSession|undefined} */
     this._session = undefined;
     /** @type {Map<string, Promise<LH.Artifacts.CSSStyleSheetInfo|Error>>} */
     this._sheetPromises = new Map();
@@ -64,7 +64,7 @@ class CSSUsage extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async startCSSUsageTracking(context) {
     const session = context.driver.defaultSession;
@@ -78,7 +78,7 @@ class CSSUsage extends FRGatherer {
 
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async stopCSSUsageTracking(context) {
     const session = context.driver.defaultSession;
@@ -88,7 +88,7 @@ class CSSUsage extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async startInstrumentation(context) {
     if (context.gatherMode !== 'timespan') return;
@@ -96,7 +96,7 @@ class CSSUsage extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async stopInstrumentation(context) {
     if (context.gatherMode !== 'timespan') return;
@@ -104,7 +104,7 @@ class CSSUsage extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Artifacts['CSSUsage']>}
    */
   async getArtifact(context) {

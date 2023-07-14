@@ -19,7 +19,7 @@
 
 import {NetworkRecords} from '../../../computed/network-records.js';
 import DevtoolsLog from '../devtools-log.js';
-import FRGatherer from '../../base-gatherer.js';
+import BaseGatherer from '../../base-gatherer.js';
 
 /* global document, window, HTMLLinkElement, SVGScriptElement */
 
@@ -113,7 +113,7 @@ async function collectTagsThatBlockFirstPaint() {
 }
 /* c8 ignore stop */
 
-class TagsBlockingFirstPaint extends FRGatherer {
+class TagsBlockingFirstPaint extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'DevtoolsLog'>} */
   meta = {
     supportedModes: ['navigation'],
@@ -149,7 +149,7 @@ class TagsBlockingFirstPaint extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalDriver} driver
+   * @param {LH.Gatherer.Driver} driver
    * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
    * @return {Promise<Array<LH.Artifacts.TagBlockingFirstPaint>>}
    */
@@ -206,7 +206,7 @@ class TagsBlockingFirstPaint extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async startSensitiveInstrumentation(context) {
     const {executionContext} = context.driver;
@@ -215,7 +215,7 @@ class TagsBlockingFirstPaint extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['TagsBlockingFirstPaint']>}
    */
   async getArtifact(context) {

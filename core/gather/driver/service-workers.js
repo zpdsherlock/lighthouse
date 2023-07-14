@@ -5,7 +5,7 @@
  */
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<LH.Crdp.ServiceWorker.WorkerVersionUpdatedEvent>}
  */
 function getServiceWorkerVersions(session) {
@@ -37,7 +37,7 @@ function getServiceWorkerVersions(session) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<LH.Crdp.ServiceWorker.WorkerRegistrationUpdatedEvent>}
  */
 function getServiceWorkerRegistrations(session) {

@@ -16,7 +16,7 @@ import {getBaseArtifacts, finalizeArtifacts} from './base-artifacts.js';
 /**
  * @param {LH.Puppeteer.Page} page
  * @param {{config?: LH.Config, flags?: LH.Flags}} [options]
- * @return {Promise<{endTimespanGather(): Promise<LH.Gatherer.FRGatherResult>}>}
+ * @return {Promise<{endTimespanGather(): Promise<LH.Gatherer.GatherResult>}>}
  */
 async function startTimespanGather(page, options = {}) {
   const {flags = {}, config} = options;

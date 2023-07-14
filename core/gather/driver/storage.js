@@ -34,7 +34,7 @@ const str_ = i18n.createIcuMessageFn(import.meta.url, UIStrings);
 
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {string} url
  * @return {Promise<LH.IcuMessage[]>}
  */
@@ -82,7 +82,7 @@ async function clearDataForOrigin(session, url) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {string} url
  * @return {Promise<LH.IcuMessage | undefined>}
  */
@@ -112,7 +112,7 @@ async function getImportantStorageWarning(session, url) {
 
 /**
  * Clear the network cache on disk and in memory.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<LH.IcuMessage[]>}
  */
 async function clearBrowserCaches(session) {

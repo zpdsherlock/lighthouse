@@ -34,7 +34,7 @@ describe('.getArtifact', () => {
       .mockResponse('CSS.disable')
       .mockResponse('DOM.disable');
 
-    /** @type {LH.Gatherer.FRTransitionalContext} */
+    /** @type {LH.Gatherer.Context} */
     const context = {
       driver: driver.asDriver(),
       gatherMode: 'snapshot',
@@ -91,7 +91,7 @@ describe('.getArtifact', () => {
       .mockResponse('CSS.disable')
       .mockResponse('DOM.disable');
 
-    /** @type {LH.Gatherer.FRTransitionalContext} */
+    /** @type {LH.Gatherer.Context} */
     const context = {
       driver: driver.asDriver(),
       gatherMode: 'timespan',
@@ -146,7 +146,7 @@ describe('.getArtifact', () => {
       .mockResponse('CSS.disable')
       .mockResponse('DOM.disable');
 
-    /** @type {LH.Gatherer.FRTransitionalContext} */
+    /** @type {LH.Gatherer.Context} */
     const context = {
       driver: driver.asDriver(),
       gatherMode: 'snapshot',

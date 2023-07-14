@@ -22,7 +22,7 @@ function handlePotentialMissingNodeError(err) {
  * Resolves a backend node ID (from a trace event, protocol, etc) to the object ID for use with
  * `Runtime.callFunctionOn`. `undefined` means the node could not be found.
  *
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {number} backendNodeId
  * @return {Promise<string|undefined>}
  */
@@ -40,7 +40,7 @@ async function resolveNodeIdToObjectId(session, backendNodeId) {
  * with `Runtime.callFunctionOn`. `undefined` means the node could not be found.
  * Requires `DOM.getDocument` to have been called since the object's creation or it will always be `undefined`.
  *
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {string} path
  * @return {Promise<string|undefined>}
  */

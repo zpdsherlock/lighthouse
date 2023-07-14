@@ -9,11 +9,11 @@
  */
 
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {NetworkRecords} from '../../computed/network-records.js';
 import DevtoolsLog from './devtools-log.js';
 
-class InspectorIssues extends FRGatherer {
+class InspectorIssues extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'DevtoolsLog'>} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -35,7 +35,7 @@ class InspectorIssues extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async startInstrumentation(context) {
     const session = context.driver.defaultSession;
@@ -44,7 +44,7 @@ class InspectorIssues extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    */
   async stopInstrumentation(context) {
     const session = context.driver.defaultSession;
@@ -53,7 +53,7 @@ class InspectorIssues extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['InspectorIssues']>}
    */
   async getArtifact(context) {

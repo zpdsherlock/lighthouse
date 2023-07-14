@@ -103,7 +103,7 @@ function resolveExtensions(config) {
  * Looks up the required artifact IDs for each dependency, throwing if no earlier artifact satisfies the dependency.
  *
  * @param {LH.Config.ArtifactJson} artifact
- * @param {LH.Config.AnyFRGathererDefn} gatherer
+ * @param {LH.Config.AnyGathererDefn} gatherer
  * @param {Map<Symbol, LH.Config.AnyArtifactDefn>} artifactDefnsBySymbol
  * @return {LH.Config.AnyArtifactDefn['dependencies']}
  */

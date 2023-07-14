@@ -6,7 +6,7 @@
 
 /* global getNodeDetails */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 
 /* eslint-env browser, node */
@@ -93,14 +93,14 @@ function collectElements() {
 }
 /* c8 ignore stop */
 
-class Inputs extends FRGatherer {
+class Inputs extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts['Inputs']>}
    */
   async getArtifact(passContext) {

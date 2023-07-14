@@ -11,15 +11,15 @@ import * as LH from '../../types/lh.js';
 /**
  * Base class for all gatherers.
  *
- * @implements {LH.Gatherer.FRGathererInstance}
+ * @implements {LH.Gatherer.GathererInstance}
  */
-class FRGatherer {
+class BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {supportedModes: []};
 
   /**
    * Method to start observing a page for an arbitrary period of time.
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<void>|void}
    */
   startInstrumentation(passContext) { }
@@ -27,7 +27,7 @@ class FRGatherer {
   /**
    * Method to start observing a page when the measurements are very sensitive and
    * should observe as little Lighthouse-induced work as possible.
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<void>|void}
    */
   startSensitiveInstrumentation(passContext) { }
@@ -36,24 +36,24 @@ class FRGatherer {
    * Method to stop observing a page when the measurements are very sensitive and
    * should observe as little Lighthouse-induced work as possible.
    *
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<void>|void}
    */
   stopSensitiveInstrumentation(passContext) { }
 
   /**
    * Method to end observing a page after an arbitrary period of time.
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<void>|void}
    */
   stopInstrumentation(passContext) { }
 
   /**
    * Method to gather results about a page.
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {LH.Gatherer.PhaseResult}
    */
   getArtifact(passContext) { }
 }
 
-export default FRGatherer;
+export default BaseGatherer;

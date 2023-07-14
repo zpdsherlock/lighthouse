@@ -19,7 +19,7 @@ import {ProtocolSession} from '../session.js';
  * @typedef {{
  *   target: LH.Crdp.Target.TargetInfo,
  *   cdpSession: LH.Puppeteer.CDPSession,
- *   session: LH.Gatherer.FRProtocolSession,
+ *   session: LH.Gatherer.ProtocolSession,
  *   protocolListener: (event: unknown) => void,
  * }} TargetWithSession
  */
@@ -84,7 +84,7 @@ class TargetManager extends ProtocolEventEmitter {
 
   /**
    * @param {string} sessionId
-   * @return {LH.Gatherer.FRProtocolSession}
+   * @return {LH.Gatherer.ProtocolSession}
    */
   _findSession(sessionId) {
     for (const {session, cdpSession} of this._targetIdToTargets.values()) {
@@ -96,7 +96,7 @@ class TargetManager extends ProtocolEventEmitter {
 
   /**
    * Returns the root session.
-   * @return {LH.Gatherer.FRProtocolSession}
+   * @return {LH.Gatherer.ProtocolSession}
    */
   rootSession() {
     const rootSessionId = this._rootCdpSession.id();

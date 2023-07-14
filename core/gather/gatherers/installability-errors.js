@@ -6,9 +6,9 @@
 
 import log from 'lighthouse-logger';
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
-class InstallabilityErrors extends FRGatherer {
+class InstallabilityErrors extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
@@ -17,7 +17,7 @@ class InstallabilityErrors extends FRGatherer {
   /**
    * Creates an Artifacts.InstallabilityErrors, tranforming data from the protocol
    * for old versions of Chrome.
-   * @param {LH.Gatherer.FRProtocolSession} session
+   * @param {LH.Gatherer.ProtocolSession} session
    * @return {Promise<LH.Artifacts['InstallabilityErrors']>}
    */
   static async getInstallabilityErrors(session) {
@@ -35,7 +35,7 @@ class InstallabilityErrors extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Artifacts['InstallabilityErrors']>}
    */
   async getArtifact(context) {

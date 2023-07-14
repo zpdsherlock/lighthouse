@@ -41,7 +41,7 @@ function createMockBfCacheEvent() {
 }
 
 describe('BFCacheFailures', () => {
-  /** @type {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} */
+  /** @type {LH.Gatherer.Context<'DevtoolsLog'>} */
   let context;
   let mockContext = createMockContext();
   /** @type {LH.Crdp.Page.BackForwardCacheNotUsedEvent|undefined} */

@@ -13,7 +13,7 @@ import {
 
 /**
  * @param {LH.Config.ResolvedConfig} resolvedConfig
- * @param {LH.Gatherer.FRTransitionalDriver} driver
+ * @param {LH.Gatherer.Driver} driver
  * @param {{gatherMode: LH.Gatherer.GatherMode}} context
  * @return {Promise<LH.BaseArtifacts>}
  */

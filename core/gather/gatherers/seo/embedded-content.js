@@ -6,7 +6,7 @@
 
 /* globals getElementsInDocument getNodeDetails */
 
-import FRGatherer from '../../base-gatherer.js';
+import BaseGatherer from '../../base-gatherer.js';
 import {pageFunctions} from '../../../lib/page-functions.js';
 
 /**
@@ -39,14 +39,14 @@ function getEmbeddedContent() {
     }));
 }
 
-class EmbeddedContent extends FRGatherer {
+class EmbeddedContent extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts['EmbeddedContent']>}
    */
   getArtifact(passContext) {

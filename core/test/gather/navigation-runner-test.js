@@ -54,7 +54,7 @@ describe('NavigationRunner', () => {
   /** @type {LH.BaseArtifacts} */
   let baseArtifacts;
 
-  /** @return {LH.Config.AnyFRGathererDefn} */
+  /** @return {LH.Config.AnyGathererDefn} */
   function createGathererDefn() {
     return {
       instance: {

@@ -10,10 +10,10 @@
  * This protocol log can be used to recreate the network records using lib/network-recorder.js.
  */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {TraceProcessor} from '../../lib/tracehouse/trace-processor.js';
 
-class Trace extends FRGatherer {
+class Trace extends BaseGatherer {
   /** @type {LH.Trace} */
   _trace = {traceEvents: []};
 
@@ -63,7 +63,7 @@ class Trace extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRProtocolSession} session
+   * @param {LH.Gatherer.ProtocolSession} session
    * @return {Promise<LH.Trace>}
    */
   static async endTraceAndCollectEvents(session) {
@@ -98,7 +98,7 @@ class Trace extends FRGatherer {
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    */
   async startSensitiveInstrumentation({driver, gatherMode, settings}) {
     const traceCategories = Trace.getDefaultTraceCategories()
@@ -116,7 +116,7 @@ class Trace extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    */
   async stopSensitiveInstrumentation({driver}) {
     this._trace = await Trace.endTraceAndCollectEvents(driver.defaultSession);

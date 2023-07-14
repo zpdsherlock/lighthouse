@@ -16,7 +16,7 @@ import {createRequire} from 'module';
 
 import log from 'lighthouse-logger';
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
 
 // This is removed by rollup, because the only usage is to resolve a module path
@@ -85,8 +85,8 @@ async function detectLibraries() {
 /* c8 ignore stop */
 
 
-/** @implements {LH.Gatherer.FRGathererInstance} */
-class Stacks extends FRGatherer {
+/** @implements {LH.Gatherer.GathererInstance} */
+class Stacks extends BaseGatherer {
   constructor() {
     super();
 
@@ -97,7 +97,7 @@ class Stacks extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalDriver['executionContext']} executionContext
+   * @param {LH.Gatherer.Driver['executionContext']} executionContext
    * @return {Promise<LH.Artifacts['Stacks']>}
    */
   static async collectStacks(executionContext) {
@@ -122,7 +122,7 @@ class Stacks extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Artifacts['Stacks']>}
    */
   async getArtifact(context) {

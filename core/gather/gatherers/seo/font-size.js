@@ -15,7 +15,7 @@
  * This gatherer collects stylesheet metadata by itself, instead of relying on the styles gatherer which is slow (because it parses the stylesheet content).
  */
 
-import FRGatherer from '../../base-gatherer.js';
+import BaseGatherer from '../../base-gatherer.js';
 
 const FONT_SIZE_PROPERTY_NAME = 'font-size';
 const MINIMAL_LEGIBLE_FONT_SIZE_PX = 12;
@@ -116,7 +116,7 @@ function getTextLength(text) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {number} nodeId text node
  * @return {Promise<NodeFontData['cssRule']|undefined>}
  */
@@ -138,14 +138,14 @@ async function fetchSourceRule(session, nodeId) {
   };
 }
 
-class FontSize extends FRGatherer {
+class FontSize extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
   };
 
   /**
-   * @param {LH.Gatherer.FRProtocolSession} session
+   * @param {LH.Gatherer.ProtocolSession} session
    * @param {Array<NodeFontData>} failingNodes
    */
   static async fetchFailingNodeSourceRules(session, failingNodes) {
@@ -274,7 +274,7 @@ class FontSize extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts.FontSize>} font-size analysis
    */
   async getArtifact(passContext) {

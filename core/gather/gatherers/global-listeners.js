@@ -13,9 +13,9 @@
 
 import log from 'lighthouse-logger';
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
-class GlobalListeners extends FRGatherer {
+class GlobalListeners extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'timespan', 'navigation'],
@@ -57,7 +57,7 @@ class GlobalListeners extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts['GlobalListeners']>}
    */
   async getArtifact(passContext) {

@@ -11,10 +11,10 @@
  */
 
 import TraceGatherer from './trace.js';
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
-/** @implements {LH.Gatherer.FRGathererInstance<'Trace'>} */
-class TraceCompat extends FRGatherer {
+/** @implements {LH.Gatherer.GathererInstance<'Trace'>} */
+class TraceCompat extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'Trace'>} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -22,7 +22,7 @@ class TraceCompat extends FRGatherer {
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'Trace'>} passContext
+   * @param {LH.Gatherer.Context<'Trace'>} passContext
    * @return {Promise<LH.Artifacts['traces']>}
    */
   async getArtifact(passContext) {

@@ -4,11 +4,11 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import DevtoolsLogGatherer from './devtools-log.js';
 
-/** @implements {LH.Gatherer.FRGathererInstance<'DevtoolsLog'>} */
-class NetworkUserAgent extends FRGatherer {
+/** @implements {LH.Gatherer.GathererInstance<'DevtoolsLog'>} */
+class NetworkUserAgent extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'DevtoolsLog'>} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -30,7 +30,7 @@ class NetworkUserAgent extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['NetworkUserAgent']>}
    */
   async getArtifact(context) {

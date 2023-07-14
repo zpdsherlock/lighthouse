@@ -6,7 +6,7 @@
 
 /* global caches */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
 /**
  * @return {Promise<Array<string>>}
@@ -36,7 +36,7 @@ function getCacheContents() {
 }
 /* c8 ignore stop */
 
-class CacheContents extends FRGatherer {
+class CacheContents extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
@@ -44,7 +44,7 @@ class CacheContents extends FRGatherer {
 
   /**
    * Creates an array of cached URLs.
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts['CacheContents']>}
    */
   async getArtifact(passContext) {

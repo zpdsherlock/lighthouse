@@ -20,7 +20,7 @@ describe('MainDocumentContent', () => {
     mockContext.driver.defaultSession.sendCommand
       .mockResponse('Network.getResponseBody', {body: 'RESPONSE'});
 
-    /** @type {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} */
+    /** @type {LH.Gatherer.Context<'DevtoolsLog'>} */
     const context = {
       ...mockContext.asContext(),
       dependencies: {DevtoolsLog: devtoolsLog},

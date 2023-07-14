@@ -19,7 +19,7 @@ describe('.gotoURL', () => {
   before(() => timers.useFakeTimers());
   after(() => timers.dispose());
 
-  /** @type {LH.Gatherer.FRTransitionalDriver} */
+  /** @type {LH.Gatherer.Driver} */
   let driver;
   /** @type {ReturnType<typeof createMockDriver>} */
   let mockDriver;

@@ -10,9 +10,9 @@
  * This protocol log can be used to recreate the network records using lib/network-recorder.js.
  */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
-class DevtoolsLog extends FRGatherer {
+class DevtoolsLog extends BaseGatherer {
   static symbol = Symbol('DevtoolsLog');
 
   /** @type {LH.Gatherer.GathererMeta} */
@@ -31,7 +31,7 @@ class DevtoolsLog extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    */
   async startSensitiveInstrumentation({driver}) {
     this._messageLog.reset();
@@ -42,7 +42,7 @@ class DevtoolsLog extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    */
   async stopSensitiveInstrumentation({driver}) {
     this._messageLog.endRecording();

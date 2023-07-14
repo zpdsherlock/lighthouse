@@ -77,7 +77,7 @@ function resolveWaitForFullyLoadedOptions(options) {
  * Typical use of this method involves navigating to a neutral page such as `about:blank` in between
  * navigations.
  *
- * @param {LH.Gatherer.FRTransitionalDriver} driver
+ * @param {LH.Gatherer.Driver} driver
  * @param {LH.NavigationRequestor} requestor
  * @param {NavigationOptions} options
  * @return {Promise<{requestedUrl: string, mainDocumentUrl: string, warnings: Array<LH.IcuMessage>}>}

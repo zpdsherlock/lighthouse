@@ -6,7 +6,7 @@
 
 /* global getNodeDetails */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 
 /* eslint-env browser, node */
@@ -37,14 +37,14 @@ function collectIFrameElements() {
 }
 /* c8 ignore stop */
 
-class IFrameElements extends FRGatherer {
+class IFrameElements extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'navigation'],
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<LH.Artifacts['IFrameElements']>}
    * @override
    */

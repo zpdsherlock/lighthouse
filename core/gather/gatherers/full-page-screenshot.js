@@ -6,7 +6,7 @@
 
 /* globals window getBoundingClientRect requestAnimationFrame */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import * as emulation from '../../lib/emulation.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 import {NetworkMonitor} from '../driver/network-monitor.js';
@@ -65,14 +65,14 @@ function waitForDoubleRaf() {
 
 /* c8 ignore stop */
 
-class FullPageScreenshot extends FRGatherer {
+class FullPageScreenshot extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['snapshot', 'timespan', 'navigation'],
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @param {{height: number, width: number, mobile: boolean}} deviceMetrics
    */
   async _resizeViewport(context, deviceMetrics) {
@@ -120,7 +120,7 @@ class FullPageScreenshot extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Result.FullPageScreenshot['screenshot']>}
    */
   async _takeScreenshot(context) {
@@ -150,7 +150,7 @@ class FullPageScreenshot extends FRGatherer {
    * `getNodeDetails` maintains a collection of DOM objects in the page, which we can iterate
    * to re-collect the bounding client rectangle.
    * @see pageFunctions.getNodeDetails
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Result.FullPageScreenshot['nodes']>}
    */
   async _resolveNodes(context) {
@@ -189,7 +189,7 @@ class FullPageScreenshot extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Artifacts['FullPageScreenshot']>}
    */
   async getArtifact(context) {

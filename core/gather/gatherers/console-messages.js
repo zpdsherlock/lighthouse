@@ -10,7 +10,7 @@
  */
 
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
 /**
  * @param {LH.Crdp.Runtime.RemoteObject} obj
@@ -29,7 +29,7 @@ function remoteObjectToString(obj) {
   return `[${type} ${className}]`;
 }
 
-class ConsoleMessages extends FRGatherer {
+class ConsoleMessages extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -134,7 +134,7 @@ class ConsoleMessages extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    */
   async startInstrumentation(passContext) {
     const session = passContext.driver.defaultSession;
@@ -151,7 +151,7 @@ class ConsoleMessages extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} passContext
+   * @param {LH.Gatherer.Context} passContext
    * @return {Promise<void>}
    */
   async stopInstrumentation({driver}) {

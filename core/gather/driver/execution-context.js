@@ -10,7 +10,7 @@ import * as LH from '../../../types/lh.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 
 class ExecutionContext {
-  /** @param {LH.Gatherer.FRProtocolSession} session */
+  /** @param {LH.Gatherer.ProtocolSession} session */
   constructor(session) {
     this._session = session;
 

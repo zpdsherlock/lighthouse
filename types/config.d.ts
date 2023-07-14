@@ -20,13 +20,11 @@ interface ClassOf<T> {
 interface Config {
   extends?: 'lighthouse:default' | string;
   settings?: SharedFlagsSettings;
+  artifacts?: Config.ArtifactJson[] | null;
   audits?: Config.AuditJson[] | null;
   categories?: Record<string, Config.CategoryJson> | null;
   groups?: Record<string, Config.GroupJson> | null;
   plugins?: Array<string>;
-
-  // Fraggle Rock Only
-  artifacts?: Config.ArtifactJson[] | null;
 }
 
 declare module Config {
@@ -83,10 +81,10 @@ declare module Config {
   type GathererJson = {
     path: string;
   } | {
-    implementation: ClassOf<Gatherer.FRGathererInstance>;
+    implementation: ClassOf<Gatherer.GathererInstance>;
   } | {
-    instance: Gatherer.FRGathererInstance;
-  } | Gatherer.FRGathererInstance | ClassOf<Gatherer.FRGathererInstance> | string;
+    instance: Gatherer.GathererInstance;
+  } | Gatherer.GathererInstance | ClassOf<Gatherer.GathererInstance> | string;
 
   interface CategoryJson {
     title: string | IcuMessage;
@@ -129,7 +127,7 @@ declare module Config {
 
   interface ArtifactDefn<TDependencies extends Gatherer.DependencyKey = Gatherer.DependencyKey> {
     id: string;
-    gatherer: FRGathererDefn<TDependencies>;
+    gatherer: GathererDefn<TDependencies>;
     dependencies?: TDependencies extends Gatherer.DefaultDependenciesKey ?
       undefined :
       Record<Exclude<TDependencies, Gatherer.DefaultDependenciesKey>, {id: string}>;
@@ -142,24 +140,18 @@ declare module Config {
       ArtifactDefn<TDependencies>
   type AnyArtifactDefn = ArtifactDefnExpander<Gatherer.DefaultDependenciesKey>|ArtifactDefnExpander<Gatherer.DependencyKey>
 
-  interface FRGathererDefn<TDependencies extends Gatherer.DependencyKey = Gatherer.DependencyKey> {
-    implementation?: ClassOf<Gatherer.FRGathererInstance<TDependencies>>;
-    instance: Gatherer.FRGathererInstance<TDependencies>;
+  interface GathererDefn<TDependencies extends Gatherer.DependencyKey = Gatherer.DependencyKey> {
+    implementation?: ClassOf<Gatherer.GathererInstance<TDependencies>>;
+    instance: Gatherer.GathererInstance<TDependencies>;
     path?: string;
   }
 
-  type FRGathererDefnExpander<TDependencies extends Gatherer.DependencyKey> =
+  type GathererDefnExpander<TDependencies extends Gatherer.DependencyKey> =
     // Lack of brackets intentional here to convert to the union of all individual dependencies.
     TDependencies extends Gatherer.DefaultDependenciesKey ?
-      FRGathererDefn<Gatherer.DefaultDependenciesKey> :
-      FRGathererDefn<TDependencies>
-  type AnyFRGathererDefn = FRGathererDefnExpander<Gatherer.DefaultDependenciesKey>|FRGathererDefnExpander<Gatherer.DependencyKey>
-
-  interface GathererDefn {
-    implementation?: ClassOf<Gatherer.FRGathererInstance>;
-    instance: Gatherer.FRGathererInstance;
-    path?: string;
-  }
+      GathererDefn<Gatherer.DefaultDependenciesKey> :
+      GathererDefn<TDependencies>
+  type AnyGathererDefn = GathererDefnExpander<Gatherer.DefaultDependenciesKey>|GathererDefnExpander<Gatherer.DependencyKey>
 
   interface AuditDefn {
     implementation: typeof Audit;

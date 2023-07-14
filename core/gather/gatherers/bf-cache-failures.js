@@ -4,14 +4,14 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {waitForFrameNavigated, waitForLoadEvent} from '../driver/wait-for-condition.js';
 import DevtoolsLog from './devtools-log.js';
 
 const AFTER_RETURN_TIMEOUT = 100;
 const TEMP_PAGE_PAUSE_TIMEOUT = 100;
 
-class BFCacheFailures extends FRGatherer {
+class BFCacheFailures extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'DevtoolsLog'>} */
   meta = {
     supportedModes: ['navigation', 'timespan'],
@@ -83,7 +83,7 @@ class BFCacheFailures extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Crdp.Page.BackForwardCacheNotUsedEvent|undefined>}
    */
   async activelyCollectBFCacheEvent(context) {
@@ -137,7 +137,7 @@ class BFCacheFailures extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {LH.Crdp.Page.BackForwardCacheNotUsedEvent[]}
    */
   passivelyCollectBFCacheEvents(context) {
@@ -151,7 +151,7 @@ class BFCacheFailures extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['BFCacheFailures']>}
    */
   async getArtifact(context) {

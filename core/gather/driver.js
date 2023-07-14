@@ -15,7 +15,7 @@ const throwNotConnectedFn = () => {
   throw new Error('Session not connected');
 };
 
-/** @type {LH.Gatherer.FRProtocolSession} */
+/** @type {LH.Gatherer.ProtocolSession} */
 const throwingSession = {
   setTargetInfo: throwNotConnectedFn,
   hasNextProtocolTimeout: throwNotConnectedFn,
@@ -28,7 +28,7 @@ const throwingSession = {
   dispose: throwNotConnectedFn,
 };
 
-/** @implements {LH.Gatherer.FRTransitionalDriver} */
+/** @implements {LH.Gatherer.Driver} */
 class Driver {
   /**
    * @param {LH.Puppeteer.Page} page
@@ -45,7 +45,7 @@ class Driver {
     this.defaultSession = throwingSession;
   }
 
-  /** @return {LH.Gatherer.FRTransitionalDriver['executionContext']} */
+  /** @return {LH.Gatherer.Driver['executionContext']} */
   get executionContext() {
     if (!this._executionContext) return throwNotConnectedFn();
     return this._executionContext;

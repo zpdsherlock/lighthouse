@@ -45,7 +45,7 @@ function waitForNothing() {
 /**
  * Returns a promise that resolve when a frame has been navigated.
  * Used for detecting that our about:blank reset has been completed.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {CancellableWait<LH.Crdp.Page.FrameNavigatedEvent>}
  */
 function waitForFrameNavigated(session) {
@@ -68,7 +68,7 @@ function waitForFrameNavigated(session) {
 
 /**
  * Returns a promise that resolve when a frame has a FCP.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {number} pauseAfterFcpMs
  * @param {number} maxWaitForFcpMs
  * @return {CancellableWait}
@@ -119,7 +119,7 @@ function waitForFcp(session, pauseAfterFcpMs, maxWaitForFcpMs) {
 /**
  * Returns a promise that resolves when the network has been idle (after DCL) for
  * `networkQuietThresholdMs` ms and a method to cancel internal network listeners/timeout.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {NetworkMonitor} networkMonitor
  * @param {{networkQuietThresholdMs: number, busyEvent: NetworkMonitorEvent, idleEvent: NetworkMonitorEvent, isIdle(recorder: NetworkMonitor): boolean, pretendDCLAlreadyFired?: boolean}} networkQuietOptions
  * @return {CancellableWait}
@@ -213,7 +213,7 @@ function waitForNetworkIdle(session, networkMonitor, networkQuietOptions) {
 
 /**
  * Resolves when there have been no long tasks for at least waitForCPUQuiet ms.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {number} waitForCPUQuiet
  * @return {CancellableWait}
  */
@@ -344,7 +344,7 @@ function checkTimeSinceLastLongTaskInPage() {
 /**
  * Return a promise that resolves `pauseAfterLoadMs` after the load event
  * fires and a method to cancel internal listeners and timeout.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {number} pauseAfterLoadMs
  * @return {CancellableWait}
  */
@@ -379,7 +379,7 @@ function waitForLoadEvent(session, pauseAfterLoadMs) {
 
 /**
  * Returns whether the page appears to be hung.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<boolean>}
  */
 async function isPageHung(session) {
@@ -410,7 +410,7 @@ const DEFAULT_WAIT_FUNCTIONS = {waitForFcp, waitForLoadEvent, waitForCPUIdle, wa
  *    - cpuQuietThresholdMs have passed since the last long task after network-2-quiet.
  * - maxWaitForLoadedMs milliseconds have passed.
  * See https://github.com/GoogleChrome/lighthouse/issues/627 for more.
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {NetworkMonitor} networkMonitor
  * @param {WaitOptions} options
  * @return {Promise<{timedOut: boolean}>}
@@ -519,7 +519,7 @@ async function waitForFullyLoaded(session, networkMonitor, options) {
 }
 
 /**
- * @param {LH.Gatherer.FRTransitionalDriver} driver
+ * @param {LH.Gatherer.Driver} driver
  */
 function waitForUserToContinue(driver) {
   /* c8 ignore start */

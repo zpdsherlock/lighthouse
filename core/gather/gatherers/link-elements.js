@@ -6,7 +6,7 @@
 
 import LinkHeader from 'http-link-header';
 
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 import DevtoolsLog from './devtools-log.js';
 import {MainResource} from '../../computed/main-resource.js';
@@ -93,7 +93,7 @@ function getLinkElementsInDOM() {
 }
 /* c8 ignore stop */
 
-class LinkElements extends FRGatherer {
+class LinkElements extends BaseGatherer {
   constructor() {
     super();
     /**
@@ -108,7 +108,7 @@ class LinkElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @return {Promise<LH.Artifacts['LinkElements']>}
    */
   static getLinkElementsInDOM(context) {
@@ -125,7 +125,7 @@ class LinkElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
+   * @param {LH.Gatherer.Context} context
    * @param {LH.Artifacts['DevtoolsLog']} devtoolsLog
    * @return {Promise<LH.Artifacts['LinkElements']>}
    */
@@ -172,7 +172,7 @@ class LinkElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['LinkElements']>}
    */
   async getArtifact(context) {

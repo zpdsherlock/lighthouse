@@ -15,7 +15,7 @@ import {getBaseArtifacts, finalizeArtifacts} from './base-artifacts.js';
 /**
  * @param {LH.Puppeteer.Page} page
  * @param {{config?: LH.Config, flags?: LH.Flags}} [options]
- * @return {Promise<LH.Gatherer.FRGatherResult>}
+ * @return {Promise<LH.Gatherer.GatherResult>}
  */
 async function snapshotGather(page, options = {}) {
   const {flags = {}, config} = options;

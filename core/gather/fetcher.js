@@ -17,7 +17,7 @@ import * as LH from '../../types/lh.js';
 
 class Fetcher {
   /**
-   * @param {LH.Gatherer.FRProtocolSession} session
+   * @param {LH.Gatherer.ProtocolSession} session
    */
   constructor(session) {
     this.session = session;

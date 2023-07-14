@@ -25,7 +25,7 @@ type CrdpCommands = CrdpMappings.Commands;
 
 declare module Gatherer {
   /** The Lighthouse wrapper around a raw CDP session. */
-  interface FRProtocolSession {
+  interface ProtocolSession {
     setTargetInfo(targetInfo: Crdp.Target.TargetInfo): void;
     hasNextProtocolTimeout(): boolean;
     getNextProtocolTimeout(): number;
@@ -37,26 +37,24 @@ declare module Gatherer {
     dispose(): Promise<void>;
   }
 
-  /** The limited driver interface shared between pre and post Fraggle Rock Lighthouse. */
-  interface FRTransitionalDriver {
-    defaultSession: FRProtocolSession;
+  interface Driver {
+    defaultSession: ProtocolSession;
     executionContext: ExecutionContext;
     fetcher: Fetcher;
     url: () => Promise<string>;
     targetManager: {
-      rootSession(): FRProtocolSession;
+      rootSession(): ProtocolSession;
       mainFrameExecutionContexts(): Array<Crdp.Runtime.ExecutionContextDescription>;
       on(event: 'protocolevent', callback: (payload: Protocol.RawEventMessage) => void): void
       off(event: 'protocolevent', callback: (payload: Protocol.RawEventMessage) => void): void
     };
   }
 
-  /** The limited context interface shared between pre and post Fraggle Rock Lighthouse. */
-  interface FRTransitionalContext<TDependencies extends DependencyKey = DefaultDependenciesKey> {
+  interface Context<TDependencies extends DependencyKey = DefaultDependenciesKey> {
     /** The gather mode Lighthouse is currently in. */
     gatherMode: GatherMode;
     /** The connection to the page being analyzed. */
-    driver: FRTransitionalDriver;
+    driver: Driver;
     /** The Puppeteer page handle. Will be undefined in legacy navigation mode. */
     page?: Puppeteer.Page;
     /** The set of base artifacts that are always collected. */
@@ -69,7 +67,7 @@ declare module Gatherer {
     settings: Config.Settings;
   }
 
-  interface FRGatherResult {
+  interface GatherResult {
     artifacts: Artifacts;
     runnerOptions: {
       resolvedConfig: Config.ResolvedConfig;
@@ -114,23 +112,23 @@ declare module Gatherer {
       GathererMetaNoDependencies :
       GathererMetaWithDependencies<Exclude<TDependencies, DefaultDependenciesKey>>;
 
-  type FRGatherPhase = keyof Omit<Gatherer.FRGathererInstance, 'name'|'meta'>
+  type GatherPhase = keyof Omit<Gatherer.GathererInstance, 'name'|'meta'>
 
-  interface FRGathererInstance<TDependencies extends DependencyKey = DefaultDependenciesKey> {
+  interface GathererInstance<TDependencies extends DependencyKey = DefaultDependenciesKey> {
     meta: GathererMeta<TDependencies>;
-    startInstrumentation(context: FRTransitionalContext<DefaultDependenciesKey>): Promise<void>|void;
-    startSensitiveInstrumentation(context: FRTransitionalContext<DefaultDependenciesKey>): Promise<void>|void;
-    stopSensitiveInstrumentation(context: FRTransitionalContext<DefaultDependenciesKey>): Promise<void>|void;
-    stopInstrumentation(context: FRTransitionalContext<DefaultDependenciesKey>): Promise<void>|void;
-    getArtifact(context: FRTransitionalContext<TDependencies>): PhaseResult;
+    startInstrumentation(context: Context<DefaultDependenciesKey>): Promise<void>|void;
+    startSensitiveInstrumentation(context: Context<DefaultDependenciesKey>): Promise<void>|void;
+    stopSensitiveInstrumentation(context: Context<DefaultDependenciesKey>): Promise<void>|void;
+    stopInstrumentation(context: Context<DefaultDependenciesKey>): Promise<void>|void;
+    getArtifact(context: Context<TDependencies>): PhaseResult;
   }
 
-  type FRGathererInstanceExpander<TDependencies extends Gatherer.DependencyKey> =
+  type GathererInstanceExpander<TDependencies extends Gatherer.DependencyKey> =
     // Lack of brackets intentional here to convert to the union of all individual dependencies.
     TDependencies extends Gatherer.DefaultDependenciesKey ?
-      FRGathererInstance<Gatherer.DefaultDependenciesKey> :
-      FRGathererInstance<Exclude<TDependencies, DefaultDependenciesKey>>
-  type AnyFRGathererInstance = FRGathererInstanceExpander<Gatherer.DependencyKey>
+      GathererInstance<Gatherer.DefaultDependenciesKey> :
+      GathererInstance<Exclude<TDependencies, DefaultDependenciesKey>>
+  type AnyGathererInstance = GathererInstanceExpander<Gatherer.DependencyKey>
 
   namespace Simulation {
     type GraphNode = import('../core/lib/dependency-graph/base-node.js').Node;

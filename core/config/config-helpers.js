@@ -254,7 +254,7 @@ async function requireWrapper(requirePath) {
  * @param {string} gathererPath
  * @param {Array<string>} coreGathererList
  * @param {string=} configDir
- * @return {Promise<LH.Config.GathererDefn>}
+ * @return {Promise<LH.Config.AnyGathererDefn>}
  */
 async function requireGatherer(gathererPath, coreGathererList, configDir) {
   const coreGatherer = coreGathererList.find(a => a === `${gathererPath}.js`);
@@ -399,7 +399,7 @@ async function mergePlugins(config, configDir, flags) {
  * @param {LH.Config.GathererJson} gathererJson
  * @param {Array<string>} coreGathererList
  * @param {string=} configDir
- * @return {Promise<LH.Config.GathererDefn>}
+ * @return {Promise<LH.Config.AnyGathererDefn>}
  */
 async function resolveGathererToDefn(gathererJson, coreGathererList, configDir) {
   const gathererDefn = expandGathererShorthand(gathererJson);

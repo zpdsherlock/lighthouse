@@ -30,7 +30,7 @@ const SLOW_CPU_BENCHMARK_INDEX_THRESHOLD = 1000;
 const str_ = i18n.createIcuMessageFn(import.meta.url, UIStrings);
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<LH.Crdp.Browser.GetVersionResponse & {milestone: number}>}
  */
 async function getBrowserVersion(session) {
@@ -45,7 +45,7 @@ async function getBrowserVersion(session) {
 
 /**
  * Computes the benchmark index to get a rough estimate of device class.
- * @param {LH.Gatherer.FRTransitionalDriver['executionContext']} executionContext
+ * @param {LH.Gatherer.Driver['executionContext']} executionContext
  * @return {Promise<number>}
  */
 async function getBenchmarkIndex(executionContext) {

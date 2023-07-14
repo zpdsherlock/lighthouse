@@ -15,7 +15,7 @@ import {mergeConfigFragment, deepClone} from './config/config-helpers.js';
 import * as i18n from './lib/i18n/i18n.js';
 import * as LH from '../types/lh.js';
 
-/** @typedef {WeakMap<LH.UserFlow.GatherStep, LH.Gatherer.FRGatherResult['runnerOptions']>} GatherStepRunnerOptions */
+/** @typedef {WeakMap<LH.UserFlow.GatherStep, LH.Gatherer.GatherResult['runnerOptions']>} GatherStepRunnerOptions */
 
 const UIStrings = {
   /**
@@ -107,7 +107,7 @@ class UserFlow {
   }
 
   /**
-   * @param {LH.Gatherer.FRGatherResult} gatherResult
+   * @param {LH.Gatherer.GatherResult} gatherResult
    * @param {LH.UserFlow.StepFlags} [flags]
    */
   _addGatherStep(gatherResult, flags) {

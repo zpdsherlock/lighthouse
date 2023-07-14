@@ -11,10 +11,10 @@
  */
 
 import DevtoolsLogGatherer from './devtools-log.js';
-import FRGatherer from '../base-gatherer.js';
+import BaseGatherer from '../base-gatherer.js';
 
-/** @implements {LH.Gatherer.FRGathererInstance<'DevtoolsLog'>} */
-class DevtoolsLogCompat extends FRGatherer {
+/** @implements {LH.Gatherer.GathererInstance<'DevtoolsLog'>} */
+class DevtoolsLogCompat extends BaseGatherer {
   /** @type {LH.Gatherer.GathererMeta<'DevtoolsLog'>} */
   meta = {
     supportedModes: ['timespan', 'navigation'],
@@ -22,7 +22,7 @@ class DevtoolsLogCompat extends FRGatherer {
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} passContext
+   * @param {LH.Gatherer.Context<'DevtoolsLog'>} passContext
    * @return {Promise<LH.Artifacts['devtoolsLogs']>}
    */
   async getArtifact(passContext) {

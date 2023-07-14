@@ -5,15 +5,15 @@
  */
 
 import {Audit} from '../audits/audit.js';
-import BaseFRGatherer from '../gather/base-gatherer.js';
+import BaseGatherer from '../gather/base-gatherer.js';
 import * as i18n from '../lib/i18n/i18n.js';
 
 /**
  * Determines if the artifact dependency direction is valid. The dependency's minimum supported mode
  * must be less than or equal to the dependent's.
  *
- * @param {LH.Config.AnyFRGathererDefn} dependent The artifact that depends on the other.
- * @param {LH.Config.AnyFRGathererDefn} dependency The artifact that is being depended on by the other.
+ * @param {LH.Config.AnyGathererDefn} dependent The artifact that depends on the other.
+ * @param {LH.Config.AnyGathererDefn} dependency The artifact that is being depended on by the other.
  * @return {boolean}
  */
 function isValidArtifactDependency(dependent, dependency) {
@@ -62,7 +62,7 @@ function assertValidArtifact(artifactDefn) {
 
   if (
     typeof gatherer.getArtifact !== 'function' ||
-    gatherer.getArtifact === BaseFRGatherer.prototype.getArtifact
+    gatherer.getArtifact === BaseGatherer.prototype.getArtifact
   ) {
     throw new Error(`Gatherer for ${artifactDefn.id} did not define a "getArtifact" method.`);
   }

@@ -5,7 +5,7 @@
  */
 
 import * as helpers from '../../gather/runner-helpers.js';
-import Gatherer from '../../gather/base-gatherer.js';
+import BaseGatherer from '../../gather/base-gatherer.js';
 import {defaultSettings} from '../../config/constants.js';
 import {createMockDriver, createMockGathererInstance, createMockBaseArtifacts} from './mock-driver.js'; // eslint-disable-line max-len
 
@@ -16,8 +16,8 @@ describe('collectArtifactDependencies', () => {
   let artifactStateById;
 
   beforeEach(() => {
-    class GathererWithDependency extends Gatherer {
-      meta = {...new Gatherer().meta, dependencies: {ImageElements: Symbol('')}};
+    class GathererWithDependency extends BaseGatherer {
+      meta = {...new BaseGatherer().meta, dependencies: {ImageElements: Symbol('')}};
     }
 
     artifact = {
@@ -175,10 +175,10 @@ describe('collectPhaseArtifacts', () => {
   it('should pass dependencies to gatherers', async () => {
     const {artifactDefinitions: artifacts_, gatherers} = createGathererSet();
     const gatherer =
-      /** @type {{instance: LH.Gatherer.FRGathererInstance}} */
+      /** @type {{instance: LH.Gatherer.GathererInstance}} */
       (artifacts_[1].gatherer);
     const imageElementsGatherer =
-      /** @type {{instance: LH.Gatherer.FRGathererInstance<'ImageElements'>}} */
+      /** @type {{instance: LH.Gatherer.GathererInstance<'ImageElements'>}} */
       (artifacts_[1].gatherer);
     const artifactDefinitions = [
       {id: 'Dependency', gatherer},

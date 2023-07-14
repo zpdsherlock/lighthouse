@@ -58,7 +58,7 @@ function parseUseragentIntoMetadata(userAgent, formFactor) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {LH.Config.Settings} settings
  * @return {Promise<void>}
  */
@@ -85,7 +85,7 @@ async function emulate(session, settings) {
  * Sets the throttling options specified in config settings, clearing existing network throttling if
  * throttlingMethod is not `devtools` (but not CPU throttling, suspected requirement of WPT-compat).
  *
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {LH.Config.Settings} settings
  * @return {Promise<void>}
  */
@@ -99,7 +99,7 @@ async function throttle(session, settings) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<void>}
  */
 async function clearThrottling(session) {
@@ -107,7 +107,7 @@ async function clearThrottling(session) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {Required<LH.ThrottlingSettings>} throttlingSettings
  * @return {Promise<void>}
  */
@@ -127,7 +127,7 @@ function enableNetworkThrottling(session, throttlingSettings) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<void>}
  */
 function clearNetworkThrottling(session) {
@@ -135,7 +135,7 @@ function clearNetworkThrottling(session) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @param {Required<LH.ThrottlingSettings>} throttlingSettings
  * @return {Promise<void>}
  */
@@ -145,7 +145,7 @@ function enableCPUThrottling(session, throttlingSettings) {
 }
 
 /**
- * @param {LH.Gatherer.FRProtocolSession} session
+ * @param {LH.Gatherer.ProtocolSession} session
  * @return {Promise<void>}
  */
 function clearCPUThrottling(session) {
