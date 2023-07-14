@@ -14,7 +14,7 @@ import {ExecutionContext} from '../core/gather/driver/execution-context.js';
 import {Fetcher} from '../core/gather/fetcher.js';
 import {ArbitraryEqualityMap} from '../core/lib/arbitrary-equality-map.js';
 
-import {Artifacts, FRBaseArtifacts, GathererArtifacts, DevtoolsLog, Trace} from './artifacts.js';
+import {Artifacts, BaseArtifacts, GathererArtifacts, DevtoolsLog, Trace} from './artifacts.js';
 import Config from './config.js';
 import Result from './lhr/lhr.js';
 import Protocol from './protocol.js';
@@ -60,7 +60,7 @@ declare module Gatherer {
     /** The Puppeteer page handle. Will be undefined in legacy navigation mode. */
     page?: Puppeteer.Page;
     /** The set of base artifacts that are always collected. */
-    baseArtifacts: FRBaseArtifacts;
+    baseArtifacts: BaseArtifacts;
     /** The cached results of computed artifacts. */
     computedCache: Map<string, ArbitraryEqualityMap>;
     /** The set of available dependencies requested by the current gatherer. */

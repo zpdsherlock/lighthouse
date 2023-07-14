@@ -38,10 +38,6 @@ async function getBaseArtifacts(resolvedConfig, driver, context) {
     },
     PageLoadError: null,
     GatherContext: context,
-    // Artifacts that have been replaced by regular gatherers in Fraggle Rock.
-    NetworkUserAgent: '',
-    traces: {},
-    devtoolsLogs: {},
   };
 }
 
@@ -63,7 +59,7 @@ function deduplicateWarnings(warnings) {
 }
 
 /**
- * @param {LH.FRBaseArtifacts} baseArtifacts
+ * @param {LH.BaseArtifacts} baseArtifacts
  * @param {Partial<LH.Artifacts>} gathererArtifacts
  * @return {LH.Artifacts}
  */

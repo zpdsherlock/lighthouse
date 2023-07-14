@@ -35,8 +35,6 @@ export import Puppeteer = Puppeteer_;
 // artifacts.d.ts
 export import Artifacts = Artifacts_.Artifacts;
 export import BaseArtifacts = Artifacts_.BaseArtifacts;
-export import FRArtifacts = Artifacts_.FRArtifacts;
-export import FRBaseArtifacts = Artifacts_.FRBaseArtifacts;
 export import GathererArtifacts = Artifacts_.GathererArtifacts;
 export import DevtoolsLog = Artifacts_.DevtoolsLog;
 export import Trace = Artifacts_.Trace;

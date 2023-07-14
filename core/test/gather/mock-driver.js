@@ -206,7 +206,7 @@ function mockDriverModule(driverProvider) {
 }
 
 /**
- * @returns {LH.FRBaseArtifacts}
+ * @returns {LH.BaseArtifacts}
  */
 function createMockBaseArtifacts() {
   return {

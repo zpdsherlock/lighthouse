@@ -220,13 +220,17 @@ async function saveArtifacts(artifacts, basePath) {
   const {traces, devtoolsLogs, DevtoolsLog, Trace, ...restArtifacts} = artifacts;
 
   // save traces
-  for (const [passName, trace] of Object.entries(traces)) {
-    await saveTrace(trace, `${basePath}/${passName}${traceSuffix}`);
+  if (traces) {
+    for (const [passName, trace] of Object.entries(traces)) {
+      await saveTrace(trace, `${basePath}/${passName}${traceSuffix}`);
+    }
   }
 
   // save devtools log
-  for (const [passName, devtoolsLog] of Object.entries(devtoolsLogs)) {
-    await saveDevtoolsLog(devtoolsLog, `${basePath}/${passName}${devtoolsLogSuffix}`);
+  if (devtoolsLogs) {
+    for (const [passName, devtoolsLog] of Object.entries(devtoolsLogs)) {
+      await saveDevtoolsLog(devtoolsLog, `${basePath}/${passName}${devtoolsLogSuffix}`);
+    }
   }
 
   // save everything else, using a replacer to serialize LighthouseErrors in the artifacts.

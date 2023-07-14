@@ -32,7 +32,7 @@ import {NetworkRecords} from '../computed/network-records.js';
  * @property {LH.Config.ResolvedConfig} resolvedConfig
  * @property {LH.Config.NavigationDefn} navigation
  * @property {LH.NavigationRequestor} requestor
- * @property {LH.FRBaseArtifacts} baseArtifacts
+ * @property {LH.BaseArtifacts} baseArtifacts
  * @property {Map<string, LH.ArbitraryEqualityMap>} computedCache
  */
 
@@ -43,7 +43,7 @@ const DEFAULT_PORT = 9222;
 
 /**
  * @param {{driver: Driver, resolvedConfig: LH.Config.ResolvedConfig, requestor: LH.NavigationRequestor}} args
- * @return {Promise<{baseArtifacts: LH.FRBaseArtifacts}>}
+ * @return {Promise<{baseArtifacts: LH.BaseArtifacts}>}
  */
 async function _setup({driver, resolvedConfig, requestor}) {
   await driver.connect();
@@ -260,8 +260,8 @@ async function _navigation(navigationContext) {
 }
 
 /**
- * @param {{driver: Driver, page: LH.Puppeteer.Page, resolvedConfig: LH.Config.ResolvedConfig, requestor: LH.NavigationRequestor; baseArtifacts: LH.FRBaseArtifacts, computedCache: NavigationContext['computedCache']}} args
- * @return {Promise<{artifacts: Partial<LH.FRArtifacts & LH.FRBaseArtifacts>}>}
+ * @param {{driver: Driver, page: LH.Puppeteer.Page, resolvedConfig: LH.Config.ResolvedConfig, requestor: LH.NavigationRequestor; baseArtifacts: LH.BaseArtifacts, computedCache: NavigationContext['computedCache']}} args
+ * @return {Promise<{artifacts: Partial<LH.Artifacts & LH.BaseArtifacts>}>}
  */
 async function _navigations(args) {
   const {
@@ -277,7 +277,7 @@ async function _navigations(args) {
     throw new Error('No artifacts were defined on the config');
   }
 
-  /** @type {Partial<LH.FRArtifacts & LH.FRBaseArtifacts>} */
+  /** @type {Partial<LH.Artifacts & LH.BaseArtifacts>} */
   const artifacts = {};
   /** @type {Array<LH.IcuMessage>} */
   const LighthouseRunWarnings = [];

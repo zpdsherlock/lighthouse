@@ -10,7 +10,7 @@
  * @property {LH.Puppeteer.Page} page
  * @property {Array<LH.Config.AnyArtifactDefn>} artifactDefinitions
  * @property {ArtifactState} artifactState
- * @property {LH.FRBaseArtifacts} baseArtifacts
+ * @property {LH.BaseArtifacts} baseArtifacts
  * @property {LH.Gatherer.FRGatherPhase} phase
  * @property {LH.Gatherer.GatherMode} gatherMode
  * @property {Map<string, LH.ArbitraryEqualityMap>} computedCache

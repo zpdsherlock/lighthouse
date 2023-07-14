@@ -8,7 +8,7 @@ import log from 'lighthouse-logger';
 
 import {Audit} from '../audits/audit.js';
 
-/** @type {Record<keyof LH.FRBaseArtifacts, string>} */
+/** @type {Record<keyof LH.BaseArtifacts, string>} */
 const baseArtifactKeySource = {
   fetchTime: '',
   LighthouseRunWarnings: '',

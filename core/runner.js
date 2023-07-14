@@ -148,7 +148,7 @@ class Runner {
    * @param {LH.Artifacts.ComputedContext} context
    */
   static async getEntityClassification(artifacts, context) {
-    const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
+    const devtoolsLog = artifacts.devtoolsLogs?.[Audit.DEFAULT_PASS];
     if (!devtoolsLog) return;
     const classifiedEntities = await EntityClassification.request(
       {URL: artifacts.URL, devtoolsLog}, context);

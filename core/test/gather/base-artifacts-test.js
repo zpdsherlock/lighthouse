@@ -50,7 +50,7 @@ describe('getBaseArtifacts', () => {
 });
 
 describe('finalizeArtifacts', () => {
-  /** @type {LH.FRBaseArtifacts} */
+  /** @type {LH.BaseArtifacts} */
   let baseArtifacts;
   /** @type {Partial<LH.Artifacts>} */
   let gathererArtifacts = {};

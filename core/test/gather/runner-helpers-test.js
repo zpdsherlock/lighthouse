@@ -91,7 +91,7 @@ describe('collectPhaseArtifacts', () => {
   let page;
   /** @type {ReturnType<typeof createMockDriver>} */
   let mockDriver;
-  /** @type {LH.FRBaseArtifacts} */
+  /** @type {LH.BaseArtifacts} */
   let baseArtifacts;
 
   function createGathererSet() {
