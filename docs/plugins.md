@@ -99,7 +99,7 @@ These files contain the logic that will generate results for the Lighthouse repo
 **Example `audits/has-cat-images.js`**
 
 ```js
-import {Audit} = from 'lighthouse';
+import {Audit} from 'lighthouse';
 
 class CatAudit extends Audit {
   static get meta() {
