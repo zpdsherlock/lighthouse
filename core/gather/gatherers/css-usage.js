@@ -51,7 +51,7 @@ class CSSUsage extends FRGatherer {
         );
         Sentry.captureException(err, {
           tags: {
-            gatherer: this.name,
+            gatherer: 'CSSUsage',
           },
           extra: {
             url: event.header.sourceURL,

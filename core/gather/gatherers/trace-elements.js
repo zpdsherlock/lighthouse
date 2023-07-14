@@ -249,12 +249,13 @@ class TraceElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
-   * @param {LH.Trace|undefined} trace
-   * @return {Promise<LH.Artifacts['TraceElements']>}
+   * @param {LH.Gatherer.FRTransitionalContext<'Trace'>} context
+   * @return {Promise<LH.Artifacts.TraceElement[]>}
    */
-  async _getArtifact(context, trace) {
+  async getArtifact(context) {
     const session = context.driver.defaultSession;
+
+    const trace = context.dependencies.Trace;
     if (!trace) {
       throw new Error('Trace is missing!');
     }
@@ -295,7 +296,7 @@ class TraceElements extends FRGatherer {
           });
         } catch (err) {
           Sentry.captureException(err, {
-            tags: {gatherer: this.name},
+            tags: {gatherer: 'TraceElements'},
             level: 'error',
           });
           continue;
@@ -315,25 +316,6 @@ class TraceElements extends FRGatherer {
     }
 
     return traceElements;
-  }
-
-  /**
-   * @param {LH.Gatherer.FRTransitionalContext<'Trace'>} context
-   * @return {Promise<LH.Artifacts.TraceElement[]>}
-   */
-  async getArtifact(context) {
-    return this._getArtifact(context, context.dependencies.Trace);
-  }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts.TraceElement[]>}
-   */
-  async afterPass(passContext, loadData) {
-    const context = {...passContext, dependencies: {}};
-    await this.stopInstrumentation(context);
-    return this._getArtifact(context, loadData.trace);
   }
 }
 

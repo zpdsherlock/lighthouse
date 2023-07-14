@@ -11,12 +11,6 @@ const lighthouse = async function lighthouse(...args) {
   return lighthouse(...args);
 };
 
-/** @type {import('./index.js')['legacyNavigation']} */
-const legacyNavigation = async function legacyNavigation(...args) {
-  const {legacyNavigation} = await import('./index.js');
-  return legacyNavigation(...args);
-};
-
 /** @type {import('./index.js')['startFlow']} */
 const startFlow = async function startFlow(...args) {
   const {startFlow} = await import('./index.js');
@@ -42,7 +36,6 @@ const snapshot = async function snapshot(...args) {
 };
 
 module.exports = lighthouse;
-module.exports.legacyNavigation = legacyNavigation;
 module.exports.startFlow = startFlow;
 module.exports.navigation = navigation;
 module.exports.startTimespan = startTimespan;

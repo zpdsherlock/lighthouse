@@ -97,7 +97,6 @@ function createMockGathererInstance(meta) {
 
     /** @return {LH.Gatherer.AnyFRGathererInstance} */
     asGatherer() {
-      // @ts-expect-error - We'll rely on the tests passing to know this matches.
       return this;
     },
   };
@@ -240,12 +239,6 @@ function createMockContext() {
 
     /** @return {LH.Gatherer.FRTransitionalContext} */
     asContext() {
-      // @ts-expect-error - We'll rely on the tests passing to know this matches.
-      return this;
-    },
-
-    /** @return {LH.Gatherer.PassContext} */
-    asLegacyContext() {
       // @ts-expect-error - We'll rely on the tests passing to know this matches.
       return this;
     },

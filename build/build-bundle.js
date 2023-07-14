@@ -110,10 +110,7 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
   }).join(',\n');
 
   /** @type {Record<string, string>} */
-  const shimsObj = {
-    [require.resolve('../core/legacy/gather/connections/cri.js')]:
-      'export const CriConnection = {}',
-  };
+  const shimsObj = {};
 
   const modulesToIgnore = [
     'puppeteer-core',

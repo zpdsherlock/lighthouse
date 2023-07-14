@@ -7,8 +7,7 @@
 import {defaultSettings, defaultNavigationConfig} from '../../config/constants.js';
 import defaultConfig from '../../config/default-config.js';
 import {Audit as BaseAudit} from '../../audits/audit.js';
-import BaseFRGatherer from '../../gather/base-gatherer.js';
-import {Gatherer as BaseLegacyGatherer} from '../../gather/gatherers/gatherer.js';
+import BaseGatherer from '../../gather/base-gatherer.js';
 import * as validation from '../../config/validation.js';
 import {initializeConfig} from '../../config/config.js';
 
@@ -45,16 +44,6 @@ describe('Fraggle Rock Config Validation', () => {
     });
   });
 
-  describe('isFRGathererDefn', () => {
-    it('should identify fraggle rock gatherer definitions', () => {
-      expect(validation.isFRGathererDefn({instance: new BaseFRGatherer()})).toBe(true);
-    });
-
-    it('should identify legacy gatherer definitions', () => {
-      expect(validation.isFRGathererDefn({instance: new BaseLegacyGatherer()})).toBe(false);
-    });
-  });
-
   describe('isValidArtifactDependency', () => {
     /** @type {Array<{dependent: SupportedModes, dependency: SupportedModes, isValid: boolean}>} */
     const combinations = [
@@ -71,9 +60,9 @@ describe('Fraggle Rock Config Validation', () => {
 
     for (const {dependent, dependency, isValid} of combinations) {
       it(`should identify ${dependent.join(',')} / ${dependency.join(',')} correctly`, () => {
-        const dependentDefn = {instance: new BaseFRGatherer()};
+        const dependentDefn = {instance: new BaseGatherer()};
         dependentDefn.instance.meta.supportedModes = dependent;
-        const dependencyDefn = {instance: new BaseFRGatherer()};
+        const dependencyDefn = {instance: new BaseGatherer()};
         dependencyDefn.instance.meta.supportedModes = dependency;
         expect(validation.isValidArtifactDependency(dependentDefn, dependencyDefn)).toBe(isValid);
       });
@@ -95,29 +84,32 @@ describe('Fraggle Rock Config Validation', () => {
     });
   });
 
-  describe('.assertValidFRGatherer', () => {
+  describe('.assertValidArtifact', () => {
     it('should throw if gatherer does not have a meta object', () => {
-      const gatherer = new BaseFRGatherer();
+      const gatherer = new BaseGatherer();
       // @ts-expect-error - We are intentionally creating a malformed input.
       gatherer.meta = undefined;
 
       const gathererDefn = {instance: gatherer};
-      const invocation = () => validation.assertValidFRGatherer(gathererDefn);
+      const artifactDefn = {id: 'NewArtifact', gatherer: gathererDefn};
+      const invocation = () => validation.assertValidArtifact(artifactDefn);
       expect(invocation).toThrow(/did not provide a meta/);
     });
 
     it('should throw if gatherer does not have a supported modes', () => {
-      const gathererDefn = {instance: new BaseFRGatherer()};
-      const invocation = () => validation.assertValidFRGatherer(gathererDefn);
+      const gathererDefn = {instance: new BaseGatherer()};
+      const artifactDefn = {id: 'NewArtifact', gatherer: gathererDefn};
+      const invocation = () => validation.assertValidArtifact(artifactDefn);
       expect(invocation).toThrow(/did not support any gather modes/);
     });
 
     it('should throw if gatherer does define getArtifact', () => {
-      const gatherer = new BaseFRGatherer();
+      const gatherer = new BaseGatherer();
       gatherer.meta = {supportedModes: ['navigation']};
 
       const gathererDefn = {instance: gatherer};
-      const invocation = () => validation.assertValidFRGatherer(gathererDefn);
+      const artifactDefn = {id: 'NewArtifact', gatherer: gathererDefn};
+      const invocation = () => validation.assertValidArtifact(artifactDefn);
       expect(invocation).toThrow(/did not define.*getArtifact/);
     });
   });

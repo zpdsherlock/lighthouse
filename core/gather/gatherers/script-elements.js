@@ -95,15 +95,6 @@ class ScriptElements extends FRGatherer {
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
     return this._getArtifact(context, networkRecords);
   }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   */
-  async afterPass(passContext, loadData) {
-    const networkRecords = loadData.networkRecords;
-    return this._getArtifact({...passContext, dependencies: {}}, networkRecords);
-  }
 }
 
 export default ScriptElements;

@@ -145,7 +145,6 @@ describe('.deepCloneConfigJson', () => {
     const TimingGatherer = new Gatherer();
     const input = {
       artifacts: [{id: 'Timing', gatherer: TimingGatherer}],
-      passes: [{passName: 'defaultPass', gatherers: []}],
       audits: [{path: 'user-timings'}],
       categories: {random: {auditRefs: [{id: 'user-timings'}]}},
     };
@@ -154,23 +153,11 @@ describe('.deepCloneConfigJson', () => {
     expect(output).not.toBe(input);
     expect(output).toEqual(input);
     output.artifacts[0].id = 'NewName';
-    output.passes[0].passName = 'newName';
     output.audits[0].path = 'new-audit';
     output.categories.random.auditRefs[0].id = 'new-audit';
     expect(input.artifacts[0].id).toEqual('Timing');
-    expect(input.passes[0].passName).toEqual('defaultPass');
     expect(input.audits[0].path).toEqual('user-timings');
     expect(input.categories.random.auditRefs[0].id).toEqual('user-timings');
-  });
-
-  it('should preserve gatherer implementations in passes', () => {
-    const TimingGatherer = new Gatherer();
-    const input = {
-      passes: [{passName: 'defaultPass', gatherers: [TimingGatherer]}],
-    };
-
-    const output = deepCloneConfigJson(input);
-    expect(output.passes[0].gatherers[0]).toEqual(TimingGatherer);
   });
 
   it('should preserve gatherer implementations in artifacts', () => {

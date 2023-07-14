@@ -20,7 +20,7 @@ import {getModuleDirectory} from '../../esm-utils.js';
 
 const require = createRequire(import.meta.url);
 
-/** @typedef {typeof import('../gather/gatherers/gatherer.js').Gatherer} GathererConstructor */
+/** @typedef {typeof import('../gather/base-gatherer.js').default} GathererConstructor */
 /** @typedef {typeof import('../audits/audit.js')['Audit']} Audit */
 /** @typedef {InstanceType<GathererConstructor>} Gatherer */
 
@@ -160,7 +160,7 @@ function mergeConfigFragmentArrayByKey(baseArray, extensionArray, keyFn) {
  *  - {instance: myGathererInstance}
  *
  * @param {LH.Config.GathererJson} gatherer
- * @return {{instance?: Gatherer, implementation?: GathererConstructor, path?: string}} passes
+ * @return {{instance?: Gatherer, implementation?: GathererConstructor, path?: string}}
  */
 function expandGathererShorthand(gatherer) {
   if (typeof gatherer === 'string') {
@@ -178,7 +178,7 @@ function expandGathererShorthand(gatherer) {
   } else if (typeof gatherer === 'function') {
     // just GathererConstructor
     return {implementation: gatherer};
-  } else if (gatherer && typeof gatherer.beforePass === 'function') {
+  } else if (gatherer && typeof gatherer.getArtifact === 'function') {
     // just GathererInstance
     return {instance: gatherer};
   } else {
@@ -595,13 +595,6 @@ function deepCloneConfigJson(json) {
 
   // Copy arrays that could contain non-serializable properties to allow for programmatic
   // injection of audit and gatherer implementations.
-  if (Array.isArray(cloned.passes) && Array.isArray(json.passes)) {
-    for (let i = 0; i < cloned.passes.length; i++) {
-      const pass = cloned.passes[i];
-      pass.gatherers = (json.passes[i].gatherers || []).map(gatherer => shallowClone(gatherer));
-    }
-  }
-
   if (Array.isArray(json.audits)) {
     cloned.audits = json.audits.map(audit => shallowClone(audit));
   }

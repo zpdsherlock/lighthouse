@@ -27,23 +27,9 @@ interface Config {
 
   // Fraggle Rock Only
   artifacts?: Config.ArtifactJson[] | null;
-
-  // Legacy Only
-  passes?: Config.PassJson[] | null;
 }
 
 declare module Config {
-  /**
-   * The normalized and fully resolved legacy config.
-   */
-  interface LegacyResolvedConfig {
-    settings: Settings;
-    passes: Pass[] | null;
-    audits: AuditDefn[] | null;
-    categories: Record<string, Category> | null;
-    groups: Record<string, Group> | null;
-  }
-
   /**
    * The normalized and fully resolved config.
    */
@@ -78,17 +64,6 @@ declare module Config {
     blankPage?: string;
   }
 
-  interface PassJson extends SharedPassNavigationJson {
-    /** The identifier for the pass. Config extension will deduplicate passes with the same passName. */
-    passName: string;
-    /** Whether a trace and devtoolsLog should be recorded for the pass. */
-    recordTrace?: boolean;
-    /** Whether throttling settings should be used for the pass. */
-    useThrottling?: boolean;
-    /** The array of gatherers to run during the pass. */
-    gatherers?: GathererJson[];
-  }
-
   interface NavigationJson extends SharedPassNavigationJson {
     /** The identifier for the navigation. Config extension will deduplicate navigations with the same id. */
     id: string;
@@ -102,21 +77,16 @@ declare module Config {
 
   interface ArtifactJson {
     id: string;
-    gatherer: FRGathererJson;
+    gatherer: GathererJson;
   }
 
   type GathererJson = {
     path: string;
-    options?: {};
   } | {
-    implementation: ClassOf<Gatherer.GathererInstance>;
-    options?: {};
+    implementation: ClassOf<Gatherer.FRGathererInstance>;
   } | {
-    instance: Gatherer.GathererInstance;
-    options?: {};
-  } | Gatherer.GathererInstance | ClassOf<Gatherer.GathererInstance> | string;
-
-  type FRGathererJson = string | {instance: Gatherer.FRGathererInstance}
+    instance: Gatherer.FRGathererInstance;
+  } | Gatherer.FRGathererInstance | ClassOf<Gatherer.FRGathererInstance> | string;
 
   interface CategoryJson {
     title: string | IcuMessage;
@@ -153,10 +123,6 @@ declare module Config {
 
   type Settings = ConfigSettings;
 
-  interface Pass extends Required<PassJson> {
-    gatherers: GathererDefn[];
-  }
-
   interface NavigationDefn extends Omit<Required<NavigationJson>, 'artifacts'> {
     artifacts: AnyArtifactDefn[];
   }
@@ -190,8 +156,8 @@ declare module Config {
   type AnyFRGathererDefn = FRGathererDefnExpander<Gatherer.DefaultDependenciesKey>|FRGathererDefnExpander<Gatherer.DependencyKey>
 
   interface GathererDefn {
-    implementation?: ClassOf<Gatherer.GathererInstance>;
-    instance: Gatherer.GathererInstance;
+    implementation?: ClassOf<Gatherer.FRGathererInstance>;
+    instance: Gatherer.FRGathererInstance;
     path?: string;
   }
 

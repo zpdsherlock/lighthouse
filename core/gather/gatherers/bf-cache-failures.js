@@ -163,15 +163,6 @@ class BFCacheFailures extends FRGatherer {
 
     return events.map(BFCacheFailures.processBFCacheEvent);
   }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['BFCacheFailures']>}
-   */
-  async afterPass(passContext, loadData) {
-    return this.getArtifact({...passContext, dependencies: {DevtoolsLog: loadData.devtoolsLog}});
-  }
 }
 
 export default BFCacheFailures;

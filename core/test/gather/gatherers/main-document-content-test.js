@@ -5,7 +5,6 @@
  */
 
 import MainDocumentContent from '../../../gather/gatherers/main-document-content.js';
-import {NetworkRecorder} from '../../../lib/network-recorder.js';
 import {createMockContext} from '../mock-driver.js';
 import {getURLArtifactFromDevtoolsLog, readJson} from '../../test-utils.js';
 
@@ -13,24 +12,8 @@ const devtoolsLog = readJson('../../fixtures/traces/lcp-m78.devtools.log.json', 
 
 const URL = getURLArtifactFromDevtoolsLog(devtoolsLog);
 
-describe('FR compat (main-document-content)', () => {
-  it('uses loadData in legacy mode', async () => {
-    const gatherer = new MainDocumentContent();
-    const networkRecords = NetworkRecorder.recordsFromLogs(devtoolsLog);
-    const mockContext = createMockContext();
-    mockContext.baseArtifacts.URL = URL;
-    mockContext.driver.defaultSession.sendCommand
-      .mockResponse('Network.getResponseBody', {body: 'RESPONSE'});
-
-    const artifact = await gatherer.afterPass(
-      mockContext.asLegacyContext(),
-      {devtoolsLog, networkRecords}
-    );
-
-    expect(artifact).toEqual('RESPONSE');
-  });
-
-  it('uses dependencies for FR', async () => {
+describe('MainDocumentContent', () => {
+  it('returns response content', async () => {
     const gatherer = new MainDocumentContent();
     const mockContext = createMockContext();
     mockContext.baseArtifacts.URL = URL;

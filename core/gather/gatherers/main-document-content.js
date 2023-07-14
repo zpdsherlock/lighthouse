@@ -20,33 +20,15 @@ class MainDocumentContent extends FRGatherer {
   };
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
-   * @param {LH.Artifacts['DevtoolsLog']} devtoolsLog
-   * @return {Promise<LH.Artifacts['MainDocumentContent']>}
-   */
-  async _getArtifact(context, devtoolsLog) {
-    const mainResource =
-      await MainResource.request({devtoolsLog, URL: context.baseArtifacts.URL}, context);
-    const session = context.driver.defaultSession;
-    return fetchResponseBodyFromCache(session, mainResource.requestId);
-  }
-
-  /**
    * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['MainDocumentContent']>}
    */
   async getArtifact(context) {
     const devtoolsLog = context.dependencies.DevtoolsLog;
-    return this._getArtifact(context, devtoolsLog);
-  }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['MainDocumentContent']>}
-   */
-  async afterPass(passContext, loadData) {
-    return this._getArtifact({...passContext, dependencies: {}}, loadData.devtoolsLog);
+    const mainResource =
+      await MainResource.request({devtoolsLog, URL: context.baseArtifacts.URL}, context);
+    const session = context.driver.defaultSession;
+    return fetchResponseBodyFromCache(session, mainResource.requestId);
   }
 }
 

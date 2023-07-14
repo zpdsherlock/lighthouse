@@ -223,15 +223,6 @@ class TagsBlockingFirstPaint extends FRGatherer {
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
     return TagsBlockingFirstPaint.findBlockingTags(context.driver, networkRecords);
   }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['TagsBlockingFirstPaint']>}
-   */
-  afterPass(passContext, loadData) {
-    return TagsBlockingFirstPaint.findBlockingTags(passContext.driver, loadData.networkRecords);
-  }
 }
 
 export default TagsBlockingFirstPaint;

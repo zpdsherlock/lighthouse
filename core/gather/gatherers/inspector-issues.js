@@ -53,10 +53,13 @@ class InspectorIssues extends FRGatherer {
   }
 
   /**
-   * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
+   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['InspectorIssues']>}
    */
-  async _getArtifact(networkRecords) {
+  async getArtifact(context) {
+    const devtoolsLog = context.dependencies.DevtoolsLog;
+    const networkRecords = await NetworkRecords.request(devtoolsLog, context);
+
     /** @type {LH.Artifacts.InspectorIssues} */
     const artifact = {
       attributionReportingIssue: [],
@@ -102,26 +105,6 @@ class InspectorIssues extends FRGatherer {
     }
 
     return artifact;
-  }
-
-  /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
-   * @return {Promise<LH.Artifacts['InspectorIssues']>}
-   */
-  async getArtifact(context) {
-    const devtoolsLog = context.dependencies.DevtoolsLog;
-    const networkRecords = await NetworkRecords.request(devtoolsLog, context);
-    return this._getArtifact(networkRecords);
-  }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['InspectorIssues']>}
-   */
-  async afterPass(passContext, loadData) {
-    await this.stopInstrumentation({...passContext, dependencies: {}});
-    return this._getArtifact(loadData.networkRecords);
   }
 }
 

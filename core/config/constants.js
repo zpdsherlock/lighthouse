@@ -127,21 +127,6 @@ const defaultSettings = {
   skipAudits: null,
 };
 
-/** @type {LH.Config.Pass} */
-const defaultPassConfig = {
-  passName: 'defaultPass',
-  loadFailureMode: 'fatal',
-  recordTrace: false,
-  useThrottling: false,
-  pauseAfterFcpMs: 0,
-  pauseAfterLoadMs: 0,
-  networkQuietThresholdMs: 0,
-  cpuQuietThresholdMs: 0,
-  blockedUrlPatterns: [],
-  blankPage: 'about:blank',
-  gatherers: [],
-};
-
 /** @type {Required<LH.Config.NavigationJson>} */
 const defaultNavigationConfig = {
   id: 'default',
@@ -169,7 +154,6 @@ export {
   screenEmulationMetrics,
   userAgents,
   defaultSettings,
-  defaultPassConfig,
   defaultNavigationConfig,
   nonSimulatedPassConfigOverrides,
 };

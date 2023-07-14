@@ -11,7 +11,6 @@ import * as LH from '../../types/lh.js';
 /**
  * Base class for all gatherers.
  *
- * @implements {LH.Gatherer.GathererInstance}
  * @implements {LH.Gatherer.FRGathererInstance}
  */
 class FRGatherer {
@@ -55,52 +54,6 @@ class FRGatherer {
    * @return {LH.Gatherer.PhaseResult}
    */
   getArtifact(passContext) { }
-
-  /**
-   * Legacy property used to define the artifact ID. In Fraggle Rock, the artifact ID lives on the config.
-   * @return {keyof LH.GathererArtifacts}
-   */
-  get name() {
-    let name = this.constructor.name;
-    // Rollup will mangle class names in an known way–just trim until `$`.
-    if (name.includes('$')) {
-      name = name.substr(0, name.indexOf('$'));
-    }
-    // @ts-expect-error - assume that class name has been added to LH.GathererArtifacts.
-    return name;
-  }
-
-  /**
-   * Legacy method. Called before navigation to target url, roughly corresponds to `startInstrumentation`.
-   * @param {LH.Gatherer.PassContext} passContext
-   * @return {Promise<LH.Gatherer.PhaseResultNonPromise>}
-   */
-  async beforePass(passContext) {
-    await this.startInstrumentation({...passContext, dependencies: {}});
-    await this.startSensitiveInstrumentation({...passContext, dependencies: {}});
-  }
-
-  /**
-   * Legacy method. Should never be used by a Fraggle Rock gatherer, here for compat only.
-   * @param {LH.Gatherer.PassContext} passContext
-   * @return {LH.Gatherer.PhaseResult}
-   */
-  pass(passContext) { }
-
-  /**
-   * Legacy method. Roughly corresponds to `stopInstrumentation` or `getArtifact` depending on type of gatherer.
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Gatherer.PhaseResultNonPromise>}
-   */
-  async afterPass(passContext, loadData) {
-    if ('dependencies' in this.meta) {
-      throw Error('Gatherer with dependencies should override afterPass');
-    }
-    await this.stopSensitiveInstrumentation({...passContext, dependencies: {}});
-    await this.stopInstrumentation({...passContext, dependencies: {}});
-    return this.getArtifact({...passContext, dependencies: {}});
-  }
 }
 
 export default FRGatherer;

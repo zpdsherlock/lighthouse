@@ -6,7 +6,7 @@
 
 import TraceElementsGatherer from '../../../gather/gatherers/trace-elements.js';
 import {createTestTrace, rootFrame} from '../../create-test-trace.js';
-import {flushAllTimersAndMicrotasks, fnAny, readJson, timers} from '../../test-utils.js';
+import {flushAllTimersAndMicrotasks, readJson, timers} from '../../test-utils.js';
 import {ProcessedTrace} from '../../../computed/processed-trace.js';
 import {createMockDriver} from '../mock-driver.js';
 
@@ -504,7 +504,11 @@ describe('Trace Elements gatherer - Animated Elements', () => {
     const gatherer = new TraceElementsGatherer();
     gatherer.animationIdToName.set('1', 'example');
 
-    const result = await gatherer._getArtifact({driver, computedCache: new Map()}, trace);
+    const result = await gatherer.getArtifact({
+      driver,
+      dependencies: {Trace: trace},
+      computedCache: new Map()}
+    );
     const sorted = result.sort((a, b) => a.nodeId - b.nodeId);
 
     expect(sorted).toEqual([
@@ -591,7 +595,11 @@ describe('Trace Elements gatherer - Animated Elements', () => {
     gatherer.animationIdToName.set('3', 'beta');
     gatherer.animationIdToName.set('4', 'gamma');
 
-    const result = await gatherer._getArtifact({driver, computedCache: new Map()}, animationTrace);
+    const result = await gatherer.getArtifact({
+      driver,
+      dependencies: {Trace: animationTrace},
+      computedCache: new Map(),
+    });
 
     const animationTraceElements = result.filter(el => el.traceEventType === 'animation');
     expect(animationTraceElements).toHaveLength(2);
@@ -666,7 +674,11 @@ describe('Trace Elements gatherer - Animated Elements', () => {
     gatherer.animationIdToName.set('1', 'notgunnamatter');
     gatherer.animationIdToName.set('2', 'example');
 
-    const result = await gatherer._getArtifact({driver, computedCache: new Map()}, trace);
+    const result = await gatherer.getArtifact({
+      driver,
+      dependencies: {Trace: trace},
+      computedCache: new Map(),
+    });
 
     expect(result).toEqual([
       {
@@ -717,11 +729,12 @@ describe('Trace Elements gatherer - Animated Elements', () => {
     const gatherer = new TraceElementsGatherer();
     gatherer.animationIdToName.set('1', 'example');
 
-    const result = await gatherer._getArtifact({
+    const result = await gatherer.getArtifact({
       driver,
       gatherMode: 'timespan',
+      dependencies: {Trace: trace},
       computedCache: new Map(),
-    }, trace);
+    });
 
     expect(result).toEqual([
       {
@@ -772,32 +785,5 @@ describe('instrumentation', () => {
     await gatherer.stopInstrumentation({driver, computedCache: new Map()});
 
     expect(gatherer.animationIdToName.size).toEqual(0);
-  });
-});
-
-describe('FR compat (trace-elements)', () => {
-  it('uses loadData in legacy mode', async () => {
-    const trace = ['1', '2'];
-    const gatherer = new TraceElementsGatherer();
-    gatherer._getArtifact = fnAny();
-    gatherer.stopInstrumentation = fnAny();
-
-    await gatherer.afterPass({}, {trace});
-
-    expect(gatherer._getArtifact).toHaveBeenCalledWith({dependencies: {}}, trace);
-    expect(gatherer.stopInstrumentation).toHaveBeenCalledWith({dependencies: {}});
-  });
-
-  it('uses dependency in legacy mode', async () => {
-    const trace = ['1', '2'];
-    const gatherer = new TraceElementsGatherer();
-    gatherer._getArtifact = fnAny();
-    gatherer.stopInstrumentation = fnAny();
-
-    const context = {dependencies: {Trace: trace}};
-    await gatherer.getArtifact(context);
-
-    expect(gatherer._getArtifact).toHaveBeenCalledWith(context, trace);
-    expect(gatherer.stopInstrumentation).not.toHaveBeenCalled();
   });
 });

@@ -172,11 +172,11 @@ class LinkElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.FRTransitionalContext} context
-   * @param {LH.Artifacts['DevtoolsLog']} devtoolsLog
+   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['LinkElements']>}
    */
-  async _getArtifact(context, devtoolsLog) {
+  async getArtifact(context) {
+    const devtoolsLog = context.dependencies.DevtoolsLog;
     const fromDOM = await LinkElements.getLinkElementsInDOM(context);
     const fromHeaders = await LinkElements.getLinkElementsInHeaders(context, devtoolsLog);
     const linkElements = fromDOM.concat(fromHeaders);
@@ -187,23 +187,6 @@ class LinkElements extends FRGatherer {
     }
 
     return linkElements;
-  }
-
-  /**
-   * @param {LH.Gatherer.PassContext} context
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['LinkElements']>}
-   */
-  async afterPass(context, loadData) {
-    return this._getArtifact({...context, dependencies: {}}, loadData.devtoolsLog);
-  }
-
-  /**
-   * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
-   * @return {Promise<LH.Artifacts['LinkElements']>}
-   */
-  async getArtifact(context) {
-    return this._getArtifact(context, context.dependencies.DevtoolsLog);
   }
 }
 

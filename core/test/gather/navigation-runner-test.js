@@ -58,7 +58,6 @@ describe('NavigationRunner', () => {
   function createGathererDefn() {
     return {
       instance: {
-        name: 'Accessibility',
         meta: {supportedModes: []},
         startInstrumentation: fnAny(),
         stopInstrumentation: fnAny(),

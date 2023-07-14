@@ -10,14 +10,12 @@ import {ProtocolMapping as CrdpMappings} from 'devtools-protocol/types/protocol-
 import {NetworkNode as _NetworkNode} from '../core/lib/dependency-graph/network-node.js';
 import {CPUNode as _CPUNode} from '../core/lib/dependency-graph/cpu-node.js';
 import {Simulator as _Simulator} from '../core/lib/dependency-graph/simulator/simulator.js';
-import {Driver} from '../core/legacy/gather/driver.js';
 import {ExecutionContext} from '../core/gather/driver/execution-context.js';
 import {Fetcher} from '../core/gather/fetcher.js';
 import {ArbitraryEqualityMap} from '../core/lib/arbitrary-equality-map.js';
 
-import {Artifacts, BaseArtifacts, FRBaseArtifacts, GathererArtifacts, DevtoolsLog, Trace} from './artifacts.js';
+import {Artifacts, FRBaseArtifacts, GathererArtifacts, DevtoolsLog, Trace} from './artifacts.js';
 import Config from './config.js';
-import {IcuMessage} from './lhr/i18n.js';
 import Result from './lhr/lhr.js';
 import Protocol from './protocol.js';
 import Puppeteer from './puppeteer.js';
@@ -79,19 +77,6 @@ declare module Gatherer {
     }
   }
 
-  interface PassContext {
-    gatherMode: 'navigation';
-    /** The url of the currently loaded page. If the main document redirects, this will be updated to keep track. */
-    url: string;
-    driver: Driver;
-    passConfig: Config.Pass
-    settings: Config.Settings;
-    computedCache: Map<string, ArbitraryEqualityMap>
-    /** Gatherers can push to this array to add top-level warnings to the LHR. */
-    LighthouseRunWarnings: Array<string | IcuMessage>;
-    baseArtifacts: BaseArtifacts;
-  }
-
   interface LoadData {
     networkRecords: Array<Artifacts.NetworkRequest>;
     devtoolsLog: DevtoolsLog;
@@ -129,17 +114,9 @@ declare module Gatherer {
       GathererMetaNoDependencies :
       GathererMetaWithDependencies<Exclude<TDependencies, DefaultDependenciesKey>>;
 
-  interface GathererInstance {
-    name: keyof GathererArtifacts;
-    beforePass(context: Gatherer.PassContext): PhaseResult;
-    pass(context: Gatherer.PassContext): PhaseResult;
-    afterPass(context: Gatherer.PassContext, loadData: Gatherer.LoadData): PhaseResult;
-  }
-
   type FRGatherPhase = keyof Omit<Gatherer.FRGathererInstance, 'name'|'meta'>
 
   interface FRGathererInstance<TDependencies extends DependencyKey = DefaultDependenciesKey> {
-    name: keyof GathererArtifacts; // temporary COMPAT measure until artifact config support is available
     meta: GathererMeta<TDependencies>;
     startInstrumentation(context: FRTransitionalContext<DefaultDependenciesKey>): Promise<void>|void;
     startSensitiveInstrumentation(context: FRTransitionalContext<DefaultDependenciesKey>): Promise<void>|void;
