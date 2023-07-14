@@ -25,6 +25,8 @@
 
 import log from 'lighthouse-logger';
 
+import {Sentry} from '../lib/sentry.js';
+
 /**
  *
  * @param {{id: string}} dependency
@@ -115,7 +117,13 @@ async function collectPhaseArtifacts(options) {
       return artifact;
     });
 
-    await artifactPromise.catch(() => {});
+    await artifactPromise.catch((err) => {
+      Sentry.captureException(err, {
+        tags: {gatherer: artifactDefn.id, phase},
+        level: 'error',
+      });
+      log.error(artifactDefn.id, err.message);
+    });
     artifactState[phase][artifactDefn.id] = artifactPromise;
   }
 }

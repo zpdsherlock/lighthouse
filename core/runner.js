@@ -390,15 +390,11 @@ class Runner {
           // @ts-expect-error: TODO why is this a type error now?
           const artifactError = artifacts[artifactName];
 
-          Sentry.captureException(artifactError, {
-            tags: {gatherer: artifactName},
-            level: 'error',
-          });
-
           log.warn('Runner', `${artifactName} gatherer, required by audit ${audit.meta.id},` +
             ` encountered an error: ${artifactError.message}`);
 
-          // Create a friendlier display error and mark it as expected to avoid duplicates in Sentry
+          // Create a friendlier display error and mark it as expected to avoid duplicates in Sentry.
+          // The artifact error was already sent to Sentry in `collectPhaseArtifacts`.
           const error = new LighthouseError(LighthouseError.errors.ERRORED_REQUIRED_ARTIFACT,
               {artifactName, errorMessage: artifactError.message}, {cause: artifactError});
           // @ts-expect-error Non-standard property added to Error

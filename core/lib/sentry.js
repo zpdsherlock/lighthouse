@@ -126,9 +126,16 @@ async function init(opts) {
         if (opts.tags) {
           scope.setTags(opts.tags);
         }
-        if (opts.extra) {
-          scope.setExtras(opts.extra);
+
+        // Add extra details
+        let extra;
+        if (opts.extra) extra = {...opts.extra};
+        // @ts-expect-error Non-standard property
+        if (err.extra) extra = {...extra, ...err.extra};
+        if (extra) {
+          scope.setExtras(extra);
         }
+
         Sentry.captureException(err);
       });
     };
