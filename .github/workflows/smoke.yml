@@ -156,7 +156,7 @@ jobs:
 
     - run: sudo apt-get install xvfb
     - name: yarn test-bundle
-      run: xvfb-run --auto-servernum yarn test-bundle --shard=${{ matrix.smoke-test-shard }}/$SHARD_TOTAL
+      run: xvfb-run --auto-servernum yarn test-bundle --shard=${{ matrix.smoke-test-shard }}/$SHARD_TOTAL --retries=2
 
     # Fail if any changes were written to source files.
     - run: git diff --exit-code

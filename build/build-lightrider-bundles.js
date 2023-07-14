@@ -7,9 +7,9 @@
 import fs from 'fs';
 import path from 'path';
 
-import {rollup} from 'rollup';
+import esbuild from 'esbuild';
 
-import * as rollupPlugins from './rollup-plugins.js';
+import * as plugins from './esbuild-plugins.js';
 import {buildBundle} from './build-bundle.js';
 import {LH_ROOT} from '../root.js';
 
@@ -28,44 +28,41 @@ function buildEntryPoint() {
 }
 
 async function buildReportGenerator() {
-  const bundle = await rollup({
-    input: 'report/generator/report-generator.js',
+  await esbuild.build({
+    entryPoints: ['report/generator/report-generator.js'],
+    outfile: 'dist/lightrider/report-generator-bundle.js',
+    bundle: true,
+    minify: false,
     plugins: [
-      rollupPlugins.removeModuleDirCalls(),
-      rollupPlugins.inlineFs({verbose: Boolean(process.env.DEBUG)}),
-      rollupPlugins.shim({
+      plugins.umd('ReportGenerator'),
+      plugins.replaceModules({
         [`${LH_ROOT}/report/generator/flow-report-assets.js`]: 'export const flowReportAssets = {}',
-        'fs': 'export default {}',
-        'module': 'export function createRequire(){}',
-        'path': 'export default {}',
-        'url': 'export default {}',
       }),
+      plugins.bulkLoader([
+        plugins.partialLoaders.inlineFs({verbose: Boolean(process.env.DEBUG)}),
+        plugins.partialLoaders.rmGetModuleDirectory,
+      ]),
+      plugins.ignoreBuiltins(),
     ],
   });
-
-  await bundle.write({
-    file: 'dist/lightrider/report-generator-bundle.js',
-    format: 'umd',
-    name: 'ReportGenerator',
-  });
-  await bundle.close();
 }
 
 async function buildStaticServerBundle() {
-  const bundle = await rollup({
-    input: 'cli/test/fixtures/static-server.js',
+  await esbuild.build({
+    entryPoints: ['cli/test/fixtures/static-server.js'],
+    outfile: 'dist/lightrider/static-server.js',
+    format: 'cjs',
+    bundle: true,
+    minify: false,
     plugins: [
-      rollupPlugins.inlineFs({verbose: Boolean(process.env.DEBUG)}),
-      rollupPlugins.nodeResolve(),
+      plugins.bulkLoader([
+        plugins.partialLoaders.inlineFs({verbose: Boolean(process.env.DEBUG)}),
+        plugins.partialLoaders.rmGetModuleDirectory,
+      ]),
+      plugins.ignoreBuiltins(),
     ],
     external: ['mime-types', 'glob'],
   });
-
-  await bundle.write({
-    file: 'dist/lightrider/static-server.js',
-    format: 'commonjs',
-  });
-  await bundle.close();
 }
 
 await Promise.all([

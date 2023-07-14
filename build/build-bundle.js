@@ -15,16 +15,18 @@ import {execSync} from 'child_process';
 import {createRequire} from 'module';
 
 import esMain from 'es-main';
-import {rollup} from 'rollup';
+import esbuild from 'esbuild';
 // @ts-expect-error: plugin has no types.
 import PubAdsPlugin from 'lighthouse-plugin-publisher-ads';
 // @ts-expect-error: plugin has no types.
 import SoftNavPlugin from 'lighthouse-plugin-soft-navigation';
+import * as terser from 'terser';
 
-import * as rollupPlugins from './rollup-plugins.js';
+import * as plugins from './esbuild-plugins.js';
 import {Runner} from '../core/runner.js';
 import {LH_ROOT} from '../root.js';
 import {readJson} from '../core/test/test-utils.js';
+import {nodeModulesPolyfillPlugin} from '../third-party/esbuild-plugins-polyfills/esbuild-polyfills.js';
 
 const require = createRequire(import.meta.url);
 
@@ -81,10 +83,6 @@ const banner = `
  * @return {Promise<void>}
  */
 async function buildBundle(entryPath, distPath, opts = {minify: true}) {
-  if (fs.existsSync(LH_ROOT + '/lighthouse-logger/node_modules')) {
-    throw new Error('delete `lighthouse-logger/node_modules` because it messes up rollup bundle');
-  }
-
   // List of paths (absolute / relative to config-helpers.js) to include
   // in bundle and make accessible via config-helpers.js `requireWrapper`.
   const dynamicModulePaths = [
@@ -110,12 +108,20 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
   }).join(',\n');
 
   /** @type {Record<string, string>} */
-  const shimsObj = {};
+  const shimsObj = {
+    // zlib's decompression code is very large and we don't need it.
+    // We export empty functions, instead of an empty module, simply to silence warnings
+    // about no exports.
+    '__zlib-lib/inflate': `
+      export function inflateInit2() {};
+      export function inflate() {};
+      export function inflateEnd() {};
+      export function inflateReset() {};
+    `,
+  };
 
   const modulesToIgnore = [
     'puppeteer-core',
-    'intl-pluralrules',
-    'intl',
     'pako/lib/zlib/inflate.js',
     '@sentry/node',
     'source-map',
@@ -125,55 +131,37 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
   // Don't include the stringified report in DevTools - see devtools-report-assets.js
   // Don't include in Lightrider - HTML generation isn't supported, so report assets aren't needed.
   if (isDevtools(entryPath) || isLightrider(entryPath)) {
-    shimsObj[require.resolve('../report/generator/report-assets.js')] =
+    shimsObj[`${LH_ROOT}/report/generator/report-assets.js`] =
       'export const reportAssets = {}';
   }
 
   // Don't include locales in DevTools.
   if (isDevtools(entryPath)) {
-    shimsObj['./locales.js'] = 'export const locales = {};';
+    shimsObj[`${LH_ROOT}/shared/localization/locales.js`] = 'export const locales = {};';
   }
 
   for (const modulePath of modulesToIgnore) {
     shimsObj[modulePath] = 'export default {}';
   }
 
-  const bundle = await rollup({
-    input: entryPath,
-    context: 'globalThis',
+  const result = await esbuild.build({
+    entryPoints: [entryPath],
+    outfile: distPath,
+    write: false,
+    format: 'iife',
+    charset: 'utf8',
+    bundle: true,
+    // For now, we defer to terser.
+    minify: false,
+    treeShaking: true,
+    sourcemap: DEBUG,
+    banner: {js: banner},
+    // Because of page-functions!
+    keepNames: true,
+    inject: ['./build/process-global.js'],
+    /** @type {esbuild.Plugin[]} */
     plugins: [
-      rollupPlugins.replace({
-        delimiters: ['', ''],
-        values: {
-          '/* BUILD_REPLACE_BUNDLED_MODULES */': `[\n${bundledMapEntriesCode},\n]`,
-          // This package exports to default in a way that causes Rollup to get confused,
-          // resulting in MessageFormat being undefined.
-          'require(\'intl-messageformat\').default': 'require(\'intl-messageformat\')',
-          // Below we replace lighthouse-logger with a local copy, which is ES modules. Need
-          // to change every require of the package to reflect this.
-          'require(\'lighthouse-logger\');': 'require(\'lighthouse-logger\').default;',
-          // Rollup doesn't replace this, so let's manually change it to false.
-          'require.main === module': 'false',
-          // TODO: Use globalThis directly.
-          'global.isLightrider': 'globalThis.isLightrider',
-          'global.isDevtools': 'globalThis.isDevtools',
-          // For some reason, `shim` doesn't work to force this module to return false, so instead
-          // just replace usages of it with false.
-          'esMain(import.meta)': 'false',
-          'import esMain from \'es-main\'': '',
-          // By default Rollup converts `import.meta` to a big mess of `document.currentScript && ...`,
-          // and uses the output name as the url. Instead, do a simpler conversion and use the
-          // module path.
-          'import.meta': (id) => `{url: '${path.relative(LH_ROOT, id)}'}`,
-        },
-      }),
-      rollupPlugins.alias({
-        entries: {
-          'debug': require.resolve('debug/src/browser.js'),
-          'lighthouse-logger': require.resolve('../lighthouse-logger/index.js'),
-        },
-      }),
-      rollupPlugins.shim({
+      plugins.replaceModules({
         ...shimsObj,
         'url': `
           export const URL = globalThis.URL;
@@ -189,59 +177,99 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
             };
           };
         `,
+      }, {
+        // buildBundle is used in a lot of different contexts. Some share the same modules
+        // that need to be replaced, but others don't use those modules at all.
+        disableUnusedError: true,
       }),
-      rollupPlugins.json(),
-      rollupPlugins.removeModuleDirCalls(),
-      rollupPlugins.inlineFs({
-        verbose: Boolean(process.env.DEBUG),
-        ignorePaths: [
-          require.resolve('puppeteer-core/lib/esm/puppeteer/common/Page.js'),
-        ],
-      }),
-      rollupPlugins.commonjs({
-        // https://github.com/rollup/plugins/issues/922
-        ignoreGlobal: true,
-      }),
-      rollupPlugins.nodePolyfills(),
-      rollupPlugins.nodeResolve({preferBuiltins: true}),
-      // Rollup sees the usages of these functions in page functions (ex: see AnchorElements)
-      // and treats them as globals. Because the names are "taken" by the global, Rollup renames
-      // the actual functions (getNodeDetails$1). The page functions expect a certain name, so
-      // here we undo what Rollup did.
-      rollupPlugins.postprocess([
-        [/getBoundingClientRect\$1/, 'getBoundingClientRect'],
-        [/getElementsInDocument\$1/, 'getElementsInDocument'],
-        [/getNodeDetails\$1/, 'getNodeDetails'],
-        [/getRectCenterPoint\$1/, 'getRectCenterPoint'],
-        [/isPositionFixed\$1/, 'isPositionFixed'],
+      nodeModulesPolyfillPlugin(),
+      plugins.bulkLoader([
+        // TODO: when we used rollup, various things were tree-shaken out before inlineFs did its
+        // thing. Now treeshaking only happens at the end, so the plugin sees more cases than it
+        // did before. Some of those new cases emit warnings. Safe to ignore, but should be
+        // resolved eventually.
+        plugins.partialLoaders.inlineFs({
+          verbose: Boolean(process.env.DEBUG),
+          ignorePaths: [require.resolve('puppeteer-core/lib/esm/puppeteer/common/Page.js')],
+        }),
+        plugins.partialLoaders.rmGetModuleDirectory,
+        plugins.partialLoaders.replaceText({
+          '/* BUILD_REPLACE_BUNDLED_MODULES */': `[\n${bundledMapEntriesCode},\n]`,
+          // TODO: Use globalThis directly.
+          'global.isLightrider': 'globalThis.isLightrider',
+          'global.isDevtools': 'globalThis.isDevtools',
+          // By default esbuild converts `import.meta` to an empty object.
+          // We need at least the url property for i18n things.
+          /** @param {string} id */
+          'import.meta': (id) => `{url: '${path.relative(LH_ROOT, id)}'}`,
+        }),
       ]),
-      opts.minify && rollupPlugins.terser({
-        ecma: 2019,
-        output: {
-          comments: (node, comment) => {
-            const text = comment.value;
-            if (text.includes('The Lighthouse Authors') && comment.line > 1) return false;
-            return /@ts-nocheck - Prevent tsc|@preserve|@license|@cc_on|^!/i.test(text);
-          },
-          max_line_len: 1000,
+      {
+        name: 'alias',
+        setup({onResolve}) {
+          onResolve({filter: /\.*/}, (args) => {
+            /** @type {Record<string, string>} */
+            const entries = {
+              'debug': require.resolve('debug/src/browser.js'),
+              'lighthouse-logger': require.resolve('../lighthouse-logger/index.js'),
+            };
+            if (args.path in entries) {
+              return {path: entries[args.path]};
+            }
+          });
         },
-        // The config relies on class names for gatherers.
-        keep_classnames: true,
-        // Runtime.evaluate errors if function names are elided.
-        keep_fnames: true,
-      }),
+      },
+      {
+        name: 'postprocess',
+        setup({onEnd}) {
+          onEnd(result => {
+            if (!result.outputFiles) throw new Error();
+
+            let code = result.outputFiles[0].text;
+
+            // Get rid of our extra license comments.
+            // https://stackoverflow.com/a/35923766
+            const re = /\/\*\*\s*\n([^*]|(\*(?!\/)))*\*\/\n/g;
+            let hasSeenFirst = false;
+            code = code.replace(re, (match) => {
+              if (match.includes('@license') && match.match(/Lighthouse Authors|Google/)) {
+                if (hasSeenFirst) {
+                  return '';
+                }
+
+                hasSeenFirst = true;
+              }
+
+              return match;
+            });
+
+            result.outputFiles[0].contents = new TextEncoder().encode(code);
+          });
+        },
+      },
     ],
   });
 
-  await bundle.write({
-    file: distPath,
-    banner,
-    format: 'iife',
-    sourcemap: DEBUG,
-    // Suppress code splitting.
-    inlineDynamicImports: true,
-  });
-  await bundle.close();
+  let code = result.outputFiles[0].text;
+
+  // Just make sure the above shimming worked.
+  if (code.includes('inflate_fast')) {
+    throw new Error('Expected zlib inflate code to have been removed');
+  }
+
+  // Ideally we'd let esbuild minify, but we need to disable variable name mangling otherwise
+  // code generated dynamically to run inside the browser (pageFunctions) breaks. For example,
+  // the `truncate` function is unable to properly reference `Util`.
+  if (opts.minify) {
+    code = (await terser.minify(result.outputFiles[0].text, {
+      mangle: false,
+      format: {
+        max_line_len: 1000,
+      },
+    })).code || '';
+  }
+
+  await fs.promises.writeFile(result.outputFiles[0].path, code);
 }
 
 /**

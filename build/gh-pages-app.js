@@ -5,15 +5,15 @@
  */
 
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 
-import {rollup} from 'rollup';
+import esbuild from 'esbuild';
 import cpy from 'cpy';
 import ghPages from 'gh-pages';
 import glob from 'glob';
 import * as terser from 'terser';
 
-import * as rollupPlugins from './rollup-plugins.js';
 import {LH_ROOT} from '../root.js';
 import {readJson} from '../core/test/test-utils.js';
 
@@ -39,7 +39,7 @@ const license = `/*
 /**
  * Literal string (representing JS, CSS, etc...), or an object with a path, which would
  * be interpreted relative to opts.appDir and be glob-able.
- * @typedef {{path: string, rollup?: boolean, rollupPlugins?: import('rollup').Plugin[]} | string} Source
+ * @typedef {{path: string, rollup?: boolean, esbuild?: boolean, esbuildPlugins?: esbuild.Plugin[]} | string} Source
  */
 
 /**
@@ -132,10 +132,10 @@ class GhPagesApp {
     for (const source of sources) {
       if (typeof source === 'string') {
         result.push(source);
-      } else if (source.rollup) {
-        result.push(await this._rollupSource(
+      } else if (source.esbuild) {
+        result.push(await this._esbuildSource(
           path.resolve(this.opts.appDir, source.path),
-          source.rollupPlugins)
+          source.esbuildPlugins)
         );
       } else {
         result.push(...loadFiles(path.resolve(this.opts.appDir, source.path)));
@@ -147,33 +147,30 @@ class GhPagesApp {
 
   /**
    * @param {string} input
-   * @param {import('rollup').Plugin[]=} plugins
+   * @param {esbuild.Plugin[]=} plugins
    * @return {Promise<string>}
    */
-  async _rollupSource(input, plugins) {
-    plugins = plugins || [
-      rollupPlugins.nodeResolve(),
-      rollupPlugins.commonjs(),
-    ];
-    if (!process.env.DEBUG) plugins.push(rollupPlugins.terser());
-    const bundle = await rollup({
-      preserveEntrySignatures: 'strict',
-      input,
+  async _esbuildSource(input, plugins) {
+    const result = await esbuild.build({
+      entryPoints: [input],
+      write: false,
+      outdir: fs.mkdtempSync(path.join(os.tmpdir(), 'gh-pages-app-')),
+      format: 'esm',
+      bundle: true,
+      splitting: true,
+      minify: !process.env.DEBUG,
       plugins,
     });
-    const {output} = await bundle.generate({format: 'esm'});
 
     // Return the code from the main chunk, and save the rest to the src directory.
-    for (let i = 1; i < output.length; i++) {
-      if (output[i].type === 'chunk') {
-        // @ts-expect-error This is a chunk, not an asset.
-        const code = output[i].code;
-        safeWriteFile(`${this.distDir}/src/${output[i].fileName}`, code);
-      }
+    for (let i = 1; i < result.outputFiles.length; i++) {
+      const code = result.outputFiles[i].text;
+      const basename = path.basename(result.outputFiles[i].path);
+      safeWriteFile(`${this.distDir}/src/${basename}`, code);
     }
-    const scripts = output[0].imports.map(fileName => `src/${fileName}`);
-    this.preloadScripts.push(...scripts);
-    return output[0].code;
+
+    this.preloadScripts.push(...result.outputFiles.slice(1).map(f => path.basename(f.path)));
+    return result.outputFiles[0].text;
   }
 
   async _compileHtml() {

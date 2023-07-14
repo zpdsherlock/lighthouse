@@ -19,7 +19,7 @@ import log from 'lighthouse-logger';
 import BaseGatherer from '../base-gatherer.js';
 
 
-// This is removed by rollup, because the only usage is to resolve a module path
+// This is removed by esbuild (if minified), because the only usage is to resolve a module path
 // but that is replaced by the inline-fs plugin, leaving `require` unused.
 const require = /* #__PURE__ */ createRequire(import.meta.url);
 

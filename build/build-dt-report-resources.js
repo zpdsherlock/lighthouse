@@ -8,9 +8,9 @@ import fs from 'fs';
 import path from 'path';
 import assert from 'assert/strict';
 
-import {rollup} from 'rollup';
+import esbuild from 'esbuild';
 
-import * as rollupPlugins from './rollup-plugins.js';
+import * as plugins from './esbuild-plugins.js';
 import {LH_ROOT} from '../root.js';
 
 const distDir = path.join(LH_ROOT, 'dist', 'dt-report-resources');
@@ -31,24 +31,23 @@ fs.mkdirSync(distDir, {recursive: true});
 writeFile('report-generator.mjs.d.ts', 'export {}');
 
 async function buildReportGenerator() {
-  const bundle = await rollup({
-    input: 'report/generator/report-generator.js',
+  await esbuild.build({
+    entryPoints: ['report/generator/report-generator.js'],
+    outfile: bundleOutFile,
+    bundle: true,
+    minify: false,
     plugins: [
-      rollupPlugins.shim({
+      plugins.umd('Lighthouse.ReportGenerator'),
+      plugins.replaceModules({
         [`${LH_ROOT}/report/generator/flow-report-assets.js`]: 'export const flowReportAssets = {}',
       }),
-      rollupPlugins.nodeResolve(),
-      rollupPlugins.removeModuleDirCalls(),
-      rollupPlugins.inlineFs({verbose: Boolean(process.env.DEBUG)}),
+      plugins.bulkLoader([
+        plugins.partialLoaders.inlineFs({verbose: Boolean(process.env.DEBUG)}),
+        plugins.partialLoaders.rmGetModuleDirectory,
+      ]),
+      plugins.ignoreBuiltins(),
     ],
   });
-
-  await bundle.write({
-    file: bundleOutFile,
-    format: 'umd',
-    name: 'Lighthouse.ReportGenerator',
-  });
-  await bundle.close();
 }
 
 await buildReportGenerator();

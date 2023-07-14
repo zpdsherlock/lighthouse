@@ -56,6 +56,7 @@ async function runBundledLighthouse(url, config, testRunnerOptions) {
 
   const originalBuffer = global.Buffer;
   const originalRequire = global.require;
+  const originalProcess = global.process;
   if (typeof globalThis === 'undefined') {
     // @ts-expect-error - exposing for loading of dt-bundle.
     global.globalThis = global;
@@ -66,6 +67,7 @@ async function runBundledLighthouse(url, config, testRunnerOptions) {
 
   global.require = originalRequire;
   global.Buffer = originalBuffer;
+  global.process = originalProcess;
 
   /** @type {import('../../../../core/index.js')['default']} */
   // @ts-expect-error - not worth giving test global an actual type.
@@ -122,7 +124,7 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
   const log = logs.join('') + '\n';
 
   if (workerResponse.type === 'error') {
-    new Error(`Worker returned an error: ${workerResponse.value}\nLog:\n${log}`);
+    throw new Error(`Worker returned an error: ${workerResponse.value}\nLog:\n${log}`);
   }
 
   const result = workerResponse.value;
