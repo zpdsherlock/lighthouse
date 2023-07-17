@@ -13,9 +13,10 @@
 import {Buffer} from 'buffer';
 import {gzip} from 'zlib';
 
+import log from 'lighthouse-logger';
+
 import BaseGatherer from '../../base-gatherer.js';
 import UrlUtils from '../../../lib/url-utils.js';
-import {Sentry} from '../../../lib/sentry.js';
 import {NetworkRequest} from '../../../lib/network-request.js';
 import DevtoolsLog from '../devtools-log.js';
 import {fetchResponseBodyFromCache} from '../../driver/network.js';
@@ -119,12 +120,13 @@ class ResponseCompression extends BaseGatherer {
           });
         });
       }).catch(err => {
-        Sentry.captureException(err, {
-          tags: {gatherer: 'ResponseCompression'},
-          extra: {url: UrlUtils.elideDataURI(record.url)},
-          level: 'warning',
-        });
+        const isExpectedError = err?.message?.includes('No resource with given identifier found');
+        if (!isExpectedError) {
+          err.extra = {url: UrlUtils.elideDataURI(record.url)};
+          throw err;
+        }
 
+        log.error('ResponseCompression', err.message);
         record.gzipSize = undefined;
         return record;
       });

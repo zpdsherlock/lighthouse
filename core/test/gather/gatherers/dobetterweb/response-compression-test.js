@@ -145,12 +145,19 @@ describe('Optimized responses', () => {
     expect(artifact[0].gzipSize).toEqual(26);
   });
 
-  it('recovers from driver errors', async () => {
-    mocks.networkMock.fetchResponseBodyFromCache.mockRejectedValue(new Error('Failed'));
+  it('recovers from cache ejection errors', async () => {
+    mocks.networkMock.fetchResponseBodyFromCache.mockRejectedValue(
+      new Error('No resource with given identifier found'));
     const artifact = await gatherer.getCompressibleRecords(context, networkRecords);
     expect(artifact).toHaveLength(2);
     expect(artifact[0].resourceSize).toEqual(6);
     expect(artifact[0].gzipSize).toBeUndefined();
+  });
+
+  it('does not suppress other errors', async () => {
+    mocks.networkMock.fetchResponseBodyFromCache.mockRejectedValue(new Error('Failed'));
+    await expect(gatherer.getCompressibleRecords(context, networkRecords))
+      .rejects.toThrow();
   });
 
   it('ignores responses from installed Chrome extensions', async () => {
