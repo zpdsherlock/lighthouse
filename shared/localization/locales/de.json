@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Die Seite hat keine Manifest-URL <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Es wurde kein passender Service Worker gefunden. Versuche, die Seite zu aktualisieren oder prüfe, ob der Bereich des Service Workers für die aktuelle Seite den Bereich und die Start-URL des Manifests umfasst."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Service Worker konnte ohne das Feld „start_url“ im Manifest nicht geprüft werden"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Kurze Erstreaktionszeit des Servers"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Der Service Worker ermöglicht es deiner App, viele Funktionen von progressiven Web-Apps zu nutzen, beispielsweise den Offlinemodus, das Hinzufügen zum Startbildschirm und Push-Benachrichtigungen. [Weitere Informationen.](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Diese Seite wird von einem Service Worker kontrolliert. Es wurde jedoch keine `start_url` gefunden, weil das Manifest nicht als gültige JSON-Datei geparst werden konnte."
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Diese Seite wird zwar von einem Service Worker kontrolliert, die `start_url` ({startUrl}) liegt jedoch nicht in dessen Zuständigkeitsbereich ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Diese Seite wird zwar von einem Service Worker kontrolliert, es wurde jedoch keine `start_url` gefunden, da kein Manifest abgerufen wurde."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Dieser Ursprung verfügt über mindestens einen Service Worker. Die Seite ({pageUrl}) liegt jedoch nicht in dessen Zuständigkeitsbereich."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Es wurde kein Service Worker erkannt, der die Seite und `start_url` kontrolliert"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Es wurde ein Service Worker erkannt, der die Seite und `start_url` kontrolliert."
   },
   "core/audits/splash-screen.js | description": {
     "message": "Wenn du deinen Startbildschirm passend zum Design deiner App gestaltest, vermittelst du den Nutzern schon beim Ladevorgang einen hochwertigen Eindruck. [Weitere Informationen zu Startbildschirmen.](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

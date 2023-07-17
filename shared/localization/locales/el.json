@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Η σελίδα δεν περιέχει <link> URL μανιφέστου"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Δεν εντοπίστηκε service worker που να αντιστοιχεί. Μπορεί να χρειαστεί να επαναφορτώσετε τη σελίδα ή να ελέγξετε ότι το εύρος του service worker για την τρέχουσα σελίδα περικλείει το εύρος του URL έναρξης από το μανιφέστο."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Δεν ήταν δυνατός ο έλεγχος του service worker χωρίς πεδίο \"start_url\" στο μανιφέστο."
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Ο αρχικός χρόνος απόκρισης διακομιστή ήταν σύντομος"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Το service worker είναι η τεχνολογία που επιτρέπει στην εφαρμογή σας να χρησιμοποιεί πολλές λειτουργίες προηγμένων εφαρμογών ιστού, όπως είναι η λειτουργία εκτός σύνδεσης, η προσθήκη στην αρχική οθόνη και οι ειδοποιήσεις push. [Μάθετε περισσότερα σχετικά με τα service worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Αυτή η σελίδα ελέγχεται από ένα service worker, αλλά δεν βρέθηκε κανένα `start_url` επειδή το μανιφέστο απέτυχε να αναλυθεί ως έγκυρο JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Αυτή η σελίδα ελέγχεται από ένα service worker, αλλά το `start_url` ({startUrl}) δεν βρίσκεται στο εύρος του service worker ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Αυτή η σελίδα ελέγχεται από ένα service worker, αλλά δεν βρέθηκε κανένα `start_url` επειδή δεν έγινε λήψη μανιφέστου."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Αυτή η προέλευση διαθέτει ένα περισσότερα service worker, αλλά η σελίδα ({pageUrl}) βρίσκεται εκτός εύρους."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Δεν καταγράφει service worker που ελέγχει τη σελίδα και το `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Καταγράφει ένα service worker που ελέγχει μια σελίδα και το `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Μια θεματική οθόνη εκκίνησης διασφαλίζει μια εμπειρία υψηλής ποιότητας όταν οι χρήστες εκκινούν την εφαρμογή σας από την αρχική οθόνη τους. [Μάθετε περισσότερα σχετικά με τις οθόνες εκκίνησης](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

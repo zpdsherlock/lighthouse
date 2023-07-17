@@ -23,9 +23,6 @@ const expectations = {
     requestedUrl: 'https://airhorner.com',
     finalDisplayedUrl: 'https://airhorner.com/',
     audits: {
-      'service-worker': {
-        score: 1,
-      },
       'viewport': {
         score: 1,
       },

@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Sivulta puuttuu manifestin <link>-URL"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Vastaavaa service workeria ei havaittu. Sinun on ehkä päivitettävä sivu ja tarkistettava, kattaako nykyisen sivun service workerin laajuus manifestin ja aloitus-URL:in."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Service workeria ei voitu tarkistaa, koska manifestistä puuttuu \"start_url\"-kenttä"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Palvelimen vasteaika alussa oli lyhyt"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service worker ‑teknologia tuo sovelluksen käyttöön monia progressiivisen web-sovelluksen ominaisuuksia, kuten offline-käytön, aloitusnäytölle lisäämisen ja ilmoitukset. [Lue lisää Service Workereista](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Service worker hallitsee sivua, mutta osoitetta (`start_url`) ei löytynyt, koska luetteloa ei voitu jäsentää kelvollisena JSONina."
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Service worker hallitsee sivua, mutta `start_url` ({startUrl}) ei ole workerin toiminta-alueella ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Service worker hallitsee sivua, mutta osoitetta (`start_url`) ei löytynyt, koska luetteloa ei noudettu."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Lähteessä on ainakin yksi service worker, mutta sivu ({pageUrl}) ei kuulu sen toiminta-alueeseen."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Ei rekisteröi service workeria, jonka hallinnassa sivu ja `start_url` ovat"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Rekisteröi service workerin, jonka hallinnassa sivu ja `start_url` ovat"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Teeman sisältävä aloitussivu varmistaa laadukkaan kokemuksen, kun käyttäjä avaa sovelluksen aloitusnäytöltään. [Lue lisää aloitusnäytöistä](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

@@ -27,9 +27,6 @@ const expectations = {
     requestedUrl: 'https://connorjclark.github.io/pwa.rocks/',
     finalDisplayedUrl: 'https://connorjclark.github.io/pwa.rocks/',
     audits: {
-      'service-worker': {
-        score: 1,
-      },
       'viewport': {
         score: 1,
       },

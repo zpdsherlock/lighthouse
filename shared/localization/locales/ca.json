@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "La pàgina no té cap URL <link> del fitxer de manifest"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "No s'ha detectat cap Service Worker coincident. Pot ser que hagis de tornar a carregar la pàgina o comprovar que l'abast del Service Worker per a la pàgina actual englobi l'abast i l'URL d'inici del fitxer de manifest."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "No s'ha pogut comprovar el Service Worker perquè el fitxer de manifest no té cap camp \"start_url\""
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "El temps inicial de resposta del servidor ha estat breu"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "El Service Worker és la tecnologia que fa possible que la teva aplicació utilitzi moltes funcions d'aplicació web progressiva, com ara funcionar sense connexió, poder afegir-se a la pantalla d'inici i mostrar notificacions automàtiques. [Obtén més informació sobre els Service Workers](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Tot i que un Service Worker controla aquesta pàgina, no s'ha trobat cap atribut `start_url` perquè el fitxer de manifest no s'ha pogut analitzar com a format JSON vàlid"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Tot i que un Service Worker controla aquesta pàgina, l'atribut `start_url` ({startUrl}) no és a l'abast del Service Worker ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Tot i que un Service Worker controla aquesta pàgina, no s'ha trobat cap `start_url` perquè no s'ha obtingut cap fitxer de manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Aquest origen té un Service Worker o més, però la pàgina ({pageUrl}) està fora de l'abast."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "No registra cap Service Worker que controli la pàgina i l'atribut `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registra un Service Worker que controla la pàgina i l'atribut `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Utilitzar una pantalla inicial temàtica garanteix una experiència d'alta qualitat quan els usuaris inicien l'aplicació des de la pantalla d'inici. [Obtén més informació sobre les pantalles inicials](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

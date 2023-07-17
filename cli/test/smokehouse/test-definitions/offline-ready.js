@@ -13,7 +13,6 @@ const config = {
     ],
     onlyAudits: [
       'is-on-https',
-      'service-worker',
       'viewport',
       'user-timings',
       'critical-request-chains',
@@ -69,13 +68,6 @@ const expectations = {
     audits: {
       'is-on-https': {
         score: 1,
-      },
-      'service-worker': {
-        score: 1,
-        details: {
-          scriptUrl: 'http://localhost:10503/offline-ready-sw.js',
-          scopeUrl: 'http://localhost:10503/',
-        },
       },
       'viewport': {
         score: 1,

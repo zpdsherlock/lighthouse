@@ -31,9 +31,6 @@ const expectations = {
     requestedUrl: 'https://jakearchibald.github.io/svgomg/',
     finalDisplayedUrl: 'https://jakearchibald.github.io/svgomg/',
     audits: {
-      'service-worker': {
-        score: 1,
-      },
       'viewport': {
         score: 1,
       },

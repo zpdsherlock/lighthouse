@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Stranica ne sadrži <link> URL manifesta"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nije otkriven nijedan odgovarajući serviser. Možda ćete morati ponovo da učitate stranicu ili da proverite da li opseg servisera za aktuelnu stranicu obuhvata opseg i početni URL iz manifesta."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Provera servisera bez polja „start_url“ u manifestu nije uspela"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Početno vreme odgovora servera je bilo kratko"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Serviser je tehnologija koja omogućava aplikaciji da koristi mnoge funkcije progresivnih veb-aplikacija, poput oflajn rada, dodavanja na početni ekran i iskačućih obaveštenja. [Saznajte više o serviserima](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Ovu stranicu kontroliše serviser, ali nije pronađen nijedan `start_url` jer nije uspelo raščlanjivanje manifesta kao važeće JSON datoteke"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Ovu stranicu kontroliše serviser, ali `start_url` ({startUrl}) ne spada u opseg servisera ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Ovu stranicu kontroliše serviser, ali nije pronađen nijedan `start_url` jer nijedan manifest nije preuzet."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Ovaj izvor ima jedan ili više servisera, ali stranica ({pageUrl}) nije u opsegu."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Ne registruje serviser koji kontroliše stranicu i `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registruje serviser koji kontroliše stranicu i `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Tematski uvodni ekran obezbeđuje kvalitetan doživljaj kada korisnici pokreću aplikaciju sa početnih ekrana. [Saznajte više o uvodnim ekranima](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

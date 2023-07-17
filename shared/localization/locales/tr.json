@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Sayfada hiç manifest <link> URL'si yok"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Eşleşen hizmet çalışanı algılanamadı. Sayfayı yeniden yüklemeniz veya mevcut sayfaya ait hizmet çalışanı kapsamının, manifest dosyasındaki kapsamı ve başlangıç URL'sini içerdiğinden emin olmanız gerekir."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Manifest dosyasında \"start_url\" alanı olmadığından hizmet çalışanı kontrol edilemedi"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "İlk sunucu yanıt süresi kısaydı"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Servis çalışanı, uygulamanızın çevrimdışı çalışma, ana ekrana ekleme ve push bildirimleri gibi pek çok Progresif Web Uygulaması özelliğini kullanmasını sağlayan teknolojidir. [Hizmet çalışanları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Sayfa bir hizmet çalışanı tarafından kontrol ediliyor ancak manifest dosyası geçerli JSON olarak ayrışmadığından `start_url` bulunamadı"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Sayfa bir hizmet çalışanı tarafından kontrol ediliyor ancak `start_url` ({startUrl}) öğesi hizmet çalışanının kapsamında ({scopeUrl}) değil"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Bu sayfa bir hizmet çalışanı tarafından yönetiliyor ancak manifest dosyası getirilmediğinden `start_url` öğesi bulunamadı."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Bu kaynak bir veya daha fazla hizmet çalışanına sahip ancak sayfa ({pageUrl}) kapsam içinde değil."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Sayfayı kontrol eden bir hizmet çalışanı ve `start_url` öğesi kaydedilmiyor"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Sayfayı kontrol eden bir hizmet çalışanı ve `start_url` öğesi kaydediliyor"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Temalı başlangıç ekranı, kullanıcılar uygulamanızı ana ekranlarında başlattığında yüksek kaliteli bir deneyim sağlar. [Başlangıç ekranları hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

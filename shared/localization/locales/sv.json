@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Sidan har ingen webbadress för <link> i manifestet"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Ingen matchande tjänstefunktion hittades. Du kanske måste läsa in sidan igen eller kontrollera att tjänstefunktionens omfattning för den aktuella sidan inbegriper omfattningen och startwebbadressen i manifestet."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Det går inte att kontrollera tjänstefunktionen utan fältet start_url i manifestet."
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Serverns första svarstid var kort"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Tjänstefunktioner är en teknik som gör det möjligt att använda flera funktioner för progressiva webbappar i appen, till exempel offlineanvändning, pushmeddelanden och att lägga till den på startskärmen. [Läs mer om tjänstefunktioner](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Sidan styrs av en tjänstefunktion, men `start_url` hittades inte eftersom det inte gick att analysera manifestet som giltigt JSON-format."
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Den här sidan styrs av en tjänstefunktion, men `start_url` ({startUrl}) är inte inom tjänstefunktionens omfattning ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Sidan styrs av en tjänstefunktion, men `start_url` hittades inte eftersom inget manifest hämtades."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Ursprunget har en eller flera tjänstefunktioner, men sidan ({pageUrl}) är inte inom omfattningen."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Registrerar inte en tjänstefunktion som styr sidan och `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registrerar en tjänstefunktion som styr sidan och `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Med hjälp av en välkomstskärm med ett tema som visas när användarna startar appen på startskärmen kan du se till att de får en bra upplevelse. [Läs mer om välkomstskärmar](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

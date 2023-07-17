@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Stránka neobsahuje prvek <link> s adresou URL manifestu"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nebyl nalezen žádný odpovídající pracovní proces služby. Je možné, že stránku budete muset načíst znovu nebo zkontrolovat, zda rozsah (scope) skriptu pracovní proces služby pro aktuální stránku zahrnuje rozsah a počáteční URL (start_url) z manifestu."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Skript pracovní proces služby nelze zkontrolovat bez pole „start_url“ v manifestu"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Počáteční odpověď serveru byla rychlá"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Pracovní proces služby je technologie, která aplikaci umožňuje využívat mnoho funkcí progresivní webové aplikace, jako je režim offline, přidání na plochu nebo oznámení push. [Další informace o skriptech service službě worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Tuto stránku ovládá soubor pracovní proces služby, nebyl ale nalezen atribut `start_url`, protože se manifest nepodařilo analyzovat jako platný soubor JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Tuto stránku ovládá soubor pracovní proces služby, ale atribut `start_url` ({startUrl}) pod soubor pracovní proces služby ({scopeUrl}) nespadá."
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Tuto stránku ovládá soubor pracovní proces služby, ale atribut `start_url` nebyl nalezen, protože nebyl načten žádný manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Tento zdroj má jeden či více souborů pracovní proces služby, ale stránka ({pageUrl}) pod něj nespadá."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Neregistruje soubor pracovní proces služby, který ovládá stránku a `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registruje soubor pracovní proces služby, který ovládá stránku a atribut `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Stylová úvodní obrazovka zajišťuje kvalitní uživatelský dojem při spuštění aplikace z plochy. [Další informace o úvodních obrazovkách](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

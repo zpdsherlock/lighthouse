@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Trang không có URL <link> của tệp kê khai"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Không phát hiện thấy trình chạy dịch vụ phù hợp. Bạn có thể cần tải lại trang hoặc kiểm tra để đảm bảo rằng phạm vi của trình chạy dịch vụ cho trang hiện tại có bao gồm phạm vi và URL bắt đầu của tệp kê khai."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Không thể kiểm tra trình chạy dịch vụ nếu không có trường \"start_url\" trong tệp kê khai"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Thời gian phản hồi ban đầu của máy chủ là ngắn"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Trình chạy dịch vụ là công nghệ cho phép ứng dụng của bạn dùng nhiều tính năng của Ứng dụng web tiến bộ, chẳng hạn như hoạt động khi không có mạng, thêm vào màn hình chính và thông báo đẩy. [Tìm hiểu thêm về Trình chạy dịch vụ](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Trang này do một trình chạy dịch vụ kiểm soát. Tuy nhiên, không tìm thấy `start_url` vì tệp kê khai không thể phân tích cú pháp thành tệp JSON hợp lệ"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Trang này do một trình chạy dịch vụ kiểm soát. Tuy nhiên, `start_url` ({startUrl}) không thuộc phạm vi của trình chạy dịch vụ này ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Trang này do một trình chạy dịch vụ kiểm soát. Tuy nhiên, không tìm thấy `start_url` vì không tìm nạp được tệp kê khai."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Nguồn gốc này có một hoặc nhiều trình chạy dịch vụ. Tuy nhiên, trang ({pageUrl}) không thuộc phạm vi của các trình chạy dịch vụ này."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Không đăng ký một trình chạy dịch vụ kiểm soát trang và `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Đăng ký một trình chạy dịch vụ kiểm soát trang và `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Màn hình chờ có giao diện giúp đảm bảo người dùng có trải nghiệm chất lượng cao khi chạy ứng dụng từ màn hình chính. [Tìm hiểu thêm về màn hình chờ](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

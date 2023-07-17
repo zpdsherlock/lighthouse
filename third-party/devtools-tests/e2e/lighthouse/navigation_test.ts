@@ -115,10 +115,9 @@ describe('Navigation', async function() {
     });
 
     const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr);
-    assert.strictEqual(auditResults.length, 185);
+    assert.strictEqual(auditResults.length, 184);
     assert.deepStrictEqual(erroredAudits, []);
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
-      'service-worker',
       'installable-manifest',
       'splash-screen',
       'themed-omnibox',
@@ -199,10 +198,9 @@ describe('Navigation', async function() {
     ];
 
     const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, flakyAudits);
-    assert.strictEqual(auditResults.length, 162);
+    assert.strictEqual(auditResults.length, 161);
     assert.deepStrictEqual(erroredAudits, []);
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
-      'service-worker',
       'installable-manifest',
       'splash-screen',
       'themed-omnibox',

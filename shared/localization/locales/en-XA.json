@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "[Þåĝé ĥåš ñö måñîƒéšţ <link> ÛŔĻ one two three four five six]"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "[Ñö måţçĥîñĝ šéŕvîçé ŵöŕķéŕ ðéţéçţéð. Ýöû måý ñééð ţö ŕéļöåð ţĥé þåĝé, öŕ çĥéçķ ţĥåţ ţĥé šçöþé öƒ ţĥé šéŕvîçé ŵöŕķéŕ ƒöŕ ţĥé çûŕŕéñţ þåĝé éñçļöšéš ţĥé šçöþé åñð šţåŕţ ÛŔĻ ƒŕöm ţĥé måñîƒéšţ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive twentysix]"
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "[Çöûļð ñöţ çĥéçķ šéŕvîçé ŵöŕķéŕ ŵîţĥöûţ å 'šţåŕţ_ûŕļ' ƒîéļð îñ ţĥé måñîƒéšţ one two three four five six seven eight nine ten eleven twelve thirteen fourteen]"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "[Îñîţîåļ šéŕvéŕ ŕéšþöñšé ţîmé ŵåš šĥöŕţ one two three four five six seven eight]"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "[Ţĥé šéŕvîçé ŵöŕķéŕ îš ţĥé ţéçĥñöļöĝý ţĥåţ éñåбļéš ýöûŕ åþþ ţö ûšé måñý Þŕöĝŕéššîvé Ŵéб Åþþ ƒéåţûŕéš, šûçĥ åš öƒƒļîñé, åðð ţö ĥöméšçŕééñ, åñð þûšĥ ñöţîƒîçåţîöñš. ᐅ[ᐊĻéåŕñ möŕé åбöûţ Šéŕvîçé Ŵöŕķéŕšᐅ](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive twentysix twentyseven]"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "[Ţĥîš þåĝé îš çöñţŕöļļéð бý å šéŕvîçé ŵöŕķéŕ, ĥöŵévéŕ ñö ᐅ`start_url`ᐊ ŵåš ƒöûñð бéçåûšé måñîƒéšţ ƒåîļéð ţö þåŕšé åš våļîð ĴŠÖÑ one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen]"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "[Ţĥîš þåĝé îš çöñţŕöļļéð бý å šéŕvîçé ŵöŕķéŕ, ĥöŵévéŕ ţĥé ᐅ`start_url`ᐊ (ᐅ{startUrl}ᐊ) îš ñöţ îñ ţĥé šéŕvîçé ŵöŕķéŕ'š šçöþé (ᐅ{scopeUrl}ᐊ) one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen]"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "[Ţĥîš þåĝé îš çöñţŕöļļéð бý å šéŕvîçé ŵöŕķéŕ, ĥöŵévéŕ ñö ᐅ`start_url`ᐊ ŵåš ƒöûñð бéçåûšé ñö måñîƒéšţ ŵåš ƒéţçĥéð. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen]"
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "[Ţĥîš öŕîĝîñ ĥåš öñé öŕ möŕé šéŕvîçé ŵöŕķéŕš, ĥöŵévéŕ ţĥé þåĝé (ᐅ{pageUrl}ᐊ) îš ñöţ îñ šçöþé. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen]"
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "[Ðöéš ñöţ ŕéĝîšţéŕ å šéŕvîçé ŵöŕķéŕ ţĥåţ çöñţŕöļš þåĝé åñð ᐅ`start_url`ᐊ one two three four five six seven eight nine ten eleven twelve]"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "[Ŕéĝîšţéŕš å šéŕvîçé ŵöŕķéŕ ţĥåţ çöñţŕöļš þåĝé åñð ᐅ`start_url`ᐊ one two three four five six seven eight nine ten eleven]"
   },
   "core/audits/splash-screen.js | description": {
     "message": "[Å ţĥéméð šþļåšĥ šçŕééñ éñšûŕéš å ĥîĝĥ-qûåļîţý éxþéŕîéñçé ŵĥéñ ûšéŕš ļåûñçĥ ýöûŕ åþþ ƒŕöm ţĥéîŕ ĥöméšçŕééñš. ᐅ[ᐊĻéåŕñ möŕé åбöûţ šþļåšĥ šçŕééñšᐅ](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo]"

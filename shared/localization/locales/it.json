@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "La pagina non contiene URL del file manifest <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nessun service worker corrispondente trovato. Potrebbe essere necessario ricaricare la pagina o verificare che l'ambito del service worker per la pagina corrente includa l'ambito e l'URL di avvio dal file manifest."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Impossibile verificare il service worker se il file manifest non contiene un campo \"start_url\""
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Il tempo di risposta iniziale del server è stato breve"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Il service worker è la tecnologia che consente alla tua app di usare tante funzionalità delle app web progressive, ad esempio il funzionamento offline, l'aggiunta alla schermata Home e le notifiche push. [Scopri di più sui service worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Questa pagina è controllata tramite un service worker, ma non è stato trovato alcun elemento `start_url` perché non è stato possibile analizzare il file manifest come JSON valido"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Questa pagina è controllata tramite un service worker, ma `start_url` ({startUrl}) non rientra nell'ambito del service worker ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Questa pagina è controllata tramite un service worker, ma non è stato trovato alcun elemento `start_url` perché non è stato recuperato alcun file manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Questa origine contiene uno o più service worker, ma la pagina ({pageUrl}) non rientra nell'ambito."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Non registra un service worker che controlla la pagina e `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registra un service worker che controlla la pagina e `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Una schermata iniziale a tema assicura un'esperienza di alta qualità quando gli utenti avviano la tua app dalla schermata Home. [Scopri di più sulle schermate iniziali](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

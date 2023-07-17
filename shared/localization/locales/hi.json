@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "पेज में कोई भी मेनिफ़ेस्ट <link> यूआरएल नहीं है"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "कोई भी मिलता-जुलता सर्विस वर्कर नहीं मिला. हो सकता है कि आपको पेज फिर से लोड करना पड़े या यह जांच करनी पड़े कि मौजूदा पेज के लिए सर्विस वर्कर का दायरा, मेनिफ़ेस्ट के दायरे और स्टार्ट यूआरएल जितना हो."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "मेनिफ़ेस्ट में 'start_url' फ़ील्ड न होने की वजह से सर्विस वर्कर की जांच नहीं की जा सकती"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "जवाब देने में सर्वर को लगने वाला शुरुआती समय कम था"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "सर्विस वर्कर एक ऐसी टेक्नोलॉजी है जो आपके ऐप्लिकेशन को, प्रोग्रेसिव वेब ऐप्लिकेशन के कई फ़ीचर इस्तेमाल करने की अनुमति देती है. इनमें ऑफ़लाइन, होमस्क्रीन पर जोड़ें, और पुश नोटिफ़िकेशन जैसे फ़ीचर शामिल हैं. [सर्विस वर्कर के बारे में ज़्यादा जानें](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "इस पेज का नियंत्रण सर्विस वर्कर के पास है. हालांकि, कोई `start_url` नहीं मिला, क्योंकि मेनिफ़ेस्ट को मान्य JSON के रूप में पार्स नहीं किया जा सका"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "इस पेज का नियंत्रण सर्विस वर्कर के पास है. हालांकि, `start_url` ({startUrl}) सर्विस वर्कर के दायरे में नहीं है ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "इस पेज का नियंत्रण सर्विस वर्कर के पास है. हालांकि, कोई `start_url` नहीं मिला, क्योंकि किसी पेज पर कोई मेनिफ़ेस्ट ही नहीं था."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "यहां पर एक या ज़्यादा सर्विस वर्कर हैं. हालांकि, पेज ({pageUrl}) दायरे में नहीं है."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "किसी ऐसे सर्विस वर्कर को रजिस्टर नहीं करता जो पेज और `start_url` को नियंत्रित करता है"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "किसी ऐसे सर्विस वर्कर को रजिस्टर करता है जो पेज और `start_url` को नियंत्रित करता है"
   },
   "core/audits/splash-screen.js | description": {
     "message": "जब लोग अपने डिवाइस की होमस्क्रीन से आपका ऐप्लिकेशन लॉन्च करते हैं, तो थीम वाली स्प्लैश स्क्रीन की वजह से उन्हें अच्छा अनुभव मिलता है. [स्प्लैश स्क्रीन के बारे में ज़्यादा जानें](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

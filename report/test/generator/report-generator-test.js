@@ -110,7 +110,7 @@ category,score
 \\"accessibility\\",\\"0.81\\"
 \\"best-practices\\",\\"0.33\\"
 \\"seo\\",\\"0.67\\"
-\\"pwa\\",\\"0.33\\"
+\\"pwa\\",\\"0.38\\"
 
 category,audit,score,displayValue,description
 \\"performance\\",\\"first-contentful-paint\\",\\"0.01\\",\\"6.8 s\\",\\"First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/).\\"

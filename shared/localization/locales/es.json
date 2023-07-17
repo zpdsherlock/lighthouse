@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "La página no tiene ninguna URL del archivo de manifiesto <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "No se ha detectado ningún service worker que coincida. Es posible que tengas que volver a cargar la página, o comprueba que el alcance del service worker en la página actual incluya el alcance y la URL de inicio del archivo de manifiesto."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "No se ha podido comprobar el service worker porque no hay ningún campo \"start_url\" en el archivo de manifiesto"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "El tiempo de respuesta inicial del servidor fue breve"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "El service worker es la tecnología que te permite usar en tu aplicación las funciones de las aplicaciones web progresivas, como el modo sin conexión, poder añadirlas a la pantalla de inicio y las notificaciones push. [Más información sobre los service workers](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Un service worker controla esta página, pero no se ha encontrado ninguna propiedad `start_url` porque el archivo de manifiesto no es un JSON válido"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Un service worker controla esta página, pero la propiedad `start_url` ({startUrl}) está fuera del rango del service worker ({scopeUrl})."
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Un service worker controla esta página, pero no se ha encontrado la propiedad `start_url` porque no se ha recuperado ningún archivo de manifiesto."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Este origen tiene al menos un service worker, pero la página ({pageUrl}) no está dentro del rango."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "No registra un service worker que controle la página y la propiedad `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Hay un service worker que controla la página y la propiedad `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Una pantalla de inicio personalizada asegura una experiencia de calidad cuando los usuarios ejecuten tu aplicación desde sus pantallas de inicio. [Más información sobre las pantallas de inicio](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

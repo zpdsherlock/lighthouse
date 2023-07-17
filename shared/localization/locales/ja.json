@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "ページにマニフェストの <link> URL がありません"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "一致する Service Worker が検出されませんでした。ページを再読み込みするか、現在のページの Service Worker のスコープにマニフェストのスコープと開始 URL が含まれていることを確認する必要があります。"
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "マニフェストに「start_url」フィールドがないため Service Worker をチェックできませんでした"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "最初のサーバー応答時間は問題ない速さです"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service Worker は、多くのプログレッシブ ウェブアプリ機能（オフライン、ホーム画面への追加、プッシュ通知など）をアプリで使用できるようにするための技術です。[Service Worker の詳細](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "このページは Service Worker によって制御されていますが、マニフェストが有効な JSON としてパースされなかったため、`start_url` は見つかりませんでした"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "このページは Service Worker によって制御されていますが、`start_url`（{startUrl}）が Service Worker のスコープ（{scopeUrl}）内にありません"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "このページは Service Worker によって制御されていますが、マニフェストが取得されなかったため、`start_url` は見つかりませんでした。"
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "この発信元には Service Worker が存在しますが、ページ（{pageUrl}）がスコープ内にありません。"
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "ページと `start_url` を制御する Service Worker が登録されていません"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "ページと `start_url` を制御する Service Worker が登録されています"
   },
   "core/audits/splash-screen.js | description": {
     "message": "テーマのあるスプラッシュ画面を設定すると、ホーム画面からのアプリの起動時に、質の良いアプリであることをユーザーにアピールできます。[スプラッシュ画面の詳細](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

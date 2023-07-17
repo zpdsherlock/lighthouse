@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "В страницата не е зададен URL адрес на манифеста чрез маркера <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Не бе открит съответстващ файл service worker. Може да се наложи да презаредите страницата или да се уверите, че зададените в манифеста обхват и URL адрес за стартиране попадат в обхвата на service worker за текущата страница."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Файлът service worker не бе проверен, тъй като за него липсваше поле start_url в манифеста"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Началното време за реакция на сървъра бе кратко"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service worker е технологията, която дава възможност на приложението ви да използва много от функциите на прогресивните уеб приложения (PWA), като например работа офлайн, добавяне към началния екран и насочени известия. [Научете повече за service worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Тази страница е контролирана от service worker, но не бе намерен параметър `start_url`, тъй като при синтактичния анализ бе установено, че манифестът не е във валиден формат JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Тази страница се контролира от файл service worker, но `start_url` ({startUrl}) не е в обхвата му ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Тази страница се контролира от service worker, но не бе намерен параметър `start_url`, тъй като не бе извлечен манифест."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Този източник има един или повече файлове service worker, но страницата ({pageUrl}) не е в обхвата им."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Няма регистриран service worker, който контролира страницата и `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Регистриран е service worker, който контролира страницата и `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Тематичният първоначален екран гарантира висококачествена практическа работа, когато потребителите стартират приложението ви от началния екран. [Научете повече за първоначалните екрани](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

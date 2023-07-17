@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "‏‮Page‬‏ ‏‮has‬‏ ‏‮no‬‏ ‏‮manifest‬‏ <link> ‏‮URL‬‏"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "‏‮No‬‏ ‏‮matching‬‏ ‏‮service‬‏ ‏‮worker‬‏ ‏‮detected‬‏. ‏‮You‬‏ ‏‮may‬‏ ‏‮need‬‏ ‏‮to‬‏ ‏‮reload‬‏ ‏‮the‬‏ ‏‮page‬‏, ‏‮or‬‏ ‏‮check‬‏ ‏‮that‬‏ ‏‮the‬‏ ‏‮scope‬‏ ‏‮of‬‏ ‏‮the‬‏ ‏‮service‬‏ ‏‮worker‬‏ ‏‮for‬‏ ‏‮the‬‏ ‏‮current‬‏ ‏‮page‬‏ ‏‮encloses‬‏ ‏‮the‬‏ ‏‮scope‬‏ ‏‮and‬‏ ‏‮start‬‏ ‏‮URL‬‏ ‏‮from‬‏ ‏‮the‬‏ ‏‮manifest‬‏."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "‏‮Could‬‏ ‏‮not‬‏ ‏‮check‬‏ ‏‮service‬‏ ‏‮worker‬‏ ‏‮without‬‏ ‏‮a‬‏ '‏‮start‬‏_‏‮url‬‏' ‏‮field‬‏ ‏‮in‬‏ ‏‮the‬‏ ‏‮manifest‬‏"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "‏‮Initial‬‏ ‏‮server‬‏ ‏‮response‬‏ ‏‮time‬‏ ‏‮was‬‏ ‏‮short‬‏"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "‏‮The‬‏ ‏‮service‬‏ ‏‮worker‬‏ ‏‮is‬‏ ‏‮the‬‏ ‏‮technology‬‏ ‏‮that‬‏ ‏‮enables‬‏ ‏‮your‬‏ ‏‮app‬‏ ‏‮to‬‏ ‏‮use‬‏ ‏‮many‬‏ ‏‮Progressive‬‏ ‏‮Web‬‏ ‏‮App‬‏ ‏‮features‬‏, ‏‮such‬‏ ‏‮as‬‏ ‏‮offline‬‏, ‏‮add‬‏ ‏‮to‬‏ ‏‮homescreen‬‏, ‏‮and‬‏ ‏‮push‬‏ ‏‮notifications‬‏. [‏‮Learn‬‏ ‏‮more‬‏ ‏‮about‬‏ ‏‮Service‬‏ ‏‮Workers‬‏](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "‏‮This‬‏ ‏‮page‬‏ ‏‮is‬‏ ‏‮controlled‬‏ ‏‮by‬‏ ‏‮a‬‏ ‏‮service‬‏ ‏‮worker‬‏, ‏‮however‬‏ ‏‮no‬‏ `start_url` ‏‮was‬‏ ‏‮found‬‏ ‏‮because‬‏ ‏‮manifest‬‏ ‏‮failed‬‏ ‏‮to‬‏ ‏‮parse‬‏ ‏‮as‬‏ ‏‮valid‬‏ ‏‮JSON‬‏"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "‏‮This‬‏ ‏‮page‬‏ ‏‮is‬‏ ‏‮controlled‬‏ ‏‮by‬‏ ‏‮a‬‏ ‏‮service‬‏ ‏‮worker‬‏, ‏‮however‬‏ ‏‮the‬‏ `start_url` ({startUrl}) ‏‮is‬‏ ‏‮not‬‏ ‏‮in‬‏ ‏‮the‬‏ ‏‮service‬‏ ‏‮worker‬‏'‏‮s‬‏ ‏‮scope‬‏ ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "‏‮This‬‏ ‏‮page‬‏ ‏‮is‬‏ ‏‮controlled‬‏ ‏‮by‬‏ ‏‮a‬‏ ‏‮service‬‏ ‏‮worker‬‏, ‏‮however‬‏ ‏‮no‬‏ `start_url` ‏‮was‬‏ ‏‮found‬‏ ‏‮because‬‏ ‏‮no‬‏ ‏‮manifest‬‏ ‏‮was‬‏ ‏‮fetched‬‏."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "‏‮This‬‏ ‏‮origin‬‏ ‏‮has‬‏ ‏‮one‬‏ ‏‮or‬‏ ‏‮more‬‏ ‏‮service‬‏ ‏‮workers‬‏, ‏‮however‬‏ ‏‮the‬‏ ‏‮page‬‏ ({pageUrl}) ‏‮is‬‏ ‏‮not‬‏ ‏‮in‬‏ ‏‮scope‬‏."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "‏‮Does‬‏ ‏‮not‬‏ ‏‮register‬‏ ‏‮a‬‏ ‏‮service‬‏ ‏‮worker‬‏ ‏‮that‬‏ ‏‮controls‬‏ ‏‮page‬‏ ‏‮and‬‏ `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "‏‮Registers‬‏ ‏‮a‬‏ ‏‮service‬‏ ‏‮worker‬‏ ‏‮that‬‏ ‏‮controls‬‏ ‏‮page‬‏ ‏‮and‬‏ `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "‏‮A‬‏ ‏‮themed‬‏ ‏‮splash‬‏ ‏‮screen‬‏ ‏‮ensures‬‏ ‏‮a‬‏ ‏‮high‬‏-‏‮quality‬‏ ‏‮experience‬‏ ‏‮when‬‏ ‏‮users‬‏ ‏‮launch‬‏ ‏‮your‬‏ ‏‮app‬‏ ‏‮from‬‏ ‏‮their‬‏ ‏‮homescreens‬‏. [‏‮Learn‬‏ ‏‮more‬‏ ‏‮about‬‏ ‏‮splash‬‏ ‏‮screens‬‏](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

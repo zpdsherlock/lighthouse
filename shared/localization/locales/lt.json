@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Puslapyje nėra aprašo <link> URL"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Neaptikta atitinkančio pagalbinio „JavaScript“ failo. Gali reikėti iš naujo įkelti puslapį arba patikrinti, ar dabartinis pagalbinis „JavaScript“ failas apima aprašo apimtį ir pradžios URL."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Nepavyko patikrinti pagalbinio „JavaScript“ failo, nes apraše nėra lauko „start_url“"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Pradinio serverio atsako laikas buvo trumpas"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Pagalbinis „JavaScript“ failas – tai technologija, įgalinanti jūsų programą naudoti daug laipsniškosios žiniatinklio programos funkcijų, pvz., naudoti neprisijungus, pridėti prie pagrindinio ekrano ar naudoti iš karto gaunamus pranešimus. [Sužinokite daugiau apie pagalbinius „JavaScript“ failus](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Šis puslapis valdomas naudojant pagalbinį „JavaScript“ failą, tačiau `start_url` nerasta, nes aprašo nepavyko analizuoti kaip galiojančio JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Šs puslapis valdomas naudojant pagalbinį „JavaScript“ failą, tačiau `start_url` ({startUrl}) nepatenka į pagalbinio „JavaScript“ failo aprėptį ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Šis puslapis valdomas naudojant pagalbinį „JavaScript“ failą, tačiau neaptikta `start_url`, nes neįkeltas joks aprašas."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Šiame pradiniame puslapyje yra vienas ar daugiau pagalbinių „JavaScript“ failų, tačiau puslapis ({pageUrl}) neįtrauktas."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Neregistruojamas pagalbinis „JavaScript“ failas, naudojamas puslapiams ir `start_url` valdyti"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registruojamas pagalbinis „JavaScript“ failas, naudojamas puslapiams ir `start_url` valdyti"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Teminis prisistatymo langas užtikrina kokybišką patirtį naudotojui paleidžiant jūsų programą iš pagrindinio ekrano. [Sužinokite daugiau apie prisistatymo langus](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "A página não tem um URL de manifesto <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nenhum service worker correspondente foi detectado. Pode ser necessário atualizar a página ou conferir se o escopo do service worker da página atual inclui o escopo e o URL de início do manifesto."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Não foi possível verificar o service worker sem um campo \"start_url\" no manifesto"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "O tempo de resposta inicial do servidor foi curto"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "O service worker é a tecnologia que permite que seu app use muitos recursos do Progressive Web App, por exemplo, disponibilidade off-line, adicionar à tela inicial e notificações de push. [Saiba mais sobre os service workers](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Esta página é controlada por um service worker, no entanto, nenhum `start_url` foi encontrado porque o manifesto não foi analisado como um JSON válido."
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Esta página é controlada por um service worker, no entanto, a `start_url` ({startUrl}) não está no escopo dele ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Esta página é controlada por um service worker, no entanto, nenhuma `start_url` foi encontrada porque nenhum manifesto foi recuperado."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Esta origem tem um ou mais service workers, no entanto, a página ({pageUrl}) não está em escopo."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Não há registro de um service worker que controle a página e `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Há registro de um service worker que controla a página e `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Uma tela de apresentação personalizada garante uma experiência de alta qualidade quando os usuários abrem o aplicativo na tela inicial. [Saiba mais sobre telas de apresentação](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

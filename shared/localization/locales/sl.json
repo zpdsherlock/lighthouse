@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Stran nima URL-ja manifesta <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Noben ujemajoči proces storitve ni zaznan. Morda boste morali znova naložiti stran oziroma preveriti, ali obseg procesa storitve za trenutno stran zajema obseg in začetni URL manifesta."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Procesa storitve ni mogoče preveriti brez polja »start_url« v manifestu"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Začetni odzivni čas strežnika je bil kratek"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Proces storitve je tehnologija, ki aplikaciji omogoča uporabo številnih funkcij moderne spletne aplikacije, na primer delovanje brez povezave, dodajanje na začetni zaslon in potisna obvestila. [Preberite več o procesih storitve](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "To stran nadzira proces storitve, vendar ni bilo mogoče najti ničesar od tega: `start_url`, ker ni bilo mogoče razčleniti manifesta kot veljavne datoteke JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "To stran nadzira proces storitve, vendar `start_url` ({startUrl}) ni v obsegu procesa storitve ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "To stran nadzira proces storitve, vendar ni bilo mogoče najti ničesar od tega: `start_url`, ker niso bili preneseni manifesti."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Ta izvor ima enega ali več procesov storitve, vendar stran ({pageUrl}) ni v obsegu."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Ne registrira procesa storitve, ki nadzira stran in to: `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registrira proces storitve, ki nadzira stran in to: `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "S tematskim pozdravnim zaslonom zagotovite visokokakovostno izkušnjo, ko uporabniki zaženejo aplikacijo z začetnih zaslonov. [Preberite več o pozdravnih zaslonih](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

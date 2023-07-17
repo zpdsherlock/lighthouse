@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Walang URL ng manifest <link> ang page"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Walang na-detect na tumutugmang service worker. Posibleng kailanganin mong i-reload ang page, o tingnan kung nakapaloob sa saklaw ng service worker para sa kasalukuyang page ang saklaw at start URL mula sa manifest."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Hindi masusuri ang service worker kapag walang field na 'start_url' sa manifest"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Mabilis ang unang pagtugon ng server"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Ang service worker ang teknolohiyang nagbibigay-daan sa iyong app na gumamit ng maraming feature ng Progressive Web App, tulad ng offline, pagdaragdag sa homescreen, at mga push notification. [Matuto pa tungkol sa Mga Service Worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Kinokontrol ng service worker ang page na ito, gayunpaman, walang nakitang `start_url` dahil hindi na-parse ang manifest bilang valid na JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Kinokontrol ng service worker ang page na ito, gayunpaman, wala ang `start_url` ({startUrl}) sa saklaw ng service worker ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Kinokontrol ng service worker ang page na ito, gayunpaman, walang nakitang `start_url` dahil walang nakuhang manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "May isa o higit pang service worker ang pinagmulang ito, gayunpaman, wala sa saklaw ang page ({pageUrl})."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Hindi nagrerehistro ng service worker na kumokontrol sa page at `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Nagrerehistro ng service worker na kumokontrol sa page at `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Tinitiyak ng splash screen na may tema na magkakaroon ng experience na may mataas na kalidad kapag inilulunsad ng mga user ang iyong app sa kanilang mga homescreen. [Matuto pa tungkol sa mga splash screen](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

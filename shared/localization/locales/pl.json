@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Strona nie ma adresu URL pliku manifestu <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nie wykryto pasującego skryptu service worker. Konieczne może być ponowne załadowanie strony albo sprawdzenie, czy skrypt service worker dla bieżącej strony obejmuje zakres i URL początkowy z pliku manifestu."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Nie można sprawdzić skryptu service worker bez pola „start_url” w pliku manifestu"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Wstępny czas reakcji serwera był krótki"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Skrypt service worker pozwala aplikacji na korzystanie z wielu funkcji progresywnych aplikacji internetowych – takich jak działanie offline, dodawanie do ekranu głównego czy powiadomienia push. [Więcej informacji o skryptach service worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Stroną steruje skrypt service worker, ale nie znaleziono elementu `start_url`, ponieważ nie udało się przetworzyć pliku manifestu jako prawidłowego pliku JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Tą stroną steruje skrypt service worker, ale element `start_url` ({startUrl}) nie znajduje się w jego zakresie ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Tą stroną steruje skrypt service worker, ale nie znaleziono elementu `start_url`, ponieważ nie został pobrany żaden plik manifestu."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Ta witryna zawiera co najmniej jeden skrypt service worker, ale strona ({pageUrl}) nie jest w zakresie."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Nie rejestruje skryptu service worker, który steruje stroną i elementem `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Rejestruje skrypt service worker, który steruje stroną i elementem `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Ekran powitalny z niestandardowym motywem zapewnia użytkownikom lepsze wrażenia podczas otwierania aplikacji z ekranu głównego. [Więcej informacji o ekranach powitalnych](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

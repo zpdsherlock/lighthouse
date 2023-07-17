@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Halaman tidak memiliki URL <link> manifes"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Pekerja layanan yang cocok tidak terdeteksi. Anda harus memuat ulang halaman, atau memeriksa apakah cakupan pekerja layanan untuk halaman saat ini menyertakan scope dan start_URL dari manifes."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Tidak dapat memeriksa pekerja layanan tanpa kolom 'start_url' di manifes"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Respons server awal memakan waktu singkat"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Pekerja layanan adalah teknologi yang memungkinkan aplikasi Anda menggunakan banyak fitur Progressive Web App, seperti fitur offline, tambahkan ke layar utama, dan notifikasi push. [Pelajari lebih lanjut Pekerja Layanan](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Halaman ini dikontrol oleh pekerja layanan, tetapi `start_url` tidak ditemukan karena manifes gagal diurai sebagai JSON yang valid"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Halaman ini dikontrol oleh pekerja layanan, tetapi `start_url` ({startUrl}) tidak termasuk dalam cakupan pekerja layanan ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Halaman ini dikontrol oleh pekerja layanan, tetapi `start_url` tidak ditemukan karena tidak ada manifes yang diambil."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Asal memiliki satu pekerja layanan atau lebih, tetapi halaman ({pageUrl}) tidak termasuk dalam cakupan."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Tidak mendaftarkan pekerja layanan yang mengontrol halaman dan `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Mendaftarkan pekerja layanan yang mengontrol halaman dan `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Layar pembuka yang bertema akan memberikan pengalaman berkualitas tinggi saat pengguna meluncurkan aplikasi dari layar utama. [Pelajari lebih lanjut layar pembuka](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

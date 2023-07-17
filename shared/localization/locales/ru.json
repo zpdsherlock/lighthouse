@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Страница не содержит URL манифеста <link>."
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Подходящих файлов service worker не найдено. Перезагрузите страницу или убедитесь, что файлы service worker текущей страницы включают область действия и стартовый URL из манифеста."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Для проверки файла service worker в манифесте должно быть поле start_url."
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Время до получения первого байта от сервера допустимое"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service worker – это технология, позволяющая добавлять в приложения возможности современных веб-приложений, например поддержку офлайн-режима, добавление на главный экран и push-уведомления. Подробнее [о файлах service worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)…"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Страницей управляет Service Worker, но не найден `start_url`, так как не удалось интерпретировать манифест как JSON."
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Страницей управляет Service Worker, но `start_url` ({startUrl}) находится вне его области действия ({scopeUrl})."
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Страницей управляет Service Worker, но не удалось найти `start_url`, так как не был получен манифест."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "В этом источнике несколько Service Worker, но страница {pageUrl} не входит в их область действия."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Не регистрируется Service Worker, управляющий страницей и `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Регистрируется Service Worker, управляющий страницей и `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Приложение оставляет у пользователей более приятное впечатление, когда оно встречает их тематической заставкой. Подробнее [о заставках](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)…"

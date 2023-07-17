@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "หน้านี้ไม่มี <link> URL ของไฟล์ Manifest"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "ไม่พบ Service Worker ที่ตรงกัน คุณอาจต้องโหลดหน้านี้ซ้ำหรือตรวจสอบว่าขอบเขตของ Service Worker สำหรับหน้าปัจจุบันครอบคลุมขอบเขตและ URL เริ่มต้นจากไฟล์ Manifest"
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "ตรวจสอบ Service Worker โดยไม่มีช่อง \"start_url\" ในไฟล์ Manifest ไม่ได้"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "การตอบกลับของเซิร์ฟเวอร์ขณะเริ่มแรกใช้เวลาน้อย"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service Worker เป็นเทคโนโลยีที่ช่วยให้แอปของคุณใช้ฟีเจอร์ของ Progressive Web App ได้หลายฟีเจอร์ เช่น ออฟไลน์ เพิ่มไปยังหน้าจอหลัก และข้อความ Push [ดูข้อมูลเพิ่มเติมเกี่ยวกับ Service Worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "หน้านี้ควบคุมโดย Service Worker แต่ไม่พบ `start_url` เนื่องจากไฟล์ Manifest แยกวิเคราะห์เป็น JSON ที่ถูกต้องไม่ได้"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "หน้านี้ควบคุมโดย Service Worker แต่ `start_url` ({startUrl}) ไม่ได้อยู่ในขอบเขตของ Service Worker นั้น ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "หน้านี้ควบคุมโดย Service Worker แต่ไม่พบ `start_url` เพราะไม่มีการดึงไฟล์ Manifest"
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "ต้นทางนี้มี Service Worker อย่างน้อย 1 ไฟล์ แต่หน้าเว็บ ({pageUrl}) ไม่อยู่ในขอบเขต"
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "ไม่ได้ลงทะเบียน Service Worker ที่ควบคุมหน้าเว็บและ `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "ลงทะเบียน Service Worker ที่ควบคุมหน้าเว็บและ `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "หน้าจอแนะนำที่มีธีมช่วยให้ผู้ใช้ได้รับประสบการณ์ที่มีคุณภาพสูงเมื่อเปิดแอปของคุณจากหน้าจอหลัก [ดูข้อมูลเพิ่มเติมเกี่ยวกับหน้าจอแนะนำ](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

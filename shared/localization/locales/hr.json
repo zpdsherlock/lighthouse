@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Stranica nema URL manifesta <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nije pronađen podudaran uslužni alat. Možda ćete trebati ponovo učitati stranicu ili provjeriti obuhvaća li opseg uslužnog alata za trenutačnu stranicu opseg i početni URL iz manifesta."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Uslužni alat ne može se provjeriti bez polja \"start_url\" u manifestu"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Inicijalno vrijeme odgovora poslužitelja bilo je kratko"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Uslužni je alat tehnologija koja aplikaciji omogućuje korištenje brojnih značajki progresivnih web-aplikacija, kao što je offline rad, dodavanje na početni zaslon i push obavijesti. [Saznajte više o uslužnim alatima](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Ovom stranicom upravlja uslužni alat, no nije pronađen `start_url` jer manifest nije raščlanjen kao važeći JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Ovom stranicom upravlja uslužni alat, no `start_url` ({startUrl}) nije u rasponu uslužnog alata ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Ovom stranicom upravlja uslužni alat, no nije pronađen `start_url` jer nije dohvaćen manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Ova izvor ima jedan ili više uslužnih alata, no stranica ({pageUrl}) nije u rasponu."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Ne registrira uslužni alat koji kontrolira stranicu i `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registrira uslužni alat koji upravlja stranicom i `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Tematski pozdravni zaslon pruža bolji doživljaj korisnicima koji pokreću vašu aplikaciju na početnom zaslonu. [Saznajte više o pozdravnim zaslonima](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

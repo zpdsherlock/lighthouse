@@ -1010,9 +1010,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "P̂áĝé ĥáŝ ńô ḿâńîf́êśt̂ <ĺîńk̂> ÚR̂Ĺ"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "N̂ó m̂át̂ćĥín̂ǵ ŝér̂v́îćê ẃôŕk̂ér̂ d́êt́êćt̂éd̂. Ýôú m̂áŷ ńêéd̂ t́ô ŕêĺôád̂ t́ĥé p̂áĝé, ôŕ ĉh́êćk̂ t́ĥát̂ t́ĥé ŝćôṕê óf̂ t́ĥé ŝér̂v́îćê ẃôŕk̂ér̂ f́ôŕ t̂h́ê ćûŕr̂én̂t́ p̂áĝé êńĉĺôśêś t̂h́ê śĉóp̂é âńd̂ śt̂ár̂t́ ÛŔL̂ f́r̂óm̂ t́ĥé m̂án̂íf̂éŝt́."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Ĉóûĺd̂ ńôt́ ĉh́êćk̂ śêŕv̂íĉé ŵór̂ḱêŕ ŵít̂h́ôút̂ á 'ŝt́âŕt̂_úr̂ĺ' f̂íêĺd̂ ín̂ t́ĥé m̂án̂íf̂éŝt́"
   },
@@ -1041,7 +1038,7 @@
     "message": "p̂ŕêf́êŕ_r̂él̂át̂éd̂_áp̂ṕl̂íĉát̂íôńŝ íŝ ón̂ĺŷ śûṕp̂ór̂t́êd́ ôń Ĉh́r̂óm̂é B̂ét̂á âńd̂ Śt̂áb̂ĺê ćĥán̂ńêĺŝ ón̂ Án̂d́r̂óîd́."
   },
   "core/audits/installable-manifest.js | protocol-timeout": {
-    "message": "L̂íĝh́t̂h́ôúŝé ĉóûĺd̂ ńôt́ d̂ét̂ér̂ḿîńê íf̂ t́ĥér̂é ŵáŝ á ŝér̂v́îćê ẃôŕk̂ér̂. Ṕl̂éâśê t́r̂ý ŵít̂h́ â ńêẃêŕ v̂ér̂śîón̂ óf̂ Ćĥŕôḿê."
+    "message": "L̂íĝh́t̂h́ôúŝé ĉóûĺd̂ ńôt́ d̂ét̂ér̂ḿîńê íf̂ t́ĥé p̂áĝé îś îńŝt́âĺl̂áb̂ĺê. Ṕl̂éâśê t́r̂ý ŵít̂h́ â ńêẃêŕ v̂ér̂śîón̂ óf̂ Ćĥŕôḿê."
   },
   "core/audits/installable-manifest.js | scheme-not-supported-for-webapk": {
     "message": "T̂h́ê ḿâńîf́êśt̂ ÚR̂Ĺ ŝćĥém̂é ({scheme}) îś n̂ót̂ śûṕp̂ór̂t́êd́ ôń Âńd̂ŕôíd̂."
@@ -1483,27 +1480,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Îńît́îál̂ śêŕv̂ér̂ ŕêśp̂ón̂śê t́îḿê ẃâś ŝh́ôŕt̂"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "T̂h́ê śêŕv̂íĉé ŵór̂ḱêŕ îś t̂h́ê t́êćĥńôĺôǵŷ t́ĥát̂ én̂áb̂ĺêś ŷóûŕ âṕp̂ t́ô úŝé m̂án̂ý P̂ŕôǵr̂éŝśîv́ê Ẃêb́ Âṕp̂ f́êát̂úr̂éŝ, śûćĥ áŝ óf̂f́l̂ín̂é, âd́d̂ t́ô h́ôḿêśĉŕêén̂, án̂d́ p̂úŝh́ n̂ót̂íf̂íĉát̂íôńŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ Śêŕv̂íĉé Ŵór̂ḱêŕŝ](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "T̂h́îś p̂áĝé îś ĉón̂t́r̂ól̂ĺêd́ b̂ý â śêŕv̂íĉé ŵór̂ḱêŕ, ĥóŵév̂ér̂ ńô `start_url` ẃâś f̂óûńd̂ b́êćâúŝé m̂án̂íf̂éŝt́ f̂áîĺêd́ t̂ó p̂ár̂śê áŝ v́âĺîd́ ĴŚÔŃ"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "T̂h́îś p̂áĝé îś ĉón̂t́r̂ól̂ĺêd́ b̂ý â śêŕv̂íĉé ŵór̂ḱêŕ, ĥóŵév̂ér̂ t́ĥé `start_url` ({startUrl}) îś n̂ót̂ ín̂ t́ĥé ŝér̂v́îćê ẃôŕk̂ér̂'ś ŝćôṕê ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "T̂h́îś p̂áĝé îś ĉón̂t́r̂ól̂ĺêd́ b̂ý â śêŕv̂íĉé ŵór̂ḱêŕ, ĥóŵév̂ér̂ ńô `start_url` ẃâś f̂óûńd̂ b́êćâúŝé n̂ó m̂án̂íf̂éŝt́ ŵáŝ f́êt́ĉh́êd́."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "T̂h́îś ôŕîǵîń ĥáŝ ón̂é ôŕ m̂ór̂é ŝér̂v́îćê ẃôŕk̂ér̂ś, ĥóŵév̂ér̂ t́ĥé p̂áĝé ({pageUrl}) îś n̂ót̂ ín̂ śĉóp̂é."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "D̂óêś n̂ót̂ ŕêǵîśt̂ér̂ á ŝér̂v́îćê ẃôŕk̂ér̂ t́ĥát̂ ćôńt̂ŕôĺŝ ṕâǵê án̂d́ `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "R̂éĝíŝt́êŕŝ á ŝér̂v́îćê ẃôŕk̂ér̂ t́ĥát̂ ćôńt̂ŕôĺŝ ṕâǵê án̂d́ `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Â t́ĥém̂éd̂ śp̂ĺâśĥ śĉŕêén̂ én̂śûŕêś â h́îǵĥ-q́ûál̂ít̂ý êx́p̂ér̂íêńĉé ŵh́êń ûśêŕŝ ĺâún̂ćĥ ýôúr̂ áp̂ṕ f̂ŕôḿ t̂h́êír̂ h́ôḿêśĉŕêén̂ś. [L̂éâŕn̂ ḿôŕê áb̂óût́ ŝṕl̂áŝh́ ŝćr̂éêńŝ](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

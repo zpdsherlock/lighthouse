@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "На сторінці немає URL-адреси маніфесту в тегах <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Не виявлено відповідного синтаксису Service Worker. Можливо, потрібно перезавантажити сторінку або перевірити, чи область дії синтаксису Service Worker для поточної сторінки включає область дії та початкову URL-адресу з маніфесту."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Не вдалося перевірити синтаксис Service Worker без поля start_url у маніфесті"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Сервер відповідає швидко"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Синтаксис Service Worker – це технологія, яка дає змогу додатку використовувати багато функцій прогресивного веб-додатка, як-от режим офлайн, додавання на головний екран і push-сповіщення. [Докладніше про синтаксис Service Worker.](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Цією сторінкою керує синтаксис Service Worker, однак `start_url` не знайдено, оскільки не вдалося виконати синтаксичний аналіз маніфесту як дійсного файлу JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Цією сторінкою керує синтаксис Service Worker, однак параметр `start_url` ({startUrl}) перебуває за межами дії служби ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Цією сторінкою керує синтаксис Service Worker, однак `start_url` не знайдено, оскільки маніфест не завантажено."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Це джерело містить один або кілька синтаксисів Service Worker, але сторінка ({pageUrl}) перебуває за межами дії служби."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Немає синтаксису Service Worker, який керує сторінкою та `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Наявний синтаксис Service Worker, який керує сторінкою та `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Тематична заставка покращує взаємодію з користувачами під час запуску додатка з головного екрана. [Докладніше про заставки.](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

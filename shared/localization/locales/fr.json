@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "La page n'a aucune URL <lien> de fichier manifeste"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Aucun service worker correspondant n'a été détecté. Vous devrez peut-être recharger la page ou vérifier que le champ d'application du service worker pour la page actuelle inclut le champ d'application et l'URL de démarrage du fichier manifeste."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Impossible de contrôler le service worker sans un champ \"start_url\" dans le fichier manifeste"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Le temps de réponse initial du serveur était court"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Un service worker est une technologie qui permet à votre appli d'exploiter de nombreuses fonctionnalités propres aux progressive web apps, comme le fonctionnement hors connexion, l'ajout à un écran d'accueil et les notifications push. [En savoir plus sur les service workers](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Un service worker contrôle cette page. Toutefois, aucun attribut `start_url` n'a été trouvé en raison d'un échec lors de l'analyse du fichier manifeste (JSON non valide)"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Un service worker contrôle cette page. Toutefois, l'attribut `start_url` ({startUrl}) est situé en dehors du champ d'application du service worker ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Un service worker contrôle cette page. Toutefois, aucun attribut `start_url` n'a été trouvé, car le fichier manifeste n'a pas pu être récupéré."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Plusieurs service workers existent pour cette origine. Toutefois, la page ({pageUrl}) est située en dehors du champ d'application."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Aucun service worker de contrôle de la page et de `start_url` n'est enregistré"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Un service worker de contrôle de la page et de `start_url` est enregistré"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Avec un écran de démarrage à thème, vous garantissez une expérience de haute qualité aux utilisateurs qui lancent votre appli depuis leur écran d'accueil. [En savoir plus sur les écrans de démarrage](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

@@ -21,9 +21,6 @@ const expectations = {
     requestedUrl: 'https://chromestatus.com/features',
     finalDisplayedUrl: 'https://chromestatus.com/features',
     audits: {
-      'service-worker': {
-        score: 0,
-      },
       'viewport': {
         score: 1,
       },

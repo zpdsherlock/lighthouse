@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "網頁沒有資訊清單 <link> 網址"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "未偵測到相符的 Service Worker。你可能需要重新載入網頁，或是檢查目前網頁的 Service Worker 範圍是否涵蓋資訊清單的範圍和開始網址。"
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "資訊清單中沒有「start_url」欄位，因此無法檢查 Service Worker"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "初始伺服器回應時間很短"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service Worker 技術可讓你的應用程式使用許多漸進式網頁應用程式的功能，例如離線存取、新增到主畫面，以及推播通知。[進一步瞭解 Service Worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)。"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "此網頁由 Service Worker 所控管，但系統無法將資訊清單剖析為有效的 JSON，因此找不到任何 `start_url`"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "這個網頁由 Service Worker 所控管，但是 `start_url` ({startUrl}) 不在 Service Worker 的範圍內 ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "這個網頁由 Service Worker 所控管，但系統未擷取任何資訊清單，因此找不到任何 `start_url`。"
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "此來源包含一個或多個 Service Worker，但該頁面 ({pageUrl}) 不在 Service Worker 的範圍內。"
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "未註冊可控管網頁和 `start_url` 的 Service Worker"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "已註冊可控管網頁和 `start_url` 的 Service Worker"
   },
   "core/audits/splash-screen.js | description": {
     "message": "透過設定啟動畫面的主題，可確保使用者從主畫面啟動你的應用程式時享有優質體驗。[進一步瞭解啟動畫面](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)。"

@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "אין לדף כתובת URL של מניפסט <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "לא נמצא קובץ שירות (service worker) תואם. ייתכן שצריך לטעון מחדש את הדף, או לבדוק אם ההיקף של קובץ השירות (service worker) של הדף הנוכחי כולל את ההיקף ואת כתובת ה-URL להתחלה של קובץ המניפסט."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "לא ניתן לבדוק את קובץ השירות (service worker) ללא השדה 'כתובת url להתחלה'"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "זמן התגובה הראשונית של השרת היה קצר"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "קובץ השירות (service worker) הוא הטכנולוגיה שמאפשרת לאפליקציה שלך להשתמש בתכונות רבות של Progressive Web App כמו 'מצב אופליין', 'הוספה למסך הבית' ו'התראות'. [מידע נוסף על קובצי שירות (service worker)](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "דף זה נשלט על ידי קובץ שירות (service worker), אך לא נמצא `start_url` כי לא ניתן היה לנתח את המניפסט בתור JSON תקף"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "דף זה נשלט על ידי קובץ שירות (service worker), אך ה-`start_url` ({startUrl}) לא נמצא בטווח ({scopeUrl}) של קובץ השירות"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "דף זה נשלט על ידי קובץ שירות (service worker), אך לא נמצא `start_url` כי לא אוחזר מניפסט."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "למקור זה יש לפחות קובץ שירות (service worker) אחד, אך הדף ({pageUrl}) לא נמצא בטווח."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "לא רושם קובץ שירות (service worker) ששולט בדף וב-`start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "רושם קובץ שירות (service worker) ששולט בדף וב-`start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "מסך פתיחה מעוצב מבטיח חוויה באיכות גבוהה כשמשתמשים מפעילים את האפליקציה שלך ממסכי הבית שלהם. [מידע נוסף על מסכי פתיחה](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

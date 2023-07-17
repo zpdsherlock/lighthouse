@@ -23,9 +23,6 @@ const expectations = {
     requestedUrl: 'https://caltrainschedule.io/',
     finalDisplayedUrl: 'https://caltrainschedule.io/',
     audits: {
-      'service-worker': {
-        score: 1,
-      },
       'viewport': {
         score: 1,
       },

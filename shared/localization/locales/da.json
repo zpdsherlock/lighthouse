@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Siden har ikke nogen <link>-webadresse for manifestet"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Der blev ikke registreret nogen matchende scripttjeneste. Du skal muligvis genindlæse siden eller tjekke, at omfanget af scripttjenesten for den aktuelle side omslutter omfanget og startwebadressen fra manifestet."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Scripttjenesten kunne ikke tjekkes, da feltet \"start_url\" i manifestet ikke var angivet"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Den indledende serversvartid var kort"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Scripttjenesten er den teknologi, der gør det muligt for din app at bruge mange funktioner til progressive webapps, f.eks. offline, tilføjelse på startskærme og push-notifikationer. [Få flere oplysninger om scripttjenester](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Denne side styres af en scripttjeneste, men der blev ikke fundet noget `start_url`, fordi manifestet ikke kunne parse den som en gyldig JSON-fil"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Denne side styres af en scripttjeneste, men `start_url` ({startUrl}) er ikke omfattet af scripttjenesten ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Denne side styres af en scripttjeneste, men der blev ikke fundet nogen `start_url`, da der ikke blev hentet noget manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Dette website har én eller flere scripttjenester, men siden ({pageUrl}) er ikke omfattet af disse."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Registrerer ikke en scripttjeneste, der styrer siden og `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registrerer en scripttjeneste, der styrer siden og `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "En splash-skærm med tema sikrer, at brugerne får en god oplevelse, når de starter din app på deres startskærm. [Få flere oplysninger om splash-skærme](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

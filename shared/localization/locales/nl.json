@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "De pagina heeft geen manifest-URL <link>"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Geen overeenkomende service worker gevonden. Laad de pagina opnieuw of check of het bereik van de service worker voor de huidige pagina het bereik en de start-URL van het manifest omvat."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Kan de service worker niet checken zonder een veld 'start_url' in het manifest"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Eerste reactietijd van server was kort"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "De service worker is de technologie waarmee je app veel functies van progressive web-apps kan gebruiken, zoals offline functionaliteit, toevoegen aan het startscherm en pushmeldingen. [Meer informatie over service workers](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Deze pagina wordt beheerd door een service worker, maar er is geen `start_url` gevonden omdat het manifest niet kan worden geparseerd als geldig json-bestand"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Deze pagina wordt beheerd door een service worker, maar de `start_url` ({startUrl}) valt niet binnen het bereik van de service worker ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Deze pagina wordt beheerd door een service worker, maar er is geen `start_url` gevonden omdat er geen manifest is opgehaald."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Deze herkomst heeft een of meer service workers, maar de pagina ({pageUrl}) valt niet binnen het bereik."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Registreert geen service worker die de pagina en `start_url` beheert"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registreert een service worker die de pagina en `start_url` beheert"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Een startscherm met een thema zorgt voor een gebruikerservaring van hoge kwaliteit als gebruikers je app starten vanaf hun startscherm. [Meer informatie over startschermen](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

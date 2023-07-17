@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Pagina nu include adresa URL <link> a manifestului"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nu s-a detectat niciun service worker care corespunde. Poate fi necesar să reîncarci pagina sau să verifici dacă aria de acoperire a service workerului pentru pagina actuală include aria de acoperire și adresa URL inițială din manifest."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Nu s-a putut verifica service workerul fără câmpul „start_url” în manifest"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Durata inițială de răspuns de la server a fost scurtă"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service worker este tehnologia care îi permite aplicației să folosească mai multe funcții de aplicații web progresive, cum ar fi cele offline, adăugarea în ecranul de pornire și notificările push. [Află mai multe despre elementele service worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Pagina este controlată de un service worker, dar nu s-a găsit niciun `start_url`, deoarece manifestul nu s-a putut analiza ca un JSON valid"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Pagina este controlată de un service worker, dar `start_url` ({startUrl}) nu este în aria de acoperire a acestuia ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Pagina este controlată de un service worker, dar nu s-a găsit un `start_url`, deoarece nu s-a preluat niciun manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Această origine are unul sau mai multe elemente service worker, însă pagina ({pageUrl}) nu este în aria de acoperire."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Nu înregistrează un service worker care să controleze pagina și `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Înregistrează un service worker care să controleze pagina și `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Un ecran de întâmpinare tematic asigură o experiență de calitate atunci când utilizatorii lansează aplicația din ecranele de pornire. [Află mai multe despre ecranele de întâmpinare](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

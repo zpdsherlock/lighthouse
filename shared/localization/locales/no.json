@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Siden har ingen manifest-<link>-nettadresse"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Fant ingen samsvarende Service Worker. Du må kanskje laste inn siden på nytt eller sjekke at Service Worker for den gjeldende siden har et omfang som omslutter omfanget («scope») og start-nettadressen («start_url») fra manifestet."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Kunne ikke sjekke Service Worker uten et «start_url»-felt i manifestet"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Den innledende tjenerresponstiden var kort"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Service Worker er teknologien som gjør at appen din kan bruke mange funksjoner for progressive nettprogrammer, f.eks. muligheten til å bruke appen uten nett, legge den til på startskjermen og sende pushvarslinger. [Finn ut mer om Service Worker](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Denne siden styres av en tjenestearbeider, men ingen `start_url` ble funnet fordi manifestet ikke kunne parses som gyldig JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Denne siden styres av en tjenestearbeider, men `start_url` ({startUrl}) ligger utenfor tjenestearbeiderens omfang ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Denne siden styres av en tjenestearbeider, men ingen `start_url` ble funnet fordi manifestet ikke ble hentet."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Denne plasseringen har én eller flere tjenestearbeidere, men siden ({pageUrl}) ligger utenfor omfanget."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Registrerer ikke en tjenestearbeider som styrer siden og `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Registrerer en tjenestearbeider som styrer siden og `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Tematiske splash-skjermer gjør at brukerne får en kvalitetsopplevelse når de starter appen fra startskjermen. [Finn ut mer om splash-skjermer](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Stránka nemá webovú adresu <link> manifestu"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nezistila sa žiadna zodpovedajúca obsluha. Stránku budete musieť zrejme znova načítať. Prípadne skontrolujte, či rozsah obsluhy pre aktuálnu stránku zahrnuje rozsah a začiatočnú webovú adresu z manifestu."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Nepodarilo sa skontrolovať obsluhu bez poľa „start_url“ v manifeste"
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "Počiatočný čas odpovede servera bol krátky"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "Obsluha je technológia, ktorá umožňuje vašej aplikácii používať mnoho funkcií progresívnej webovej aplikácie, napríklad offline režim, pridanie na plochu a upozornenia aplikácie. [Ďalšie informácie o obsluhe](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Túto stránku ovláda obsluha, ale nenašla sa vlastnosť `start_url`, pretože sa nepodarilo analyzovať manifest ako platný súbor JSON"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Túto stránku ovláda obsluha, ale hodnota `start_url` ({startUrl}) sa nenachádza v rozsahu obsluhy ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Túto stránku ovláda obsluha, ale nenašla sa vlastnosť `start_url`, pretože sa nepodarilo načítať manifest."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Zdroj obsahuje jednu alebo viac obslúh, avšak stránka ({pageUrl}) nie je v rozsahu."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Nemá zaregistrovanú obsluhu, ktorá ovláda stránku a vlastnosť `start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Má zaregistrovanú obsluhu, ktorá ovláda stránku a vlastnosť `start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "Úvodná obrazovka s motívom zaistí skvelý dojem používateľa, keď si spustí vašu aplikáciu z plochy. [Ďalšie informácie o úvodných obrazovkách](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

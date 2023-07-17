@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "لا تتضمّن الصفحة عنوان URL <link> لملف البيان."
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "لم يتم رصد مشغّل خدمات مطابق. قد تحتاج إلى إعادة تحميل الصفحة، أو التأكّد أن نطاق مشغّل الخدمات للصفحة الحالية يشتمل على النطاق وعنوان URL البداية من ملف البيان."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "تعذّر التحقّق من مشغّل الخدمات بدون توفّر حقل \"start_url\" في ملف البيان."
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "وقت استجابة الخادم الأوّلي قصير"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "مشغّل الخدمات هو التكنولوجيا التي تمكّن تطبيقك من استخدام ميزات عديدة في \"تطبيق الويب التقدّمي\"، مثل الاستجابة عند عدم الاتصال بالإنترنت والإضافة إلى الشاشة الرئيسية والإشعارات الفورية. [مزيد من المعلومات حول مشغِّلات الخدمات](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "يتحكم مشغّل الخدمات في هذه الصفحة، ومع ذلك لم يتم العثور على `start_url` بسبب تعذّر تحليل البيان كملف JSON صالح"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "يتحكم مشغّل الخدمات في هذه الصفحة، ومع ذلك لا يتوفر `start_url` ({startUrl}) في نطاق مشغّل الخدمات ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "يتحكم مشغّل الخدمات في هذه الصفحة، ومع ذلك لم يتم العثور على `start_url` لأنه لم يتم جلب أي بيان."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "تحتوي نقطة الانطلاق هذه على مشغّل خدمات واحد أو أكثر، ولكن لا يوجد مشغّل يتحكم في الصفحة ({pageUrl})."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "عدم تسجيل مشغّل الخدمات الذي يتحكّم في صفحة و`start_url`"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "تسجيل مشغّل الخدمات الذي يتحكّم في صفحة و`start_url`"
   },
   "core/audits/splash-screen.js | description": {
     "message": "تضمن شاشة البداية المميَّزة توفير تجربة عالية الجودة عند تشغيل المستخدمين لتطبيقك من الشاشات الرئيسية. [مزيد من المعلومات حول شاشات البداية](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

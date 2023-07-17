@@ -13,7 +13,6 @@ const config = {
     ],
     onlyAudits: [
       'is-on-https',
-      'service-worker',
       'viewport',
       'user-timings',
       'critical-request-chains',
@@ -52,9 +51,6 @@ const expectations = {
       },
       'paste-preventing-inputs': {
         score: 1,
-      },
-      'service-worker': {
-        score: 0,
       },
       'viewport': {
         score: 1,

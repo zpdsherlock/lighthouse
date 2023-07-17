@@ -46,13 +46,6 @@
         ]
       }
     },
-    "service-worker": {
-      "id": "service-worker",
-      "title": "Does not register a service worker that controls page and `start_url`",
-      "description": "The service worker is the technology that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. [Learn more about Service Workers](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/).",
-      "score": 0,
-      "scoreDisplayMode": "binary"
-    },
     "viewport": {
       "id": "viewport",
       "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
@@ -6574,11 +6567,6 @@
           "group": "pwa-installable"
         },
         {
-          "id": "service-worker",
-          "weight": 1,
-          "group": "pwa-optimized"
-        },
-        {
           "id": "splash-screen",
           "weight": 1,
           "group": "pwa-optimized"
@@ -6617,7 +6605,7 @@
         }
       ],
       "id": "pwa",
-      "score": 0.33
+      "score": 0.38
     }
   },
   "categoryGroups": {
@@ -7769,12 +7757,6 @@
       {
         "startTime": 0,
         "name": "lh:computed:NetworkRecords",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
-        "name": "lh:audit:service-worker",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9165,12 +9147,6 @@
       ],
       "core/audits/is-on-https.js | allowed": [
         "audits[is-on-https].details.items[0].resolution"
-      ],
-      "core/audits/service-worker.js | failureTitle": [
-        "audits[service-worker].title"
-      ],
-      "core/audits/service-worker.js | description": [
-        "audits[service-worker].description"
       ],
       "core/audits/viewport.js | title": [
         "audits.viewport.title"

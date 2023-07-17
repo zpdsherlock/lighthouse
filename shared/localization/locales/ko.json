@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "페이지에 매니페스트 <link> URL이 없습니다."
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "일치하는 서비스 워커가 감지되지 않았습니다. 페이지를 새로고침하거나 현재 페이지에 관한 서비스 워커의 범위가 범위와 매니페스트의 시작 URL을 포괄하는지 확인하세요."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "매니페스트에 'start_url' 필드가 없는 서비스 워크를 확인할 수 없습니다."
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "초기 서버 응답 시간 짧음"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "서비스 워커는 앱에서 오프라인, 홈 화면에 추가, 푸시 알림 등 다양한 프로그레시브 웹 앱 기능을 사용할 수 있도록 설정하는 기술입니다. [서비스 워커에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)"
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "이 페이지는 서비스 워커로 인해 제어되지만 매니페스트가 유효한 JSON으로 파싱하는 데 실패했으므로 `start_url`을(를) 찾지 못했습니다."
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "이 페이지는 서비스 워커로 인해 제어되지만 `start_url`({startUrl})이(가) 서비스 워커의 범위({scopeUrl})에 있지 않습니다."
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "이 페이지는 서비스 워커로 인해 제어되지만 가져온 매니페스트가 없으므로 `start_url`을(를) 찾지 못했습니다."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "이 원본에 하나 이상의 서비스 워커가 있지만 페이지({pageUrl})가 범위 내에 있지 않습니다."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "페이지와 `start_url`을(를) 제어하는 서비스 워커를 등록하지 않음"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "페이지와 `start_url`을(를) 제어하는 서비스 워커를 등록함"
   },
   "core/audits/splash-screen.js | description": {
     "message": "테마 스플래시 화면을 사용하면 사용자가 홈 화면에서 앱을 실행했을 때 고품질의 환경을 경험할 수 있습니다. [스플래시 화면에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)"

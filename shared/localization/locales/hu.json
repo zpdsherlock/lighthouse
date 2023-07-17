@@ -938,9 +938,6 @@
   "core/audits/installable-manifest.js | no-manifest": {
     "message": "Az oldalon nem található manifest-URL (<link>)"
   },
-  "core/audits/installable-manifest.js | no-matching-service-worker": {
-    "message": "Nem található egyező service worker. Elképzelhető, hogy újra be kell töltenie az oldalt, vagy ellenőriznie kell, hogy a service worker jelenlegi oldalra vonatkozó scope-ja tartalmazza-e a manifestben található scope-ot és start_url-t."
-  },
   "core/audits/installable-manifest.js | no-url-for-service-worker": {
     "message": "Nem sikerült a service worker ellenőrzése, mivel nem található „start_url” mező a manifestben."
   },
@@ -1411,27 +1408,6 @@
   },
   "core/audits/server-response-time.js | title": {
     "message": "A kezdeti szerverválaszidő rövid volt"
-  },
-  "core/audits/service-worker.js | description": {
-    "message": "A service worker elnevezésű technológia lehető teszi az alkalmazás számára a progresszív webes alkalmazások funkcióinak használatát. Ilyen funkció például az offline működés, a kezdőképernyőhöz való hozzáadás és a leküldött (push) értesítések. [További információ a service worker technológiáról](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
-  },
-  "core/audits/service-worker.js | explanationBadManifest": {
-    "message": "Az oldalt szolgáltató munkatárs vezérli, azonban a(z) `start_url` nem található, ugyanis nem sikerült a manifest érvényes JSON-ként való elemzése"
-  },
-  "core/audits/service-worker.js | explanationBadStartUrl": {
-    "message": "Az oldalt szolgáltató munkatárs vezérli, azonban a(z) `start_url` ({startUrl}) nincs a szolgáltató munkatárs hatókörében ({scopeUrl})"
-  },
-  "core/audits/service-worker.js | explanationNoManifest": {
-    "message": "Az oldalt szolgáltató munkatárs vezérli, azonban a(z) `start_url` nem található, mert nem sikerült lekérni a manifestfájlt."
-  },
-  "core/audits/service-worker.js | explanationOutOfScope": {
-    "message": "Ez a forrás rendelkezik legalább egy szolgáltató munkatárssal, azonban az oldal ({pageUrl}) nincs a hatókörükben."
-  },
-  "core/audits/service-worker.js | failureTitle": {
-    "message": "Nem regisztrál szolgáltató munkatársat, amely vezérli az oldalt és a(z) `start_url` URL-t"
-  },
-  "core/audits/service-worker.js | title": {
-    "message": "Olyan szolgáltató munkatársat regisztrál, amely vezérli az oldalt és a(z) `start_url` URL-t"
   },
   "core/audits/splash-screen.js | description": {
     "message": "A saját témájú betöltési képernyő jó felhasználói élményt eredményez, amikor a kezdőképernyőről indítják el az alkalmazást. [További információ a betöltési képernyőről](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."

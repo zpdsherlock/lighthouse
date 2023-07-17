@@ -13,7 +13,6 @@ const config = {
     ],
     onlyAudits: [
       'is-on-https',
-      'service-worker',
       'viewport',
       'user-timings',
       'critical-request-chains',
