@@ -29,9 +29,9 @@ describe('Metrics: Lantern LCP', () => {
       pessimistic: Math.round(result.pessimisticEstimate.timeInMs)}).
 toMatchInlineSnapshot(`
 Object {
-  "optimistic": 2291,
-  "pessimistic": 3230,
-  "timing": 2761,
+  "optimistic": 2294,
+  "pessimistic": 3233,
+  "timing": 2764,
 }
 `);
     assert.equal(result.optimisticEstimate.nodeTimings.size, 12);

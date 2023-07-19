@@ -44,9 +44,9 @@
             "id": "first-contentful-paint",
             "title": "First Contentful Paint",
             "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/).",
-            "score": 0.98,
+            "score": 0.97,
             "scoreDisplayMode": "numeric",
-            "numericValue": 1352.107,
+            "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
             "displayValue": "1.4 s"
           },
@@ -56,7 +56,7 @@
             "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
             "score": 1,
             "scoreDisplayMode": "numeric",
-            "numericValue": 1352.107,
+            "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
             "displayValue": "1.4 s"
           },
@@ -66,7 +66,7 @@
             "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about the First Meaningful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/).",
             "score": 0.99,
             "scoreDisplayMode": "numeric",
-            "numericValue": 1352.107,
+            "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
             "displayValue": "1.4 s"
           },
@@ -76,7 +76,7 @@
             "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://developer.chrome.com/docs/lighthouse/performance/speed-index/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
-            "numericValue": 1352.107,
+            "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
             "displayValue": "1.4 s"
           },
@@ -234,9 +234,9 @@
             "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/).",
             "score": 0.99,
             "scoreDisplayMode": "numeric",
-            "numericValue": 2328.6969999999997,
+            "numericValue": 2369.0733999999998,
             "numericUnit": "millisecond",
-            "displayValue": "2.3 s"
+            "displayValue": "2.4 s"
           },
           "user-timings": {
             "id": "user-timings",
@@ -661,7 +661,7 @@
                   "numTasksOver50ms": 0,
                   "numTasksOver100ms": 0,
                   "numTasksOver500ms": 0,
-                  "rtt": 3.406000000000006,
+                  "rtt": 0.041299999999999996,
                   "throughput": 28471144.280089427,
                   "maxRtt": 162.331,
                   "maxServerLatency": 22.397999999999982,
@@ -1180,7 +1180,7 @@
                 },
                 {
                   "origin": "https://fonts.gstatic.com",
-                  "rtt": 3.406000000000006
+                  "rtt": 0.041299999999999996
                 }
               ],
               "sortedBy": [
@@ -1219,7 +1219,7 @@
                 },
                 {
                   "origin": "https://fonts.gstatic.com",
-                  "serverResponseTime": 17.328999999999994
+                  "serverResponseTime": 20.6937
                 },
                 {
                   "origin": "https://www.mikescerealshack.co",
@@ -1295,23 +1295,23 @@
             "description": "Collects all available metrics.",
             "score": null,
             "scoreDisplayMode": "informative",
-            "numericValue": 2329,
+            "numericValue": 2369,
             "numericUnit": "millisecond",
             "details": {
               "type": "debugdata",
               "items": [
                 {
-                  "firstContentfulPaint": 1352,
-                  "firstMeaningfulPaint": 1352,
-                  "largestContentfulPaint": 1352,
-                  "interactive": 2329,
-                  "speedIndex": 1352,
+                  "firstContentfulPaint": 1372,
+                  "firstMeaningfulPaint": 1372,
+                  "largestContentfulPaint": 1372,
+                  "interactive": 2369,
+                  "speedIndex": 1372,
                   "totalBlockingTime": 143,
                   "maxPotentialFID": 193,
                   "cumulativeLayoutShift": 0.002631263732910156,
                   "cumulativeLayoutShiftMainFrame": 0.002631263732910156,
-                  "lcpLoadStart": 985,
-                  "lcpLoadEnd": 1062,
+                  "lcpLoadStart": 1000,
+                  "lcpLoadEnd": 1078,
                   "timeToFirstByte": 615,
                   "observedTimeOrigin": 0,
                   "observedTimeOriginTs": 183712982617,
@@ -1531,7 +1531,7 @@
             "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
             "score": null,
             "scoreDisplayMode": "informative",
-            "displayValue": "1,350 ms",
+            "displayValue": "1,370 ms",
             "details": {
               "type": "list",
               "items": [
@@ -1592,17 +1592,17 @@
                     },
                     {
                       "phase": "Load Delay",
-                      "timing": 370.96815338890303,
-                      "percent": "27%"
+                      "timing": 385.68235231964275,
+                      "percent": "28%"
                     },
                     {
                       "phase": "Load Time",
-                      "timing": 76.93370773303661,
+                      "timing": 78.082398686087,
                       "percent": "6%"
                     },
                     {
                       "phase": "Render Delay",
-                      "timing": 289.6881388780603,
+                      "timing": 294.01344899427,
                       "percent": "21%"
                     }
                   ]
@@ -1800,17 +1800,17 @@
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js",
                   "duration": 193,
-                  "startTime": 2135.6969999999997
+                  "startTime": 2176.0733999999998
                 },
                 {
                   "url": "https://www.mikescerealshack.co/",
                   "duration": 127,
-                  "startTime": 769.8119999999999
+                  "startTime": 779.9060999999999
                 },
                 {
                   "url": "https://www.mikescerealshack.co/",
                   "duration": 96,
-                  "startTime": 965.8119999999999
+                  "startTime": 975.9060999999999
                 }
               ],
               "sortedBy": [
@@ -1828,21 +1828,21 @@
                 "tasks": [
                   {
                     "urlIndex": 0,
-                    "startTime": 2135.7,
+                    "startTime": 2176.1,
                     "duration": 193,
                     "other": 193,
                     "scriptEvaluation": 0
                   },
                   {
                     "urlIndex": 1,
-                    "startTime": 769.8,
+                    "startTime": 779.9,
                     "duration": 127,
                     "other": 127,
                     "scriptEvaluation": 0
                   },
                   {
                     "urlIndex": 1,
-                    "startTime": 965.8,
+                    "startTime": 975.9,
                     "duration": 96,
                     "other": 96,
                     "paintCompositeRender": 0,
@@ -6863,31 +6863,31 @@
             "core/lib/i18n/i18n.js | seconds": [
               {
                 "values": {
-                  "timeInMs": 1352.107
+                  "timeInMs": 1372.2951999999998
                 },
                 "path": "audits[first-contentful-paint].displayValue"
               },
               {
                 "values": {
-                  "timeInMs": 1352.107
+                  "timeInMs": 1372.2951999999998
                 },
                 "path": "audits[largest-contentful-paint].displayValue"
               },
               {
                 "values": {
-                  "timeInMs": 1352.107
+                  "timeInMs": 1372.2951999999998
                 },
                 "path": "audits[first-meaningful-paint].displayValue"
               },
               {
                 "values": {
-                  "timeInMs": 1352.107
+                  "timeInMs": 1372.2951999999998
                 },
                 "path": "audits[speed-index].displayValue"
               },
               {
                 "values": {
-                  "timeInMs": 2328.6969999999997
+                  "timeInMs": 2369.0733999999998
                 },
                 "path": "audits.interactive.displayValue"
               },
@@ -6955,7 +6955,7 @@
               },
               {
                 "values": {
-                  "timeInMs": 1352.107
+                  "timeInMs": 1372.2951999999998
                 },
                 "path": "audits[largest-contentful-paint-element].displayValue"
               }
@@ -9145,12 +9145,12 @@
                   "rtt": 49.56
                 },
                 {
-                  "origin": "https://www.mikescerealshack.co",
+                  "origin": "https://cdn.mikescerealshack.co",
                   "rtt": 5.454999999999998
                 },
                 {
-                  "origin": "https://cdn.mikescerealshack.co",
-                  "rtt": 5.454999999999998
+                  "origin": "https://www.mikescerealshack.co",
+                  "rtt": 0.0901
                 }
               ],
               "sortedBy": [
@@ -9189,7 +9189,7 @@
                 },
                 {
                   "origin": "https://www.mikescerealshack.co",
-                  "serverResponseTime": 569.5899999999999
+                  "serverResponseTime": 574.9549
                 },
                 {
                   "origin": "https://mnl4bjjsnz-dsn.algolia.net",

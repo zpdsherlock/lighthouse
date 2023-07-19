@@ -214,6 +214,16 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
       assert.deepStrictEqual(result.get('https://example.com'), expected);
     });
 
+    it('should use coarse estimates on a per-origin basis', () => {
+      const records = [
+        createRecord({url: 'https://example.com', timing: {connectStart: 1, connectEnd: 100, sendStart: 150}}),
+        createRecord({url: 'https://example2.com', timing: {sendStart: 150}}),
+      ];
+      const result = NetworkAnalyzer.estimateRTTByOrigin(records);
+      assert.deepStrictEqual(result.get('https://example.com'), {min: 99, max: 99, avg: 99, median: 99});
+      assert.deepStrictEqual(result.get('https://example2.com'), {min: 15, max: 15, avg: 15, median: 15});
+    });
+
     it('should handle untrustworthy connection information', () => {
       const timing = {sendStart: 150};
       const recordA = createRecord({networkRequestTime: 0, networkEndTime: 1, timing,

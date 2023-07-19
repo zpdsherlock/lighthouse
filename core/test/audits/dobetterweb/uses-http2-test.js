@@ -71,8 +71,8 @@ describe('Resources are fetched over http/2', () => {
     expect(urls).not.toContain(records[30].url);
     expect(result.details.items).toHaveLength(30);
     // make sure we report less savings
-    expect(result.numericValue).toMatchInlineSnapshot(`320`);
-    expect(result.details.overallSavingsMs).toMatchInlineSnapshot(`320`);
+    expect(result.numericValue).toMatchInlineSnapshot(`360`);
+    expect(result.details.overallSavingsMs).toMatchInlineSnapshot(`360`);
   });
 
   it('should return table items for timespan mode', async () => {

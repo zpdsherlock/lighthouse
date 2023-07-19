@@ -46,6 +46,9 @@ Map {
     });
 
     const result = await NetworkAnalysis.request(mutatedLog, {computedCache: new Map()});
-    expect(result.additionalRttByOrigin.get('https://www.google-analytics.com')).toEqual(0);
+    // If the connection timings were not removed, this would be the 1.045 estimate as seen in
+    // the test above. However, without connection timings we fall back to a coarse estimate and
+    // get this instead.
+    expect(result.additionalRttByOrigin.get('https://www.google-analytics.com')).toBeCloseTo(2.86);
   });
 });

@@ -77,18 +77,18 @@ describe('Render blocking resources audit', () => {
     const settings = {throttlingMethod: 'simulate', throttling: mobileSlow4G};
     const computedCache = new Map();
     const result = await RenderBlockingResourcesAudit.audit(artifacts, {settings, computedCache});
-    expect(result.numericValue).toMatchInlineSnapshot(`450`);
+    expect(result.numericValue).toMatchInlineSnapshot(`469`);
     expect(result.details.items).toMatchObject([
       {
         'totalBytes': 621,
         'url': 'https://fonts.googleapis.com/css?family=Fira+Sans+Condensed%3A400%2C400i%2C600%2C600i&subset=latin%2Clatin-ext&display=swap',
-        'wastedMs': 465,
+        'wastedMs': 440,
       },
       // Due to internal H2 simulation details, parallel HTTP/2 requests are pipelined which makes
       // it look like Montserrat starts after Fira Sans finishes. It would be preferred
       // if eventual simulation improvements list Montserrat here as well.
     ]);
-    expect(result.metricSavings).toEqual({FCP: 450, LCP: 450});
+    expect(result.metricSavings).toEqual({FCP: 469, LCP: 469});
   });
 
   describe('#estimateSavingsWithGraphs', () => {
