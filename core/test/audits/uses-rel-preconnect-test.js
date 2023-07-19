@@ -14,12 +14,14 @@ const mainResource = {
   url: 'https://www.example.com/',
   timing: {receiveHeadersEnd: 0.5},
   networkEndTime: 1000,
+  priority: 'High',
 };
 
-function buildArtifacts(networkRecords) {
+function buildArtifacts(networkRecords, fcpTs) {
   const trace = createTestTrace({
     timeOrigin: 0,
     largestContentfulPaint: 5000,
+    firstContentfulPaint: fcpTs ? fcpTs : 5000,
     topLevelTasks: [{ts: 1000, duration: 50}],
   });
   const devtoolsLog = networkRecordsToDevtoolsLog(networkRecords);
@@ -177,6 +179,7 @@ describe('Performance: uses-rel-preconnect audit', () => {
           connectEnd: 300,
           receiveHeadersEnd: 2.3,
         },
+        priority: 'High',
       },
       {
         url: 'https://cdn.example.com/second',
@@ -188,17 +191,20 @@ describe('Performance: uses-rel-preconnect audit', () => {
           connectEnd: 400,
           receiveHeadersEnd: 3.4,
         },
+        priority: 'High',
       },
     ];
 
     const artifacts = buildArtifacts(networkRecords);
     const context = {settings: {}, computedCache: new Map()};
-    const {numericValue, details} = await UsesRelPreconnect.audit(artifacts, context);
+    const {numericValue, details, metricSavings} =
+      await UsesRelPreconnect.audit(artifacts, context);
     assert.equal(numericValue, 300);
     assert.equal(details.items.length, 1);
     assert.deepStrictEqual(details.items, [
       {url: 'https://cdn.example.com', wastedMs: 300},
     ]);
+    assert.deepStrictEqual(metricSavings, {LCP: 300, FCP: 300});
   });
 
   it(`should give a list of important preconnected origins`, async () => {
@@ -214,6 +220,7 @@ describe('Performance: uses-rel-preconnect audit', () => {
           connectEnd: 300,
           receiveHeadersEnd: 2.3,
         },
+        priority: 'High',
       },
       {
         url: 'https://othercdn.example.com/second',
@@ -225,6 +232,7 @@ describe('Performance: uses-rel-preconnect audit', () => {
           connectEnd: 600,
           receiveHeadersEnd: 1.8,
         },
+        priority: 'High',
       },
       {
         url: 'https://unimportant.example.com/second',
@@ -237,6 +245,7 @@ describe('Performance: uses-rel-preconnect audit', () => {
           connectEnd: 600,
           receiveHeadersEnd: 1.8,
         },
+        priority: 'High',
       },
     ];
 
@@ -246,6 +255,7 @@ describe('Performance: uses-rel-preconnect audit', () => {
       numericValue,
       details,
       warnings,
+      metricSavings,
     } = await UsesRelPreconnect.audit(artifacts, context);
     assert.equal(numericValue, 300);
     assert.equal(details.items.length, 2);
@@ -253,6 +263,7 @@ describe('Performance: uses-rel-preconnect audit', () => {
       {url: 'https://othercdn.example.com', wastedMs: 300},
       {url: 'http://cdn.example.com', wastedMs: 150},
     ]);
+    assert.deepStrictEqual(metricSavings, {LCP: 300, FCP: 300});
     assert.equal(warnings.length, 0);
   });
 
@@ -342,5 +353,34 @@ describe('Performance: uses-rel-preconnect audit', () => {
     const result = await UsesRelPreconnect.audit(artifacts, context);
     assert.equal(result.score, 1);
     assert.equal(result.warnings.length, 1);
+  });
+
+  it('should have LCP savings and not FCP savings', async () => {
+    const networkRecords = [
+      mainResource,
+      {
+        url: 'https://cdn.example.com/second',
+        initiator: {},
+        networkRequestTime: 4000, // starts *after* FCP
+        networkEndTime: 4500, // ends *before* LCP
+        timing: {
+          dnsStart: 100,
+          connectStart: 200,
+          connectEnd: 300,
+        },
+        priority: 'High',
+      },
+    ];
+
+    const artifacts = buildArtifacts(networkRecords, 4000);
+    const context = {settings: {}, computedCache: new Map()};
+    const {numericValue, details, metricSavings} =
+      await UsesRelPreconnect.audit(artifacts, context);
+    assert.equal(numericValue, 300);
+    assert.equal(details.items.length, 1);
+    assert.deepStrictEqual(details.items, [
+      {url: 'https://cdn.example.com', wastedMs: 300},
+    ]);
+    assert.deepStrictEqual(metricSavings, {LCP: 300, FCP: 0});
   });
 });

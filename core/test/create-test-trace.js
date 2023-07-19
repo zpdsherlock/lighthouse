@@ -20,6 +20,7 @@ const lcpImageUrl = 'http://www.example.com/image.png';
  * @property {string} [frameUrl]
  * @property {number} [timeOrigin]
  * @property {number} [largestContentfulPaint]
+ * @property {number} [firstContentfulPaint]
  * @property {number} [traceEnd]
  * @property {Array<TopLevelTaskDef>} [topLevelTasks]
  * @property {Array<ChildFrame>} [childFrames] Add a child frame with a known `frame` id for easy insertion of child frame events.
@@ -140,7 +141,7 @@ function createTestTrace(options) {
     args: {frame: rootFrame},
   }, {
     name: 'firstContentfulPaint',
-    ts: timeOrigin + 10,
+    ts: options.firstContentfulPaint ? options.firstContentfulPaint * 1000 : timeOrigin + 10,
     pid,
     tid,
     ph: 'R',
