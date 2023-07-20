@@ -2274,15 +2274,15 @@ chrome-devtools-frontend@1.0.1153166:
   resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.1153166.tgz#dea2625a9e5404f26d466ac2bd4f6b0f6d554c57"
   integrity sha512-oMzyDtW9tj6lbccWUV9BH4NoUNuM7TUmpJbHMObIQdsr2MwbRDHuvjnOE1+7ITQeWudRnM0n1ZD6Efu9m+qjfw==
 
-chrome-launcher@^0.15.2:
-  version "0.15.2"
-  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.15.2.tgz#4e6404e32200095fdce7f6a1e1004f9bd36fa5da"
-  integrity sha512-zdLEwNo3aUVzIhKhTtXfxhdvZhUghrnmkvcAq2NoDd+LeOHKf03H5jwZ8T/STsAlzyALkBVK552iaG1fGf1xVQ==
+chrome-launcher@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-1.0.0.tgz#c8bc62a89bebfdcb71976a9bd7e3d66e2106ee8b"
+  integrity sha512-74IMFVfgni/bQ4GotUNJpH2vDR+Sh9cXNPVhPXiedeiB0+5j7/8i8LAqS7WlyNSKqtxJ/CgbOpBDPLkzqDVhlw==
   dependencies:
     "@types/node" "*"
     escape-string-regexp "^4.0.0"
     is-wsl "^2.2.0"
-    lighthouse-logger "^1.0.0"
+    lighthouse-logger "^2.0.1"
 
 chromium-bidi@0.4.16:
   version "0.4.16"
@@ -4938,10 +4938,18 @@ lie@~3.3.0:
   dependencies:
     immediate "~3.0.5"
 
-lighthouse-logger@^1.0.0, lighthouse-logger@^1.4.1:
+lighthouse-logger@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/lighthouse-logger/-/lighthouse-logger-1.4.1.tgz#a076d7be80cbac16b9fdcd930379b03fff514699"
   integrity sha512-VDZF31xGrLS1Zyf79/Xs6J9I08EVgJyz085MAt0G3Sh6nARFSUaM+IkuEZE9xZrLpTtzH1Qt9UzH/7kt9LnhZQ==
+  dependencies:
+    debug "^2.6.9"
+    marky "^1.2.2"
+
+lighthouse-logger@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/lighthouse-logger/-/lighthouse-logger-2.0.1.tgz#48895f639b61cca89346bb6f47f7403a3895fa02"
+  integrity sha512-ioBrW3s2i97noEmnXxmUq7cjIcVRjT5HBpAYy8zE11CxU9HqlWHHeRxfeN1tn8F7OEMVPIC9x1f8t3Z7US9ehQ==
   dependencies:
     debug "^2.6.9"
     marky "^1.2.2"

@@ -17,7 +17,7 @@ import {Worker, isMainThread, parentPort, workerData} from 'worker_threads';
 import {once} from 'events';
 
 import puppeteer from 'puppeteer-core';
-import ChromeLauncher from 'chrome-launcher';
+import * as ChromeLauncher from 'chrome-launcher';
 
 import {LH_ROOT} from '../../../../root.js';
 import {loadArtifacts, saveArtifacts} from '../../../../core/lib/asset-saver.js';
