@@ -19,7 +19,7 @@ describe('Start/End navigation', function() {
   state.installSetupAndTeardownHooks();
 
   before(() => {
-    state.server.baseDir = `${LH_ROOT}/core/test/fixtures/fraggle-rock/navigation-basic`;
+    state.server.baseDir = `${LH_ROOT}/core/test/fixtures/user-flows/navigation-basic`;
   });
 
   it('should capture a navigation via user interaction', async () => {

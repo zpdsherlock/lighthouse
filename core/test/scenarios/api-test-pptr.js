@@ -31,7 +31,7 @@ describe('Fraggle Rock API', function() {
   describe('snapshot', () => {
     beforeEach(() => {
       const {server} = state;
-      server.baseDir = `${LH_ROOT}/core/test/fixtures/fraggle-rock/snapshot-basic`;
+      server.baseDir = `${LH_ROOT}/core/test/fixtures/user-flows/snapshot-basic`;
     });
 
     it('should compute accessibility results on the page as-is', async () => {
@@ -60,7 +60,7 @@ describe('Fraggle Rock API', function() {
   describe('startTimespan', () => {
     beforeEach(() => {
       const {server} = state;
-      server.baseDir = `${LH_ROOT}/core/test/fixtures/fraggle-rock/snapshot-basic`;
+      server.baseDir = `${LH_ROOT}/core/test/fixtures/user-flows/snapshot-basic`;
     });
 
     it('should compute ConsoleMessage results across a span of time', async () => {
@@ -212,7 +212,7 @@ Array [
   describe('navigation', () => {
     beforeEach(() => {
       const {server} = state;
-      server.baseDir = `${LH_ROOT}/core/test/fixtures/fraggle-rock/navigation-basic`;
+      server.baseDir = `${LH_ROOT}/core/test/fixtures/user-flows/navigation-basic`;
     });
 
     it('should compute both snapshot & timespan results', async () => {

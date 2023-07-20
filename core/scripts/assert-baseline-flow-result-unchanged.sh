@@ -10,7 +10,7 @@ set -e
 
 PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 LH_ROOT="$PWD/../.."
-BASELINE_RESULT_PATH="$LH_ROOT/core/test/fixtures/fraggle-rock/reports/sample-flow-result.json"
+BASELINE_RESULT_PATH="$LH_ROOT/core/test/fixtures/user-flows/reports/sample-flow-result.json"
 TMP_PATH="$LH_ROOT/.tmp"
 FRESH_RESULT_PATH="$TMP_PATH/fresh_flow_result.json"
 

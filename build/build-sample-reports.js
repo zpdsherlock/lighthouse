@@ -23,7 +23,7 @@ const lhr = readJson(`${LH_ROOT}/core/test/results/sample_v2.json`);
 
 /** @type {LH.FlowResult} */
 const flowResult = readJson(
-  `${LH_ROOT}/core/test/fixtures/fraggle-rock/reports/sample-flow-result.json`
+  `${LH_ROOT}/core/test/fixtures/user-flows/reports/sample-flow-result.json`
 );
 
 const DIST = path.join(LH_ROOT, 'dist');

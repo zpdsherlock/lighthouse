@@ -16,7 +16,7 @@ import {ReportGenerator} from '../../generator/report-generator.js';
 import {readJson} from '../../../core/test/test-utils.js';
 
 const sampleResults = readJson('core/test/results/sample_v2.json');
-const sampleFlowResult = readJson('core/test/fixtures/fraggle-rock/reports/sample-flow-result.json');
+const sampleFlowResult = readJson('core/test/fixtures/user-flows/reports/sample-flow-result.json');
 
 describe('ReportGenerator', () => {
   describe('#replaceStrings', () => {

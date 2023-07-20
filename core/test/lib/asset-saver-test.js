@@ -237,7 +237,7 @@ describe('asset-saver helper', () => {
 
   describe('loadFlowArtifacts', () => {
     it('loads flow artifacts from disk', async () => {
-      const artifactsPath = moduleDir + '/../fixtures/fraggle-rock/artifacts/';
+      const artifactsPath = moduleDir + '/../fixtures/user-flows/artifacts/';
       const flowArtifacts = await assetSaver.loadFlowArtifacts(artifactsPath);
 
       expect(flowArtifacts.gatherSteps.map(gatherStep => gatherStep.flags)).toEqual([
@@ -290,7 +290,7 @@ describe('asset-saver helper', () => {
     });
 
     it('round trips saved flow artifacts', async () => {
-      const flowArtifactsPath = moduleDir + '/../fixtures/fraggle-rock/artifacts/';
+      const flowArtifactsPath = moduleDir + '/../fixtures/user-flows/artifacts/';
       const originalArtifacts = await assetSaver.loadFlowArtifacts(flowArtifactsPath);
 
       await assetSaver.saveFlowArtifacts(originalArtifacts, outputPath);
@@ -333,7 +333,7 @@ describe('asset-saver helper', () => {
       const existingDevtoolslogPath = `${step0Path}/bestPass.devtoolslog.json`;
       fs.writeFileSync(existingDevtoolslogPath, '[]');
 
-      const artifactsPath = moduleDir + '/../fixtures/fraggle-rock/artifacts';
+      const artifactsPath = moduleDir + '/../fixtures/user-flows/artifacts';
       const originalArtifacts = await assetSaver.loadFlowArtifacts(artifactsPath);
 
       await assetSaver.saveFlowArtifacts(originalArtifacts, outputPath);
