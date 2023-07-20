@@ -17,7 +17,7 @@ const throttling = {
   DEVTOOLS_RTT_ADJUSTMENT_FACTOR,
   DEVTOOLS_THROUGHPUT_ADJUSTMENT_FACTOR,
   // These values align with WebPageTest's definition of "Fast 3G"
-  // But offer similar charateristics to roughly the 75th percentile of 4G connections.
+  // But offer similar characteristics to roughly the 75th percentile of 4G connections.
   mobileSlow4G: {
     rttMs: 150,
     throughputKbps: 1.6 * 1024,
