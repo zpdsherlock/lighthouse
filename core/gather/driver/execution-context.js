@@ -108,7 +108,7 @@ class ExecutionContext {
         ${ExecutionContext._cachedNativesPreamble};
         globalThis.__lighthouseExecutionContextUniqueIdentifier =
           ${uniqueExecutionContextIdentifier};
-        ${pageFunctions.esbuildFunctionNameStubString}
+        ${pageFunctions.esbuildFunctionWrapperString}
         return new Promise(function (resolve) {
           return Promise.resolve()
             .then(_ => ${expression})
@@ -277,13 +277,20 @@ class ExecutionContext {
    * @return {string}
    */
   static serializeDeps(deps) {
-    deps = [pageFunctions.esbuildFunctionNameStubString, ...deps || []];
+    deps = [pageFunctions.esbuildFunctionWrapperString, ...deps || []];
     return deps.map(dep => {
       if (typeof dep === 'function') {
         // esbuild will change the actual function name (ie. function actualName() {})
-        // always, despite minification settings, but preserve the real name in `actualName.name`
-        // (see esbuildFunctionNameStubString).
-        return `const ${dep.name} = ${dep}`;
+        // always, and preserve the real name in `actualName.name`.
+        // See esbuildFunctionWrapperString.
+        const output = dep.toString();
+        const runtimeName = pageFunctions.getRuntimeFunctionName(dep);
+        if (runtimeName !== dep.name) {
+          // In addition to exposing the mangled name, also expose the original as an alias.
+          return `${output}; const ${dep.name} = ${runtimeName};`;
+        } else {
+          return output;
+        }
       } else {
         return dep;
       }

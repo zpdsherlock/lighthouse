@@ -20,7 +20,6 @@ import esbuild from 'esbuild';
 import PubAdsPlugin from 'lighthouse-plugin-publisher-ads';
 // @ts-expect-error: plugin has no types.
 import SoftNavPlugin from 'lighthouse-plugin-soft-navigation';
-import * as terser from 'terser';
 
 import * as plugins from './esbuild-plugins.js';
 import {Runner} from '../core/runner.js';
@@ -146,13 +145,11 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
 
   const result = await esbuild.build({
     entryPoints: [entryPath],
-    outfile: distPath,
     write: false,
     format: 'iife',
     charset: 'utf8',
     bundle: true,
-    // For now, we defer to terser.
-    minify: false,
+    minify: opts.minify,
     treeShaking: true,
     sourcemap: DEBUG,
     banner: {js: banner},
@@ -250,26 +247,14 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     ],
   });
 
-  let code = result.outputFiles[0].text;
+  const code = result.outputFiles[0].text;
 
   // Just make sure the above shimming worked.
   if (code.includes('inflate_fast')) {
     throw new Error('Expected zlib inflate code to have been removed');
   }
 
-  // Ideally we'd let esbuild minify, but we need to disable variable name mangling otherwise
-  // code generated dynamically to run inside the browser (pageFunctions) breaks. For example,
-  // the `truncate` function is unable to properly reference `Util`.
-  if (opts.minify) {
-    code = (await terser.minify(result.outputFiles[0].text, {
-      mangle: false,
-      format: {
-        max_line_len: 1000,
-      },
-    })).code || '';
-  }
-
-  await fs.promises.writeFile(result.outputFiles[0].path, code);
+  await fs.promises.writeFile(distPath, code);
 }
 
 /**

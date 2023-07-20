@@ -23,6 +23,7 @@ import {ProcessedNavigation} from '../../computed/processed-navigation.js';
 import {LighthouseError} from '../../lib/lh-error.js';
 import {Responsiveness} from '../../computed/metrics/responsiveness.js';
 import {CumulativeLayoutShift} from '../../computed/metrics/cumulative-layout-shift.js';
+import {ExecutionContext} from '../driver/execution-context.js';
 
 /** @typedef {{nodeId: number, score?: number, animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[], type?: string}} TraceElementData */
 
@@ -284,12 +285,15 @@ class TraceElements extends BaseGatherer {
         try {
           const objectId = await resolveNodeIdToObjectId(session, backendNodeId);
           if (!objectId) continue;
+
+          const deps = ExecutionContext.serializeDeps([
+            pageFunctions.getNodeDetails,
+            getNodeDetailsData,
+          ]);
           response = await session.sendCommand('Runtime.callFunctionOn', {
             objectId,
             functionDeclaration: `function () {
-              ${pageFunctions.esbuildFunctionNameStubString}
-              ${getNodeDetailsData.toString()};
-              ${pageFunctions.getNodeDetails};
+              ${deps}
               return getNodeDetailsData.call(this);
             }`,
             returnByValue: true,
