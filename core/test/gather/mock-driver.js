@@ -18,6 +18,7 @@ import {
 } from './mock-commands.js';
 import * as constants from '../../config/constants.js';
 import {fnAny} from '../test-utils.js';
+import {NetworkMonitor} from '../../gather/driver/network-monitor.js';
 
 /** @typedef {import('../../gather/driver.js').Driver} Driver */
 /** @typedef {import('../../gather/driver/execution-context.js')} ExecutionContext */
@@ -141,7 +142,7 @@ function createMockTargetManager(session) {
     on: createMockOnFn(),
     off: fnAny(),
 
-    /** @return {import('../../gather/driver/target-manager.js')} */
+    /** @return {LH.Gatherer.Driver['targetManager']} */
     asTargetManager() {
       // @ts-expect-error - We'll rely on the tests passing to know this matches.
       return this;
@@ -168,6 +169,7 @@ function createMockDriver() {
     fetcher: {
       fetchResource: fnAny(),
     },
+    networkMonitor: new NetworkMonitor(targetManager.asTargetManager()),
 
     /** @return {Driver} */
     asDriver() {

@@ -9,7 +9,6 @@
 import BaseGatherer from '../base-gatherer.js';
 import * as emulation from '../../lib/emulation.js';
 import {pageFunctions} from '../../lib/page-functions.js';
-import {NetworkMonitor} from '../driver/network-monitor.js';
 import {waitForNetworkIdle} from '../driver/wait-for-condition.js';
 
 // JPEG quality setting
@@ -89,7 +88,7 @@ class FullPageScreenshot extends BaseGatherer {
     const height = Math.min(fullHeight, MAX_WEBP_SIZE);
 
     // Setup network monitor before we change the viewport.
-    const networkMonitor = new NetworkMonitor(context.driver.targetManager);
+    const networkMonitor = context.driver.networkMonitor;
     const waitForNetworkIdleResult = waitForNetworkIdle(session, networkMonitor, {
       pretendDCLAlreadyFired: true,
       networkQuietThresholdMs: 1000,
@@ -97,7 +96,6 @@ class FullPageScreenshot extends BaseGatherer {
       idleEvent: 'network-critical-idle',
       isIdle: recorder => recorder.isCriticalIdle(),
     });
-    await networkMonitor.enable();
 
     await session.sendCommand('Emulation.setDeviceMetricsOverride', {
       mobile: deviceMetrics.mobile,
@@ -113,7 +111,6 @@ class FullPageScreenshot extends BaseGatherer {
       waitForNetworkIdleResult.promise,
     ]);
     waitForNetworkIdleResult.cancel();
-    await networkMonitor.disable();
 
     // Now that new resources are (probably) fetched, wait long enough for a layout.
     await context.driver.executionContext.evaluate(waitForDoubleRaf, {args: []});

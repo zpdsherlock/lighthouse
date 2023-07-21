@@ -11,6 +11,7 @@ import {NetworkNode as _NetworkNode} from '../core/lib/dependency-graph/network-
 import {CPUNode as _CPUNode} from '../core/lib/dependency-graph/cpu-node.js';
 import {Simulator as _Simulator} from '../core/lib/dependency-graph/simulator/simulator.js';
 import {ExecutionContext} from '../core/gather/driver/execution-context.js';
+import {NetworkMonitor} from '../core/gather/driver/network-monitor.js';
 import {Fetcher} from '../core/gather/fetcher.js';
 import {ArbitraryEqualityMap} from '../core/lib/arbitrary-equality-map.js';
 
@@ -48,6 +49,7 @@ declare module Gatherer {
       on(event: 'protocolevent', callback: (payload: Protocol.RawEventMessage) => void): void
       off(event: 'protocolevent', callback: (payload: Protocol.RawEventMessage) => void): void
     };
+    networkMonitor: NetworkMonitor;
   }
 
   interface Context<TDependencies extends DependencyKey = DefaultDependenciesKey> {
