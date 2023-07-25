@@ -30,13 +30,13 @@ jobs:
 
     steps:
     - name: git clone
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         # Depth of at least 2 for codecov coverage diffs. See https://github.com/GoogleChrome/lighthouse/pull/12079
         fetch-depth: 2
 
     - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: 16.x
 
@@ -62,7 +62,7 @@ jobs:
 
     - name: Upload test coverage to Codecov
       if: matrix.chrome-channel == 'ToT'
-      uses: codecov/codecov-action@6004246f47ab62d32be025ce173b241cd84ac58e
+      uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d
       with:
         flags: smoke
         file: ./smoke-coverage.lcov
@@ -88,11 +88,11 @@ jobs:
 
     steps:
     - name: git clone
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     # Use Node 18 here earlier than everywhere else, see https://github.com/GoogleChrome/lighthouse/issues/15160#issuecomment-1589913408
     - name: Use Node.js 18.x
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: 18.x
 
@@ -136,10 +136,10 @@ jobs:
 
     steps:
     - name: git clone
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: 16.x
 
