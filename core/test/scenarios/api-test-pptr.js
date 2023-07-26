@@ -11,7 +11,7 @@ import {createTestState, getAuditsBreakdown} from './pptr-test-utils.js';
 import {LH_ROOT} from '../../../root.js';
 import {TargetManager} from '../../gather/driver/target-manager.js';
 
-describe('Fraggle Rock API', function() {
+describe('Individual modes API', function() {
   // eslint-disable-next-line no-invalid-this
   this.timeout(120_000);
 

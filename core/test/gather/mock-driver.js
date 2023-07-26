@@ -5,7 +5,7 @@
  */
 
 /**
- * @fileoverview Mock fraggle rock driver for testing.
+ * @fileoverview Mock driver for testing.
  */
 
 import jestMock from 'jest-mock';
@@ -26,7 +26,7 @@ import {NetworkMonitor} from '../../gather/driver/network-monitor.js';
 function createMockSession() {
   return {
     setTargetInfo: fnAny(),
-    sendCommand: createMockSendCommandFn({useSessionId: false}),
+    sendCommand: createMockSendCommandFn(),
     setNextProtocolTimeout: fnAny(),
     hasNextProtocolTimeout: fnAny(),
     getNextProtocolTimeout: fnAny(),
@@ -52,7 +52,7 @@ function createMockCdpSession(sessionId = 'DEFAULT_ID') {
 
   return {
     id: () => sessionId,
-    send: createMockSendCommandFn({useSessionId: false}),
+    send: createMockSendCommandFn(),
     once: createMockOnceFn(),
     on: createMockOnFn(),
     off: fnAny(),

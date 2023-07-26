@@ -29,7 +29,7 @@ beforeEach(() => {
   ExampleAudit = ExampleAudit_;
 });
 
-describe('Fraggle Rock Config Validation', () => {
+describe('Config Validation', () => {
   describe('assertValidConfig', () => {
     it('should throw if multiple artifacts have the same id', async () => {
       const {resolvedConfig} = await initializeConfig('navigation');
@@ -114,11 +114,11 @@ describe('Fraggle Rock Config Validation', () => {
     });
   });
 
-  describe('.assertValidFRNavigations', () => {
+  describe('.assertValidNavigations', () => {
     it('should add warning if navigations uses non-fatal loadFailureMode', () => {
       /** @type {Array<LH.Config.NavigationDefn>} */
       const navigations = [{...defaultNavigationConfig, loadFailureMode: 'warn', artifacts: []}];
-      const {warnings} = validation.assertValidFRNavigations(navigations);
+      const {warnings} = validation.assertValidNavigations(navigations);
       expect(warnings).toHaveLength(1);
       expect(warnings[0]).toContain('but had a failure mode');
       expect(navigations[0].loadFailureMode).toEqual('fatal');
@@ -132,7 +132,7 @@ describe('Fraggle Rock Config Validation', () => {
         {...defaultNavigationConfig, id: 'second', artifacts: []},
         {...defaultNavigationConfig, id: 'first', artifacts: []},
       ];
-      const invocation = () => validation.assertValidFRNavigations(navigations);
+      const invocation = () => validation.assertValidNavigations(navigations);
       expect(invocation).toThrow(/must have unique.*but "first" was repeated/);
     });
   });

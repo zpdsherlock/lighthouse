@@ -261,7 +261,7 @@ describe('TargetManager', () => {
 
       const rootTargetInfo = createTargetInfo();
       // Still mock command responses at session level.
-      rootSession.send = createMockSendCommandFn({useSessionId: false})
+      rootSession.send = createMockSendCommandFn()
         .mockResponse('Page.enable')
         .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: ''}}})
         .mockResponse('Runtime.enable')
@@ -277,7 +277,7 @@ describe('TargetManager', () => {
       const iframeSession = createCdpSession('iframe');
       const iframeTargetInfo = createTargetInfo({type: 'iframe', targetId: 'iframe'});
       // Still mock command responses at session level.
-      iframeSession.send = createMockSendCommandFn({useSessionId: false})
+      iframeSession.send = createMockSendCommandFn()
         .mockResponse('Target.getTargetInfo', {targetInfo: iframeTargetInfo})
         .mockResponse('Network.enable')
         .mockResponse('Target.setAutoAttach')
@@ -332,7 +332,7 @@ describe('TargetManager', () => {
     it('should stop listening for protocol events', async () => {
       const rootSession = createCdpSession('root');
       // Still mock command responses at session level.
-      rootSession.send = createMockSendCommandFn({useSessionId: false})
+      rootSession.send = createMockSendCommandFn()
         .mockResponse('Page.enable')
         .mockResponse('Page.getFrameTree', {frameTree: {frame: {id: ''}}})
         .mockResponse('Runtime.enable')

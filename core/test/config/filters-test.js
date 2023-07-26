@@ -11,7 +11,7 @@ import BaseGatherer from '../../gather/base-gatherer.js';
 import {defaultSettings, defaultNavigationConfig} from '../../config/constants.js';
 import * as filters from '../../config/filters.js';
 
-describe('Fraggle Rock Config Filtering', () => {
+describe('Config Filtering', () => {
   const snapshotGatherer = new BaseGatherer();
   snapshotGatherer.meta = {supportedModes: ['snapshot']};
   const timespanGatherer = new BaseGatherer();

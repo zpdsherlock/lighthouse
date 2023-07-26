@@ -8,10 +8,7 @@
 
 (function() {
 
-const params = new URLSearchParams(location.search);
-
-if (location.search === '' || params.has('deprecations')) {
-  window.webkitStorageInfo.PERSISTENT; // FAIL(deprecations)
-}
+// Just here to block rendering for now...
+// Feel free to add code here if it's useful for the test.
 
 })();

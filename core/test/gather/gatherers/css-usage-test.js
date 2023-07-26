@@ -37,6 +37,7 @@ describe('.getArtifact', () => {
     /** @type {LH.Gatherer.Context} */
     const context = {
       driver: driver.asDriver(),
+      page: driver._page.asPage(),
       gatherMode: 'snapshot',
       computedCache: new Map(),
       baseArtifacts: createMockBaseArtifacts(),
@@ -94,6 +95,7 @@ describe('.getArtifact', () => {
     /** @type {LH.Gatherer.Context} */
     const context = {
       driver: driver.asDriver(),
+      page: driver._page.asPage(),
       gatherMode: 'timespan',
       computedCache: new Map(),
       baseArtifacts: createMockBaseArtifacts(),
@@ -149,6 +151,7 @@ describe('.getArtifact', () => {
     /** @type {LH.Gatherer.Context} */
     const context = {
       driver: driver.asDriver(),
+      page: driver._page.asPage(),
       gatherMode: 'snapshot',
       computedCache: new Map(),
       baseArtifacts: createMockBaseArtifacts(),

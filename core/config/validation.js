@@ -46,7 +46,7 @@ function assertValidPluginName(config, pluginName) {
 }
 
 /**
- * Throws an error if the provided object does not implement the required Fraggle Rock gatherer interface.
+ * Throws an error if the provided object does not implement the required gatherer interface.
  * @param {LH.Config.AnyArtifactDefn} artifactDefn
  */
 function assertValidArtifact(artifactDefn) {
@@ -73,7 +73,7 @@ function assertValidArtifact(artifactDefn) {
  * @param {LH.Config.ResolvedConfig['navigations']} navigationsDefn
  * @return {{warnings: string[]}}
  */
-function assertValidFRNavigations(navigationsDefn) {
+function assertValidNavigations(navigationsDefn) {
   if (!navigationsDefn || !navigationsDefn.length) return {warnings: []};
 
   /** @type {string[]} */
@@ -248,7 +248,7 @@ function assertArtifactTopologicalOrder(navigations) {
  * @return {{warnings: string[]}}
  */
 function assertValidConfig(resolvedConfig) {
-  const {warnings} = assertValidFRNavigations(resolvedConfig.navigations);
+  const {warnings} = assertValidNavigations(resolvedConfig.navigations);
 
   /** @type {Set<string>} */
   const artifactIds = new Set();
@@ -303,7 +303,7 @@ export {
   isValidArtifactDependency,
   assertValidPluginName,
   assertValidArtifact,
-  assertValidFRNavigations,
+  assertValidNavigations,
   assertValidAudit,
   assertValidCategories,
   assertValidSettings,

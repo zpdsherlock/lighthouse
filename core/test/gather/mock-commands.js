@@ -30,16 +30,8 @@ import {fnAny} from '../test-utils.js';
  *      returns the protocol message argument.
  *
  * To mock an error response, use `send.mockResponse('Command', () => Promise.reject(error))`.
- *
- * There are two variants of sendCommand, one that expects a sessionId as the second positional
- * argument (legacy Lighthouse `Connection.sendCommand`) and one that does not (Fraggle Rock
- * `ProtocolSession.sendCommand`).
- *
- * @param {{useSessionId: boolean}} [options]
  */
-function createMockSendCommandFn(options) {
-  const {useSessionId = true} = options || {};
-
+function createMockSendCommandFn() {
   /**
    * Typescript fails to equate template type `C` here with `C` when pushing to this array.
    * Instead of sprinkling a couple ts-ignores, make `command` be any, but leave `C` for just
@@ -52,18 +44,11 @@ function createMockSendCommandFn(options) {
     /**
      * @template {keyof LH.CrdpCommands} C
      * @param {C} command
-     * @param {string|undefined=} sessionId
      * @param {LH.CrdpCommands[C]['paramsType']} args
      */
-    async (command, sessionId, ...args) => {
-      if (!useSessionId) {
-        // @ts-expect-error - If sessionId isn't used, it *is* args.
-        args = [sessionId, ...args];
-        sessionId = undefined;
-      }
-
+    async (command, ...args) => {
       const indexOfResponse = mockResponses
-        .findIndex(entry => entry.command === command && entry.sessionId === sessionId);
+        .findIndex(entry => entry.command === command && entry.sessionId === undefined);
       if (indexOfResponse === -1) throw new Error(`${command} unimplemented`);
       const {response, delay} = mockResponses[indexOfResponse];
       mockResponses.splice(indexOfResponse, 1);
@@ -96,25 +81,20 @@ function createMockSendCommandFn(options) {
     },
     /**
      * @param {keyof LH.CrdpCommands} command
-     * @param {string=} sessionId
      */
-    findInvocation(command, sessionId) {
-      const expectedArgs = useSessionId ?
-        [command, sessionId, expect.anything()] :
-        [command, expect.anything()];
-      expect(mockFn).toHaveBeenCalledWith(...expectedArgs);
+    findInvocation(command) {
+      expect(mockFn).toHaveBeenCalledWith(command, expect.anything());
       return mockFn.mock.calls.find(
-        call => call[0] === command && (!useSessionId || call[1] === sessionId)
-      )[useSessionId ? 2 : 1];
+        call => call[0] === command
+      )[1];
     },
     /**
      * @param {keyof LH.CrdpCommands} command
-     * @param {string=} sessionId
      */
-    findAllInvocations(command, sessionId) {
+    findAllInvocations(command) {
       return mockFn.mock.calls.filter(
-        call => call[0] === command && (!useSessionId || call[1] === sessionId)
-      ).map(invocation => useSessionId ? invocation[2] : invocation[1]);
+        call => call[0] === command
+      ).map(invocation => invocation[1]);
     },
   });
 

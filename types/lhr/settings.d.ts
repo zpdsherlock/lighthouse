@@ -71,7 +71,7 @@ export type ScreenEmulationSettings = {
   disableStorageReset?: boolean;
   /** Flag indicating that Lighthouse should pause after page load to wait for the user's permission to continue the audit. */
   debugNavigation?: boolean;
-  /** If set to true, will skip the initial navigation to about:blank. This option is ignored when using the legacy navigation runner. */
+  /** If set to true, will skip the initial navigation to about:blank. */
   skipAboutBlank?: boolean;
   /** If set to true, gatherers should avoid any behavior that may be destructive to the page state. (e.g. extra navigations, resizing the viewport) */
   usePassiveGathering?: boolean;
