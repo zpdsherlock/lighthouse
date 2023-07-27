@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Cumulatieve indelingsverschuiving (CLS) meet de beweging van zichtbare elementen binnen de viewport. [Meer informatie over de statistiek Cumulatieve indelingsverschuiving (CLS)](https://web.dev/cls/)"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interactie tot Volgende weergave meet de responsiviteit van de pagina, dat wil zeggen hoelang het duurt voordat de pagina zichtbaar reageert op gebruikersinvoer. [Meer informatie over de statistiek Interactie tot Volgende weergave](https://web.dev/inp/)"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Eerste weergave met content (FCP) geeft de tijd aan waarbinnen de eerste tekst of afbeelding wordt weergegeven. [Meer informatie over de statistiek Eerste weergave met content (LCP)](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)"
   },

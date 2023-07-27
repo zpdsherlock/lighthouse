@@ -146,7 +146,7 @@ describe('Lighthouse Viewer', () => {
 
     it('should contain audits of all categories', async () => {
       const nonNavigationAudits = [
-        'experimental-interaction-to-next-paint',
+        'interaction-to-next-paint',
         'uses-responsive-images-snapshot',
         'work-during-interaction',
       ];

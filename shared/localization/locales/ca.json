@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "El canvi de disseny acumulatiu mesura el moviment d'elements visibles a la finestra gràfica. [Obtén més informació sobre la mètrica Canvi de disseny acumulatiu](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "La mètrica Interacció amb la renderització següent mesura la capacitat de resposta de la pàgina; és a dir, el temps que tarda la pàgina a respondre visiblement a l'entrada de l'usuari. [Obtén més informació sobre la mètrica Interacció amb la renderització següent](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "La mètrica Primera renderització de contingut marca el moment en què es renderitza el primer text o la primera imatge. [Obtén més informació sobre la mètrica Primera renderització de contingut](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Cumulative Layout Shift, görüntü alanı içindeki görünür öğelerin hareketini ölçer. [Cumulative Layout Shift metriği hakkında daha fazla bilgi edinin](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Sonraki Boyamayla Etkileşim, sayfanın tepkisini ve kullanıcı girişine görünür şekilde yanıt vermesinin ne kadar sürdüğünü ölçer. [Sonraki Boyamayla Etkileşim metriği hakkında daha fazla bilgi edinin](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "İlk Zengin İçerikli Boyama, ilk metnin veya resmin boyandığı zamanı işaret eder. [İlk zengin içerikli boyama metriği hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "காட்சிப் பகுதிக்குள் தெரியக்கூடிய கூறுகளின் நகர்வை கியூமுலேட்டிவ் லேஅவுட் ஷிஃப்ட் அளவிடுகிறது. [கியூமுலேட்டிவ் லேஅவுட் ஷிஃப்ட் அளவீடு குறித்து மேலும் அறிக](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "செயல்-காட்சி நேரம் என்பது பக்கத்தின் பதிலளிக்கும் தன்மையை அளவிடுகிறது, அதாவது பயனர் உள்ளீட்டிற்குப் பக்கத்தின் தெரிவுநிலை எந்த அளவிற்கு உள்ளது என்பதை அளவிடுவது. [செயல்-காட்சி நேர அளவீடு குறித்து மேலும் அறிக](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "'உள்ளடக்கத்துடன் முதல் தோற்றம்' என்பது வார்த்தைகளோ படமோ முதலில் தோன்றும் நேரத்தைக் குறிக்கிறது. ['உள்ளடக்கத்துடன் முதல் தோற்றம்' அளவீடு குறித்து மேலும் அறிக](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

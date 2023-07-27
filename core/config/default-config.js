@@ -186,7 +186,7 @@ const defaultConfig = {
     'metrics/total-blocking-time',
     'metrics/max-potential-fid',
     'metrics/cumulative-layout-shift',
-    'metrics/experimental-interaction-to-next-paint',
+    'metrics/interaction-to-next-paint',
     'errors-in-console',
     'server-response-time',
     'metrics/interactive',
@@ -436,7 +436,7 @@ const defaultConfig = {
         {id: 'total-blocking-time', weight: 30, group: 'metrics', acronym: 'TBT', relevantAudits: metricsToAudits.tbtRelevantAudits},
         {id: 'cumulative-layout-shift', weight: 25, group: 'metrics', acronym: 'CLS', relevantAudits: metricsToAudits.clsRelevantAudits},
         {id: 'speed-index', weight: 10, group: 'metrics', acronym: 'SI'},
-        {id: 'experimental-interaction-to-next-paint', weight: 0, group: 'metrics', acronym: 'INP', relevantAudits: metricsToAudits.inpRelevantAudits},
+        {id: 'interaction-to-next-paint', weight: 0, group: 'metrics', acronym: 'INP', relevantAudits: metricsToAudits.inpRelevantAudits},
 
         // These are our "invisible" metrics. Not displayed, but still in the LHR.
         {id: 'interactive', weight: 0, group: 'hidden', acronym: 'TTI'},

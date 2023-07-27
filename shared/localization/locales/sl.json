@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Kumulativna sprememba postavitve meri premikanje vidnih elementov znotraj vidnega območja. [Preberite več o meritvi »Kumulativna sprememba postavitve«](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interakcija do naslednjega izrisa meri odzivnost strani, kako dolgo traja, da se stran vidno odzove na vnos uporabnika. [Preberite več o meritvi interakcije do naslednjega izrisa](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Prvi vsebinski izris označuje čas, ko je izrisano prvo besedilo oziroma je izrisana prva slika. [Preberite več o meritvi prvega vsebinskega izrisa](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

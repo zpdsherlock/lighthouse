@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Οι Συνολικές αλλαγές διάταξης μετρούν την κίνηση των ορατών στοιχείων εντός της θύρας προβολής. [Μάθετε περισσότερα σχετικά με τη μέτρηση Συνολικές αλλαγές διάταξης](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Το Interaction to Next Paint μετρά την ανταπόκριση της σελίδας και τον χρόνο που χρειάζεται η σελίδα για να ανταποκριθεί εμφανώς στην εισαγωγή στοιχείων από τους χρήστες. [Μάθετε περισσότερα σχετικά με τη μέτρηση Interaction to Next Paint](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Η Πρώτη σχεδίαση περιεχομένου (FCP) επισημαίνει πότε σχεδιάζεται το πρώτο κείμενο ή η πρώτη εικόνα. [Μάθετε περισσότερα σχετικά με τη μέτρηση Πρώτη σχεδίαση περιεχομένου (FCP)](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

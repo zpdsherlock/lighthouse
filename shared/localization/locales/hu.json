@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Az Elrendezés összmozgása mutató az oldal megjelenítési területén látható elemek mozgását méri. [További információ az Elrendezés összmozgása mutatóról](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Az interakciótól a következő vizuális válaszig eltelt idő az oldal válaszadási hajlandóságát méri, vagyis azt, hogy az oldal mennyi idő alatt reagál láthatóan a felhasználói bevitelre. [További információ Az interakciótól a következő vizuális válaszig eltelt idő mutatóról](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Az első vizuális tartalomválasz azt az időpontot jelöli, amikor a rendszer megkezdi az első szöveg vagy kép megjelenítését. [További információ az Első vizuális tartalomválasz mutatóról](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

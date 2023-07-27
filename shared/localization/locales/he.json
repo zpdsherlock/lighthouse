@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "המדד Cumulative Layout Shift ‏(CLS) מודד את התנועה של הרכיבים הגלויים בתוך אזור התצוגה. [מידע נוסף על המדד Cumulative Layout Shift ‏(CLS)](https://web.dev/cls/)"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "המדד 'מאינטראקציה ועד הצגת התגובה' מודד את רמת הרספונסיביות של הדף – כמה זמן נדרש עד להצגת תגובה בדף לקלט של משתמש. [מידע נוסף על המדד 'מאינטראקציה ועד הצגת התגובה'](https://web.dev/inp/)"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "המדד 'הצגת תוכן ראשוני (FCP)' מציין את הזמן שבו הטקסט או התמונה הראשונים מוצגים. [מידע נוסף על המדד 'הצגת תוכן ראשוני (FCP)'](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)"
   },

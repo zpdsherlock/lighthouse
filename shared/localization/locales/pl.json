@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Zbiorcze przesunięcie układu to miara ruchu elementów w widocznym obszarze. [Więcej informacji o danych dotyczących zbiorczego przesunięcia układu](https://web.dev/cls/)"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Czas od interakcji do kolejnego wyrenderowania określa responsywność strony, czyli czas potrzebny do widocznej reakcji na dane wprowadzone przez użytkownika. [Więcej informacji o czasie od interakcji do kolejnego wyrenderowania](https://web.dev/inp/)"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Pierwsze wyrenderowanie treści oznacza czas wyrenderowania pierwszego tekstu lub obrazu. [Więcej informacji o danych pierwszego wyrenderowania treści](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)"
   },

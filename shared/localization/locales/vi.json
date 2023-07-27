@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Điểm số tổng hợp về mức thay đổi bố cục đo lường mức độ dịch chuyển của các phần tử hiển thị trong khung nhìn. [Tìm hiểu thêm về chỉ số Điểm số tổng hợp về mức thay đổi bố cục](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Hoạt động tương tác với thời gian hiển thị tiếp theo đo lường khả năng phản hồi của trang, thời gian trang cần để phản hồi hoạt động đầu vào của người dùng một cách rõ ràng. [Tìm hiểu thêm về chỉ số Hoạt động tương tác với thời gian hiển thị tiếp theo](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Chỉ số Hiển thị nội dung đầu tiên đánh dấu thời điểm hiển thị văn bản hoặc hình ảnh đầu tiên. [Tìm hiểu thêm về chỉ số Hiển thị nội dung đầu tiên](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

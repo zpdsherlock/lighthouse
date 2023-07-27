@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Сукупне зміщення макета вимірює рух видимих елементів у межах області перегляду. [Докладніше про показник \"Сукупне зміщення макета\".](https://web.dev/cls/)"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Показник Interaction to Next Paint вимірює, наскільки швидко сторінка може відповідати на ввід користувача. [Докладніше про показник Interaction to Next Paint.](https://web.dev/inp/)"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Перша візуалізація контенту показує, коли з’являється текст чи зображення. [Докладніше про показник \"Перша візуалізація контенту\".](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)"
   },

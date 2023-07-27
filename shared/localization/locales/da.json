@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Akkumuleret layoutskift måler synlige elementers bevægelse i det synlige område. [Få flere oplysninger om metric'en Akkumuleret layoutskift](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interaktion indtil næste visning måler sidens svartid, dvs. hvor lang tid det tager, før siden reagerer på brugerinput på en synlig måde. [Få flere oplysninger om metric'en for interaktion indtil næste visning](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Første visning af indhold markerer tidspunktet, hvor den første tekst eller det første billede vises. [Få flere oplysninger om metric'en Første visning af indhold](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

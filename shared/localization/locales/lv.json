@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Cumulative Layout Shift norāda redzamo elementu kustību skatvietā. [Uzziniet vairāk par rādītāju “Cumulative Layout Shift”](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interaction to Next Paint nosaka lapas atbildi — laiku, kas lapai nepieciešams, lai redzami reaģētu uz lietotāja ievadi. [Uzziniet vairāk par rādītāju “Interaction to Next Paint”](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Rādītājs “First Contentful Paint” ataino laiku, kad tiek atveidots pirmais teksts vai attēls. [Uzziniet vairāk par rādītāju “First Contentful Paint”](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

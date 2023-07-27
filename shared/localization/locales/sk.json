@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Kumulatívna zmena rozloženia meria pohyb viditeľných prvkov v rámci oblasti zobrazenia. [Ďalšie informácie o metrike Kumulatívna zmena rozloženia](https://web.dev/cls/)"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Čas od interakcie do ďalšieho vykreslenia meria responzívnosť stránky, teda ako dlho jej trvá viditeľne odpovedať na vstup používateľa. [Ďalšie informácie o metrike Čas od interakcie do ďalšieho vykreslenia](https://web.dev/inp/)"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Prvé vykreslenie obsahu označuje čas, za ktorý je vykreslený prvý text alebo obrázok. [Ďalšie informácie o metrike Prvé vykreslenie obsahu](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)"
   },

@@ -86,7 +86,7 @@ describe('Timespan', async function() {
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), []);
 
     // Ensure the timespan captured the user interaction.
-    const interactionAudit = lhr.audits['experimental-interaction-to-next-paint'];
+    const interactionAudit = lhr.audits['interaction-to-next-paint'];
     assert.ok(interactionAudit.score);
     assert.ok(interactionAudit.numericValue);
     assert.strictEqual(interactionAudit.scoreDisplayMode, 'numeric');

@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "\"Mudança de layout cumulativa\" mede o movimento de elementos visíveis na janela de visualização. [Saiba mais sobre a métrica \"Mudança de layout cumulativa\"](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "A métrica \"Interação com a próxima exibição\" mede a capacidade de resposta da página, ou seja, quanto tempo a página leva para responder de maneira visível à entrada do usuário. [Saiba mais sobre a métrica \"Interação com a próxima exibição\"](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "\"Primeira exibição de conteúdo\" marca o momento em que o primeiro texto ou imagem é disponibilizado. [Saiba mais sobre a métrica \"Primeira exibição de conteúdo\"](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

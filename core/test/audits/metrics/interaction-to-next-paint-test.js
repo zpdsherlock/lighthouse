@@ -4,7 +4,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import ExperimentalInteractionToNextPaint from '../../../audits/metrics/experimental-interaction-to-next-paint.js';
+import InteractionToNextPaint from '../../../audits/metrics/interaction-to-next-paint.js';
 import {readJson} from '../../test-utils.js';
 
 const interactionTrace = readJson('../../fixtures/traces/timespan-responsiveness-m103.trace.json', import.meta);
@@ -14,14 +14,14 @@ describe('Interaction to Next Paint', () => {
   function getTestData() {
     const artifacts = {
       traces: {
-        [ExperimentalInteractionToNextPaint.DEFAULT_PASS]: interactionTrace,
+        [InteractionToNextPaint.DEFAULT_PASS]: interactionTrace,
       },
     };
 
     const context = {
       settings: {throttlingMethod: 'devtools'},
       computedCache: new Map(),
-      options: ExperimentalInteractionToNextPaint.defaultOptions,
+      options: InteractionToNextPaint.defaultOptions,
     };
 
     return {artifacts, context};
@@ -29,7 +29,7 @@ describe('Interaction to Next Paint', () => {
 
   it('evaluates INP correctly', async () => {
     const {artifacts, context} = getTestData();
-    const result = await ExperimentalInteractionToNextPaint.audit(artifacts, context);
+    const result = await InteractionToNextPaint.audit(artifacts, context);
     expect(result).toEqual({
       score: 0.66,
       numericValue: 368,
@@ -47,7 +47,7 @@ describe('Interaction to Next Paint', () => {
     }
     artifacts.traces.defaultPass = clonedTrace;
 
-    const result = await ExperimentalInteractionToNextPaint.audit(artifacts, context);
+    const result = await InteractionToNextPaint.audit(artifacts, context);
     // Conveniently, the matching responsiveness event has slightly different
     // duration than the matching interaction event so can be tested against.
     expect(result).toEqual({
@@ -61,7 +61,7 @@ describe('Interaction to Next Paint', () => {
   it('is not applicable if using simulated throttling', async () => {
     const {artifacts, context} = getTestData();
     context.settings.throttlingMethod = 'simulate';
-    const result = await ExperimentalInteractionToNextPaint.audit(artifacts, context);
+    const result = await InteractionToNextPaint.audit(artifacts, context);
     expect(result).toMatchObject({
       score: null,
       notApplicable: true,
@@ -70,8 +70,8 @@ describe('Interaction to Next Paint', () => {
 
   it('is not applicable if no interactions occurred in trace', async () => {
     const {artifacts, context} = getTestData();
-    artifacts.traces[ExperimentalInteractionToNextPaint.DEFAULT_PASS] = noInteractionTrace;
-    const result = await ExperimentalInteractionToNextPaint.audit(artifacts, context);
+    artifacts.traces[InteractionToNextPaint.DEFAULT_PASS] = noInteractionTrace;
+    const result = await InteractionToNextPaint.audit(artifacts, context);
     expect(result).toMatchObject({
       score: null,
       notApplicable: true,

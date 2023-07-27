@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "[Çûmûļåţîvé Ļåýöûţ Šĥîƒţ méåšûŕéš ţĥé mövéméñţ öƒ vîšîбļé éļéméñţš ŵîţĥîñ ţĥé vîéŵþöŕţ. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ţĥé Çûmûļåţîvé Ļåýöûţ Šĥîƒţ méţŕîçᐅ](https://web.dev/cls/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo]"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "[Îñţéŕåçţîöñ ţö Ñéxţ Þåîñţ méåšûŕéš þåĝé ŕéšþöñšîvéñéšš, ĥöŵ ļöñĝ îţ ţåķéš ţĥé þåĝé ţö vîšîбļý ŕéšþöñð ţö ûšéŕ îñþûţ. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ţĥé Îñţéŕåçţîöñ ţö Ñéxţ Þåîñţ méţŕîçᐅ](https://web.dev/inp/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive]"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "[Fîŕšţ Çöñţéñţƒûļ Þåîñţ måŕķš ţĥé ţîmé åţ ŵĥîçĥ ţĥé ƒîŕšţ ţéxţ öŕ îmåĝé îš þåîñţéð. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ţĥé Fîŕšţ Çöñţéñţƒûļ Þåîñţ méţŕîçᐅ](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone]"
   },

@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Kumulativni pomak izgleda mjeri kretanje vidljivih elemenata u vidljivom dijelu. [Saznajte više o mjernom podatku Kumulativni pomak izgleda](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interakcija do sljedećeg renderiranja mjeri responzivnost stranice, koliko je vremena potrebno da stranica vidljivo reagira na korisnički unos. [Saznajte više o mjernom podatku Interakcija do sljedećeg renderiranja](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Prvo renderiranje sadržaja označava vrijeme renderiranja prvog teksta ili slike. [Saznajte više o mjernom podatku Prvo renderiranje sadržaja](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

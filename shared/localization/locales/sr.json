@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Кумулативни помак садржаја странице мери кретање видљивих елемената унутар области приказа. [Сазнајте више о показатељу Кумулативни помак садржаја странице](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Интеракција до следећег приказивања мери брзину одговора странице, колико дуго страници треба да видљиво одговори на унос корисника. [Сазнајте више о показатељу Интеракција до следећег приказивања](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Прво приказивање садржаја означава време када се приказују први текст или слика. [Сазнајте више о показатељу Прво приказивање садржаја](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "يحدِّد مقياس \"متغيّرات التصميم التراكمية\" مقدار حركة العناصر المرئية في إطار العرض. [مزيد من المعلومات حول مقياس \"متغيّرات التصميم التراكمية\"](https://web.dev/cls/)"
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "يحدِّد مقياس \"مدة عرض الاستجابة لتفاعل المستخدم\" سرعة استجابة الصفحة والمدّة التي تستغرِقها الصفحة للاستجابة بشكل واضح للبيانات التي أدخلها المستخدم. [مزيد من المعلومات حول مقياس \"مدة عرض الاستجابة لتفاعل المستخدم\"](https://web.dev/inp/)"
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "يحدِّد مقياس \"سرعة عرض المحتوى على الصفحة\" الوقت الذي يُعرَض فيه أول نص أو صورة من محتوى الصفحة. [مزيد من المعلومات حول مقياس \"سرعة عرض المحتوى على الصفحة\"](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)"
   },

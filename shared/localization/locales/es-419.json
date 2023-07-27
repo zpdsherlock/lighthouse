@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "El Cambio de diseño acumulado mide el movimiento de los elementos visibles dentro del viewport. [Obtén más información sobre la métrica de Cambio de diseño acumulado](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "La Interacción a la siguiente pintura mide la capacidad de respuesta de la página, es decir, cuánto tarda en responder de manera visible a las entradas del usuario. [Obtén más información sobre la métrica de Interacción a la siguiente pintura](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "El primer procesamiento de imagen con contenido indica el momento en el que se visualiza en la pantalla el primer texto o imagen. [Obtén más información sobre la métrica de Primer procesamiento de imagen con contenido](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Kumulativ layoutförskjutning mäter rörelsen hos synliga element inom visningsområdet. [Läs mer om mätvärdet Kumulativ layoutförskjutning](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interaktion till nästa uppritning mäter sidans responsivitet, hur lång tid det tar innan det syns att en sida svarar på indata från användare. [Läs mer om mätvärdet Interakation till nästa uppritning](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "Första innehållsrenderingen anger när den första texten eller bilden ritades upp. [Läs mer om mätvärdet Första innehållsrenderingen](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },

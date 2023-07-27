@@ -1109,9 +1109,6 @@
   "core/audits/metrics/cumulative-layout-shift.js | description": {
     "message": "Cumulative Layout Shift măsoară deplasarea elementelor vizibile în aria vizibilă. [Află mai multe despre valoarea Cumulative Layout Shift](https://web.dev/cls/)."
   },
-  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interacțiunea cu următoarea reprezentare măsoară receptivitatea paginii, adică timpul necesar pentru ca pagina să răspundă în mod vizibil la comanda utilizatorului. [Află mai multe despre valoarea Interacțiunea cu următoarea reprezentare](https://web.dev/inp/)."
-  },
   "core/audits/metrics/first-contentful-paint.js | description": {
     "message": "First Contentful Paint arată momentul când se redă primul text sau prima imagine. [Află mai multe despre valoarea First Contentful Paint](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },
