@@ -76,7 +76,8 @@ describe('CLI Tests', function() {
       const ret = spawnSync('node', [indexPath, 'https://www.google.com',
         '--extra-headers', '{notjson}'], {encoding: 'utf8'});
 
-      assert.ok(ret.stderr.includes('Unexpected token'));
+      // This message was changed in Node 20, check for old and new versions.
+      assert.ok(/(Unexpected token|Expected property name)/.test(ret.stderr));
       assert.equal(ret.status, 1);
     });
   });

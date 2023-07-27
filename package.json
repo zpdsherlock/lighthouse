@@ -10,7 +10,7 @@
     "smokehouse": "./cli/test/smokehouse/frontends/smokehouse-bin.js"
   },
   "engines": {
-    "node": ">=16.16"
+    "node": ">=18.16"
   },
   "scripts": {
     "prepack": "yarn build-report --standalone --flow --esm && yarn build-types",
@@ -172,7 +172,7 @@
     "rollup-plugin-polyfill-node": "^0.12.0",
     "tabulator-tables": "^4.9.3",
     "terser": "^5.18.2",
-    "testdouble": "^3.17.2",
+    "testdouble": "^3.18.0",
     "typed-query-selector": "^2.6.1",
     "typescript": "^5.0.4",
     "wait-for-expect": "^3.0.2",

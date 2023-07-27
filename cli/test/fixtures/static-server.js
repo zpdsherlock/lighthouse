@@ -169,7 +169,10 @@ class Server {
         headers['X-TotalFetchedSize'] = Buffer.byteLength(data) + JSON.stringify(headers).length;
       }
 
-      response.writeHead(statusCode, headers);
+      response.statusCode = statusCode;
+      for (const [name, value] of Object.entries(headers)) {
+        response.setHeader(name, value);
+      }
       const encoding = charset === 'UTF-8' ? 'utf-8' : 'binary';
 
       // Delay the response
@@ -188,9 +191,8 @@ class Server {
         <h1>Smoke test fixtures</h1>
         ${fixturePaths.map(p => `<a href=${encodeURI(p)}>${escape(p)}</a>`).join('<br>')}
       `;
-      response.writeHead(200, {
-        'Content-Security-Policy': `default-src 'none';`,
-      });
+      response.statusCode = 200;
+      response.setHeader('Content-Security-Policy', `default-src 'none';`);
       sendResponse(200, html);
       return;
     }
@@ -227,16 +229,14 @@ class Server {
     function sendRedirect(url) {
       // Redirects can only contain ASCII characters.
       if (url.split('').some(char => char.charCodeAt(0) > 256)) {
-        response.writeHead(500);
+        response.statusCode = 500;
         response.write(`Invalid redirect URL: ${url}`);
         response.end();
         return;
       }
 
-      const headers = {
-        Location: url,
-      };
-      response.writeHead(302, headers);
+      response.statusCode = 302;
+      response.setHeader('Location', url);
       response.end();
     }
 

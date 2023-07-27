@@ -241,13 +241,17 @@ describe('SourceMaps gatherer', () => {
       {
         scriptUrl: mapsAndEvents[0].script.name,
         sourceMapUrl: mapsAndEvents[0].script.sourceMapURL,
-        errorMessage: 'SyntaxError: Unexpected token { in JSON at position 1',
+        // This message was changed in Node 20, check for old and new versions.
+        // eslint-disable-next-line max-len
+        errorMessage: expect.stringMatching(/(Expected property name|Unexpected token).*at position 1/),
         map: undefined,
       },
       {
         scriptUrl: mapsAndEvents[1].script.name,
         sourceMapUrl: undefined,
-        errorMessage: 'SyntaxError: Unexpected token ; in JSON at position 2',
+        // This message was changed in Node 20, check for old and new versions.
+        // eslint-disable-next-line max-len
+        errorMessage: expect.stringMatching(/(Unexpected non-whitespace|Unexpected token).*at position 2/),
         map: undefined,
       },
     ]);
