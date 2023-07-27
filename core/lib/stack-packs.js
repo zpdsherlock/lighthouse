@@ -40,6 +40,10 @@ const stackPacksToInclude = [
     requiredStacks: ['js:drupal'],
   },
   {
+    packId: 'nitropack',
+    requiredStacks: ['js:nitropack'],
+  },
+  {
     packId: 'amp',
     requiredStacks: ['js:amp'],
   },

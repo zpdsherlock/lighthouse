@@ -2862,7 +2862,7 @@
     "message": "Îńŝt́âĺl̂ [á D̂ŕûṕâĺ m̂ód̂úl̂é](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=im_vid_3%3A67&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=%22lazy+load%22&solrsort=iss_project_release_usage+desc&op=Search) t̂h́ât́ ĉán̂ ĺâźŷ ĺôád̂ ím̂áĝéŝ. Śûćĥ ḿôd́ûĺêś p̂ŕôv́îd́ê t́ĥé âb́îĺît́ŷ t́ô d́êf́êŕ âńŷ óf̂f́ŝćr̂éêń îḿâǵêś t̂ó îḿp̂ŕôv́ê ṕêŕf̂ór̂ḿâńĉé."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | render-blocking-resources": {
-    "message": "Ĉón̂śîd́êŕ ûśîńĝ á m̂ód̂úl̂é t̂ó îńl̂ín̂é ĉŕît́îćâĺ ĈŚŜ án̂d́ Ĵáv̂áŜćr̂íp̂t́, ôŕ p̂ót̂én̂t́îál̂ĺŷ ĺôád̂ áŝśêt́ŝ áŝýn̂ćĥŕôńôúŝĺŷ v́îá Ĵáv̂áŜćr̂íp̂t́ ŝúĉh́ âś t̂h́ê [Ád̂v́âńĉéd̂ ĆŜŚ/ĴŚ Âǵĝŕêǵât́îón̂](https://www.drupal.org/project/advagg) ḿôd́ûĺê. B́êẃâŕê t́ĥát̂ óp̂t́îḿîźât́îón̂ś p̂ŕôv́îd́êd́ b̂ý t̂h́îś m̂ód̂úl̂é m̂áŷ b́r̂éâḱ ŷóûŕ ŝít̂é, ŝó ŷóû ẃîĺl̂ ĺîḱêĺŷ ńêéd̂ t́ô ḿâḱê ćôd́ê ćĥán̂ǵêś."
+    "message": "Ĉón̂śîd́êŕ ûśîńĝ á m̂ód̂úl̂é t̂ó îńl̂ín̂é ĉŕît́îćâĺ ĈŚŜ án̂d́ Ĵáv̂áŜćr̂íp̂t́, âńd̂ úŝé t̂h́ê d́êf́êŕ ât́t̂ŕîb́ût́ê f́ôŕ n̂ón̂-ćr̂ít̂íĉál̂ ĆŜŚ ôŕ Ĵáv̂áŜćr̂íp̂t́."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | server-response-time": {
     "message": "T̂h́êḿêś, m̂ód̂úl̂éŝ, án̂d́ ŝér̂v́êŕ ŝṕêćîf́îćât́îón̂ś âĺl̂ ćôńt̂ŕîb́ût́ê t́ô śêŕv̂ér̂ ŕêśp̂ón̂śê t́îḿê. Ćôńŝíd̂ér̂ f́îńd̂ín̂ǵ â ḿôŕê óp̂t́îḿîźêd́ t̂h́êḿê, ćâŕêf́ûĺl̂ý ŝél̂éĉt́îńĝ án̂ óp̂t́îḿîźât́îón̂ ḿôd́ûĺê, án̂d́/ôŕ ûṕĝŕâd́îńĝ ýôúr̂ śêŕv̂ér̂. Ýôúr̂ h́ôśt̂ín̂ǵ ŝér̂v́êŕŝ śĥóûĺd̂ ḿâḱê úŝé ôf́ P̂H́P̂ óp̂ćôd́ê ćâćĥín̂ǵ, m̂ém̂ór̂ý-ĉáĉh́îńĝ t́ô ŕêd́ûćê d́ât́âb́âśê q́ûér̂ý t̂ím̂éŝ śûćĥ áŝ Ŕêd́îś ôŕ M̂ém̂ćâćĥéd̂, áŝ ẃêĺl̂ áŝ óp̂t́îḿîźêd́ âṕp̂ĺîćât́îón̂ ĺôǵîć t̂ó p̂ŕêṕâŕê ṕâǵêś f̂áŝt́êŕ."
@@ -2871,10 +2871,10 @@
     "message": "Ĉón̂śîd́êŕ ûśîńĝ [Ŕêśp̂ón̂śîv́ê Ím̂áĝé Ŝt́ŷĺêś](https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8) t̂ó r̂éd̂úĉé t̂h́ê śîźê óf̂ ím̂áĝéŝ ĺôád̂éd̂ ón̂ ýôúr̂ ṕâǵê. Íf̂ ýôú âŕê úŝín̂ǵ V̂íêẃŝ t́ô śĥóŵ ḿûĺt̂íp̂ĺê ćôńt̂én̂t́ ît́êḿŝ ón̂ á p̂áĝé, ĉón̂śîd́êŕ îḿp̂ĺêḿêńt̂ín̂ǵ p̂áĝín̂át̂íôń t̂ó l̂ím̂ít̂ t́ĥé n̂úm̂b́êŕ ôf́ ĉón̂t́êńt̂ ít̂ém̂ś ŝh́ôẃn̂ ón̂ á ĝív̂én̂ ṕâǵê."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | unminified-css": {
-    "message": "Êńŝúr̂é ŷóû h́âv́ê én̂áb̂ĺêd́ \"Âǵĝŕêǵât́ê ĆŜŚ f̂íl̂éŝ\" ín̂ t́ĥé \"Âd́m̂ín̂íŝt́r̂át̂íôń » Ĉón̂f́îǵûŕât́îón̂ » D́êv́êĺôṕm̂én̂t́\" p̂áĝé. Ŷóû ćâń âĺŝó ĉón̂f́îǵûŕê ḿôŕê ád̂v́âńĉéd̂ áĝǵr̂éĝát̂íôń ôṕt̂íôńŝ t́ĥŕôúĝh́ [âd́d̂ít̂íôńâĺ m̂ód̂úl̂éŝ](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=im_vid_3%3A123&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=css+aggregation&solrsort=iss_project_release_usage+desc&op=Search) t́ô śp̂éêd́ ûṕ ŷóûŕ ŝít̂é b̂ý ĉón̂ćât́êńât́îńĝ, ḿîńîf́ŷín̂ǵ, âńd̂ ćôḿp̂ŕêśŝín̂ǵ ŷóûŕ ĈŚŜ śt̂ýl̂éŝ."
+    "message": "Êńŝúr̂é ŷóû h́âv́ê én̂áb̂ĺêd́ \"Âǵĝŕêǵât́ê ĆŜŚ f̂íl̂éŝ\" ín̂ t́ĥé \"Âd́m̂ín̂íŝt́r̂át̂íôń » Ĉón̂f́îǵûŕât́îón̂ » D́êv́êĺôṕm̂én̂t́\" p̂áĝé.  Êńŝúr̂é ŷóûŕ D̂ŕûṕâĺ ŝít̂é îś r̂ún̂ńîńĝ át̂ ĺêáŝt́ D̂ŕûṕâĺ 10.1 f̂ór̂ ím̂ṕr̂óv̂éd̂ áŝśêt́ âǵĝŕêǵât́îón̂ śûṕp̂ór̂t́."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | unminified-javascript": {
-    "message": "Êńŝúr̂é ŷóû h́âv́ê én̂áb̂ĺêd́ \"Âǵĝŕêǵât́ê J́âv́âŚĉŕîṕt̂ f́îĺêś\" îń t̂h́ê \"Ád̂ḿîńîśt̂ŕât́îón̂ » Ćôńf̂íĝúr̂át̂íôń » D̂év̂él̂óp̂ḿêńt̂\" ṕâǵê. Ýôú ĉán̂ ál̂śô ćôńf̂íĝúr̂é m̂ór̂é âd́v̂án̂ćêd́ âǵĝŕêǵât́îón̂ óp̂t́îón̂ś t̂h́r̂óûǵĥ [ád̂d́ît́îón̂ál̂ ḿôd́ûĺêś](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=im_vid_3%3A123&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=javascript+aggregation&solrsort=iss_project_release_usage+desc&op=Search) t̂ó ŝṕêéd̂ úp̂ ýôúr̂ śît́ê b́ŷ ćôńĉát̂én̂át̂ín̂ǵ, m̂ín̂íf̂ýîńĝ, án̂d́ ĉóm̂ṕr̂éŝśîńĝ ýôúr̂ J́âv́âŚĉŕîṕt̂ áŝśêt́ŝ."
+    "message": "Êńŝúr̂é ŷóû h́âv́ê én̂áb̂ĺêd́ \"Âǵĝŕêǵât́ê J́âv́âŚĉŕîṕt̂ f́îĺêś\" îń t̂h́ê \"Ád̂ḿîńîśt̂ŕât́îón̂ » Ćôńf̂íĝúr̂át̂íôń » D̂év̂él̂óp̂ḿêńt̂\" ṕâǵê.  Én̂śûŕê ýôúr̂ D́r̂úp̂ál̂ śît́ê íŝ ŕûńn̂ín̂ǵ ât́ l̂éâśt̂ D́r̂úp̂ál̂ 10.1 f́ôŕ îḿp̂ŕôv́êd́ âśŝét̂ áĝǵr̂éĝát̂íôń ŝúp̂ṕôŕt̂."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | unused-css-rules": {
     "message": "Ĉón̂śîd́êŕ r̂ém̂óv̂ín̂ǵ ûńûśêd́ ĈŚŜ ŕûĺêś âńd̂ ón̂ĺŷ át̂t́âćĥ t́ĥé n̂éêd́êd́ D̂ŕûṕâĺ l̂íb̂ŕâŕîéŝ t́ô t́ĥé r̂él̂év̂án̂t́ p̂áĝé ôŕ ĉóm̂ṕôńêńt̂ ín̂ á p̂áĝé. Ŝéê t́ĥé [D̂ŕûṕâĺ d̂óĉúm̂én̂t́ât́îón̂ ĺîńk̂](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library) f́ôŕ d̂ét̂áîĺŝ. T́ô íd̂én̂t́îf́ŷ át̂t́âćĥéd̂ ĺîb́r̂ár̂íêś t̂h́ât́ âŕê ád̂d́îńĝ éx̂t́r̂án̂éôúŝ ĆŜŚ, t̂ŕŷ ŕûńn̂ín̂ǵ [ĉód̂é ĉóv̂ér̂áĝé](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) îń Ĉh́r̂óm̂é D̂év̂T́ôól̂ś. Ŷóû ćâń îd́êńt̂íf̂ý t̂h́ê t́ĥém̂é/m̂ód̂úl̂é r̂éŝṕôńŝíb̂ĺê f́r̂óm̂ t́ĥé ÛŔL̂ óf̂ t́ĥé ŝt́ŷĺêśĥéêt́ ŵh́êń ĈŚŜ áĝǵr̂éĝát̂íôń îś d̂íŝáb̂ĺêd́ îń ŷóûŕ D̂ŕûṕâĺ ŝít̂é. L̂óôḱ ôút̂ f́ôŕ t̂h́êḿêś/m̂ód̂úl̂éŝ t́ĥát̂ h́âv́ê ḿâńŷ śt̂ýl̂éŝh́êét̂ś îń t̂h́ê ĺîśt̂ ẃĥíĉh́ ĥáv̂é â ĺôt́ ôf́ r̂éd̂ ín̂ ćôd́ê ćôv́êŕâǵê. Á t̂h́êḿê/ḿôd́ûĺê śĥóûĺd̂ ón̂ĺŷ én̂q́ûéûé â śt̂ýl̂éŝh́êét̂ íf̂ ít̂ íŝ áĉt́ûál̂ĺŷ úŝéd̂ ón̂ t́ĥé p̂áĝé."
@@ -3073,6 +3073,48 @@
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-text-compression": {
     "message": "Êńâb́l̂é ĉóm̂ṕr̂éŝśîón̂ ón̂ ýôúr̂ Ńêx́t̂.j́ŝ śêŕv̂ér̂. [Ĺêár̂ń m̂ór̂é](https://nextjs.org/docs/api-reference/next.config.js/compression)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | dom-size": {
+    "message": "Ĉón̂t́âćt̂ ýôúr̂ áĉćôún̂t́ m̂án̂áĝér̂ t́ô én̂áb̂ĺê [`HTML Lazy Load`](https://support.nitropack.io/hc/en-us/articles/17144942904337). Ćôńf̂íĝúr̂ín̂ǵ ît́ ŵíl̂ĺ p̂ŕîór̂ít̂íẑé âńd̂ óp̂t́îḿîźê ýôúr̂ ṕâǵê ŕêńd̂ér̂ín̂ǵ p̂ér̂f́ôŕm̂án̂ćê."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | font-display": {
+    "message": "Ûśê t́ĥé [`Override Font Rendering Behavior`](https://support.nitropack.io/hc/en-us/articles/16547358865041) ôṕt̂íôń îń N̂ít̂ŕôṔâćk̂ t́ô śêt́ â d́êśîŕêd́ v̂ál̂úê f́ôŕ t̂h́ê ĆŜŚ f̂ón̂t́-d̂íŝṕl̂áŷ ŕûĺê."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | modern-image-formats": {
+    "message": "Ûśê [`Image Optimization`](https://support.nitropack.io/hc/en-us/articles/16547237162513) t́ô áût́ôḿât́îćâĺl̂ý ĉón̂v́êŕt̂ ýôúr̂ ím̂áĝéŝ t́ô Ẃêb́P̂."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | offscreen-images": {
+    "message": "D̂éf̂ér̂ óf̂f́ŝćr̂éêń îḿâǵêś b̂ý êńâb́l̂ín̂ǵ [`Automatic Image Lazy Loading`](https://support.nitropack.io/hc/en-us/articles/12457493524369-NitroPack-Lazy-Loading-Feature-for-Images)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | render-blocking-resources": {
+    "message": "Êńâb́l̂é [`Remove render-blocking resources`](https://support.nitropack.io/hc/en-us/articles/13820893500049-How-to-Deal-with-Render-Blocking-Resources-in-NitroPack) îń N̂ít̂ŕôṔâćk̂ f́ôŕ f̂áŝt́êŕ îńît́îál̂ ĺôád̂ t́îḿêś."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | server-response-time": {
+    "message": "Îḿp̂ŕôv́ê śêŕv̂ér̂ ŕêśp̂ón̂śê t́îḿê án̂d́ ôṕt̂ím̂íẑé p̂ér̂ćêív̂éd̂ ṕêŕf̂ór̂ḿâńĉé b̂ý âćt̂ív̂át̂ín̂ǵ [`Instant Load`](https://support.nitropack.io/hc/en-us/articles/16547340617361)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | unminified-css": {
+    "message": "Êńâb́l̂é [`Minify resources`](https://support.nitropack.io/hc/en-us/articles/360061059394-Minify-Resources) îń ŷóûŕ Ĉáĉh́îńĝ śêt́t̂ín̂ǵŝ t́ô ŕêd́ûćê t́ĥé ŝíẑé ôf́ ŷóûŕ ĈŚŜ, H́T̂ḾL̂, án̂d́ Ĵáv̂áŜćr̂íp̂t́ f̂íl̂éŝ f́ôŕ f̂áŝt́êŕ l̂óâd́ t̂ím̂éŝ."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | unminified-javascript": {
+    "message": "Êńâb́l̂é [`Minify resources`](https://support.nitropack.io/hc/en-us/articles/360061059394-Minify-Resources) îń ŷóûŕ Ĉáĉh́îńĝ śêt́t̂ín̂ǵŝ t́ô ŕêd́ûćê t́ĥé ŝíẑé ôf́ ŷóûŕ ĴŚ, ĤT́M̂Ĺ, âńd̂ ĆŜŚ f̂íl̂éŝ f́ôŕ f̂áŝt́êŕ l̂óâd́ t̂ím̂éŝ."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | unused-css-rules": {
+    "message": "Êńâb́l̂é [`Reduce Unused CSS`](https://support.nitropack.io/hc/en-us/articles/360020418457-Reduce-Unused-CSS) t̂ó r̂ém̂óv̂é ĈŚŜ ŕûĺêś t̂h́ât́ âŕê ńôt́ âṕp̂ĺîćâb́l̂é t̂ó t̂h́îś p̂áĝé."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | unused-javascript": {
+    "message": "Ĉón̂f́îǵûŕê [`Delayed Scripts`](https://support.nitropack.io/hc/en-us/articles/1500002600942-Delayed-Scripts) ín̂ Ńît́r̂óP̂áĉḱ t̂ó d̂él̂áŷ ĺôád̂ín̂ǵ ôf́ ŝćr̂íp̂t́ŝ ún̂t́îĺ t̂h́êý âŕê ńêéd̂éd̂."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | uses-long-cache-ttl": {
+    "message": "Ĝó t̂ó t̂h́ê [`Improve Server Response Time`](https://support.nitropack.io/hc/en-us/articles/1500002321821-Improve-Server-Response-Time) f́êát̂úr̂é îń t̂h́ê `Caching` ḿêńû án̂d́ âd́ĵúŝt́ ŷóûŕ p̂áĝé ĉáĉh́ê éx̂ṕîŕât́îón̂ t́îḿê t́ô ím̂ṕr̂óv̂é l̂óâd́îńĝ t́îḿêś âńd̂ úŝér̂ éx̂ṕêŕîén̂ćê."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | uses-optimized-images": {
+    "message": "Âút̂óm̂át̂íĉál̂ĺŷ ćôḿp̂ŕêśŝ, óp̂t́îḿîźê, án̂d́ ĉón̂v́êŕt̂ ýôúr̂ ím̂áĝéŝ ín̂t́ô Ẃêb́P̂ b́ŷ én̂áb̂ĺîńĝ t́ĥé [`Image Optimization`](https://support.nitropack.io/hc/en-us/articles/14177271695121-How-to-serve-images-in-next-gen-formats-using-NitroPack) ŝét̂t́îńĝ."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | uses-responsive-images": {
+    "message": "Êńâb́l̂é [`Adaptive Image Sizing`](https://support.nitropack.io/hc/en-us/articles/10123833029905-How-to-Enable-Adaptive-Image-Sizing-For-Your-Site) t̂ó p̂ŕêém̂ṕt̂ív̂él̂ý ôṕt̂ím̂íẑé ŷóûŕ îḿâǵêś âńd̂ ḿâḱê t́ĥém̂ ḿât́ĉh́ t̂h́ê d́îḿêńŝíôńŝ óf̂ t́ĥé ĉón̂t́âín̂ér̂ś t̂h́êý’r̂é d̂íŝṕl̂áŷéd̂ ín̂ áĉŕôśŝ ál̂ĺ d̂év̂íĉéŝ."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nitropack.js | uses-text-compression": {
+    "message": "Ûśê [`Gzip compression`](https://support.nitropack.io/hc/en-us/articles/13229297479313-Enabling-GZIP-compression) ín̂ Ńît́r̂óP̂áĉḱ t̂ó r̂éd̂úĉé t̂h́ê śîźê óf̂ t́ĥé f̂íl̂éŝ t́ĥát̂ ár̂é ŝén̂t́ t̂ó t̂h́ê b́r̂óŵśêŕ."
   },
   "node_modules/lighthouse-stack-packs/packs/nuxt.js | modern-image-formats": {
     "message": "Ûśê t́ĥé `nuxt/image` ĉóm̂ṕôńêńt̂ án̂d́ ŝét̂ `format=\"webp\"`. [Ĺêár̂ń m̂ór̂é](https://image.nuxtjs.org/components/nuxt-img#format)."
