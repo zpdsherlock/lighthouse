@@ -464,6 +464,18 @@ describe('CategoryRenderer', () => {
       assert.ok(isExpanded, 'Warning audit group should be expanded by default');
     });
 
+    it('expands the manual audit group if there are 0 failing audits', () => {
+      const category = sampleResults.categories.accessibility;
+      const categoryClone = JSON.parse(JSON.stringify(category));
+      categoryClone.auditRefs.filter(audit => audit.result.scoreDisplayMode === 'binary')
+        .forEach(audit => audit.result.score = 1);
+
+      const auditDOM = renderer.render(categoryClone, sampleResults.categoryGroups);
+      const manualClumpEl = auditDOM.querySelector('.lh-clump--manual');
+      const isExpanded = manualClumpEl.hasAttribute('open');
+      assert.ok(isExpanded, 'Manual audit group should be expanded if there are 0 failing audits');
+    });
+
     it('only passing audits with warnings show in warnings section', () => {
       const failingWarning = 'Failed and warned';
       const passingWarning = 'A passing warning';

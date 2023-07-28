@@ -4006,7 +4006,7 @@
           },
           "accessibility": {
             "title": "Accessibility",
-            "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.",
+            "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so [manual testing](https://web.dev/how-to-review/) is also encouraged.",
             "manualDescription": "These items address areas which an automated testing tool cannot cover. Learn more in our guide on [conducting an accessibility review](https://web.dev/how-to-review/).",
             "supportedModes": [
               "navigation",
@@ -4299,10 +4299,6 @@
                 "group": "a11y-audio-video"
               },
               {
-                "id": "logical-tab-order",
-                "weight": 0
-              },
-              {
                 "id": "focusable-controls",
                 "weight": 0
               },
@@ -4311,11 +4307,27 @@
                 "weight": 0
               },
               {
-                "id": "managed-focus",
+                "id": "logical-tab-order",
+                "weight": 0
+              },
+              {
+                "id": "visual-order-follows-dom",
                 "weight": 0
               },
               {
                 "id": "focus-traps",
+                "weight": 0
+              },
+              {
+                "id": "managed-focus",
+                "weight": 0
+              },
+              {
+                "id": "use-landmarks",
+                "weight": 0
+              },
+              {
+                "id": "offscreen-content-hidden",
                 "weight": 0
               },
               {
@@ -4324,18 +4336,6 @@
               },
               {
                 "id": "custom-controls-roles",
-                "weight": 0
-              },
-              {
-                "id": "visual-order-follows-dom",
-                "weight": 0
-              },
-              {
-                "id": "offscreen-content-hidden",
-                "weight": 0
-              },
-              {
-                "id": "use-landmarks",
                 "weight": 0
               },
               {
@@ -14855,7 +14855,7 @@
           },
           "accessibility": {
             "title": "Accessibility",
-            "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.",
+            "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so [manual testing](https://web.dev/how-to-review/) is also encouraged.",
             "manualDescription": "These items address areas which an automated testing tool cannot cover. Learn more in our guide on [conducting an accessibility review](https://web.dev/how-to-review/).",
             "supportedModes": [
               "navigation",
@@ -15148,10 +15148,6 @@
                 "group": "a11y-audio-video"
               },
               {
-                "id": "logical-tab-order",
-                "weight": 0
-              },
-              {
                 "id": "focusable-controls",
                 "weight": 0
               },
@@ -15160,11 +15156,27 @@
                 "weight": 0
               },
               {
-                "id": "managed-focus",
+                "id": "logical-tab-order",
+                "weight": 0
+              },
+              {
+                "id": "visual-order-follows-dom",
                 "weight": 0
               },
               {
                 "id": "focus-traps",
+                "weight": 0
+              },
+              {
+                "id": "managed-focus",
+                "weight": 0
+              },
+              {
+                "id": "use-landmarks",
+                "weight": 0
+              },
+              {
+                "id": "offscreen-content-hidden",
                 "weight": 0
               },
               {
@@ -15173,18 +15185,6 @@
               },
               {
                 "id": "custom-controls-roles",
-                "weight": 0
-              },
-              {
-                "id": "visual-order-follows-dom",
-                "weight": 0
-              },
-              {
-                "id": "offscreen-content-hidden",
-                "weight": 0
-              },
-              {
-                "id": "use-landmarks",
                 "weight": 0
               },
               {
@@ -21634,7 +21634,7 @@
           },
           "accessibility": {
             "title": "Accessibility",
-            "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.",
+            "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developer.chrome.com/docs/lighthouse/accessibility/). Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so [manual testing](https://web.dev/how-to-review/) is also encouraged.",
             "manualDescription": "These items address areas which an automated testing tool cannot cover. Learn more in our guide on [conducting an accessibility review](https://web.dev/how-to-review/).",
             "supportedModes": [
               "navigation",
@@ -21927,10 +21927,6 @@
                 "group": "a11y-audio-video"
               },
               {
-                "id": "logical-tab-order",
-                "weight": 0
-              },
-              {
                 "id": "focusable-controls",
                 "weight": 0
               },
@@ -21939,11 +21935,27 @@
                 "weight": 0
               },
               {
-                "id": "managed-focus",
+                "id": "logical-tab-order",
+                "weight": 0
+              },
+              {
+                "id": "visual-order-follows-dom",
                 "weight": 0
               },
               {
                 "id": "focus-traps",
+                "weight": 0
+              },
+              {
+                "id": "managed-focus",
+                "weight": 0
+              },
+              {
+                "id": "use-landmarks",
+                "weight": 0
+              },
+              {
+                "id": "offscreen-content-hidden",
                 "weight": 0
               },
               {
@@ -21952,18 +21964,6 @@
               },
               {
                 "id": "custom-controls-roles",
-                "weight": 0
-              },
-              {
-                "id": "visual-order-follows-dom",
-                "weight": 0
-              },
-              {
-                "id": "offscreen-content-hidden",
-                "weight": 0
-              },
-              {
-                "id": "use-landmarks",
                 "weight": 0
               },
               {
