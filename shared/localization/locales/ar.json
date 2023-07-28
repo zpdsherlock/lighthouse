@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "القيم تقديرية وقابلة للتغيير. ويتم [حساب نتيجة الأداء](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) مباشرة من خلال هذه المقاييس."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "عرض سجلّ التتبّع الأصلي"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "عرض سجلّ التتبُّع"
   },

@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "这些都是估算值，且可能会因时而异。系统会直接基于这些指标来[计算性能得分](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)。"
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "查看原始跟踪记录"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "查看跟踪记录"
   },

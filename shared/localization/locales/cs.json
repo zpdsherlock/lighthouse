@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Hodnoty jsou odhady a mohou se lišit. [Skóre výkonu se počítá](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) přímo z těchto metrik."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Zobrazit původní trasovací protokol"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Zobrazit trasovací protokol"
   },

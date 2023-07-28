@@ -282,7 +282,7 @@ limitations under the License.
     }
     .lh-tools__button.lh-active + .lh-tools__dropdown {
       opacity: 1;
-      clip: rect(-1px, 194px, 242px, -3px);
+      clip: rect(-1px, 194px, 270px, -3px);
       visibility: visible;
     }
     .lh-tools__dropdown {
@@ -399,6 +399,8 @@ limitations under the License.
         <a role="menuitem" tabindex="-1" href="#" class="lh-report-icon lh-report-icon--download" data-i18n="dropdownSaveJSON" data-action="save-json"></a>
         <a role="menuitem" tabindex="-1" href="#" class="lh-report-icon lh-report-icon--open" data-i18n="dropdownViewer" data-action="open-viewer"></a>
         <a role="menuitem" tabindex="-1" href="#" class="lh-report-icon lh-report-icon--open" data-i18n="dropdownSaveGist" data-action="save-gist"></a>
+        <!-- Only enabled if Options.onViewTrace is set and we are on simulated throttling. -->
+        <a role="menuitem" tabindex="-1" href="#" class="lh-report-icon lh-report-icon--open lh-hidden" data-i18n="dropdownViewUnthrottledTrace" data-action="view-unthrottled-trace"></a>
         <a role="menuitem" tabindex="-1" href="#" class="lh-report-icon lh-report-icon--dark" data-i18n="dropdownDarkTheme" data-action="toggle-dark"></a>
       </div>
     </div>

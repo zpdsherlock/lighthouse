@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Vertės yra apytikslės ir gali skirtis. [Našumo įvertinimas apskaičiuojamas](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) tiesiogiai pagal šias metrikas."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Žr. pradinį pėdsaką"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Žr. pėdsaką"
   },

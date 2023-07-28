@@ -114,6 +114,9 @@ export class TopbarFeatures {
         toggleDarkTheme(this._dom);
         break;
       }
+      case 'view-unthrottled-trace': {
+        this._reportUIFeatures._opts.onViewTrace?.();
+      }
     }
 
     this._dropDownMenu.close();

@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Els valors són estimacions i poden variar. El [resultat del rendiment es calcula](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) directament a partir d'aquestes mètriques."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Mostra la traça original"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Mostra la traça"
   },

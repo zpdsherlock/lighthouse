@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "విలువలు కేవలం అంచనా మాత్రమే, ఇవి మారే అవకాశం ఉంది. నేరుగా ఈ కొలమానాల ఆధారంగా [పనితీరు స్కోరు లెక్కించబడుతుంది](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "అసలైన ట్రేస్‌ను చూపించు"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "ట్రేస్‌ను చూపించు"
   },

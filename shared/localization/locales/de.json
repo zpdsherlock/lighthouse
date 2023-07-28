@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Die Werte sind geschätzt und können variieren. Die [Leistungsbewertung](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) wird direkt aus diesen Messwerten berechnet."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Ursprünglichen Trace anzeigen"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Trace anzeigen"
   },

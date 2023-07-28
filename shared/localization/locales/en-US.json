@@ -3320,6 +3320,9 @@
   "report/renderer/report-utils.js | dropdownViewer": {
     "message": "Open in Viewer"
   },
+  "report/renderer/report-utils.js | dropdownViewUnthrottledTrace": {
+    "message": "View Unthrottled Trace"
+  },
   "report/renderer/report-utils.js | errorLabel": {
     "message": "Error!"
   },
@@ -3436,9 +3439,6 @@
   },
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Values are estimated and may vary. The [performance score is calculated](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) directly from these metrics."
-  },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "View Original Trace"
   },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "View Trace"

@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "此為預估值，可能與實際情況有所不同。系統會直接根據這些指標[計算效能分數](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)。"
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "查看原始追蹤記錄"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "查看追蹤記錄"
   },

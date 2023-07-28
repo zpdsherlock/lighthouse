@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Verdiene er anslått og kan variere. [Beregningen av ytelsespoengsummen](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) er basert direkte på disse verdiene."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Vis opprinnelig sporing"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Vis sporing"
   },

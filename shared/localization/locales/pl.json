@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Wartości są szacunkowe i mogą się zmieniać. [Wynik wydajności jest obliczony](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) bezpośrednio na podstawie tych danych."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Wyświetl oryginalne dane śledzenia"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Wyświetl ślad"
   },

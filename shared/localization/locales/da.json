@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Værdierne er estimater og kan variere. [Resultatet beregnes](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) direkte på baggrund af disse metrics."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Se oprindeligt spor"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Se spor"
   },

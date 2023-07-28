@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "ค่ามาจากการประมาณและอาจแตกต่างกันไป [คะแนนประสิทธิภาพคำนวณ](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)จากเมตริกเหล่านี้โดยตรง"
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "ดูการติดตามดั้งเดิม"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "ดูการติดตาม"
   },

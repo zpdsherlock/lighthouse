@@ -3320,6 +3320,9 @@
   "report/renderer/report-utils.js | dropdownViewer": {
     "message": "Ôṕêń îń V̂íêẃêŕ"
   },
+  "report/renderer/report-utils.js | dropdownViewUnthrottledTrace": {
+    "message": "V̂íêẃ Ûńt̂h́r̂ót̂t́l̂éd̂ T́r̂áĉé"
+  },
   "report/renderer/report-utils.js | errorLabel": {
     "message": "Êŕr̂ór̂!"
   },
@@ -3436,9 +3439,6 @@
   },
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "V̂ál̂úêś âŕê éŝt́îḿât́êd́ âńd̂ ḿâý v̂ár̂ý. T̂h́ê [ṕêŕf̂ór̂ḿâńĉé ŝćôŕê íŝ ćâĺĉúl̂át̂éd̂](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) d́îŕêćt̂ĺŷ f́r̂óm̂ t́ĥéŝé m̂ét̂ŕîćŝ."
-  },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "V̂íêẃ Ôŕîǵîńâĺ T̂ŕâćê"
   },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "V̂íêẃ T̂ŕâćê"

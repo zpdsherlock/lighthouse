@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Valorile sunt estimate și pot varia. [Scorul de performanță este calculat](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) direct folosind aceste valori."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Vezi urma inițială"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Vezi urma"
   },

@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "மதிப்புகள் தோராயமானவை, மாறுபடக்கூடியவை. இந்த அளவீடுகளிலிருந்து நேரடியாக [செயல்திறன் ஸ்கோர் கணக்கிடப்படும்](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "அசல் டிரேஸைக் காட்டு"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "டிரேஸைக் காட்டு"
   },

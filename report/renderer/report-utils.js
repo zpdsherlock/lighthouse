@@ -398,8 +398,6 @@ const UIStrings = {
   viewTreemapLabel: 'View Treemap',
   /** This label is for a button that will show the user a trace of the page. */
   viewTraceLabel: 'View Trace',
-  /** This label is for a button that will show the user a trace of the page. */
-  viewOriginalTraceLabel: 'View Original Trace',
 
   /** Option in a dropdown menu that opens a small, summary report in a print dialog.  */
   dropdownPrintSummary: 'Print Summary',
@@ -417,6 +415,8 @@ const UIStrings = {
   dropdownSaveGist: 'Save as Gist',
   /** Option in a dropdown menu that toggles the themeing of the report between Light(default) and Dark themes. */
   dropdownDarkTheme: 'Toggle Dark Theme',
+  /** Option in a dropdown menu that opens the trace of the page without throttling. "Unthrottled" can be replaced with "Original". */
+  dropdownViewUnthrottledTrace: 'View Unthrottled Trace',
 
   /** Label for a row in a table that describes the kind of device that was emulated for the Lighthouse run.  Example values for row elements: 'No Emulation', 'Emulated Desktop', etc. */
   runtimeSettingsDevice: 'Device',

@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Arvot ovat arvioita ja voivat vaihdella. [Tehokkuusprosentti lasketaan](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) suoraan näistä mittareista."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Näytä alkuperäinen jälki"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Näytä jälki"
   },

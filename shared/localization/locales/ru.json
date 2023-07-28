@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Значения приблизительные и могут изменяться. [Уровень производительности рассчитывается](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) непосредственно на основании этих показателей."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Посмотреть оригинальную трассировку"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Посмотреть трассировку"
   },

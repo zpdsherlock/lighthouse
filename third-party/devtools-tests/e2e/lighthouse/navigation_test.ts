@@ -128,13 +128,13 @@ describe('Navigation', async function() {
       'bf-cache',
     ]);
 
-    const viewTraceButton = await $textContent('View Original Trace', reportEl);
-    if (!viewTraceButton) {
-      throw new Error('Could not find view trace button');
-    }
+    const viewTraceButton = await $textContent('View Trace', reportEl);
+    assert.ok(!viewTraceButton);
 
     // Test view trace button behavior
-    await viewTraceButton.click();
+    // For some reason the CDP click command doesn't work here even if the tools menu is open.
+    await reportEl.$eval(
+        'a[data-action="view-unthrottled-trace"]:not(.hidden)', saveJsonEl => (saveJsonEl as HTMLElement).click());
     let selectedTab = await waitFor('.tabbed-pane-header-tab.selected[aria-label="Performance"]');
     let selectedTabText = await selectedTab.evaluate(selectedTabEl => {
       return selectedTabEl.textContent;
@@ -245,8 +245,8 @@ describe('Navigation', async function() {
     assert.notInclude(lhr.configSettings.emulatedUserAgent, 'Mobile');
     assert.notInclude(lhr.environment.networkUserAgent, 'Mobile');
 
-    const viewTraceButton = await $textContent('Ver rastro original', reportEl);
-    assert.ok(viewTraceButton);
+    const viewTreemapButton = await $textContent('Ver gráfico de rectángulos', reportEl);
+    assert.ok(viewTreemapButton);
 
     const footerIssueText = await reportEl.$eval('.lh-footer__version_issue', footerIssueEl => {
       return footerIssueEl.textContent;

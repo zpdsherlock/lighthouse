@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Стойностите са приблизителни и може да варират. [Рейтингът за ефективността се изчислява](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) директно от тези показатели."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Преглед на първоначалното трасиране"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Преглед на трасирането"
   },

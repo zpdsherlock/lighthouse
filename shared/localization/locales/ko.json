@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "값은 추정치이며 달라질 수 있습니다. 이러한 측정항목에서 [성능 점수가 직접 계산됩니다](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "출처 흔적 보기"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "흔적 보기"
   },

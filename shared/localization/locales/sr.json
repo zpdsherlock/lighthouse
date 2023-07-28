@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Вредности представљају процене и могу да варирају. [Оцена учинка са израчунава](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) директно на основу тих показатеља."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Прикажи оригинални траг"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Прикажи траг"
   },

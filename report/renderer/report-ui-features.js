@@ -114,12 +114,15 @@ export class ReportUIFeatures {
     }
 
     if (this._opts.onViewTrace) {
-      this.addButton({
-        text: lhr.configSettings.throttlingMethod === 'simulate' ?
-          Globals.strings.viewOriginalTraceLabel :
-          Globals.strings.viewTraceLabel,
-        onClick: () => this._opts.onViewTrace?.(),
-      });
+      if (lhr.configSettings.throttlingMethod === 'simulate') {
+        // eslint-disable-next-line max-len
+        this._dom.find('a[data-action="view-unthrottled-trace"]', this._dom.rootEl).classList.remove('lh-hidden');
+      } else {
+        this.addButton({
+          text: Globals.strings.viewTraceLabel,
+          onClick: () => this._opts.onViewTrace?.(),
+        });
+      }
     }
 
     if (this._opts.getStandaloneReportHTML) {

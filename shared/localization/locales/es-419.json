@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Los valores son estimados y pueden variar. La [medición del rendimiento se calcula](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) directamente a partir de estas métricas."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Ver registro original"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Ver registro"
   },

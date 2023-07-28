@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Значення приблизні й можуть відрізнятися. [Значення ефективності визначено](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) на основі цих показників."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Переглянути оригінальне трасування"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Переглянути трасування"
   },

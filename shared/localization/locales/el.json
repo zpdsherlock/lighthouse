@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Οι τιμές εκτιμώνται και μπορεί να ποικίλουν. Η [βαθμολογία απόδοσης υπολογίζεται](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) απευθείας από αυτές τις μετρήσεις."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Προβολή αρχικού ίχνους"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Προβολή ίχνους"
   },

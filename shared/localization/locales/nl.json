@@ -3260,9 +3260,6 @@
   "report/renderer/report-utils.js | varianceDisclaimer": {
     "message": "Waarden worden geschat en kunnen variëren. De [prestatiescore wordt rechtstreeks berekend](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) op basis van deze statistieken."
   },
-  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
-    "message": "Oorspronkelijke tracering bekijken"
-  },
   "report/renderer/report-utils.js | viewTraceLabel": {
     "message": "Tracering bekijken"
   },
