@@ -85,7 +85,7 @@ A PR adding or changing a gatherer almost always needs to include the following:
    yarn update:sample-artifacts ScriptElements
    ```
 
-   This command works for updating `yarn update:sample-artifacts devtoolsLogs` or `traces` as well, but the resulting `sample_v2.json` churn may be extensive and you might be better off editing manually.
+   This command works for updating `yarn update:sample-artifacts DevtoolsLog` or `Trace` as well, but the resulting `sample_v2.json` churn may be extensive and you might be better off editing manually.
 
 1. Run `yarn update:sample-json` to update the [sample Lighthouse result JSON](core/test/results/sample_v2.json) kept in the repo for testing. This will also pull any strings needed for localization into the correct files.
 
