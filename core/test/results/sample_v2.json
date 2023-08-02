@@ -6469,7 +6469,7 @@
       "auditRefs": [
         {
           "id": "is-on-https",
-          "weight": 1,
+          "weight": 5,
           "group": "best-practices-trust-safety"
         },
         {
@@ -6489,7 +6489,7 @@
         },
         {
           "id": "paste-preventing-inputs",
-          "weight": 1,
+          "weight": 3,
           "group": "best-practices-ux"
         },
         {
@@ -6529,7 +6529,7 @@
         },
         {
           "id": "deprecations",
-          "weight": 1,
+          "weight": 5,
           "group": "best-practices-general"
         },
         {
@@ -6549,7 +6549,7 @@
         }
       ],
       "id": "best-practices",
-      "score": 0.33
+      "score": 0.18
     },
     "seo": {
       "title": "SEO",

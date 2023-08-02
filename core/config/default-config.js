@@ -593,12 +593,12 @@ const defaultConfig = {
       supportedModes: ['navigation', 'timespan', 'snapshot'],
       auditRefs: [
         // Trust & Safety
-        {id: 'is-on-https', weight: 1, group: 'best-practices-trust-safety'},
+        {id: 'is-on-https', weight: 5, group: 'best-practices-trust-safety'},
         {id: 'geolocation-on-start', weight: 1, group: 'best-practices-trust-safety'},
         {id: 'notification-on-start', weight: 1, group: 'best-practices-trust-safety'},
         {id: 'csp-xss', weight: 0, group: 'best-practices-trust-safety'},
         // User Experience
-        {id: 'paste-preventing-inputs', weight: 1, group: 'best-practices-ux'},
+        {id: 'paste-preventing-inputs', weight: 3, group: 'best-practices-ux'},
         {id: 'image-aspect-ratio', weight: 1, group: 'best-practices-ux'},
         {id: 'image-size-responsive', weight: 1, group: 'best-practices-ux'},
         {id: 'preload-fonts', weight: 1, group: 'best-practices-ux'},
@@ -608,7 +608,7 @@ const defaultConfig = {
         // General Group
         {id: 'no-unload-listeners', weight: 1, group: 'best-practices-general'},
         {id: 'js-libraries', weight: 0, group: 'best-practices-general'},
-        {id: 'deprecations', weight: 1, group: 'best-practices-general'},
+        {id: 'deprecations', weight: 5, group: 'best-practices-general'},
         {id: 'errors-in-console', weight: 1, group: 'best-practices-general'},
         {id: 'valid-source-maps', weight: 0, group: 'best-practices-general'},
         {id: 'inspector-issues', weight: 1, group: 'best-practices-general'},

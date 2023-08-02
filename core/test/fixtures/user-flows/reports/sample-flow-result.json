@@ -4372,7 +4372,7 @@
             "auditRefs": [
               {
                 "id": "is-on-https",
-                "weight": 1,
+                "weight": 5,
                 "group": "best-practices-trust-safety"
               },
               {
@@ -4392,7 +4392,7 @@
               },
               {
                 "id": "paste-preventing-inputs",
-                "weight": 1,
+                "weight": 3,
                 "group": "best-practices-ux"
               },
               {
@@ -4432,7 +4432,7 @@
               },
               {
                 "id": "deprecations",
-                "weight": 1,
+                "weight": 5,
                 "group": "best-practices-general"
               },
               {
@@ -10848,7 +10848,7 @@
             "auditRefs": [
               {
                 "id": "is-on-https",
-                "weight": 1,
+                "weight": 5,
                 "group": "best-practices-trust-safety"
               },
               {
@@ -10873,7 +10873,7 @@
               },
               {
                 "id": "deprecations",
-                "weight": 1,
+                "weight": 5,
                 "group": "best-practices-general"
               },
               {
@@ -10893,7 +10893,7 @@
               }
             ],
             "id": "best-practices",
-            "score": 0.86
+            "score": 0.93
           }
         },
         "categoryGroups": {
@@ -15221,7 +15221,7 @@
             "auditRefs": [
               {
                 "id": "paste-preventing-inputs",
-                "weight": 1,
+                "weight": 3,
                 "group": "best-practices-ux"
               },
               {
@@ -15246,7 +15246,7 @@
               }
             ],
             "id": "best-practices",
-            "score": 0.75
+            "score": 0.83
           },
           "seo": {
             "title": "SEO",
@@ -22000,7 +22000,7 @@
             "auditRefs": [
               {
                 "id": "is-on-https",
-                "weight": 1,
+                "weight": 5,
                 "group": "best-practices-trust-safety"
               },
               {
@@ -22020,7 +22020,7 @@
               },
               {
                 "id": "paste-preventing-inputs",
-                "weight": 1,
+                "weight": 3,
                 "group": "best-practices-ux"
               },
               {
@@ -22060,7 +22060,7 @@
               },
               {
                 "id": "deprecations",
-                "weight": 1,
+                "weight": 5,
                 "group": "best-practices-general"
               },
               {
