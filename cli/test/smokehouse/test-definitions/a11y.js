@@ -940,7 +940,7 @@ const expectations = {
                 'selector': 'body > section > span#target-size-2',
                 'snippet': '<span role="button" tabindex="0" id="target-size-2">',
                 // Exact target size can vary depending on the device.
-                'explanation': /^Fix any of the following:\n {2}Target has insufficient size \([0-9]+px by [0-9]+px, should be at least 24px by 24px\)\n {2}Target has insufficient offset from its closest neighbor \([0-9]+px should be at least 24px\)$/,
+                'explanation': /^Fix any of the following:\n {2}Target has insufficient size \([0-9.]+px by [0-9.]+px, should be at least 24px by 24px\)\n {2}Target has insufficient offset from its closest neighbor \([0-9.]+px should be at least 24px\)$/,
                 'nodeLabel': 'o',
               },
             },
