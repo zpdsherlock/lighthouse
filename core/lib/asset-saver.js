@@ -62,6 +62,9 @@ function loadArtifacts(basePath) {
     if (passName === 'defaultPass') {
       artifacts.DevtoolsLog = devtoolsLog;
     }
+    if (passName === 'pageLoadError-defaultPass') {
+      artifacts.DevtoolsLogError = devtoolsLog;
+    }
   });
 
   // load traces
@@ -73,6 +76,9 @@ function loadArtifacts(basePath) {
     artifacts.traces[passName] = Array.isArray(trace) ? {traceEvents: trace} : trace;
     if (passName === 'defaultPass') {
       artifacts.Trace = artifacts.traces[passName];
+    }
+    if (passName === 'pageLoadError-defaultPass') {
+      artifacts.TraceError = artifacts.traces[passName];
     }
   });
 

@@ -108,6 +108,8 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   CSSUsage: {rules: Crdp.CSS.RuleUsage[], stylesheets: Artifacts.CSSStyleSheetInfo[]};
   /** The primary log of devtools protocol activity. */
   DevtoolsLog: DevtoolsLog;
+  /** The log of devtools protocol activity if there was a page load error and Chrome navigated to a `chrome-error://` page. */
+  DevtoolsLogError: DevtoolsLog;
   /** Information on the document's doctype(or null if not present), specifically the name, publicId, and systemId.
       All properties default to an empty string if not present */
   Doctype: Artifacts.Doctype | null;
@@ -152,6 +154,8 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   TapTargets: Artifacts.TapTarget[];
   /** The primary trace taken over the entire run. */
   Trace: Trace;
+  /** The trace if there was a page load error and Chrome navigated to a `chrome-error://` page. */
+  TraceError: Trace;
   /** Elements associated with metrics (ie: Largest Contentful Paint element). */
   TraceElements: Artifacts.TraceElement[];
   /** Parsed version of the page's Web App Manifest, or null if none found. */

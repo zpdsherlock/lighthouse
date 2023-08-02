@@ -43,12 +43,8 @@ const expectations = {
     },
   },
   artifacts: {
-    devtoolsLogs: {
-      defaultPass: NONEMPTY_ARRAY,
-    },
-    traces: {
-      defaultPass: {traceEvents: NONEMPTY_ARRAY},
-    },
+    DevtoolsLog: NONEMPTY_ARRAY,
+    Trace: {traceEvents: NONEMPTY_ARRAY},
   },
 };
 

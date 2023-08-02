@@ -129,7 +129,7 @@ const defaultSettings = {
 
 /** @type {Required<LH.Config.NavigationJson>} */
 const defaultNavigationConfig = {
-  id: 'default',
+  id: 'defaultPass',
   loadFailureMode: 'fatal',
   disableThrottling: false,
   disableStorageReset: false,

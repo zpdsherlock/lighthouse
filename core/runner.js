@@ -367,6 +367,8 @@ class Runner {
 
     let auditResult;
     try {
+      if (artifacts.PageLoadError) throw artifacts.PageLoadError;
+
       // Return an early error if an artifact required for the audit is missing or an error.
       for (const artifactName of audit.meta.requiredArtifacts) {
         const noArtifact = artifacts[artifactName] === undefined;

@@ -37,18 +37,14 @@ const expectations = {
     audits: {
       'first-contentful-paint': {
         scoreDisplayMode: 'error',
-        errorMessage: 'Required traces gatherer did not run.',
+        errorMessage: 'Lighthouse was unable to reliably load the URL you requested because the page stopped responding.',
       },
     },
   },
   artifacts: {
     PageLoadError: {code: 'PAGE_HUNG'},
-    devtoolsLogs: {
-      'pageLoadError-default': {...NONEMPTY_ARRAY},
-    },
-    traces: {
-      'pageLoadError-default': {traceEvents: NONEMPTY_ARRAY},
-    },
+    DevtoolsLogError: NONEMPTY_ARRAY,
+    TraceError: {traceEvents: NONEMPTY_ARRAY},
   },
 };
 

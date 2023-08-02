@@ -253,9 +253,10 @@ describe('Config', () => {
 
       expect(resolvedConfig).toMatchObject({
         artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}],
-        navigations: [
-          {id: 'default', artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}]},
-        ],
+        navigations: [{
+          id: 'defaultPass',
+          artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}],
+        }],
       });
     });
 
@@ -269,7 +270,7 @@ describe('Config', () => {
       expect(resolvedConfig).toMatchObject({
         navigations: [
           {
-            id: 'default',
+            id: 'defaultPass',
             blankPage: 'about:blank',
             artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}],
             loadFailureMode: 'fatal',
@@ -366,7 +367,7 @@ describe('Config', () => {
           {id: 'Accessibility'},
         ],
         navigations: [
-          {id: 'default', artifacts: [{id: 'Accessibility'}]},
+          {id: 'defaultPass', artifacts: [{id: 'Accessibility'}]},
         ],
       });
     });

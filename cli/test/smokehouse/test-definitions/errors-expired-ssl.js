@@ -40,18 +40,14 @@ const expectations = {
     audits: {
       'first-contentful-paint': {
         scoreDisplayMode: 'error',
-        errorMessage: 'Required traces gatherer did not run.',
+        errorMessage: 'The URL you have provided does not have a valid security certificate. net::ERR_CERT_DATE_INVALID',
       },
     },
   },
   artifacts: {
     PageLoadError: {code: 'INSECURE_DOCUMENT_REQUEST'},
-    devtoolsLogs: {
-      'pageLoadError-default': {...NONEMPTY_ARRAY},
-    },
-    traces: {
-      'pageLoadError-default': {traceEvents: NONEMPTY_ARRAY},
-    },
+    DevtoolsLogError: NONEMPTY_ARRAY,
+    TraceError: {traceEvents: NONEMPTY_ARRAY},
   },
 };
 
