@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Unngå flere viderekoblinger av siden"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "For å angi begrensninger for antall sideressurser og størrelsen på disse, legg til en budget.json-fil. [Finn ut mer om ytelsesbegrensninger](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 forespørsel • {byteCount, number, bytes} KiB}other{# forespørsler • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Minimer antall forespørsler og størrelsen på overføringer"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Kanoniske linker foreslår hvilken nettadresse som skal vises i søkeresultater. [Finn ut mer om kanoniske linker](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Iwasan ang mga pag-redirect sa maraming page"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Para magtakda ng mga badyet para sa dami at laki ng mga resource ng page, magdagdag ng budget.json na file. [Matuto pa tungkol sa mga badyet sa performance](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 kahilingan • {byteCount, number, bytes} KiB}one{# kahilingan • {byteCount, number, bytes} KiB}other{# na kahilingan • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Panatilihing mababa ang mga bilang ng kahilingan at maliit ang mga paglipat"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Iminumungkahi ng mga canonical na link kung aling URL ang ipapakita sa mga resulta ng paghahanap. [Matuto pa tungkol sa mga canonical na link](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

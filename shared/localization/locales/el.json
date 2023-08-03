@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Αποφυγή ανακατευθύνσεων πολλών σελίδων"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Για τον ορισμό προϋπολογισμών για την ποσότητα και το μέγεθος των πόρων σελίδας, προσθέστε ένα αρχείο budget.json. [Μάθετε περισσότερα σχετικά με τους προϋπολογισμούς απόδοσης](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 αίτημα • {byteCount, number, bytes} KiB}other{# αιτήματα • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Φροντίστε να διατηρείτε το πλήθος των αιτημάτων χαμηλό και το μέγεθος των μεταφορών μικρό"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Οι κανονικοί σύνδεσμοι προτείνουν το URL που πρέπει να εμφανιστεί στα αποτελέσματα αναζήτησης. [Μάθετε περισσότερα σχετικά με τους κανονικούς συνδέσμους](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

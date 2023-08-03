@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Evita que haya varias redirecciones de página"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Para definir la cantidad y el tamaño de los recursos de la página, añade un archivo budget.json. [Más información sobre los límites de rendimiento](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 solicitud • {byteCount, number, bytes} KiB}other{# solicitudes • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Reduce el número de solicitudes y el tamaño de las transferencias"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Los enlaces canónicos sugieren qué URL se debe mostrar en los resultados de búsqueda. [Más información sobre los enlaces canónicos](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

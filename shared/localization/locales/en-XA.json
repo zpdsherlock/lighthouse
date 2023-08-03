@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "[Åvöîð mûļţîþļé þåĝé ŕéðîŕéçţš one two three four five six seven]"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "[Ţö šéţ бûðĝéţš ƒöŕ ţĥé qûåñţîţý åñð šîžé öƒ þåĝé ŕéšöûŕçéš, åðð å бûðĝéţ.ĵšöñ ƒîļé. ᐅ[ᐊĻéåŕñ möŕé åбöûţ þéŕƒöŕmåñçé бûðĝéţšᐅ](https://web.dev/use-lighthouse-for-performance-budgets/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty]"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{[1 ŕéqûéšţ • ᐅ{byteCount, number, bytes}ᐊ ĶîБ one two three four]}other{[# ŕéqûéšţš • ᐅ{byteCount, number, bytes}ᐊ ĶîБ one two three four five]}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "[Ķééþ ŕéqûéšţ çöûñţš ļöŵ åñð ţŕåñšƒéŕ šîžéš šmåļļ one two three four five six seven eight nine ten]"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "[Çåñöñîçåļ ļîñķš šûĝĝéšţ ŵĥîçĥ ÛŔĻ ţö šĥöŵ îñ šéåŕçĥ ŕéšûļţš. ᐅ[ᐊĻéåŕñ möŕé åбöûţ çåñöñîçåļ ļîñķšᐅ](https://developer.chrome.com/docs/lighthouse/seo/canonical/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen]"
   },

@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Tránh chuyển hướng trang nhiều lần"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Để thiết lập ngân sách cho số lượng và quy mô của tài nguyên trang, hãy thêm tệp budget.json. [Tìm hiểu thêm về ngân sách hiệu suất](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 yêu cầu • {byteCount, number, bytes} KiB}other{# yêu cầu • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Giảm số lượng yêu cầu và chuyển những tài nguyên có kích thước nhỏ"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Đường liên kết chính tắc đề xuất URL nào nên hiển thị trong kết quả tìm kiếm. [Tìm hiểu thêm về đường liên kết chính tắc](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

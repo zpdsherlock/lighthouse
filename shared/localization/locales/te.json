@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "అనేక పేజీ మళ్లింపులను నివారించండి"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "పేజీ రిసోర్స్‌ల పరిమాణానికి, ఇంకా సైజుకు బడ్జెట్‌లను సెట్ చేయడానికి, budget.json ఫైల్‌ను జోడించండి. [పనితీరుకు సంబంధించిన బడ్జెట్‌ల గురించి మరింత తెలుసుకోండి](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 రిక్వెస్ట్ • {byteCount, number, bytes} KiB}other{# రిక్వెస్ట్‌లు • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "రిక్వెస్ట్‌ల సంఖ్యను తగ్గించుకోండి, బదిలీ పరిమాణాలు తక్కువగా ఉండేలా చూసుకోండి"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "సెర్చ్ ఫలితాలలో ఏ URLను చూపాలో కనోనికల్ లింక్‌లు సూచిస్తాయి. [కనోనికల్ లింక్‌ల గురించి మరింత తెలుసుకోండి](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

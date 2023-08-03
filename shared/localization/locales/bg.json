@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Не използвайте пренасочвания през няколко страници"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "За да определите лимити за количеството и размера на ресурсите на страницата, добавете файл budget.json. [Научете повече за лимитите за показатели с въздействие върху ефективността](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 заявка • {byteCount, number, bytes} KiB}other{# заявки • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Поддържайте малък брой заявки и неголям обем на прехвърляните данни"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Каноничните връзки указват кой URL адрес да се показва в резултатите от търсенето. [Научете повече за каноничните връзки](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

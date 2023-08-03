@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Evita les redireccions múltiples a pàgines"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Per definir els pressupostos de la quantitat i la mida dels recursos de la pàgina, afegeix un fitxer budget.json. [Obtén més informació sobre els pressupostos de rendiment](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 sol·licitud • {byteCount, number, bytes} KiB}other{# sol·licituds • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Mantén els recomptes de les sol·licituds baixos i les mides de les transferències petites"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Els enllaços canònics suggereixen quins URL s'han de mostrar als resultats de la cerca. [Obtén més informació sobre els enllaços canònics](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

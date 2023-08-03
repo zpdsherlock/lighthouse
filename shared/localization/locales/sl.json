@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Izogibajte se preusmeritvam na več strani"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Če želite nastaviti proračune za količino in velikost sredstev strani, dodajte datoteko budget.json. [Preberite več o proračunih za uspešnost](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 zahteva • {byteCount, number, bytes} KiB}one{# zahteva • {byteCount, number, bytes} KiB}two{# zahtevi • {byteCount, number, bytes} KiB}few{# zahteve • {byteCount, number, bytes} KiB}other{# zahtev • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Število zahtev naj bo majhno in prenosi naj ne bodo preveliki"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Kanonične povezave predlagajo, kateri URL naj bo prikazan v rezultatih iskanja. [Preberite več o kanoničnih povezavah](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

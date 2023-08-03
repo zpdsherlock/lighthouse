@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "หลีกเลี่ยงการเปลี่ยนเส้นทางหลายหน้า"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "หากต้องการตั้งงบประมาณสำหรับจำนวนและขนาดของทรัพยากรหน้า ให้เพิ่มไฟล์ budget.json [ดูข้อมูลเพิ่มเติมเกี่ยวกับงบประมาณด้านประสิทธิภาพ](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 คำขอ • {byteCount, number, bytes} KiB}other{# คำขอ • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "ควบคุมให้จำนวนคำขอมีไม่มากและการโอนมีขนาดเล็ก"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "ลิงก์ Canonical จะบอกถึง URL ที่จะแสดงในผลการค้นหา [ดูข้อมูลเพิ่มเติมเกี่ยวกับลิงก์ Canonical](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

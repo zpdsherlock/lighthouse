@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Nepieļaujiet vairākas lapas novirzīšanas"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Lai iestatītu lapas resursu daudzuma un lieluma budžetus, pievienojiet failu “budget.json”. [Uzziniet vairāk par izpildes budžetiem](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{Viens pieprasījums • {byteCount, number, bytes} KiB}zero{# pieprasījumu • {byteCount, number, bytes} KiB}one{# pieprasījums • {byteCount, number, bytes} KiB}other{# pieprasījumi • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Uzturiet nelielu pieprasījumu skaitu un mazu pārsūtīšanas failu lielumu"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Kanoniskās saites iesaka, kurus URL rādīt meklēšanas rezultātos. [Uzziniet vairāk par kanoniskajām saitēm](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

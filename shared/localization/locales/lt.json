@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Venkite kelių puslapio peradresavimų"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Kad nustatytumėte puslapio išteklių kiekio ir dydžio biudžetus, pridėkite biudžeto .json failą. [Sužinokite daugiau apie našumo biudžetus](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{Viena užklausa • {byteCount, number, bytes} KiB}one{# užklausa • {byteCount, number, bytes} KiB}few{# užklausos • {byteCount, number, bytes} KiB}many{# užklausos • {byteCount, number, bytes} KiB}other{# užklausų • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Pasistenkite neteikti daug užklausų ir neperkelti daug duomenų"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Standartizuotos nuorodos siūlo, kurį URL rodyti paieškos rezultatuose. [Sužinokite daugiau apie standartizuotas nuorodas](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

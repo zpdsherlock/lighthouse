@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Vältä useita uudelleenohjauksia"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Jos haluat asettaa sivuresurssien määrälle ja koolle budjetin, lisää budget.json-tiedosto. [Lue lisää tehokkuusbudjeteista](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 pyyntö • {byteCount, number, bytes} KiB}other{# pyyntöä • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Pidä pyyntöjen määrät alhaisina ja siirtojen koot pieninä"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Ensisijaiset linkit ehdottavat, mitä URL-osoitteita näyttää hakutuloksissa. [Lue lisää ensisijaisista linkeistä](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

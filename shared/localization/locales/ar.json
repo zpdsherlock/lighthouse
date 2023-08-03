@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "تجنُب عمليات إعادة توجيه الصفحات المتعددة"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "لتحديد ميزانيات لكمية موارد الصفحة وحجمها، يمكنك إضافة ملف budget.json. [مزيد من المعلومات حول الميزانيات القائمة على الأداء](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{طلب واحد • {byteCount, number, bytes} كيبيبايت}zero{# طلب • {byteCount, number, bytes} كيبيبايت}two{طلبان • {byteCount, number, bytes} كيبيبايت}few{# طلبات • {byteCount, number, bytes} كيبيبايت}many{# طلبًا • {byteCount, number, bytes} كيبيبايت}other{# طلب • {byteCount, number, bytes} كيبيبايت}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "الحفاظ على انخفاض عدد الطلبات ونقل الأحجام الصغيرة"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "تقترح الروابط الأساسية عنوان URL للعرض في نتائج البحث. [مزيد من المعلومات حول الروابط الأساسية](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

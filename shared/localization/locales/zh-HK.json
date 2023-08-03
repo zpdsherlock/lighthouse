@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "避免多次頁面重新導向"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "如要設定網頁資源的數量和大小的預算，請新增 budget.json 檔案。[進一步瞭解效能預算](https://web.dev/use-lighthouse-for-performance-budgets/)。"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 個要求 • {byteCount, number, bytes} KiB}other{# 個要求 • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "降低要求數量並減少傳輸大小"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "標準連結會建議要在搜尋結果中顯示哪個網址。[進一步瞭解標準連結](https://developer.chrome.com/docs/lighthouse/seo/canonical/)。"
   },

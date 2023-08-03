@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Избегайте большого количества переадресаций"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Чтобы установить бюджет для количества и размера ресурсов на странице, добавьте файл budget.json. Подробнее [о бюджетах производительности](https://web.dev/use-lighthouse-for-performance-budgets/)…"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 запрос • {byteCount, number, bytes} КиБ}one{# запрос • {byteCount, number, bytes} КиБ}few{# запроса • {byteCount, number, bytes} КиБ}many{# запросов • {byteCount, number, bytes} КиБ}other{# запроса • {byteCount, number, bytes} КиБ}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Постарайтесь уменьшить количество запросов и размеры передаваемых данных"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Канонические ссылки помогают определить, какой URL будет показан в результатах поиска. Подробнее [о канонических ссылках](https://developer.chrome.com/docs/lighthouse/seo/canonical/)…"
   },

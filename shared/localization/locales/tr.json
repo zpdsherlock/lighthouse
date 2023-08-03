@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Birden çok sayfa yönlendirmesini önleyin"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Sayfa kaynaklarının miktarı ve büyüklüğü için bütçeler belirlemek üzere bir budget.json dosyası ekleyin. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 istek • {byteCount, number, bytes} KiB}other{# istek • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "İstek sayısını az ve aktarma boyutlarını küçük tutun"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Standart bağlantılar, arama sonuçlarında hangi URL'nin gösterileceğini belirtir. [Standart bağlantılar hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

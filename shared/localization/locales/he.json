@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "יש להימנע מהפניות אוטומטיות מרובות"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "כדי להגדיר תקציבים עבור הכמות והגודל של משאבי הדף, יש להוסיף קובץ budget.json. [מידע נוסף על תקציבי ביצועים](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{בקשה אחת • ‎{byteCount, number, bytes} KiB}one{# בקשות • ‎{byteCount, number, bytes} KiB}two{# בקשות • ‎{byteCount, number, bytes} KiB}other{# בקשות • ‎{byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "יש לצמצם ככל האפשר את מספר הבקשות ואת גודל ההעברות"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "קישורים קנוניים מציעים את כתובת ה-URL שיש להציג בתוצאות החיפוש. [מידע נוסף על קישורים קנוניים](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

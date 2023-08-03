@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Undgå mange sideomdirigeringer"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Tilføj en budget.json-fil for at angive budgetter for antallet af og størrelsen på sideressourcer. [Få flere oplysninger om budgetter for ydeevne](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 anmodning • {byteCount, number, bytes} KiB}one{# anmodning • {byteCount, number, bytes} KiB}other{# anmodninger • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Sørg for, at antallet af anmodninger er lavt, og at overførslerne ikke er for store"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Kanoniske links foreslår, hvilken webadresse der skal vises i søgeresultater. [Få flere oplysninger om kanoniske links](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

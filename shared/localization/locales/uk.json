@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Уникайте переспрямувань кількох сторінок"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Щоб установити бюджет відповідно до кількості та розміру ресурсів на сторінці, додайте файл budget.json. [Докладніше про бюджети продуктивності.](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 запит • {byteCount, number, bytes} КіБ}one{# запит • {byteCount, number, bytes} КіБ}few{# запити • {byteCount, number, bytes} КіБ}many{# запитів • {byteCount, number, bytes} КіБ}other{# запиту • {byteCount, number, bytes} КіБ}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Не надсилайте багато запитів і передавайте вміст малого розміру"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Канонічні посилання вказують, які URL-адреси відображати в результатах пошуку. [Докладніше про канонічні посилання.](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

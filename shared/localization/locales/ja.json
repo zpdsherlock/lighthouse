@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "複数のページ リダイレクトの回避"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "ページリソースの数とサイズの予算を設定するには、budget.json ファイルを追加します。[パフォーマンス バジェットの詳細](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 件のリクエスト • {byteCount, number, bytes} KiB}other{# 件のリクエスト • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "リクエスト数を少なく、転送サイズを小さく維持してください"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "正規リンクで、検索結果に表示する URL を指定します。[正規リンクの詳細](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

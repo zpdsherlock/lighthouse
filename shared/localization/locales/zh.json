@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "避免多次网页重定向"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "若要根据页面资源的数量和大小设置预算，请添加 budget.json 文件。[详细了解性能预算](https://web.dev/use-lighthouse-for-performance-budgets/)。"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 项请求 • {byteCount, number, bytes} KiB}other{# 项请求 • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "请保持较低的请求数量和较小的传输大小"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "规范链接用于建议应在搜索结果中显示哪个网址。[详细了解规范链接](https://developer.chrome.com/docs/lighthouse/seo/canonical/)。"
   },

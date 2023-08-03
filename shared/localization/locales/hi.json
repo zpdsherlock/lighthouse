@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "एक से ज़्यादा पेज रीडायरेक्ट करने से बचें"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "पेज रिसॉर्स की संख्या और साइज़ का बजट सेट करने के लिए, budget.json फ़ाइल जोड़ें. [परफ़ॉर्मेंस बजट के बारे में ज़्यादा जानें](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 अनुरोध • {byteCount, number, bytes} किबीबाइट}one{# अनुरोध • {byteCount, number, bytes} किबीबाइट}other{# अनुरोध • {byteCount, number, bytes} किबीबाइट}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "अनुरोधों की संख्या कम और ट्रांसफ़र का आकार छोटा रखें"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "कैननिकल लिंक, इस बारे में जानकारी देते हैं कि खोज के नतीजों में कौनसे यूआरएल दिखाए जाएं. [कैननिकल लिंक के बारे में ज़्यादा जानें](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

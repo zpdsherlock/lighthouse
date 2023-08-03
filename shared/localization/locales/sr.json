@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Избегавајте вишеструка преусмеравања странице"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Да бисте подесили циљеве за количину и величину ресурса странице, додајте датотеку budget.json file. [Сазнајте више о ограничењима учинка](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 захтев • {byteCount, number, bytes} KiB}one{# захтев • {byteCount, number, bytes} KiB}few{# захтева • {byteCount, number, bytes} KiB}other{# захтева • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Омогући да број захтева и величине преноса буду мали"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Канонички линкови предлажу који URL треба да се прикаже у резултатима претраге. [Сазнајте више о каноничким линковима](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

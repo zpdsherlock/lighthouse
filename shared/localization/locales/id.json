@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Hindari pengalihan lebih dari satu halaman"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Untuk mengatur anggaran jumlah dan ukuran resource halaman, tambahkan file budget.json. [Pelajari lebih lanjut anggaran performa](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 permintaan • {byteCount, number, bytes} KiB}other{# permintaan • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Pertahankan jumlah permintaan tetap rendah dan ukuran transfer tetap kecil"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Link kanonis menyarankan URL yang akan ditampilkan dalam hasil penelusuran. [Pelajari lebih lanjut link kanonis](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

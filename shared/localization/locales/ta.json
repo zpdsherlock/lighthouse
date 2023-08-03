@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "பல பக்கங்களுக்குத் திசைதிருப்புவதைத் தவிர்க்கவும்"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "பக்க ஆதாரங்களின் அளவிற்கும் எண்ணிக்கைக்கும் பட்ஜெட்களை அமைக்க budget.json ஃபைலைச் சேர்க்கவும். [செயல்திறன் பட்ஜெட்கள் குறித்து மேலும் அறிக](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 கோரிக்கை • {byteCount, number, bytes} KiB}other{# கோரிக்கைகள் • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "கோரிக்கை எண்ணிக்கைகளைக் குறைவாகவும் பரிமாற்ற அளவுகளை சிறியதாகவும் வைத்திருங்கள்"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "தேடல் முடிவுகளில் எந்த URLலைக் காட்ட வேண்டும் என்பதை 'முன்னுரிமை இணைப்புகள்' பரிந்துரைக்கும். [முன்னுரிமை இணைப்புகள் குறித்து மேலும் அறிக](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

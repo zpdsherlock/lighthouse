@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Vermijd meerdere pagina-omleidingen"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Voeg een budget.json-bestand toe om budgetten in te stellen voor de hoeveelheid en grootte van paginabronnen. [Meer informatie over prestatiebudgetten](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 verzoek • {byteCount, number, bytes} KiB}other{# verzoeken • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Houd het aantal verzoeken laag en de overdrachtsgrootte klein"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Canonieke links geven een suggestie voor welke URL moet worden getoond in de zoekresultaten. [Meer informatie over canonieke links](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

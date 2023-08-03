@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Evită mai multe redirecționări ale paginii"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Ca să setezi limitele pentru cantitatea și dimensiunea resurselor de pagină, adaugă un fișier budget.json. [Află mai multe despre limitele de funcționare](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{O solicitare • {byteCount, number, bytes} KiB}few{# solicitări • {byteCount, number, bytes} KiB}other{# de solicitări • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Păstrează numărul de solicitări scăzut și dimensiunea transferurilor redusă"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Linkurile canonice sugerează care adresă URL să se afișeze în rezultatele căutării. [Află mai multe despre linkurile canonice](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

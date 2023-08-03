@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Undvik upprepade omdirigeringar"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Lägg till en budget.json-fil för att ange budgetar för kvantitet och storlek på sidresurser. [Läs mer om prestandabudgetar](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 begäran • {byteCount, number, bytes} Kibit}other{# förfrågningar • {byteCount, number, bytes} Kibit}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Begränsa antalet begäranden och storleken på överföringar"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Kanoniska länkar föreslår vilka webbadresser som ska visas i sökresultat. [Läs mer om kanoniska länkar](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },

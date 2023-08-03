@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "여러 차례의 페이지 리디렉션 피하기"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "페이지 리소스의 수량과 크기와 관련해 예산을 설정하려면 budget.json 파일을 추가하세요. [성능 예산에 관해 자세히 알아보기](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{요청 1개 • {byteCount, number, bytes}KiB}other{요청 #개 • {byteCount, number, bytes}KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "요청 수는 낮게, 전송 크기는 작게 유지하기"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "표준 링크는 검색결과에 어떤 URL을 표시할지 알려줍니다. [표준 링크에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

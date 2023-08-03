@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Nepoužívejte několik přesměrování stránky"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Pokud chcete nastavit rozpočet pro množství a velikost zdrojů na stránce, přidejte soubor budget.json. [Další informace o rozpočtech výkonu](https://web.dev/use-lighthouse-for-performance-budgets/)"
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 požadavek • {byteCount, number, bytes} KiB}few{# požadavky • {byteCount, number, bytes} KiB}many{# požadavku • {byteCount, number, bytes} KiB}other{# požadavků • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "Používejte málo požadavků a malé velikosti přenosů"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "Odkazy na kanonické verze slouží jako návrhy, které adresy URL se mají zobrazovat ve výsledcích vyhledávání. [Další informace o kanonických odkazech](https://developer.chrome.com/docs/lighthouse/seo/canonical/)"
   },

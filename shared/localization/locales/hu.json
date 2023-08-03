@@ -1208,15 +1208,6 @@
   "core/audits/redirects.js | title": {
     "message": "Kerülje a többszörös oldalátirányítást"
   },
-  "core/audits/resource-summary.js | description": {
-    "message": "Az oldal forrásainak mennyiségére és méretére vonatkozó határértékeket egy budget.json fájl hozzáadásával határozhatja meg. [További információ a teljesítmény-határértékekről](https://web.dev/use-lighthouse-for-performance-budgets/)."
-  },
-  "core/audits/resource-summary.js | displayValue": {
-    "message": "{requestCount,plural, =1{1 kérelem • {byteCount, number, bytes} KiB}other{# kérelem • {byteCount, number, bytes} KiB}}"
-  },
-  "core/audits/resource-summary.js | title": {
-    "message": "A kérések száma legyen kevés, az átvitelek pedig kis méretűek"
-  },
   "core/audits/seo/canonical.js | description": {
     "message": "A szabványos linkek a keresési eredményként megjelenítendő URL-re tesznek javaslatot. [További információ a szabványos linkekről](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },
