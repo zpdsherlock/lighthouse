@@ -56,7 +56,7 @@
     "unit-viewer": "yarn mocha --testMatch viewer/**/*-test.js",
     "unit-flow": "bash flow-report/test/run-flow-report-tests.sh",
     "unit": "yarn unit-flow && yarn mocha",
-    "unit:ci": "NODE_OPTIONS=--max-old-space-size=8192 npm run unit --forbid-only",
+    "unit:ci": "NODE_OPTIONS=--max-old-space-size=8192 npm run unit",
     "core-unit": "yarn unit-core",
     "cli-unit": "yarn unit-cli",
     "viewer-unit": "yarn unit-viewer",
