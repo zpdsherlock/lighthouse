@@ -6,17 +6,15 @@ This doc is only relevant to core members.
 
 ### Cadence
 
-We aim to release every 3 weeks. Our schedule is set as follows: Two days before the [expected Chromium branch point](https://www.chromium.org/developers/calendar) (which is every six weeks) and again exactly 3 weeks after that day. These are Tuesdays.
+We aim to release every 4 week, one day after the [expected Chromium branch point](https://www.chromium.org/developers/calendar). These are Wednesdays.
+
+Major version bumps will be the first release of April and October. The due date and progress of major milestones are tracked in https://github.com/GoogleChrome/lighthouse/milestones.
 
 For example, following this schedule, we will attempt a release on these dates:
 
-* _Sep 29 2020_ (M87)
-* Oct 20 2020
-* _Nov 10 2020_ (M88)
-* Dec 1 2020
+* _Sep 6 2023_ (Ships in M119, after M118 branch point)
+* _Oct 4 2023_ (Ships in M120, after M119 branch point)
 * ...
-
-Italicized dates are two days before the expected Chromium branch point.
 
 The planned ship dates are added to the internal Lighthouse calendar.
 
