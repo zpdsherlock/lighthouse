@@ -31,6 +31,7 @@ class Redirects extends Audit {
       description: str_(UIStrings.description),
       scoreDisplayMode: Audit.SCORING_MODES.NUMERIC,
       supportedModes: ['navigation'],
+      guidanceLevel: 2,
       requiredArtifacts: ['URL', 'GatherContext', 'devtoolsLogs', 'traces'],
     };
   }
