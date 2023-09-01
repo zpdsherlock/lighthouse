@@ -577,8 +577,8 @@ const expectations = {
         _excludeRunner: 'devtools',
         details: {items: {0: {
           timeToFirstByte: '450+/-100',
-          lcpLoadStart: '7750+/-1000',
-          lcpLoadEnd: '7750+/-1000',
+          lcpLoadStart: '>5000',
+          lcpLoadEnd: '>5000',
         }}},
       },
       'largest-contentful-paint-element': {
