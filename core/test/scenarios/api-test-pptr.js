@@ -8,7 +8,7 @@ import jestMock from 'jest-mock';
 
 import * as api from '../../index.js';
 import {createTestState, getAuditsBreakdown} from './pptr-test-utils.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {TargetManager} from '../../gather/driver/target-manager.js';
 
 describe('Individual modes API', function() {

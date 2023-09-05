@@ -8,7 +8,7 @@ import esbuild from 'esbuild';
 import esMain from 'es-main';
 
 import * as plugins from './esbuild-plugins.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {getIcuMessageIdParts} from '../shared/localization/format.js';
 import {locales} from '../shared/localization/locales.js';
 import {UIStrings as FlowUIStrings} from '../flow-report/src/i18n/ui-strings.js';

@@ -11,7 +11,7 @@ import glob from 'glob';
 import MessageParser from 'intl-messageformat-parser';
 
 import {collectAllCustomElementsFromICU} from '../../../shared/localization/format.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {readJson} from '../../test/test-utils.js';
 
 /** @typedef {Record<string, {message: string}>} LhlMessages */

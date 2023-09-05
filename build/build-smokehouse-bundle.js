@@ -7,7 +7,7 @@
 import esbuild from 'esbuild';
 
 import * as plugins from './esbuild-plugins.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {nodeModulesPolyfillPlugin} from '../third-party/esbuild-plugins-polyfills/esbuild-polyfills.js';
 
 const distDir = `${LH_ROOT}/dist`;

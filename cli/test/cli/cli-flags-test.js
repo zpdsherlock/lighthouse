@@ -8,7 +8,7 @@ import assert from 'assert/strict';
 import fs from 'fs';
 
 import {getFlags, getYargsParser} from '../../cli-flags.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 /**
  * @param {LH.CliFlags} flags

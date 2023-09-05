@@ -7,7 +7,7 @@
 import fs from 'fs';
 import crypto from 'crypto';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const scriptDir = `${LH_ROOT}/core/scripts/legacy-javascript`;
 

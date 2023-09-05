@@ -10,7 +10,7 @@ import fs from 'fs';
 import * as assetSaver from '../../lib/asset-saver.js';
 import {MetricTraceEvents} from '../../lib/traces/metric-trace-events.js';
 import {LighthouseError} from '../../lib/lh-error.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {getModuleDirectory} from '../../../shared/esm-utils.js';
 import {readJson} from '../test-utils.js';
 

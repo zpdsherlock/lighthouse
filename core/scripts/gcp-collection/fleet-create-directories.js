@@ -14,7 +14,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const TMP_DIR = path.join(LH_ROOT, '.tmp/gcp-instances');
 const URLS_LIST = process.argv[2]

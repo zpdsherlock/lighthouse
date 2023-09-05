@@ -25,7 +25,7 @@ import {EntityClassification} from '../../computed/entity-classification.js';
 import {JSBundles} from '../../computed/js-bundles.js';
 import * as i18n from '../../lib/i18n/i18n.js';
 import {getRequestForScript} from '../../lib/script-helpers.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const graphJson = fs.readFileSync(
   `${LH_ROOT}/core/audits/byte-efficiency/polyfill-graph-data.json`, 'utf-8');

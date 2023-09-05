@@ -23,7 +23,7 @@ import SoftNavPlugin from 'lighthouse-plugin-soft-navigation';
 
 import * as plugins from './esbuild-plugins.js';
 import {Runner} from '../core/runner.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {readJson} from '../core/test/test-utils.js';
 import {nodeModulesPolyfillPlugin} from '../third-party/esbuild-plugins-polyfills/esbuild-polyfills.js';
 

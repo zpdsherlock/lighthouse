@@ -8,7 +8,7 @@
 
 import * as puppeteer from 'puppeteer';
 
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import {Server} from '../../../../cli/test/fixtures/static-server.js';
 import {saveTrace, saveDevtoolsLog} from '../../../lib/asset-saver.js';
 

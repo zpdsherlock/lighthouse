@@ -24,7 +24,7 @@ import {Runner} from '../../runner.js';
 import BaseGatherer from '../../gather/base-gatherer.js';
 import ImageElementsGatherer from '../../gather/gatherers/image-elements.js';
 import UserTimingsAudit from '../../audits/user-timings.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {getModuleDirectory} from '../../../shared/esm-utils.js';
 
 const require = createRequire(import.meta.url);

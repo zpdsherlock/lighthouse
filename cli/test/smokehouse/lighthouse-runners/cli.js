@@ -20,7 +20,7 @@ import log from 'lighthouse-logger';
 import * as assetSaver from '../../../../core/lib/asset-saver.js';
 import {LocalConsole} from '../lib/local-console.js';
 import {ChildProcessError} from '../lib/child-process-error.js';
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 
 const execFileAsync = promisify(execFile);
 

@@ -10,7 +10,7 @@ import puppeteer from 'puppeteer';
 import {getChromePath} from 'chrome-launcher';
 
 import {Server} from '../../cli/test/fixtures/static-server.js';
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 
 const debugOptions = JSON.parse(
   fs.readFileSync(LH_ROOT + '/treemap/app/debug.json', 'utf-8')

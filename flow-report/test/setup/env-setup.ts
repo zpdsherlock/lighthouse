@@ -11,7 +11,7 @@ import jestMock from 'jest-mock';
 import {JSDOM} from 'jsdom';
 import * as preact from 'preact';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 // These modules aren't imported correctly if these directories aren't defined to use ES modules.
 // Similar to this, which was resolved but their fix didn't work for us:

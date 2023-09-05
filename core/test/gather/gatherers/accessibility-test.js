@@ -11,7 +11,7 @@ import puppeteer from 'puppeteer';
 import {getChromePath} from 'chrome-launcher';
 
 import AccessibilityGather from '../../../gather/gatherers/accessibility.js';
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import {axeSource} from '../../../../core/lib/axe.js';
 import {pageFunctions} from '../../../../core/lib/page-functions.js';
 

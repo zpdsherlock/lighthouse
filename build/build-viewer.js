@@ -10,7 +10,7 @@ import esbuild from 'esbuild';
 
 import * as plugins from './esbuild-plugins.js';
 import {GhPagesApp} from './gh-pages-app.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 
 const require = createRequire(import.meta.url);
 

@@ -11,7 +11,7 @@ import fs from 'fs';
 import * as run from '../../run.js';
 import {parseChromeFlags} from '../../run.js';
 import {getFlags} from '../../cli-flags.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 /** @type {LH.Config} */
 const testConfig = {

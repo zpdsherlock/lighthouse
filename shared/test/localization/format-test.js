@@ -11,7 +11,7 @@ import * as constants from '../../../core/config/constants.js';
 import * as format from '../../localization/format.js';
 import {locales} from '../../localization/locales.js';
 import {getModuleDirectory, getModulePath} from '../../esm-utils.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../root.js';
 
 const moduleDir = getModuleDirectory(import.meta);
 const modulePath = getModulePath(import.meta);

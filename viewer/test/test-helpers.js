@@ -9,7 +9,7 @@ import path from 'path';
 
 import * as jsdom from 'jsdom';
 
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 
 const PAGE = fs.readFileSync(path.join(LH_ROOT, 'viewer/app/index.html'), 'utf8');
 

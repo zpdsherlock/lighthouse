@@ -24,7 +24,7 @@ import path from 'path';
 
 import fetch from 'node-fetch';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const DAY_FILTER = 90;
 const HOUR_IN_MS = 60 * 60 * 1000;

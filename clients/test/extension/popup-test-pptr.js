@@ -10,7 +10,7 @@ import puppeteer from 'puppeteer-core';
 import {getChromePath} from 'chrome-launcher';
 
 import {DEFAULT_CATEGORIES, STORAGE_KEYS} from '../../extension/scripts/settings-controller.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const lighthouseExtensionPath = path.resolve(LH_ROOT, 'dist/extension-chrome');
 

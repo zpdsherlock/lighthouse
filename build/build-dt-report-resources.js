@@ -11,7 +11,7 @@ import assert from 'assert/strict';
 import esbuild from 'esbuild';
 
 import * as plugins from './esbuild-plugins.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 
 const distDir = path.join(LH_ROOT, 'dist', 'dt-report-resources');
 const bundleOutFile = `${distDir}/report-generator.mjs`;

@@ -12,7 +12,7 @@
 import path from 'path';
 import {execFileSync} from 'child_process';
 
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 import {buildBundle} from '../build-bundle.js';
 
 describe('page functions build', () => {

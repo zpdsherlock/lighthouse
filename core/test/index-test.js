@@ -7,7 +7,7 @@
 import assert from 'assert/strict';
 
 import lighthouse, {getAuditList, traceCategories} from '../index.js';
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 import {readJson} from './test-utils.js';
 
 const pkg = readJson('package.json');

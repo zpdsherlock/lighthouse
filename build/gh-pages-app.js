@@ -14,7 +14,7 @@ import ghPages from 'gh-pages';
 import glob from 'glob';
 import * as terser from 'terser';
 
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {readJson} from '../core/test/test-utils.js';
 
 const ghPagesDistDir = `${LH_ROOT}/dist/gh-pages`;

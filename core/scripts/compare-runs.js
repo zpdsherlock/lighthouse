@@ -22,7 +22,7 @@ import glob from 'glob';
 import yargs from 'yargs';
 import * as yargsHelpers from 'yargs/helpers';
 
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 import {ProgressLogger} from './lantern/collect/common.js';
 
 const mkdir = fs.promises.mkdir;

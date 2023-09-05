@@ -12,7 +12,7 @@ import path from 'path';
 import yargs from 'yargs';
 import * as yargsHelpers from 'yargs/helpers';
 
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {isObjectOfUnknownValues} from '../shared/type-verifiers.js';
 
 /**

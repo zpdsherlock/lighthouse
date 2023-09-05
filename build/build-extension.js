@@ -11,7 +11,7 @@ import cpy from 'cpy';
 import esbuild from 'esbuild';
 
 import * as plugins from './esbuild-plugins.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {readJson} from '../core/test/test-utils.js';
 
 const argv = process.argv.slice(2);

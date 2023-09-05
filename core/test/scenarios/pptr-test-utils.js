@@ -11,7 +11,7 @@ import * as puppeteer from 'puppeteer-core';
 import {getChromePath} from 'chrome-launcher';
 
 import {Server} from '../../../cli/test/fixtures/static-server.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 /** @typedef {InstanceType<typeof import('../../../cli/test/fixtures/static-server.js').Server>} StaticServer */
 

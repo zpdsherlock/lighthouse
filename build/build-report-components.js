@@ -17,7 +17,7 @@ import fs from 'fs';
 import jsdom from 'jsdom';
 import esMain from 'es-main';
 
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 
 const html = fs.readFileSync(LH_ROOT + '/report/assets/templates.html', 'utf-8');
 const {window} = new jsdom.JSDOM(html);

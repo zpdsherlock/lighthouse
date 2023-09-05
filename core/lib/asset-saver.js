@@ -17,7 +17,7 @@ import {MetricTraceEvents} from './traces/metric-trace-events.js';
 import {NetworkAnalysis} from '../computed/network-analysis.js';
 import {LoadSimulator} from '../computed/load-simulator.js';
 import {LighthouseError} from '../lib/lh-error.js';
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 
 const optionsFilename = 'options.json';
 const artifactsFilename = 'artifacts.json';

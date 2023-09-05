@@ -22,7 +22,7 @@ import {Util} from '../../../shared/util.js';
 import {collectAndBakeCtcStrings} from './bake-ctc-to-lhl.js';
 import {pruneObsoleteLhlMessages} from './prune-obsolete-lhl-messages.js';
 import {countTranslatedMessages} from './count-translated.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {resolveModulePath} from '../../../shared/esm-utils.js';
 
 // Match declarations of UIStrings, terminating in either a `};\n` (very likely to always be right)

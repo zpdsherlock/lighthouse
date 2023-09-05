@@ -19,7 +19,7 @@ import * as assetSaver from './lib/asset-saver.js';
 import {Sentry} from './lib/sentry.js';
 import {ReportGenerator} from '../report/generator/report-generator.js';
 import {LighthouseError} from './lib/lh-error.js';
-import {lighthouseVersion} from '../root.js';
+import {lighthouseVersion} from '../shared/root.js';
 import {getModuleDirectory} from '../shared/esm-utils.js';
 import {EntityClassification} from './computed/entity-classification.js';
 import UrlUtils from './lib/url-utils.js';

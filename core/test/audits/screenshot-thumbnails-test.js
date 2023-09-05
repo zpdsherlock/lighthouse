@@ -9,7 +9,7 @@ import path from 'path';
 import assert from 'assert/strict';
 
 import ScreenshotThumbnailsAudit from '../../audits/screenshot-thumbnails.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {readJson} from '../test-utils.js';
 
 const pwaTrace = readJson('../fixtures/traces/progressive-app-m60.json', import.meta);

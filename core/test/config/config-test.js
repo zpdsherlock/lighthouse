@@ -10,7 +10,7 @@ import {Audit as BaseAudit} from '../../audits/audit.js';
 import * as constants from '../../config/constants.js';
 import BaseGatherer from '../../gather/base-gatherer.js';
 import {initializeConfig, getConfigDisplayString} from '../../config/config.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import * as format from '../../../shared/localization/format.js';
 import defaultConfig from '../../config/default-config.js';
 

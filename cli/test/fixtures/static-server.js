@@ -19,7 +19,7 @@ import mime from 'mime-types';
 import glob from 'glob';
 import esMain from 'es-main';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const HEADER_SAFELIST = new Set(['x-robots-tag', 'link', 'content-security-policy']);
 const wasInvokedDirectly = esMain(import.meta);

@@ -28,7 +28,7 @@ import * as Printer from './printer.js';
 import {getFlags} from './cli-flags.js';
 import {runLighthouse} from './run.js';
 import {askPermission} from './sentry-prompt.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {Sentry} from '../core/lib/sentry.js';
 
 const pkg = JSON.parse(fs.readFileSync(LH_ROOT + '/package.json', 'utf-8'));

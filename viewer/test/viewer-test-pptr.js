@@ -13,7 +13,7 @@ import {getChromePath} from 'chrome-launcher';
 
 import {Server} from '../../cli/test/fixtures/static-server.js';
 import defaultConfig from '../../core/config/default-config.js';
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 import {getCanonicalLocales} from '../../shared/localization/format.js';
 import {getProtoRoundTrip} from '../../core/test/test-utils.js';
 

@@ -6,7 +6,7 @@
 
 import fs from 'fs';
 
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 
 /** @type {LH.Config} */
 const config = {

@@ -7,7 +7,7 @@
 import {createRequire} from 'module';
 
 import {GhPagesApp} from './gh-pages-app.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 import {getIcuMessageIdParts} from '../shared/localization/format.js';
 import {locales} from '../shared/localization/locales.js';
 import {UIStrings} from '../treemap/app/src/util.js';

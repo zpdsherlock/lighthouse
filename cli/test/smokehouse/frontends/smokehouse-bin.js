@@ -23,7 +23,7 @@ import log from 'lighthouse-logger';
 
 import {runSmokehouse, getShardedDefinitions} from '../smokehouse.js';
 import {updateTestDefnFormat} from './back-compat-util.js';
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import exclusions from '../config/exclusions.js';
 import {saveArtifacts} from '../../../../core/lib/asset-saver.js';
 import {saveLhr} from '../../../../core/lib/asset-saver.js';

@@ -17,7 +17,7 @@ import stream from 'stream';
 
 import archiver from 'archiver';
 
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 
 const streamFinished = promisify(stream.finished);
 

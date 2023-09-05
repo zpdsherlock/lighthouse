@@ -9,7 +9,7 @@ import fs from 'fs';
 import jsdom from 'jsdom';
 
 import {DOM} from '../../renderer/dom.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {normalizeTextNodeText} from '../../../build/build-report-components.js';
 
 const html = fs.readFileSync(LH_ROOT + '/report/assets/templates.html', 'utf-8');

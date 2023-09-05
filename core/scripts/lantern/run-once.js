@@ -11,7 +11,7 @@ import path from 'path';
 import PredictivePerf from '../../audits/predictive-perf.js';
 import {Simulator} from '../../lib/dependency-graph/simulator/simulator.js';
 import traceSaver from '../../lib/lantern-trace-saver.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {readJson} from '../../test/test-utils.js';
 import {DocumentUrls} from '../../computed/document-urls.js';
 

@@ -8,7 +8,7 @@
 
 import glob from 'glob';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import {readJson} from '../../test/test-utils.js';
 
 /** @type {LhlMessages} */

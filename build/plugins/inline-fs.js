@@ -13,7 +13,7 @@ import MagicString from 'magic-string';
 import resolve from 'resolve';
 import * as terser from 'terser';
 
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 
 // ESTree provides much better types for AST nodes. See https://github.com/acornjs/acorn/issues/946
 /** @typedef {import('estree').Node} Node */

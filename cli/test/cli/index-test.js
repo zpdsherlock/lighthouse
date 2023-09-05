@@ -7,7 +7,7 @@
 import assert from 'assert/strict';
 import {spawnSync} from 'child_process';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const indexPath = `${LH_ROOT}/cli/index.js`;
 

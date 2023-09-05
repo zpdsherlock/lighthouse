@@ -16,7 +16,7 @@ import fetch from 'node-fetch';
 
 import defaultTestUrls from './urls.js';
 import * as common from './common.js';
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import {makeGolden} from './golden.js';
 
 const execFileAsync = promisify(execFile);

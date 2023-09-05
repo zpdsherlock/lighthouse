@@ -6,7 +6,7 @@
 
 import path from 'path';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 /* eslint-disable max-len */
 

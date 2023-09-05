@@ -11,7 +11,7 @@ import esbuild from 'esbuild';
 
 import * as plugins from './esbuild-plugins.js';
 import {buildBundle} from './build-bundle.js';
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 
 const distDir = path.join(LH_ROOT, 'dist', 'lightrider');
 const sourceDir = path.join(LH_ROOT, 'clients', 'lightrider');

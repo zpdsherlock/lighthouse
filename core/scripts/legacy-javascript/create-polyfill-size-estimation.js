@@ -32,7 +32,7 @@ import prettyJSONStringify from 'pretty-json-stringify';
 import {makeHash} from './hash.js';
 import LegacyJavascript from '../../audits/byte-efficiency/legacy-javascript.js';
 import {JSBundles} from '../../computed/js-bundles.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const hash = makeHash();
 const VARIANT_DIR = `${LH_ROOT}/core/scripts/legacy-javascript/variants/${hash}`;

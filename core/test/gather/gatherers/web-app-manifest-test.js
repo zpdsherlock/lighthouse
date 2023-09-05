@@ -6,7 +6,7 @@
 
 import fs from 'fs';
 
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import WebAppManifest from '../../../gather/gatherers/web-app-manifest.js';
 import {createMockSession} from '../mock-driver.js';
 

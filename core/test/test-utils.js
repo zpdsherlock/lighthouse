@@ -12,7 +12,7 @@ import {createRequire} from 'module';
 import * as td from 'testdouble';
 import jestMock from 'jest-mock';
 
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 import * as mockCommands from './gather/mock-commands.js';
 import {NetworkRecorder} from '../lib/network-recorder.js';
 import {timers} from './test-env/fake-timers.js';

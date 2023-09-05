@@ -24,7 +24,7 @@ import {expect} from 'expect';
 import * as td from 'testdouble';
 import jestSnapshot from 'jest-snapshot';
 
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 import './expect-setup.js';
 import {timers} from './fake-timers.js';
 

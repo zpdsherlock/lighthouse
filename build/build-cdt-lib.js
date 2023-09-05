@@ -10,7 +10,7 @@ import fs from 'fs';
 
 import ts from 'typescript';
 
-import {LH_ROOT} from '../root.js';
+import {LH_ROOT} from '../shared/root.js';
 
 /**
  * @typedef Modification

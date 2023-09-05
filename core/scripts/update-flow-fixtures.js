@@ -16,7 +16,7 @@ import yargs from 'yargs';
 import {getChromePath} from 'chrome-launcher';
 import log from 'lighthouse-logger';
 
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 import * as api from '../index.js';
 import * as assetSaver from '../lib/asset-saver.js';
 

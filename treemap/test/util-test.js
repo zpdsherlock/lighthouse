@@ -10,7 +10,7 @@ import fs from 'fs';
 import jsdom from 'jsdom';
 
 import {TreemapUtil} from '../app/src/util.js';
-import {LH_ROOT} from '../../root.js';
+import {LH_ROOT} from '../../shared/root.js';
 
 describe('TreemapUtil', () => {
   it('pathsAreEqual works', () => {

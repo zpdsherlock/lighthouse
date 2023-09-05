@@ -10,7 +10,7 @@
 
 import {execFileSync} from 'child_process';
 
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import {testUrlFromDevtools} from '../../../../core/scripts/pptr-run-devtools.js';
 
 const devtoolsDir =

@@ -9,7 +9,7 @@ import path from 'path';
 import {createRequire} from 'module';
 
 import {inlineFs} from '../../plugins/inline-fs.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 const require = createRequire(import.meta.url);
 

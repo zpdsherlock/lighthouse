@@ -19,7 +19,7 @@ import {once} from 'events';
 import puppeteer from 'puppeteer-core';
 import * as ChromeLauncher from 'chrome-launcher';
 
-import {LH_ROOT} from '../../../../root.js';
+import {LH_ROOT} from '../../../../shared/root.js';
 import {loadArtifacts, saveArtifacts} from '../../../../core/lib/asset-saver.js';
 
 // This runs only in the worker. The rest runs on the main thread.

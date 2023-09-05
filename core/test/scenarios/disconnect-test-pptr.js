@@ -8,7 +8,7 @@
 
 import * as api from '../../index.js';
 import {createTestState} from './pptr-test-utils.js';
-import {LH_ROOT} from '../../../root.js';
+import {LH_ROOT} from '../../../shared/root.js';
 
 describe('Disconnect', function() {
   // eslint-disable-next-line no-invalid-this
