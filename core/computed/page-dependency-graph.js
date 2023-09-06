@@ -412,7 +412,8 @@ class PageDependencyGraph {
     const rootNode = networkNodeOutput.idToNodeMap.get(rootRequest.requestId);
     if (!rootNode) throw new Error('rootNode not found');
 
-    const mainDocumentRequest = NetworkAnalyzer.findResourceForUrl(networkRecords, mainDocumentUrl);
+    const mainDocumentRequest =
+      NetworkAnalyzer.findLastDocumentForUrl(networkRecords, mainDocumentUrl);
     if (!mainDocumentRequest) throw new Error('mainDocumentRequest not found');
     const mainDocumentNode = networkNodeOutput.idToNodeMap.get(mainDocumentRequest.requestId);
     if (!mainDocumentNode) throw new Error('mainDocumentNode not found');
