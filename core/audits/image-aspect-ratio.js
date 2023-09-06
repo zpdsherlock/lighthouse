@@ -59,7 +59,16 @@ class ImageAspectRatio extends Audit {
     const displayedAspectRatio = image.displayedWidth / image.displayedHeight;
 
     const targetDisplayHeight = image.displayedWidth / actualAspectRatio;
-    const doRatiosMatch = Math.abs(targetDisplayHeight - image.displayedHeight) < THRESHOLD_PX;
+    const targetDisplayWidth = image.displayedHeight * actualAspectRatio;
+
+    // Small rounding errors in aspect ratio can lead to large differences in target width/height
+    // if the aspect ratio is close to 0.
+    //
+    // In these cases, we should compare the smaller dimension because any rounding errors will
+    // affect that dimension less.
+    const doRatiosMatch = targetDisplayHeight < targetDisplayWidth
+      ? Math.abs(targetDisplayHeight - image.displayedHeight) < THRESHOLD_PX
+      : Math.abs(targetDisplayWidth - image.displayedWidth) < THRESHOLD_PX;
 
     return {
       url,
