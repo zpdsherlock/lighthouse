@@ -8073,6 +8073,12 @@
       },
       {
         "startTime": 0,
+        "name": "lh:computed:TBTImpactTasks",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:uses-rel-preload",
         "duration": 100,
         "entryType": "measure"
@@ -8188,12 +8194,6 @@
       {
         "startTime": 0,
         "name": "lh:audit:third-party-summary",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
-        "name": "lh:computed:TBTImpactTasks",
         "duration": 100,
         "entryType": "measure"
       },
