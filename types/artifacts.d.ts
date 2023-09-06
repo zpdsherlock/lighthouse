@@ -210,7 +210,7 @@ declare module Artifacts {
     impact?: string;
     tags: Array<string>;
     nodes: Array<{
-      target: Array<string>;
+      target: Array<string|string[]>;
       failureSummary?: string;
       node: NodeDetails;
       relatedNodes: NodeDetails[];

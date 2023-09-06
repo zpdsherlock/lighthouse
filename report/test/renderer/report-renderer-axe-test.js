@@ -66,16 +66,6 @@ describe('ReportRendererAxe', () => {
       //   id: 'color-contrast',
       // },
 
-      expect(axeResults.violations.find(v => v.id === 'duplicate-id')).toMatchObject({
-        id: 'duplicate-id',
-        nodes: [
-          // We use these audits in multiple categories. Makes sense.
-          {html: '<div class="lh-audit lh-audit--binary lh-audit--pass" id="viewport">'},
-          {html: '<div class="lh-audit lh-audit--binary lh-audit--fail" id="image-alt">'},
-          {html: '<div class="lh-audit lh-audit--binary lh-audit--pass" id="document-title">'},
-        ],
-      });
-
       const axeSummary = axeResults.violations.map((v) => {
         return {
           id: v.id,
