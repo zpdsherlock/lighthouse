@@ -181,7 +181,7 @@
   },
   "dependencies": {
     "@sentry/node": "^6.17.4",
-    "axe-core": "^4.8.0",
+    "axe-core": "^4.8.1",
     "chrome-launcher": "^1.0.0",
     "configstore": "^5.0.1",
     "csp_evaluator": "1.1.1",
