@@ -108,8 +108,8 @@ describe('TargetManager', () => {
       expect(sendMock.findAllInvocations('Runtime.runIfWaitingForDebugger')).toHaveLength(4);
     });
 
-    it('should ignore non-frame targets', async () => {
-      targetInfo.type = 'worker';
+    it('should ignore targets that are not frames or web workers', async () => {
+      targetInfo.type = 'service_worker';
       sendMock
         .mockResponse('Target.getTargetInfo', {targetInfo})
         .mockResponse('Target.setAutoAttach');
@@ -179,7 +179,8 @@ describe('TargetManager', () => {
     });
 
     it('should resume the target when finished', async () => {
-      sendMock.mockResponse('Target.getTargetInfo', {});
+      targetInfo.type = 'service_worker';
+      sendMock.mockResponse('Target.getTargetInfo', {targetInfo});
       await targetManager.enable();
 
       const invocations = sendMock.findAllInvocations('Runtime.runIfWaitingForDebugger');

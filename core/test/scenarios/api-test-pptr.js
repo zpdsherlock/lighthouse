@@ -180,9 +180,10 @@ describe('Individual modes API', function() {
         .map((r) => ({url: r.url, sessionTargetType: r.sessionTargetType}))
         // @ts-expect-error
         .sort((a, b) => a.url.localeCompare(b.url));
-      expect(networkRequests).toHaveLength(4);
+      expect(networkRequests).toHaveLength(10);
       expect(networkRequests.filter(r => r.sessionTargetType === 'page')).toHaveLength(2);
       expect(networkRequests.filter(r => r.sessionTargetType === 'iframe')).toHaveLength(2);
+      expect(networkRequests.filter(r => r.sessionTargetType === 'worker')).toHaveLength(6);
       expect(networkRequests).toMatchInlineSnapshot(`
 Array [
   Object {
@@ -190,16 +191,40 @@ Array [
     "url": "http://localhost:10200/simple-script.js",
   },
   Object {
+    "sessionTargetType": "worker",
+    "url": "http://localhost:10200/simple-script.js?esm",
+  },
+  Object {
+    "sessionTargetType": "worker",
+    "url": "http://localhost:10200/simple-script.js?importScripts",
+  },
+  Object {
     "sessionTargetType": "page",
     "url": "http://localhost:10200/simple-worker.js",
+  },
+  Object {
+    "sessionTargetType": "worker",
+    "url": "http://localhost:10200/simple-worker.mjs",
   },
   Object {
     "sessionTargetType": "iframe",
     "url": "http://localhost:10503/simple-script.js",
   },
   Object {
+    "sessionTargetType": "worker",
+    "url": "http://localhost:10503/simple-script.js?esm",
+  },
+  Object {
+    "sessionTargetType": "worker",
+    "url": "http://localhost:10503/simple-script.js?importScripts",
+  },
+  Object {
     "sessionTargetType": "iframe",
     "url": "http://localhost:10503/simple-worker.js",
+  },
+  Object {
+    "sessionTargetType": "worker",
+    "url": "http://localhost:10503/simple-worker.mjs",
   },
 ]
 `);

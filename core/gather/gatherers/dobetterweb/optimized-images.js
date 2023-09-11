@@ -54,8 +54,8 @@ class OptimizedImages extends BaseGatherer {
     /** @type {Set<string>} */
     const seenUrls = new Set();
     return networkRecords.reduce((prev, record) => {
-      // Skip records that we've seen before, never finished, or came from OOPIFs.
-      if (seenUrls.has(record.url) || !record.finished || record.isOutOfProcessIframe) {
+      // Skip records that we've seen before, never finished, or came from OOPIFs/web workers.
+      if (seenUrls.has(record.url) || !record.finished || record.sessionTargetType !== 'page') {
         return prev;
       }
 

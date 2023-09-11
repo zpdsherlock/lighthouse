@@ -30,6 +30,7 @@ const networkRecords = [
     }],
     content: 'aaabbbccc',
     finished: true,
+    sessionTargetType: 'page',
   },
   {
     url: 'http://google.com/index.css',
@@ -42,6 +43,7 @@ const networkRecords = [
     responseHeaders: [],
     content: 'abcabc',
     finished: true,
+    sessionTargetType: 'page',
   },
   {
     url: 'http://google.com/index.json',
@@ -54,6 +56,7 @@ const networkRecords = [
     responseHeaders: [],
     content: '1234567',
     finished: true,
+    sessionTargetType: 'page',
   },
   {
     url: 'http://google.com/index-oopif.json',
@@ -79,6 +82,7 @@ const networkRecords = [
     responseHeaders: [],
     content: '1234567',
     finished: true,
+    sessionTargetType: 'page',
   },
   {
     url: 'http://google.com/other.json',
@@ -91,6 +95,7 @@ const networkRecords = [
     responseHeaders: [],
     content: '1234567',
     finished: false, // ignore for not finishing
+    sessionTargetType: 'page',
   },
   {
     url: 'http://google.com/index.jpg',
@@ -103,6 +108,7 @@ const networkRecords = [
     responseHeaders: [],
     content: 'aaaaaaaaaa',
     finished: true,
+    sessionTargetType: 'page',
   },
   {
     url: 'http://google.com/helloworld.mp4',
@@ -115,6 +121,20 @@ const networkRecords = [
     responseHeaders: [],
     content: 'bbbbbbbb',
     finished: true,
+    sessionTargetType: 'page',
+  },
+  {
+    url: 'http://google.com/index-worker.json',
+    statusCode: 200,
+    mimeType: 'application/json',
+    requestId: 28,
+    resourceSize: 7,
+    transferSize: 8,
+    resourceType: 'XHR',
+    responseHeaders: [],
+    content: '1234567',
+    finished: true,
+    sessionTargetType: 'worker', // ignore for being from a worker
   },
 ].map((record) => Object.assign(new NetworkRequest(), record));
 
@@ -172,6 +192,7 @@ describe('Optimized responses', () => {
         responseHeaders: [],
         content: 'aaaaaaaaaa',
         finished: true,
+        sessionTargetType: 'page',
       },
       {
         url: 'http://google.com/chrome-extension.css',
@@ -183,6 +204,7 @@ describe('Optimized responses', () => {
         responseHeaders: [],
         content: 'aaaaaaaaaa',
         finished: true,
+        sessionTargetType: 'page',
       },
     ];
 

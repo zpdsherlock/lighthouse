@@ -61,8 +61,13 @@ const expectations = {
               {url: 'http://localhost:10503/simple-script.js', resourceType: 'Fetch'},
               {url: 'http://localhost:10200/simple-worker.js'},
               {url: 'http://localhost:10503/simple-worker.js'},
-              // Several requests are emitted in workers but Lighthouse doesn't capture them.
-              // https://github.com/GoogleChrome/lighthouse/issues/14211
+              // Requests from worker targets
+              {url: 'http://localhost:10200/simple-worker.mjs'},
+              {url: 'http://localhost:10503/simple-worker.mjs'},
+              {url: 'http://localhost:10200/simple-script.js?esm', resourceType: 'Script'},
+              {url: 'http://localhost:10503/simple-script.js?esm', resourceType: 'Script'},
+              {url: 'http://localhost:10200/simple-script.js?importScripts', resourceType: 'Other'},
+              {url: 'http://localhost:10503/simple-script.js?importScripts', resourceType: 'Other'},
             ],
             // Ensure the above is exhaustive (except for favicon, which won't be fetched in devtools/LR).
             _excludes: [

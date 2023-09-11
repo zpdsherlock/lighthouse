@@ -112,6 +112,16 @@ describe('Optimized images', () => {
         transferSize: 20000,
         finished: true,
       },
+      {
+        requestId: '11',
+        url: 'http://gmail.com/image-worker.jpg',
+        mimeType: 'image/jpeg',
+        resourceSize: 15000,
+        transferSize: 20000,
+        resourceType: 'Image',
+        finished: true,
+        sessionTargetType: 'worker', // ignore for being a worker
+      },
     ]);
   });
 

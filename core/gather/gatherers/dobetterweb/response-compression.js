@@ -56,7 +56,7 @@ class ResponseCompression extends BaseGatherer {
     const unoptimizedResponses = [];
 
     networkRecords.forEach(record => {
-      if (record.isOutOfProcessIframe) return;
+      if (record.sessionTargetType !== 'page') return;
 
       const mimeType = record.mimeType;
       const resourceType = record.resourceType || NetworkRequest.TYPES.Other;

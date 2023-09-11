@@ -65,7 +65,7 @@ class ScriptElements extends BaseGatherer {
 
     const scriptRecords = networkRecords
       .filter(record => record.resourceType === NetworkRequest.TYPES.Script)
-      .filter(record => !record.isOutOfProcessIframe);
+      .filter(record => record.sessionTargetType === 'page');
 
     for (let i = 0; i < scriptRecords.length; i++) {
       const record = scriptRecords[i];

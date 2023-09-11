@@ -21,6 +21,7 @@ const {NetworkRequest} = await import('../../../lib/network-request.js');
 function mockRecord(partial) {
   const request = new NetworkRequest();
   request.resourceType = NetworkRequest.TYPES.Script;
+  request.sessionTargetType = 'page';
   return Object.assign(request, partial);
 }
 
@@ -80,11 +81,12 @@ describe('_getArtifact', () => {
     ]);
   });
 
-  it('ignore OOPIF records', async () => {
+  it('ignore OOPIF and worker records', async () => {
     networkRecords = [
       mainDocument,
       mockRecord({url: 'https://example.com/script.js', requestId: '1'}),
       mockRecord({url: 'https://oopif.com/script.js', requestId: '2', sessionTargetType: 'iframe'}),
+      mockRecord({url: 'https://oopif.com/worker.js', requestId: '2', sessionTargetType: 'worker'}),
     ];
     // OOPIF would not produce script element
     scriptElements = [

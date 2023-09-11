@@ -19,10 +19,19 @@ function createRequest(
   url,
   networkRequestTime = 0,
   initiator = null,
-  resourceType = NetworkRequest.TYPES.Document
+  resourceType = NetworkRequest.TYPES.Document,
+  sessionTargetType = 'page'
 ) {
   const networkEndTime = networkRequestTime + 50;
-  return {requestId, url, networkRequestTime, networkEndTime, initiator, resourceType};
+  return {
+    requestId,
+    url,
+    networkRequestTime,
+    networkEndTime,
+    initiator,
+    resourceType,
+    sessionTargetType,
+  };
 }
 
 const TOPLEVEL_TASK_NAME = 'TaskQueueManager::ProcessTaskFromWorkQueue';
@@ -103,6 +112,19 @@ describe('PageDependencyGraph computed artifact:', () => {
         assert.equal(node.type, 'network');
         assert.equal(node.record, networkRecords[i]);
       }
+    });
+
+    it('should ignore worker requests', () => {
+      const workerRequest = createRequest(4, 'https://example.com/worker.js', 0, null, 'Script', 'worker');
+      const recordsWithWorker = [
+        ...networkRecords,
+        workerRequest,
+      ];
+
+      const networkNodeOutput = PageDependencyGraph.getNetworkNodeOutput(recordsWithWorker);
+
+      expect(networkNodeOutput.nodes).toHaveLength(3);
+      expect(networkNodeOutput.nodes.map(node => node.record)).not.toContain(workerRequest);
     });
 
     it('should index nodes by ID', () => {
