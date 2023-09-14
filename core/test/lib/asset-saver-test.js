@@ -33,14 +33,14 @@ describe('asset-saver helper', () => {
   describe('saves files', function() {
     const tmpDir = `${LH_ROOT}/.tmp/asset-saver-test`;
 
-    before(() => {
+    before(async () => {
       fs.mkdirSync(tmpDir, {recursive: true});
       const artifacts = {
         DevtoolsLog: [{message: 'first'}, {message: 'second'}],
         Trace: {traceEvents},
       };
 
-      return assetSaver.saveAssets(artifacts, dbwResults.audits, `${tmpDir}/the_file`);
+      await assetSaver.saveAssets(artifacts, dbwResults.audits, `${tmpDir}/the_file`);
     });
 
     it('trace file saved to disk with trace events and extra fakeEvents', () => {
@@ -57,8 +57,34 @@ describe('asset-saver helper', () => {
     it('devtools log file saved to disk with data', () => {
       const filename = tmpDir + '/the_file-0.devtoolslog.json';
       const fileContents = fs.readFileSync(filename, 'utf8');
-      assert.ok(fileContents.includes('"message": "first"'));
+      assert.ok(fileContents.includes('"message":"first"'));
       fs.unlinkSync(filename);
+    });
+
+    it('skips trace when undefined', async () => {
+      const noTracePrefix = tmpDir + '/the_file_no_trace';
+      const artifacts = {
+        DevtoolsLog: [{message: 'first'}, {message: 'second'}],
+      };
+      await assetSaver.saveAssets(artifacts, dbwResults.audits, noTracePrefix);
+
+      assert.ok(fs.existsSync(noTracePrefix + '-0.devtoolslog.json'));
+      fs.unlinkSync(noTracePrefix + '-0.devtoolslog.json');
+
+      assert.ok(!fs.existsSync(noTracePrefix + '-0.trace.json'));
+    });
+
+    it('skips dt log when undefined', async () => {
+      const noDtLogPrefix = tmpDir + '/the_file_no_dt';
+      const artifacts = {
+        Trace: {traceEvents},
+      };
+      await assetSaver.saveAssets(artifacts, dbwResults.audits, noDtLogPrefix);
+
+      assert.ok(!fs.existsSync(noDtLogPrefix + '-0.devtoolslog.json'));
+
+      assert.ok(fs.existsSync(noDtLogPrefix + '-0.trace.json'));
+      fs.unlinkSync(noDtLogPrefix + '-0.trace.json');
     });
   });
 

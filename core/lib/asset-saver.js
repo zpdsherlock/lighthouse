@@ -29,8 +29,8 @@ const stepDirectoryRegex = /^step(\d+)$/;
 
 /**
  * @typedef {object} PreparedAssets
- * @property {LH.Trace} traceData
- * @property {LH.DevtoolsLog} devtoolsLog
+ * @property {LH.Trace} [traceData]
+ * @property {LH.DevtoolsLog} [devtoolsLog]
  */
 
 
@@ -420,14 +420,18 @@ async function saveLanternDebugTraces(pathWithBasename) {
  */
 async function saveAssets(artifacts, audits, pathWithBasename) {
   const allAssets = await prepareAssets(artifacts, audits);
-  const saveAll = allAssets.map(async (passAssets, index) => {
-    const devtoolsLogFilename = `${pathWithBasename}-${index}${devtoolsLogSuffix}`;
-    fs.writeFileSync(devtoolsLogFilename, JSON.stringify(passAssets.devtoolsLog, null, 2));
-    log.log('saveAssets', 'devtools log saved to disk: ' + devtoolsLogFilename);
+  const saveAll = allAssets.map(async (assets, index) => {
+    if (assets.devtoolsLog) {
+      const devtoolsLogFilename = `${pathWithBasename}-${index}${devtoolsLogSuffix}`;
+      await saveDevtoolsLog(assets.devtoolsLog, devtoolsLogFilename);
+      log.log('saveAssets', 'devtools log saved to disk: ' + devtoolsLogFilename);
+    }
 
-    const traceFilename = `${pathWithBasename}-${index}${traceSuffix}`;
-    await saveTrace(passAssets.traceData, traceFilename);
-    log.log('saveAssets', 'trace file streamed to disk: ' + traceFilename);
+    if (assets.traceData) {
+      const traceFilename = `${pathWithBasename}-${index}${traceSuffix}`;
+      await saveTrace(assets.traceData, traceFilename);
+      log.log('saveAssets', 'trace file streamed to disk: ' + traceFilename);
+    }
   });
 
   await Promise.all(saveAll);
