@@ -296,6 +296,7 @@ async function testUrlFromDevtools(url, options = {}) {
     executablePath: getChromePath(),
     args: chromeFlags,
     devtools: true,
+    defaultViewport: null,
   });
 
   try {
