@@ -7,6 +7,7 @@
 /* eslint-env browser */
 
 /** @typedef {HTMLElementTagNameMap & {[id: string]: HTMLElement}} HTMLElementByTagName */
+/** @typedef {SVGElementTagNameMap & {[id: string]: SVGElement}} SVGElementByTagName */
 /** @template {string} T @typedef {import('typed-query-selector/parser').ParseSelector<T, Element>} ParseSelector */
 
 import {Util} from '../../shared/util.js';
@@ -59,6 +60,17 @@ export class DOM {
       }
     }
     return element;
+  }
+
+  /**
+   * @template {string} T
+   * @param {T} name
+   * @param {string=} className
+   * @return {SVGElementByTagName[T]}
+   */
+  createSVGElement(name, className) {
+    return /** @type {SVGElementByTagName[T]} */ (
+      this._document.createElementNS('http://www.w3.org/2000/svg', name, className));
   }
 
   /**
@@ -239,23 +251,38 @@ export class DOM {
   }
 
   /**
-   * Guaranteed context.querySelector. Always returns an element or throws if
+   * Typed and guaranteed context.querySelector. Always returns an element or throws if
    * nothing matches query.
+   *
    * @template {string} T
    * @param {T} query
    * @param {ParentNode} context
    * @return {ParseSelector<T>}
    */
   find(query, context) {
-    const result = context.querySelector(query);
+    const result = this.maybeFind(query, context);
     if (result === null) {
       throw new Error(`query ${query} not found`);
     }
 
+    return result;
+  }
+
+  /**
+   * Typed context.querySelector.
+   *
+   * @template {string} T
+   * @param {T} query
+   * @param {ParentNode} context
+   * @return {ParseSelector<T> | null}
+   */
+  maybeFind(query, context) {
+    const result = context.querySelector(query);
+
     // Because we control the report layout and templates, use the simpler
     // `typed-query-selector` types that don't require differentiating between
     // e.g. HTMLAnchorElement and SVGAElement. See https://github.com/GoogleChrome/lighthouse/issues/12011
-    return /** @type {ParseSelector<T>} */ (result);
+    return /** @type {ParseSelector<T> | null} */ (result);
   }
 
   /**
