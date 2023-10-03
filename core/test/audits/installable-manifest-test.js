@@ -115,7 +115,7 @@ describe('PWA: webapp install banner audit', () => {
       return InstallableManifestAudit.audit(artifacts, context).then(result => {
         assert.strictEqual(result.score, 0);
         const items = result.details.items;
-        expect(items[0].reason).toBeDisplayString(/does not contain a 'name'/);
+        expect(items[0].reason).toBeDisplayString(/does not contain a `name`/);
       });
     });
 

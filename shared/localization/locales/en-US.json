@@ -1026,7 +1026,7 @@
     "message": "Page is loaded in an incognito window"
   },
   "core/audits/installable-manifest.js | manifest-display-not-supported": {
-    "message": "Manifest 'display' property must be one of 'standalone', 'fullscreen', or 'minimal-ui'"
+    "message": "Manifest `display` property must be one of `standalone`, `fullscreen`, or `minimal-ui`"
   },
   "core/audits/installable-manifest.js | manifest-display-override-not-supported": {
     "message": "Manifest contains 'display_override' field, and the first supported display mode must be one of 'standalone', 'fullscreen', or 'minimal-ui'"
@@ -1038,7 +1038,7 @@
     "message": "Manifest URL changed while the manifest was being fetched."
   },
   "core/audits/installable-manifest.js | manifest-missing-name-or-short-name": {
-    "message": "Manifest does not contain a 'name' or 'short_name' field"
+    "message": "Manifest does not contain a `name` or `short_name` field"
   },
   "core/audits/installable-manifest.js | manifest-missing-suitable-icon": {
     "message": "Manifest does not contain a suitable icon - PNG, SVG or WebP format of at least {value0} px is required, the sizes attribute must be set, and the purpose attribute, if set, must include \"any\"."
