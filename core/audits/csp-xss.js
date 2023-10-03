@@ -21,7 +21,7 @@ const UIStrings = {
   /** Summary text for the results of a Lighthouse audit that evaluates the security of a page's CSP. This is displayed if no CSP is being enforced. "CSP" stands for "Content Security Policy". "CSP" does not need to be translated. */
   noCsp: 'No CSP found in enforcement mode',
   /** Message shown when one or more CSPs are defined in a <meta> tag. Shown in a table with a list of other CSP bypasses and warnings. "CSP" stands for "Content Security Policy". "CSP" and "HTTP" do not need to be translated. */
-  metaTagMessage: 'The page contains a CSP defined in a <meta> tag. ' +
+  metaTagMessage: 'The page contains a CSP defined in a `<meta>` tag. ' +
     'Consider moving the CSP to an HTTP header or ' +
     'defining another strict CSP in an HTTP header.',
   /** Label for a column in a data table; entries will be a directive of a CSP. "CSP" stands for "Content Security Policy". */

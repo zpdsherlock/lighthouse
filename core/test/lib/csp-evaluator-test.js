@@ -43,7 +43,7 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'script-src directive is missing. This can allow the execution of unsafe scripts.'
+      '`script-src` directive is missing. This can allow the execution of unsafe scripts.'
     );
   });
 
@@ -55,8 +55,8 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'Missing object-src allows the injection of plugins that execute unsafe scripts. ' +
-      'Consider setting object-src to \'none\' if you can.'
+      'Missing `object-src` allows the injection of plugins that execute unsafe scripts. ' +
+      'Consider setting `object-src` to `\'none\'` if you can.'
     );
   });
 
@@ -68,9 +68,9 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'Missing base-uri allows injected <base> tags to set the base URL for all ' +
+      'Missing `base-uri` allows injected `<base>` tags to set the base URL for all ' +
       'relative URLs (e.g. scripts) to an attacker controlled domain. ' +
-      'Consider setting base-uri to \'none\' or \'self\'.'
+      'Consider setting `base-uri` to `\'none\'` or `\'self\'`.'
     );
   });
 
@@ -82,7 +82,7 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      '\'unsafe-inline\' allows the execution of unsafe in-page scripts ' +
+      '`\'unsafe-inline\'` allows the execution of unsafe in-page scripts ' +
       'and event handlers. Consider using CSP nonces or hashes to allow scripts individually.'
     );
   });
@@ -124,7 +124,7 @@ describe('getTranslatedDescription', () => {
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
       'Host allowlists can frequently be bypassed. Consider using ' +
-      'CSP nonces or hashes instead, along with \'strict-dynamic\' if necessary.'
+      'CSP nonces or hashes instead, along with `\'strict-dynamic\'` if necessary.'
     );
   });
 
@@ -137,7 +137,7 @@ describe('getTranslatedDescription', () => {
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
       'Consider adding https: and http: URL schemes (ignored by browsers ' +
-      'supporting \'strict-dynamic\') to be backward compatible with older browsers.'
+      'supporting `\'strict-dynamic\'`) to be backward compatible with older browsers.'
     );
   });
 
@@ -149,7 +149,7 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'Consider adding \'unsafe-inline\' (ignored by browsers supporting ' +
+      'Consider adding `\'unsafe-inline\'` (ignored by browsers supporting ' +
       'nonces/hashes) to be backward compatible with older browsers.'
     );
   });
@@ -235,7 +235,7 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'reflected-xss is deprecated since CSP2. ' +
+      '`reflected-xss` is deprecated since CSP2. ' +
       'Please, use the X-XSS-Protection header instead.'
     );
   });
@@ -250,7 +250,7 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'referrer is deprecated since CSP2. ' +
+      '`referrer` is deprecated since CSP2. ' +
       'Please, use the Referrer-Policy header instead.'
     );
   });
@@ -265,7 +265,7 @@ describe('getTranslatedDescription', () => {
     expect(translated).toHaveLength(1);
     expect(isIcuMessage(translated[0])).toBeTruthy();
     expect(translated[0]).toBeDisplayString(
-      'disown-opener is deprecated since CSP3. ' +
+      '`disown-opener` is deprecated since CSP3. ' +
       'Please, use the Cross-Origin-Opener-Policy header instead.'
     );
   });
