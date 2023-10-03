@@ -38,7 +38,11 @@
             "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Learn more about using the viewport meta tag](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).",
             "score": 1,
             "scoreDisplayMode": "binary",
-            "warnings": []
+            "warnings": [],
+            "metricSavings": {
+              "INP": 0
+            },
+            "guidanceLevel": 3
           },
           "first-contentful-paint": {
             "id": "first-contentful-paint",
@@ -48,7 +52,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
-            "displayValue": "1.4 s"
+            "displayValue": "1.4 s",
+            "scoringOptions": {
+              "p10": 1800,
+              "median": 3000
+            }
           },
           "largest-contentful-paint": {
             "id": "largest-contentful-paint",
@@ -58,7 +66,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
-            "displayValue": "1.4 s"
+            "displayValue": "1.4 s",
+            "scoringOptions": {
+              "p10": 2500,
+              "median": 4000
+            }
           },
           "first-meaningful-paint": {
             "id": "first-meaningful-paint",
@@ -78,7 +90,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 1372.2951999999998,
             "numericUnit": "millisecond",
-            "displayValue": "1.4 s"
+            "displayValue": "1.4 s",
+            "scoringOptions": {
+              "p10": 3387,
+              "median": 5800
+            }
           },
           "screenshot-thumbnails": {
             "id": "screenshot-thumbnails",
@@ -154,7 +170,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 143,
             "numericUnit": "millisecond",
-            "displayValue": "140 ms"
+            "displayValue": "140 ms",
+            "scoringOptions": {
+              "p10": 200,
+              "median": 600
+            }
           },
           "max-potential-fid": {
             "id": "max-potential-fid",
@@ -175,6 +195,10 @@
             "numericValue": 0.002631263732910156,
             "numericUnit": "unitless",
             "displayValue": "0.003",
+            "scoringOptions": {
+              "p10": 0.1,
+              "median": 0.25
+            },
             "details": {
               "type": "debugdata",
               "items": [
@@ -205,6 +229,10 @@
             "numericValue": 19.687999999999988,
             "numericUnit": "millisecond",
             "displayValue": "Root document took 20 ms",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [
@@ -226,7 +254,8 @@
                 }
               ],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 1
           },
           "interactive": {
             "id": "interactive",
@@ -295,7 +324,8 @@
                   "timingType": "Mark"
                 }
               ]
-            }
+            },
+            "guidanceLevel": 2
           },
           "critical-request-chains": {
             "id": "critical-request-chains",
@@ -322,7 +352,8 @@
                 "length": 1,
                 "transferSize": 3558
               }
-            }
+            },
+            "guidanceLevel": 1
           },
           "redirects": {
             "id": "redirects",
@@ -333,12 +364,17 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "LCP": 0,
+              "FCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
               "items": [],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 2
           },
           "installable-manifest": {
             "id": "installable-manifest",
@@ -479,6 +515,9 @@
             "numericValue": 959.4240000000008,
             "numericUnit": "millisecond",
             "displayValue": "1.0 s",
+            "metricSavings": {
+              "TBT": 143
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -529,7 +568,8 @@
               "sortedBy": [
                 "duration"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "bootup-time": {
             "id": "bootup-time",
@@ -540,6 +580,9 @@
             "numericValue": 288.41200000000015,
             "numericUnit": "millisecond",
             "displayValue": "0.3 s",
+            "metricSavings": {
+              "TBT": 142.50196940171634
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -593,7 +636,8 @@
               "sortedBy": [
                 "total"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "uses-rel-preload": {
             "id": "uses-rel-preload",
@@ -606,7 +650,8 @@
               "headings": [],
               "items": [],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-rel-preconnect": {
             "id": "uses-rel-preconnect",
@@ -618,6 +663,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "LCP": 0,
+              "FCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -626,7 +675,8 @@
               "sortedBy": [
                 "wastedMs"
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "font-display": {
             "id": "font-display",
@@ -639,7 +689,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "diagnostics": {
             "id": "diagnostics",
@@ -1371,6 +1422,9 @@
             "score": 1,
             "scoreDisplayMode": "binary",
             "displayValue": "Third-party code blocked the main thread for 0 ms",
+            "metricSavings": {
+              "TBT": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -1435,14 +1489,19 @@
                 "wastedMs": 0
               },
               "isEntityGrouped": true
-            }
+            },
+            "guidanceLevel": 1
           },
           "third-party-facades": {
             "id": "third-party-facades",
             "title": "Lazy load third-party resources with facades",
             "description": "Some third-party embeds can be lazy loaded. Consider replacing them with a facade until they are required. [Learn how to defer third-parties with a facade](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/).",
             "score": null,
-            "scoreDisplayMode": "notApplicable"
+            "scoreDisplayMode": "notApplicable",
+            "metricSavings": {
+              "TBT": 0
+            },
+            "guidanceLevel": 3
           },
           "largest-contentful-paint-element": {
             "id": "largest-contentful-paint-element",
@@ -1451,6 +1510,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "1,370 ms",
+            "metricSavings": {
+              "LCP": 0
+            },
             "details": {
               "type": "list",
               "items": [
@@ -1527,7 +1589,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "lcp-lazy-loaded": {
             "id": "lcp-lazy-loaded",
@@ -1535,6 +1598,9 @@
             "description": "Above-the-fold images that are lazily loaded render later in the page lifecycle, which can delay the largest contentful paint. [Learn more about optimal lazy loading](https://web.dev/lcp-lazy-loading/).",
             "score": 1,
             "scoreDisplayMode": "binary",
+            "metricSavings": {
+              "LCP": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -1564,7 +1630,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "layout-shift-elements": {
             "id": "layout-shift-elements",
@@ -1573,6 +1640,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "5 elements found",
+            "metricSavings": {
+              "CLS": 0.002631263732910156
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -1685,7 +1755,8 @@
                   "score": 0.00036762719987422577
                 }
               ]
-            }
+            },
+            "guidanceLevel": 2
           },
           "long-tasks": {
             "id": "long-tasks",
@@ -1769,7 +1840,8 @@
                   }
                 ]
               }
-            }
+            },
+            "guidanceLevel": 1
           },
           "no-unload-listeners": {
             "id": "no-unload-listeners",
@@ -1784,11 +1856,15 @@
             "description": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "unsized-images": {
             "id": "unsized-images",
@@ -1796,6 +1872,9 @@
             "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -1831,7 +1910,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "valid-source-maps": {
             "id": "valid-source-maps",
@@ -1854,6 +1934,9 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -1876,7 +1959,8 @@
                 ],
                 "pathLength": 2
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "csp-xss": {
             "id": "csp-xss",
@@ -2700,7 +2784,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "total-byte-weight": {
             "id": "total-byte-weight",
@@ -2770,7 +2855,8 @@
               "sortedBy": [
                 "totalBytes"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "offscreen-images": {
             "id": "offscreen-images",
@@ -2782,6 +2868,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2798,7 +2888,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "render-blocking-resources": {
             "id": "render-blocking-resources",
@@ -2808,12 +2899,17 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 0,
             "numericUnit": "millisecond",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
               "items": [],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 2
           },
           "unminified-css": {
             "id": "unminified-css",
@@ -2824,6 +2920,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2840,7 +2940,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "unminified-javascript": {
             "id": "unminified-javascript",
@@ -2852,6 +2953,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2868,7 +2973,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "unused-css-rules": {
             "id": "unused-css-rules",
@@ -2879,6 +2985,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2895,7 +3005,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "unused-javascript": {
             "id": "unused-javascript",
@@ -2906,6 +3017,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2922,7 +3037,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "modern-image-formats": {
             "id": "modern-image-formats",
@@ -2934,6 +3050,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2950,7 +3070,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-optimized-images": {
             "id": "uses-optimized-images",
@@ -2962,6 +3083,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -2978,7 +3103,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "uses-text-compression": {
             "id": "uses-text-compression",
@@ -2989,6 +3115,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -3005,7 +3135,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-responsive-images": {
             "id": "uses-responsive-images",
@@ -3016,6 +3147,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -3032,7 +3167,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "efficient-animated-content": {
             "id": "efficient-animated-content",
@@ -3043,6 +3179,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -3059,7 +3199,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "duplicated-javascript": {
             "id": "duplicated-javascript",
@@ -3070,6 +3211,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -3086,7 +3231,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "legacy-javascript": {
             "id": "legacy-javascript",
@@ -3097,6 +3243,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "Potential savings of 0 KiB",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [
@@ -3157,7 +3307,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "doctype": {
             "id": "doctype",
@@ -3182,6 +3333,9 @@
             "numericValue": 70,
             "numericUnit": "element",
             "displayValue": "70 elements",
+            "metricSavings": {
+              "TBT": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -3259,7 +3413,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "geolocation-on-start": {
             "id": "geolocation-on-start",
@@ -3295,7 +3450,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "js-libraries": {
             "id": "js-libraries",
@@ -3382,7 +3538,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "meta-description": {
             "id": "meta-description",
@@ -3554,7 +3711,8 @@
             "title": "Page didn't prevent back/forward cache restoration",
             "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
             "score": 1,
-            "scoreDisplayMode": "binary"
+            "scoreDisplayMode": "binary",
+            "guidanceLevel": 2
           }
         },
         "configSettings": {
@@ -8367,7 +8525,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 122.83299999999986,
             "numericUnit": "millisecond",
-            "displayValue": "120 ms"
+            "displayValue": "120 ms",
+            "scoringOptions": {
+              "p10": 200,
+              "median": 600
+            }
           },
           "cumulative-layout-shift": {
             "id": "cumulative-layout-shift",
@@ -8378,6 +8540,10 @@
             "numericValue": 0.13125,
             "numericUnit": "unitless",
             "displayValue": "0.131",
+            "scoringOptions": {
+              "p10": 0.1,
+              "median": 0.25
+            },
             "details": {
               "type": "debugdata",
               "items": [
@@ -8471,7 +8637,8 @@
                   "timingType": "Mark"
                 }
               ]
-            }
+            },
+            "guidanceLevel": 2
           },
           "image-aspect-ratio": {
             "id": "image-aspect-ratio",
@@ -8648,6 +8815,9 @@
             "numericValue": 867.7709999999973,
             "numericUnit": "millisecond",
             "displayValue": "0.9 s",
+            "metricSavings": {
+              "TBT": 122.83299999999986
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -8703,7 +8873,8 @@
               "sortedBy": [
                 "duration"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "bootup-time": {
             "id": "bootup-time",
@@ -8714,6 +8885,9 @@
             "numericValue": 352.6489999999996,
             "numericUnit": "millisecond",
             "displayValue": "0.4 s",
+            "metricSavings": {
+              "TBT": 106.76186411159928
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -8767,7 +8941,8 @@
               "sortedBy": [
                 "total"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "network-requests": {
             "id": "network-requests",
@@ -9365,6 +9540,9 @@
             "score": 1,
             "scoreDisplayMode": "binary",
             "displayValue": "Third-party code blocked the main thread for 0 ms",
+            "metricSavings": {
+              "TBT": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -9422,7 +9600,8 @@
                 "wastedMs": 0
               },
               "isEntityGrouped": true
-            }
+            },
+            "guidanceLevel": 1
           },
           "layout-shift-elements": {
             "id": "layout-shift-elements",
@@ -9431,6 +9610,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "1 element found",
+            "metricSavings": {
+              "CLS": 0.13125
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -9467,7 +9649,8 @@
                   "score": 0.13125
                 }
               ]
-            }
+            },
+            "guidanceLevel": 2
           },
           "long-tasks": {
             "id": "long-tasks",
@@ -9527,7 +9710,8 @@
                   }
                 ]
               }
-            }
+            },
+            "guidanceLevel": 1
           },
           "no-unload-listeners": {
             "id": "no-unload-listeners",
@@ -9542,11 +9726,15 @@
             "description": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "unsized-images": {
             "id": "unsized-images",
@@ -9554,6 +9742,9 @@
             "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -9589,7 +9780,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "valid-source-maps": {
             "id": "valid-source-maps",
@@ -9780,7 +9972,8 @@
               "skipSumming": [
                 "cacheLifetimeMs"
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "total-byte-weight": {
             "id": "total-byte-weight",
@@ -9850,7 +10043,8 @@
               "sortedBy": [
                 "totalBytes"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "unminified-css": {
             "id": "unminified-css",
@@ -9861,6 +10055,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -9877,7 +10075,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "unminified-javascript": {
             "id": "unminified-javascript",
@@ -9889,6 +10088,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -9905,7 +10108,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "unused-css-rules": {
             "id": "unused-css-rules",
@@ -9916,6 +10120,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -9932,7 +10140,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "unused-javascript": {
             "id": "unused-javascript",
@@ -9943,6 +10152,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -9959,7 +10172,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "modern-image-formats": {
             "id": "modern-image-formats",
@@ -9971,6 +10185,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -9987,7 +10205,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-optimized-images": {
             "id": "uses-optimized-images",
@@ -9999,6 +10218,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -10015,7 +10238,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "uses-text-compression": {
             "id": "uses-text-compression",
@@ -10026,6 +10250,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -10042,7 +10270,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-responsive-images": {
             "id": "uses-responsive-images",
@@ -10053,6 +10282,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -10069,7 +10302,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "efficient-animated-content": {
             "id": "efficient-animated-content",
@@ -10080,6 +10314,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -10096,7 +10334,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "duplicated-javascript": {
             "id": "duplicated-javascript",
@@ -10107,6 +10346,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -10123,7 +10366,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "legacy-javascript": {
             "id": "legacy-javascript",
@@ -10134,6 +10378,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -10150,7 +10398,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "inspector-issues": {
             "id": "inspector-issues",
@@ -10174,7 +10423,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "uses-passive-event-listeners": {
             "id": "uses-passive-event-listeners",
@@ -10186,7 +10436,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "work-during-interaction": {
             "id": "work-during-interaction",
@@ -10195,6 +10446,9 @@
             "score": 1,
             "scoreDisplayMode": "numeric",
             "displayValue": "60 ms spent on event 'keypress'",
+            "metricSavings": {
+              "INP": 64
+            },
             "details": {
               "type": "list",
               "items": [
@@ -10376,14 +10630,16 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "bf-cache": {
             "id": "bf-cache",
             "title": "Page didn't prevent back/forward cache restoration",
             "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
             "score": 1,
-            "scoreDisplayMode": "binary"
+            "scoreDisplayMode": "binary",
+            "guidanceLevel": 2
           }
         },
         "configSettings": {
@@ -12160,7 +12416,11 @@
             "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Learn more about using the viewport meta tag](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).",
             "score": 1,
             "scoreDisplayMode": "binary",
-            "warnings": []
+            "warnings": [],
+            "metricSavings": {
+              "INP": 0
+            },
+            "guidanceLevel": 3
           },
           "image-aspect-ratio": {
             "id": "image-aspect-ratio",
@@ -12315,6 +12575,9 @@
             "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -12350,7 +12613,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "accesskeys": {
             "id": "accesskeys",
@@ -14158,7 +14422,8 @@
                   "actualDimensions": "1000x450"
                 }
               ]
-            }
+            },
+            "guidanceLevel": 2
           },
           "doctype": {
             "id": "doctype",
@@ -14176,6 +14441,7 @@
             "numericValue": 361,
             "numericUnit": "element",
             "displayValue": "361 elements",
+            "metricSavings": {},
             "details": {
               "type": "table",
               "headings": [
@@ -14253,7 +14519,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "js-libraries": {
             "id": "js-libraries",
@@ -17383,7 +17650,11 @@
             "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Learn more about using the viewport meta tag](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).",
             "score": 1,
             "scoreDisplayMode": "binary",
-            "warnings": []
+            "warnings": [],
+            "metricSavings": {
+              "INP": 0
+            },
+            "guidanceLevel": 3
           },
           "first-contentful-paint": {
             "id": "first-contentful-paint",
@@ -17393,7 +17664,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 866.7026,
             "numericUnit": "millisecond",
-            "displayValue": "0.9 s"
+            "displayValue": "0.9 s",
+            "scoringOptions": {
+              "p10": 1800,
+              "median": 3000
+            }
           },
           "largest-contentful-paint": {
             "id": "largest-contentful-paint",
@@ -17403,7 +17678,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 1803.0092,
             "numericUnit": "millisecond",
-            "displayValue": "1.8 s"
+            "displayValue": "1.8 s",
+            "scoringOptions": {
+              "p10": 2500,
+              "median": 4000
+            }
           },
           "first-meaningful-paint": {
             "id": "first-meaningful-paint",
@@ -17423,7 +17702,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 866.7026,
             "numericUnit": "millisecond",
-            "displayValue": "0.9 s"
+            "displayValue": "0.9 s",
+            "scoringOptions": {
+              "p10": 3387,
+              "median": 5800
+            }
           },
           "screenshot-thumbnails": {
             "id": "screenshot-thumbnails",
@@ -17499,7 +17782,11 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 13,
             "numericUnit": "millisecond",
-            "displayValue": "10 ms"
+            "displayValue": "10 ms",
+            "scoringOptions": {
+              "p10": 200,
+              "median": 600
+            }
           },
           "max-potential-fid": {
             "id": "max-potential-fid",
@@ -17520,6 +17807,10 @@
             "numericValue": 0,
             "numericUnit": "unitless",
             "displayValue": "0",
+            "scoringOptions": {
+              "p10": 0.1,
+              "median": 0.25
+            },
             "details": {
               "type": "debugdata",
               "items": [
@@ -17550,6 +17841,10 @@
             "numericValue": 10.263,
             "numericUnit": "millisecond",
             "displayValue": "Root document took 10 ms",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [
@@ -17571,7 +17866,8 @@
                 }
               ],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 1
           },
           "interactive": {
             "id": "interactive",
@@ -17640,7 +17936,8 @@
                   "timingType": "Mark"
                 }
               ]
-            }
+            },
+            "guidanceLevel": 2
           },
           "critical-request-chains": {
             "id": "critical-request-chains",
@@ -17667,7 +17964,8 @@
                 "length": 1,
                 "transferSize": 3596
               }
-            }
+            },
+            "guidanceLevel": 1
           },
           "redirects": {
             "id": "redirects",
@@ -17678,12 +17976,17 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "LCP": 0,
+              "FCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
               "items": [],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 2
           },
           "installable-manifest": {
             "id": "installable-manifest",
@@ -17824,6 +18127,9 @@
             "numericValue": 454.39200000000045,
             "numericUnit": "millisecond",
             "displayValue": "0.5 s",
+            "metricSavings": {
+              "TBT": 13
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -17874,7 +18180,8 @@
               "sortedBy": [
                 "duration"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "bootup-time": {
             "id": "bootup-time",
@@ -17885,6 +18192,9 @@
             "numericValue": 169.10399999999998,
             "numericUnit": "millisecond",
             "displayValue": "0.2 s",
+            "metricSavings": {
+              "TBT": 25.85177364864864
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -17944,7 +18254,8 @@
               "sortedBy": [
                 "total"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "uses-rel-preload": {
             "id": "uses-rel-preload",
@@ -17957,7 +18268,8 @@
               "headings": [],
               "items": [],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-rel-preconnect": {
             "id": "uses-rel-preconnect",
@@ -17969,6 +18281,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "LCP": 0,
+              "FCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -17977,7 +18293,8 @@
               "sortedBy": [
                 "wastedMs"
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "font-display": {
             "id": "font-display",
@@ -17990,7 +18307,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "diagnostics": {
             "id": "diagnostics",
@@ -18680,6 +18998,9 @@
             "score": 1,
             "scoreDisplayMode": "binary",
             "displayValue": "Third-party code blocked the main thread for 0 ms",
+            "metricSavings": {
+              "TBT": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -18725,14 +19046,19 @@
                 }
               ],
               "isEntityGrouped": true
-            }
+            },
+            "guidanceLevel": 1
           },
           "third-party-facades": {
             "id": "third-party-facades",
             "title": "Lazy load third-party resources with facades",
             "description": "Some third-party embeds can be lazy loaded. Consider replacing them with a facade until they are required. [Learn how to defer third-parties with a facade](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/).",
             "score": null,
-            "scoreDisplayMode": "notApplicable"
+            "scoreDisplayMode": "notApplicable",
+            "metricSavings": {
+              "TBT": 0
+            },
+            "guidanceLevel": 3
           },
           "largest-contentful-paint-element": {
             "id": "largest-contentful-paint-element",
@@ -18741,6 +19067,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "1,800 ms",
+            "metricSavings": {
+              "LCP": 0
+            },
             "details": {
               "type": "list",
               "items": [
@@ -18817,7 +19146,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "lcp-lazy-loaded": {
             "id": "lcp-lazy-loaded",
@@ -18825,6 +19155,9 @@
             "description": "Above-the-fold images that are lazily loaded render later in the page lifecycle, which can delay the largest contentful paint. [Learn more about optimal lazy loading](https://web.dev/lcp-lazy-loading/).",
             "score": 1,
             "scoreDisplayMode": "binary",
+            "metricSavings": {
+              "LCP": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -18854,7 +19187,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "layout-shift-elements": {
             "id": "layout-shift-elements",
@@ -18862,11 +19196,15 @@
             "description": "These DOM elements contribute most to the CLS of the page. [Learn how to improve CLS](https://web.dev/optimize-cls/)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "long-tasks": {
             "id": "long-tasks",
@@ -18937,7 +19275,8 @@
                   }
                 ]
               }
-            }
+            },
+            "guidanceLevel": 1
           },
           "no-unload-listeners": {
             "id": "no-unload-listeners",
@@ -18952,11 +19291,15 @@
             "description": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "unsized-images": {
             "id": "unsized-images",
@@ -18964,6 +19307,9 @@
             "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
+            "metricSavings": {
+              "CLS": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -19018,7 +19364,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 3
           },
           "valid-source-maps": {
             "id": "valid-source-maps",
@@ -19041,6 +19388,9 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -19063,7 +19413,8 @@
                 ],
                 "pathLength": 2
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "csp-xss": {
             "id": "csp-xss",
@@ -19924,7 +20275,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "total-byte-weight": {
             "id": "total-byte-weight",
@@ -19974,7 +20326,8 @@
               "sortedBy": [
                 "totalBytes"
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "offscreen-images": {
             "id": "offscreen-images",
@@ -19986,6 +20339,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20002,7 +20359,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "render-blocking-resources": {
             "id": "render-blocking-resources",
@@ -20012,12 +20370,17 @@
             "scoreDisplayMode": "numeric",
             "numericValue": 0,
             "numericUnit": "millisecond",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
               "items": [],
               "overallSavingsMs": 0
-            }
+            },
+            "guidanceLevel": 2
           },
           "unminified-css": {
             "id": "unminified-css",
@@ -20028,6 +20391,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20044,7 +20411,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "unminified-javascript": {
             "id": "unminified-javascript",
@@ -20056,6 +20424,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20072,7 +20444,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "unused-css-rules": {
             "id": "unused-css-rules",
@@ -20083,6 +20456,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20099,7 +20476,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "unused-javascript": {
             "id": "unused-javascript",
@@ -20110,6 +20488,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20126,7 +20508,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "modern-image-formats": {
             "id": "modern-image-formats",
@@ -20138,6 +20521,10 @@
             "numericUnit": "millisecond",
             "displayValue": "Potential savings of 67 KiB",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 330
+            },
             "details": {
               "type": "opportunity",
               "headings": [
@@ -20200,7 +20587,8 @@
                   "LCP": 330
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-optimized-images": {
             "id": "uses-optimized-images",
@@ -20212,6 +20600,10 @@
             "numericUnit": "millisecond",
             "displayValue": "",
             "warnings": [],
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20228,7 +20620,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "uses-text-compression": {
             "id": "uses-text-compression",
@@ -20239,6 +20632,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20255,7 +20652,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "uses-responsive-images": {
             "id": "uses-responsive-images",
@@ -20266,6 +20664,10 @@
             "numericValue": 300,
             "numericUnit": "millisecond",
             "displayValue": "Potential savings of 51 KiB",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 300
+            },
             "details": {
               "type": "opportunity",
               "headings": [
@@ -20326,7 +20728,8 @@
                   "LCP": 300
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "efficient-animated-content": {
             "id": "efficient-animated-content",
@@ -20337,6 +20740,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20353,7 +20760,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 3
           },
           "duplicated-javascript": {
             "id": "duplicated-javascript",
@@ -20364,6 +20772,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [],
@@ -20380,7 +20792,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "legacy-javascript": {
             "id": "legacy-javascript",
@@ -20391,6 +20804,10 @@
             "numericValue": 0,
             "numericUnit": "millisecond",
             "displayValue": "",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            },
             "details": {
               "type": "opportunity",
               "headings": [
@@ -20451,7 +20868,8 @@
                   "LCP": 0
                 }
               }
-            }
+            },
+            "guidanceLevel": 2
           },
           "doctype": {
             "id": "doctype",
@@ -20476,6 +20894,9 @@
             "numericValue": 81,
             "numericUnit": "element",
             "displayValue": "81 elements",
+            "metricSavings": {
+              "TBT": 0
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -20553,7 +20974,8 @@
                   }
                 }
               ]
-            }
+            },
+            "guidanceLevel": 1
           },
           "geolocation-on-start": {
             "id": "geolocation-on-start",
@@ -20589,7 +21011,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 2
           },
           "js-libraries": {
             "id": "js-libraries",
@@ -20676,7 +21099,8 @@
               "type": "table",
               "headings": [],
               "items": []
-            }
+            },
+            "guidanceLevel": 3
           },
           "meta-description": {
             "id": "meta-description",
@@ -20905,7 +21329,8 @@
             "title": "Page didn't prevent back/forward cache restoration",
             "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
             "score": 1,
-            "scoreDisplayMode": "binary"
+            "scoreDisplayMode": "binary",
+            "guidanceLevel": 2
           }
         },
         "configSettings": {

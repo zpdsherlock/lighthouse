@@ -66,4 +66,13 @@ export interface Result {
   numericUnit?: string;
   /** Extra information about the page provided by some types of audits, in one of several possible forms that can be rendered in the HTML report. */
   details?: FormattedIcu<AuditDetails>;
+  /** Estimates of how much this audit affects various performance metrics. Values will be in the unit of the respective metrics. */
+  metricSavings?: MetricSavings
+  /** Score details including p10 and median for calculating an audit's log-normal score. */
+  scoringOptions?: {
+    p10: number;
+    median: number;
+  };
+  /** A number indicating how much guidance Lighthouse provides to solve the problem in this audit on a 1-3 scale. Higher means more guidance. */
+  guidanceLevel?: number;
 }

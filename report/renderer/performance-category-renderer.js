@@ -9,6 +9,7 @@
 import {CategoryRenderer} from './category-renderer.js';
 import {ReportUtils} from './report-utils.js';
 import {Globals} from './report-globals.js';
+import {Util} from '../../shared/util.js';
 import {createGauge, updateGauge} from './explodey-gauge.js';
 
 export class PerformanceCategoryRenderer extends CategoryRenderer {
@@ -42,61 +43,6 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
     }
 
     return element;
-  }
-
-  /**
-   * @param {LH.ReportResult.AuditRef} audit
-   * @param {number} scale
-   * @return {!Element}
-   */
-  _renderOpportunity(audit, scale) {
-    const oppTmpl = this.dom.createComponent('opportunity');
-    const element = this.populateAuditValues(audit, oppTmpl);
-    element.id = audit.result.id;
-
-    if (!audit.result.details || audit.result.scoreDisplayMode === 'error') {
-      return element;
-    }
-    const details = audit.result.details;
-    if (details.overallSavingsMs === undefined) {
-      return element;
-    }
-
-    // Overwrite the displayValue with opportunity's wastedMs
-    // TODO: normalize this to one tagName.
-    const displayEl =
-      this.dom.find('span.lh-audit__display-text, div.lh-audit__display-text', element);
-    const sparklineWidthPct = `${details.overallSavingsMs / scale * 100}%`;
-    this.dom.find('div.lh-sparkline__bar', element).style.width = sparklineWidthPct;
-    displayEl.textContent = Globals.i18n.formatSeconds(details.overallSavingsMs, 0.01);
-
-    // Set [title] tooltips
-    if (audit.result.displayValue) {
-      const displayValue = audit.result.displayValue;
-      this.dom.find('div.lh-load-opportunity__sparkline', element).title = displayValue;
-      displayEl.title = displayValue;
-    }
-
-    return element;
-  }
-
-  /**
-   * Get an audit's wastedMs to sort the opportunity by, and scale the sparkline width
-   * Opportunities with an error won't have a details object, so MIN_VALUE is returned to keep any
-   * erroring opportunities last in sort order.
-   * @param {LH.ReportResult.AuditRef} audit
-   * @return {number}
-   */
-  _getWastedMs(audit) {
-    if (audit.result.details) {
-      const details = audit.result.details;
-      if (typeof details.overallSavingsMs !== 'number') {
-        throw new Error('non-opportunity details passed to _getWastedMs');
-      }
-      return details.overallSavingsMs;
-    } else {
-      return Number.MIN_VALUE;
-    }
   }
 
   /**
@@ -147,18 +93,55 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
   }
 
   /**
-   * For performance, audits with no group should be a diagnostic or opportunity.
-   * The audit details type will determine which of the two groups an audit is in.
+   * Returns true if the audit is a general performance insight (i.e. not a metric or hidden audit).
    *
    * @param {LH.ReportResult.AuditRef} audit
-   * @return {'load-opportunity'|'diagnostic'|null}
+   * @return {boolean}
    */
-  _classifyPerformanceAudit(audit) {
-    if (audit.group) return null;
-    if (audit.result.details?.overallSavingsMs !== undefined) {
-      return 'load-opportunity';
+  _isPerformanceInsight(audit) {
+    return !audit.group;
+  }
+
+  /**
+   * Returns overallImpact and linearImpact for an audit.
+   * The overallImpact is determined by the audit saving's effect on the overall performance score.
+   * We use linearImpact to compare audits where their overallImpact is rounded down to 0.
+   *
+   * @param {LH.ReportResult.AuditRef} audit
+   * @param {LH.ReportResult.AuditRef[]} metricAudits
+   * @return {{overallImpact: number, overallLinearImpact: number}}
+   */
+  overallImpact(audit, metricAudits) {
+    if (!audit.result.metricSavings) {
+      return {overallImpact: 0, overallLinearImpact: 0};
     }
-    return 'diagnostic';
+
+    let overallImpact = 0;
+    let overallLinearImpact = 0;
+    for (const [k, savings] of Object.entries(audit.result.metricSavings)) {
+      // Get metric savings for individual audit.
+      if (savings === undefined) continue;
+
+      // Get the metric data.
+      const mAudit = metricAudits.find(audit => audit.acronym === k);
+      if (!mAudit) continue;
+      if (mAudit.result.score === null) continue;
+
+      const mValue = mAudit.result.numericValue;
+      if (!mValue) continue;
+
+      const linearImpact = savings / mValue * mAudit.weight;
+      overallLinearImpact += linearImpact;
+
+      const scoringOptions = mAudit.result.scoringOptions;
+      if (!scoringOptions) continue;
+
+      const newMetricScore = Util.computeLogNormalScore(scoringOptions, mValue - savings);
+
+      const weightedMetricImpact = (newMetricScore - mAudit.result.score) * mAudit.weight;
+      overallImpact += weightedMetricImpact;
+    }
+    return {overallImpact, overallLinearImpact};
   }
 
   /**
@@ -228,53 +211,54 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
       filmstripEl && timelineEl.append(filmstripEl);
     }
 
-    // Opportunities
-    const opportunityAudits = category.auditRefs
-        .filter(audit => this._classifyPerformanceAudit(audit) === 'load-opportunity')
-        .filter(audit => !ReportUtils.showAsPassed(audit.result))
-        .sort((auditA, auditB) => this._getWastedMs(auditB) - this._getWastedMs(auditA));
-
     const filterableMetrics = metricAudits.filter(a => !!a.relevantAudits);
     // TODO: only add if there are opportunities & diagnostics rendered.
     if (filterableMetrics.length) {
       this.renderMetricAuditFilter(filterableMetrics, element);
     }
 
-    if (opportunityAudits.length) {
-      // Scale the sparklines relative to savings, minimum 2s to not overstate small savings
-      const minimumScale = 2000;
-      const wastedMsValues = opportunityAudits.map(audit => this._getWastedMs(audit));
-      const maxWaste = Math.max(...wastedMsValues);
-      const scale = Math.max(Math.ceil(maxWaste / 1000) * 1000, minimumScale);
-      const [groupEl, footerEl] = this.renderAuditGroup(groups['load-opportunities']);
-      const tmpl = this.dom.createComponent('opportunityHeader');
-
-      this.dom.find('.lh-load-opportunity__col--one', tmpl).textContent =
-        strings.opportunityResourceColumnLabel;
-      this.dom.find('.lh-load-opportunity__col--two', tmpl).textContent =
-        strings.opportunitySavingsColumnLabel;
-
-      const headerEl = this.dom.find('.lh-load-opportunity__header', tmpl);
-      groupEl.insertBefore(headerEl, footerEl);
-      opportunityAudits.forEach(item =>
-        groupEl.insertBefore(this._renderOpportunity(item, scale), footerEl));
-      groupEl.classList.add('lh-audit-group--load-opportunities');
-      element.append(groupEl);
-    }
-
     // Diagnostics
     const diagnosticAudits = category.auditRefs
-        .filter(audit => this._classifyPerformanceAudit(audit) === 'diagnostic')
-        .filter(audit => !ReportUtils.showAsPassed(audit.result))
-        .sort((a, b) => {
-          const scoreA = a.result.scoreDisplayMode === 'informative' ? 100 : Number(a.result.score);
-          const scoreB = b.result.scoreDisplayMode === 'informative' ? 100 : Number(b.result.score);
-          return scoreA - scoreB;
-        });
+        .filter(audit => this._isPerformanceInsight(audit))
+        .filter(audit => !ReportUtils.showAsPassed(audit.result));
 
-    if (diagnosticAudits.length) {
+    /** @type {Array<{auditRef:LH.ReportResult.AuditRef, overallImpact: number, overallLinearImpact: number, guidanceLevel: number}>} */
+    const auditImpacts = [];
+    diagnosticAudits.forEach(audit => {
+      const {
+        overallImpact: overallImpact,
+        overallLinearImpact: overallLinearImpact,
+      } = this.overallImpact(audit, metricAudits);
+      const guidanceLevel = audit.result.guidanceLevel ?? 1;
+      auditImpacts.push({auditRef: audit, overallImpact, overallLinearImpact, guidanceLevel});
+    });
+
+    auditImpacts.sort((a, b) => {
+      // Sort audits by impact, prioritizing those with a higher overallImpact first,
+      // then falling back to linearImpact, guidance level and score.
+      if (a.overallImpact !== b.overallImpact) return b.overallImpact - a.overallImpact;
+
+      if (
+        a.overallImpact === 0 && b.overallImpact === 0 &&
+        a.overallLinearImpact !== b.overallLinearImpact
+      ) {
+        return b.overallLinearImpact - a.overallLinearImpact;
+      }
+
+      if (a.guidanceLevel !== b.guidanceLevel) return b.guidanceLevel - a.guidanceLevel;
+
+      const scoreA = a.auditRef.result.scoreDisplayMode === 'informative'
+        ? 100
+        : Number(a.auditRef.result.score);
+      const scoreB = b.auditRef.result.scoreDisplayMode === 'informative'
+        ? 100
+        : Number(b.auditRef.result.score);
+      return scoreA - scoreB;
+    });
+
+    if (auditImpacts.length) {
       const [groupEl, footerEl] = this.renderAuditGroup(groups['diagnostics']);
-      diagnosticAudits.forEach(item => groupEl.insertBefore(this.renderAudit(item), footerEl));
+      auditImpacts.forEach(item => groupEl.insertBefore(this.renderAudit(item.auditRef), footerEl));
       groupEl.classList.add('lh-audit-group--diagnostics');
       element.append(groupEl);
     }
@@ -282,7 +266,7 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
     // Passed audits
     const passedAudits = category.auditRefs
         .filter(audit =>
-          this._classifyPerformanceAudit(audit) && ReportUtils.showAsPassed(audit.result));
+          this._isPerformanceInsight(audit) && ReportUtils.showAsPassed(audit.result));
 
     if (!passedAudits.length) return element;
 

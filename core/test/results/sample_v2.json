@@ -52,7 +52,11 @@
       "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Learn more about using the viewport meta tag](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).",
       "score": 1,
       "scoreDisplayMode": "binary",
-      "warnings": []
+      "warnings": [],
+      "metricSavings": {
+        "INP": 0
+      },
+      "guidanceLevel": 3
     },
     "first-contentful-paint": {
       "id": "first-contentful-paint",
@@ -62,7 +66,11 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 6843.95,
       "numericUnit": "millisecond",
-      "displayValue": "6.8 s"
+      "displayValue": "6.8 s",
+      "scoringOptions": {
+        "p10": 1800,
+        "median": 3000
+      }
     },
     "largest-contentful-paint": {
       "id": "largest-contentful-paint",
@@ -72,7 +80,11 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 13319.961,
       "numericUnit": "millisecond",
-      "displayValue": "13.3 s"
+      "displayValue": "13.3 s",
+      "scoringOptions": {
+        "p10": 2500,
+        "median": 4000
+      }
     },
     "first-meaningful-paint": {
       "id": "first-meaningful-paint",
@@ -92,7 +104,11 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 8114,
       "numericUnit": "millisecond",
-      "displayValue": "8.1 s"
+      "displayValue": "8.1 s",
+      "scoringOptions": {
+        "p10": 3387,
+        "median": 5800
+      }
     },
     "screenshot-thumbnails": {
       "id": "screenshot-thumbnails",
@@ -168,7 +184,11 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 1220.691999999999,
       "numericUnit": "millisecond",
-      "displayValue": "1,220 ms"
+      "displayValue": "1,220 ms",
+      "scoringOptions": {
+        "p10": 200,
+        "median": 600
+      }
     },
     "max-potential-fid": {
       "id": "max-potential-fid",
@@ -189,6 +209,10 @@
       "numericValue": 0.13570762803819444,
       "numericUnit": "unitless",
       "displayValue": "0.136",
+      "scoringOptions": {
+        "p10": 0.1,
+        "median": 0.25
+      },
       "details": {
         "type": "debugdata",
         "items": [
@@ -308,6 +332,10 @@
       "numericValue": 568.468,
       "numericUnit": "millisecond",
       "displayValue": "Root document took 570 ms",
+      "metricSavings": {
+        "FCP": 468.46799999999996,
+        "LCP": 468.46799999999996
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -329,7 +357,8 @@
           }
         ],
         "overallSavingsMs": 468.46799999999996
-      }
+      },
+      "guidanceLevel": 1
     },
     "interactive": {
       "id": "interactive",
@@ -607,7 +636,8 @@
             "timingType": "Mark"
           }
         ]
-      }
+      },
+      "guidanceLevel": 2
     },
     "critical-request-chains": {
       "id": "critical-request-chains",
@@ -744,7 +774,8 @@
           "length": 2,
           "transferSize": 903
         }
-      }
+      },
+      "guidanceLevel": 1
     },
     "redirects": {
       "id": "redirects",
@@ -755,12 +786,17 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "",
+      "metricSavings": {
+        "LCP": 0,
+        "FCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
         "items": [],
         "overallSavingsMs": 0
-      }
+      },
+      "guidanceLevel": 2
     },
     "installable-manifest": {
       "id": "installable-manifest",
@@ -1000,6 +1036,9 @@
       "numericValue": 2240.732999999998,
       "numericUnit": "millisecond",
       "displayValue": "2.2 s",
+      "metricSavings": {
+        "TBT": 1220.691999999999
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -1050,7 +1089,8 @@
         "sortedBy": [
           "duration"
         ]
-      }
+      },
+      "guidanceLevel": 1
     },
     "bootup-time": {
       "id": "bootup-time",
@@ -1061,6 +1101,9 @@
       "numericValue": 1324.3129999999999,
       "numericUnit": "millisecond",
       "displayValue": "1.3 s",
+      "metricSavings": {
+        "TBT": 1209.4020894768312
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -1114,7 +1157,8 @@
         "sortedBy": [
           "total"
         ]
-      }
+      },
+      "guidanceLevel": 1
     },
     "uses-rel-preload": {
       "id": "uses-rel-preload",
@@ -1127,7 +1171,8 @@
         "headings": [],
         "items": [],
         "overallSavingsMs": 0
-      }
+      },
+      "guidanceLevel": 3
     },
     "uses-rel-preconnect": {
       "id": "uses-rel-preconnect",
@@ -1139,6 +1184,10 @@
       "numericUnit": "millisecond",
       "displayValue": "",
       "warnings": [],
+      "metricSavings": {
+        "LCP": 0,
+        "FCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -1147,7 +1196,8 @@
         "sortedBy": [
           "wastedMs"
         ]
-      }
+      },
+      "guidanceLevel": 3
     },
     "font-display": {
       "id": "font-display",
@@ -1160,7 +1210,8 @@
         "type": "table",
         "headings": [],
         "items": []
-      }
+      },
+      "guidanceLevel": 3
     },
     "diagnostics": {
       "id": "diagnostics",
@@ -2145,6 +2196,9 @@
       "score": 1,
       "scoreDisplayMode": "binary",
       "displayValue": "Third-party code blocked the main thread for 0 ms",
+      "metricSavings": {
+        "TBT": 23.424291876693196
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -2202,14 +2256,19 @@
           "wastedMs": 0
         },
         "isEntityGrouped": true
-      }
+      },
+      "guidanceLevel": 1
     },
     "third-party-facades": {
       "id": "third-party-facades",
       "title": "Lazy load third-party resources with facades",
       "description": "Some third-party embeds can be lazy loaded. Consider replacing them with a facade until they are required. [Learn how to defer third-parties with a facade](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/).",
       "score": null,
-      "scoreDisplayMode": "notApplicable"
+      "scoreDisplayMode": "notApplicable",
+      "metricSavings": {
+        "TBT": 0
+      },
+      "guidanceLevel": 3
     },
     "largest-contentful-paint-element": {
       "id": "largest-contentful-paint-element",
@@ -2218,6 +2277,9 @@
       "score": null,
       "scoreDisplayMode": "informative",
       "displayValue": "13,320 ms",
+      "metricSavings": {
+        "LCP": 10819.961
+      },
       "details": {
         "type": "list",
         "items": [
@@ -2294,14 +2356,19 @@
             ]
           }
         ]
-      }
+      },
+      "guidanceLevel": 1
     },
     "lcp-lazy-loaded": {
       "id": "lcp-lazy-loaded",
       "title": "Largest Contentful Paint image was not lazily loaded",
       "description": "Above-the-fold images that are lazily loaded render later in the page lifecycle, which can delay the largest contentful paint. [Learn more about optimal lazy loading](https://web.dev/lcp-lazy-loading/).",
       "score": null,
-      "scoreDisplayMode": "notApplicable"
+      "scoreDisplayMode": "notApplicable",
+      "metricSavings": {
+        "LCP": 0
+      },
+      "guidanceLevel": 3
     },
     "layout-shift-elements": {
       "id": "layout-shift-elements",
@@ -2310,6 +2377,9 @@
       "score": null,
       "scoreDisplayMode": "informative",
       "displayValue": "5 elements found",
+      "metricSavings": {
+        "CLS": 0.13570762803819444
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -2422,7 +2492,8 @@
             "score": 0.004071364067636093
           }
         ]
-      }
+      },
+      "guidanceLevel": 2
     },
     "long-tasks": {
       "id": "long-tasks",
@@ -2499,7 +2570,8 @@
             }
           ]
         }
-      }
+      },
+      "guidanceLevel": 1
     },
     "no-unload-listeners": {
       "id": "no-unload-listeners",
@@ -2536,6 +2608,9 @@
       "score": null,
       "scoreDisplayMode": "informative",
       "displayValue": "1 animated element found",
+      "metricSavings": {
+        "CLS": 0
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -2587,7 +2662,8 @@
             }
           }
         ]
-      }
+      },
+      "guidanceLevel": 2
     },
     "unsized-images": {
       "id": "unsized-images",
@@ -2595,6 +2671,9 @@
       "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
       "score": 0,
       "scoreDisplayMode": "binary",
+      "metricSavings": {
+        "CLS": 0
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -2649,7 +2728,8 @@
             }
           }
         ]
-      }
+      },
+      "guidanceLevel": 3
     },
     "valid-source-maps": {
       "id": "valid-source-maps",
@@ -2672,6 +2752,9 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "",
+      "metricSavings": {
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -2739,7 +2822,8 @@
           ],
           "pathLength": 4
         }
-      }
+      },
+      "guidanceLevel": 3
     },
     "csp-xss": {
       "id": "csp-xss",
@@ -4151,7 +4235,8 @@
         "skipSumming": [
           "cacheLifetimeMs"
         ]
-      }
+      },
+      "guidanceLevel": 3
     },
     "total-byte-weight": {
       "id": "total-byte-weight",
@@ -4221,7 +4306,8 @@
         "sortedBy": [
           "totalBytes"
         ]
-      }
+      },
+      "guidanceLevel": 1
     },
     "offscreen-images": {
       "id": "offscreen-images",
@@ -4233,6 +4319,10 @@
       "numericUnit": "millisecond",
       "displayValue": "",
       "warnings": [],
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -4249,7 +4339,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "render-blocking-resources": {
       "id": "render-blocking-resources",
@@ -4260,6 +4351,10 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 0 ms",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4312,7 +4407,8 @@
           }
         ],
         "overallSavingsMs": 0
-      }
+      },
+      "guidanceLevel": 2
     },
     "unminified-css": {
       "id": "unminified-css",
@@ -4323,6 +4419,10 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -4339,7 +4439,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 3
     },
     "unminified-javascript": {
       "id": "unminified-javascript",
@@ -4351,6 +4452,10 @@
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 82 KiB",
       "warnings": [],
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 300
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4390,7 +4495,8 @@
             "LCP": 300
           }
         }
-      }
+      },
+      "guidanceLevel": 3
     },
     "unused-css-rules": {
       "id": "unused-css-rules",
@@ -4401,6 +4507,10 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -4417,7 +4527,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "unused-javascript": {
       "id": "unused-javascript",
@@ -4428,6 +4539,10 @@
       "numericValue": 750,
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 64 KiB",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 450
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4483,7 +4598,8 @@
             "LCP": 450
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "modern-image-formats": {
       "id": "modern-image-formats",
@@ -4495,6 +4611,10 @@
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 76 KiB",
       "warnings": [],
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 450
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4597,7 +4717,8 @@
             "LCP": 450
           }
         }
-      }
+      },
+      "guidanceLevel": 3
     },
     "uses-optimized-images": {
       "id": "uses-optimized-images",
@@ -4609,6 +4730,10 @@
       "numericUnit": "millisecond",
       "displayValue": "",
       "warnings": [],
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -4625,7 +4750,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "uses-text-compression": {
       "id": "uses-text-compression",
@@ -4636,6 +4762,10 @@
       "numericValue": 2400,
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 143 KiB",
+      "metricSavings": {
+        "FCP": 150,
+        "LCP": 750
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4679,7 +4809,8 @@
             "LCP": 750
           }
         }
-      }
+      },
+      "guidanceLevel": 3
     },
     "uses-responsive-images": {
       "id": "uses-responsive-images",
@@ -4690,6 +4821,10 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -4706,7 +4841,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "efficient-animated-content": {
       "id": "efficient-animated-content",
@@ -4717,6 +4853,10 @@
       "numericValue": 3450,
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 666 KiB",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 3300
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4755,7 +4895,8 @@
             "LCP": 3300
           }
         }
-      }
+      },
+      "guidanceLevel": 3
     },
     "duplicated-javascript": {
       "id": "duplicated-javascript",
@@ -4766,6 +4907,10 @@
       "numericValue": 0,
       "numericUnit": "millisecond",
       "displayValue": "",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
@@ -4782,7 +4927,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "legacy-javascript": {
       "id": "legacy-javascript",
@@ -4793,6 +4939,10 @@
       "numericValue": 450,
       "numericUnit": "millisecond",
       "displayValue": "Potential savings of 26 KiB",
+      "metricSavings": {
+        "FCP": 0,
+        "LCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4863,7 +5013,8 @@
             "LCP": 0
           }
         }
-      }
+      },
+      "guidanceLevel": 2
     },
     "doctype": {
       "id": "doctype",
@@ -4888,6 +5039,9 @@
       "numericValue": 153,
       "numericUnit": "element",
       "displayValue": "153 elements",
+      "metricSavings": {
+        "TBT": 1
+      },
       "details": {
         "type": "table",
         "headings": [
@@ -4965,7 +5119,8 @@
             }
           }
         ]
-      }
+      },
+      "guidanceLevel": 1
     },
     "geolocation-on-start": {
       "id": "geolocation-on-start",
@@ -5060,7 +5215,8 @@
             }
           }
         ]
-      }
+      },
+      "guidanceLevel": 2
     },
     "js-libraries": {
       "id": "js-libraries",
@@ -5202,12 +5358,17 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
       "numericUnit": "millisecond",
+      "metricSavings": {
+        "LCP": 0,
+        "FCP": 0
+      },
       "details": {
         "type": "opportunity",
         "headings": [],
         "items": [],
         "overallSavingsMs": 0
-      }
+      },
+      "guidanceLevel": 3
     },
     "uses-passive-event-listeners": {
       "id": "uses-passive-event-listeners",
@@ -5235,7 +5396,8 @@
             }
           }
         ]
-      }
+      },
+      "guidanceLevel": 3
     },
     "meta-description": {
       "id": "meta-description",
@@ -5543,7 +5705,8 @@
             "protocolReason": "BrowsingInstanceNotSwapped"
           }
         ]
-      }
+      },
+      "guidanceLevel": 2
     }
   },
   "configSettings": {
