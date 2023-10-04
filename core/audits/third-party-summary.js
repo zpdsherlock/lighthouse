@@ -75,6 +75,7 @@ class ThirdPartySummary extends Audit {
       failureTitle: str_(UIStrings.failureTitle),
       description: str_(UIStrings.description),
       guidanceLevel: 1,
+      scoreDisplayMode: Audit.SCORING_MODES.METRIC_SAVINGS,
       requiredArtifacts: ['traces', 'devtoolsLogs', 'URL', 'GatherContext'],
     };
   }
@@ -257,8 +258,11 @@ class ThirdPartySummary extends Audit {
     const details = Audit.makeTableDetails(headings, results,
       {...overallSummary, isEntityGrouped: true});
 
+    const passed = overallSummary.wastedMs <= PASS_THRESHOLD_IN_MS;
+
     return {
-      score: Number(overallSummary.wastedMs <= PASS_THRESHOLD_IN_MS),
+      score: Number(passed),
+      scoreDisplayMode: passed ? Audit.SCORING_MODES.INFORMATIVE : undefined,
       displayValue: str_(UIStrings.displayValue, {
         timeInMs: overallSummary.wastedMs,
       }),

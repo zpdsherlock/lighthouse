@@ -51,6 +51,7 @@ class FontDisplay extends Audit {
       supportedModes: ['navigation'],
       guidanceLevel: 3,
       requiredArtifacts: ['devtoolsLogs', 'CSSUsage', 'URL'],
+      scoreDisplayMode: Audit.SCORING_MODES.METRIC_SAVINGS,
     };
   }
 

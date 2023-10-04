@@ -55,6 +55,7 @@ class NoDocWriteAudit extends ViolationAudit {
       description: str_(UIStrings.description),
       guidanceLevel: 2,
       requiredArtifacts: ['ConsoleMessages', 'SourceMaps', 'Scripts'],
+      scoreDisplayMode: ViolationAudit.SCORING_MODES.METRIC_SAVINGS,
     };
   }
 

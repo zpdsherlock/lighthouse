@@ -90,6 +90,8 @@ declare module Audit {
     metricSavings?: MetricSavings;
     /** Score details including p10 and median for calculating an audit's log-normal score. */
     scoringOptions?: ScoreOptions;
+    /** A string identifying how the score should be interpreted for display. Overrides audit meta `scoreDisplayMode` if defined. */
+    scoreDisplayMode?: AuditResult.ScoreDisplayMode;
   }
 
   /** The Audit.Product type for audits that do not return a `numericValue`. */

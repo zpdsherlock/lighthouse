@@ -58,7 +58,7 @@ class WorkDuringInteraction extends Audit {
       title: str_(UIStrings.title),
       failureTitle: str_(UIStrings.failureTitle),
       description: str_(UIStrings.description),
-      scoreDisplayMode: Audit.SCORING_MODES.NUMERIC,
+      scoreDisplayMode: Audit.SCORING_MODES.METRIC_SAVINGS,
       supportedModes: ['timespan'],
       guidanceLevel: 1,
       requiredArtifacts: ['traces', 'devtoolsLogs', 'TraceElements'],
@@ -273,8 +273,12 @@ class WorkDuringInteraction extends Audit {
 
     const duration = interactionEvent.args.data.duration;
     const displayValue = str_(UIStrings.displayValue, {timeInMs: duration, interactionType});
+
+    const passed = duration < InteractionToNextPaint.defaultOptions.p10;
+
     return {
-      score: duration < InteractionToNextPaint.defaultOptions.p10 ? 1 : 0,
+      score: passed ? 1 : 0,
+      scoreDisplayMode: passed ? Audit.SCORING_MODES.INFORMATIVE : undefined,
       displayValue,
       details: {
         type: 'list',

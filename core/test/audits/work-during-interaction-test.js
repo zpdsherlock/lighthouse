@@ -259,6 +259,7 @@ Object {
     "INP": 368,
   },
   "score": 0,
+  "scoreDisplayMode": undefined,
 }
 `);
   });

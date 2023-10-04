@@ -36,6 +36,7 @@ class Viewport extends Audit {
       description: str_(UIStrings.description),
       guidanceLevel: 3,
       requiredArtifacts: ['MetaElements'],
+      scoreDisplayMode: Audit.SCORING_MODES.METRIC_SAVINGS,
     };
   }
 

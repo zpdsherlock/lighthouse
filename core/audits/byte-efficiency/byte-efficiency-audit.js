@@ -309,7 +309,7 @@ class ByteEfficiencyAudit extends Audit {
       displayValue,
       numericValue: wastedMs,
       numericUnit: 'millisecond',
-      score: ByteEfficiencyAudit.scoreForWastedMs(wastedMs),
+      score: results.length ? 0 : 1,
       details,
       metricSavings,
     };

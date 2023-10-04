@@ -313,7 +313,7 @@ const expectations = {
         score: 0,
       },
       'no-document-write': {
-        score: 0,
+        score: 0.5,
         details: {
           items: {
             length: 3,
@@ -350,7 +350,7 @@ const expectations = {
         },
       },
       'uses-passive-event-listeners': {
-        score: 0,
+        score: 0.5,
         details: {
           items: {
           // Note: Originally this was 7 but M56 defaults document-level
@@ -436,7 +436,7 @@ const expectations = {
         },
       },
       'dom-size': {
-        score: 1,
+        score: null,
         numericValue: 153,
         details: {
           items: [
@@ -563,7 +563,7 @@ const expectations = {
         }}},
       },
       'largest-contentful-paint-element': {
-        score: null,
+        score: 0,
         displayValue: /\d+\xa0ms/,
         details: {
           items: [

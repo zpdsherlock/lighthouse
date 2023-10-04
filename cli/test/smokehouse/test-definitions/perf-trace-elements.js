@@ -143,7 +143,7 @@ const expectations = {
     finalDisplayedUrl: 'http://localhost:10200/perf/trace-elements.html',
     audits: {
       'largest-contentful-paint-element': {
-        score: null,
+        score: 0,
         displayValue: /\d+\xa0ms/,
         details: {
           items: {
