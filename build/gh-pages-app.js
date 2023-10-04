@@ -185,7 +185,7 @@ class GhPagesApp {
 
     if (this.preloadScripts.length) {
       const preloads = this.preloadScripts.map(fileName =>
-        `<link rel="preload" href="${fileName}" as="script" crossorigin="anonymous" />`
+        `<link rel="preload" href="./src/${fileName}" as="script" crossorigin="anonymous" />`
       ).join('\n');
       const endHeadIndex = htmlSrc.indexOf('</head>');
       if (endHeadIndex === -1) {
