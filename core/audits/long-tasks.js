@@ -11,6 +11,7 @@ import {MainThreadTasks} from '../computed/main-thread-tasks.js';
 import {PageDependencyGraph} from '../computed/page-dependency-graph.js';
 import {LoadSimulator} from '../computed/load-simulator.js';
 import {getJavaScriptURLs, getAttributableURLForTask} from '../lib/tracehouse/task-summary.js';
+import {TotalBlockingTime} from '../computed/metrics/total-blocking-time.js';
 
 /** We don't always have timing data for short tasks, if we're missing timing data. Treat it as though it were 0ms. */
 const DEFAULT_TIMING = {startTime: 0, endTime: 0, duration: 0};
@@ -66,8 +67,8 @@ class LongTasks extends Audit {
       scoreDisplayMode: Audit.SCORING_MODES.INFORMATIVE,
       title: str_(UIStrings.title),
       description: str_(UIStrings.description),
+      requiredArtifacts: ['traces', 'devtoolsLogs', 'URL', 'GatherContext'],
       guidanceLevel: 1,
-      requiredArtifacts: ['traces', 'devtoolsLogs', 'URL'],
     };
   }
 
@@ -180,6 +181,9 @@ class LongTasks extends Audit {
     const devtoolsLog = artifacts.devtoolsLogs[LongTasks.DEFAULT_PASS];
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
 
+    const metricComputationData = Audit.makeMetricComputationDataInput(artifacts, context);
+    const tbtResult = await TotalBlockingTime.request(metricComputationData, context);
+
     /** @type {Map<LH.TraceEvent, LH.Gatherer.Simulation.NodeTiming>|undefined} */
     let taskTimingsByEvent;
 
@@ -245,6 +249,9 @@ class LongTasks extends Audit {
       notApplicable: results.length === 0,
       details: tableDetails,
       displayValue,
+      metricSavings: {
+        TBT: tbtResult.timing,
+      },
     };
   }
 }

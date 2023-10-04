@@ -6,6 +6,7 @@
 
 import {readJson} from '../test-utils.js';
 import LongTasks from '../../audits/long-tasks.js';
+import {defaultSettings} from '../../config/constants.js';
 import {createTestTrace} from '../create-test-trace.js';
 import {networkRecordsToDevtoolsLog} from '../network-records-to-devtools-log.js';
 
@@ -52,27 +53,46 @@ function generateTraceWithLongTasks({count, duration = 200, withChildTasks = fal
   return createTestTrace({
     topLevelTasks: traceTasks,
     timeOrigin: BASE_TS,
+    traceEnd: BASE_TS + 20_000,
   });
 }
 
 describe('Long tasks audit', () => {
-  const devtoolsLog = networkRecordsToDevtoolsLog([{url: TASK_URL}]);
+  const devtoolsLog = networkRecordsToDevtoolsLog([{
+    url: TASK_URL,
+    priority: 'High',
+  }]);
   const URL = {
     requestedUrl: TASK_URL,
     mainDocumentUrl: TASK_URL,
     finalDisplayedUrl: TASK_URL,
   };
 
-  it('should pass if there are no long tasks', async () => {
+  let context;
+
+  beforeEach(() => {
+    const settings = JSON.parse(JSON.stringify(defaultSettings));
+    settings.throttlingMethod = 'devtools';
+
+    context = {
+      computedCache: new Map(),
+      settings,
+    };
+  });
+
+  it('should pass and be non-applicable if there are no long tasks', async () => {
     const artifacts = {
       URL,
       traces: {defaultPass: generateTraceWithLongTasks({count: 0})},
       devtoolsLogs: {defaultPass: devtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
     expect(result.details.items).toHaveLength(0);
     expect(result.score).toBe(1);
     expect(result.displayValue).toBeUndefined();
+    expect(result.notApplicable).toBeTruthy();
+    expect(result.metricSavings).toEqual({TBT: 0});
   });
 
   it('should return a list of long tasks with duration >= 50 ms', async () => {
@@ -80,8 +100,9 @@ describe('Long tasks audit', () => {
       URL,
       traces: {defaultPass: generateTraceWithLongTasks({count: 4})},
       devtoolsLogs: {defaultPass: devtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
     expect(result.details.items).toMatchObject([
       {url: 'Unattributable', duration: 200, startTime: 1000},
       {url: 'Unattributable', duration: 200, startTime: 2000},
@@ -91,11 +112,13 @@ describe('Long tasks audit', () => {
     expect(result.score).toBe(0);
     expect(result.displayValue).toBeDisplayString('4 long tasks found');
     expect(result.notApplicable).toBeFalsy();
+    expect(result.metricSavings).toEqual({TBT: 600}); // 4 * (200ms - 50ms)
   });
 
   it('should filter out tasks with duration less than 50 ms', async () => {
     const trace = createTestTrace({
       timeOrigin: BASE_TS,
+      traceEnd: BASE_TS + 20_000,
       topLevelTasks: [
         {ts: BASE_TS, duration: 1},
         {ts: BASE_TS + 1000, duration: 30},
@@ -108,24 +131,29 @@ describe('Long tasks audit', () => {
       URL,
       traces: {defaultPass: trace},
       devtoolsLogs: {defaultPass: devtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
 
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
     expect(result.details.items).toMatchObject([
       {url: 'Unattributable', duration: 100, startTime: 2000},
       {url: 'Unattributable', duration: 50, startTime: 4000},
     ]);
     expect(result.score).toBe(0);
     expect(result.displayValue).toBeDisplayString('2 long tasks found');
+    expect(result.metricSavings).toEqual({TBT: 50}); // (100ms - 50ms) + (50ms - 50ms)
   });
 
   it('should not filter out tasks with duration >= 50 ms only after throttling', async () => {
     const artifacts = {
       URL,
       traces: {defaultPass: generateTraceWithLongTasks({count: 4, duration: 25})},
-      devtoolsLogs: {defaultPass: networkRecordsToDevtoolsLog([
-        {url: TASK_URL, timing: {connectEnd: 50, connectStart: 0.01, sslStart: 25, sslEnd: 40}},
-      ])},
+      devtoolsLogs: {defaultPass: networkRecordsToDevtoolsLog([{
+        url: TASK_URL,
+        priority: 'High',
+        timing: {connectEnd: 50, connectStart: 0.01, sslStart: 25, sslEnd: 40},
+      }])},
+      GatherContext: {gatherMode: 'navigation'},
     };
     const context = {
       computedCache: new Map(),
@@ -152,6 +180,7 @@ describe('Long tasks audit', () => {
     expect(result.score).toBe(0);
     expect(result.details.items).toHaveLength(4);
     expect(result.displayValue).toBeDisplayString('4 long tasks found');
+    expect(result.metricSavings).toEqual({TBT: 200}); // 4 * (100ms - 50ms)
   });
 
   it('should populate url when tasks have an attributable url', async () => {
@@ -160,13 +189,15 @@ describe('Long tasks audit', () => {
       URL,
       traces: {defaultPass: trace},
       devtoolsLogs: {defaultPass: devtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
     expect(result.details.items).toMatchObject([
       {url: TASK_URL, duration: 300, startTime: 1000},
     ]);
     expect(result.score).toBe(0);
     expect(result.displayValue).toBeDisplayString('1 long task found');
+    expect(result.metricSavings).toEqual({TBT: 250}); // 300ms - 50ms
   });
 
   it('should include more than 20 tasks in debugData', async () => {
@@ -181,18 +212,21 @@ describe('Long tasks audit', () => {
 
     const trace = createTestTrace({
       timeOrigin: BASE_TS,
+      traceEnd: BASE_TS + 100_000,
       topLevelTasks,
     });
     const artifacts = {
       URL,
       traces: {defaultPass: trace},
       devtoolsLogs: {defaultPass: devtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
 
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
     expect(result.details.items).toHaveLength(20);
     expect(result.score).toBe(0);
     expect(result.displayValue).toBeDisplayString('20 long tasks found');
+    expect(result.metricSavings).toEqual({TBT: 249.99}); // (55ms - 50ms) * 50
 
     const debugData = result.details.debugData;
     expect(debugData).toMatchObject({
@@ -218,8 +252,9 @@ describe('Long tasks audit', () => {
       URL,
       traces: {defaultPass: trace},
       devtoolsLogs: {defaultPass: devtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
 
     expect(result).toMatchObject({
       score: 0,
@@ -250,8 +285,9 @@ describe('Long tasks audit', () => {
       URL,
       traces: {defaultPass: redirectTrace},
       devtoolsLogs: {defaultPass: redirectDevtoolsLog},
+      GatherContext: {gatherMode: 'navigation'},
     };
-    const result = await LongTasks.audit(artifacts, {computedCache: new Map()});
+    const result = await LongTasks.audit(artifacts, context);
 
     expect(result).toMatchObject({
       score: 0,
@@ -268,6 +304,7 @@ describe('Long tasks audit', () => {
         }],
       },
     });
+    expect(result.metricSavings.TBT).toBeApproximately(353.53);
 
     const debugData = result.details.debugData;
     expect(debugData).toStrictEqual({
