@@ -2502,6 +2502,9 @@
       "score": null,
       "scoreDisplayMode": "informative",
       "displayValue": "2 long tasks found",
+      "metricSavings": {
+        "TBT": 1220.691999999999
+      },
       "details": {
         "type": "table",
         "headings": [

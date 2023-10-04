@@ -145,33 +145,26 @@ function addSniffer(receiver, methodName, override) {
 }
 
 async function waitForLighthouseReady() {
+  // @ts-expect-error import
+  const {ViewManager, DockController} = await import('./ui/legacy/legacy.js');
+  // @ts-expect-error import
+  const {LighthousePanel} = await import('./panels/lighthouse/lighthouse.js');
+  // @ts-expect-error import
+  const {TargetManager} = await import('./core/sdk/sdk.js');
+  // @ts-expect-error import
+  const {AdvancedApp} = await import('./panels/emulation/emulation.js');
+
   // Undocking later in the function can cause hiccups when Lighthouse enables device emulation.
-  // @ts-expect-error global
-  UI.dockController.setDockSide('undocked');
+  DockController.DockController.instance().setDockSide('undocked');
 
-  // @ts-expect-error global
-  const viewManager = UI.viewManager || (UI.ViewManager.ViewManager || UI.ViewManager).instance();
-  const views = viewManager.views || viewManager._views;
-  const panelName = views.has('lighthouse') ? 'lighthouse' : 'audits';
-  await viewManager.showView(panelName);
+  await ViewManager.ViewManager.instance().showView('lighthouse');
 
-  // @ts-expect-error global
-  const panel = UI.panels.lighthouse || UI.panels.audits;
+  const panel = LighthousePanel.LighthousePanel.instance();
+
   const button = panel.contentElement.querySelector('button');
   if (button.disabled) throw new Error('Start button disabled');
 
-  // Give the main target model a moment to be available.
-  // Otherwise, 'SDK.TargetManager.TargetManager.instance().mainTarget()' is null.
-  // @ts-expect-error global
-  if (self.runtime && self.runtime.loadLegacyModule) {
-    // This exposes TargetManager via self.SDK.
-    try {
-    // @ts-expect-error global
-      await self.runtime.loadLegacyModule('core/sdk/sdk-legacy.js');
-    } catch {}
-  }
-  // @ts-expect-error global
-  const targetManager = SDK.targetManager || (SDK.TargetManager.TargetManager || SDK.TargetManager).instance();
+  const targetManager = TargetManager.TargetManager.instance();
   if (targetManager.primaryPageTarget() === null) {
     if (targetManager?.observeTargets) {
       await new Promise(resolve => targetManager.observeTargets({
@@ -186,16 +179,16 @@ async function waitForLighthouseReady() {
   }
 
   // Ensure the emulation model is ready before Lighthouse starts by enabling device emulation.
-  // @ts-expect-error global
-  const {deviceModeView} = Emulation.AdvancedApp.instance();
+  const {deviceModeView} = AdvancedApp.AdvancedApp.instance();
   if (!deviceModeView.isDeviceModeOn()) {
     deviceModeView.toggleDeviceMode();
   }
 }
 
 async function runLighthouse() {
-  // @ts-expect-error global
-  const panel = UI.panels.lighthouse || UI.panels.audits;
+  // @ts-expect-error import
+  const {LighthousePanel} = await import('./panels/lighthouse/lighthouse.js');
+  const panel = LighthousePanel.LighthousePanel.instance();
 
   /** @type {Promise<{lhr: LH.Result, artifacts: LH.Artifacts}>} */
   const resultPromise = new Promise((resolve, reject) => {
@@ -233,9 +226,11 @@ async function runLighthouse() {
   return resultPromise;
 }
 
-function enableDevToolsThrottling() {
-  // @ts-expect-error global
-  const panel = UI.panels.lighthouse || UI.panels.audits;
+async function enableDevToolsThrottling() {
+  // @ts-expect-error import
+  const {LighthousePanel} = await import('./panels/lighthouse/lighthouse.js');
+  const panel = LighthousePanel.LighthousePanel.instance();
+
   const toolbarRoot = panel.contentElement.querySelector('.lighthouse-settings-pane .toolbar').shadowRoot;
   toolbarRoot.querySelector('option[value="devtools"]').selected = true;
   toolbarRoot.querySelector('select').dispatchEvent(new Event('change'));

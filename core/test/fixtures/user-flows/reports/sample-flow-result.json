@@ -1765,6 +1765,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "3 long tasks found",
+            "metricSavings": {
+              "TBT": 143
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -9659,6 +9662,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "1 long task found",
+            "metricSavings": {
+              "TBT": 122.83299999999986
+            },
             "details": {
               "type": "table",
               "headings": [
@@ -19213,6 +19219,9 @@
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "2 long tasks found",
+            "metricSavings": {
+              "TBT": 13
+            },
             "details": {
               "type": "table",
               "headings": [
