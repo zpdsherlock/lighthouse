@@ -28,7 +28,7 @@ import {fileURLToPath} from 'url';
 import * as puppeteer from 'puppeteer-core';
 import yargs from 'yargs';
 import * as yargsHelpers from 'yargs/helpers';
-import {getChromePath} from 'chrome-launcher';
+import {launch} from 'chrome-launcher';
 import esMain from 'es-main';
 
 import {parseChromeFlags} from '../../cli/run.js';
@@ -300,12 +300,17 @@ function dismissDialog(dialog) {
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, logs: string[]}>}
  */
 async function testUrlFromDevtools(url, options = {}) {
-  const {config, chromeFlags} = options;
+  const {config, chromeFlags = []} = options;
 
-  const browser = await puppeteer.launch({
-    executablePath: getChromePath(),
-    args: chromeFlags,
-    devtools: true,
+  const newChromeFlags = [
+    ...chromeFlags,
+    '--auto-open-devtools-for-tabs',
+  ];
+
+  const chrome = await launch({chromeFlags: newChromeFlags});
+
+  const browser = await puppeteer.connect({
+    browserURL: `http://127.0.0.1:${chrome.port}`,
     defaultViewport: null,
   });
 
