@@ -1,3 +1,73 @@
+<a name="11.2.0"></a>
+# 11.2.0 (2023-10-09)
+[Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v11.1.0...v11.2.0)
+
+We expect this release to ship in the DevTools of [Chrome 120](https://chromiumdash.appspot.com/schedule), and to PageSpeed Insights within 2 weeks.
+
+## Notable Changes
+
+This update includes an overhaul to the performance category. Performance insights are now scored and prioritized based on their estimated impact to the performance metrics. Additionally, the performance score gauge includes more detailed information about how each metric affects the score.
+
+* core: align performance audit score with metric savings ([#15447](https://github.com/GoogleChrome/lighthouse/pull/15447))
+* report: sort performance audits based on impact ([#15445](https://github.com/GoogleChrome/lighthouse/pull/15445))
+* report: add explodey gauge for performance category ([#15396](https://github.com/GoogleChrome/lighthouse/pull/15396))
+
+## Core
+
+* asset-saver: fix handling of undefined trace ([#15451](https://github.com/GoogleChrome/lighthouse/pull/15451))
+* csp: use monospace for technical terms in strings ([#15511](https://github.com/GoogleChrome/lighthouse/pull/15511))
+* driver: attach to worker targets ([#14212](https://github.com/GoogleChrome/lighthouse/pull/14212))
+* inspector-issues: add `propertyRuleIssue` ([#15491](https://github.com/GoogleChrome/lighthouse/pull/15491))
+* installable-manifest: use monospace for technical terms in strings ([#15513](https://github.com/GoogleChrome/lighthouse/pull/15513))
+* long-tasks: compute TBT impact ([#15197](https://github.com/GoogleChrome/lighthouse/pull/15197))
+* mainthread-work-breakdown: add TBT savings ([#15201](https://github.com/GoogleChrome/lighthouse/pull/15201))
+* tags-blocking-first-paint: ignore malformed link tags ([#15489](https://github.com/GoogleChrome/lighthouse/pull/15489))
+
+## CLI
+
+* sentry: set useful tags from resolved config ([#15485](https://github.com/GoogleChrome/lighthouse/pull/15485))
+
+## Report
+
+* redefine gauge percentage positioning ([#15486](https://github.com/GoogleChrome/lighthouse/pull/15486))
+
+## Deps
+
+* upgrade puppeteer to v21.3.6 ([#15490](https://github.com/GoogleChrome/lighthouse/pull/15490))
+* pin puppeteer version ([#15458](https://github.com/GoogleChrome/lighthouse/pull/15458))
+* upgrade `axe-core` to 4.8.1 ([#15446](https://github.com/GoogleChrome/lighthouse/pull/15446))
+* chrome-launcher: upgrade to 1.1.0 ([#15517](https://github.com/GoogleChrome/lighthouse/pull/15517))
+
+## Clients
+
+* viewer: fix preload links ([#15515](https://github.com/GoogleChrome/lighthouse/pull/15515))
+
+## I18n
+
+* upgrade to latest icu formatter ([#13834](https://github.com/GoogleChrome/lighthouse/pull/13834))
+
+## Docs
+
+* plugins: minor corrections ([#15449](https://github.com/GoogleChrome/lighthouse/pull/15449))
+* readme: edit description of the PageVitals tool ([#15395](https://github.com/GoogleChrome/lighthouse/pull/15395))
+
+## Tests
+
+* use new headless for puppeteer tests ([#15374](https://github.com/GoogleChrome/lighthouse/pull/15374))
+* dbw: increase wasted ms threshold ([#15483](https://github.com/GoogleChrome/lighthouse/pull/15483))
+* devtools: remove usage of frontend globals ([#15518](https://github.com/GoogleChrome/lighthouse/pull/15518))
+* devtools: ensure Lighthouse starts in smoke tests ([#15459](https://github.com/GoogleChrome/lighthouse/pull/15459))
+* devtools: fix viewport in smoke tests ([#15454](https://github.com/GoogleChrome/lighthouse/pull/15454))
+* devtools: sync e2e ([#15444](https://github.com/GoogleChrome/lighthouse/pull/15444))
+
+## Misc
+
+* tweak dependabot ecosystem value ([#15521](https://github.com/GoogleChrome/lighthouse/pull/15521))
+* have dependabot check github actions deps ([#15496](https://github.com/GoogleChrome/lighthouse/pull/15496))
+* adopt minimal license headers ([#15456](https://github.com/GoogleChrome/lighthouse/pull/15456))
+* bot: delete stale git bot rules ([#14915](https://github.com/GoogleChrome/lighthouse/pull/14915))
+* ci: use commit sha for markdown action ([#15493](https://github.com/GoogleChrome/lighthouse/pull/15493))
+
 <a name="11.1.0"></a>
 # 11.1.0 (2023-09-06)
 [Full Changelog](https://github.com/GoogleChrome/lighthouse/compare/v11.0.0...v11.1.0)
