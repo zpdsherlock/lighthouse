@@ -320,7 +320,7 @@ async function _cleanup({requestedUrl, driver, resolvedConfig, lhBrowser, lhPage
   await driver.disconnect();
 
   // If Lighthouse started the Puppeteer instance then we are responsible for closing it.
-  if (flags.window === undefined || flags.window) {
+  if (flags === undefined || flags.window === undefined || flags.window) {
     await lhPage?.close();
   }
   await lhBrowser?.disconnect();
@@ -369,7 +369,9 @@ async function navigationGather(page, requestor, options = {}) {
           height: resolvedConfig.settings.screenEmulation.height,
         });
         const viewportSize = await lhPage.viewport();
-        console.log(`Lighthouse on ViewPort(${viewportSize.width} x ${viewportSize.height})`);
+        if (viewportSize) {
+          console.log(`Lighthouse on ViewPort(${viewportSize.width} x ${viewportSize.height})`);
+        }
         page = lhPage;
       }
 
