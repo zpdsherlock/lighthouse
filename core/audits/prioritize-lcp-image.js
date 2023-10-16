@@ -17,7 +17,7 @@ const UIStrings = {
   title: 'Preload Largest Contentful Paint image',
   /** Description of a lighthouse audit that tells a user to preload an image in order to improve their LCP time.  */
   description: 'If the LCP element is dynamically added to the page, you should preload the ' +
-    'image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/optimize-lcp/#optimize-when-the-resource-is-discovered).',
+    'image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered).',
 };
 
 const str_ = i18n.createIcuMessageFn(import.meta.url, UIStrings);

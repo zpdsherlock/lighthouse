@@ -12,7 +12,7 @@ const UIStrings = {
   /** Description of the Interaction to Next Paint metric. This description is displayed within a tooltip when the user hovers on the metric name to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
   description: 'Interaction to Next Paint measures page responsiveness, how long it ' +
                'takes the page to visibly respond to user input. ' +
-               '[Learn more about the Interaction to Next Paint metric](https://web.dev/inp/).',
+               '[Learn more about the Interaction to Next Paint metric](https://web.dev/articles/inp).',
 };
 
 const str_ = i18n.createIcuMessageFn(import.meta.url, UIStrings);
@@ -40,7 +40,7 @@ class InteractionToNextPaint extends Audit {
    */
   static get defaultOptions() {
     return {
-      // https://web.dev/inp/
+      // https://web.dev/articles/inp
       // This is using the same threshold as field tools since only supported in
       // unsimulated user flows for now.
       // see https://www.desmos.com/calculator/4xtrhg51th

@@ -142,7 +142,7 @@ writeFileSync('report.html', await flow.generateReport());
 <img src="https://user-images.githubusercontent.com/39191/170560932-f10c8465-de49-4e75-be6c-1cf408cf84f6.png" height=240>
 
 
-So far we've seen individual Lighthouse modes in action. The true power of flows comes from combining these building blocks into a comprehensive flow to capture the user's entire experience. Analyzing a multi-step user flow is currently only available [using the Lighthouse Node API along with Puppeteer](https://web.dev/lighthouse-user-flows/).
+So far we've seen individual Lighthouse modes in action. The true power of flows comes from combining these building blocks into a comprehensive flow to capture the user's entire experience. Analyzing a multi-step user flow is currently only available [using the Lighthouse Node API along with Puppeteer](https://web.dev/articles/lighthouse-user-flows).
 
 When mapping a user flow onto the Lighthouse modes, strive for each report to have a narrow focus. This will make debugging much easier when you have issues to fix!
 

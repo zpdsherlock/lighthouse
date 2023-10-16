@@ -152,10 +152,10 @@ describe('DOM', () => {
     });
 
     it('appends utm params to the URLs with https://web.dev origin', () => {
-      const text = '[Learn more](https://web.dev/tap-targets/).';
+      const text = '[Learn more](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/).';
 
       const result = dom.convertMarkdownLinkSnippets(text);
-      assert.equal(result.innerHTML, '<a rel="noopener" target="_blank" href="https://web.dev/tap-targets/?utm_source=lighthouse&amp;utm_medium=someChannel">Learn more</a>.');
+      assert.equal(result.innerHTML, '<a rel="noopener" target="_blank" href="https://developer.chrome.com/docs/lighthouse/seo/tap-targets/?utm_source=lighthouse&amp;utm_medium=someChannel">Learn more</a>.');
     });
 
     it('appends utm params to the URLs with https://developer.chrome.com origin', () => {
