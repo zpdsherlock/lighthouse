@@ -4280,11 +4280,6 @@
                 "group": "a11y-names-labels"
               },
               {
-                "id": "label-content-name-mismatch",
-                "weight": 7,
-                "group": "a11y-names-labels"
-              },
-              {
                 "id": "label",
                 "weight": 7,
                 "group": "a11y-names-labels"
@@ -4342,16 +4337,6 @@
               {
                 "id": "table-duplicate-name",
                 "weight": 1,
-                "group": "a11y-tables-lists"
-              },
-              {
-                "id": "table-fake-caption",
-                "weight": 7,
-                "group": "a11y-tables-lists"
-              },
-              {
-                "id": "td-has-header",
-                "weight": 10,
                 "group": "a11y-tables-lists"
               },
               {
@@ -4431,6 +4416,21 @@
               },
               {
                 "id": "target-size",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "label-content-name-mismatch",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "table-fake-caption",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "td-has-header",
                 "weight": 0,
                 "group": "hidden"
               }
@@ -15051,11 +15051,6 @@
                 "group": "a11y-names-labels"
               },
               {
-                "id": "label-content-name-mismatch",
-                "weight": 7,
-                "group": "a11y-names-labels"
-              },
-              {
                 "id": "label",
                 "weight": 7,
                 "group": "a11y-names-labels"
@@ -15113,16 +15108,6 @@
               {
                 "id": "table-duplicate-name",
                 "weight": 1,
-                "group": "a11y-tables-lists"
-              },
-              {
-                "id": "table-fake-caption",
-                "weight": 7,
-                "group": "a11y-tables-lists"
-              },
-              {
-                "id": "td-has-header",
-                "weight": 10,
                 "group": "a11y-tables-lists"
               },
               {
@@ -15202,6 +15187,21 @@
               },
               {
                 "id": "target-size",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "label-content-name-mismatch",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "table-fake-caption",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "td-has-header",
                 "weight": 0,
                 "group": "hidden"
               }
@@ -21904,11 +21904,6 @@
                 "group": "a11y-names-labels"
               },
               {
-                "id": "label-content-name-mismatch",
-                "weight": 7,
-                "group": "a11y-names-labels"
-              },
-              {
                 "id": "label",
                 "weight": 7,
                 "group": "a11y-names-labels"
@@ -21966,16 +21961,6 @@
               {
                 "id": "table-duplicate-name",
                 "weight": 1,
-                "group": "a11y-tables-lists"
-              },
-              {
-                "id": "table-fake-caption",
-                "weight": 7,
-                "group": "a11y-tables-lists"
-              },
-              {
-                "id": "td-has-header",
-                "weight": 10,
                 "group": "a11y-tables-lists"
               },
               {
@@ -22057,10 +22042,25 @@
                 "id": "target-size",
                 "weight": 0,
                 "group": "hidden"
+              },
+              {
+                "id": "label-content-name-mismatch",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "table-fake-caption",
+                "weight": 0,
+                "group": "hidden"
+              },
+              {
+                "id": "td-has-header",
+                "weight": 0,
+                "group": "hidden"
               }
             ],
             "id": "accessibility",
-            "score": 0.96
+            "score": 0.95
           },
           "best-practices": {
             "title": "Best Practices",

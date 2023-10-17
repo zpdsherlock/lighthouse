@@ -301,7 +301,7 @@ describe('CategoryRenderer', () => {
       );
 
       const gauge = categoryDOM.querySelector('.lh-fraction__content');
-      assert.equal(gauge.textContent.trim(), '22/27', 'fraction is included');
+      assert.equal(gauge.textContent.trim(), '19/24', 'fraction is included');
 
       const score = categoryDOM.querySelector('.lh-category-header');
       const title = score.querySelector('.lh-fraction__label');
