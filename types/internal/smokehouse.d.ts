@@ -56,14 +56,19 @@ declare global {
       {runnerName?: string} & ((url: string, config?: Config, runnerOptions?: {isDebug?: boolean}) => Promise<{lhr: LHResult, artifacts: Artifacts, log: string}>);
 
     export interface SmokehouseOptions {
-      /** If true, performs extra logging from the test runs. */
-      isDebug?: boolean;
+      /** Options to pass to the specific Lighthouse runner. */
+      testRunnerOptions?: {
+        /** If true, performs extra logging from the test runs. */
+        isDebug?: boolean;
+        /** Launch Chrome in the new headless mode (`--headless=new`), rather than the typical desktop headful mode. */
+        headless?: boolean;
+      };
       /** Manually set the number of jobs to run at once. `1` runs all tests serially. */
-      jobs?: number;
+      jobs: number;
       /** The number of times to retry failing tests before accepting. Defaults to 0. */
-      retries?: number;
+      retries: number;
       /** A function that runs Lighthouse with the given options. Defaults to running Lighthouse via the CLI. */
-      lighthouseRunner?: LighthouseRunner;
+      lighthouseRunner: LighthouseRunner;
       /** A function that gets a list of URLs requested to the server since the last fetch. */
       takeNetworkRequestUrls?: () => string[];
       /** A function run once before all smoke tests. */

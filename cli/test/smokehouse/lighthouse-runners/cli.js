@@ -28,7 +28,7 @@ const execFileAsync = promisify(execFile);
  * Launch Chrome and do a full Lighthouse run via the Lighthouse CLI.
  * @param {string} url
  * @param {LH.Config=} config
- * @param {{isDebug?: boolean}=} testRunnerOptions
+ * @param {Smokehouse.SmokehouseOptions['testRunnerOptions']=} testRunnerOptions
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, log: string}>}
  */
 async function runLighthouse(url, config, testRunnerOptions = {}) {
@@ -46,11 +46,11 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
  * @param {string} url
  * @param {string} tmpPath
  * @param {LH.Config=} config
- * @param {{isDebug?: boolean}=} options
+ * @param {Smokehouse.SmokehouseOptions['testRunnerOptions']=} options
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, log: string}>}
  */
 async function internalRun(url, tmpPath, config, options) {
-  const {isDebug = false} = options || {};
+  const {isDebug, headless} = options || {};
   const localConsole = new LocalConsole();
 
   const outputPath = `${tmpPath}/smokehouse.report.json`;
@@ -66,6 +66,8 @@ async function internalRun(url, tmpPath, config, options) {
     '--port=0',
     '--quiet',
   ];
+
+  if (headless) args.push('--chrome-flags="--headless=new"');
 
   // Config can be optionally provided.
   if (config) {

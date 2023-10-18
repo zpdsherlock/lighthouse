@@ -21,7 +21,7 @@ import yargs from 'yargs';
 import * as yargsHelpers from 'yargs/helpers';
 import log from 'lighthouse-logger';
 
-import {runSmokehouse, getShardedDefinitions} from '../smokehouse.js';
+import {runSmokehouse, getShardedDefinitions, DEFAULT_RETRIES, DEFAULT_CONCURRENT_RUNS} from '../smokehouse.js';
 import {updateTestDefnFormat} from './back-compat-util.js';
 import {LH_ROOT} from '../../../../shared/root.js';
 import exclusions from '../config/exclusions.js';
@@ -139,10 +139,12 @@ async function begin() {
       'jobs': {
         type: 'number',
         alias: 'j',
+        default: DEFAULT_CONCURRENT_RUNS,
         describe: 'Manually set the number of jobs to run at once. `1` runs all tests serially',
       },
       'retries': {
         type: 'number',
+        default: DEFAULT_RETRIES,
         describe: 'The number of times to retry failing tests before accepting. Defaults to 0',
       },
       'runner': {
@@ -164,6 +166,15 @@ async function begin() {
         default: false,
         describe: 'Ignore any smoke test exclusions set.',
       },
+      'headless': {
+        type: 'boolean',
+        default: true,
+        hidden: true,
+      },
+      'no-headless': {
+        type: 'boolean',
+        describe: 'Launch Chrome in typical desktop headful mode, rather than our default of `--headless=new` (https://developer.chrome.com/articles/new-headless/).', // eslint-disable-line max-len
+      },
     })
     .wrap(y.terminalWidth())
     .argv;
@@ -172,9 +183,6 @@ async function begin() {
   // so for now cast to add yarg's camelCase properties to type.
   const argv =
     /** @type {Awaited<typeof rawArgv> & LH.Util.CamelCasify<Awaited<typeof rawArgv>>} */ (rawArgv);
-
-  const jobs = Number.isFinite(argv.jobs) ? argv.jobs : undefined;
-  const retries = Number.isFinite(argv.retries) ? argv.retries : undefined;
 
   const runnerPath = runnerPaths[/** @type {keyof typeof runnerPaths} */ (argv.runner)];
   if (argv.runner === 'bundle') {
@@ -210,9 +218,12 @@ async function begin() {
 
     const prunedTestDefns = pruneExpectedNetworkRequests(testDefns, takeNetworkRequestUrls);
     const options = {
-      jobs,
-      retries,
-      isDebug: argv.debug,
+      jobs: argv.jobs,
+      retries: argv.retries,
+      testRunnerOptions: {
+        isDebug: argv.debug,
+        headless: argv.headless,
+      },
       lighthouseRunner: runLighthouse,
       takeNetworkRequestUrls,
       setup,
