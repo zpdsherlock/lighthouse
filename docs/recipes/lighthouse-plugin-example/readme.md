@@ -1,5 +1,7 @@
 # Lighthouse plugin recipe
 
+The result of this guide can be found at our [Lighthouse Plugin GitHub repository template](https://github.com/GoogleChrome/lighthouse-plugin-example)
+
 ## Contents
 - `package.json` - declares the plugin's entry point (`plugin.js`)
 - `plugin.js` - instructs Lighthouse to run the plugin's own `preload-as.js` audit; describes the new category and its details for the report

@@ -47,7 +47,7 @@ To develop a Lighthouse plugin, you'll need to write three things:
 1. A `plugin.js` file to declare your plugin's audits, category name, and scoring.
 1. Custom audit files that will contain the primary logic of the checks you want to perform.
 
-To see a fully functioning example, see our [plugin recipe](./recipes/lighthouse-plugin-example/readme.md).
+To see a fully functioning example, see our [plugin recipe](./recipes/lighthouse-plugin-example/readme.md) or its [GitHub repository template](https://github.com/GoogleChrome/lighthouse-plugin-example).
 
 #### `package.json`
 
