@@ -7,14 +7,12 @@
 import jestMock from 'jest-mock';
 
 import {Audit as BaseAudit} from '../../audits/audit.js';
-import * as constants from '../../config/constants.js';
 import BaseGatherer from '../../gather/base-gatherer.js';
 import {initializeConfig, getConfigDisplayString} from '../../config/config.js';
 import {LH_ROOT} from '../../../shared/root.js';
 import * as format from '../../../shared/localization/format.js';
 import defaultConfig from '../../config/default-config.js';
-
-const {nonSimulatedPassConfigOverrides} = constants;
+import {nonSimulatedSettingsOverrides} from '../../config/constants.js';
 
 describe('Config', () => {
   /** @type {LH.Gatherer.GatherMode} */
@@ -73,6 +71,27 @@ describe('Config', () => {
 
     expect(resolvedConfig.settings).toMatchObject({
       throttlingMethod: 'devtools',
+    });
+  });
+
+  it('should ensure minimum quiet thresholds when throttlingMethod is devtools', async () => {
+    gatherMode = 'navigation';
+    const config = {
+      settings: {
+        cpuQuietThresholdMs: 10_000,
+      },
+      artifacts: [{id: 'Accessibility', gatherer: 'accessibility'}],
+    };
+
+    const {resolvedConfig} = await initializeConfig(gatherMode, config, {
+      throttlingMethod: 'devtools',
+    });
+
+    expect(resolvedConfig.settings).toMatchObject({
+      cpuQuietThresholdMs: 10_000,
+      pauseAfterFcpMs: nonSimulatedSettingsOverrides.pauseAfterFcpMs,
+      pauseAfterLoadMs: nonSimulatedSettingsOverrides.pauseAfterLoadMs,
+      networkQuietThresholdMs: nonSimulatedSettingsOverrides.networkQuietThresholdMs,
     });
   });
 
@@ -203,25 +222,6 @@ describe('Config', () => {
       });
     });
 
-    it('should resolve artifact dependencies in navigations', async () => {
-      const {resolvedConfig} = await initializeConfig('snapshot', config);
-      expect(resolvedConfig).toMatchObject({
-        navigations: [
-          {
-            artifacts: [
-              {id: 'Dependency'},
-              {
-                id: 'Dependent',
-                dependencies: {
-                  ImageElements: {id: 'Dependency'},
-                },
-              },
-            ],
-          },
-        ],
-      });
-    });
-
     it('should throw when dependencies are out of order in artifacts', async () => {
       if (!config.artifacts) throw new Error('Failed to run beforeEach');
       config.artifacts = [config.artifacts[1], config.artifacts[0]];
@@ -241,70 +241,6 @@ describe('Config', () => {
       dependencyGatherer.meta.supportedModes = ['navigation'];
       await expect(initializeConfig('navigation', config))
         .rejects.toThrow(/Dependency.*is invalid/);
-    });
-  });
-
-  describe('.resolveFakeNavigations', () => {
-    it('should resolve a single fake navigation definitions', async () => {
-      const config = {
-        artifacts: [{id: 'Accessibility', gatherer: 'accessibility'}],
-      };
-      const {resolvedConfig} = await initializeConfig('navigation', config);
-
-      expect(resolvedConfig).toMatchObject({
-        artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}],
-        navigations: [{
-          id: 'defaultPass',
-          artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}],
-        }],
-      });
-    });
-
-    it('should set default properties on navigations', async () => {
-      gatherMode = 'navigation';
-      const config = {
-        artifacts: [{id: 'Accessibility', gatherer: 'accessibility'}],
-      };
-      const {resolvedConfig} = await initializeConfig(gatherMode, config);
-
-      expect(resolvedConfig).toMatchObject({
-        navigations: [
-          {
-            id: 'defaultPass',
-            blankPage: 'about:blank',
-            artifacts: [{id: 'Accessibility', gatherer: {path: 'accessibility'}}],
-            loadFailureMode: 'fatal',
-            disableThrottling: false,
-            networkQuietThresholdMs: 1000,
-            cpuQuietThresholdMs: 1000,
-          },
-        ],
-      });
-    });
-
-    it('should ensure minimum quiet thresholds when throttlingMethod is devtools', async () => {
-      gatherMode = 'navigation';
-      const config = {
-        settings: {
-          cpuQuietThresholdMs: 10_000,
-        },
-        artifacts: [{id: 'Accessibility', gatherer: 'accessibility'}],
-      };
-
-      const {resolvedConfig} = await initializeConfig(gatherMode, config, {
-        throttlingMethod: 'devtools',
-      });
-
-      expect(resolvedConfig).toMatchObject({
-        navigations: [
-          {
-            cpuQuietThresholdMs: 10_000,
-            pauseAfterFcpMs: nonSimulatedPassConfigOverrides.pauseAfterFcpMs,
-            pauseAfterLoadMs: nonSimulatedPassConfigOverrides.pauseAfterLoadMs,
-            networkQuietThresholdMs: nonSimulatedPassConfigOverrides.networkQuietThresholdMs,
-          },
-        ],
-      });
     });
   });
 
@@ -366,9 +302,6 @@ describe('Config', () => {
         artifacts: [
           {id: 'Accessibility'},
         ],
-        navigations: [
-          {id: 'defaultPass', artifacts: [{id: 'Accessibility'}]},
-        ],
       });
     });
 
@@ -414,18 +347,6 @@ describe('Config', () => {
       ]);
     });
 
-    it('should merge in navigations', async () => {
-      const {resolvedConfig} = await initializeConfig('navigation', extensionConfig);
-      if (!resolvedConfig.navigations) throw new Error(`No navigations created`);
-
-      expect(resolvedConfig.navigations).toHaveLength(1);
-      const hasNavigation = resolvedConfig.navigations[0].artifacts.
-        some(a => a.id === 'ExtraArtifact');
-      if (!hasNavigation) {
-        expect(resolvedConfig.navigations[0].artifacts).toContain('ExtraArtifact');
-      }
-    });
-
     it('should merge in audits', async () => {
       const {resolvedConfig} = await initializeConfig('navigation', extensionConfig);
       if (!resolvedConfig.audits) throw new Error(`No audits created`);
@@ -451,19 +372,6 @@ describe('Config', () => {
       const resolvedConfigPromise = initializeConfig('navigation', extensionConfig);
       await expect(resolvedConfigPromise).rejects.toThrow(/`lighthouse:default` is the only valid/);
     });
-  });
-
-  it('should use failure mode fatal for the fake navigation', async () => {
-    /** @type {LH.Config} */
-    const extensionConfig = {
-      extends: 'lighthouse:default',
-    };
-
-    const {resolvedConfig, warnings} = await initializeConfig('navigation', extensionConfig);
-    const navigations = resolvedConfig.navigations;
-    if (!navigations) throw new Error(`Failed to initialize navigations`);
-    expect(warnings).toHaveLength(0);
-    expect(navigations[0].loadFailureMode).toEqual('fatal');
   });
 
   it('should validate the resolvedConfig with fatal errors', async () => {

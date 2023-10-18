@@ -295,21 +295,6 @@ describe('#getPageLoadError', () => {
     expect(error).toBeUndefined();
   });
 
-  it('passes when the page is expected to fail', () => {
-    const mainRecord = makeNetworkRequest();
-    const context = {
-      url: 'http://the-page.com',
-      networkRecords: [mainRecord],
-      loadFailureMode: LoadFailureMode.ignore,
-      warnings: [],
-    };
-    mainRecord.url = context.url;
-    mainRecord.failed = true;
-
-    const error = getPageLoadError(undefined, context);
-    expect(error).toBeUndefined();
-  });
-
   it('passes when the page redirects to MIME type text/html', () => {
     const mainRecord = makeNetworkRequest();
     const context = {

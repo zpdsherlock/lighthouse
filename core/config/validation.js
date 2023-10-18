@@ -69,43 +69,6 @@ function assertValidArtifact(artifactDefn) {
 }
 
 /**
- * Throws an error if the provided object does not implement the required navigations interface.
- * @param {LH.Config.ResolvedConfig['navigations']} navigationsDefn
- * @return {{warnings: string[]}}
- */
-function assertValidNavigations(navigationsDefn) {
-  if (!navigationsDefn || !navigationsDefn.length) return {warnings: []};
-
-  /** @type {string[]} */
-  const warnings = [];
-
-  // Assert that the first navigation has loadFailureMode fatal.
-  const firstNavigation = navigationsDefn[0];
-  if (firstNavigation.loadFailureMode !== 'fatal') {
-    const currentMode = firstNavigation.loadFailureMode;
-    const warning = [
-      `"${firstNavigation.id}" is the first navigation but had a failure mode of ${currentMode}.`,
-      `The first navigation will always be treated as loadFailureMode=fatal.`,
-    ].join(' ');
-
-    warnings.push(warning);
-    firstNavigation.loadFailureMode = 'fatal';
-  }
-
-  // Assert that navigations have unique IDs.
-  const navigationIds = navigationsDefn.map(navigation => navigation.id);
-  const duplicateId = navigationIds.find(
-    (id, i) => navigationIds.slice(i + 1).some(other => id === other)
-  );
-
-  if (duplicateId) {
-    throw new Error(`Navigation must have unique identifiers, but "${duplicateId}" was repeated.`);
-  }
-
-  return {warnings};
-}
-
-/**
  * Throws an error if the provided object does not implement the required properties of an audit
  * definition.
  * @param {LH.Config.AuditDefn} auditDefinition
@@ -223,42 +186,36 @@ function assertValidSettings(settings) {
 }
 
 /**
- * Asserts that artifacts are in a valid dependency order that can be computed.
+ * Asserts that artifacts are unique, valid and are in a dependency order that can be computed.
  *
- * @param {Array<LH.Config.NavigationDefn>} navigations
+ * @param {Array<LH.Config.AnyArtifactDefn>} artifactDefns
  */
-function assertArtifactTopologicalOrder(navigations) {
+function assertValidArtifacts(artifactDefns) {
+  /** @type {Set<string>} */
   const availableArtifacts = new Set();
 
-  for (const navigation of navigations) {
-    for (const artifact of navigation.artifacts) {
-      availableArtifacts.add(artifact.id);
-      if (!artifact.dependencies) continue;
+  for (const artifact of artifactDefns) {
+    assertValidArtifact(artifact);
 
-      for (const [dependencyKey, {id: dependencyId}] of Object.entries(artifact.dependencies)) {
-        if (availableArtifacts.has(dependencyId)) continue;
-        throwInvalidDependencyOrder(artifact.id, dependencyKey);
-      }
+    if (availableArtifacts.has(artifact.id)) {
+      throw new Error(`Config defined multiple artifacts with id '${artifact.id}'`);
+    }
+
+    availableArtifacts.add(artifact.id);
+    if (!artifact.dependencies) continue;
+
+    for (const [dependencyKey, {id: dependencyId}] of Object.entries(artifact.dependencies)) {
+      if (availableArtifacts.has(dependencyId)) continue;
+      throwInvalidDependencyOrder(artifact.id, dependencyKey);
     }
   }
 }
 
 /**
  * @param {LH.Config.ResolvedConfig} resolvedConfig
- * @return {{warnings: string[]}}
  */
 function assertValidConfig(resolvedConfig) {
-  const {warnings} = assertValidNavigations(resolvedConfig.navigations);
-
-  /** @type {Set<string>} */
-  const artifactIds = new Set();
-  for (const artifactDefn of resolvedConfig.artifacts || []) {
-    if (artifactIds.has(artifactDefn.id)) {
-      throw new Error(`Config defined multiple artifacts with id '${artifactDefn.id}'`);
-    }
-    artifactIds.add(artifactDefn.id);
-    assertValidArtifact(artifactDefn);
-  }
+  assertValidArtifacts(resolvedConfig.artifacts || []);
 
   for (const auditDefn of resolvedConfig.audits || []) {
     assertValidAudit(auditDefn);
@@ -266,7 +223,6 @@ function assertValidConfig(resolvedConfig) {
 
   assertValidCategories(resolvedConfig.categories, resolvedConfig.audits, resolvedConfig.groups);
   assertValidSettings(resolvedConfig.settings);
-  return {warnings};
 }
 
 /**
@@ -303,11 +259,10 @@ export {
   isValidArtifactDependency,
   assertValidPluginName,
   assertValidArtifact,
-  assertValidNavigations,
   assertValidAudit,
   assertValidCategories,
   assertValidSettings,
-  assertArtifactTopologicalOrder,
+  assertValidArtifacts,
   assertValidConfig,
   throwInvalidDependencyOrder,
   throwInvalidArtifactDependency,

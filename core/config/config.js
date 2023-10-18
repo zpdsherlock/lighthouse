@@ -10,12 +10,11 @@ import log from 'lighthouse-logger';
 
 import {Runner} from '../runner.js';
 import defaultConfig from './default-config.js';
-import {defaultNavigationConfig, nonSimulatedPassConfigOverrides} from './constants.js'; // eslint-disable-line max-len
+import {nonSimulatedSettingsOverrides} from './constants.js'; // eslint-disable-line max-len
 import {
   throwInvalidDependencyOrder,
   isValidArtifactDependency,
   throwInvalidArtifactDependency,
-  assertArtifactTopologicalOrder,
   assertValidConfig,
 } from './validation.js';
 import {filterConfigByGatherMode, filterConfigByExplicitFilters} from './filters.js';
@@ -192,66 +191,34 @@ function overrideSettingsForGatherMode(settings, gatherMode) {
 /**
  * Overrides the quiet windows when throttlingMethod requires observation.
  *
- * @param {LH.Config.NavigationDefn} navigation
  * @param {LH.Config.Settings} settings
  */
-function overrideNavigationThrottlingWindows(navigation, settings) {
-  if (navigation.disableThrottling) return;
+function overrideThrottlingWindows(settings) {
   if (settings.throttlingMethod === 'simulate') return;
 
-  navigation.cpuQuietThresholdMs = Math.max(
-    navigation.cpuQuietThresholdMs || 0,
-    nonSimulatedPassConfigOverrides.cpuQuietThresholdMs
+  settings.cpuQuietThresholdMs = Math.max(
+    settings.cpuQuietThresholdMs || 0,
+    nonSimulatedSettingsOverrides.cpuQuietThresholdMs
   );
-  navigation.networkQuietThresholdMs = Math.max(
-    navigation.networkQuietThresholdMs || 0,
-    nonSimulatedPassConfigOverrides.networkQuietThresholdMs
+  settings.networkQuietThresholdMs = Math.max(
+    settings.networkQuietThresholdMs || 0,
+    nonSimulatedSettingsOverrides.networkQuietThresholdMs
   );
-  navigation.pauseAfterFcpMs = Math.max(
-    navigation.pauseAfterFcpMs || 0,
-    nonSimulatedPassConfigOverrides.pauseAfterFcpMs
+  settings.pauseAfterFcpMs = Math.max(
+    settings.pauseAfterFcpMs || 0,
+    nonSimulatedSettingsOverrides.pauseAfterFcpMs
   );
-  navigation.pauseAfterLoadMs = Math.max(
-    navigation.pauseAfterLoadMs || 0,
-    nonSimulatedPassConfigOverrides.pauseAfterLoadMs
+  settings.pauseAfterLoadMs = Math.max(
+    settings.pauseAfterLoadMs || 0,
+    nonSimulatedSettingsOverrides.pauseAfterLoadMs
   );
-}
-
-/**
- * @param {LH.Config.AnyArtifactDefn[]|null|undefined} artifactDefns
- * @param {LH.Config.Settings} settings
- * @return {LH.Config.NavigationDefn[] | null}
- */
-function resolveFakeNavigations(artifactDefns, settings) {
-  if (!artifactDefns) return null;
-
-  const status = {msg: 'Resolve navigation definitions', id: 'lh:config:resolveNavigationsToDefns'};
-  log.time(status, 'verbose');
-
-  const resolvedNavigation = {
-    ...defaultNavigationConfig,
-    artifacts: artifactDefns,
-    pauseAfterFcpMs: settings.pauseAfterFcpMs,
-    pauseAfterLoadMs: settings.pauseAfterLoadMs,
-    networkQuietThresholdMs: settings.networkQuietThresholdMs,
-    cpuQuietThresholdMs: settings.cpuQuietThresholdMs,
-    blankPage: settings.blankPage,
-  };
-
-  overrideNavigationThrottlingWindows(resolvedNavigation, settings);
-
-  const navigations = [resolvedNavigation];
-  assertArtifactTopologicalOrder(navigations);
-
-  log.timeEnd(status);
-  return navigations;
 }
 
 /**
  * @param {LH.Gatherer.GatherMode} gatherMode
  * @param {LH.Config=} config
  * @param {LH.Flags=} flags
- * @return {Promise<{resolvedConfig: LH.Config.ResolvedConfig, warnings: string[]}>}
+ * @return {Promise<{resolvedConfig: LH.Config.ResolvedConfig}>}
  */
 async function initializeConfig(gatherMode, config, flags = {}) {
   const status = {msg: 'Initialize config', id: 'lh:config'};
@@ -264,28 +231,26 @@ async function initializeConfig(gatherMode, config, flags = {}) {
 
   const settings = resolveSettings(configWorkingCopy.settings || {}, flags);
   overrideSettingsForGatherMode(settings, gatherMode);
+  overrideThrottlingWindows(settings);
 
   const artifacts = await resolveArtifactsToDefns(configWorkingCopy.artifacts, configDir);
-
-  const navigations = resolveFakeNavigations(artifacts, settings);
 
   /** @type {LH.Config.ResolvedConfig} */
   let resolvedConfig = {
     artifacts,
-    navigations,
     audits: await resolveAuditsToDefns(configWorkingCopy.audits, configDir),
     categories: configWorkingCopy.categories || null,
     groups: configWorkingCopy.groups || null,
     settings,
   };
 
-  const {warnings} = assertValidConfig(resolvedConfig);
+  assertValidConfig(resolvedConfig);
 
   resolvedConfig = filterConfigByGatherMode(resolvedConfig, gatherMode);
   resolvedConfig = filterConfigByExplicitFilters(resolvedConfig, settings);
 
   log.timeEnd(status);
-  return {resolvedConfig, warnings};
+  return {resolvedConfig};
 }
 
 /**
@@ -295,15 +260,6 @@ async function initializeConfig(gatherMode, config, flags = {}) {
 function getConfigDisplayString(resolvedConfig) {
   /** @type {LH.Config.ResolvedConfig} */
   const resolvedConfigCopy = JSON.parse(JSON.stringify(resolvedConfig));
-
-  if (resolvedConfigCopy.navigations) {
-    for (const navigation of resolvedConfigCopy.navigations) {
-      for (let i = 0; i < navigation.artifacts.length; ++i) {
-        // @ts-expect-error Breaking the Config.AnyArtifactDefn type.
-        navigation.artifacts[i] = navigation.artifacts[i].id;
-      }
-    }
-  }
 
   if (resolvedConfigCopy.artifacts) {
     for (const artifactDefn of resolvedConfigCopy.artifacts) {

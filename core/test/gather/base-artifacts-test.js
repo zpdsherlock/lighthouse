@@ -65,7 +65,6 @@ describe('finalizeArtifacts', () => {
 
   it('should merge the two objects', () => {
     baseArtifacts.LighthouseRunWarnings = [{i18nId: '1', formattedDefault: 'Yes'}];
-    gathererArtifacts.LighthouseRunWarnings = [{i18nId: '2', formattedDefault: 'No'}];
     gathererArtifacts.HostUserAgent = 'Desktop Chrome';
 
     const winningError = new LighthouseError(LighthouseError.errors.NO_LCP);
@@ -85,7 +84,6 @@ describe('finalizeArtifacts', () => {
       RobotsTxt: {status: 404, content: null},
       LighthouseRunWarnings: [
         {i18nId: '1', formattedDefault: 'Yes'},
-        {i18nId: '2', formattedDefault: 'No'},
       ],
     });
   });
@@ -109,18 +107,11 @@ describe('finalizeArtifacts', () => {
       {i18nId: '1', formattedDefault: 'Yes', values: {test: 1}},
       {i18nId: '1', formattedDefault: 'Yes', values: {test: 2}},
     ];
-    gathererArtifacts.LighthouseRunWarnings = [
-      {i18nId: '1', formattedDefault: 'Yes', values: {test: 1}},
-      {i18nId: '1', formattedDefault: 'Yes', values: {test: 3}},
-      {i18nId: '2', formattedDefault: 'No'},
-    ];
 
     const artifacts = finalizeArtifacts(baseArtifacts, gathererArtifacts);
     expect(artifacts.LighthouseRunWarnings).toEqual([
       {i18nId: '1', formattedDefault: 'Yes', values: {test: 1}},
       {i18nId: '1', formattedDefault: 'Yes', values: {test: 2}},
-      {i18nId: '1', formattedDefault: 'Yes', values: {test: 3}},
-      {i18nId: '2', formattedDefault: 'No'},
     ]);
   });
 

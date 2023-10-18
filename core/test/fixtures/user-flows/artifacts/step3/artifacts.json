@@ -6,392 +6,448 @@
       "entryType": "measure",
       "startTime": 0,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:config:resolveArtifactsToDefns",
       "entryType": "measure",
       "startTime": 1,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:config:resolveNavigationsToDefns",
       "entryType": "measure",
       "startTime": 2,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:runner:gather",
       "entryType": "measure",
       "startTime": 3,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:driver:connect",
       "entryType": "measure",
       "startTime": 4,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getBenchmarkIndex",
       "entryType": "measure",
       "startTime": 5,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getVersion",
       "entryType": "measure",
       "startTime": 6,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:prepare:navigationMode",
       "entryType": "measure",
       "startTime": 7,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:prepare:navigation",
       "entryType": "measure",
       "startTime": 8,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:prepareThrottlingAndNetwork",
       "entryType": "measure",
       "startTime": 9,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:driver:navigate",
       "entryType": "measure",
       "startTime": 10,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:DevtoolsLog",
       "entryType": "measure",
       "startTime": 11,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Trace",
       "entryType": "measure",
       "startTime": 12,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:computed:NetworkRecords",
       "entryType": "measure",
       "startTime": 13,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:DevtoolsLog",
       "entryType": "measure",
       "startTime": 14,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Trace",
       "entryType": "measure",
       "startTime": 15,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Accessibility",
       "entryType": "measure",
       "startTime": 16,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:AnchorElements",
       "entryType": "measure",
       "startTime": 17,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:ConsoleMessages",
       "entryType": "measure",
       "startTime": 18,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:CSSUsage",
       "entryType": "measure",
       "startTime": 19,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Doctype",
       "entryType": "measure",
       "startTime": 20,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:DOMStats",
       "entryType": "measure",
       "startTime": 21,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:EmbeddedContent",
       "entryType": "measure",
       "startTime": 22,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:FontSize",
       "entryType": "measure",
       "startTime": 23,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Inputs",
       "entryType": "measure",
       "startTime": 24,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:GlobalListeners",
       "entryType": "measure",
       "startTime": 25,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:ImageElements",
       "entryType": "measure",
       "startTime": 26,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:InstallabilityErrors",
       "entryType": "measure",
       "startTime": 27,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getInstallabilityErrors",
       "entryType": "measure",
       "startTime": 28,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:InspectorIssues",
       "entryType": "measure",
       "startTime": 29,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:JsUsage",
       "entryType": "measure",
       "startTime": 30,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:LinkElements",
       "entryType": "measure",
       "startTime": 31,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:computed:MainResource",
       "entryType": "measure",
       "startTime": 32,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:MainDocumentContent",
       "entryType": "measure",
       "startTime": 33,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:MetaElements",
       "entryType": "measure",
       "startTime": 34,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:NetworkUserAgent",
       "entryType": "measure",
       "startTime": 35,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:OptimizedImages",
       "entryType": "measure",
       "startTime": 36,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:ResponseCompression",
       "entryType": "measure",
       "startTime": 37,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:RobotsTxt",
       "entryType": "measure",
       "startTime": 38,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:ServiceWorker",
       "entryType": "measure",
       "startTime": 39,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Scripts",
       "entryType": "measure",
       "startTime": 40,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:SourceMaps",
       "entryType": "measure",
       "startTime": 41,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:Stacks",
       "entryType": "measure",
       "startTime": 42,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:collectStacks",
       "entryType": "measure",
       "startTime": 43,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:TagsBlockingFirstPaint",
       "entryType": "measure",
       "startTime": 44,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:TapTargets",
       "entryType": "measure",
       "startTime": 45,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:TraceElements",
       "entryType": "measure",
       "startTime": 46,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:computed:ProcessedTrace",
       "entryType": "measure",
       "startTime": 47,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:computed:ProcessedNavigation",
       "entryType": "measure",
       "startTime": 48,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:computed:Responsiveness",
       "entryType": "measure",
       "startTime": 49,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:ViewportDimensions",
       "entryType": "measure",
       "startTime": 50,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:WebAppManifest",
       "entryType": "measure",
       "startTime": 51,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:devtoolsLogs",
       "entryType": "measure",
       "startTime": 52,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:traces",
       "entryType": "measure",
       "startTime": 53,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:FullPageScreenshot",
       "entryType": "measure",
       "startTime": 54,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     },
     {
       "name": "lh:gather:getArtifact:BFCacheFailures",
       "entryType": "measure",
       "startTime": 55,
       "duration": 1,
-      "detail": null
+      "detail": null,
+      "gather": true
     }
   ],
   "LighthouseRunWarnings": [],

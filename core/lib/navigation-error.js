@@ -113,11 +113,11 @@ function getNonHtmlError(finalRecord) {
  * Returns an error if the page load should be considered failed, e.g. from a
  * main document request failure, a security issue, etc.
  * @param {LH.LighthouseError|undefined} navigationError
- * @param {{url: string, loadFailureMode: LH.Config.SharedPassNavigationJson['loadFailureMode'], networkRecords: Array<LH.Artifacts.NetworkRequest>, warnings: Array<string | LH.IcuMessage>}} context
+ * @param {{url: string, networkRecords: Array<LH.Artifacts.NetworkRequest>, warnings: Array<string | LH.IcuMessage>}} context
  * @return {LH.LighthouseError|undefined}
  */
 function getPageLoadError(navigationError, context) {
-  const {url, loadFailureMode, networkRecords} = context;
+  const {url, networkRecords} = context;
   /** @type {LH.Artifacts.NetworkRequest|undefined} */
   let mainRecord = NetworkAnalyzer.findResourceForUrl(networkRecords, url);
 
@@ -147,10 +147,6 @@ function getPageLoadError(navigationError, context) {
   const networkError = getNetworkError(mainRecord);
   const interstitialError = getInterstitialError(mainRecord, networkRecords);
   const nonHtmlError = getNonHtmlError(finalRecord);
-
-  // Check to see if we need to ignore the page load failure.
-  // e.g. When the driver is offline, the load will fail without page offline support.
-  if (loadFailureMode === 'ignore') return;
 
   // We want to special-case the interstitial beyond FAILED_DOCUMENT_REQUEST. See https://github.com/GoogleChrome/lighthouse/pull/8865#issuecomment-497507618
   if (interstitialError) return interstitialError;

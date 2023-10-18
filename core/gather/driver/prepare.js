@@ -114,21 +114,17 @@ async function resetStorageForUrl(session, url) {
  *
  * @param {LH.Gatherer.ProtocolSession} session
  * @param {LH.Config.Settings} settings
- * @param {{disableThrottling: boolean, blockedUrlPatterns?: string[]}} options
  */
-async function prepareThrottlingAndNetwork(session, settings, options) {
+async function prepareThrottlingAndNetwork(session, settings) {
   const status = {msg: 'Preparing network conditions', id: `lh:gather:prepareThrottlingAndNetwork`};
   log.time(status);
 
-  if (options.disableThrottling) await emulation.clearThrottling(session);
-  else await emulation.throttle(session, settings);
+  await emulation.throttle(session, settings);
 
   // Set request blocking before any network activity.
   // No "clearing" is done at the end of the recording since Network.setBlockedURLs([]) will unset all if
   // neccessary at the beginning of the next section.
-  const blockedUrls = (options.blockedUrlPatterns || []).concat(
-    settings.blockedUrlPatterns || []
-  );
+  const blockedUrls = settings.blockedUrlPatterns || [];
   await session.sendCommand('Network.setBlockedURLs', {urls: blockedUrls});
 
   const headers = settings.extraHeaders;
@@ -163,10 +159,7 @@ async function prepareTargetForTimespanMode(driver, settings) {
   log.time(status);
 
   await prepareDeviceEmulation(driver, settings);
-  await prepareThrottlingAndNetwork(driver.defaultSession, settings, {
-    disableThrottling: false,
-    blockedUrlPatterns: undefined,
-  });
+  await prepareThrottlingAndNetwork(driver.defaultSession, settings);
   await warmUpIntlSegmenter(driver);
 
   log.timeEnd(status);
@@ -192,10 +185,15 @@ async function warmUpIntlSegmenter(driver) {
  *
  * @param {LH.Gatherer.Driver} driver
  * @param {LH.Config.Settings} settings
+ * @param {LH.NavigationRequestor} requestor
+ * @return {Promise<{warnings: Array<LH.IcuMessage>}>}
  */
-async function prepareTargetForNavigationMode(driver, settings) {
+async function prepareTargetForNavigationMode(driver, settings, requestor) {
   const status = {msg: 'Preparing target for navigation mode', id: 'lh:prepare:navigationMode'};
   log.time(status);
+
+  /** @type {Array<LH.IcuMessage>} */
+  const warnings = [];
 
   await prepareDeviceEmulation(driver, settings);
 
@@ -212,41 +210,20 @@ async function prepareTargetForNavigationMode(driver, settings) {
 
   await warmUpIntlSegmenter(driver);
 
-  log.timeEnd(status);
-}
-
-/**
- * Prepares a target for a particular navigation by resetting storage and setting network.
- *
- * This method assumes `prepareTargetForNavigationMode` has already been invoked.
- *
- * @param {LH.Gatherer.ProtocolSession} session
- * @param {LH.Config.Settings} settings
- * @param {Pick<LH.Config.NavigationDefn, 'disableThrottling'|'disableStorageReset'|'blockedUrlPatterns'> & {requestor: LH.NavigationRequestor}} navigation
- * @return {Promise<{warnings: Array<LH.IcuMessage>}>}
- */
-async function prepareTargetForIndividualNavigation(session, settings, navigation) {
-  const status = {msg: 'Preparing target for navigation', id: 'lh:prepare:navigation'};
-  log.time(status);
-
-  /** @type {Array<LH.IcuMessage>} */
-  const warnings = [];
-
-  const {requestor} = navigation;
   const shouldResetStorage =
     !settings.disableStorageReset &&
-    !navigation.disableStorageReset &&
     // Without prior knowledge of the destination, we cannot know which URL to clear storage for.
     typeof requestor === 'string';
   if (shouldResetStorage) {
-    const requestedUrl = requestor;
-    const {warnings: storageWarnings} = await resetStorageForUrl(session, requestedUrl);
+    const {warnings: storageWarnings} =
+      await resetStorageForUrl(driver.defaultSession, requestor);
     warnings.push(...storageWarnings);
   }
 
-  await prepareThrottlingAndNetwork(session, settings, navigation);
+  await prepareThrottlingAndNetwork(driver.defaultSession, settings);
 
   log.timeEnd(status);
+
   return {warnings};
 }
 
@@ -254,6 +231,5 @@ export {
   prepareThrottlingAndNetwork,
   prepareTargetForTimespanMode,
   prepareTargetForNavigationMode,
-  prepareTargetForIndividualNavigation,
   enableAsyncStacks,
 };
