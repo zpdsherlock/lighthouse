@@ -14,6 +14,7 @@ describe('Has inspector issues audit', () => {
       blockedByResponseIssue: [],
       clientHintIssue: [],
       contentSecurityPolicyIssue: [],
+      cookieDeprecationMetadataIssue: [],
       corsIssue: [],
       deprecationIssue: [],
       federatedAuthRequestIssue: [],

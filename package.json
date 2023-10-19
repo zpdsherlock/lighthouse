@@ -98,9 +98,9 @@
   },
   "devDependencies": {
     "@build-tracker/cli": "^1.0.0-beta.15",
-    "@formatjs/icu-messageformat-parser": "^2.6.2",
     "@esbuild-kit/esm-loader": "^2.1.1",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@formatjs/icu-messageformat-parser": "^2.6.2",
     "@jest/fake-timers": "^28.1.0",
     "@testing-library/preact": "^3.1.1",
     "@testing-library/preact-hooks": "^1.1.0",
@@ -185,7 +185,7 @@
     "chrome-launcher": "^1.1.0",
     "configstore": "^5.0.1",
     "csp_evaluator": "1.1.1",
-    "devtools-protocol": "0.0.1200039",
+    "devtools-protocol": "0.0.1211954",
     "enquirer": "^2.3.6",
     "http-link-header": "^1.1.1",
     "intl-messageformat": "^10.5.3",
@@ -209,8 +209,8 @@
     "yargs-parser": "^21.0.0"
   },
   "resolutions": {
-    "puppeteer/**/devtools-protocol": "0.0.1200039",
-    "puppeteer-core/**/devtools-protocol": "0.0.1200039"
+    "puppeteer/**/devtools-protocol": "0.0.1211954",
+    "puppeteer-core/**/devtools-protocol": "0.0.1211954"
   },
   "repository": "GoogleChrome/lighthouse",
   "keywords": [

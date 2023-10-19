@@ -37,6 +37,7 @@ Array [
   "bounceTrackingIssueDetails",
   "clientHintIssueDetails",
   "contentSecurityPolicyIssueDetails",
+  "cookieDeprecationMetadataIssueDetails",
   "cookieIssueDetails",
   "corsIssueDetails",
   "deprecationIssueDetails",

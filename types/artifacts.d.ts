@@ -579,6 +579,7 @@ declare module Artifacts {
     bounceTrackingIssue: Crdp.Audits.BounceTrackingIssueDetails[];
     clientHintIssue: Crdp.Audits.ClientHintIssueDetails[];
     contentSecurityPolicyIssue: Crdp.Audits.ContentSecurityPolicyIssueDetails[];
+    cookieDeprecationMetadataIssue: Crdp.Audits.CookieDeprecationMetadataIssueDetails[],
     corsIssue: Crdp.Audits.CorsIssueDetails[];
     deprecationIssue: Crdp.Audits.DeprecationIssueDetails[];
     federatedAuthRequestIssue: Crdp.Audits.FederatedAuthRequestIssueDetails[],

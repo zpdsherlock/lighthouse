@@ -232,6 +232,7 @@ describe('getArtifact', () => {
         isReportOnly: false,
         contentSecurityPolicyViolationType: 'kInlineViolation',
       }],
+      cookieDeprecationMetadataIssue: [],
       deprecationIssue: [{
         type: 'AuthorizationCoveredByWildcard',
         sourceCodeLocation: {
@@ -304,6 +305,7 @@ describe('getArtifact', () => {
       heavyAdIssue: [],
       clientHintIssue: [],
       contentSecurityPolicyIssue: [],
+      cookieDeprecationMetadataIssue: [],
       deprecationIssue: [],
       attributionReportingIssue: [],
       corsIssue: [],

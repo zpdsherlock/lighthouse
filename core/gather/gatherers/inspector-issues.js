@@ -67,6 +67,7 @@ class InspectorIssues extends BaseGatherer {
       bounceTrackingIssue: [],
       clientHintIssue: [],
       contentSecurityPolicyIssue: [],
+      cookieDeprecationMetadataIssue: [],
       corsIssue: [],
       deprecationIssue: [],
       federatedAuthRequestIssue: [],
