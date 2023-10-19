@@ -307,6 +307,7 @@ async function testUrlFromDevtools(url, options = {}) {
   const browser = await puppeteer.connect({
     browserURL: `http://127.0.0.1:${chrome.port}`,
     defaultViewport: null,
+    protocolTimeout: 300_000, // 5 min
   });
 
   /** @type {puppeteer.CDPSession|undefined} */
