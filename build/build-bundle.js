@@ -123,6 +123,10 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
 
   const modulesToIgnore = [
     'puppeteer-core',
+    // ScreenRecorder.js imports `child_process` functions that are unavailable in bundled environments.
+    // This module is imported dynamically in a function we never use, so safe to ignore:
+    // https://github.com/puppeteer/puppeteer/blob/35f9c6d1e699ea37e89ef3bbb7940f5599df4724/packages/puppeteer-core/src/api/Page.ts#L2365-L2369
+    'puppeteer-core/lib/esm/puppeteer/node/ScreenRecorder.js',
     'pako/lib/zlib/inflate.js',
     '@sentry/node',
     'source-map',
