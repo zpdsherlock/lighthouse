@@ -155,6 +155,7 @@ async function _computeNavigationResult(
   const pageLoadError = debugData.records
     ? getPageLoadError(navigationError, {
       url: mainDocumentUrl,
+      ignoreStatusCode: navigationContext.resolvedConfig.settings.ignoreStatusCode,
       networkRecords: debugData.records,
       warnings: navigationContext.baseArtifacts.LighthouseRunWarnings,
     })

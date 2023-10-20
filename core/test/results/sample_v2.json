@@ -5749,6 +5749,7 @@
     "disableFullPageScreenshot": false,
     "skipAboutBlank": false,
     "blankPage": "about:blank",
+    "ignoreStatusCode": false,
     "budgets": [
       {
         "path": "/",

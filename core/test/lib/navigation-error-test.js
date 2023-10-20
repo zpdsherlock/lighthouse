@@ -31,9 +31,10 @@ function makeNetworkRequest() {
 describe('#getNetworkError', () => {
   /**
    * @param {NetworkRequest=} mainRecord
+   * @param {{warnings: Array<string | LH.IcuMessage>, ignoreStatusCode?: LH.Config.Settings['ignoreStatusCode']}=} context
    */
-  function getAndExpectError(mainRecord) {
-    const error = getNetworkError(mainRecord);
+  function getAndExpectError(mainRecord, context) {
+    const error = getNetworkError(mainRecord, {warnings: [], ...context});
     if (!error) throw new Error('expected a network error');
     return error;
   }
@@ -42,7 +43,7 @@ describe('#getNetworkError', () => {
     const url = 'http://the-page.com';
     const mainRecord = makeNetworkRequest();
     mainRecord.url = url;
-    expect(getNetworkError(mainRecord)).toBeUndefined();
+    expect(getNetworkError(mainRecord, {warnings: []})).toBeUndefined();
   });
 
   it('fails when page fails to load', () => {
@@ -66,18 +67,44 @@ describe('#getNetworkError', () => {
     expect(error.friendlyMessage).toBeDisplayString(/^Lighthouse was unable to reliably load/);
   });
 
-  it('fails when page returns with a 404', () => {
+  it('warns when page returns with a 404 with flag', () => {
     const url = 'http://the-page.com';
     const mainRecord = makeNetworkRequest();
     mainRecord.url = url;
     mainRecord.statusCode = 404;
-    const error = getAndExpectError(mainRecord);
+    const context = {
+      url,
+      networkRecords: [mainRecord],
+      warnings: [],
+      loadFailureMode: LoadFailureMode.warn,
+      ignoreStatusCode: true,
+    };
+
+    const error = getNetworkError(mainRecord, context);
+    expect(error).toBeUndefined();
+    expect(context.warnings[0]).toBeDisplayString(/^Lighthouse was unable to reliably load/);
+  });
+
+  it('fails when page returns with a 404 without flag', () => {
+    const url = 'http://the-page.com';
+    const mainRecord = makeNetworkRequest();
+    mainRecord.url = url;
+    mainRecord.statusCode = 404;
+    const context = {
+      url,
+      networkRecords: [mainRecord],
+      warnings: [],
+      loadFailureMode: LoadFailureMode.warn,
+    };
+
+    const error = getAndExpectError(mainRecord, context);
+    expect(error).toBeDefined();
     expect(error.message).toEqual('ERRORED_DOCUMENT_REQUEST');
     expect(error.code).toEqual('ERRORED_DOCUMENT_REQUEST');
     expect(error.friendlyMessage).toBeDisplayString(/^Lighthouse was unable to reliably load.*404/);
   });
 
-  it('fails when page returns with a 500', () => {
+  it('fails when page returns with a 500 without flag', () => {
     const url = 'http://the-page.com';
     const mainRecord = makeNetworkRequest();
     mainRecord.url = url;

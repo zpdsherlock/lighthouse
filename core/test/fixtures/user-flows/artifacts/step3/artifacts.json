@@ -486,6 +486,7 @@
     "disableFullPageScreenshot": false,
     "skipAboutBlank": true,
     "blankPage": "about:blank",
+    "ignoreStatusCode": false,
     "budgets": null,
     "locale": "en-US",
     "blockedUrlPatterns": null,

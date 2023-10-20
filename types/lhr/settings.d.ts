@@ -114,6 +114,9 @@ export type ScreenEmulationSettings = {
   blankPage?: string;
   /** Disables collection of the full page screenshot, which can be rather large and possibly leave the page in an undesirable state. */
   disableFullPageScreenshot?: boolean;
+
+  /** Disables failing on 404 status code, and instead issues a warning */
+  ignoreStatusCode?: boolean;
 }
 
 export interface ConfigSettings extends Required<SharedFlagsSettings> {

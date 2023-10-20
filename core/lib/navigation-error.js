@@ -16,6 +16,13 @@ const UIStrings = {
    */
   warningXhtml:
     'The page MIME type is XHTML: Lighthouse does not explicitly support this document type',
+  /**
+   * @description Warning shown in report when the page under test returns an error code, which Lighthouse is not able to reliably load so we display a warning.
+   * @example {404} errorCode
+   */
+  warningStatusCode: 'Lighthouse was unable to reliably load the page you requested. Make sure' +
+    ' you are testing the correct URL and that the server is properly responding' +
+    ' to all requests. (Status code: {errorCode})',
 };
 
 const str_ = i18n.createIcuMessageFn(import.meta.url, UIStrings);
@@ -27,9 +34,10 @@ const XHTML_MIME_TYPE = 'application/xhtml+xml';
 /**
  * Returns an error if the original network request failed or wasn't found.
  * @param {LH.Artifacts.NetworkRequest|undefined} mainRecord
+ * @param {{warnings: Array<string | LH.IcuMessage>, ignoreStatusCode?: LH.Config.Settings['ignoreStatusCode']}} context
  * @return {LH.LighthouseError|undefined}
  */
-function getNetworkError(mainRecord) {
+function getNetworkError(mainRecord, context) {
   if (!mainRecord) {
     return new LighthouseError(LighthouseError.errors.NO_DOCUMENT_REQUEST);
   } else if (mainRecord.failed) {
@@ -47,9 +55,13 @@ function getNetworkError(mainRecord) {
         LighthouseError.errors.FAILED_DOCUMENT_REQUEST, {errorDetails: netErr});
     }
   } else if (mainRecord.hasErrorStatusCode()) {
-    return new LighthouseError(LighthouseError.errors.ERRORED_DOCUMENT_REQUEST, {
-      statusCode: `${mainRecord.statusCode}`,
-    });
+    if (context.ignoreStatusCode) {
+      context.warnings.push(str_(UIStrings.warningStatusCode, {errorCode: mainRecord.statusCode}));
+    } else {
+      return new LighthouseError(LighthouseError.errors.ERRORED_DOCUMENT_REQUEST, {
+        statusCode: `${mainRecord.statusCode}`,
+      });
+    }
   }
 }
 
@@ -113,7 +125,7 @@ function getNonHtmlError(finalRecord) {
  * Returns an error if the page load should be considered failed, e.g. from a
  * main document request failure, a security issue, etc.
  * @param {LH.LighthouseError|undefined} navigationError
- * @param {{url: string, networkRecords: Array<LH.Artifacts.NetworkRequest>, warnings: Array<string | LH.IcuMessage>}} context
+ * @param {{url: string, ignoreStatusCode?: LH.Config.Settings['ignoreStatusCode'], networkRecords: Array<LH.Artifacts.NetworkRequest>, warnings: Array<string | LH.IcuMessage>}} context
  * @return {LH.LighthouseError|undefined}
  */
 function getPageLoadError(navigationError, context) {
@@ -144,7 +156,7 @@ function getPageLoadError(navigationError, context) {
     context.warnings.push(str_(UIStrings.warningXhtml));
   }
 
-  const networkError = getNetworkError(mainRecord);
+  const networkError = getNetworkError(mainRecord, context);
   const interstitialError = getInterstitialError(mainRecord, networkRecords);
   const nonHtmlError = getNonHtmlError(finalRecord);
 
