@@ -311,9 +311,9 @@ async function _navigations(args) {
 }
 
 /**
- * @param {{requestedUrl?: string, driver: Driver, resolvedConfig: LH.Config.ResolvedConfig, lhBrowser?: LH.Puppeteer.Browser, lhPage?: LH.Puppeteer.Page}} args
+ * @param {{requestedUrl?: string, driver: Driver, resolvedConfig: LH.Config.ResolvedConfig, lhBrowser?: LH.Puppeteer.Browser, lhPage?: LH.Puppeteer.Page, flags?: LH.Flags}} args
  */
-async function _cleanup({requestedUrl, driver, resolvedConfig, lhBrowser, lhPage}) {
+async function _cleanup({requestedUrl, driver, resolvedConfig, lhBrowser, lhPage, flags}) {
   const didResetStorage = !resolvedConfig.settings.disableStorageReset && requestedUrl;
   if (didResetStorage) await storage.clearDataForOrigin(driver.defaultSession, requestedUrl);
 
@@ -321,6 +321,9 @@ async function _cleanup({requestedUrl, driver, resolvedConfig, lhBrowser, lhPage
 
   // If Lighthouse started the Puppeteer instance then we are responsible for closing it.
   await lhPage?.close();
+  if (flags === undefined || flags.window === undefined || flags.window) {
+    await lhPage?.close();
+  }
   await lhBrowser?.disconnect();
 }
 
@@ -346,6 +349,8 @@ async function navigationGather(page, requestor, options = {}) {
 
       /** @type {LH.Puppeteer.Browser|undefined} */
       let lhBrowser = undefined;
+      /** @type {Array<LH.Puppeteer.Page>|undefined} */
+      let lhPages = undefined;
       /** @type {LH.Puppeteer.Page|undefined} */
       let lhPage = undefined;
 
@@ -354,7 +359,20 @@ async function navigationGather(page, requestor, options = {}) {
       if (!page) {
         const {hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT} = flags;
         lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`, defaultViewport: null});
-        lhPage = await lhBrowser.newPage();
+        if (flags.window === false) {
+          lhPages = await lhBrowser.pages();
+          lhPage = lhPages[0];
+        } else {
+          lhPage = await lhBrowser.newPage();
+        }
+        await lhPage.setViewport({
+          width: resolvedConfig.settings.screenEmulation.width,
+          height: resolvedConfig.settings.screenEmulation.height,
+        });
+        const viewportSize = await lhPage.viewport();
+        if (viewportSize) {
+          console.log(`Lighthouse on ViewPort(${viewportSize.width} x ${viewportSize.height})`);
+        }
         page = lhPage;
       }
 
@@ -365,6 +383,7 @@ async function navigationGather(page, requestor, options = {}) {
         lhPage,
         resolvedConfig,
         requestor: normalizedRequestor,
+        flags,
       };
       const {baseArtifacts} = await _setup(context);
       const {artifacts} = await _navigations({...context, page, baseArtifacts, computedCache});

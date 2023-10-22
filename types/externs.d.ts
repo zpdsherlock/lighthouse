@@ -23,6 +23,8 @@ export interface Flags extends SharedFlagsSettings {
   configPath?: string;
   /** Run the specified plugins. */
   plugins?: string[];
+  /** flag of opening new window */
+  window?: boolean;
 }
 
 /**
