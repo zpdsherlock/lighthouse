@@ -4,6 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+const BACKENDS = [{
+  id: 'psi',
+  title: 'PSI Frontend (pagespeed.web.dev)',
+}, {
+  id: 'viewer',
+  title: 'Lighthouse Viewer (googlechrome.github.io)',
+}];
+
 // Manually define the default categories, instead of bundling a lot of i18n code.
 const DEFAULT_CATEGORIES = [{
   id: 'performance',
@@ -22,7 +30,7 @@ const DEFAULT_CATEGORIES = [{
   title: 'PWA',
 }];
 
-/** @typedef {{selectedCategories: string[], device: string}} Settings */
+/** @typedef {{backend: string, selectedCategories: string[], device: string}} Settings */
 
 const STORAGE_KEYS = {
   Categories: 'lighthouse_audits',
@@ -49,6 +57,9 @@ function saveSettings(settings) {
 
   // Stash device setting.
   storage[STORAGE_KEYS.Settings].device = settings.device;
+
+  // Stash backend setting.
+  storage[STORAGE_KEYS.Settings].backend = settings.backend;
 
   // Save object to chrome local storage.
   chrome.storage.local.set(storage);
@@ -81,6 +92,7 @@ function loadSettings() {
       const savedSettings = {...defaultSettings, ...result[STORAGE_KEYS.Settings]};
 
       resolve({
+        backend: savedSettings.backend ?? 'psi',
         device: savedSettings.device,
         selectedCategories: Object.keys(savedCategories).filter(cat => savedCategories[cat]),
       });
@@ -89,6 +101,7 @@ function loadSettings() {
 }
 
 export {
+  BACKENDS,
   DEFAULT_CATEGORIES,
   STORAGE_KEYS,
   saveSettings,
