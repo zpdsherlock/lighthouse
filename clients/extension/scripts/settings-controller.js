@@ -30,7 +30,7 @@ const DEFAULT_CATEGORIES = [{
   title: 'PWA',
 }];
 
-/** @typedef {{backend: string, selectedCategories: string[], device: string}} Settings */
+/** @typedef {{backend: string, selectedCategories: string[], device: string, locale: string}} Settings */
 
 const STORAGE_KEYS = {
   Categories: 'lighthouse_audits',
@@ -60,6 +60,8 @@ function saveSettings(settings) {
 
   // Stash backend setting.
   storage[STORAGE_KEYS.Settings].backend = settings.backend;
+
+  storage[STORAGE_KEYS.Settings].locale = settings.locale;
 
   // Save object to chrome local storage.
   chrome.storage.local.set(storage);
@@ -94,6 +96,7 @@ function loadSettings() {
       resolve({
         backend: savedSettings.backend ?? 'psi',
         device: savedSettings.device,
+        locale: savedSettings.locale ?? navigator.language,
         selectedCategories: Object.keys(savedCategories).filter(cat => savedCategories[cat]),
       });
     });

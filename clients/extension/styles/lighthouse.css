@@ -33,7 +33,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  width: 350px;
+  width: 450px;
   background-color: var(--color-bg);
   color: #212121;
   font-family: var(--report-font-family);
@@ -105,6 +105,9 @@ main {
   padding-bottom: 10px;
 }
 
+.options__group {
+  width: 50%;
+}
 .options__group:first-child {
   width: 100%;
 }
@@ -158,8 +161,12 @@ main {
   margin-right: 8px;
 }
 
-.options__list {
+.options__list, .options__select {
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+.options__group--locales {
+  width: 100%;
 }

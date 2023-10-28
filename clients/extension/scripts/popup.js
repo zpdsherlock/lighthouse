@@ -9,6 +9,8 @@ import * as SettingsController from './settings-controller.js';
 // Replaced with 'chrome' or 'firefox' in the build script.
 /** @type {string} */
 const BROWSER_BRAND = '___BROWSER_BRAND___';
+/** @type {string[]} */
+const LOCALES = JSON.parse('__LOCALES__');
 
 const CHROME_STRINGS = {
   localhostErrorMessage: 'Use DevTools to audit pages on localhost.',
@@ -100,6 +102,7 @@ function onGenerateReportButtonClick(backend, url, settings) {
     for (const category of settings.selectedCategories) {
       apiUrl.searchParams.append('category', category);
     }
+    apiUrl.searchParams.append('hl', settings.locale);
   } else {
     apiUrl = new URL('https://googlechrome.github.io/lighthouse/viewer/');
     apiUrl.searchParams.append('psiurl', url);
@@ -107,6 +110,7 @@ function onGenerateReportButtonClick(backend, url, settings) {
     for (const category of settings.selectedCategories) {
       apiUrl.searchParams.append('category', category);
     }
+    apiUrl.searchParams.append('locale', settings.locale);
   }
   apiUrl.searchParams.append('utm_source', 'lh-chrome-ext');
   window.open(apiUrl.href);
@@ -147,6 +151,74 @@ function generateBackendOptionsList(settings) {
 }
 
 /**
+ * From third_party/devtools-frontend/src/front_end/core/i18n/i18nImpl.ts
+ *
+ * Returns a string of the form:
+ *   "German (Austria) - Deutsch (Österreich)"
+ * where the former locale representation is written in the currently enabled DevTools
+ * locale and the latter locale representation is written in the locale of `localeString`.
+ *
+ * Should the two locales match (i.e. have the same language) then the latter locale
+ * representation is written in English.
+ *
+ * @param {string} localeString
+ * @param {string} currentLocale
+ * @return {string}
+ */
+function getLocalizedLanguageRegion(localeString, currentLocale) {
+  const locale = new Intl.Locale(localeString);
+  const localLanguage = locale.language || 'en';
+  const localBaseName = locale.baseName || 'en-US';
+  const devtoolsLoc = new Intl.Locale(currentLocale);
+  const targetLanguage = localLanguage === devtoolsLoc.language ? 'en' : localBaseName;
+  const languageInCurrentLocale =
+    new Intl.DisplayNames([currentLocale], {type: 'language'}).of(localLanguage);
+  const languageInTargetLocale =
+    new Intl.DisplayNames([targetLanguage], {type: 'language'}).of(localLanguage);
+
+  let wrappedRegionInCurrentLocale = '';
+  let wrappedRegionInTargetLocale = '';
+
+  if (locale.region) {
+    const regionInCurrentLocale =
+        new Intl.DisplayNames([currentLocale], {type: 'region', style: 'short'}).of(locale.region);
+    const regionInTargetLocale =
+        new Intl.DisplayNames([targetLanguage], {type: 'region', style: 'short'}).of(locale.region);
+    wrappedRegionInCurrentLocale = ` (${regionInCurrentLocale})`;
+    wrappedRegionInTargetLocale = ` (${regionInTargetLocale})`;
+  }
+
+  const lhs = languageInCurrentLocale + wrappedRegionInCurrentLocale;
+  const rhs = languageInTargetLocale + wrappedRegionInTargetLocale;
+  if (lhs === rhs) {
+    return lhs;
+  }
+
+  return `${lhs} - ${rhs}`;
+}
+
+/**
+ * Generates a document fragment containing a list of locale options.
+ * @param {SettingsController.Settings} settings
+ */
+function generateLocaleOptionsList(settings) {
+  const frag = document.createDocumentFragment();
+
+  LOCALES.forEach(locale => {
+    const optionEl = document.createElement('option');
+    optionEl.textContent = getLocalizedLanguageRegion(locale, navigator.language);
+    optionEl.value = locale;
+    if (settings.locale === locale) {
+      optionEl.selected = true;
+    }
+    frag.append(optionEl);
+  });
+
+  const optionsLocalesList = find('.options__locales');
+  optionsLocalesList.append(frag);
+}
+
+/**
  * @param {SettingsController.Settings} settings
  */
 function configureVisibleSettings(settings) {
@@ -168,12 +240,14 @@ function readSettingsFromDomAndPersist() {
   const optionsEl = find('.section--options');
   // Save settings when options page is closed.
   const backend = find('.options__backend input:checked').value;
+  const locale = find('select.options__locales').value;
   const checkboxes = optionsEl.querySelectorAll('.options__categories input:checked');
   const selectedCategories = Array.from(checkboxes).map(input => input.value);
   const device = find('input[name="device"]:checked').value;
 
   const settings = {
     backend,
+    locale,
     selectedCategories,
     device,
   };
@@ -238,6 +312,7 @@ async function initPopup() {
   // Generate checkboxes from saved settings.
   generateBackendOptionsList(settings);
   generateCategoryOptionsList(settings);
+  generateLocaleOptionsList(settings);
   configureVisibleSettings(settings);
   const selectedDeviceEl = find(`.options__device input[value="${settings.device}"]`);
   selectedDeviceEl.checked = true;
