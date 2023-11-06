@@ -128,6 +128,13 @@ export class ReportRenderer {
       devicesTooltipTextLines.push(`${Globals.strings.runtimeSettingsAxeVersion}: ${axeVersion}`);
     }
 
+    let stopwatchLabel = Globals.strings.runtimeAnalysisWindow;
+    if (report.gatherMode === 'timespan') {
+      stopwatchLabel = Globals.strings.runtimeAnalysisWindowTimespan;
+    } else if (report.gatherMode === 'snapshot') {
+      stopwatchLabel = Globals.strings.runtimeAnalysisWindowSnapshot;
+    }
+
     // [CSS icon class, textContent, tooltipText]
     const metaItems = [
       ['date',
@@ -139,7 +146,7 @@ export class ReportRenderer {
         Globals.strings.runtimeSingleLoad,
         Globals.strings.runtimeSingleLoadTooltip],
       ['stopwatch',
-        Globals.strings.runtimeAnalysisWindow],
+        stopwatchLabel],
       ['networkspeed',
         `${envValues.summary}`,
         `${Globals.strings.runtimeSettingsNetworkThrottling}: ${envValues.networkThrottling}`],
