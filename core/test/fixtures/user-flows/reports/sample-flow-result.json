@@ -1479,6 +1479,13 @@
                         "blockingTime": 0,
                         "transferSize": 8273,
                         "tbtImpact": 0
+                      },
+                      {
+                        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+                        "mainThreadTime": 4.868,
+                        "blockingTime": 0,
+                        "transferSize": 2506,
+                        "tbtImpact": 0
                       }
                     ]
                   }
@@ -19056,7 +19063,29 @@
                   "entity": "Google Fonts",
                   "subItems": {
                     "type": "subitems",
-                    "items": []
+                    "items": [
+                      {
+                        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+                        "mainThreadTime": 2.98,
+                        "blockingTime": 0,
+                        "transferSize": 0,
+                        "tbtImpact": 0
+                      },
+                      {
+                        "url": "https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
+                        "mainThreadTime": 0,
+                        "blockingTime": 0,
+                        "transferSize": 0,
+                        "tbtImpact": 0
+                      },
+                      {
+                        "url": "https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
+                        "mainThreadTime": 0,
+                        "blockingTime": 0,
+                        "transferSize": 0,
+                        "tbtImpact": 0
+                      }
+                    ]
                   }
                 }
               ],
