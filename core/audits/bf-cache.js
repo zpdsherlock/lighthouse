@@ -61,7 +61,7 @@ class BFCache extends Audit {
       supportedModes: ['navigation', 'timespan'],
       guidanceLevel: 2,
       requiredArtifacts: ['BFCacheFailures'],
-      scoreDisplayMode: Audit.SCORING_MODES.METRIC_SAVINGS,
+      scoreDisplayMode: Audit.SCORING_MODES.BINARY,
     };
   }
 

@@ -5659,8 +5659,8 @@
       "id": "bf-cache",
       "title": "Page prevented back/forward cache restoration",
       "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
-      "score": 0.5,
-      "scoreDisplayMode": "metricSavings",
+      "score": 0,
+      "scoreDisplayMode": "binary",
       "displayValue": "2 failure reasons",
       "details": {
         "type": "table",

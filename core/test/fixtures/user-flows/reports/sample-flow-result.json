@@ -3721,7 +3721,7 @@
             "title": "Page didn't prevent back/forward cache restoration",
             "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
             "score": 1,
-            "scoreDisplayMode": "metricSavings",
+            "scoreDisplayMode": "binary",
             "guidanceLevel": 2
           }
         },
@@ -10654,7 +10654,7 @@
             "title": "Page didn't prevent back/forward cache restoration",
             "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
             "score": 1,
-            "scoreDisplayMode": "metricSavings",
+            "scoreDisplayMode": "binary",
             "guidanceLevel": 2
           }
         },
@@ -21376,7 +21376,7 @@
             "title": "Page didn't prevent back/forward cache restoration",
             "description": "Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. [Learn more about the bfcache](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)",
             "score": 1,
-            "scoreDisplayMode": "metricSavings",
+            "scoreDisplayMode": "binary",
             "guidanceLevel": 2
           }
         },
