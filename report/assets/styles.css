@@ -1474,6 +1474,8 @@
 }
 
 .lh-row--group td:first-child {
+  display: block;
+  min-width: max-content;
   font-weight: normal;
 }
 
@@ -1509,11 +1511,11 @@
 }
 
 .lh-row--group .lh-report-icon--external {
-  display: none;
+  visibility: hidden;
 }
 
 .lh-row--group:hover .lh-report-icon--external {
-  display: inline-block;
+  visibility: visible;
 }
 
 .lh-dark .lh-report-icon--external::before {
@@ -1907,7 +1909,7 @@ details[open] .lh-clump-toggletext--hide { display: block;}
   width: 225px;
   stroke-width: var(--stroke-width);
   stroke-linecap: round;
-  
+
   /* for better rendering perf */
   contain: strict;
   height: 225px;
