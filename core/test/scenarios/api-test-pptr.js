@@ -64,7 +64,14 @@ describe('Individual modes API', function() {
     });
 
     it('should compute ConsoleMessage results across a span of time', async () => {
-      const run = await api.startTimespan(state.page);
+      const run = await api.startTimespan(state.page, {
+        config: {
+          extends: 'lighthouse:default',
+          audits: [
+            {path: 'bootup-time', options: {thresholdInMs: 10}},
+          ],
+        },
+      });
 
       await setupTestPage();
 
