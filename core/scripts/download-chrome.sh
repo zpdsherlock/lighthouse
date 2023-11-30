@@ -22,7 +22,12 @@ if [ "$machine" == "MinGw" ]; then
 elif [ "$machine" == "Linux" ]; then
   url="https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots"
 elif [ "$machine" == "Mac" ]; then
-  url="https://download-chromium.appspot.com/dl/Mac?type=snapshots"
+  arch="$(uname -m)"
+  if [ "$arch" == "arm64" ]; then
+    url="https://download-chromium.appspot.com/dl/Mac_Arm?type=snapshots"
+  else
+    url="https://download-chromium.appspot.com/dl/Mac?type=snapshots"
+  fi
 else
   echo "unsupported platform"
   exit 1
