@@ -6,8 +6,21 @@
 ##
 
 # Download chrome inside of our CI env.
+# Takes one arg - the location to extract ToT chrome to. Defaults to .tmp/chrome-tot
+# If already exists, this script does nothing.
 
 set -euo pipefail
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+LH_ROOT_DIR="$SCRIPT_DIR/../.."
+
+chrome_out=${1:-"$LH_ROOT_DIR/.tmp/chrome-tot"}
+mkdir -p "$LH_ROOT_DIR/.tmp"
+
+if [ -e "$chrome_out" ]; then
+  echo "cached chrome found"
+  exit 0
+fi
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -33,8 +46,7 @@ else
   exit 1
 fi
 
-if [ -e "$CHROME_PATH" ]; then
-  echo "cached chrome found"
-else
-  curl "$url" -Lo chrome.zip && unzip -q chrome.zip
-fi
+mkdir -p .tmp-download && cd .tmp-download
+curl "$url" -Lo chrome.zip && unzip -q chrome.zip && rm chrome.zip
+mv * "$chrome_out"
+cd - && rm -rf .tmp-download

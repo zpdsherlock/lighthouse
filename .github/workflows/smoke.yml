@@ -42,13 +42,12 @@ jobs:
 
     - name: Define ToT chrome path
       if: matrix.chrome-channel == 'ToT'
-      run: echo "CHROME_PATH=/home/runner/chrome-linux-tot/chrome" >> $GITHUB_ENV
+      run: echo "CHROME_PATH=${{ github.workspace }}/lighthouse/.tmp/chrome-tot/chrome" >> $GITHUB_ENV
 
     # Chrome Stable is already installed by default.
     - name: Install Chrome ToT
       if: matrix.chrome-channel == 'ToT'
-      working-directory: /home/runner
-      run: bash $GITHUB_WORKSPACE/core/scripts/download-chrome.sh && mv chrome-linux chrome-linux-tot
+      run: bash $GITHUB_WORKSPACE/core/scripts/download-chrome.sh
 
     - run: yarn install --frozen-lockfile --network-timeout 1000000
     - run: yarn build-report
@@ -127,6 +126,7 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-latest
     env:
+      CHROME_PATH: ${{ github.workspace }}/lighthouse/.tmp/chrome-tot/chrome
       # The total number of shards. Set dynamically when length of *single* matrix variable is
       # computable. See https://github.community/t/get-length-of-strategy-matrix-or-get-all-matrix-options/18342
       SHARD_TOTAL: 3
@@ -146,12 +146,8 @@ jobs:
     - run: yarn build-report
     - run: yarn build-devtools
 
-    - name: Define ToT chrome path
-      run: echo "CHROME_PATH=/home/runner/chrome-linux-tot/chrome" >> $GITHUB_ENV
-
     - name: Install Chrome ToT
-      working-directory: /home/runner
-      run: bash $GITHUB_WORKSPACE/core/scripts/download-chrome.sh && mv chrome-linux chrome-linux-tot
+      run: bash $GITHUB_WORKSPACE/core/scripts/download-chrome.sh
 
     - name: yarn test-bundle
       run: yarn test-bundle --shard=${{ matrix.smoke-test-shard }}/$SHARD_TOTAL --retries=2
