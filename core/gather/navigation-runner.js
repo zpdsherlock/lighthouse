@@ -220,7 +220,7 @@ async function _navigation(navigationContext) {
 
   // Every required url is initialized to an empty string in `getBaseArtifacts`.
   // If we haven't set all the required urls yet, set them here.
-  if (!Object.values(phaseState.baseArtifacts).every(Boolean)) {
+  if (!Object.values(phaseState.baseArtifacts.URL).every(Boolean)) {
     phaseState.baseArtifacts.URL = {
       requestedUrl: navigateResult.requestedUrl,
       mainDocumentUrl: navigateResult.mainDocumentUrl,
