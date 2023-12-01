@@ -247,6 +247,13 @@ class NetworkRequest {
   }
 
   /**
+   * @param {LH.Crdp.Network.ResponseReceivedExtraInfoEvent} data
+   */
+  onResponseReceivedExtraInfo(data) {
+    this.responseHeadersText = data.headersText || '';
+  }
+
+  /**
    * @param {LH.Crdp.Network.DataReceivedEvent} data
    */
   onDataReceived(data) {
@@ -354,7 +361,6 @@ class NetworkRequest {
     this.timing = response.timing;
     if (resourceType) this.resourceType = RESOURCE_TYPES[resourceType];
     this.mimeType = response.mimeType;
-    this.responseHeadersText = response.headersText || '';
     this.responseHeaders = NetworkRequest._headersDictToHeadersArray(response.headers);
 
     this.fetchedViaServiceWorker = !!response.fromServiceWorker;
