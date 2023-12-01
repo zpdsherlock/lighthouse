@@ -30,23 +30,49 @@ case "${unameOut}" in
   *)          machine="UNKNOWN:${unameOut}"
 esac
 
-if [ "$machine" == "MinGw" ]; then
-  url="https://download-chromium.appspot.com/dl/Win?type=snapshots"
-elif [ "$machine" == "Linux" ]; then
-  url="https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots"
-elif [ "$machine" == "Mac" ]; then
-  arch="$(uname -m)"
-  if [ "$arch" == "arm64" ]; then
-    url="https://download-chromium.appspot.com/dl/Mac_Arm?type=snapshots"
+# Only set this to true when actual ToT is broken and we can't fix it yet.
+should_hardcode_ci=true
+
+if [[ "${CI:-}" ]] && [ "$should_hardcode_ci" == true ]; then
+  rev=1228630
+  if [ "$machine" == "MinGw" ]; then
+    url="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Win_x64/$rev/chrome-win.zip"
+  elif [ "$machine" == "Linux" ]; then
+    url="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/$rev/chrome-linux.zip"
+  elif [ "$machine" == "Mac" ]; then
+    arch="$(uname -m)"
+    if [ "$arch" == "arm64" ]; then
+      url="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac_Arm/$rev/chrome-mac.zip"
+    else
+      url="http://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/$rev/chrome-mac.zip"
+    fi
   else
-    url="https://download-chromium.appspot.com/dl/Mac?type=snapshots"
+    echo "unsupported platform"
+    exit 1
   fi
 else
-  echo "unsupported platform"
-  exit 1
+  if [ "$machine" == "MinGw" ]; then
+    url="https://download-chromium.appspot.com/dl/Win?type=snapshots"
+  elif [ "$machine" == "Linux" ]; then
+    url="https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots"
+  elif [ "$machine" == "Mac" ]; then
+    arch="$(uname -m)"
+    if [ "$arch" == "arm64" ]; then
+      url="https://download-chromium.appspot.com/dl/Mac_Arm?type=snapshots"
+    else
+      url="https://download-chromium.appspot.com/dl/Mac?type=snapshots"
+    fi
+  else
+    echo "unsupported platform"
+    exit 1
+  fi
 fi
+
+echo "downloading $url"
 
 mkdir -p .tmp-download && cd .tmp-download
 curl "$url" -Lo chrome.zip && unzip -q chrome.zip && rm chrome.zip
 mv * "$chrome_out"
 cd - && rm -rf .tmp-download
+
+ls "$chrome_out"
