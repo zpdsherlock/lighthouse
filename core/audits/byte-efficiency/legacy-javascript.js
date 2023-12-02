@@ -391,34 +391,37 @@ class LegacyJavascript extends ByteEfficiencyAudit {
   }
 
   /**
-   * Utility function to estimate transfer size and cache calculation.
+   * Utility function to estimate the ratio of the compression on the resource.
+   * This excludes the size of the response headers.
+   * Also caches the calculation.
    *
    * Note: duplicated-javascript does this exact thing. In the future, consider
-   * making a generic estimator on ByteEfficienyAudit.
-   * @param {Map<string, number>} transferRatioByUrl
+   * making a generic estimator on ByteEfficiencyAudit.
+   * @param {Map<string, number>} compressionRatioByUrl
    * @param {string} url
    * @param {LH.Artifacts} artifacts
    * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
    */
-  static async estimateTransferRatioForScript(transferRatioByUrl, url, artifacts, networkRecords) {
-    let transferRatio = transferRatioByUrl.get(url);
-    if (transferRatio !== undefined) return transferRatio;
+  static async estimateCompressionRatioForContent(compressionRatioByUrl, url,
+      artifacts, networkRecords) {
+    let compressionRatio = compressionRatioByUrl.get(url);
+    if (compressionRatio !== undefined) return compressionRatio;
 
     const script = artifacts.Scripts.find(script => script.url === url);
 
-    if (!script || script.content === null) {
+    if (!script) {
       // Can't find content, so just use 1.
-      transferRatio = 1;
+      compressionRatio = 1;
     } else {
       const networkRecord = getRequestForScript(networkRecords, script);
-      const contentLength = script.length || 0;
-      const transferSize =
-        ByteEfficiencyAudit.estimateTransferSize(networkRecord, contentLength, 'Script');
-      transferRatio = transferSize / contentLength;
+      const contentLength = networkRecord?.resourceSize || script.length || 0;
+      const compressedSize =
+        ByteEfficiencyAudit.estimateCompressedContentSize(networkRecord, contentLength, 'Script');
+      compressionRatio = compressedSize / contentLength;
     }
 
-    transferRatioByUrl.set(url, transferRatio);
-    return transferRatio;
+    compressionRatioByUrl.set(url, compressionRatio);
+    return compressionRatio;
   }
 
   /**
@@ -443,14 +446,14 @@ class LegacyJavascript extends ByteEfficiencyAudit {
     ]);
 
     /** @type {Map<string, number>} */
-    const transferRatioByUrl = new Map();
+    const compressionRatioByUrl = new Map();
 
     const scriptToMatchResults =
       this.detectAcrossScripts(matcher, artifacts.Scripts, networkRecords, bundles);
     for (const [script, matches] of scriptToMatchResults.entries()) {
-      const transferRatio = await this.estimateTransferRatioForScript(
-        transferRatioByUrl, script.url, artifacts, networkRecords);
-      const wastedBytes = Math.round(this.estimateWastedBytes(matches) * transferRatio);
+      const compressionRatio = await this.estimateCompressionRatioForContent(
+        compressionRatioByUrl, script.url, artifacts, networkRecords);
+      const wastedBytes = Math.round(this.estimateWastedBytes(matches) * compressionRatio);
       /** @type {typeof items[number]} */
       const item = {
         url: script.url,

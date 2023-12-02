@@ -135,6 +135,7 @@ class NetworkRequest {
 
     // Go read the comment on _updateTransferSizeForLightrider.
     this.transferSize = 0;
+    this.responseHeadersTransferSize = 0;
     this.resourceSize = 0;
     this.fromDiskCache = false;
     this.fromMemoryCache = false;
@@ -351,6 +352,7 @@ class NetworkRequest {
     this.responseHeadersEndTime = timestamp * 1000;
 
     this.transferSize = response.encodedDataLength;
+    this.responseHeadersTransferSize = response.encodedDataLength;
     if (typeof response.fromDiskCache === 'boolean') this.fromDiskCache = response.fromDiskCache;
     if (typeof response.fromPrefetchCache === 'boolean') {
       this.fromPrefetchCache = response.fromPrefetchCache;
@@ -604,6 +606,15 @@ class NetworkRequest {
       .find(header => header.name === 'Non-Authoritative-Reason');
     const reason = reasonHeader?.value;
     return reason === 'HSTS' && NetworkRequest.isSecureRequest(destination);
+  }
+
+  /**
+   * Returns whether the network request was sent encoded.
+   * @param {NetworkRequest} record
+   * @return {boolean}
+   */
+  static isContentEncoded(record) {
+    return record.responseHeaders.some(item => item.name === 'Content-Encoding');
   }
 
   /**

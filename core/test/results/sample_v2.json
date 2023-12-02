@@ -4975,7 +4975,7 @@
         "items": [
           {
             "url": "http://localhost:10200/dobetterweb/third_party/aggressive-promise-polyfill.js",
-            "wastedBytes": 26622,
+            "wastedBytes": 26585,
             "subItems": {
               "type": "subitems",
               "items": [
@@ -5005,7 +5005,7 @@
           }
         ],
         "overallSavingsMs": 450,
-        "overallSavingsBytes": 26622,
+        "overallSavingsBytes": 26585,
         "sortedBy": [
           "wastedBytes"
         ],
@@ -10473,7 +10473,7 @@
         },
         {
           "values": {
-            "wastedBytes": 26622
+            "wastedBytes": 26585
           },
           "path": "audits[legacy-javascript].displayValue"
         }

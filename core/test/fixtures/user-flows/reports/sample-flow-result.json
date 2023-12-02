@@ -3286,7 +3286,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
-                  "wastedBytes": 57,
+                  "wastedBytes": 167,
                   "subItems": {
                     "type": "subitems",
                     "items": [
@@ -3306,7 +3306,7 @@
                 }
               ],
               "overallSavingsMs": 0,
-              "overallSavingsBytes": 57,
+              "overallSavingsBytes": 167,
               "sortedBy": [
                 "wastedBytes"
               ],
@@ -8034,7 +8034,7 @@
             "core/lib/i18n/i18n.js | displayValueByteSavings": [
               {
                 "values": {
-                  "wastedBytes": 57
+                  "wastedBytes": 167
                 },
                 "path": "audits[legacy-javascript].displayValue"
               }
@@ -20850,7 +20850,7 @@
             "scoreDisplayMode": "metricSavings",
             "numericValue": 0,
             "numericUnit": "millisecond",
-            "displayValue": "",
+            "displayValue": "Potential savings of 0 KiB",
             "metricSavings": {
               "FCP": 0,
               "LCP": 0
@@ -20884,7 +20884,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
-                  "wastedBytes": 0,
+                  "wastedBytes": 167,
                   "subItems": {
                     "type": "subitems",
                     "items": [
@@ -20904,7 +20904,7 @@
                 }
               ],
               "overallSavingsMs": 0,
-              "overallSavingsBytes": 0,
+              "overallSavingsBytes": 167,
               "sortedBy": [
                 "wastedBytes"
               ],
@@ -25629,6 +25629,12 @@
                   "wastedBytes": 52102
                 },
                 "path": "audits[uses-responsive-images].displayValue"
+              },
+              {
+                "values": {
+                  "wastedBytes": 167
+                },
+                "path": "audits[legacy-javascript].displayValue"
               }
             ],
             "core/lib/i18n/i18n.js | columnResourceSize": [

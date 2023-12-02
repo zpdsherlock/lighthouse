@@ -19,6 +19,7 @@ const getResult = scripts => {
     ...scripts.map(({url}, index) => ({
       requestId: String(index),
       url,
+      responseHeaders: [],
     })),
   ];
   const artifacts = {

@@ -44,6 +44,7 @@ function mockNetworkRecords() {
     transferSize: 300,
     url: requestedUrl,
     frameId: 'ROOT_FRAME',
+    responseHeaders: [{name: 'Content-Encoding'}],
   },
   {
     requestId: '2:redirect',
@@ -57,6 +58,7 @@ function mockNetworkRecords() {
     transferSize: 16_000,
     url: mainDocumentUrl,
     frameId: 'ROOT_FRAME',
+    responseHeaders: [{name: 'Content-Encoding'}],
   }];
 }
 
