@@ -31,7 +31,7 @@ case "${unameOut}" in
 esac
 
 # Only set this to true when actual ToT is broken and we can't fix it yet.
-should_hardcode_ci=true
+should_hardcode_ci=false
 
 if [[ "${CI:-}" ]] && [ "$should_hardcode_ci" == true ]; then
   rev=1228630
