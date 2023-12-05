@@ -152,16 +152,19 @@ class UsesHTTP2Audit extends Audit {
    * @param {LH.Artifacts.EntityClassification} classifiedEntities
    * @return {boolean}
    */
-  static isStaticAsset(networkRequest, classifiedEntities) {
+  static isMultiplexableStaticAsset(networkRequest, classifiedEntities) {
     if (!STATIC_RESOURCE_TYPES.has(networkRequest.resourceType)) return false;
 
     // Resources from third-parties that are less than 100 bytes are usually tracking pixels, not actual resources.
     // They can masquerade as static types though (gifs, documents, etc)
     if (networkRequest.resourceSize < 100) {
-      // This logic needs to be revisited.
-      // See https://github.com/GoogleChrome/lighthouse/issues/14661
       const entity = classifiedEntities.entityByUrl.get(networkRequest.url);
-      if (entity && !entity.isUnrecognized) return false;
+      if (entity) {
+        // Third-party assets are multiplexable in their first-party context.
+        if (classifiedEntities.firstParty?.name === entity.name) return true;
+        // Skip recognizable third-parties' requests.
+        if (!entity.isUnrecognized) return false;
+      }
     }
 
     return true;
@@ -199,7 +202,7 @@ class UsesHTTP2Audit extends Audit {
     /** @type {Map<string, Array<LH.Artifacts.NetworkRequest>>} */
     const groupedByOrigin = new Map();
     for (const record of networkRecords) {
-      if (!UsesHTTP2Audit.isStaticAsset(record, classifiedEntities)) continue;
+      if (!UsesHTTP2Audit.isMultiplexableStaticAsset(record, classifiedEntities)) continue;
       if (UrlUtils.isLikeLocalhost(record.parsedURL.host)) continue;
       const existing = groupedByOrigin.get(record.parsedURL.securityOrigin) || [];
       existing.push(record);
