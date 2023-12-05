@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {getDomain} from 'tldts';
+import {getDomain} from 'tldts-icann';
 
 import {Util} from '../../shared/util.js';
 import {LighthouseError} from './lh-error.js';
