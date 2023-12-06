@@ -133,8 +133,8 @@
   --snippet-color: #0938C2;
   --stackpack-padding-horizontal: 10px;
   --sticky-header-background-color: var(--report-background-color);
-  --sticky-header-buffer: calc(var(--topbar-height) + var(--sticky-header-height));
-  --sticky-header-height: calc(var(--gauge-circle-size-sm) + var(--score-container-padding) * 2);
+  --sticky-header-buffer: var(--topbar-height);
+  --sticky-header-height: calc(var(--gauge-circle-size-sm) + var(--score-container-padding) * 2 + 1em);
   --table-group-header-background-color: #EEF1F4;
   --table-group-header-text-color: var(--color-gray-700);
   --table-higlight-background-color: #F5F7FA;
@@ -271,6 +271,10 @@
   --section-padding-vertical: 8px;
 }
 
+.lh-container:has(.lh-sticky-header) {
+  --sticky-header-buffer: calc(var(--topbar-height) + var(--sticky-header-height));
+}
+
 .lh-container:not(.lh-topbar + .lh-container) {
   --topbar-height: 0;
   --sticky-header-height: 0;
@@ -295,7 +299,11 @@
   overflow-y: scroll;
   height: calc(100% - var(--topbar-height));
   /** The .lh-container is the scroll parent in DevTools so we exclude the topbar from the sticky header buffer. */
-  --sticky-header-buffer: calc(var(--sticky-header-height));
+  --sticky-header-buffer: 0;
+}
+.lh-devtools .lh-container:has(.lh-sticky-header) {
+  /** The .lh-container is the scroll parent in DevTools so we exclude the topbar from the sticky header buffer. */
+  --sticky-header-buffer: var(--sticky-header-height);
 }
 @media print {
   .lh-devtools .lh-container {
@@ -1369,7 +1377,7 @@
   max-width: var(--report-content-max-width);
   margin: 0 auto;
 
-  scroll-margin-top: var(--sticky-header-buffer);
+  scroll-margin-top: calc(var(--sticky-header-buffer) - 1em);
 }
 
 .lh-category-wrapper {
@@ -1460,7 +1468,7 @@
 
 .lh-table thead th {
   position: sticky;
-  top: calc(var(--sticky-header-buffer) + 1em);
+  top: var(--sticky-header-buffer);
   z-index: 1;
   background-color: var(--report-background-color);
   border-bottom: 1px solid var(--report-border-color-secondary);
