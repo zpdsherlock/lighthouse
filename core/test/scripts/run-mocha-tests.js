@@ -192,7 +192,7 @@ function getTestFiles() {
   // Collect all the possible test files, based off the provided testMatch glob pattern
   // or the default patterns defined above.
   const testsGlob = argv.testMatch || `{${defaultTestMatches.join(',')}}`;
-  const allTestFiles = glob.sync(testsGlob, {cwd: LH_ROOT});
+  const allTestFiles = glob.sync(testsGlob, {cwd: LH_ROOT, ignore: '**/node_modules/**'});
 
   // If provided, filter the test files using a basic string includes on the absolute path of
   // each test file.

@@ -5,9 +5,9 @@
  */
 
 import {makeComputedArtifact} from './computed-artifact.js';
-import {ByteEfficiencyAudit} from '../audits/byte-efficiency/byte-efficiency-audit.js';
 import {NetworkRecords} from './network-records.js';
 import {Util} from '../../shared/util.js';
+import {estimateTransferSize} from '../lib/script-helpers.js';
 
 const PREVIEW_LENGTH = 100;
 
@@ -70,7 +70,7 @@ class UnusedCSS {
       usedUncompressedBytes += usedRule.endOffset - usedRule.startOffset;
     }
 
-    const totalTransferredBytes = ByteEfficiencyAudit.estimateTransferSize(
+    const totalTransferredBytes = estimateTransferSize(
         stylesheetInfo.networkRecord, totalUncompressedBytes, 'Stylesheet');
     const percentUnused = (totalUncompressedBytes - usedUncompressedBytes) / totalUncompressedBytes;
     const wastedBytes = Math.round(percentUnused * totalTransferredBytes);

@@ -84,6 +84,7 @@
     "core/test/lib/page-functions-test.js",
     "core/test/lib/proto-preprocessor-test.js",
     "core/test/lib/rect-helpers-test.js",
+    "core/test/lib/script-helpers-test.js",
     "core/test/lib/sentry-test.js",
     "core/test/lib/stack-packs-test.js",
     "core/test/lib/statistics-test.js",

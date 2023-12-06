@@ -24,7 +24,7 @@ import {ByteEfficiencyAudit} from './byte-efficiency-audit.js';
 import {EntityClassification} from '../../computed/entity-classification.js';
 import {JSBundles} from '../../computed/js-bundles.js';
 import * as i18n from '../../lib/i18n/i18n.js';
-import {getRequestForScript} from '../../lib/script-helpers.js';
+import {estimateCompressionRatioForContent} from '../../lib/script-helpers.js';
 import {LH_ROOT} from '../../../shared/root.js';
 
 const graphJson = fs.readFileSync(
@@ -391,40 +391,6 @@ class LegacyJavascript extends ByteEfficiencyAudit {
   }
 
   /**
-   * Utility function to estimate the ratio of the compression on the resource.
-   * This excludes the size of the response headers.
-   * Also caches the calculation.
-   *
-   * Note: duplicated-javascript does this exact thing. In the future, consider
-   * making a generic estimator on ByteEfficiencyAudit.
-   * @param {Map<string, number>} compressionRatioByUrl
-   * @param {string} url
-   * @param {LH.Artifacts} artifacts
-   * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
-   */
-  static async estimateCompressionRatioForContent(compressionRatioByUrl, url,
-      artifacts, networkRecords) {
-    let compressionRatio = compressionRatioByUrl.get(url);
-    if (compressionRatio !== undefined) return compressionRatio;
-
-    const script = artifacts.Scripts.find(script => script.url === url);
-
-    if (!script) {
-      // Can't find content, so just use 1.
-      compressionRatio = 1;
-    } else {
-      const networkRecord = getRequestForScript(networkRecords, script);
-      const contentLength = networkRecord?.resourceSize || script.length || 0;
-      const compressedSize =
-        ByteEfficiencyAudit.estimateCompressedContentSize(networkRecord, contentLength, 'Script');
-      compressionRatio = compressedSize / contentLength;
-    }
-
-    compressionRatioByUrl.set(url, compressionRatio);
-    return compressionRatio;
-  }
-
-  /**
    * @param {LH.Artifacts} artifacts
    * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
    * @param {LH.Audit.Context} context
@@ -451,7 +417,7 @@ class LegacyJavascript extends ByteEfficiencyAudit {
     const scriptToMatchResults =
       this.detectAcrossScripts(matcher, artifacts.Scripts, networkRecords, bundles);
     for (const [script, matches] of scriptToMatchResults.entries()) {
-      const compressionRatio = await this.estimateCompressionRatioForContent(
+      const compressionRatio = await estimateCompressionRatioForContent(
         compressionRatioByUrl, script.url, artifacts, networkRecords);
       const wastedBytes = Math.round(this.estimateWastedBytes(matches) * compressionRatio);
       /** @type {typeof items[number]} */

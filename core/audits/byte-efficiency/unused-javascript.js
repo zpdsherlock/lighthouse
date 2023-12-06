@@ -8,7 +8,7 @@ import {ByteEfficiencyAudit} from './byte-efficiency-audit.js';
 import {UnusedJavascriptSummary} from '../../computed/unused-javascript-summary.js';
 import {JSBundles} from '../../computed/js-bundles.js';
 import * as i18n from '../../lib/i18n/i18n.js';
-import {getRequestForScript} from '../../lib/script-helpers.js';
+import {estimateTransferSize, getRequestForScript} from '../../lib/script-helpers.js';
 
 const UIStrings = {
   /** Imperative title of a Lighthouse audit that tells the user to reduce JavaScript that is never evaluated during page load. This is displayed in a list of audit titles that Lighthouse generates. */
@@ -99,8 +99,7 @@ class UnusedJavaScript extends ByteEfficiencyAudit {
         await UnusedJavascriptSummary.request({scriptId, scriptCoverage, bundle}, context);
       if (unusedJsSummary.wastedBytes === 0 || unusedJsSummary.totalBytes === 0) continue;
 
-      const transfer = ByteEfficiencyAudit
-        .estimateTransferSize(networkRecord, unusedJsSummary.totalBytes, 'Script');
+      const transfer = estimateTransferSize(networkRecord, unusedJsSummary.totalBytes, 'Script');
       const transferRatio = transfer / unusedJsSummary.totalBytes;
       /** @type {LH.Audit.ByteEfficiencyItem} */
       const item = {
