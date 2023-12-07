@@ -3252,7 +3252,7 @@
             "scoreDisplayMode": "metricSavings",
             "numericValue": 0,
             "numericUnit": "millisecond",
-            "displayValue": "Potential savings of 0 KiB",
+            "displayValue": "",
             "metricSavings": {
               "FCP": 0,
               "LCP": 0
@@ -3286,7 +3286,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
-                  "wastedBytes": 167,
+                  "wastedBytes": 0,
                   "subItems": {
                     "type": "subitems",
                     "items": [
@@ -3306,7 +3306,7 @@
                 }
               ],
               "overallSavingsMs": 0,
-              "overallSavingsBytes": 167,
+              "overallSavingsBytes": 0,
               "sortedBy": [
                 "wastedBytes"
               ],
@@ -8030,14 +8030,6 @@
             ],
             "core/audits/byte-efficiency/legacy-javascript.js | description": [
               "audits[legacy-javascript].description"
-            ],
-            "core/lib/i18n/i18n.js | displayValueByteSavings": [
-              {
-                "values": {
-                  "wastedBytes": 167
-                },
-                "path": "audits[legacy-javascript].displayValue"
-              }
             ],
             "core/lib/i18n/i18n.js | columnWastedBytes": [
               "audits[legacy-javascript].details.headings[2].label"
@@ -20850,7 +20842,7 @@
             "scoreDisplayMode": "metricSavings",
             "numericValue": 0,
             "numericUnit": "millisecond",
-            "displayValue": "Potential savings of 0 KiB",
+            "displayValue": "",
             "metricSavings": {
               "FCP": 0,
               "LCP": 0
@@ -20884,7 +20876,7 @@
               "items": [
                 {
                   "url": "https://www.mikescerealshack.co/_next/static/chunks/commons.49455e4fa8cc3f51203f.js",
-                  "wastedBytes": 167,
+                  "wastedBytes": 0,
                   "subItems": {
                     "type": "subitems",
                     "items": [
@@ -20904,7 +20896,7 @@
                 }
               ],
               "overallSavingsMs": 0,
-              "overallSavingsBytes": 167,
+              "overallSavingsBytes": 0,
               "sortedBy": [
                 "wastedBytes"
               ],
@@ -25629,12 +25621,6 @@
                   "wastedBytes": 52102
                 },
                 "path": "audits[uses-responsive-images].displayValue"
-              },
-              {
-                "values": {
-                  "wastedBytes": 167
-                },
-                "path": "audits[legacy-javascript].displayValue"
               }
             ],
             "core/lib/i18n/i18n.js | columnResourceSize": [

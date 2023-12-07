@@ -614,7 +614,10 @@ class NetworkRequest {
    * @return {boolean}
    */
   static isContentEncoded(record) {
-    return record.responseHeaders.some(item => item.name === 'Content-Encoding');
+    // FYI: older devtools logs (like our test fixtures) seems to be lower case, while modern logs
+    // are Cased-Like-This.
+    const pattern = /^content-encoding$/i;
+    return record.responseHeaders.some(item => item.name.match(pattern));
   }
 
   /**
