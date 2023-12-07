@@ -187,25 +187,25 @@ const expectations = {
           items: [
             {
               url: 'http://localhost:10200/byte-efficiency/script.js',
-              wastedBytes: '46039 +/- 100',
+              wastedBytes: '45816 +/- 100',
               wastedPercent: '87 +/- 5',
             },
             {
               // /some-custom-url.js,
               url: 'inline: \n  function unusedFunction() {\n    // U…',
-              wastedBytes: '6690 +/- 100',
+              wastedBytes: '6630 +/- 100',
               wastedPercent: '99.6 +/- 0.1',
             },
             {
               url: 'inline: \n  // Used block #1\n  // FILLER DATA JU…',
-              wastedBytes: '6569 +/- 100',
+              wastedBytes: '6510 +/- 100',
               wastedPercent: 100,
             },
             {
               url: 'http://localhost:10200/byte-efficiency/bundle.js',
               totalBytes: '12962 +/- 1000',
-              wastedBytes: '2349 +/- 100',
-              wastedPercent: '19 +/- 5',
+              wastedBytes: '2303 +/- 100',
+              wastedPercent: '18 +/- 5',
             },
           ],
         },
