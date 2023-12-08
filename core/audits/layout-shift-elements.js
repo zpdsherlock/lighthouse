@@ -40,15 +40,28 @@ class LayoutShiftElements extends Audit {
    * @return {Promise<LH.Audit.Product>}
    */
   static async audit(artifacts, context) {
-    const clsElements = artifacts.TraceElements
-      .filter(element => element.traceEventType === 'layout-shift');
+    const {cumulativeLayoutShift: clsSavings, impactByNodeId} =
+      await CumulativeLayoutShiftComputed.request(artifacts.traces[Audit.DEFAULT_PASS], context);
 
-    const clsElementData = clsElements.map(element => {
-      return {
+    /** @type {Array<{node: LH.Audit.Details.ItemValue, score?: number}>} */
+    const clsElementData = artifacts.TraceElements
+      .filter(element => element.traceEventType === 'layout-shift')
+      .map(element => ({
         node: Audit.makeNodeItem(element.node),
         score: element.score,
-      };
-    });
+      }));
+
+    if (clsElementData.length < impactByNodeId.size) {
+      const elementDataImpact = clsElementData.reduce((sum, {score}) => sum += score || 0, 0);
+      const remainingImpact = Math.max(clsSavings - elementDataImpact, 0);
+      clsElementData.push({
+        node: {
+          type: 'code',
+          value: str_(i18n.UIStrings.otherResourceType),
+        },
+        score: remainingImpact,
+      });
+    }
 
     /** @type {LH.Audit.Details.Table['headings']} */
     const headings = [
@@ -58,14 +71,12 @@ class LayoutShiftElements extends Audit {
     ];
 
     const details = Audit.makeTableDetails(headings, clsElementData);
-    let displayValue;
-    if (clsElementData.length > 0) {
-      displayValue = str_(i18n.UIStrings.displayValueElementsFound,
-        {nodeCount: clsElementData.length});
-    }
 
-    const {cumulativeLayoutShift: clsSavings} =
-      await CumulativeLayoutShiftComputed.request(artifacts.traces[Audit.DEFAULT_PASS], context);
+    let displayValue;
+    if (impactByNodeId.size > 0) {
+      displayValue = str_(i18n.UIStrings.displayValueElementsFound,
+        {nodeCount: impactByNodeId.size});
+    }
 
     const passed = clsSavings <= CumulativeLayoutShift.defaultOptions.p10;
 

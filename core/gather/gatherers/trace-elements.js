@@ -15,7 +15,6 @@
 import BaseGatherer from '../base-gatherer.js';
 import {resolveNodeIdToObjectId} from '../driver/dom.js';
 import {pageFunctions} from '../../lib/page-functions.js';
-import * as RectHelpers from '../../lib/rect-helpers.js';
 import {Sentry} from '../../lib/sentry.js';
 import Trace from './trace.js';
 import {ProcessedTrace} from '../../computed/processed-trace.js';
@@ -26,6 +25,8 @@ import {CumulativeLayoutShift} from '../../computed/metrics/cumulative-layout-sh
 import {ExecutionContext} from '../driver/execution-context.js';
 
 /** @typedef {{nodeId: number, score?: number, animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[], type?: string}} TraceElementData */
+
+const MAX_LAYOUT_SHIFT_ELEMENTS = 15;
 
 /**
  * @this {HTMLElement}
@@ -63,75 +64,24 @@ class TraceElements extends BaseGatherer {
   }
 
   /**
-   * @param {Array<number>} rect
-   * @return {LH.Artifacts.Rect}
+   * This function finds the top (up to 15) elements that contribute to the CLS score of the page.
+   *
+   * @param {LH.Trace} trace
+   * @param {LH.Gatherer.Context} context
+   * @return {Promise<Array<TraceElementData>>}
    */
-  static traceRectToLHRect(rect) {
-    const rectArgs = {
-      x: rect[0],
-      y: rect[1],
-      width: rect[2],
-      height: rect[3],
-    };
-    return RectHelpers.addRectTopAndBottom(rectArgs);
-  }
+  static async getTopLayoutShiftElements(trace, context) {
+    const {impactByNodeId} = await CumulativeLayoutShift.request(trace, context);
 
-  /**
-   * This function finds the top (up to 5) elements that contribute to the CLS score of the page.
-   * Each layout shift event has a 'score' which is the amount added to the CLS as a result of the given shift(s).
-   * We calculate the score per element by taking the 'score' of each layout shift event and
-   * distributing it between all the nodes that were shifted, proportianal to the impact region of
-   * each shifted element.
-   * @param {LH.Artifacts.ProcessedTrace} processedTrace
-   * @return {Array<TraceElementData>}
-   */
-  static getTopLayoutShiftElements(processedTrace) {
-    /** @type {Map<number, number>} */
-    const clsPerNode = new Map();
-    const shiftEvents = CumulativeLayoutShift.getLayoutShiftEvents(processedTrace);
-
-    shiftEvents.forEach((event) => {
-      if (!event || !event.impactedNodes) {
-        return;
-      }
-
-      let totalAreaOfImpact = 0;
-      /** @type {Map<number, number>} */
-      const pixelsMovedPerNode = new Map();
-
-      event.impactedNodes.forEach(node => {
-        if (!node.node_id || !node.old_rect || !node.new_rect) {
-          return;
-        }
-
-        const oldRect = TraceElements.traceRectToLHRect(node.old_rect);
-        const newRect = TraceElements.traceRectToLHRect(node.new_rect);
-        const areaOfImpact = RectHelpers.getRectArea(oldRect) +
-          RectHelpers.getRectArea(newRect) -
-          RectHelpers.getRectOverlapArea(oldRect, newRect);
-
-        pixelsMovedPerNode.set(node.node_id, areaOfImpact);
-        totalAreaOfImpact += areaOfImpact;
+    return [...impactByNodeId.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, MAX_LAYOUT_SHIFT_ELEMENTS)
+      .map(([nodeId, clsContribution]) => {
+        return {
+          nodeId: nodeId,
+          score: clsContribution,
+        };
       });
-
-      for (const [nodeId, pixelsMoved] of pixelsMovedPerNode.entries()) {
-        let clsContribution = clsPerNode.get(nodeId) || 0;
-        clsContribution += (pixelsMoved / totalAreaOfImpact) * event.weightedScore;
-        clsPerNode.set(nodeId, clsContribution);
-      }
-    });
-
-    const topFive = [...clsPerNode.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
-    .map(([nodeId, clsContribution]) => {
-      return {
-        nodeId: nodeId,
-        score: clsContribution,
-      };
-    });
-
-    return topFive;
   }
 
   /**
@@ -265,7 +215,7 @@ class TraceElements extends BaseGatherer {
     const {mainThreadEvents} = processedTrace;
 
     const lcpNodeData = await TraceElements.getLcpElement(trace, context);
-    const clsNodeData = TraceElements.getTopLayoutShiftElements(processedTrace);
+    const clsNodeData = await TraceElements.getTopLayoutShiftElements(trace, context);
     const animatedElementData = await this.getAnimatedElements(mainThreadEvents);
     const responsivenessElementData = await TraceElements.getResponsivenessElement(trace, context);
 

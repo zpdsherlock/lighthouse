@@ -6,6 +6,7 @@
 
 import {makeComputedArtifact} from '../computed-artifact.js';
 import {ProcessedTrace} from '../processed-trace.js';
+import * as RectHelpers from '../../lib/rect-helpers.js';
 
 /** @typedef {{ts: number, isMainFrame: boolean, weightedScore: number, impactedNodes?: LH.Artifacts.TraceImpactedNode[]}} LayoutShiftEvent */
 
@@ -73,6 +74,49 @@ class CumulativeLayoutShift {
   }
 
   /**
+   * Each layout shift event has a 'score' which is the amount added to the CLS as a result of the given shift(s).
+   * We calculate the score per element by taking the 'score' of each layout shift event and
+   * distributing it between all the nodes that were shifted, proportianal to the impact region of
+   * each shifted element.
+   *
+   * @param {LayoutShiftEvent[]} layoutShiftEvents
+   * @return {Map<number, number>}
+   */
+  static getImpactByNodeId(layoutShiftEvents) {
+    /** @type {Map<number, number>} */
+    const impactByNodeId = new Map();
+
+    for (const event of layoutShiftEvents) {
+      if (!event.impactedNodes) continue;
+
+      let totalAreaOfImpact = 0;
+      /** @type {Map<number, number>} */
+      const pixelsMovedPerNode = new Map();
+
+      for (const node of event.impactedNodes) {
+        if (!node.node_id || !node.old_rect || !node.new_rect) continue;
+
+        const oldRect = RectHelpers.traceRectToLHRect(node.old_rect);
+        const newRect = RectHelpers.traceRectToLHRect(node.new_rect);
+        const areaOfImpact = RectHelpers.getRectArea(oldRect) +
+          RectHelpers.getRectArea(newRect) -
+          RectHelpers.getRectOverlapArea(oldRect, newRect);
+
+        pixelsMovedPerNode.set(node.node_id, areaOfImpact);
+        totalAreaOfImpact += areaOfImpact;
+      }
+
+      for (const [nodeId, pixelsMoved] of pixelsMovedPerNode.entries()) {
+        let clsContribution = impactByNodeId.get(nodeId) || 0;
+        clsContribution += (pixelsMoved / totalAreaOfImpact) * event.weightedScore;
+        impactByNodeId.set(nodeId, clsContribution);
+      }
+    }
+
+    return impactByNodeId;
+  }
+
+  /**
    * Calculates cumulative layout shifts per cluster (session) of LayoutShift
    * events -- where a new cluster is created when there's a gap of more than
    * 1000ms since the last LayoutShift event or the cluster is greater than
@@ -104,18 +148,20 @@ class CumulativeLayoutShift {
   /**
    * @param {LH.Trace} trace
    * @param {LH.Artifacts.ComputedContext} context
-   * @return {Promise<{cumulativeLayoutShift: number, cumulativeLayoutShiftMainFrame: number}>}
+   * @return {Promise<{cumulativeLayoutShift: number, cumulativeLayoutShiftMainFrame: number, impactByNodeId: Map<number, number>}>}
    */
   static async compute_(trace, context) {
     const processedTrace = await ProcessedTrace.request(trace, context);
 
     const allFrameShiftEvents =
         CumulativeLayoutShift.getLayoutShiftEvents(processedTrace);
+    const impactByNodeId = CumulativeLayoutShift.getImpactByNodeId(allFrameShiftEvents);
     const mainFrameShiftEvents = allFrameShiftEvents.filter(e => e.isMainFrame);
 
     return {
       cumulativeLayoutShift: CumulativeLayoutShift.calculate(allFrameShiftEvents),
       cumulativeLayoutShiftMainFrame: CumulativeLayoutShift.calculate(mainFrameShiftEvents),
+      impactByNodeId,
     };
   }
 }
