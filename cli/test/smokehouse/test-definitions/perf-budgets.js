@@ -66,6 +66,22 @@ const expectations = {
     requestedUrl: 'http://localhost:10200/perf/perf-budgets/load-things.html',
     finalDisplayedUrl: 'http://localhost:10200/perf/perf-budgets/load-things.html',
     audits: {
+      'resource-summary': {
+        score: null,
+        details: {
+          items: [
+            {resourceType: 'total', requestCount: 10, transferSize: '166472±1000'},
+            {resourceType: 'font', requestCount: 2, transferSize: '81096±1000'},
+            {resourceType: 'script', requestCount: 3, transferSize: '53615±1000'},
+            {resourceType: 'image', requestCount: 2, transferSize: '28359±1000'},
+            {resourceType: 'document', requestCount: 1, transferSize: '1776±150'},
+            {resourceType: 'other', requestCount: 1, transferSize: '1085±100'},
+            {resourceType: 'stylesheet', requestCount: 1, transferSize: '528±100'},
+            {resourceType: 'media', requestCount: 0, transferSize: 0},
+            {resourceType: 'third-party', requestCount: 0, transferSize: 0},
+          ],
+        },
+      },
       'performance-budget': {
         score: null,
         details: {

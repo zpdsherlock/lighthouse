@@ -168,9 +168,9 @@ function lookupLocale(locales, possibleLocales) {
  * Returns a function that generates `LH.IcuMessage` objects to localize the
  * messages in `fileStrings` and the shared `i18n.UIStrings`.
  * @param {string} filename
- * @param {Record<string, string>} fileStrings
+ * @param {Record<string, string>=} fileStrings
  */
-function createIcuMessageFn(filename, fileStrings) {
+function createIcuMessageFn(filename, fileStrings = {}) {
   if (filename.startsWith('file://')) filename = url.fileURLToPath(filename);
 
   // In the common case, `filename` is an absolute path that needs to be transformed
