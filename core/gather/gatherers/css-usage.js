@@ -132,6 +132,11 @@ class CSSUsage extends BaseGatherer {
         continue;
       }
 
+      // Exclude empty stylesheets.
+      if (sheet.header.length === 0) {
+        continue;
+      }
+
       dedupedStylesheets.set(sheet.content, sheet);
     }
 
