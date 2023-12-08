@@ -43,12 +43,12 @@ class LayoutShiftElements extends Audit {
     const {cumulativeLayoutShift: clsSavings, impactByNodeId} =
       await CumulativeLayoutShiftComputed.request(artifacts.traces[Audit.DEFAULT_PASS], context);
 
-    /** @type {Array<{node: LH.Audit.Details.ItemValue, score?: number}>} */
+    /** @type {Array<{node: LH.Audit.Details.ItemValue, score: number}>} */
     const clsElementData = artifacts.TraceElements
       .filter(element => element.traceEventType === 'layout-shift')
       .map(element => ({
         node: Audit.makeNodeItem(element.node),
-        score: element.score,
+        score: impactByNodeId.get(element.nodeId) || 0,
       }));
 
     if (clsElementData.length < impactByNodeId.size) {

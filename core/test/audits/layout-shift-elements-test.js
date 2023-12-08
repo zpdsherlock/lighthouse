@@ -47,13 +47,13 @@ describe('Performance: layout-shift-elements audit', () => {
       traces: {defaultPass: trace},
       TraceElements: [{
         traceEventType: 'layout-shift',
+        nodeId: 1,
         node: {
           devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
           selector: 'div.l-header > div.chorus-emc__content',
           nodeLabel: 'My Test Label',
           snippet: '<h1 class="test-class">',
         },
-        score: 0.3,
       }],
     };
 
@@ -64,21 +64,13 @@ describe('Performance: layout-shift-elements audit', () => {
     expect(auditResult.details.items).toHaveLength(1);
     expect(auditResult.details.items[0]).toHaveProperty('node');
     expect(auditResult.details.items[0].node).toHaveProperty('type', 'node');
-    expect(auditResult.details.items[0].score).toEqual(0.3);
+    expect(auditResult.details.items[0].score).toEqual(0.4);
   });
 
   it('correctly surfaces multiple CLS elements', async () => {
-    const clsElement = {
-      traceEventType: 'layout-shift',
-      node: {
-        devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
-        selector: 'div.l-header > div.chorus-emc__content',
-        nodeLabel: 'My Test Label',
-        snippet: '<h1 class="test-class">',
-      },
-      score: 0.3,
-    };
     const trace = createTestTrace({});
+    const traceElements = [];
+
     for (let i = 1; i <= 4; ++i) {
       trace.traceEvents.push({
         args: {
@@ -97,10 +89,22 @@ describe('Performance: layout-shift-elements audit', () => {
         name: 'LayoutShift',
         cat: 'loading',
       });
+
+      traceElements.push({
+        traceEventType: 'layout-shift',
+        nodeId: i,
+        node: {
+          devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
+          selector: 'div.l-header > div.chorus-emc__content',
+          nodeLabel: 'My Test Label',
+          snippet: '<h1 class="test-class">',
+        },
+      });
     }
+
     const artifacts = {
       traces: {defaultPass: trace},
-      TraceElements: Array(4).fill(clsElement),
+      TraceElements: traceElements,
     };
 
     const auditResult = await LayoutShiftElementsAudit.audit(artifacts, {computedCache: new Map()});
@@ -111,19 +115,8 @@ describe('Performance: layout-shift-elements audit', () => {
   });
 
   it('aggregates elements missing from TraceElements', async () => {
-    const clsElement = {
-      traceEventType: 'layout-shift',
-      node: {
-        devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
-        selector: 'div.l-header > div.chorus-emc__content',
-        nodeLabel: 'My Test Label',
-        snippet: '<h1 class="test-class">',
-      },
-      score: 0.1,
-    };
-    const trace = createTestTrace({});
-
     // Create 20 shift events on 20 unique elements
+    const trace = createTestTrace({});
     for (let i = 1; i <= 20; ++i) {
       trace.traceEvents.push({
         args: {
@@ -143,10 +136,25 @@ describe('Performance: layout-shift-elements audit', () => {
         cat: 'loading',
       });
     }
+
+    // Only create element data for the first 15 elements
+    const traceElements = [];
+    for (let i = 1; i <= 15; ++i) {
+      traceElements.push({
+        traceEventType: 'layout-shift',
+        nodeId: i,
+        node: {
+          devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
+          selector: 'div.l-header > div.chorus-emc__content',
+          nodeLabel: 'My Test Label',
+          snippet: '<h1 class="test-class">',
+        },
+      });
+    }
+
     const artifacts = {
       traces: {defaultPass: trace},
-      // Only create element data for the first 15 elements
-      TraceElements: Array(15).fill(clsElement),
+      TraceElements: traceElements,
     };
 
     const auditResult = await LayoutShiftElementsAudit.audit(artifacts, {computedCache: new Map()});

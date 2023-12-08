@@ -95,7 +95,6 @@ const expectations = {
             height: 37,
           },
         },
-        score: '0.035 +/- 0.01',
       },
       {
         traceEventType: 'layout-shift',
@@ -111,7 +110,6 @@ const expectations = {
             height: 18,
           },
         },
-        score: '0.017 +/- 0.01',
       },
       {
         traceEventType: 'animation',
@@ -176,9 +174,39 @@ const expectations = {
         score: null,
         displayValue: '2 elements found',
         details: {
-          items: {
-            length: 2,
-          },
+          items: [
+            {
+              node: {
+                selector: 'body > h1',
+                nodeLabel: 'Please don\'t move me',
+                snippet: '<h1>',
+                boundingRect: {
+                  top: 465,
+                  bottom: 502,
+                  left: 8,
+                  right: 404,
+                  width: 396,
+                  height: 37,
+                },
+              },
+              score: '0.035 +/- 0.01',
+            },
+            {
+              node: {
+                nodeLabel: 'Sorry!',
+                snippet: '<div style="height: 18px;">',
+                boundingRect: {
+                  top: 426,
+                  bottom: 444,
+                  left: 8,
+                  right: 404,
+                  width: 396,
+                  height: 18,
+                },
+              },
+              score: '0.017 +/- 0.01',
+            },
+          ],
         },
       },
       'long-tasks': {

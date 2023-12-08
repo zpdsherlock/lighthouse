@@ -560,9 +560,8 @@ declare module Artifacts {
 
   interface TraceElement {
     traceEventType: 'largest-contentful-paint'|'layout-shift'|'animation'|'responsiveness';
-    score?: number;
     node: NodeDetails;
-    nodeId?: number;
+    nodeId: number;
     animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[];
     type?: string;
   }

@@ -24,7 +24,7 @@ import {Responsiveness} from '../../computed/metrics/responsiveness.js';
 import {CumulativeLayoutShift} from '../../computed/metrics/cumulative-layout-shift.js';
 import {ExecutionContext} from '../driver/execution-context.js';
 
-/** @typedef {{nodeId: number, score?: number, animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[], type?: string}} TraceElementData */
+/** @typedef {{nodeId: number, animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[], type?: string}} TraceElementData */
 
 const MAX_LAYOUT_SHIFT_ELEMENTS = 15;
 
@@ -76,12 +76,7 @@ class TraceElements extends BaseGatherer {
     return [...impactByNodeId.entries()]
       .sort((a, b) => b[1] - a[1])
       .slice(0, MAX_LAYOUT_SHIFT_ELEMENTS)
-      .map(([nodeId, clsContribution]) => {
-        return {
-          nodeId: nodeId,
-          score: clsContribution,
-        };
-      });
+      .map(([nodeId]) => ({nodeId}));
   }
 
   /**
@@ -261,7 +256,6 @@ class TraceElements extends BaseGatherer {
           traceElements.push({
             traceEventType,
             ...response.result.value,
-            score: backendNodeData[i].score,
             animations: backendNodeData[i].animations,
             nodeId: backendNodeId,
             type: backendNodeData[i].type,

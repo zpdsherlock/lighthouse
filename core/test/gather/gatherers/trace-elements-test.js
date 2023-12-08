@@ -73,15 +73,6 @@ function makeLCPTraceEvent(nodeId) {
 }
 
 describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
-  /**
-   * @param {Array<{nodeId: number, score: number}>} shiftScores
-   */
-  function sumScores(shiftScores) {
-    let sum = 0;
-    shiftScores.forEach(shift => sum += shift.score);
-    return sum;
-  }
-
   it('returns layout shift data sorted by impact area', async () => {
     const trace = createTestTrace({});
     trace.traceEvents.push(
@@ -102,11 +93,9 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
     const result =
       await TraceElementsGatherer.getTopLayoutShiftElements(trace, {computedCache: new Map()});
     expect(result).toEqual([
-      {nodeId: 25, score: 0.6},
-      {nodeId: 60, score: 0.4},
+      {nodeId: 25}, // score: 0.6
+      {nodeId: 60}, // score: 0.4
     ]);
-    const total = sumScores(result);
-    expect(total).toBeCloseTo(1.0);
   });
 
   it('returns only the top 15 values', async () => {
@@ -167,24 +156,22 @@ describe('Trace Elements gatherer - GetTopLayoutShiftElements', () => {
     const result =
       await TraceElementsGatherer.getTopLayoutShiftElements(trace, {computedCache: new Map()});
     expect(result).toEqual([
-      {nodeId: 3, score: 1.0},
-      {nodeId: 1, score: 0.5},
-      {nodeId: 2, score: 0.5},
-      {nodeId: 6, score: 0.25},
-      {nodeId: 7, score: 0.25},
-      {nodeId: 4, score: 0.125},
-      {nodeId: 5, score: 0.125},
-      {nodeId: 8, score: 0.1},
-      {nodeId: 9, score: 0.1},
-      {nodeId: 10, score: 0.1},
-      {nodeId: 11, score: 0.1},
-      {nodeId: 12, score: 0.1},
-      {nodeId: 13, score: 0.1},
-      {nodeId: 14, score: 0.1},
-      {nodeId: 15, score: 0.1},
+      {nodeId: 3}, // score: 1.0
+      {nodeId: 1}, // score: 0.5
+      {nodeId: 2}, // score: 0.5
+      {nodeId: 6}, // score: 0.25
+      {nodeId: 7}, // score: 0.25
+      {nodeId: 4}, // score: 0.125
+      {nodeId: 5}, // score: 0.125
+      {nodeId: 8}, // score: 0.1
+      {nodeId: 9}, // score: 0.1
+      {nodeId: 10}, // score: 0.1
+      {nodeId: 11}, // score: 0.1
+      {nodeId: 12}, // score: 0.1
+      {nodeId: 13}, // score: 0.1
+      {nodeId: 14}, // score: 0.1
+      {nodeId: 15}, // score: 0.1
     ]);
-    const total = sumScores(result);
-    expect(total).toBeCloseTo(3.55);
   });
 });
 
@@ -379,7 +366,6 @@ describe('Trace Elements gatherer - Animated Elements', () => {
       },
       {
         ...layoutShiftNodeData,
-        score: 0.5, // the other CLS node contributed an additional 0.5, but it was 'no node found'
         nodeId: 4,
       },
       {
