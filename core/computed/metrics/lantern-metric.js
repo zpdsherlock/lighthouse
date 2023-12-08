@@ -26,18 +26,19 @@ import {LoadSimulator} from '../load-simulator.js';
 class LanternMetric {
   /**
    * @param {Node} dependencyGraph
-   * @param {function(NetworkNode):boolean=} condition
+   * @param {function(NetworkNode):boolean=} treatNodeAsRenderBlocking
    * @return {Set<string>}
    */
-  static getScriptUrls(dependencyGraph, condition) {
+  static getScriptUrls(dependencyGraph, treatNodeAsRenderBlocking) {
     /** @type {Set<string>} */
     const scriptUrls = new Set();
 
     dependencyGraph.traverse(node => {
-      if (node.type === BaseNode.TYPES.CPU) return;
+      if (node.type !== BaseNode.TYPES.NETWORK) return;
       if (node.record.resourceType !== NetworkRequest.TYPES.Script) return;
-      if (condition && !condition(node)) return;
-      scriptUrls.add(node.record.url);
+      if (treatNodeAsRenderBlocking?.(node)) {
+        scriptUrls.add(node.record.url);
+      }
     });
 
     return scriptUrls;
