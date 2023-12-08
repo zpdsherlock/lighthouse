@@ -206,10 +206,10 @@ class ByteEfficiencyAudit extends Audit {
     if (metricComputationInput.gatherContext.gatherMode === 'navigation') {
       const graph = await PageDependencyGraph.request(metricComputationInput, context);
       const {
-        pessimisticGraph: pessimisticFCPGraph,
+        optimisticGraph: optimisticFCPGraph,
       } = await LanternFirstContentfulPaint.request(metricComputationInput, context);
       const {
-        pessimisticGraph: pessimisticLCPGraph,
+        optimisticGraph: optimisticLCPGraph,
       } = await LanternLargestContentfulPaint.request(metricComputationInput, context);
 
       wastedMs = this.computeWasteWithTTIGraph(results, graph, simulator, {
@@ -218,16 +218,18 @@ class ByteEfficiencyAudit extends Audit {
 
       const {savings: fcpSavings} = this.computeWasteWithGraph(
         results,
-        pessimisticFCPGraph,
+        optimisticFCPGraph,
         simulator,
         {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'fcp'}
       );
+      // Note: LCP's optimistic graph sometimes unexpectedly yields higher savings than the pessimistic graph.
       const {savings: lcpGraphSavings} = this.computeWasteWithGraph(
         results,
-        pessimisticLCPGraph,
+        optimisticLCPGraph,
         simulator,
         {providedWastedBytesByUrl: result.wastedBytesByUrl, label: 'lcp'}
       );
+
 
       // The LCP graph can underestimate the LCP savings if there is potential savings on the LCP record itself.
       let lcpRecordSavings = 0;
