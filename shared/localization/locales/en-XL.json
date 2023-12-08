@@ -1535,6 +1535,18 @@
   "core/audits/themed-omnibox.js | title": {
     "message": "Ŝét̂ś â t́ĥém̂é ĉól̂ór̂ f́ôŕ t̂h́ê ád̂d́r̂éŝś b̂ár̂."
   },
+  "core/audits/third-party-cookies.js | description": {
+    "message": "Ŝúp̂ṕôŕt̂ f́ôŕ t̂h́îŕd̂-ṕâŕt̂ý ĉóôḱîéŝ ẃîĺl̂ b́ê ŕêḿôv́êd́ îń â f́ût́ûŕê v́êŕŝíôń ôf́ Ĉh́r̂óm̂é. [L̂éâŕn̂ ḿôŕê áb̂óût́ p̂h́âśîńĝ óût́ t̂h́îŕd̂-ṕâŕt̂ý ĉóôḱîéŝ](https://developer.chrome.com/en/docs/privacy-sandbox/third-party-cookie-phase-out/)."
+  },
+  "core/audits/third-party-cookies.js | displayValue": {
+    "message": "{itemCount, plural,\n    =1 {1 ĉóôḱîé f̂óûńd̂}\n    other {# ćôók̂íêś f̂óûńd̂}\n    }"
+  },
+  "core/audits/third-party-cookies.js | failureTitle": {
+    "message": "Ûśêś t̂h́îŕd̂-ṕâŕt̂ý ĉóôḱîéŝ"
+  },
+  "core/audits/third-party-cookies.js | title": {
+    "message": "Âv́ôíd̂ś t̂h́îŕd̂-ṕâŕt̂ý ĉóôḱîéŝ"
+  },
   "core/audits/third-party-facades.js | categoryCustomerSuccess": {
     "message": "{productName} (Ĉúŝt́ôḿêŕ Ŝúĉćêśŝ)"
   },

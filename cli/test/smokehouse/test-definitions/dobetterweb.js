@@ -448,7 +448,7 @@ const expectations = {
       },
       'dom-size': {
         score: null,
-        numericValue: 153,
+        numericValue: 154,
         details: {
           items: [
             {
@@ -456,7 +456,7 @@ const expectations = {
               value: {
                 type: 'numeric',
                 granularity: 1,
-                value: 153,
+                value: 154,
               },
             },
             {
@@ -552,16 +552,24 @@ const expectations = {
       },
       'network-rtt': {
         details: {
-          items: [
-            {origin: 'http://localhost:10200', rtt: '>0'},
-          ],
+          items: {
+            _includes: [
+              {origin: 'http://localhost:10200', rtt: '>0'},
+              {origin: 'http://[::1]:10503', rtt: '>0'},
+            ],
+            _excludes: [{}],
+          },
         },
       },
       'network-server-latency': {
         details: {
-          items: [
-            {origin: 'http://localhost:10200', serverResponseTime: '>0'},
-          ],
+          items: {
+            _includes: [
+              {origin: 'http://localhost:10200', serverResponseTime: '>0'},
+              {origin: 'http://[::1]:10503', serverResponseTime: '>0'},
+            ],
+            _excludes: [{}],
+          },
         },
       },
       'metrics': {
@@ -595,6 +603,15 @@ const expectations = {
                 {timing: '>0'},
               ],
             },
+          ],
+        },
+      },
+      'third-party-cookies': {
+        score: 0,
+        displayValue: '1 cookie found',
+        details: {
+          items: [
+            {name: 'Foo', url: /^http:\/\/\[::1\]:10503\/dobetterweb\/empty_module\.js/},
           ],
         },
       },

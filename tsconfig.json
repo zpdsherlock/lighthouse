@@ -104,6 +104,7 @@
     // Opt-in to typechecking for some core tests and test-support files.
     "cli/test/fixtures/static-server.js",
     "core/test/audits/bf-cache-test.js",
+    "core/test/audits/third-party-cookies-test.js",
     "core/test/audits/script-treemap-data-test.js",
     "core/test/computed/metrics/interactive-test.js",
     "core/test/computed/tbt-impact-tasks-test.js",

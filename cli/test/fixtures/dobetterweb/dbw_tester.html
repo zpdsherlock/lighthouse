@@ -406,6 +406,24 @@ function noUnloadListenersTest() {
   });
 }
 
+function thirdPartyCookieTest() {
+  const cookieInlineParam = headersParam([[
+    'Set-Cookie',
+    'Foo=Bar;SameSite=None;Secure;',
+  ]]);
+  const script = document.createElement('script');
+  // Use [::1] instead of localhost so this shows up as third party
+  script.src = 'http://[::1]:10503/dobetterweb/empty_module.js?' + cookieInlineParam;
+  requestAnimationFrame(() => {
+    document.body.append(script);
+  });
+}
+
+function headersParam(headers) {
+  const headerString = new URLSearchParams(headers).toString();
+  return new URLSearchParams([['extra_header', headerString]]).toString();
+}
+
 // Figure out which tests to fun.
 const params = new URLSearchParams(location.search);
 if (location.search === '') {
@@ -422,6 +440,7 @@ if (location.search === '') {
   inputsCanBePastedIntoTest();
   isOnHttps();
   noUnloadListenersTest();
+  thirdPartyCookieTest();
 } else {
   if (params.has('documentWrite')) {
     documentWriteTest();
@@ -458,6 +477,9 @@ if (location.search === '') {
   }
   if (params.has('isonhttps')) {
     isOnHttps();
+  }
+  if (params.has('3pcookie')) {
+    thirdPartyCookieTest();
   }
 }
 </script>

@@ -1535,6 +1535,18 @@
   "core/audits/themed-omnibox.js | title": {
     "message": "Sets a theme color for the address bar."
   },
+  "core/audits/third-party-cookies.js | description": {
+    "message": "Support for third-party cookies will be removed in a future version of Chrome. [Learn more about phasing out third-party cookies](https://developer.chrome.com/en/docs/privacy-sandbox/third-party-cookie-phase-out/)."
+  },
+  "core/audits/third-party-cookies.js | displayValue": {
+    "message": "{itemCount, plural,\n    =1 {1 cookie found}\n    other {# cookies found}\n    }"
+  },
+  "core/audits/third-party-cookies.js | failureTitle": {
+    "message": "Uses third-party cookies"
+  },
+  "core/audits/third-party-cookies.js | title": {
+    "message": "Avoids third-party cookies"
+  },
   "core/audits/third-party-facades.js | categoryCustomerSuccess": {
     "message": "{productName} (Customer Success)"
   },
