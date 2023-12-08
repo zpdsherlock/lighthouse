@@ -417,7 +417,7 @@ class LegacyJavascript extends ByteEfficiencyAudit {
     const scriptToMatchResults =
       this.detectAcrossScripts(matcher, artifacts.Scripts, networkRecords, bundles);
     for (const [script, matches] of scriptToMatchResults.entries()) {
-      const compressionRatio = await estimateCompressionRatioForContent(
+      const compressionRatio = estimateCompressionRatioForContent(
         compressionRatioByUrl, script.url, artifacts, networkRecords);
       const wastedBytes = Math.round(this.estimateWastedBytes(matches) * compressionRatio);
       /** @type {typeof items[number]} */

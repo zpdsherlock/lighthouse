@@ -4541,7 +4541,7 @@
       "scoreDisplayMode": "metricSavings",
       "numericValue": 750,
       "numericUnit": "millisecond",
-      "displayValue": "Potential savings of 64 KiB",
+      "displayValue": "Potential savings of 63 KiB",
       "metricSavings": {
         "FCP": 0,
         "LCP": 450
@@ -4578,19 +4578,19 @@
         "items": [
           {
             "url": "http://localhost:10200/dobetterweb/third_party/aggressive-promise-polyfill.js",
-            "totalBytes": 166550,
-            "wastedBytes": 43567,
+            "totalBytes": 166320,
+            "wastedBytes": 43507,
             "wastedPercent": 26.158609908609908
           },
           {
             "url": "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
-            "totalBytes": 30346,
-            "wastedBytes": 21544,
+            "totalBytes": 29671,
+            "wastedBytes": 21065,
             "wastedPercent": 70.99531129443884
           }
         ],
         "overallSavingsMs": 750,
-        "overallSavingsBytes": 65111,
+        "overallSavingsBytes": 64572,
         "sortedBy": [
           "wastedBytes"
         ],
@@ -10449,7 +10449,7 @@
         },
         {
           "values": {
-            "wastedBytes": 65111
+            "wastedBytes": 64572
           },
           "path": "audits[unused-javascript].displayValue"
         },

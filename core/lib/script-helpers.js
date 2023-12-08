@@ -137,7 +137,7 @@ function estimateCompressedContentSize(networkRecord, totalBytes, resourceType) 
  * @param {LH.Artifacts} artifacts
  * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
  */
-async function estimateCompressionRatioForContent(compressionRatioByUrl, url,
+function estimateCompressionRatioForContent(compressionRatioByUrl, url,
   artifacts, networkRecords) {
   let compressionRatio = compressionRatioByUrl.get(url);
   if (compressionRatio !== undefined) return compressionRatio;

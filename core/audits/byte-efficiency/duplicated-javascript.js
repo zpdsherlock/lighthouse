@@ -148,7 +148,7 @@ class DuplicatedJavascript extends ByteEfficiencyAudit {
         const scriptId = sourceData.scriptId;
         const script = artifacts.Scripts.find(script => script.scriptId === scriptId);
         const url = script?.url || '';
-        const compressionRatio = await estimateCompressionRatioForContent(
+        const compressionRatio = estimateCompressionRatioForContent(
           compressionRatioByUrl, url, artifacts, networkRecords);
         const transferSize = Math.round(sourceData.resourceSize * compressionRatio);
 
