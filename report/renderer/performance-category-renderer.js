@@ -246,14 +246,16 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
       if (scoreA !== scoreB) return scoreA - scoreB;
 
       // Overall impact is the estimated improvement to the performance score
-      if (a.overallImpact !== b.overallImpact) return b.overallImpact - a.overallImpact;
+      if (a.overallImpact !== b.overallImpact) {
+        return b.overallImpact * b.guidanceLevel - a.overallImpact * a.guidanceLevel;
+      }
 
       // Fall back to the linear impact if the normal impact is rounded down to 0
       if (
         a.overallImpact === 0 && b.overallImpact === 0 &&
         a.overallLinearImpact !== b.overallLinearImpact
       ) {
-        return b.overallLinearImpact - a.overallLinearImpact;
+        return b.overallLinearImpact * b.guidanceLevel - a.overallLinearImpact * a.guidanceLevel;
       }
 
       // Audits that have no estimated savings should be prioritized by the guidance level
