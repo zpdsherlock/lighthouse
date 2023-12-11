@@ -6913,10 +6913,10 @@ theredoc@^1.0.0:
   resolved "https://registry.yarnpkg.com/theredoc/-/theredoc-1.0.0.tgz#bcace376af6feb1873efbdd0f91ed026570ff062"
   integrity sha512-KU3SA3TjRRM932jpNfD3u4Ec3bSvedyo5ITPI7zgWYnKep7BwQQaxlhI9qbO+lKJoRnoAbEVfMcAHRuKVYikDA==
 
-third-party-web@^0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/third-party-web/-/third-party-web-0.24.0.tgz#9be300d60da550db093723367ac0174a2af77168"
-  integrity sha512-mMkV7LE857QCG9DM/mkZoqsEEbJmtimnWBgm/bAmJuRlfVM29OLhPFse1ayrW1xmtJqg7bVU6ZBtjz8vVQGq2g==
+third-party-web@^0.24.1:
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/third-party-web/-/third-party-web-0.24.1.tgz#b191f31f4067e3c3dce335c82a5027db7b826263"
+  integrity sha512-5VqmcM0QEF7KX1/EX9I8Yohs7GoWzhQHXfLOLGmLGbcw/zPdEohXJNctiLu0x4D0i9EzOUjFXlbmcmXcbZXl1Q==
 
 through2@^2.0.0:
   version "2.0.5"
