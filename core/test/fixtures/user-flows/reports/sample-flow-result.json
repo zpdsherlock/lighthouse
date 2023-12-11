@@ -1738,7 +1738,7 @@
           "layout-shift-elements": {
             "id": "layout-shift-elements",
             "title": "Avoid large layout shifts",
-            "description": "These DOM elements contribute most to the CLS of the page. [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
+            "description": "These DOM elements were most affected by layout shifts. Some layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "5 elements found",
@@ -1757,7 +1757,7 @@
                   "key": "score",
                   "valueType": "numeric",
                   "granularity": 0.001,
-                  "label": "CLS Contribution"
+                  "label": "Layout shift impact"
                 }
               ],
               "items": [
@@ -9863,7 +9863,7 @@
           "layout-shift-elements": {
             "id": "layout-shift-elements",
             "title": "Avoid large layout shifts",
-            "description": "These DOM elements contribute most to the CLS of the page. [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
+            "description": "These DOM elements were most affected by layout shifts. Some layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
             "score": 0,
             "scoreDisplayMode": "metricSavings",
             "displayValue": "1 element found",
@@ -9882,7 +9882,7 @@
                   "key": "score",
                   "valueType": "numeric",
                   "granularity": 0.001,
-                  "label": "CLS Contribution"
+                  "label": "Layout shift impact"
                 }
               ],
               "items": [
@@ -19644,7 +19644,7 @@
           "layout-shift-elements": {
             "id": "layout-shift-elements",
             "title": "Avoid large layout shifts",
-            "description": "These DOM elements contribute most to the CLS of the page. [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
+            "description": "These DOM elements were most affected by layout shifts. Some layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
             "metricSavings": {
