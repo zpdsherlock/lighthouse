@@ -198,7 +198,52 @@
       "scoreDisplayMode": "numeric",
       "numericValue": 1174.877,
       "numericUnit": "millisecond",
-      "displayValue": "1,170 ms"
+      "displayValue": "1,170 ms",
+      "details": {
+        "type": "debugdata",
+        "observedMaxDurationLoaf": {
+          "args": {
+            "data": {
+              "blockingDuration": 1139.261,
+              "duration": 1199.518,
+              "numScripts": 1,
+              "renderDuration": 14.777,
+              "styleAndLayoutDuration": 13.034
+            }
+          },
+          "cat": "devtools.timeline",
+          "id2": {
+            "local": "0x13b00174d98"
+          },
+          "name": "LongAnimationFrame",
+          "ph": "b",
+          "pid": 31161,
+          "scope": "devtools.timeline",
+          "tid": 259,
+          "ts": 8703546175
+        },
+        "observedMaxBlockingLoaf": {
+          "args": {
+            "data": {
+              "blockingDuration": 1139.261,
+              "duration": 1199.518,
+              "numScripts": 1,
+              "renderDuration": 14.777,
+              "styleAndLayoutDuration": 13.034
+            }
+          },
+          "cat": "devtools.timeline",
+          "id2": {
+            "local": "0x13b00174d98"
+          },
+          "name": "LongAnimationFrame",
+          "ph": "b",
+          "pid": 31161,
+          "scope": "devtools.timeline",
+          "tid": 259,
+          "ts": 8703546175
+        }
+      }
     },
     "cumulative-layout-shift": {
       "id": "cumulative-layout-shift",

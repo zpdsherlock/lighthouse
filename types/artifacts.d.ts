@@ -1017,6 +1017,8 @@ export interface TraceEvent {
       type?: string;
       functionName?: string;
       name?: string;
+      duration?: number;
+      blockingDuration?: number;
     };
     frame?: string;
     name?: string;

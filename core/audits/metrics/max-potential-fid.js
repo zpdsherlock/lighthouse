@@ -6,6 +6,8 @@
 
 import {Audit} from '../audit.js';
 import {MaxPotentialFID as ComputedFid} from '../../computed/metrics/max-potential-fid.js';
+import {ProcessedTrace} from '../../computed/processed-trace.js';
+import {ProcessedNavigation} from '../../computed/processed-navigation.js';
 import * as i18n from '../../lib/i18n/i18n.js';
 
 const UIStrings = {
@@ -49,6 +51,51 @@ class MaxPotentialFID extends Audit {
   }
 
   /**
+   * Extract potential LoAF replacements for MPFID from the trace to log in
+   * debugdata details.
+   * @param {LH.Artifacts.ProcessedTrace} processedTrace
+   * @param {LH.Artifacts.ProcessedNavigation} processedNavigation
+   * @return {{type: 'debugdata', observedMaxDurationLoaf: LH.TraceEvent, observedMaxBlockingLoaf: LH.TraceEvent}|undefined}
+   */
+  static getLongAnimationFrameDetails(processedTrace, processedNavigation) {
+    const {firstContentfulPaint} = processedNavigation.timestamps;
+    const loafs = processedTrace.mainThreadEvents.filter(evt => {
+      return evt.name === 'LongAnimationFrame' &&
+          evt.ph === 'b' &&
+          evt.ts >= firstContentfulPaint;
+    });
+
+    let currentMaxDuration = -Infinity;
+    let currentMaxDurationLoaf;
+    let currentMaxBlocking = -Infinity;
+    let currentMaxBlockingLoaf;
+
+    for (const loaf of loafs) {
+      const loafDuration = loaf.args?.data?.duration;
+      const loafBlocking = loaf.args?.data?.blockingDuration;
+      // Should never happen, so mostly keeping the type checker happy.
+      if (loafDuration === undefined || loafBlocking === undefined) continue;
+
+      if (loafDuration > currentMaxDuration) {
+        currentMaxDuration = loafDuration;
+        currentMaxDurationLoaf = loaf;
+      }
+      if (loafBlocking > currentMaxBlocking) {
+        currentMaxBlocking = loafBlocking;
+        currentMaxBlockingLoaf = loaf;
+      }
+    }
+
+    if (!currentMaxDurationLoaf || !currentMaxBlockingLoaf) return;
+
+    return {
+      type: 'debugdata',
+      observedMaxDurationLoaf: currentMaxDurationLoaf,
+      observedMaxBlockingLoaf: currentMaxBlockingLoaf,
+    };
+  }
+
+  /**
    * @param {LH.Artifacts} artifacts
    * @param {LH.Audit.Context} context
    * @return {Promise<LH.Audit.Product>}
@@ -61,6 +108,11 @@ class MaxPotentialFID extends Audit {
       settings: context.settings, URL: artifacts.URL};
     const metricResult = await ComputedFid.request(metricComputationData, context);
 
+    const processedTrace = await ProcessedTrace.request(trace, context);
+    const processedNavigation = await ProcessedNavigation.request(trace, context);
+    const details = MaxPotentialFID.getLongAnimationFrameDetails(processedTrace,
+        processedNavigation);
+
     return {
       score: Audit.computeLogNormalScore(
         {p10: context.options.p10, median: context.options.median},
@@ -69,6 +121,7 @@ class MaxPotentialFID extends Audit {
       numericValue: metricResult.timing,
       numericUnit: 'millisecond',
       displayValue: str_(i18n.UIStrings.ms, {timeInMs: metricResult.timing}),
+      details,
     };
   }
 }
