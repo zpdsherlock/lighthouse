@@ -10,6 +10,14 @@ import {ProcessedTrace} from '../../computed/processed-trace.js';
 import {ProcessedNavigation} from '../../computed/processed-navigation.js';
 import * as i18n from '../../lib/i18n/i18n.js';
 
+/**
+ * @typedef LoafDebugDetails
+ * @property {'debugdata'} type
+ * @property {LH.TraceEvent=} observedMaxDurationLoaf
+ * @property {LH.TraceEvent=} observedMaxBlockingLoaf
+ * @property {Array<{startTime: number, duration: number, blockingDuration: number}>} observedLoafs
+ */
+
 const UIStrings = {
   /** Description of the Maximum Potential First Input Delay metric that marks the maximum estimated time between the page receiving input (a user clicking, tapping, or typing) and the page responding. This description is displayed within a tooltip when the user hovers on the metric name to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
   description: 'The maximum potential First Input Delay that your users could experience is the ' +
@@ -55,43 +63,51 @@ class MaxPotentialFID extends Audit {
    * debugdata details.
    * @param {LH.Artifacts.ProcessedTrace} processedTrace
    * @param {LH.Artifacts.ProcessedNavigation} processedNavigation
-   * @return {{type: 'debugdata', observedMaxDurationLoaf: LH.TraceEvent, observedMaxBlockingLoaf: LH.TraceEvent}|undefined}
+   * @return {LoafDebugDetails|undefined}
    */
   static getLongAnimationFrameDetails(processedTrace, processedNavigation) {
-    const {firstContentfulPaint} = processedNavigation.timestamps;
-    const loafs = processedTrace.mainThreadEvents.filter(evt => {
-      return evt.name === 'LongAnimationFrame' &&
-          evt.ph === 'b' &&
-          evt.ts >= firstContentfulPaint;
+    const {firstContentfulPaint, timeOrigin} = processedNavigation.timestamps;
+
+    const loafEvents = processedTrace.mainThreadEvents.filter(evt => {
+      return evt.name === 'LongAnimationFrame' && evt.ph === 'b';
     });
+    if (loafEvents.length === 0) return;
 
     let currentMaxDuration = -Infinity;
     let currentMaxDurationLoaf;
     let currentMaxBlocking = -Infinity;
     let currentMaxBlockingLoaf;
-
-    for (const loaf of loafs) {
-      const loafDuration = loaf.args?.data?.duration;
-      const loafBlocking = loaf.args?.data?.blockingDuration;
+    const observedLoafs = [];
+    for (const loafEvent of loafEvents) {
+      const loafDuration = loafEvent.args?.data?.duration;
+      const loafBlocking = loafEvent.args?.data?.blockingDuration;
       // Should never happen, so mostly keeping the type checker happy.
       if (loafDuration === undefined || loafBlocking === undefined) continue;
 
+      observedLoafs.push({
+        startTime: (loafEvent.ts - timeOrigin) / 1000,
+        duration: loafDuration,
+        blockingDuration: loafBlocking,
+      });
+
+      // Max LoAFs are only considered after FCP.
+      if (loafEvent.ts < firstContentfulPaint) continue;
+
       if (loafDuration > currentMaxDuration) {
         currentMaxDuration = loafDuration;
-        currentMaxDurationLoaf = loaf;
+        currentMaxDurationLoaf = loafEvent;
       }
       if (loafBlocking > currentMaxBlocking) {
         currentMaxBlocking = loafBlocking;
-        currentMaxBlockingLoaf = loaf;
+        currentMaxBlockingLoaf = loafEvent;
       }
     }
-
-    if (!currentMaxDurationLoaf || !currentMaxBlockingLoaf) return;
 
     return {
       type: 'debugdata',
       observedMaxDurationLoaf: currentMaxDurationLoaf,
       observedMaxBlockingLoaf: currentMaxBlockingLoaf,
+      observedLoafs,
     };
   }
 
