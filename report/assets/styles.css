@@ -884,16 +884,16 @@
 }
 
 .lh-filmstrip {
-  display: grid;
+  display: flex;
   justify-content: space-between;
-  padding-bottom: var(--default-padding);
+  justify-items: center;
+  margin-bottom: var(--default-padding);
   width: 100%;
-  grid-template-columns: repeat(auto-fit, 90px);
 }
 
 .lh-filmstrip__frame {
-  text-align: right;
-  position: relative;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .lh-filmstrip__thumbnail {
