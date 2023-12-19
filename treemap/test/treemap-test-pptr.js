@@ -50,7 +50,7 @@ describe('Lighthouse Treemap', () => {
   beforeEach(async () => {
     if (!browser) {
       browser = await puppeteer.launch({
-        headless: 'new',
+        headless: process.env.DEBUG ? false : 'new',
         executablePath: getChromePath(),
       });
     }
