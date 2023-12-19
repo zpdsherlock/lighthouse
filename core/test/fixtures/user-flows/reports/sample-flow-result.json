@@ -203,7 +203,8 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0.002631263732910156
+                  "cumulativeLayoutShiftMainFrame": 0.002631263732910156,
+                  "newEngineResultDiffered": false
                 }
               ]
             }
@@ -8710,7 +8711,12 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0.13125
+                  "cumulativeLayoutShiftMainFrame": 0.13125,
+                  "newEngineResult": {
+                    "cumulativeLayoutShift": 0.13125,
+                    "cumulativeLayoutShiftMainFrame": 0.13125
+                  },
+                  "newEngineResultDiffered": false
                 }
               ]
             }
@@ -18149,7 +18155,12 @@
               "type": "debugdata",
               "items": [
                 {
-                  "cumulativeLayoutShiftMainFrame": 0
+                  "cumulativeLayoutShiftMainFrame": 0,
+                  "newEngineResult": {
+                    "cumulativeLayoutShift": 0,
+                    "cumulativeLayoutShiftMainFrame": 0
+                  },
+                  "newEngineResultDiffered": false
                 }
               ]
             }

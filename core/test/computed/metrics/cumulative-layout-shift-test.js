@@ -29,6 +29,11 @@ describe('Metrics: CLS', () => {
         impactByNodeId: new Map([
           [8, 4.809793674045139],
         ]),
+        newEngineResult: {
+          cumulativeLayoutShift: expect.toBeApproximately(2.268816, 6),
+          cumulativeLayoutShiftMainFrame: expect.toBeApproximately(2.268816, 6),
+        },
+        newEngineResultDiffered: false,
       });
     });
 
@@ -46,6 +51,11 @@ describe('Metrics: CLS', () => {
           [7, 0.026463014612806653],
           [8, 0.0011656245471340055],
         ]),
+        newEngineResult: {
+          cumulativeLayoutShift: 0.026463014612806653,
+          cumulativeLayoutShiftMainFrame: 0.0011656245471340055,
+        },
+        newEngineResultDiffered: false,
       });
     });
 
@@ -55,6 +65,8 @@ describe('Metrics: CLS', () => {
         cumulativeLayoutShift: 0,
         cumulativeLayoutShiftMainFrame: 0,
         impactByNodeId: new Map(),
+        newEngineResult: {cumulativeLayoutShift: 0, cumulativeLayoutShiftMainFrame: 0},
+        newEngineResultDiffered: false,
       });
     });
   });
@@ -129,10 +141,12 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 4,
           cumulativeLayoutShiftMainFrame: 4,
           impactByNodeId: new Map(),
+          newEngineResult: undefined,
+          newEngineResultDiffered: false,
         });
       });
 
-      it('should not count later shift events if input it true', async () => {
+      it('should not count later shift events if input is true', async () => {
         const context = {computedCache: new Map()};
         const trace = makeTrace([
           {score: 1, ts: 1, had_recent_input: true},
@@ -146,6 +160,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 3,
           cumulativeLayoutShiftMainFrame: 3,
           impactByNodeId: new Map(),
+          newEngineResult: undefined,
+          newEngineResultDiffered: false,
         });
       });
 
@@ -164,6 +180,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 0.75,
           cumulativeLayoutShiftMainFrame: 0.75,
           impactByNodeId: new Map(),
+          newEngineResult: {cumulativeLayoutShift: 0.75, cumulativeLayoutShiftMainFrame: 0.75},
+          newEngineResultDiffered: false,
         });
       });
 
@@ -189,6 +207,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 1.0625,
           cumulativeLayoutShiftMainFrame: 1.0625,
           impactByNodeId: new Map(),
+          newEngineResult: {cumulativeLayoutShift: 1.0625, cumulativeLayoutShiftMainFrame: 1.0625},
+          newEngineResultDiffered: false,
         });
       });
 
@@ -207,6 +227,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 3.75, // 30 * 0.125
           cumulativeLayoutShiftMainFrame: 3.75,
           impactByNodeId: new Map(),
+          newEngineResult: {cumulativeLayoutShift: 3.75, cumulativeLayoutShiftMainFrame: 3.75},
+          newEngineResultDiffered: false,
         });
       });
 
@@ -231,6 +253,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 3,
           cumulativeLayoutShiftMainFrame: 3,
           impactByNodeId: new Map(),
+          newEngineResult: undefined,
+          newEngineResultDiffered: false,
         });
       });
     });
@@ -252,6 +276,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 0.75, // Same value as single-frame uniformly distributed.
           cumulativeLayoutShiftMainFrame: 0.125, // All 1s gaps, so only one event per cluster.
           impactByNodeId: new Map(),
+          newEngineResult: {cumulativeLayoutShift: 0.75, cumulativeLayoutShiftMainFrame: 0.125},
+          newEngineResultDiffered: false,
         });
       });
 
@@ -281,6 +307,8 @@ describe('Metrics: CLS', () => {
           cumulativeLayoutShift: 4,
           cumulativeLayoutShiftMainFrame: 2,
           impactByNodeId: new Map(),
+          newEngineResult: undefined,
+          newEngineResultDiffered: false,
         });
       });
 
@@ -335,6 +363,8 @@ describe('Metrics: CLS', () => {
         expect(result).toMatchObject({
           cumulativeLayoutShift: 5,
           cumulativeLayoutShiftMainFrame: 3,
+          newEngineResult: undefined,
+          newEngineResultDiffered: false,
         });
       });
 

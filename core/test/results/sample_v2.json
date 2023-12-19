@@ -269,7 +269,12 @@
         "type": "debugdata",
         "items": [
           {
-            "cumulativeLayoutShiftMainFrame": 0.13570762803819444
+            "cumulativeLayoutShiftMainFrame": 0.13570762803819444,
+            "newEngineResult": {
+              "cumulativeLayoutShift": 0.13570762803819444,
+              "cumulativeLayoutShiftMainFrame": 0.13570762803819444
+            },
+            "newEngineResultDiffered": false
           }
         ]
       }
