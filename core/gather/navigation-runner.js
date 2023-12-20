@@ -303,7 +303,7 @@ async function navigationGather(page, requestor, options = {}) {
         page,
         resolvedConfig,
         requestor: normalizedRequestor,
-        computedCache: new Map(),
+        computedCache,
       };
       const {baseArtifacts} = await _setup(context);
 
