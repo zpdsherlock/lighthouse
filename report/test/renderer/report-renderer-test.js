@@ -36,6 +36,7 @@ describe('ReportRenderer', () => {
 
     const {window} = new jsdom.JSDOM();
     global.self = window;
+    global.HTMLElement = window.HTMLElement;
 
     const dom = new DOM(window.document);
     const detailsRenderer = new DetailsRenderer(dom);
