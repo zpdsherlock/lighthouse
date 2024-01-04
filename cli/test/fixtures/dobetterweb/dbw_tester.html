@@ -9,7 +9,7 @@
 <head>
 <title>DoBetterWeb Mega Tester... Of Death</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="viewport" content="width=2899">
 <meta property="og:description" content="Open Graph smoke test description">
 
 <template id="links-blocking-first-paint-tmpl">
@@ -47,6 +47,12 @@
 
 <!-- Malformed links should not show in TagsBlockingFirstPaint artifact -->
 <link rel="stylesheet" href="">
+
+<script>
+  // Set a mobile-friendly viewport only on load.
+  const metaViewport = document.querySelector('meta[name="viewport"]');
+  metaViewport.content = 'width=device-width, initial-scale=1, minimum-scale=1';
+</script>
 
 <!-- FAIL: block rendering -->
 <script src="./dbw_tester.js" id="dbw-tester-script"></script>

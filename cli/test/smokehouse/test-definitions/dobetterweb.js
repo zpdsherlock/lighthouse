@@ -615,6 +615,12 @@ const expectations = {
           ],
         },
       },
+      'viewport': {
+        score: 1,
+        details: {
+          viewportContent: 'width=device-width, initial-scale=1, minimum-scale=1',
+        },
+      },
     },
     fullPageScreenshot: {
       screenshot: {

@@ -42,6 +42,10 @@
             "metricSavings": {
               "INP": 0
             },
+            "details": {
+              "type": "debugdata",
+              "viewportContent": "width=device-width"
+            },
             "guidanceLevel": 3
           },
           "first-contentful-paint": {
@@ -12841,6 +12845,10 @@
             "metricSavings": {
               "INP": 0
             },
+            "details": {
+              "type": "debugdata",
+              "viewportContent": "width=device-width"
+            },
             "guidanceLevel": 3
           },
           "image-aspect-ratio": {
@@ -18077,6 +18085,10 @@
             "warnings": [],
             "metricSavings": {
               "INP": 0
+            },
+            "details": {
+              "type": "debugdata",
+              "viewportContent": "width=device-width"
             },
             "guidanceLevel": 3
           },

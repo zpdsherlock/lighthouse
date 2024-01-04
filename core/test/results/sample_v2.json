@@ -56,6 +56,10 @@
       "metricSavings": {
         "INP": 0
       },
+      "details": {
+        "type": "debugdata",
+        "viewportContent": "width=device-width, initial-scale=1, minimum-scale=1"
+      },
       "guidanceLevel": 3
     },
     "first-contentful-paint": {
