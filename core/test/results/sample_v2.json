@@ -390,8 +390,8 @@
       "numericUnit": "millisecond",
       "displayValue": "Root document took 570 ms",
       "metricSavings": {
-        "FCP": 468.46799999999996,
-        "LCP": 468.46799999999996
+        "FCP": 450,
+        "LCP": 450
       },
       "details": {
         "type": "opportunity",
@@ -1106,7 +1106,7 @@
       "numericUnit": "millisecond",
       "displayValue": "2.2 s",
       "metricSavings": {
-        "TBT": 1220.691999999999
+        "TBT": 1200
       },
       "details": {
         "type": "table",
@@ -1171,7 +1171,7 @@
       "numericUnit": "millisecond",
       "displayValue": "1.3 s",
       "metricSavings": {
-        "TBT": 1209.4020894768312
+        "TBT": 1200
       },
       "details": {
         "type": "table",
@@ -2349,7 +2349,7 @@
       "scoreDisplayMode": "informative",
       "displayValue": "Third-party code blocked the main thread for 0 ms",
       "metricSavings": {
-        "TBT": 23.424291876693196
+        "TBT": 0
       },
       "details": {
         "type": "table",
@@ -2430,7 +2430,7 @@
       "scoreDisplayMode": "metricSavings",
       "displayValue": "13,320 ms",
       "metricSavings": {
-        "LCP": 10819.961
+        "LCP": 10800
       },
       "details": {
         "type": "list",
@@ -2530,7 +2530,7 @@
       "scoreDisplayMode": "metricSavings",
       "displayValue": "5 elements found",
       "metricSavings": {
-        "CLS": 0.13570762803819444
+        "CLS": 0.136
       },
       "details": {
         "type": "table",
@@ -2655,7 +2655,7 @@
       "scoreDisplayMode": "informative",
       "displayValue": "2 long tasks found",
       "metricSavings": {
-        "TBT": 1220.691999999999
+        "TBT": 1200
       },
       "details": {
         "type": "table",
@@ -4609,7 +4609,7 @@
       "warnings": [],
       "metricSavings": {
         "FCP": 0,
-        "LCP": 610
+        "LCP": 600
       },
       "details": {
         "type": "opportunity",
@@ -4919,7 +4919,7 @@
       "displayValue": "Potential savings of 143 KiB",
       "metricSavings": {
         "FCP": 150,
-        "LCP": 1060
+        "LCP": 1050
       },
       "details": {
         "type": "opportunity",
@@ -5195,7 +5195,7 @@
       "numericUnit": "element",
       "displayValue": "153 elements",
       "metricSavings": {
-        "TBT": 1
+        "TBT": 0
       },
       "details": {
         "type": "table",

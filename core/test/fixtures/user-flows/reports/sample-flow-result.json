@@ -529,7 +529,7 @@
             "numericUnit": "millisecond",
             "displayValue": "1.0 s",
             "metricSavings": {
-              "TBT": 143
+              "TBT": 150
             },
             "details": {
               "type": "table",
@@ -594,7 +594,7 @@
             "numericUnit": "millisecond",
             "displayValue": "0.3 s",
             "metricSavings": {
-              "TBT": 142.50196940171634
+              "TBT": 150
             },
             "details": {
               "type": "table",
@@ -1744,7 +1744,7 @@
             "scoreDisplayMode": "informative",
             "displayValue": "5 elements found",
             "metricSavings": {
-              "CLS": 0.002631263732910156
+              "CLS": 0.003
             },
             "details": {
               "type": "table",
@@ -1869,7 +1869,7 @@
             "scoreDisplayMode": "informative",
             "displayValue": "3 long tasks found",
             "metricSavings": {
-              "TBT": 143
+              "TBT": 150
             },
             "details": {
               "type": "table",
@@ -8996,7 +8996,7 @@
             "numericUnit": "millisecond",
             "displayValue": "0.9 s",
             "metricSavings": {
-              "TBT": 122.83299999999986
+              "TBT": 100
             },
             "details": {
               "type": "table",
@@ -9066,7 +9066,7 @@
             "numericUnit": "millisecond",
             "displayValue": "0.4 s",
             "metricSavings": {
-              "TBT": 106.76186411159928
+              "TBT": 100
             },
             "details": {
               "type": "table",
@@ -9874,7 +9874,7 @@
             "scoreDisplayMode": "metricSavings",
             "displayValue": "1 element found",
             "metricSavings": {
-              "CLS": 0.13125
+              "CLS": 0.131
             },
             "details": {
               "type": "table",
@@ -9923,7 +9923,7 @@
             "scoreDisplayMode": "informative",
             "displayValue": "1 long task found",
             "metricSavings": {
-              "TBT": 122.83299999999986
+              "TBT": 100
             },
             "details": {
               "type": "table",
@@ -10713,7 +10713,7 @@
             "scoreDisplayMode": "informative",
             "displayValue": "60 ms spent on event 'keypress'",
             "metricSavings": {
-              "INP": 64
+              "INP": 50
             },
             "details": {
               "type": "list",
@@ -18485,7 +18485,7 @@
             "numericUnit": "millisecond",
             "displayValue": "0.5 s",
             "metricSavings": {
-              "TBT": 13
+              "TBT": 0
             },
             "details": {
               "type": "table",
@@ -18550,7 +18550,7 @@
             "numericUnit": "millisecond",
             "displayValue": "0.2 s",
             "metricSavings": {
-              "TBT": 25.85177364864864
+              "TBT": 50
             },
             "details": {
               "type": "table",
@@ -19676,7 +19676,7 @@
             "scoreDisplayMode": "informative",
             "displayValue": "2 long tasks found",
             "metricSavings": {
-              "TBT": 13
+              "TBT": 0
             },
             "details": {
               "type": "table",
@@ -20988,7 +20988,7 @@
             "warnings": [],
             "metricSavings": {
               "FCP": 0,
-              "LCP": 330
+              "LCP": 350
             },
             "details": {
               "type": "opportunity",

@@ -10,6 +10,15 @@ import {Util} from '../../shared/util.js';
 
 const DEFAULT_PASS = 'defaultPass';
 
+/** @type {LH.Audit.MetricSavings} */
+const METRIC_SAVINGS_PRECISION = {
+  FCP: 50,
+  LCP: 50,
+  INP: 50,
+  TBT: 50,
+  CLS: 0.001,
+};
+
 /**
  * @typedef TableOptions
  * @property {number=} wastedMs
@@ -340,6 +349,33 @@ class Audit {
   }
 
   /**
+   * @param {LH.Audit.MetricSavings|undefined} metricSavings
+   * @return {LH.Audit.MetricSavings|undefined}
+   */
+  static _quantizeMetricSavings(metricSavings) {
+    if (!metricSavings) return;
+
+    /** @type {LH.Audit.MetricSavings} */
+    const normalizedMetricSavings = {...metricSavings};
+
+    for (const key of /** @type {Array<LH.Result.MetricAcronym>} */ (Object.keys(metricSavings))) {
+      let value = metricSavings[key];
+      if (value === undefined) continue;
+
+      value = Math.max(value, 0);
+
+      const precision = METRIC_SAVINGS_PRECISION[key];
+      if (precision !== undefined) {
+        value = Math.round(value / precision) * precision;
+      }
+
+      normalizedMetricSavings[key] = value;
+    }
+
+    return normalizedMetricSavings;
+  }
+
+  /**
    * @param {typeof Audit} audit
    * @param {string | LH.IcuMessage} errorMessage
    * @param {string=} errorStack
@@ -378,10 +414,13 @@ class Audit {
       scoreDisplayMode = product.scoreDisplayMode;
     }
 
+    const metricSavings = Audit._quantizeMetricSavings(product.metricSavings);
+    const hasSomeSavings = Object.values(metricSavings || {}).some(v => v);
+
     if (scoreDisplayMode === Audit.SCORING_MODES.METRIC_SAVINGS) {
       if (score && score >= Util.PASS_THRESHOLD) {
         score = 1;
-      } else if (Object.values(product.metricSavings || {}).some(v => v)) {
+      } else if (hasSomeSavings) {
         score = 0;
       } else {
         score = 0.5;
@@ -419,7 +458,7 @@ class Audit {
       errorStack: product.errorStack,
       warnings: product.warnings,
       scoringOptions: product.scoringOptions,
-      metricSavings: product.metricSavings,
+      metricSavings,
 
       details: product.details,
       guidanceLevel: audit.meta.guidanceLevel,
