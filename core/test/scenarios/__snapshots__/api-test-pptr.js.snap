@@ -85,6 +85,7 @@ Array [
   "largest-contentful-paint",
   "largest-contentful-paint-element",
   "layout-shift-elements",
+  "layout-shifts",
   "lcp-lazy-loaded",
   "legacy-javascript",
   "link-in-text-block",

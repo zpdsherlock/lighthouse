@@ -46,7 +46,7 @@ describe('Performance: layout-shift-elements audit', () => {
     const artifacts = {
       traces: {defaultPass: trace},
       TraceElements: [{
-        traceEventType: 'layout-shift',
+        traceEventType: 'layout-shift-element',
         nodeId: 1,
         node: {
           devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
@@ -91,7 +91,7 @@ describe('Performance: layout-shift-elements audit', () => {
       });
 
       traceElements.push({
-        traceEventType: 'layout-shift',
+        traceEventType: 'layout-shift-element',
         nodeId: i,
         node: {
           devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',
@@ -141,7 +141,7 @@ describe('Performance: layout-shift-elements audit', () => {
     const traceElements = [];
     for (let i = 1; i <= 15; ++i) {
       traceElements.push({
-        traceEventType: 'layout-shift',
+        traceEventType: 'layout-shift-element',
         nodeId: i,
         node: {
           devtoolsNodePath: '1,HTML,3,BODY,5,DIV,0,HEADER',

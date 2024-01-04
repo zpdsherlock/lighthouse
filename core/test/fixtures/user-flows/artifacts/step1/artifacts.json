@@ -10909,5 +10909,24 @@
     }
   },
   "BFCacheFailures": [],
-  "HostProduct": "Chrome/121.0.6110.0"
+  "HostProduct": "Chrome/121.0.6110.0",
+  "RootCauses": {
+    "layoutShifts": {
+      "0": {
+        "unsizedMedia": [],
+        "iframes": [],
+        "fontChanges": [],
+        "renderBlockingRequests": [],
+        "scriptStackTrace": [
+          {
+            "columnNumber": 101697,
+            "functionName": "Su",
+            "lineNumber": 1,
+            "scriptId": "21",
+            "url": "https://www.mikescerealshack.co/_next/static/chunks/framework.9d524150d48315f49e80.js"
+          }
+        ]
+      }
+    }
+  }
 }

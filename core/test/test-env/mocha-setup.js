@@ -158,7 +158,7 @@ const rootHooks = {
       failedTests.push({
         file: path.relative(LH_ROOT, file),
         title,
-        error: this.currentTest.err?.toString(),
+        error: this.currentTest.err?.stack ?? this.currentTest.err?.toString(),
       });
     }
   },

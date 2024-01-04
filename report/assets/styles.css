@@ -1657,6 +1657,10 @@
   padding-left: 20px;
 }
 
+.lh-sub-item-row .lh-element-screenshot {
+  zoom: 0.6;
+}
+
 /* Chevron
    https://codepen.io/paulirish/pen/LmzEmK
  */

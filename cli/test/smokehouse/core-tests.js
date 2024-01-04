@@ -63,6 +63,7 @@ import seoPassing from './test-definitions/seo-passing.js';
 import seoStatus403 from './test-definitions/seo-status-403.js';
 import seoTapTargets from './test-definitions/seo-tap-targets.js';
 import serviceWorkerReloaded from './test-definitions/service-worker-reloaded.js';
+import shiftAttribution from './test-definitions/shift-attribution.js';
 import sourceMaps from './test-definitions/source-maps.js';
 import timing from './test-definitions/timing.js';
 
@@ -127,6 +128,7 @@ const smokeTests = [
   seoStatus403,
   seoTapTargets,
   serviceWorkerReloaded,
+  shiftAttribution,
   sourceMaps,
   timing,
 ];

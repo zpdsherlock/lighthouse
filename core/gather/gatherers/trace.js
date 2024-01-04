@@ -56,6 +56,9 @@ class Trace extends BaseGatherer {
       'disabled-by-default-devtools.timeline.frame',
       'latencyInfo',
 
+      // For CLS root causes.
+      'disabled-by-default-devtools.timeline.invalidationTracking',
+
       // Not used by Lighthouse (yet) but included for users that want JS samples when looking at
       // a trace collected by Lighthouse (e.g. "View Trace" workflow in DevTools)
       'disabled-by-default-v8.cpu_profiler',

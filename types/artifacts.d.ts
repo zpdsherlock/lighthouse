@@ -23,6 +23,7 @@ import LHResult from './lhr/lhr.js'
 import Protocol from './protocol.js';
 import Util from './utility-types.js';
 import Audit from './audit.js';
+import {TraceProcessor, LayoutShiftRootCauses} from './trace-engine.js';
 
 export type Artifacts = BaseArtifacts & GathererArtifacts;
 
@@ -142,6 +143,8 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   ResponseCompression: {requestId: string, url: string, mimeType: string, transferSize: number, resourceSize: number, gzipSize?: number}[];
   /** Information on fetching and the content of the /robots.txt file. */
   RobotsTxt: {status: number|null, content: string|null, errorMessage?: string};
+  /** The result of calling the shared trace engine root cause analysis. */
+  RootCauses: Artifacts.TraceEngineRootCauses;
   /** Information on all scripts in the page. */
   Scripts: Artifacts.Script[];
   /** Version information for all ServiceWorkers active after the first page load. */
@@ -559,11 +562,17 @@ declare module Artifacts {
   }
 
   interface TraceElement {
-    traceEventType: 'largest-contentful-paint'|'layout-shift'|'animation'|'responsiveness';
+    traceEventType: 'largest-contentful-paint'|'layout-shift'|'layout-shift-element'|'animation'|'responsiveness';
     node: NodeDetails;
     nodeId: number;
     animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[];
     type?: string;
+  }
+
+  type TraceEngineResult = TraceProcessor['data'];
+
+  interface TraceEngineRootCauses {
+    layoutShifts: Record<number, LayoutShiftRootCauses>;
   }
 
   interface ViewportDimensions {

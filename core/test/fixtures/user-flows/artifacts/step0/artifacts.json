@@ -20704,5 +20704,8 @@
     ],
     "labels": []
   },
-  "HostProduct": "Chrome/121.0.6110.0"
+  "HostProduct": "Chrome/121.0.6110.0",
+  "RootCauses": {
+    "layoutShifts": {}
+  }
 }

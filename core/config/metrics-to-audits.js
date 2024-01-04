@@ -43,6 +43,7 @@ const tbtRelevantAudits = [
 
 const clsRelevantAudits = [
   'layout-shift-elements',
+  'layout-shifts',
   'non-composited-animations',
   'unsized-images',
   // 'preload-fonts', // actually in BP, rather than perf

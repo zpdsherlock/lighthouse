@@ -13201,5 +13201,31 @@
       }
     }
   ],
-  "HostProduct": "Chrome/121.0.6110.0"
+  "HostProduct": "Chrome/121.0.6110.0",
+  "RootCauses": {
+    "layoutShifts": {
+      "0": {
+        "unsizedMedia": [],
+        "iframes": [],
+        "fontChanges": [],
+        "renderBlockingRequests": [],
+        "scriptStackTrace": []
+      },
+      "1": {
+        "unsizedMedia": [],
+        "iframes": [],
+        "fontChanges": [],
+        "renderBlockingRequests": [],
+        "scriptStackTrace": [
+          {
+            "columnNumber": 54,
+            "functionName": "",
+            "lineNumber": 129,
+            "scriptId": "20",
+            "url": "http://localhost:10200/dobetterweb/dbw_tester.html"
+          }
+        ]
+      }
+    }
+  }
 }
