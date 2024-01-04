@@ -194,7 +194,7 @@ class ByteEfficiencyAudit extends Audit {
 
     const wastedBytes = results.reduce((sum, item) => sum + item.wastedBytes, 0);
 
-    /** @type {LH.Audit.MetricSavings} */
+    /** @type {LH.Audit.ProductMetricSavings} */
     const metricSavings = {
       FCP: 0,
       LCP: 0,

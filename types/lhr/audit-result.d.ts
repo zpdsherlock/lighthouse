@@ -6,7 +6,6 @@
 
 import {FormattedIcu} from './i18n.js';
 import AuditDetails from './audit-details.js';
-import LHResult from './lhr.js';
 
 interface ScoreDisplayModes {
   /** Scores of 0-1 (map to displayed scores of 0-100). */
@@ -32,9 +31,7 @@ interface ScoreDisplayModes {
 
 type ScoreDisplayMode = ScoreDisplayModes[keyof ScoreDisplayModes];
 
-export type MetricSavings = {
-  [M in LHResult.MetricAcronym]?: number;
-};
+export type MetricSavings = Partial<Record<string, number>>;
 
 /** Audit result returned in Lighthouse report. All audits offer a description and score of 0-1. */
 export interface Result {

@@ -82,7 +82,7 @@ declare module Config {
     id: string;
     weight: number;
     group?: string;
-    acronym?: Result.MetricAcronym;
+    acronym?: string;
     relevantAudits?: string[];
   }
 

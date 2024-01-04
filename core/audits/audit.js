@@ -10,7 +10,7 @@ import {Util} from '../../shared/util.js';
 
 const DEFAULT_PASS = 'defaultPass';
 
-/** @type {LH.Audit.MetricSavings} */
+/** @type {Record<keyof LH.Audit.ProductMetricSavings, number>} */
 const METRIC_SAVINGS_PRECISION = {
   FCP: 50,
   LCP: 50,
@@ -349,16 +349,17 @@ class Audit {
   }
 
   /**
-   * @param {LH.Audit.MetricSavings|undefined} metricSavings
-   * @return {LH.Audit.MetricSavings|undefined}
+   * @param {LH.Audit.ProductMetricSavings|undefined} metricSavings
+   * @return {LH.Audit.ProductMetricSavings|undefined}
    */
   static _quantizeMetricSavings(metricSavings) {
     if (!metricSavings) return;
 
-    /** @type {LH.Audit.MetricSavings} */
+    /** @type {LH.Audit.ProductMetricSavings} */
     const normalizedMetricSavings = {...metricSavings};
 
-    for (const key of /** @type {Array<LH.Result.MetricAcronym>} */ (Object.keys(metricSavings))) {
+    // eslint-disable-next-line max-len
+    for (const key of /** @type {Array<keyof LH.Audit.ProductMetricSavings>} */ (Object.keys(metricSavings))) {
       let value = metricSavings[key];
       if (value === undefined) continue;
 
