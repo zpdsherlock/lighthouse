@@ -566,7 +566,10 @@ const expectations = {
           items: {
             _includes: [
               {origin: 'http://localhost:10200', serverResponseTime: '>0'},
-              {origin: 'http://[::1]:10503', serverResponseTime: '>0'},
+              // The response time estimate is based on just 1 request which can force Lighthouse
+              // to report a response time of 0 sometimes.
+              // https://github.com/GoogleChrome/lighthouse/pull/15729#issuecomment-1877869991
+              {origin: 'http://[::1]:10503', serverResponseTime: '>=0'},
             ],
             _excludes: [{}],
           },
