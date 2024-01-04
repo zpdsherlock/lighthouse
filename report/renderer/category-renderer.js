@@ -41,19 +41,9 @@ export class CategoryRenderer {
    * @return {HTMLElement}
    */
   renderAudit(audit) {
-    const component = this.dom.createComponent('audit');
-    return /** @type {HTMLElement} */ (this.populateAuditValues(audit, component));
-  }
-
-  /**
-   * Populate an DOM tree with audit details. Used by renderAudit and renderOpportunity
-   * @param {LH.ReportResult.AuditRef} audit
-   * @param {DocumentFragment} component
-   * @return {!Element}
-   */
-  populateAuditValues(audit, component) {
     const strings = Globals.strings;
-    const auditEl = this.dom.find('.lh-audit', component);
+    const component = this.dom.createComponent('audit');
+    const auditEl = this.dom.find('div.lh-audit', component);
     auditEl.id = audit.result.id;
     const scoreDisplayMode = audit.result.scoreDisplayMode;
 
