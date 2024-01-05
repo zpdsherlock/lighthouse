@@ -540,7 +540,7 @@ function waitForUserToContinue(driver) {
   }
   /* c8 ignore stop */
 
-  driver.defaultSession.setNextProtocolTimeout(2 ** 31 - 1);
+  driver.defaultSession.setNextProtocolTimeout(Infinity);
   return driver.executionContext.evaluate(createInPagePromise, {args: []});
 }
 
