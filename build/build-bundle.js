@@ -160,6 +160,7 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     treeShaking: true,
     sourcemap: 'linked',
     banner: {js: banner},
+    lineLimit: 120,
     // Because of page-functions!
     keepNames: true,
     inject: ['./build/process-global.js'],
