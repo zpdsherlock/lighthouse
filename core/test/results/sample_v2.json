@@ -2875,7 +2875,7 @@
           }
         ]
       },
-      "guidanceLevel": 3
+      "guidanceLevel": 4
     },
     "valid-source-maps": {
       "id": "valid-source-maps",
@@ -2969,7 +2969,7 @@
           "pathLength": 4
         }
       },
-      "guidanceLevel": 3
+      "guidanceLevel": 4
     },
     "csp-xss": {
       "id": "csp-xss",
@@ -5852,7 +5852,7 @@
           }
         ]
       },
-      "guidanceLevel": 2
+      "guidanceLevel": 4
     }
   },
   "configSettings": {
