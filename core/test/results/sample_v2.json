@@ -6237,10 +6237,6 @@
           "weight": 0
         },
         {
-          "id": "layout-shift-elements",
-          "weight": 0
-        },
-        {
           "id": "layout-shifts",
           "weight": 0
         },
@@ -6329,6 +6325,11 @@
         },
         {
           "id": "resource-summary",
+          "weight": 0,
+          "group": "hidden"
+        },
+        {
+          "id": "layout-shift-elements",
           "weight": 0,
           "group": "hidden"
         }
