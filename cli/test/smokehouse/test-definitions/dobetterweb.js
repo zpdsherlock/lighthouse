@@ -208,6 +208,8 @@ const expectations = {
       },
     ],
     GlobalListeners: [{
+      // Unload handlers were disabled in M122
+      _maxChromiumVersion: '121',
       type: 'unload',
       scriptId: /^\d+$/,
       lineNumber: '>300',
@@ -306,6 +308,13 @@ const expectations = {
               description: 'Failed to load resource: the server responded with a status of 404 (Not Found)',
               sourceLocation: {url: 'http://localhost:10200/favicon.ico'},
             },
+            {
+              // Unload handlers were disabled in M122
+              _minChromiumVersion: '122',
+              source: 'violation',
+              description: 'Permissions policy violation: unload is not allowed in this document.',
+              sourceLocation: {url: 'http://localhost:10200/dobetterweb/dbw_tester.html'},
+            },
           ],
         },
       },
@@ -378,7 +387,10 @@ const expectations = {
               subItems: undefined,
             },
             {
+              // Deprecation warning was added in M121
               _minChromiumVersion: '121',
+              // Unload handlers were disabled in M122
+              _maxChromiumVersion: '121',
               value: 'UnloadHandler',
               source: {
                 type: 'source-location',
@@ -480,6 +492,8 @@ const expectations = {
         },
       },
       'no-unload-listeners': {
+        // Unload handlers were disabled in M122
+        _maxChromiumVersion: '121',
         score: 0,
         details: {
           items: [{
@@ -497,6 +511,8 @@ const expectations = {
         details: {
           items: [
             {
+              // Unload handlers were disabled in M122
+              _maxChromiumVersion: '121',
               reason: 'The page has an unload handler in the main frame.',
               failureType: 'Actionable',
               subItems: {
@@ -506,9 +522,8 @@ const expectations = {
               },
             },
             {
-              // This issue only appears in the DevTools runner for some reason.
-              // TODO: Investigate why this doesn't happen on the CLI runner.
-              _runner: 'devtools',
+              // Unload handlers create a permission request in M122
+              _minChromiumVersion: '122',
               reason: 'There were permission requests upon navigating away.',
               failureType: 'Pending browser support',
               subItems: {
