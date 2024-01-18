@@ -108,6 +108,23 @@ describe('TargetManager', () => {
       expect(sendMock.findAllInvocations('Runtime.runIfWaitingForDebugger')).toHaveLength(4);
     });
 
+    it('should ignore errors while attaching to worker targets', async () => {
+      targetInfo.type = 'worker';
+      sendMock
+        .mockResponse('Target.getTargetInfo', {targetInfo})
+        .mockResponse('Network.enable', () => {
+          throw new Error('Cannot use Network.enable');
+        })
+        .mockResponse('Target.setAutoAttach');
+      await targetManager.enable();
+
+      const invocations = sendMock.findAllInvocations('Target.setAutoAttach');
+      expect(invocations).toHaveLength(0);
+
+      // Should still be resumed.
+      expect(sendMock.findAllInvocations('Runtime.runIfWaitingForDebugger')).toHaveLength(1);
+    });
+
     it('should ignore targets that are not frames or web workers', async () => {
       targetInfo.type = 'service_worker';
       sendMock
