@@ -87,14 +87,14 @@ describe('Audit', () => {
         assert.strictEqual(auditResult.score, 1);
       });
 
-      it('override scoreDisplayMode if set on audit product', () => {
+      it('switches to INFORMATIVE and set score to 1 if set on audit product', () => {
         assert.strictEqual(NumericAudit.meta.scoreDisplayMode, Audit.SCORING_MODES.NUMERIC);
         const auditResult = Audit.generateAuditResult(NumericAudit, {
-          score: 1,
+          score: null,
           scoreDisplayMode: Audit.SCORING_MODES.INFORMATIVE,
         });
         assert.strictEqual(auditResult.scoreDisplayMode, Audit.SCORING_MODES.INFORMATIVE);
-        assert.strictEqual(auditResult.score, null);
+        assert.strictEqual(auditResult.score, 1);
       });
 
       it('switches to an ERROR and is not scored if an errorMessage is passed in', () => {

@@ -67,7 +67,7 @@ const expectations = {
     finalDisplayedUrl: 'http://localhost:10200/perf/perf-budgets/load-things.html',
     audits: {
       'resource-summary': {
-        score: null,
+        score: 1,
         details: {
           items: [
             {resourceType: 'total', requestCount: 10, transferSize: '166472±1000'},
@@ -83,7 +83,7 @@ const expectations = {
         },
       },
       'performance-budget': {
-        score: null,
+        score: 1,
         details: {
           // Undefined items are asserting that the property isn't included in the table item.
           items: [

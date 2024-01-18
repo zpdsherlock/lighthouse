@@ -330,6 +330,10 @@ class Audit {
    * @return {number|null}
    */
   static _normalizeAuditScore(score, scoreDisplayMode, auditId) {
+    if (scoreDisplayMode === Audit.SCORING_MODES.INFORMATIVE) {
+      return 1;
+    }
+
     if (scoreDisplayMode !== Audit.SCORING_MODES.BINARY &&
         scoreDisplayMode !== Audit.SCORING_MODES.NUMERIC &&
         scoreDisplayMode !== Audit.SCORING_MODES.METRIC_SAVINGS) {

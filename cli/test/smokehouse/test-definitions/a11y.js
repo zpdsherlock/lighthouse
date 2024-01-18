@@ -484,7 +484,7 @@ const expectations = {
         },
       },
       'duplicate-id-aria': {
-        score: null,
+        score: 1,
         details: {
           items: [
             {
@@ -515,7 +515,7 @@ const expectations = {
         },
       },
       'empty-heading': {
-        score: null,
+        score: 1,
         details: {
           items: [
             {
@@ -531,7 +531,7 @@ const expectations = {
         },
       },
       'form-field-multiple-labels': {
-        score: null,
+        score: 1,
         scoreDisplayMode: 'informative',
         details: {
           items: [
@@ -625,7 +625,7 @@ const expectations = {
         scoreDisplayMode: 'notApplicable',
       },
       'identical-links-same-purpose': {
-        score: null,
+        score: 1,
         details: {
           items: [
             {
@@ -739,7 +739,7 @@ const expectations = {
         },
       },
       'landmark-one-main': {
-        score: null,
+        score: 1,
         details: {
           items: [
             {
@@ -931,7 +931,7 @@ const expectations = {
         },
       },
       'target-size': {
-        score: null,
+        score: 1,
         details: {
           items: [
             {

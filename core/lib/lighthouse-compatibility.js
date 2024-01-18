@@ -36,6 +36,10 @@ function upgradeLhrForCompatibility(lhr) {
       audit.scoreDisplayMode = 'notApplicable';
     }
 
+    if (audit.scoreDisplayMode === 'informative') {
+      audit.score = 1;
+    }
+
     if (audit.details) {
       // Turn `auditDetails.type` of undefined (LHR <4.2) and 'diagnostic' (LHR <5.0)
       // into 'debugdata' (LHR ≥5.0).
