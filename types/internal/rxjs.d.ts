@@ -29,7 +29,9 @@ declare module 'rxjs' {
   export const take: any;
   export const bufferCount: any;
   export const concatMap: any;
+  export const debounceTime: any;
   export const lastValueFrom: any;
   export const takeUntil: any;
+  export const delayWhen: any;
 }
 
