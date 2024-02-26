@@ -265,44 +265,43 @@ async function navigationGather(page, requestor, options = {}) {
   const isCallback = typeof requestor === 'function';
 
   const runnerOptions = {resolvedConfig, computedCache};
-  const artifacts = await Runner.gather(
-    async () => {
-      const normalizedRequestor = isCallback ? requestor : UrlUtils.normalizeUrl(requestor);
 
-      /** @type {LH.Puppeteer.Browser|undefined} */
-      let lhBrowser = undefined;
-      /** @type {LH.Puppeteer.Page|undefined} */
-      let lhPage = undefined;
+  const gatherFn = async () => {
+    const normalizedRequestor = isCallback ? requestor : UrlUtils.normalizeUrl(requestor);
 
-      // For navigation mode, we shouldn't connect to a browser in audit mode,
-      // therefore we connect to the browser in the gatherFn callback.
-      if (!page) {
-        const {hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT} = flags;
-        lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`, defaultViewport: null});
-        lhPage = await lhBrowser.newPage();
-        page = lhPage;
-      }
+    /** @type {LH.Puppeteer.Browser|undefined} */
+    let lhBrowser = undefined;
+    /** @type {LH.Puppeteer.Page|undefined} */
+    let lhPage = undefined;
 
-      const driver = new Driver(page);
-      const context = {
-        driver,
-        lhBrowser,
-        lhPage,
-        page,
-        resolvedConfig,
-        requestor: normalizedRequestor,
-        computedCache,
-      };
-      const {baseArtifacts} = await _setup(context);
+    // For navigation mode, we shouldn't connect to a browser in audit mode,
+    // therefore we connect to the browser in the gatherFn callback.
+    if (!page) {
+      const {hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT} = flags;
+      lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`, defaultViewport: null});
+      lhPage = await lhBrowser.newPage();
+      page = lhPage;
+    }
 
-      const artifacts = await _navigation({...context, baseArtifacts});
+    const driver = new Driver(page);
+    const context = {
+      driver,
+      lhBrowser,
+      lhPage,
+      page,
+      resolvedConfig,
+      requestor: normalizedRequestor,
+      computedCache,
+    };
+    const {baseArtifacts} = await _setup(context);
 
-      await _cleanup(context);
+    const artifacts = await _navigation({...context, baseArtifacts});
 
-      return finalizeArtifacts(baseArtifacts, artifacts);
-    },
-    runnerOptions
-  );
+    await _cleanup(context);
+
+    return finalizeArtifacts(baseArtifacts, artifacts);
+  };
+  const artifacts = await Runner.gather(gatherFn, runnerOptions);
   return {artifacts, runnerOptions};
 }
 
