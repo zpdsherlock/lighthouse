@@ -26,7 +26,7 @@ class NetworkNode extends BaseNode {
    * @return {number}
    */
   get startTime() {
-    return this._record.networkRequestTime * 1000;
+    return this._record.rendererStartTime * 1000;
   }
 
   /**

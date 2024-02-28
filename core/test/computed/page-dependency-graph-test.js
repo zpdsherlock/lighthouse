@@ -17,16 +17,16 @@ const sampleDevtoolsLog = readJson('../fixtures/traces/iframe-m79.devtoolslog.js
 function createRequest(
   requestId,
   url,
-  networkRequestTime = 0,
+  rendererStartTime = 0,
   initiator = null,
   resourceType = NetworkRequest.TYPES.Document,
   sessionTargetType = 'page'
 ) {
-  const networkEndTime = networkRequestTime + 50;
+  const networkEndTime = rendererStartTime + 50;
   return {
     requestId,
     url,
-    networkRequestTime,
+    rendererStartTime,
     networkEndTime,
     initiator,
     resourceType,

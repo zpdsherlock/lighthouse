@@ -261,7 +261,7 @@ describe('Byte efficiency base audit', () => {
     result = await MockAudit.audit(artifacts, {settings, computedCache});
     // expect lots of savings
     expect(result.numericValue).not.toBeLessThan(5000);
-    expect(result.numericValue).toMatchInlineSnapshot(`55880`);
+    expect(result.numericValue).toMatchInlineSnapshot(`55730`);
   });
 
   it('should compute TTI savings differently from load savings', async () => {

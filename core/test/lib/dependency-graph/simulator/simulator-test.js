@@ -22,6 +22,10 @@ let nextTid = 1;
 function request(opts) {
   const scheme = opts.scheme || 'http';
   const url = `${scheme}://example.com`;
+  const rendererStartTime = opts.startTime;
+  const networkEndTime = opts.endTime;
+  delete opts.startTime;
+  delete opts.endTime;
 
   return Object.assign({
     requestId: opts.requestId || nextRequestId++,
@@ -30,6 +34,8 @@ function request(opts) {
     protocol: scheme,
     parsedURL: {scheme, host: 'example.com', securityOrigin: url},
     timing: opts.timing,
+    rendererStartTime,
+    networkEndTime,
   }, opts);
 }
 
@@ -89,10 +95,10 @@ describe('DependencyGraph/Simulator', () => {
     });
 
     it('should simulate basic network waterfall graphs', () => {
-      const nodeA = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 1}));
-      const nodeB = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 3}));
-      const nodeC = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 5}));
-      const nodeD = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 7}));
+      const nodeA = new NetworkNode(request({startTime: 0, endTime: 1}));
+      const nodeB = new NetworkNode(request({startTime: 0, endTime: 3}));
+      const nodeC = new NetworkNode(request({startTime: 0, endTime: 5}));
+      const nodeD = new NetworkNode(request({startTime: 0, endTime: 7}));
 
       nodeA.addDependent(nodeB);
       nodeB.addDependent(nodeC);
@@ -109,9 +115,9 @@ describe('DependencyGraph/Simulator', () => {
     });
 
     it('should simulate cached network graphs', () => {
-      const nodeA = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 1,
+      const nodeA = new NetworkNode(request({startTime: 0, endTime: 1,
         fromDiskCache: true}));
-      const nodeB = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 3,
+      const nodeB = new NetworkNode(request({startTime: 0, endTime: 3,
         fromDiskCache: true}));
       nodeA.addDependent(nodeB);
 
@@ -127,9 +133,9 @@ describe('DependencyGraph/Simulator', () => {
       const url = 'data:image/jpeg;base64,foobar';
       const protocol = 'data';
       const parsedURL = {scheme: 'data', host: '', securityOrigin: 'null'};
-      const nodeA = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 1, url,
+      const nodeA = new NetworkNode(request({startTime: 0, endTime: 1, url,
         parsedURL, protocol}));
-      const nodeB = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 3, url,
+      const nodeB = new NetworkNode(request({startTime: 0, endTime: 3, url,
         parsedURL, protocol, resourceSize: 1024 * 1024}));
       nodeA.addDependent(nodeB);
 
@@ -205,10 +211,10 @@ describe('DependencyGraph/Simulator', () => {
     });
 
     it('should not reuse connections', () => {
-      const nodeA = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 1}));
-      const nodeB = new NetworkNode(request({networkRequestTime: 2, networkEndTime: 3}));
-      const nodeC = new NetworkNode(request({networkRequestTime: 2, networkEndTime: 5}));
-      const nodeD = new NetworkNode(request({networkRequestTime: 2, networkEndTime: 7}));
+      const nodeA = new NetworkNode(request({startTime: 0, networkRequestTime: 0, endTime: 1}));
+      const nodeB = new NetworkNode(request({startTime: 2, networkRequestTime: 2, endTime: 3}));
+      const nodeC = new NetworkNode(request({startTime: 2, networkRequestTime: 2, endTime: 5}));
+      const nodeD = new NetworkNode(request({startTime: 2, networkRequestTime: 2, endTime: 7}));
 
       nodeA.addDependent(nodeB);
       nodeA.addDependent(nodeC);
@@ -244,14 +250,14 @@ describe('DependencyGraph/Simulator', () => {
     });
 
     it('should start network requests in startTime order', () => {
-      const rootNode = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 0.05,
+      const rootNode = new NetworkNode(request({startTime: 0, endTime: 0.05,
         connectionId: '1'}));
       const imageNodes = [
-        new NetworkNode(request({networkRequestTime: 5})),
-        new NetworkNode(request({networkRequestTime: 4})),
-        new NetworkNode(request({networkRequestTime: 3})),
-        new NetworkNode(request({networkRequestTime: 2})),
-        new NetworkNode(request({networkRequestTime: 1})),
+        new NetworkNode(request({startTime: 5})),
+        new NetworkNode(request({startTime: 4})),
+        new NetworkNode(request({startTime: 3})),
+        new NetworkNode(request({startTime: 2})),
+        new NetworkNode(request({startTime: 1})),
       ];
 
       for (const imageNode of imageNodes) {
@@ -273,15 +279,15 @@ describe('DependencyGraph/Simulator', () => {
       assertNodeTiming(result, imageNodes[0], {startTime: 4150, endTime: 4950});
     });
 
-    it('should start network requests in priority order to break networkRequestTime ties', () => {
-      const rootNode = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 0.05,
+    it('should start network requests in priority order to break startTime ties', () => {
+      const rootNode = new NetworkNode(request({startTime: 0, endTime: 0.05,
         connectionId: '1'}));
       const imageNodes = [
-        new NetworkNode(request({networkRequestTime: 0.1, priority: 'VeryLow'})),
-        new NetworkNode(request({networkRequestTime: 0.2, priority: 'Low'})),
-        new NetworkNode(request({networkRequestTime: 0.3, priority: 'Medium'})),
-        new NetworkNode(request({networkRequestTime: 0.4, priority: 'High'})),
-        new NetworkNode(request({networkRequestTime: 0.5, priority: 'VeryHigh'})),
+        new NetworkNode(request({startTime: 0.1, priority: 'VeryLow'})),
+        new NetworkNode(request({startTime: 0.2, priority: 'Low'})),
+        new NetworkNode(request({startTime: 0.3, priority: 'Medium'})),
+        new NetworkNode(request({startTime: 0.4, priority: 'High'})),
+        new NetworkNode(request({startTime: 0.5, priority: 'VeryHigh'})),
       ];
 
       for (const imageNode of imageNodes) {
@@ -334,13 +340,13 @@ describe('DependencyGraph/Simulator', () => {
     it('should maximize throughput with H2', () => {
       const simulator = new Simulator({serverResponseTimeByOrigin});
       const connectionDefaults = {protocol: 'h2', connectionId: '1'};
-      const nodeA = new NetworkNode(request({networkRequestTime: 0, networkEndTime: 1,
+      const nodeA = new NetworkNode(request({startTime: 0, endTime: 1,
         ...connectionDefaults}));
-      const nodeB = new NetworkNode(request({networkRequestTime: 1, networkEndTime: 2,
+      const nodeB = new NetworkNode(request({startTime: 1, endTime: 2,
         ...connectionDefaults}));
-      const nodeC = new NetworkNode(request({networkRequestTime: 2, networkEndTime: 3,
+      const nodeC = new NetworkNode(request({startTime: 2, endTime: 3,
         ...connectionDefaults}));
-      const nodeD = new NetworkNode(request({networkRequestTime: 3, networkEndTime: 4,
+      const nodeD = new NetworkNode(request({startTime: 3, endTime: 4,
         ...connectionDefaults}));
 
       nodeA.addDependent(nodeB);
