@@ -78,7 +78,6 @@ describe('Navigation', function() {
       'best-practices',
       'seo',
       'pwa',
-      'lighthouse-plugin-publisher-ads',
     ]);
 
     let numNavigations = 0;
@@ -123,7 +122,7 @@ describe('Navigation', function() {
     });
 
     const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, ['max-potential-fid']);
-    assert.strictEqual(auditResults.length, 191);
+    assert.strictEqual(auditResults.length, 168);
     assert.deepStrictEqual(erroredAudits, []);
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
       'installable-manifest',
