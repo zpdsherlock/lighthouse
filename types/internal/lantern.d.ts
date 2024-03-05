@@ -87,11 +87,11 @@ declare namespace Lantern {
         sessionTargetType: LH.Protocol.TargetType | undefined;
     }
 
-    namespace Simulation {
-        type GraphNode = import('../../core/lib/lantern/base-node.js').Node;
-        type GraphNetworkNode = import('../../core/lib/lantern/network-node.js').NetworkNode;
+    export namespace Simulation {
+        type GraphNode<T> = import('../../core/lib/lantern/base-node.js').Node<T>;
+        type GraphNetworkNode<T> = import('../../core/lib/lantern/network-node.js').NetworkNode<T>;
         type GraphCPUNode = import('../../core/lib/lantern/cpu-node.js').CPUNode;
-        type Simulator = import('../../core/lib/lantern/simulator/simulator.js').Simulator;
+        type Simulator<T> = import('../../core/lib/lantern/simulator/simulator.js').Simulator<T>;
 
         interface MetricCoefficients {
             intercept: number;
@@ -116,9 +116,9 @@ declare namespace Lantern {
             duration: number;
         }
 
-        interface Result {
+        interface Result<T = any> {
             timeInMs: number;
-            nodeTimings: Map<GraphNode, NodeTiming>;
+            nodeTimings: Map<GraphNode<T>, NodeTiming>;
         }
     }
 }

@@ -9,7 +9,7 @@
 /** @typedef {import('../../../../types/internal/lantern.js').Lantern.NetworkRequest} NetworkRequest */
 /** @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.Options} SimulationOptions */
 /** @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.NodeTiming} SimulationNodeTiming */
-/** @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.Result} SimulationResult */
+/** @template T @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.Result<T>} SimulationResult */
 
 import {BaseNode} from '../base-node.js';
 import {TcpConnection} from './tcp-connection.js';
@@ -52,6 +52,9 @@ const PriorityStartTimePenalty = {
 /** @type {Map<string, Map<Node, CompleteNodeTiming>>} */
 const ALL_SIMULATION_NODE_TIMINGS = new Map();
 
+/**
+ * @template [T=any]
+ */
 class Simulator {
   /**
    * @param {SimulationOptions} [options]
@@ -435,7 +438,7 @@ class Simulator {
    *
    * @param {Node} graph
    * @param {{flexibleOrdering?: boolean, label?: string}=} options
-   * @return {SimulationResult}
+   * @return {SimulationResult<T>}
    */
   simulate(graph, options) {
     if (BaseNode.hasCycle(graph)) {
