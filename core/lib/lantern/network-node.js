@@ -4,7 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as Lantern from './lantern.js';
+/** @template T @typedef {import('../../../types/internal/lantern.js').Lantern.NetworkRequest<T>} NetworkRequest */
+
+import {NetworkRequestTypes} from './lantern.js';
 import {BaseNode} from './base-node.js';
 // TODO(15841): bring impl of isNonNetworkRequest inside lantern and remove this.
 import UrlUtils from '../url-utils.js';
@@ -15,7 +17,7 @@ import UrlUtils from '../url-utils.js';
  */
 class NetworkNode extends BaseNode {
   /**
-   * @param {Lantern.NetworkRequest<T>} networkRequest
+   * @param {NetworkRequest<T>} networkRequest
    */
   constructor(networkRequest) {
     super(networkRequest.requestId);
@@ -49,7 +51,7 @@ class NetworkNode extends BaseNode {
   }
 
   /**
-   * @return {Lantern.NetworkRequest<T>}
+   * @return {NetworkRequest<T>}
    */
   get request() {
     return this._request;
@@ -93,8 +95,8 @@ class NetworkNode extends BaseNode {
    */
   hasRenderBlockingPriority() {
     const priority = this._request.priority;
-    const isScript = this._request.resourceType === Lantern.NetworkRequestTypes.Script;
-    const isDocument = this._request.resourceType === Lantern.NetworkRequestTypes.Document;
+    const isScript = this._request.resourceType === NetworkRequestTypes.Script;
+    const isDocument = this._request.resourceType === NetworkRequestTypes.Document;
     const isBlockingScript = priority === 'High' && isScript;
     const isBlockingHtmlImport = priority === 'High' && isDocument;
     return priority === 'VeryHigh' || isBlockingScript || isBlockingHtmlImport;

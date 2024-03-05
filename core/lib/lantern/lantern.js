@@ -4,8 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-const NetworkRequest = /** @type {import('../../../types/internal/lantern').NetworkRequest} */({});
-
 /** @type {LH.Util.SelfMap<LH.Crdp.Network.ResourceType>} */
 const NetworkRequestTypes = {
   XHR: 'XHR',
@@ -29,6 +27,5 @@ const NetworkRequestTypes = {
 };
 
 export {
-  NetworkRequest,
   NetworkRequestTypes,
 };

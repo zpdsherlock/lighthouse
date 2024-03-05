@@ -132,6 +132,7 @@ declare module Gatherer {
       GathererInstance<Exclude<TDependencies, DefaultDependenciesKey>>
   type AnyGathererInstance = GathererInstanceExpander<Gatherer.DependencyKey>
 
+  // TODO(15841): use from lantern.d.ts
   namespace Simulation {
     type GraphNode = import('../core/lib/lantern/base-node.js').Node<Artifacts.NetworkRequest>;
     type GraphNetworkNode = _NetworkNode<Artifacts.NetworkRequest>;

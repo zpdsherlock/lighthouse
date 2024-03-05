@@ -53,8 +53,9 @@
  */
 
 import * as LH from '../../types/lh.js';
-import * as Lantern from './lantern/lantern.js';
 import UrlUtils from './url-utils.js';
+
+/** @template T @typedef {import('../../types/internal/lantern.js').Lantern.NetworkRequest<T>} LanternNetworkRequest */
 
 // Lightrider X-Header names for timing information.
 // See: _updateTransferSizeForLightrider and _updateTimingsForLightrider.
@@ -571,7 +572,7 @@ class NetworkRequest {
 
   /**
    * @param {NetworkRequest} record
-   * @return {Lantern.NetworkRequest<NetworkRequest>}
+   * @return {LanternNetworkRequest<NetworkRequest>}
    */
   static asLanternNetworkRequest(record) {
     return {
