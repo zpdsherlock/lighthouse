@@ -6,7 +6,7 @@
 
 import {makeComputedArtifact} from './computed-artifact.js';
 import * as constants from '../config/constants.js';
-import {Simulator} from '../lib/dependency-graph/simulator/simulator.js';
+import {Simulator} from '../lib/lantern/simulator/simulator.js';
 import {NetworkAnalysis} from './network-analysis.js';
 
 class LoadSimulator {

@@ -16,8 +16,8 @@ import {LCPImageRecord} from '../../computed/lcp-image-record.js';
 
 const str_ = i18n.createIcuMessageFn(import.meta.url, {});
 
-/** @typedef {import('../../lib/dependency-graph/simulator/simulator').Simulator} Simulator */
-/** @typedef {import('../../lib/dependency-graph/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
+/** @typedef {import('../../lib/lantern/simulator/simulator.js').Simulator} Simulator */
+/** @typedef {import('../../lib/lantern/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
 
 // Parameters for log-normal distribution scoring. These values were determined by fitting the
 // log-normal cumulative distribution function curve to the former method of linear interpolation

@@ -6,10 +6,10 @@
 
 import assert from 'assert/strict';
 
-import {NetworkNode} from '../../../../lib/dependency-graph/network-node.js';
-import {CPUNode} from '../../../../lib/dependency-graph/cpu-node.js';
-import {Simulator} from '../../../../lib/dependency-graph/simulator/simulator.js';
-import {DNSCache} from '../../../../lib/dependency-graph/simulator/dns-cache.js';
+import {NetworkNode} from '../../../../lib/lantern/network-node.js';
+import {CPUNode} from '../../../../lib/lantern/cpu-node.js';
+import {Simulator} from '../../../../lib/lantern/simulator/simulator.js';
+import {DNSCache} from '../../../../lib/lantern/simulator/dns-cache.js';
 import {PageDependencyGraph} from '../../../../computed/page-dependency-graph.js';
 import {getURLArtifactFromDevtoolsLog, readJson} from '../../../test-utils.js';
 import {NetworkRequest} from '../../../../lib/network-request.js';

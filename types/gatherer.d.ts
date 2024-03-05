@@ -7,9 +7,9 @@
 import {Protocol as Crdp} from 'devtools-protocol/types/protocol.js';
 import {ProtocolMapping as CrdpMappings} from 'devtools-protocol/types/protocol-mapping.js';
 
-import {NetworkNode as _NetworkNode} from '../core/lib/dependency-graph/network-node.js';
-import {CPUNode as _CPUNode} from '../core/lib/dependency-graph/cpu-node.js';
-import {Simulator as _Simulator} from '../core/lib/dependency-graph/simulator/simulator.js';
+import {NetworkNode as _NetworkNode} from '../core/lib/lantern/network-node.js';
+import {CPUNode as _CPUNode} from '../core/lib/lantern/cpu-node.js';
+import {Simulator as _Simulator} from '../core/lib/lantern/simulator/simulator.js';
 import {ExecutionContext} from '../core/gather/driver/execution-context.js';
 import {NetworkMonitor} from '../core/gather/driver/network-monitor.js';
 import {Fetcher} from '../core/gather/fetcher.js';
@@ -133,7 +133,7 @@ declare module Gatherer {
   type AnyGathererInstance = GathererInstanceExpander<Gatherer.DependencyKey>
 
   namespace Simulation {
-    type GraphNode = import('../core/lib/dependency-graph/base-node.js').Node<Artifacts.NetworkRequest>;
+    type GraphNode = import('../core/lib/lantern/base-node.js').Node<Artifacts.NetworkRequest>;
     type GraphNetworkNode = _NetworkNode<Artifacts.NetworkRequest>;
     type GraphCPUNode = _CPUNode;
     type Simulator = _Simulator;

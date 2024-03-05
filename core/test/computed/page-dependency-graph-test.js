@@ -7,7 +7,7 @@
 import assert from 'assert/strict';
 
 import {PageDependencyGraph} from '../../computed/page-dependency-graph.js';
-import {BaseNode} from '../../lib/dependency-graph/base-node.js';
+import {BaseNode} from '../../lib/lantern/base-node.js';
 import {NetworkRequest} from '../../lib/network-request.js';
 import {getURLArtifactFromDevtoolsLog, readJson} from '../test-utils.js';
 

@@ -5,16 +5,16 @@
  */
 
 import {makeComputedArtifact} from './computed-artifact.js';
-import {NetworkNode} from '../lib/dependency-graph/network-node.js';
-import {CPUNode} from '../lib/dependency-graph/cpu-node.js';
+import {NetworkNode} from '../lib/lantern/network-node.js';
+import {CPUNode} from '../lib/lantern/cpu-node.js';
 import {TraceProcessor} from '../lib/tracehouse/trace-processor.js';
 import {NetworkRequest} from '../lib/network-request.js';
 import {ProcessedTrace} from './processed-trace.js';
 import {NetworkRecords} from './network-records.js';
-import {NetworkAnalyzer} from '../lib/dependency-graph/simulator/network-analyzer.js';
+import {NetworkAnalyzer} from '../lib/lantern/simulator/network-analyzer.js';
 import {DocumentUrls} from './document-urls.js';
 
-/** @typedef {import('../lib/dependency-graph/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
+/** @typedef {import('../lib/lantern/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
 /** @typedef {Omit<LH.Artifacts['URL'], 'finalDisplayedUrl'>} URLArtifact */
 
 /**
