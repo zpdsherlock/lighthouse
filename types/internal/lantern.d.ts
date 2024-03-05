@@ -51,6 +51,7 @@ declare namespace Lantern {
         url: string;
         protocol: string;
         parsedURL: ParsedURL;
+        documentURL: string;
         /** When the renderer process initially discovers a network request, in milliseconds. */
         rendererStartTime: number;
         /**
@@ -75,9 +76,15 @@ declare namespace Lantern {
         redirectDestination: NetworkRequest<T> | undefined;
         failed: boolean;
         initiator: LH.Crdp.Network.Initiator;
+        initiatorRequest: NetworkRequest<T> | undefined;
+        /** The chain of network requests that redirected to this one */
+        redirects: NetworkRequest[] | undefined;
         timing: LH.Crdp.Network.ResourceTiming | undefined;
         resourceType: LH.Crdp.Network.ResourceType | undefined;
+        mimeType: string;
         priority: LH.Crdp.Network.ResourcePriority;
+        frameId: string | undefined;
+        sessionTargetType: LH.Protocol.TargetType | undefined;
     }
 
     namespace Simulation {
