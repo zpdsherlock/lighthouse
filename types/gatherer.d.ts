@@ -133,8 +133,8 @@ declare module Gatherer {
   type AnyGathererInstance = GathererInstanceExpander<Gatherer.DependencyKey>
 
   namespace Simulation {
-    type GraphNode = import('../core/lib/dependency-graph/base-node.js').Node;
-    type GraphNetworkNode = _NetworkNode;
+    type GraphNode = import('../core/lib/dependency-graph/base-node.js').Node<Artifacts.NetworkRequest>;
+    type GraphNetworkNode = _NetworkNode<Artifacts.NetworkRequest>;
     type GraphCPUNode = _CPUNode;
     type Simulator = _Simulator;
 

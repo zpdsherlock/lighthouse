@@ -11,7 +11,7 @@ import {Speedline} from '../speedline.js';
 import {LanternFirstContentfulPaint} from './lantern-first-contentful-paint.js';
 import {throttling as defaultThrottling} from '../../config/constants.js';
 
-/** @typedef {import('../../lib/dependency-graph/base-node.js').Node} Node */
+/** @typedef {import('../../lib/dependency-graph/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
 
 class LanternSpeedIndex extends LanternMetric {
   /**

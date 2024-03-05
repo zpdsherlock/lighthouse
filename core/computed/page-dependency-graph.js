@@ -14,15 +14,15 @@ import {NetworkRecords} from './network-records.js';
 import {NetworkAnalyzer} from '../lib/dependency-graph/simulator/network-analyzer.js';
 import {DocumentUrls} from './document-urls.js';
 
-/** @typedef {import('../lib/dependency-graph/base-node.js').Node} Node */
+/** @typedef {import('../lib/dependency-graph/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
 /** @typedef {Omit<LH.Artifacts['URL'], 'finalDisplayedUrl'>} URLArtifact */
 
 /**
  * @typedef {Object} NetworkNodeOutput
- * @property {Array<NetworkNode>} nodes
- * @property {Map<string, NetworkNode>} idToNodeMap
- * @property {Map<string, Array<NetworkNode>>} urlToNodeMap
- * @property {Map<string, NetworkNode|null>} frameIdToNodeMap
+ * @property {Array<NetworkNode<LH.Artifacts.NetworkRequest>>} nodes
+ * @property {Map<string, NetworkNode<LH.Artifacts.NetworkRequest>>} idToNodeMap
+ * @property {Map<string, Array<NetworkNode<LH.Artifacts.NetworkRequest>>>} urlToNodeMap
+ * @property {Map<string, NetworkNode<LH.Artifacts.NetworkRequest>|null>} frameIdToNodeMap
  */
 
 // Shorter tasks have negligible impact on simulation results.
@@ -88,7 +88,7 @@ class PageDependencyGraph {
         record.requestId += ':duplicate';
       }
 
-      const node = new NetworkNode(record);
+      const node = new NetworkNode(NetworkRequest.asLanternNetworkRequest(record));
       nodes.push(node);
 
       const urlList = urlToNodeMap.get(record.url) || [];

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import * as Lantern from '../lantern.js';
 import * as LH from '../../../../types/lh.js';
 import {BaseNode} from '../base-node.js';
 import {TcpConnection} from './tcp-connection.js';
@@ -101,11 +102,11 @@ class Simulator {
    * @param {Node} graph
    */
   _initializeConnectionPool(graph) {
-    /** @type {LH.Artifacts.NetworkRequest[]} */
+    /** @type {Lantern.NetworkRequest[]} */
     const records = [];
     graph.getRootNode().traverse(node => {
       if (node.type === BaseNode.TYPES.NETWORK) {
-        records.push(node.record);
+        records.push(node.request);
       }
     });
 
@@ -190,7 +191,7 @@ class Simulator {
   }
 
   /**
-   * @param {LH.Artifacts.NetworkRequest} record
+   * @param {Lantern.NetworkRequest} record
    * @return {?TcpConnection}
    */
   _acquireConnection(record) {
@@ -228,7 +229,7 @@ class Simulator {
       // Start a network request if we're not at max requests and a connection is available
       const numberOfActiveRequests = this._numberInProgress(node.type);
       if (numberOfActiveRequests >= this._maximumConcurrentRequests) return;
-      const connection = this._acquireConnection(node.record);
+      const connection = this._acquireConnection(node.request);
       if (!connection) return;
     }
 
@@ -286,7 +287,7 @@ class Simulator {
    * @return {number}
    */
   _estimateNetworkTimeRemaining(networkNode) {
-    const record = networkNode.record;
+    const record = networkNode.request;
     const timingData = this._nodeTimings.getNetworkStarted(networkNode);
 
     let timeElapsed = 0;
@@ -354,7 +355,7 @@ class Simulator {
     if (node.type !== BaseNode.TYPES.NETWORK) throw new Error('Unsupported');
     if (!('bytesDownloaded' in timingData)) throw new Error('Invalid timing data');
 
-    const record = node.record;
+    const record = node.request;
     const connection = this._connectionPool.acquireActiveConnectionFromRecord(record);
     const dnsResolutionTime = this._dns.getTimeUntilResolution(record, {
       requestedAt: timingData.startTime,
@@ -535,7 +536,7 @@ class Simulator {
    */
   static _computeNodeStartPosition(node) {
     if (node.type === 'cpu') return node.startTime;
-    return node.startTime + (PriorityStartTimePenalty[node.record.priority] * 1000 * 1000 || 0);
+    return node.startTime + (PriorityStartTimePenalty[node.request.priority] * 1000 * 1000 || 0);
   }
 }
 

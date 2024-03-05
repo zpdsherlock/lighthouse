@@ -11,7 +11,7 @@ import {LanternFirstContentfulPaint} from './lantern-first-contentful-paint.js';
 import {LanternInteractive} from './lantern-interactive.js';
 import {BLOCKING_TIME_THRESHOLD, calculateSumOfBlockingTime} from './tbt-utils.js';
 
-/** @typedef {import('../../lib/dependency-graph/base-node.js').Node} Node */
+/** @typedef {import('../../lib/dependency-graph/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
 
 class LanternTotalBlockingTime extends LanternMetric {
   /**

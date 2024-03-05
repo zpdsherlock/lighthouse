@@ -53,6 +53,7 @@
  */
 
 import * as LH from '../../types/lh.js';
+import * as Lantern from './dependency-graph/lantern.js';
 import UrlUtils from './url-utils.js';
 
 // Lightrider X-Header names for timing information.
@@ -566,6 +567,17 @@ class NetworkRequest {
 
   static get TYPES() {
     return RESOURCE_TYPES;
+  }
+
+  /**
+   * @param {NetworkRequest} record
+   * @return {Lantern.NetworkRequest<NetworkRequest>}
+   */
+  static asLanternNetworkRequest(record) {
+    return {
+      ...record,
+      record,
+    };
   }
 
   /**
