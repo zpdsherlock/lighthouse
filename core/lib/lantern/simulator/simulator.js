@@ -4,13 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// This could be replaced by jsdoc namespace import, when ready.
-// https://github.com/microsoft/TypeScript/issues/41825
-/** @typedef {import('../../../../types/internal/lantern.js').Lantern.NetworkRequest} NetworkRequest */
-/** @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.Options} SimulationOptions */
-/** @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.NodeTiming} SimulationNodeTiming */
-/** @template T @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.Result<T>} SimulationResult */
-
+import * as Lantern from '../types/lantern.js';
 import {BaseNode} from '../base-node.js';
 import {TcpConnection} from './tcp-connection.js';
 import {ConnectionPool} from './connection-pool.js';
@@ -57,10 +51,10 @@ const ALL_SIMULATION_NODE_TIMINGS = new Map();
  */
 class Simulator {
   /**
-   * @param {SimulationOptions} [options]
+   * @param {Lantern.Simulation.Options} [options]
    */
   constructor(options) {
-    /** @type {Required<SimulationOptions>} */
+    /** @type {Required<Lantern.Simulation.Options>} */
     this._options = Object.assign(
       {
         rtt: mobileSlow4G.rttMs,
@@ -110,7 +104,7 @@ class Simulator {
    * @param {Node} graph
    */
   _initializeConnectionPool(graph) {
-    /** @type {NetworkRequest[]} */
+    /** @type {Lantern.NetworkRequest[]} */
     const records = [];
     graph.getRootNode().traverse(node => {
       if (node.type === BaseNode.TYPES.NETWORK) {
@@ -199,7 +193,7 @@ class Simulator {
   }
 
   /**
-   * @param {NetworkRequest} record
+   * @param {Lantern.NetworkRequest} record
    * @return {?TcpConnection}
    */
   _acquireConnection(record) {
@@ -393,7 +387,7 @@ class Simulator {
   }
 
   /**
-   * @return {{nodeTimings: Map<Node, SimulationNodeTiming>, completeNodeTimings: Map<Node, CompleteNodeTiming>}}
+   * @return {{nodeTimings: Map<Node, Lantern.Simulation.NodeTiming>, completeNodeTimings: Map<Node, CompleteNodeTiming>}}
    */
   _computeFinalNodeTimings() {
     /** @type {Array<[Node, CompleteNodeTiming]>} */
@@ -404,8 +398,8 @@ class Simulator {
     // Most consumers will want the entries sorted by startTime, so insert them in that order
     completeNodeTimingEntries.sort((a, b) => a[1].startTime - b[1].startTime);
 
-    // Trimmed version of type `SimulationNodeTiming`.
-    /** @type {Array<[Node, SimulationNodeTiming]>} */
+    // Trimmed version of type `Lantern.Simulation.NodeTiming`.
+    /** @type {Array<[Node, Lantern.Simulation.NodeTiming]>} */
     const nodeTimingEntries = completeNodeTimingEntries.map(([node, timing]) => {
       return [node, {
         startTime: timing.startTime,
@@ -421,7 +415,7 @@ class Simulator {
   }
 
   /**
-   * @return {Required<SimulationOptions>}
+   * @return {Required<Lantern.Simulation.Options>}
    */
   getOptions() {
     return this._options;
@@ -438,7 +432,7 @@ class Simulator {
    *
    * @param {Node} graph
    * @param {{flexibleOrdering?: boolean, label?: string}=} options
-   * @return {SimulationResult<T>}
+   * @return {Lantern.Simulation.Result<T>}
    */
   simulate(graph, options) {
     if (BaseNode.hasCycle(graph)) {

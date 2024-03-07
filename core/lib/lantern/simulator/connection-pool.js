@@ -4,9 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/** @typedef {import('../../../../types/internal/lantern.js').Lantern.NetworkRequest} NetworkRequest */
-/** @typedef {import('../../../../types/internal/lantern.js').Lantern.Simulation.Options} SimulationOptions */
-
+import * as Lantern from '../types/lantern.js';
 import {NetworkAnalyzer} from './network-analyzer.js';
 import {TcpConnection} from './tcp-connection.js';
 
@@ -19,8 +17,8 @@ const CONNECTIONS_PER_ORIGIN = 6;
 
 export class ConnectionPool {
   /**
-   * @param {NetworkRequest[]} records
-   * @param {Required<SimulationOptions>} options
+   * @param {Lantern.NetworkRequest[]} records
+   * @param {Required<Lantern.Simulation.Options>} options
    */
   constructor(records, options) {
     this._options = options;
@@ -28,7 +26,7 @@ export class ConnectionPool {
     this._records = records;
     /** @type {Map<string, TcpConnection[]>} */
     this._connectionsByOrigin = new Map();
-    /** @type {Map<NetworkRequest, TcpConnection>} */
+    /** @type {Map<Lantern.NetworkRequest, TcpConnection>} */
     this._connectionsByRecord = new Map();
     this._connectionsInUse = new Set();
     this._connectionReusedByRequestId = NetworkAnalyzer.estimateIfConnectionWasReused(records, {
@@ -126,7 +124,7 @@ export class ConnectionPool {
    * If ignoreConnectionReused is true, acquire will consider all connections not in use as available.
    * Otherwise, only connections that have matching "warmth" are considered available.
    *
-   * @param {NetworkRequest} record
+   * @param {Lantern.NetworkRequest} record
    * @param {{ignoreConnectionReused?: boolean}} options
    * @return {?TcpConnection}
    */
@@ -152,7 +150,7 @@ export class ConnectionPool {
    * Return the connection currently being used to fetch a record. If no connection
    * currently being used for this record, an error will be thrown.
    *
-   * @param {NetworkRequest} record
+   * @param {Lantern.NetworkRequest} record
    * @return {TcpConnection}
    */
   acquireActiveConnectionFromRecord(record) {
@@ -163,7 +161,7 @@ export class ConnectionPool {
   }
 
   /**
-   * @param {NetworkRequest} record
+   * @param {Lantern.NetworkRequest} record
    */
   release(record) {
     const connection = this._connectionsByRecord.get(record);

@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/** @template T @typedef {import('../../../types/internal/lantern.js').Lantern.NetworkRequest<T>} NetworkRequest */
-
+import * as Lantern from './types/lantern.js';
 import {NetworkRequestTypes} from './lantern.js';
 import {BaseNode} from './base-node.js';
 // TODO(15841): bring impl of isNonNetworkRequest inside lantern and remove this.
@@ -17,7 +16,7 @@ import UrlUtils from '../url-utils.js';
  */
 class NetworkNode extends BaseNode {
   /**
-   * @param {NetworkRequest<T>} networkRequest
+   * @param {Lantern.NetworkRequest<T>} networkRequest
    */
   constructor(networkRequest) {
     super(networkRequest.requestId);
@@ -51,7 +50,7 @@ class NetworkNode extends BaseNode {
   }
 
   /**
-   * @return {NetworkRequest<T>}
+   * @return {Lantern.NetworkRequest<T>}
    */
   get request() {
     return this._request;

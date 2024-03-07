@@ -17,6 +17,7 @@
     "clients/**/*.js",
     "build/**/*.js",
     "./types/**/*.d.ts",
+    "./core/lib/lantern/types/**/*.d.ts",
     "eslint-local-rules.cjs",
     "third-party/axe/valid-langs.js",
     "third-party/esbuild-plugins-polyfills/esbuild-polyfills.js",
