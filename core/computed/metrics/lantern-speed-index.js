@@ -73,7 +73,7 @@ class LanternSpeedIndex extends LanternMetric {
 
   /**
    * @param {LH.Gatherer.Simulation.Result} simulationResult
-   * @param {import('./lantern-metric.js').Extras} extras
+   * @param {import('../../lib/lantern/metric.js').Extras} extras
    * @return {LH.Gatherer.Simulation.Result}
    */
   static getEstimateFromSimulation(simulationResult, extras) {

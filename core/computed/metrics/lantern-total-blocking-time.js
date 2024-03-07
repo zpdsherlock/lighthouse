@@ -43,7 +43,7 @@ class LanternTotalBlockingTime extends LanternMetric {
 
   /**
    * @param {LH.Gatherer.Simulation.Result} simulation
-   * @param {import('./lantern-metric.js').Extras} extras
+   * @param {import('../../lib/lantern/metric.js').Extras} extras
    * @return {LH.Gatherer.Simulation.Result}
    */
   static getEstimateFromSimulation(simulation, extras) {

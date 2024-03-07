@@ -120,5 +120,11 @@ declare namespace Lantern {
             timeInMs: number;
             nodeTimings: Map<GraphNode<T>, NodeTiming>;
         }
+
+        interface MetricComputationDataInput {
+            simulator: Simulator<any>;
+            graph: GraphNode<any>;
+            processedNavigation: LH.Artifacts.ProcessedNavigation;
+          }
     }
 }
