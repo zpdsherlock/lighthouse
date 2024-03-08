@@ -13,7 +13,10 @@ import {waitForNetworkIdle} from '../driver/wait-for-condition.js';
 // JPEG quality setting
 // Exploration and examples of reports using different quality settings: https://docs.google.com/document/d/1ZSffucIca9XDW2eEwfoevrk-OTl7WQFeMf0CgeJAA8M/edit#
 // Note: this analysis was done for JPEG, but now we use WEBP.
-const FULL_PAGE_SCREENSHOT_QUALITY = 30;
+const FULL_PAGE_SCREENSHOT_QUALITY = process.env.LH_FPS_TEST ? 100 : 30;
+// webp currently cant do lossless encoding, so to help tests switch to png
+// Remove when this is resolved: https://bugs.chromium.org/p/chromium/issues/detail?id=1469183
+const FULL_PAGE_SCREENSHOT_FORMAT = process.env.LH_FPS_TEST ? 'png' : 'webp';
 
 // https://developers.google.com/speed/webp/faq#what_is_the_maximum_size_a_webp_image_can_be
 const MAX_WEBP_SIZE = 16383;
@@ -121,10 +124,10 @@ class FullPageScreenshot extends BaseGatherer {
    */
   async _takeScreenshot(context) {
     const result = await context.driver.defaultSession.sendCommand('Page.captureScreenshot', {
-      format: 'webp',
+      format: FULL_PAGE_SCREENSHOT_FORMAT,
       quality: FULL_PAGE_SCREENSHOT_QUALITY,
     });
-    const data = 'data:image/webp;base64,' + result.data;
+    const data = `data:image/${FULL_PAGE_SCREENSHOT_FORMAT};base64,` + result.data;
 
     const screenshotAreaSize =
       await context.driver.executionContext.evaluate(getScreenshotAreaSize, {
@@ -159,7 +162,7 @@ class FullPageScreenshot extends BaseGatherer {
       for (const [node, id] of lhIdToElements.entries()) {
         // @ts-expect-error - getBoundingClientRect put into scope via stringification
         const rect = getBoundingClientRect(node);
-        nodes[id] = rect;
+        nodes[id] = {id: node.id, ...rect};
       }
 
       return nodes;

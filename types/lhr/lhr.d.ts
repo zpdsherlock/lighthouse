@@ -150,7 +150,7 @@ declare module Result {
       width: number;
       height: number;
     };
-    nodes: Record<string, AuditDetails.Rect>;
+    nodes: Record<string, {id?: string} & AuditDetails.Rect>;
   }
 
   /**

@@ -22,6 +22,9 @@ import glob from 'glob';
 import {LH_ROOT} from '../../../shared/root.js';
 import {mochaGlobalSetup, mochaGlobalTeardown} from '../test-env/mocha-setup.js';
 
+// Tell gatherer to use 100 quality for FPS tests.
+process.env.LH_FPS_TEST = '1';
+
 const failedTestsDir = `${LH_ROOT}/.tmp/failing-tests`;
 
 if (!isMainThread && parentPort) {
