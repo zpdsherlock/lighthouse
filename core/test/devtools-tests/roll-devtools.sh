@@ -31,9 +31,9 @@ roll_devtools
 gclient sync --delete_unversioned_trees --reset
 
 if [[ "$CI" ]]; then
-  gn gen "out/$BUILD_FOLDER" --args='devtools_dcheck_always_on=true is_debug=false'
+  gn gen "out/$BUILD_FOLDER" --args='is_debug=false'
 else
-  gn gen "out/$BUILD_FOLDER" --args='devtools_dcheck_always_on=true is_debug=false devtools_skip_typecheck=true'
+  gn gen "out/$BUILD_FOLDER" --args='is_debug=true devtools_skip_typecheck=true'
 fi
 
 # Build devtools. By default, this creates `out/LighthouseIntegration/gen/front_end`.
