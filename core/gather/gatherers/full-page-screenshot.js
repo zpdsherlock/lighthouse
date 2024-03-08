@@ -47,17 +47,6 @@ function getObservedDeviceMetrics() {
   };
 }
 
-/**
- * The screenshot dimensions are sized to `window.outerHeight` / `window.outerWidth`,
- * however the bounding boxes of the elements are relative to `window.innerHeight` / `window.innerWidth`.
- */
-function getScreenshotAreaSize() {
-  return {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
-}
-
 function waitForDoubleRaf() {
   return new Promise((resolve) => {
     requestAnimationFrame(() => requestAnimationFrame(resolve));
@@ -71,6 +60,21 @@ class FullPageScreenshot extends BaseGatherer {
   meta = {
     supportedModes: ['snapshot', 'timespan', 'navigation'],
   };
+
+  /**
+   * @param {LH.Gatherer.Context} context
+   */
+  waitForNetworkIdle(context) {
+    const session = context.driver.defaultSession;
+    const networkMonitor = context.driver.networkMonitor;
+    return waitForNetworkIdle(session, networkMonitor, {
+      pretendDCLAlreadyFired: true,
+      networkQuietThresholdMs: 1000,
+      busyEvent: 'network-critical-busy',
+      idleEvent: 'network-critical-idle',
+      isIdle: recorder => recorder.isCriticalIdle(),
+    });
+  }
 
   /**
    * @param {LH.Gatherer.Context} context
@@ -89,15 +93,7 @@ class FullPageScreenshot extends BaseGatherer {
     );
     const height = Math.min(fullHeight, MAX_WEBP_SIZE);
 
-    // Setup network monitor before we change the viewport.
-    const networkMonitor = context.driver.networkMonitor;
-    const waitForNetworkIdleResult = waitForNetworkIdle(session, networkMonitor, {
-      pretendDCLAlreadyFired: true,
-      networkQuietThresholdMs: 1000,
-      busyEvent: 'network-critical-busy',
-      idleEvent: 'network-critical-idle',
-      isIdle: recorder => recorder.isCriticalIdle(),
-    });
+    const waitForNetworkIdleResult = this.waitForNetworkIdle(context);
 
     await session.sendCommand('Emulation.setDeviceMetricsOverride', {
       mobile: deviceMetrics.mobile,
@@ -123,22 +119,17 @@ class FullPageScreenshot extends BaseGatherer {
    * @return {Promise<LH.Result.FullPageScreenshot['screenshot']>}
    */
   async _takeScreenshot(context) {
+    const metrics = await context.driver.defaultSession.sendCommand('Page.getLayoutMetrics');
     const result = await context.driver.defaultSession.sendCommand('Page.captureScreenshot', {
       format: FULL_PAGE_SCREENSHOT_FORMAT,
       quality: FULL_PAGE_SCREENSHOT_QUALITY,
     });
     const data = `data:image/${FULL_PAGE_SCREENSHOT_FORMAT};base64,` + result.data;
 
-    const screenshotAreaSize =
-      await context.driver.executionContext.evaluate(getScreenshotAreaSize, {
-        args: [],
-        useIsolation: true,
-      });
-
     return {
       data,
-      width: screenshotAreaSize.width,
-      height: screenshotAreaSize.height,
+      width: metrics.cssVisualViewport.clientWidth,
+      height: metrics.cssVisualViewport.clientHeight,
     };
   }
 

@@ -17,6 +17,7 @@ import formsAutoComplete from './test-definitions/forms-autocomplete.js';
 import fpsMax from './test-definitions/fps-max.js';
 import fpsMaxPassive from './test-definitions/fps-max-passive.js';
 import fpsScaled from './test-definitions/fps-scaled.js';
+import fpsOverflowX from './test-definitions/fps-overflow-x.js';
 import issuesMixedContent from './test-definitions/issues-mixed-content.js';
 import lanternFetch from './test-definitions/lantern-fetch.js';
 import lanternIdleCallbackLong from './test-definitions/lantern-idle-callback-long.js';
@@ -80,6 +81,7 @@ const smokeTests = [
   formsAutoComplete,
   fpsMax,
   fpsMaxPassive,
+  fpsOverflowX,
   fpsScaled,
   issuesMixedContent,
   lanternFetch,
