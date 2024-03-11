@@ -119,11 +119,13 @@ class FullPageScreenshot extends BaseGatherer {
    * @return {Promise<LH.Result.FullPageScreenshot['screenshot']>}
    */
   async _takeScreenshot(context) {
-    const metrics = await context.driver.defaultSession.sendCommand('Page.getLayoutMetrics');
-    const result = await context.driver.defaultSession.sendCommand('Page.captureScreenshot', {
-      format: FULL_PAGE_SCREENSHOT_FORMAT,
-      quality: FULL_PAGE_SCREENSHOT_QUALITY,
-    });
+    const [metrics, result] = await Promise.all([
+      context.driver.defaultSession.sendCommand('Page.getLayoutMetrics'),
+      context.driver.defaultSession.sendCommand('Page.captureScreenshot', {
+        format: FULL_PAGE_SCREENSHOT_FORMAT,
+        quality: FULL_PAGE_SCREENSHOT_QUALITY,
+      }),
+    ]);
     const data = `data:image/${FULL_PAGE_SCREENSHOT_FORMAT};base64,` + result.data;
 
     return {
