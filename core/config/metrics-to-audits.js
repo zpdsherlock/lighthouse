@@ -12,7 +12,6 @@ const fcpRelevantAudits = [
   'critical-request-chains',
   'uses-text-compression',
   'uses-rel-preconnect',
-  'uses-rel-preload',
   'font-display',
   'unminified-javascript',
   'unminified-css',
@@ -46,7 +45,6 @@ const clsRelevantAudits = [
   'layout-shifts',
   'non-composited-animations',
   'unsized-images',
-  // 'preload-fonts', // actually in BP, rather than perf
 ];
 
 const inpRelevantAudits = [

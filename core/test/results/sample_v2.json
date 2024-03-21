@@ -1036,13 +1036,6 @@
         "items": []
       }
     },
-    "preload-fonts": {
-      "id": "preload-fonts",
-      "title": "Fonts with `font-display: optional` are preloaded",
-      "description": "Preload `optional` fonts so first-time visitors may use them. [Learn more about preloading fonts](https://web.dev/articles/preload-optional-fonts)",
-      "score": null,
-      "scoreDisplayMode": "notApplicable"
-    },
     "deprecations": {
       "id": "deprecations",
       "title": "Uses deprecated APIs",
@@ -1232,20 +1225,6 @@
         ]
       },
       "guidanceLevel": 1
-    },
-    "uses-rel-preload": {
-      "id": "uses-rel-preload",
-      "title": "Preload key requests",
-      "description": "Consider using `<link rel=preload>` to prioritize fetching resources that are currently requested later in page load. [Learn how to preload key requests](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/).",
-      "score": null,
-      "scoreDisplayMode": "notApplicable",
-      "details": {
-        "type": "opportunity",
-        "headings": [],
-        "items": [],
-        "overallSavingsMs": 0
-      },
-      "guidanceLevel": 3
     },
     "uses-rel-preconnect": {
       "id": "uses-rel-preconnect",
@@ -6028,7 +6007,6 @@
             "critical-request-chains",
             "uses-text-compression",
             "uses-rel-preconnect",
-            "uses-rel-preload",
             "font-display",
             "unminified-javascript",
             "unminified-css",
@@ -6047,7 +6025,6 @@
             "critical-request-chains",
             "uses-text-compression",
             "uses-rel-preconnect",
-            "uses-rel-preload",
             "font-display",
             "unminified-javascript",
             "unminified-css",
@@ -6162,10 +6139,6 @@
         },
         {
           "id": "redirects",
-          "weight": 0
-        },
-        {
-          "id": "uses-rel-preload",
           "weight": 0
         },
         {
@@ -6736,11 +6709,6 @@
         {
           "id": "image-size-responsive",
           "weight": 1,
-          "group": "best-practices-ux"
-        },
-        {
-          "id": "preload-fonts",
-          "weight": 0,
           "group": "best-practices-ux"
         },
         {
@@ -8364,12 +8332,6 @@
       },
       {
         "startTime": 0,
-        "name": "lh:audit:preload-fonts",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
         "name": "lh:audit:deprecations",
         "duration": 100,
         "entryType": "measure"
@@ -8401,12 +8363,6 @@
       {
         "startTime": 0,
         "name": "lh:computed:TBTImpactTasks",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
-        "name": "lh:audit:uses-rel-preload",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9830,12 +9786,6 @@
       "core/audits/image-size-responsive.js | description": [
         "audits[image-size-responsive].description"
       ],
-      "core/audits/preload-fonts.js | title": [
-        "audits[preload-fonts].title"
-      ],
-      "core/audits/preload-fonts.js | description": [
-        "audits[preload-fonts].description"
-      ],
       "core/audits/deprecations.js | failureTitle": [
         "audits.deprecations.title"
       ],
@@ -9882,12 +9832,6 @@
       ],
       "core/audits/bootup-time.js | columnScriptParse": [
         "audits[bootup-time].details.headings[3].label"
-      ],
-      "core/audits/uses-rel-preload.js | title": [
-        "audits[uses-rel-preload].title"
-      ],
-      "core/audits/uses-rel-preload.js | description": [
-        "audits[uses-rel-preload].description"
       ],
       "core/audits/uses-rel-preconnect.js | title": [
         "audits[uses-rel-preconnect].title"
