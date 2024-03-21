@@ -155,7 +155,6 @@ const defaultConfig = {
     {id: 'ResponseCompression', gatherer: 'dobetterweb/response-compression'},
     {id: 'RobotsTxt', gatherer: 'seo/robots-txt'},
     {id: 'ServiceWorker', gatherer: 'service-worker'},
-    {id: 'ScriptElements', gatherer: 'script-elements'},
     {id: 'Scripts', gatherer: 'scripts'},
     {id: 'SourceMaps', gatherer: 'source-maps'},
     {id: 'Stacks', gatherer: 'stacks'},

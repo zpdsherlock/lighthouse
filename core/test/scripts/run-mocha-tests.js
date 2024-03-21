@@ -79,7 +79,6 @@ const testsToIsolate = new Set([
   'core/test/gather/timespan-runner-test.js',
   'core/test/user-flow-test.js',
   'core/test/gather/gatherers/dobetterweb/response-compression-test.js',
-  'core/test/gather/gatherers/script-elements-test.js',
   'core/test/runner-test.js',
 
   // These tend to timeout in puppeteer when run in parallel with other tests.

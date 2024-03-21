@@ -30,7 +30,6 @@ const config = {
       // unsized-images is not a byte-efficiency audit but can easily leverage the variety of images present in
       // byte-efficiency tests & thus makes sense to test together.
       'unsized-images',
-      'script-elements-test-audit',
     ],
     throttlingMethod: 'devtools',
   },
@@ -40,7 +39,6 @@ const config = {
       // Lower the threshold so we don't need huge resources to make a test.
       unusedThreshold: 2000,
     }},
-    'script-elements-test-audit',
   ],
 };
 
@@ -50,71 +48,6 @@ const config = {
  */
 const expectations = {
   artifacts: {
-    ScriptElements: [
-      {
-        type: null,
-        src: null,
-        async: false,
-        defer: false,
-        source: 'head',
-        // Only do a single assertion for `devtoolsNodePath`: this can be flaky for elements
-        // deep in the DOM, and the sample LHR test has plenty of places that would catch
-        // a regression in `devtoolsNodePath` calculation. Keep just one for the benefit
-        // of other smoke test runners.
-        node: {
-          devtoolsNodePath: '2,HTML,0,HEAD,3,SCRIPT',
-        },
-      },
-      {
-        type: 'application/javascript',
-        src: 'http://localhost:10200/byte-efficiency/script.js',
-        async: false,
-        defer: false,
-        source: 'head',
-      },
-      {
-        type: null,
-        src: 'http://localhost:10200/byte-efficiency/bundle.js',
-        async: false,
-        defer: false,
-        source: 'head',
-      },
-      {
-        type: null,
-        src: null,
-        async: false,
-        defer: false,
-        source: 'body',
-      },
-      {
-        type: null,
-        src: null,
-        async: false,
-        defer: false,
-        source: 'body',
-      },
-      {
-        type: null,
-        src: null,
-        async: false,
-        defer: false,
-        source: 'body',
-      },
-      {
-        type: null,
-        src: null,
-        async: false,
-        defer: false,
-        source: 'body',
-      },
-      {
-        type: null,
-        src: 'http://localhost:10200/byte-efficiency/delay-complete.js?delay=8000',
-        async: true,
-        defer: false,
-        source: 'body',
-      },
-    ],
     Scripts: {
       _includes: [
         {
