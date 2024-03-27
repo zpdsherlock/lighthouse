@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "זמני אחזור בקצה עורפי של שרת"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "האירוע `unload` לא מופעל בצורה אמינה, והפעלת ממשקי listener כדי לקלוט את האירוע הזה עשויה למנוע את השימוש באופטימיזציות שונות של הדפדפן, כמו האופטימיזציה במסגרת התכונה 'מטמון לדף הקודם/הבא'. יש להשתמש באירועי `pagehide` או `visibilitychange` במקום זאת. [מידע נוסף על ממשקי event listener להסרת הנתונים שנטענו](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "רישום מעבד אירוע של `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "הימנעות ממעבדי אירוע של `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "אנימציות שאינן מורכבות עלולות להיות איטיות ולהגדיל את ה-CLS. [איך להימנע מאנימציות לא מורכבות](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)?"
   },

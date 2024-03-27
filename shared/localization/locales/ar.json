@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "أوقات الاستجابة لواجهة الخادم الخلفية"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "لا يعمل حدث `unload` بفاعلية ويمكن أن تؤدي معالجته إلى عدم تنفيذ عمليات تحسين المتصفّح، مثل عملية \"التخزين المؤقت للصفحات\". وبدلاً من هذا الحدث، يمكنك استخدام `pagehide` أو `visibilitychange`. [مزيد من المعلومات حول إلغاء تحميل أدوات معالجة الأحداث](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "يتم استخدام أدوات معالجة حدث `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "لا يتم استخدام أدوات معالجة حدث `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "يمكن للصور المتحركة غير المركّبة أن تكون بجودة رديئة وأن تزيد متغيّرات التصميم التراكمية (CLS). تعرَّف على [كيفية تجنُّب استخدام الصور المتحركة غير المركّبة](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)."
   },

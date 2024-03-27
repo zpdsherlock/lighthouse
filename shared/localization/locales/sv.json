@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Serverlatens"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Händelsen `unload` aktiveras inte på ett tillförlitligt sätt och att lyssna efter den kan förhindra webbläsaroptimeringar, t.ex. vilocacheminne. Använd händelserna `pagehide` eller `visibilitychange` i stället. [Läs mer om att ta bort händelselyssnare](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Registrerar en lyssnare för `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Undviker händelselyssnare för `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Animationer som inte är sammansatta kan vara hackiga och orsaka ökad CLS. [Läs om hur du undviker animationer som inte är sammansatta](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

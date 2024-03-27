@@ -2698,34 +2698,6 @@
       },
       "guidanceLevel": 1
     },
-    "no-unload-listeners": {
-      "id": "no-unload-listeners",
-      "title": "Registers an `unload` listener",
-      "description": "The `unload` event does not fire reliably and listening for it can prevent browser optimizations like the Back-Forward Cache. Use `pagehide` or `visibilitychange` events instead. [Learn more about unload event listeners](https://web.dev/articles/bfcache#never_use_the_unload_event)",
-      "score": 0,
-      "scoreDisplayMode": "binary",
-      "details": {
-        "type": "table",
-        "headings": [
-          {
-            "key": "source",
-            "valueType": "source-location",
-            "label": "Source"
-          }
-        ],
-        "items": [
-          {
-            "source": {
-              "type": "source-location",
-              "url": "http://localhost:10200/dobetterweb/dbw_tester.html",
-              "urlProvider": "network",
-              "line": 395,
-              "column": 36
-            }
-          }
-        ]
-      }
-    },
     "non-composited-animations": {
       "id": "non-composited-animations",
       "title": "Avoid non-composited animations",
@@ -6722,11 +6694,6 @@
           "group": "best-practices-browser-compat"
         },
         {
-          "id": "no-unload-listeners",
-          "weight": 1,
-          "group": "best-practices-general"
-        },
-        {
           "id": "js-libraries",
           "weight": 0,
           "group": "best-practices-general"
@@ -6758,7 +6725,7 @@
         }
       ],
       "id": "best-practices",
-      "score": 0.33
+      "score": 0.35
     },
     "seo": {
       "title": "SEO",
@@ -8530,12 +8497,6 @@
       },
       {
         "startTime": 0,
-        "name": "lh:audit:no-unload-listeners",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
         "name": "lh:audit:non-composited-animations",
         "duration": 100,
         "entryType": "measure"
@@ -9617,7 +9578,6 @@
       "core/lib/i18n/i18n.js | columnSource": [
         "audits[errors-in-console].details.headings[0].label",
         "audits.deprecations.details.headings[1].label",
-        "audits[no-unload-listeners].details.headings[0].label",
         "audits[geolocation-on-start].details.headings[0].label",
         "audits[no-document-write].details.headings[0].label",
         "audits[notification-on-start].details.headings[0].label",
@@ -10074,12 +10034,6 @@
           },
           "path": "audits[long-tasks].displayValue"
         }
-      ],
-      "core/audits/no-unload-listeners.js | failureTitle": [
-        "audits[no-unload-listeners].title"
-      ],
-      "core/audits/no-unload-listeners.js | description": [
-        "audits[no-unload-listeners].description"
       ],
       "core/audits/non-composited-animations.js | title": [
         "audits[non-composited-animations].title"

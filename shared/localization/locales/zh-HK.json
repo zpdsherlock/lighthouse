@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "伺服器後端延遲時間"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "「`unload`」事件無法保證觸發，而偵聽此事件可能會防礙瀏覽器優化項目操作，例如向前/返回快取。請改用「`pagehide`」或「`visibilitychange`」事件。[進一步瞭解卸載事件監聽器](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "發現 `unload` 偵聽器"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "避免 `unload` 事件偵聽器"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "未合成的動畫可能無法順暢播放，而且會增加累計版面配置轉移 (CLS)。[瞭解如何避免使用非合成動畫](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

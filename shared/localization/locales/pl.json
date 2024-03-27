@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Opóźnienia backendu serwera"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Zdarzenie `unload` nie zawsze jest uruchamiane prawidłowo, a wykrywanie go może uniemożliwić działanie mechanizmów optymalizujących pracę przeglądarki takich jak np. Back-Forward Cache. Zamiast tego użyj zdarzenia `pagehide` lub `visibilitychange`. [Więcej informacji o detektorach zdarzeń wyładowania](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Zarejestrowanie detektora zdarzeń `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Zarejestrowanie braku detektorów zdarzeń `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Nieskomponowane animacje mogą działać nieprawidłowo i zwiększać CLS. [Jak unikać nieskomponowanych animacji](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

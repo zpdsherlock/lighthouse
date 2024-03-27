@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Sunucunun Arka Uç Gecikmeleri"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "`unload` etkinliği güvenilir bir şekilde tetiklenmez ve etkinliğin dinlenmesi, Geri-İleri Önbelleği gibi tarayıcı optimizasyonlarını engelleyebilir. Bunun yerine `pagehide` veya `visibilitychange` etkinliklerini kullanın. [Kaldırma etkinlik işleyiciler hakkında daha fazla bilgi edinin](https://web.dev/articles/bfcache#never_use_the_unload_event)."
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Bir `unload` işleyicisi bulunuyor"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "`unload` etkinlik işleyicisi içermiyor"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Birleştirilmemiş animasyonlar kalitesiz olabilir ve CLS'yi artırır. [Bileşik olmayan animasyonları nasıl önleyeceğinizi öğrenin](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)."
   },

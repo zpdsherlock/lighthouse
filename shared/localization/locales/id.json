@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Latensi Backend Server"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Peristiwa `unload` tidak diaktifkan dengan lancar dan jika diproses dapat mencegah upaya pengoptimalan browser seperti Back-Forward Cache. Sebagai gantinya, gunakan peristiwa `pagehide` atau `visibilitychange`. [Pelajari lebih lanjut cara menghapus muatan pemroses peristiwa](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Mendaftarkan pemroses `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Menghindari pemroses peristiwa `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Animasi yang tidak digabungkan dapat tersendat dan menambah CLS. [Pelajari cara menghindari animasi non-gabungan](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

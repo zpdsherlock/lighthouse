@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "சேவையக பேக்எண்ட் தாமதங்கள்"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "`unload` நிகழ்வு நம்பத்தகுந்த வகையில் தொடங்கவில்லை, பக்கங்கள் மேற்கொண்டு இதைக் கையாண்டால் உலாவியின் மேம்பட்ட திறன்கள் தடுக்கப்படலாம் (‘முன் பின் பக்கங்களைத் தற்காலிகமாகச் சேமித்தல்’ அம்சம் போன்றவை). இதற்குப் பதிலாக `pagehide` அல்லது `visibilitychange` நிகழ்வுகளைப் பயன்படுத்தவும். [அன்லோடு ஈவண்ட் லிசனர்கள் குறித்து மேலும் அறிக](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "`unload` நிகழ்வு லிசனரைப் பதிவுசெய்கிறது"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "`unload` நிகழ்வு லிசனர்களைத் தவிர்க்கிறது"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "தொகுக்கப்படாத அனிமேஷன்கள் மோசமாக இருக்கும், CLSஸை அதிகரிக்கும். [தொகுக்கப்படாத அனிமேஷன்களைத் தவிர்ப்பது எப்படி என அறிக](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "เวลาในการตอบสนองจากแบ็กเอนด์ของเซิร์ฟเวอร์"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "เหตุการณ์ `unload` เริ่มทำงานโดยไม่มีความเสถียร และการ Listen อาจทำให้การเพิ่มประสิทธิภาพเบราว์เซอร์อย่าง Back-Forward Cache ไม่ทำงาน ใช้เหตุการณ์ `pagehide` หรือ `visibilitychange` แทน [ดูข้อมูลเพิ่มเติมเกี่ยวกับการยกเลิกการโหลด Listener เหตุการณ์](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "ลงทะเบียน Listener `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "หลีกเลี่ยง Listener เหตุการณ์ `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "ภาพเคลื่อนไหวที่ไม่ได้ทำการ Composite อาจมีคุณภาพต่ำและทำให้ CLS เพิ่มขึ้น [ดูวิธีหลีกเลี่ยงภาพเคลื่อนไหวที่ไม่ได้ทำการ Composite](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

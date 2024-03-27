@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Várakozási idő a háttérszervereknél"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Az `unload` esemény működése nem megbízható, és figyelése megakadályozhatja a böngésző optimalizálását (például az előre-vissza gyorsítótárazást). Használja helyette a következő események valamelyikét: `pagehide` vagy `visibilitychange`. [További információ az eseményfigyelők kiürítéséről](https://web.dev/articles/bfcache#never_use_the_unload_event)."
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "`unload`-figyelőt regisztrál"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Elkerüli a(z) `unload`-eseményfigyelőket"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "A nem kompozit animációk minősége elégtelen lehet, és az ilyen animációk növelhetik a CLS-t. [További információ a nem kompozit animációk elkerüléséről](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)."
   },

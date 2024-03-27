@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Server-Backend-Latenzen"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Das `unload`-Ereignis wird nicht zuverlässig ausgelöst. Wenn der Listener darauf wartet, kann das Browseroptimierungen wie den Back-Forward-Cache beeinträchtigen. Bitte verwende stattdessen `pagehide`- oder `visibilitychange`-Ereignisse. [Weitere Informationen zum Entfernen von Event-Listenern](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Registriert einen `unload`-Listener"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Keine `unload`-Ereignis-Listener gefunden"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Nicht zusammengesetzte Animationen werden eventuell nicht richtig gerendert und können den CLS-Wert erhöhen. [Informationen dazu, wie sich nicht zusammengefasste Animationen vermeiden lassen](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

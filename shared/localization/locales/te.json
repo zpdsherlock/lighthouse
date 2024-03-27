@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "సర్వర్ బ్యాక్ఎండ్ ప్రతిస్పందన సమయాలు"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "ఈ `unload` ఈవెంట్ ఆశించినట్టు పని చేయదు, దాని కోసం వేచి ఉంటే, వెనుకకు-ముందుకు కాష్ లాంటి బ్రౌజర్ ఆప్టిమైజేషన్‌లు నిరోధించబడవచ్చు. అందుకు బదులుగా `pagehide` లేదా `visibilitychange` ఈవెంట్‌లను ఉపయోగించండి. [అన్‌లోడ్ ఈవెంట్ లిజనర్‌ల గురించి మరింత తెలుసుకోండి](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "`unload` లిజనర్‌గా రిజిస్టర్ చేస్తుంది"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "`unload` ఈవెంట్ లిజనర్స్‌ను అవాయిడ్‌ చేస్తుంది"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "కంపోజిట్ చేయని యానిమేషన్‌లు పేలవంగా ఉండవచ్చు, అవి CLSను పెంచవచ్చు. [కంపోజిట్ కాని యానిమేషన్‌లను నివారించడం ఎలాగో తెలుసుకోండి](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

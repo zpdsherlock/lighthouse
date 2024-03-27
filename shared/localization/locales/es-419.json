@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Latencias de backend del servidor"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "El evento `unload` no se ejecuta de forma confiable y su escucha puede impedir las optimizaciones del navegador, como la Memoria caché atrás/adelante. En su lugar, usa los eventos `pagehide` o `visibilitychange`. [Más información sobre la descarga de objetos de escucha de eventos](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Registra un objeto de escucha de `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Evita los objetos de escucha de eventos de `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Es posible que las animaciones que no estén compuestas se vean entrecortadas y aumenten el valor de CLS. [Más información para evitar las animaciones no compuestas](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

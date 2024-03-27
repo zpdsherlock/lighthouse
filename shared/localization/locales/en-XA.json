@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "[Šéŕvéŕ Бåçķéñð Ļåţéñçîéš one two three]"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "[Ţĥé ᐅ`unload`ᐊ évéñţ ðöéš ñöţ ƒîŕé ŕéļîåбļý åñð ļîšţéñîñĝ ƒöŕ îţ çåñ þŕévéñţ бŕöŵšéŕ öþţîmîžåţîöñš ļîķé ţĥé Бåçķ-Föŕŵåŕð Çåçĥé. Ûšé ᐅ`pagehide`ᐊ öŕ ᐅ`visibilitychange`ᐊ évéñţš îñšţéåð. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ûñļöåð évéñţ ļîšţéñéŕšᐅ](https://web.dev/articles/bfcache#never_use_the_unload_event)ᐊ one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive twentysix twentyseven]"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "[Ŕéĝîšţéŕš åñ ᐅ`unload`ᐊ ļîšţéñéŕ one two three four five six]"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "[Åvöîðš ᐅ`unload`ᐊ évéñţ ļîšţéñéŕš one two three four five six]"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "[Åñîmåţîöñš ŵĥîçĥ åŕé ñöţ çömþöšîţéð çåñ бé ĵåñķý åñð îñçŕéåšé ÇĻŠ. ᐅ[ᐊĻéåŕñ ĥöŵ ţö åvöîð ñöñ-çömþöšîţéð åñîmåţîöñšᐅ](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)ᐊ one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen]"
   },

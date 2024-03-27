@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Thời gian dưới nền của máy chủ"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Sự kiện `unload` kích hoạt không ổn định và việc làm theo sự kiện này có thể ngăn các hoạt động tối ưu hoá trình duyệt, chẳng hạn như Bộ nhớ đệm cho thao tác tiến/lùi. Hãy chuyển sang dùng sự kiện `pagehide` hoặc `visibilitychange`. [Tìm hiểu thêm về trình nghe sự kiện huỷ tải](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Đăng ký trình xử lý sự kiện `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Tránh dùng trình xử lý sự kiện `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Các ảnh động không được ghép có thể kém chất lượng và làm tăng CLS (Điểm số tổng hợp về mức thay đổi bố cục). [Tìm hiểu cách tránh ảnh động không được ghép](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Pozadinske latencije poslužitelja"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Događaj `unload` ne aktivira se na pouzdan način i njegovo osluškivanje može spriječiti optimizacije preglednika kao što je predmemoriranje cijele stranice Umjesto toga upotrijebite događaj `pagehide` ili `visibilitychange`. [Saznajte više o uklanjanju slušatelja događaja](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Registrira se kao slušatelj za događaj `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Izbjegava slušatelje događaja za `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Animacije koje nisu kompozitne mogu biti lošije kvalitete i povisiti CLS. [Saznajte kako izbjeći nekompozitne animacije](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

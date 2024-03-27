@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Servera aizmugursistēmas latentums"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Notikums “`unload`” nenodrošināja uzticamu aktivizēšanu, un tā uztveršana var liegt pārlūka optimizāciju, piemēram, pilnīgu saglabāšanu kešatmiņā. Tā vietā izmantojiet notikumu “`pagehide`” vai “`visibilitychange`”. [Uzziniet vairāk par ielādes atcelšanas notikumu uztvērējiem](https://web.dev/articles/bfcache#never_use_the_unload_event)."
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Reģistrē notikuma “`unload`” uztvērēju"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Izvairās no notikuma “`unload`” uztvērējiem"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Nesaliktas animācijas var būt lēnas un palielināt kopējo izkārtojuma nobīdi. [Uzziniet, kā izvairīties no nesaliktām animācijām](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)."
   },

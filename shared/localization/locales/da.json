@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Forsinkelser for serverens backend"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Hændelsen `unload` starter ikke stabilt, og hvis der ventes på den, kan det forhindre browseroptimeringer som f.eks. Back-Forward Cache. Anvend hændelsen `pagehide` eller `visibilitychange` i stedet. [Få flere oplysninger om hændelsesfunktioner for frigivelse](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Registrerer en hændelsesfunktion for `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Undgå hændelsesfunktioner for `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Animationer, der ikke er sammensat, kan være langsomme og øge CLS. [Få oplysninger om, hvordan du undgår ikke-sammensatte animationer](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

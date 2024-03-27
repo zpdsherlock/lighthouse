@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "サーバーのバックエンド待ち時間"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "`unload` イベントの発生は安定していないため、これをリッスンするとブラウザの最適化機能（バックフォワード キャッシュなど）が妨げられる可能性があります。代わりに `pagehide` または `visibilitychange` イベントを使用してください。[アンロード イベント リスナーの詳細](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "`unload` リスナーの登録"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "`unload` イベントのリスナーの回避"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "合成されていないアニメーションは動きが不自然になり、CLS が大きくなることがあります。[合成されていないアニメーションを避ける方法の詳細](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

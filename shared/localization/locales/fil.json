@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Mga Latency sa Backend ng Server"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Hindi palaging gumagana nang maayos ang event na `unload` at puwedeng mapigilan ng paghihintay rito ang mga pag-optimize ng browser tulad ng Back-Forward Cache. Gamitin na lang ang event na `pagehide` o `visibilitychange`. [Matuto pa tungkol sa pag-unload ng mga event listener](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Nagrerehistro ng listener na `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Umiiwas sa mga event listener na `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Kapag hindi na-composite ang animation, posibleng hindi maganda ang kalidad ng mga ito at posible ring mapataas ng mga ito ang CLS. [Alamin kung paano iwasan ang mga hindi na-composite na animation](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

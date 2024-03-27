@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Λανθάνοντες χρόνοι συστημάτων υποστήριξης διακομιστή"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Το συμβάν `unload` δεν ενεργοποιείται με αξιοπιστία και η ακρόαση για το συμβάν μπορεί να αποτρέψει τις βελτιστοποιήσεις προγράμματος περιήγησης, όπως την κρυφή μνήμη πίσω/εμπρός. Αντ' αυτού, χρησιμοποιήστε το `pagehide` ή το `visibilitychange`. [Μάθετε περισσότερα σχετικά με την κατάργηση φόρτωσης των λειτουργιών αναμονής συμβάντος](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Εγγράφει μια λειτουργία αναμονής `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Αποφεύγει λειτουργίες αναμονής συμβάντων `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Οι μη σύνθετες κινούμενες εικόνες ενδέχεται να είναι κακής ποιότητας και να αυξάνουν το CLS. [Μάθετε πώς μπορείτε να αποφύγετε τις μη σύνθετες κινούμενες εικόνες](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

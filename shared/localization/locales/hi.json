@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "सर्वर बैकएंड के इंतज़ार का समय"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "`unload` इवेंट भरोसेमंद नहीं होता और इसे इस्तेमाल करने की वजह से, ब्राउज़र को ऑप्टिमाइज़ करने की कुछ सुविधाएं रुक सकती हैं. जैसे, बैक-फ़ॉरवर्ड कैश मेमोरी. इसके बजाय, `pagehide` या `visibilitychange` इवेंट का इस्तेमाल करें. [अनलोड इवेंट लिसनर के बारे में ज़्यादा जानें](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "एक `unload` लिसनर रजिस्टर करता है"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "`unload` इवेंट लिसनर का इस्तेमाल नहीं किया जाता"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "कंपोज़िट नहीं किए गए ऐनिमेशन की क्वालिटी खराब हो सकती है और सीएलएस बढ़ सकता है. [कंपोज़ नहीं किए गए ऐनिमेशन से बचने का तरीका जानें](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Latence backendu na serveru"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Událost `unload` se nespouští spolehlivě. Naslouchání této události může zabránit optimalizacím v prohlížečích, jako je mezipaměť pro přechod zpět nebo vpřed. Použijte místo ní událost `pagehide` nebo `visibilitychange`. [Další informace o posluchačích událostí unload](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Registruje posluchač události `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Nepoužívá posluchače událostí `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Neskládané animace mohou být nekvalitní a mohou zvyšovat míru kumulativní změny rozvržení (CLS). [Jak se vyhnout neskládaným animacím](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },

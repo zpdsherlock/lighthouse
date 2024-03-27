@@ -1286,15 +1286,6 @@
   "core/audits/network-server-latency.js | title": {
     "message": "Latențe ale backendului serverului"
   },
-  "core/audits/no-unload-listeners.js | description": {
-    "message": "Evenimentul `unload` nu se declanșează într-un mod fiabil și ascultarea lui poate împiedica optimizări de browser cum ar fi memoria cache înainte-înapoi. Folosește evenimente `pagehide` sau `visibilitychange` în loc. [Află mai multe despre funcțiile de procesare a evenimentelor unload](https://web.dev/articles/bfcache#never_use_the_unload_event)"
-  },
-  "core/audits/no-unload-listeners.js | failureTitle": {
-    "message": "Înregistrează un listener `unload`"
-  },
-  "core/audits/no-unload-listeners.js | title": {
-    "message": "Evită funcțiile de procesare a evenimentelor `unload`"
-  },
   "core/audits/non-composited-animations.js | description": {
     "message": "Animațiile care nu sunt compuse pot fi dificile și pot spori CLS. [Află cum să eviți animațiile care nu sunt compuse](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)."
   },
