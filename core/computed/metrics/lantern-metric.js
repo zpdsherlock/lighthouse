@@ -19,9 +19,7 @@ class LanternMetric extends Metric {
    * @return {Promise<LH.Artifacts.LanternMetric>}
    */
   static async computeMetricWithGraphs(data, context, extras) {
-    // TODO: remove this fallback when lighthouse-pub-ads plugin can update.
-    const gatherContext = data.gatherContext || {gatherMode: 'navigation'};
-    if (gatherContext.gatherMode !== 'navigation') {
+    if (data.gatherContext.gatherMode !== 'navigation') {
       throw new Error(`Lantern metrics can only be computed on navigations`);
     }
 
