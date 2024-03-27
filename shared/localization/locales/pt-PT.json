@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "Atraso na apresentação"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "Tempo de processamento"
   },
   "core/audits/work-during-interaction.js | title": {

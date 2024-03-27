@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "표시 지연"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "처리 시간"
   },
   "core/audits/work-during-interaction.js | title": {

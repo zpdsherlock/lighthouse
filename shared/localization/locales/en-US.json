@@ -1712,8 +1712,8 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "Presentation delay"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
-    "message": "Processing time"
+  "core/audits/work-during-interaction.js | processingDuration": {
+    "message": "Processing duration"
   },
   "core/audits/work-during-interaction.js | title": {
     "message": "Minimizes work during key interaction"

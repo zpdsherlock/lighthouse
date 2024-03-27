@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "Yanıt sunumu gecikmesi"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "İşlem süresi"
   },
   "core/audits/work-during-interaction.js | title": {

@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "[Þŕéšéñţåţîöñ ðéļåý one two three]"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "[Þŕöçéššîñĝ ţîmé one two]"
   },
   "core/audits/work-during-interaction.js | title": {

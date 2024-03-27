@@ -1712,8 +1712,8 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "P̂ŕêśêńt̂át̂íôń d̂él̂áŷ"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
-    "message": "P̂ŕôćêśŝín̂ǵ t̂ím̂é"
+  "core/audits/work-during-interaction.js | processingDuration": {
+    "message": "P̂ŕôćêśŝín̂ǵ d̂úr̂át̂íôń"
   },
   "core/audits/work-during-interaction.js | title": {
     "message": "M̂ín̂ím̂íẑéŝ ẃôŕk̂ d́ûŕîńĝ ḱêý îńt̂ér̂áĉt́îón̂"

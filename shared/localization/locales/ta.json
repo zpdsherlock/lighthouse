@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "காட்சிப்படுத்தல் தாமதம்"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "செயலாக்க நேரம்"
   },
   "core/audits/work-during-interaction.js | title": {

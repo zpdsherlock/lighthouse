@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "ความล่าช้าของงานนำเสนอ"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "ระยะเวลาดำเนินการ"
   },
   "core/audits/work-during-interaction.js | title": {

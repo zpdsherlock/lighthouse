@@ -10740,7 +10740,7 @@
                       }
                     },
                     {
-                      "phase": "Processing time",
+                      "phase": "Processing duration",
                       "total": 33,
                       "subItems": {
                         "type": "subitems",
@@ -10798,7 +10798,7 @@
                       "startTs": 183718309017,
                       "endTs": 183718325017
                     },
-                    "processingTime": {
+                    "processingDuration": {
                       "startTs": 183718325017,
                       "endTs": 183718358017
                     },
@@ -12499,7 +12499,7 @@
             "core/audits/work-during-interaction.js | inputDelay": [
               "audits[work-during-interaction].details.items[1].items[0].phase"
             ],
-            "core/audits/work-during-interaction.js | processingTime": [
+            "core/audits/work-during-interaction.js | processingDuration": [
               "audits[work-during-interaction].details.items[1].items[1].phase"
             ],
             "core/audits/work-during-interaction.js | presentationDelay": [

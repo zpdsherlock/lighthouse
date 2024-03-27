@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "Pagkaantala ng presentation"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "Tagal ng pagpoproseso"
   },
   "core/audits/work-during-interaction.js | title": {

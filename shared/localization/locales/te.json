@@ -1709,7 +1709,7 @@
   "core/audits/work-during-interaction.js | presentationDelay": {
     "message": "ప్రెజెంటేషన్‌లో ఆలస్యం"
   },
-  "core/audits/work-during-interaction.js | processingTime": {
+  "core/audits/work-during-interaction.js | processingDuration": {
     "message": "ప్రాసెసింగ్ సమయం"
   },
   "core/audits/work-during-interaction.js | title": {
