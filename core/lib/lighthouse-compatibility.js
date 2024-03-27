@@ -125,6 +125,39 @@ function upgradeLhrForCompatibility(lhr) {
     }
   }
 
+  if (majorVersion < 12 && perfCategory) {
+    /** @type {Map<string, string[]>} */
+    const metricRelevanceMap = new Map();
+
+    for (const auditRef of perfCategory.auditRefs) {
+      /** @type {string[]|undefined} */
+      // @ts-expect-error Removed in v12
+      const relevantAudits = auditRef.relevantAudits;
+      if (!relevantAudits || !auditRef.acronym) continue;
+
+      for (const auditId of relevantAudits) {
+        const acronyms = metricRelevanceMap.get(auditId) || [];
+        acronyms.push(auditRef.acronym);
+        metricRelevanceMap.set(auditId, acronyms);
+      }
+    }
+
+    for (const [auditId, acronyms] of metricRelevanceMap) {
+      if (!acronyms.length) continue;
+
+      const audit = lhr.audits[auditId];
+      if (!audit) continue;
+
+      // Old versions can still define metric savings, let's not mess with it.
+      if (audit.metricSavings) continue;
+
+      audit.metricSavings = {};
+      for (const acronym of acronyms) {
+        audit.metricSavings[acronym] = 0;
+      }
+    }
+  }
+
   // Add some minimal stuff so older reports still work.
   if (!lhr.environment) {
     lhr.environment = {
