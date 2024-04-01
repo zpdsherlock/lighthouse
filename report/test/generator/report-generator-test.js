@@ -109,7 +109,7 @@ category,score
 \\"performance\\",\\"0.28\\"
 \\"accessibility\\",\\"0.77\\"
 \\"best-practices\\",\\"0.35\\"
-\\"seo\\",\\"0.67\\"
+\\"seo\\",\\"0.73\\"
 \\"pwa\\",\\"0.38\\"
 
 category,audit,score,displayValue,description

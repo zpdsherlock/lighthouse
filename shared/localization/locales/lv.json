@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "robots.txt ir derīgs"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Interaktīvajiem elementiem, piemēram, pogām un saitēm, ir jābūt pietiekami lieliem (48 x 48 pikseļi) vai tiem apkārt ir jābūt pietiekami daudz brīvas vietas, lai tiem varētu viegli pieskarties, neaizskarot citus elementus. [Uzziniet vairāk par pieskārienu mērķiem](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} pieskārienu mērķu izmērs ir atbilstošs."
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "Pieskārienu mērķu izmērs ir pārāk mazs, jo mobilo ierīču ekrāniem nav optimizēts skatvietas metatags"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "Pieskārienu mērķi nav atbilstoša izmēra"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Mērķis, kas pārklājas"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Pieskārienu mērķis"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "Pieskārienu mērķi ir pietiekami liela izmēra"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Galvenā dokumenta servera atbildes laikam jābūt īsam, jo no tā ir atkarīga pārējo pieprasījumu izpilde. [Uzziniet vairāk par rādītāju “Laiks līdz pirmajam baitam”](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

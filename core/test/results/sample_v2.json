@@ -5641,76 +5641,6 @@
       "score": null,
       "scoreDisplayMode": "notApplicable"
     },
-    "tap-targets": {
-      "id": "tap-targets",
-      "title": "Tap targets are not sized appropriately",
-      "description": "Interactive elements like buttons and links should be large enough (48x48px), or have enough space around them, to be easy enough to tap without overlapping onto other elements. [Learn more about tap targets](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/).",
-      "score": 0,
-      "scoreDisplayMode": "binary",
-      "displayValue": "0% appropriately sized tap targets",
-      "details": {
-        "type": "table",
-        "headings": [
-          {
-            "key": "tapTarget",
-            "valueType": "node",
-            "label": "Tap Target"
-          },
-          {
-            "key": "size",
-            "valueType": "text",
-            "label": "Size"
-          },
-          {
-            "key": "overlappingTarget",
-            "valueType": "node",
-            "label": "Overlapping Target"
-          }
-        ],
-        "items": [
-          {
-            "tapTarget": {
-              "type": "node",
-              "lhId": "5-46-BUTTON",
-              "path": "3,HTML,1,BODY,30,BUTTON",
-              "selector": "body > button.small-button",
-              "boundingRect": {
-                "top": 484,
-                "bottom": 505,
-                "left": 8,
-                "right": 208,
-                "width": 200,
-                "height": 21
-              },
-              "snippet": "<button class=\"small-button\">",
-              "nodeLabel": "Do something"
-            },
-            "overlappingTarget": {
-              "type": "node",
-              "lhId": "5-47-BUTTON",
-              "path": "3,HTML,1,BODY,31,BUTTON",
-              "selector": "body > button.small-button",
-              "boundingRect": {
-                "top": 505,
-                "bottom": 526,
-                "left": 8,
-                "right": 208,
-                "width": 200,
-                "height": 21
-              },
-              "snippet": "<button class=\"small-button\">",
-              "nodeLabel": "Do something else"
-            },
-            "tapTargetScore": 1008,
-            "overlappingTargetScore": 648,
-            "overlapScoreRatio": 0.6428571428571429,
-            "size": "200x21",
-            "width": 200,
-            "height": 21
-          }
-        ]
-      }
-    },
     "hreflang": {
       "id": "hreflang",
       "title": "Document has a valid `hreflang`",
@@ -6533,6 +6463,11 @@
           "group": "a11y-tables-lists"
         },
         {
+          "id": "target-size",
+          "weight": 0,
+          "group": "a11y-best-practices"
+        },
+        {
           "id": "td-headers-attr",
           "weight": 0,
           "group": "a11y-tables-lists"
@@ -6604,11 +6539,6 @@
         },
         {
           "id": "landmark-one-main",
-          "weight": 0,
-          "group": "hidden"
-        },
-        {
-          "id": "target-size",
           "weight": 0,
           "group": "hidden"
         },
@@ -6793,17 +6723,12 @@
           "group": "seo-content"
         },
         {
-          "id": "tap-targets",
-          "weight": 1,
-          "group": "seo-mobile"
-        },
-        {
           "id": "structured-data",
           "weight": 0
         }
       ],
       "id": "seo",
-      "score": 0.67
+      "score": 0.73
     },
     "pwa": {
       "title": "PWA",
@@ -9300,12 +9225,6 @@
       },
       {
         "startTime": 0,
-        "name": "lh:audit:tap-targets",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
         "name": "lh:audit:hreflang",
         "duration": 100,
         "entryType": "measure"
@@ -10804,29 +10723,6 @@
       ],
       "core/audits/seo/robots-txt.js | description": [
         "audits[robots-txt].description"
-      ],
-      "core/audits/seo/tap-targets.js | failureTitle": [
-        "audits[tap-targets].title"
-      ],
-      "core/audits/seo/tap-targets.js | description": [
-        "audits[tap-targets].description"
-      ],
-      "core/audits/seo/tap-targets.js | displayValue": [
-        {
-          "values": {
-            "decimalProportion": 0
-          },
-          "path": "audits[tap-targets].displayValue"
-        }
-      ],
-      "core/audits/seo/tap-targets.js | tapTargetHeader": [
-        "audits[tap-targets].details.headings[0].label"
-      ],
-      "core/lib/i18n/i18n.js | columnSize": [
-        "audits[tap-targets].details.headings[1].label"
-      ],
-      "core/audits/seo/tap-targets.js | overlappingTargetHeader": [
-        "audits[tap-targets].details.headings[2].label"
       ],
       "core/audits/seo/hreflang.js | title": [
         "audits.hreflang.title"

@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "Fișierul robots.txt este valid"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Elementele interactive, precum butoanele și linkurile, trebuie să fie suficient de mari (48x48 px) și să aibă suficient spațiu în jurul lor pentru a fi ușor de atins, fără a se suprapune peste alte elemente. [Află mai multe despre țintele de atingere](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} direcționări ale atingerilor au mărimea corectă"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "Direcționările atingerilor sunt prea mici, deoarece nu există o metaetichetă Viewport optimizată pentru ecranele dispozitivelor mobile"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "Direcționările atingerilor nu sunt dimensionate corect"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Direcționarea se suprapune"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Direcționarea atingerii"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "Direcționările atingerilor sunt dimensionate corect"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Menține o durată scurtă de răspuns de la server pentru documentul principal, deoarece toate celelalte solicitări depind de acest lucru. [Află mai multe despre valoarea Timpul până la primul byte](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

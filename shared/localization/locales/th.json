@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "robots.txt ถูกต้อง"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "องค์ประกอบสำหรับการโต้ตอบ เช่น ปุ่มและลิงก์ ต้องมีขนาดใหญ่พอ (48x48 พิกเซล) หรือมีพื้นที่ว่างโดยรอบมากพอเพื่อให้แตะได้ง่ายๆ โดยไม่ซ้อนทับกับองค์ประกอบอื่นๆ [ดูข้อมูลเพิ่มเติมเกี่ยวกับเป้าหมายการแตะ](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)"
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "เป้าหมายการแตะที่มีขนาดเหมาะสม {decimalProportion, number, percent}"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "เป้าหมายการแตะมีขนาดเล็กเกินไปเพราะไม่มีเมตาแท็กวิวพอร์ตที่เพิ่มประสิทธิภาพให้เหมาะกับหน้าจออุปกรณ์เคลื่อนที่"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "เป้าหมายการแตะมีขนาดที่ไม่เหมาะสม"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "เป้าหมายซ้อนทับกัน"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "เป้าหมายการแตะ"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "เป้าหมายการแตะมีขนาดที่เหมาะสม"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "พยายามทำให้การตอบกลับของเซิร์ฟเวอร์สำหรับเอกสารหลักใช้เวลาน้อยเนื่องจากคำขออื่นทั้งหมดจะขึ้นอยู่กับเวลานี้ [ดูข้อมูลเพิ่มเติมเกี่ยวกับเมตริก Time To First Byte](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)"
   },

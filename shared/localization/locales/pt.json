@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "robots.txt é válido"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Elementos interativos, como botões e links, precisam ser grandes o bastante (48x48 px) ou ter espaço suficiente ao redor para poderem ser tocados sem sobreposição com outros elementos. [Saiba mais sobre áreas de toque](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} de áreas de toque dimensionadas corretamente"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "As áreas de toque são muito pequenas porque não há nenhuma metatag de janela de visualização otimizada para telas de dispositivos móveis"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "As áreas de toque não estão dimensionadas corretamente"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Área com sobreposição"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Área de toque"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "As áreas de toque estão dimensionadas corretamente"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Mantenha curto o tempo de resposta do servidor para o documento principal, já que todos os outros pedidos dependem dele. [Saiba mais sobre a métrica \"Tempo até o primeiro byte\"](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

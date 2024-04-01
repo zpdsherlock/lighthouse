@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "El fitxer robots.txt és vàlid"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Els elements interactius, com ara els botons i els enllaços, han de ser prou grans (48 x 48 píxels) o han de tenir prou espai al voltant perquè els usuaris els puguin tocar sense que se superposin a altres elements. [Obtén més informació sobre els objectius tàctils](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "El {decimalProportion, number, percent} de les mides dels objectius tàctils és correcte"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "Els elements tàctils són massa petits perquè no hi ha cap metaetiqueta de finestra gràfica optimitzada per a pantalles de mòbil"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "La mida dels elements tàctils no és correcta"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Objectiu superposat"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Element tàctil"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "La mida dels elements tàctils és correcta"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Fes que el temps de resposta del servidor per al document principal sigui breu, ja que la resta de sol·licituds en depenen. [Obtén més informació sobre la mètrica Temps fins al primer byte](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "Το αρχείο robots.txt είναι έγκυρο"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Τα στοιχεία αλληλεπίδρασης, όπως είναι τα κουμπιά και οι σύνδεσμοι, θα πρέπει να είναι αρκετά μεγάλα (48x48px) ή με επαρκή χώρο γύρω τους, ώστε να μπορούν να πατηθούν εύκολα από τους χρήστες χωρίς να επικαλύπτουν άλλα στοιχεία. [Μάθετε περισσότερα σχετικά με τα στοιχεία που επιλέγονται με πάτημα](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "Το {decimalProportion, number, percent} των επιλεγόμενων με πάτημα στοιχείων έχουν κατάλληλο μέγεθος"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "Τα στοιχεία που επιλέγονται με πάτημα είναι υπερβολικά μικρά γιατί δεν υπάρχει βελτιστοποιημένη μεταετικέτα θύρας προβολής για οθόνες κινητών"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "Τα στοιχεία που επιλέγονται με πάτημα δεν έχουν κατάλληλο μέγεθος"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Αλληλεπικαλυπτόμενο στοιχείο επιλογής με πάτημα"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Στοιχείο επιλογής με πάτημα"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "Τα στοιχεία που επιλέγονται με πάτημα έχουν το κατάλληλο μέγεθος"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Φροντίστε να παραμείνει σύντομος ο χρόνος απόκρισης διακομιστή για το κύριο έγγραφο, επειδή όλα τα άλλα αιτήματα εξαρτώνται από αυτόν. [Μάθετε περισσότερα σχετικά με τη μέτρηση Time to First Byte](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

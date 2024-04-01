@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "‏‮robots‬‏.‏‮txt‬‏ ‏‮is‬‏ ‏‮valid‬‏"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "‏‮Interactive‬‏ ‏‮elements‬‏ ‏‮like‬‏ ‏‮buttons‬‏ ‏‮and‬‏ ‏‮links‬‏ ‏‮should‬‏ ‏‮be‬‏ ‏‮large‬‏ ‏‮enough‬‏ (48‏‮x‬‏48‏‮px‬‏), ‏‮or‬‏ ‏‮have‬‏ ‏‮enough‬‏ ‏‮space‬‏ ‏‮around‬‏ ‏‮them‬‏, ‏‮to‬‏ ‏‮be‬‏ ‏‮easy‬‏ ‏‮enough‬‏ ‏‮to‬‏ ‏‮tap‬‏ ‏‮without‬‏ ‏‮overlapping‬‏ ‏‮onto‬‏ ‏‮other‬‏ ‏‮elements‬‏. [‏‮Learn‬‏ ‏‮more‬‏ ‏‮about‬‏ ‏‮tap‬‏ ‏‮targets‬‏](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} ‏‮appropriately‬‏ ‏‮sized‬‏ ‏‮tap‬‏ ‏‮targets‬‏"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "‏‮Tap‬‏ ‏‮targets‬‏ ‏‮are‬‏ ‏‮too‬‏ ‏‮small‬‏ ‏‮because‬‏ ‏‮there‬‏'‏‮s‬‏ ‏‮no‬‏ ‏‮viewport‬‏ ‏‮meta‬‏ ‏‮tag‬‏ ‏‮optimized‬‏ ‏‮for‬‏ ‏‮mobile‬‏ ‏‮screens‬‏"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "‏‮Tap‬‏ ‏‮targets‬‏ ‏‮are‬‏ ‏‮not‬‏ ‏‮sized‬‏ ‏‮appropriately‬‏"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "‏‮Overlapping‬‏ ‏‮Target‬‏"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "‏‮Tap‬‏ ‏‮Target‬‏"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "‏‮Tap‬‏ ‏‮targets‬‏ ‏‮are‬‏ ‏‮sized‬‏ ‏‮appropriately‬‏"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "‏‮Keep‬‏ ‏‮the‬‏ ‏‮server‬‏ ‏‮response‬‏ ‏‮time‬‏ ‏‮for‬‏ ‏‮the‬‏ ‏‮main‬‏ ‏‮document‬‏ ‏‮short‬‏ ‏‮because‬‏ ‏‮all‬‏ ‏‮other‬‏ ‏‮requests‬‏ ‏‮depend‬‏ ‏‮on‬‏ ‏‮it‬‏. [‏‮Learn‬‏ ‏‮more‬‏ ‏‮about‬‏ ‏‮the‬‏ ‏‮Time‬‏ ‏‮to‬‏ ‏‮First‬‏ ‏‮Byte‬‏ ‏‮metric‬‏](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

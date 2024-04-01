@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "[ŕöбöţš.ţxţ îš våļîð one two three]"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "[Îñţéŕåçţîvé éļéméñţš ļîķé бûţţöñš åñð ļîñķš šĥöûļð бé ļåŕĝé éñöûĝĥ (48x48þx), öŕ ĥåvé éñöûĝĥ šþåçé åŕöûñð ţĥém, ţö бé éåšý éñöûĝĥ ţö ţåþ ŵîţĥöûţ övéŕļåþþîñĝ öñţö öţĥéŕ éļéméñţš. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ţåþ ţåŕĝéţšᐅ](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive twentysix twentyseven twentyeight]"
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "[ᐅ{decimalProportion, number, percent}ᐊ åþþŕöþŕîåţéļý šîžéð ţåþ ţåŕĝéţš one two three four five six seven eight]"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "[Ţåþ ţåŕĝéţš åŕé ţöö šmåļļ бéçåûšé ţĥéŕé'š ñö vîéŵþöŕţ méţå ţåĝ öþţîmîžéð ƒöŕ möбîļé šçŕééñš one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen]"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "[Ţåþ ţåŕĝéţš åŕé ñöţ šîžéð åþþŕöþŕîåţéļý one two three four five six seven eight]"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "[Övéŕļåþþîñĝ Ţåŕĝéţ one two three]"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "[Ţåþ Ţåŕĝéţ one two]"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "[Ţåþ ţåŕĝéţš åŕé šîžéð åþþŕöþŕîåţéļý one two three four five six seven eight]"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "[Ķééþ ţĥé šéŕvéŕ ŕéšþöñšé ţîmé ƒöŕ ţĥé måîñ ðöçûméñţ šĥöŕţ бéçåûšé åļļ öţĥéŕ ŕéqûéšţš ðéþéñð öñ îţ. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ţĥé Ţîmé ţö Fîŕšţ Бýţé méţŕîçᐅ](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo]"
   },

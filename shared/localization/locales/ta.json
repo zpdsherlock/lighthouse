@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "robots.txt செல்லுபடியாகிறது"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "பட்டன்கள், இணைப்புகள் போன்ற பங்கேற்கத்தக்க உறுப்புகள் போதுமான அளவு பெரிதாகவோ (48x48px) அவற்றைச் சுற்றி போதுமான இடமோ இருக்க வேண்டும். இதனால் அவற்றைப் பிற உறுப்புகளின் குறுக்கீடு இல்லாமல் எளிதாகத் தட்டலாம். [தட்டல் இலக்குகள் குறித்து மேலும் அறிக](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} தட்டுவதற்கான இலக்குகள் பொருத்தமான அளவில் இருக்கின்றன"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "மொபைல் திரைகளுக்கேற்ப காட்சிப் பகுதி மேலதிகத் தகவல் மேம்படுத்தப்படாததால் தட்டுவதற்கான இலக்குகள் மிகச் சிறிதாக உள்ளன"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "தட்டுவதற்கான இலக்குகள் சரியாக அளவிடப்படவில்லை"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "குறுக்கிடும் இலக்கு"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "தட்டுவதற்கான இலக்கு"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "தட்டுவதற்கான இலக்குகள் சரியாக அளவிடப்பட்டுள்ளன"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "முதன்மை ஆவணத்திற்கான சேவையகப் பதிலளிப்பு நேரத்தைக் குறைவாக வைக்கவும். ஏனெனில் பிற அனைத்துக் கோரிக்கைகளும் அதைச் சார்ந்தே உள்ளன. ['முதல் பைட்டிற்கான நேரம்' அளவீடு குறித்து மேலும் அறிக](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

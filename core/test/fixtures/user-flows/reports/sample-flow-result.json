@@ -3705,19 +3705,6 @@
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
-          "tap-targets": {
-            "id": "tap-targets",
-            "title": "Tap targets are sized appropriately",
-            "description": "Interactive elements like buttons and links should be large enough (48x48px), or have enough space around them, to be easy enough to tap without overlapping onto other elements. [Learn more about tap targets](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/).",
-            "score": 1,
-            "scoreDisplayMode": "binary",
-            "displayValue": "100% appropriately sized tap targets",
-            "details": {
-              "type": "table",
-              "headings": [],
-              "items": []
-            }
-          },
           "hreflang": {
             "id": "hreflang",
             "title": "Document has a valid `hreflang`",
@@ -4389,6 +4376,11 @@
                 "group": "a11y-tables-lists"
               },
               {
+                "id": "target-size",
+                "weight": 0,
+                "group": "a11y-best-practices"
+              },
+              {
                 "id": "td-headers-attr",
                 "weight": 0,
                 "group": "a11y-tables-lists"
@@ -4460,11 +4452,6 @@
               },
               {
                 "id": "landmark-one-main",
-                "weight": 0,
-                "group": "hidden"
-              },
-              {
-                "id": "target-size",
                 "weight": 0,
                 "group": "hidden"
               },
@@ -4647,11 +4634,6 @@
                 "id": "plugins",
                 "weight": 1,
                 "group": "seo-content"
-              },
-              {
-                "id": "tap-targets",
-                "weight": 1,
-                "group": "seo-mobile"
               },
               {
                 "id": "structured-data",
@@ -6970,48 +6952,42 @@
             },
             {
               "startTime": 278,
-              "name": "lh:audit:tap-targets",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 279,
               "name": "lh:audit:hreflang",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 280,
+              "startTime": 279,
               "name": "lh:audit:plugins",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 281,
+              "startTime": 280,
               "name": "lh:audit:canonical",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 282,
+              "startTime": 281,
               "name": "lh:audit:structured-data",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 283,
+              "startTime": 282,
               "name": "lh:audit:bf-cache",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 284,
+              "startTime": 283,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 285
+          "total": 284
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -8258,20 +8234,6 @@
             ],
             "core/audits/seo/robots-txt.js | description": [
               "audits[robots-txt].description"
-            ],
-            "core/audits/seo/tap-targets.js | title": [
-              "audits[tap-targets].title"
-            ],
-            "core/audits/seo/tap-targets.js | description": [
-              "audits[tap-targets].description"
-            ],
-            "core/audits/seo/tap-targets.js | displayValue": [
-              {
-                "values": {
-                  "decimalProportion": 1
-                },
-                "path": "audits[tap-targets].displayValue"
-              }
             ],
             "core/audits/seo/hreflang.js | title": [
               "audits.hreflang.title"
@@ -14959,76 +14921,6 @@
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
-          "tap-targets": {
-            "id": "tap-targets",
-            "title": "Tap targets are not sized appropriately",
-            "description": "Interactive elements like buttons and links should be large enough (48x48px), or have enough space around them, to be easy enough to tap without overlapping onto other elements. [Learn more about tap targets](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/).",
-            "score": 0.76,
-            "scoreDisplayMode": "binary",
-            "displayValue": "86% appropriately sized tap targets",
-            "details": {
-              "type": "table",
-              "headings": [
-                {
-                  "key": "tapTarget",
-                  "valueType": "node",
-                  "label": "Tap Target"
-                },
-                {
-                  "key": "size",
-                  "valueType": "text",
-                  "label": "Size"
-                },
-                {
-                  "key": "overlappingTarget",
-                  "valueType": "node",
-                  "label": "Overlapping Target"
-                }
-              ],
-              "items": [
-                {
-                  "tapTarget": {
-                    "type": "node",
-                    "lhId": "1-50-A",
-                    "path": "1,HTML,1,BODY,0,DIV,0,DIV,5,FOOTER,2,DIV,0,DIV,0,A",
-                    "selector": "footer.w-full > div.w-full > div > a",
-                    "boundingRect": {
-                      "top": 608,
-                      "bottom": 620,
-                      "left": 147,
-                      "right": 213,
-                      "width": 66,
-                      "height": 12
-                    },
-                    "snippet": "<a href=\"/terms\">",
-                    "nodeLabel": "Terms of Service"
-                  },
-                  "overlappingTarget": {
-                    "type": "node",
-                    "lhId": "1-51-A",
-                    "path": "1,HTML,1,BODY,0,DIV,0,DIV,5,FOOTER,2,DIV,1,DIV,0,A",
-                    "selector": "footer.w-full > div.w-full > div > a",
-                    "boundingRect": {
-                      "top": 620,
-                      "bottom": 632,
-                      "left": 153,
-                      "right": 207,
-                      "width": 54,
-                      "height": 12
-                    },
-                    "snippet": "<a href=\"/privacy\">",
-                    "nodeLabel": "Privacy Policy"
-                  },
-                  "tapTargetScore": 552,
-                  "overlappingTargetScore": 552,
-                  "overlapScoreRatio": 1,
-                  "size": "65x11",
-                  "width": 65,
-                  "height": 11
-                }
-              ]
-            }
-          },
           "plugins": {
             "id": "plugins",
             "title": "Document avoids plugins",
@@ -15396,6 +15288,11 @@
                 "group": "a11y-tables-lists"
               },
               {
+                "id": "target-size",
+                "weight": 0,
+                "group": "a11y-best-practices"
+              },
+              {
                 "id": "td-headers-attr",
                 "weight": 0,
                 "group": "a11y-tables-lists"
@@ -15467,11 +15364,6 @@
               },
               {
                 "id": "landmark-one-main",
-                "weight": 0,
-                "group": "hidden"
-              },
-              {
-                "id": "target-size",
                 "weight": 0,
                 "group": "hidden"
               },
@@ -15586,17 +15478,12 @@
                 "group": "seo-content"
               },
               {
-                "id": "tap-targets",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
-              {
                 "id": "structured-data",
                 "weight": 0
               }
             ],
             "id": "seo",
-            "score": 0.86
+            "score": 0.88
           }
         },
         "categoryGroups": {
@@ -17053,30 +16940,24 @@
             },
             {
               "startTime": 112,
-              "name": "lh:audit:tap-targets",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 113,
               "name": "lh:audit:plugins",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 114,
+              "startTime": 113,
               "name": "lh:audit:structured-data",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 115,
+              "startTime": 114,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 116
+          "total": 115
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -17669,29 +17550,6 @@
             ],
             "core/audits/seo/robots-txt.js | description": [
               "audits[robots-txt].description"
-            ],
-            "core/audits/seo/tap-targets.js | failureTitle": [
-              "audits[tap-targets].title"
-            ],
-            "core/audits/seo/tap-targets.js | description": [
-              "audits[tap-targets].description"
-            ],
-            "core/audits/seo/tap-targets.js | displayValue": [
-              {
-                "values": {
-                  "decimalProportion": 0.8571428571428571
-                },
-                "path": "audits[tap-targets].displayValue"
-              }
-            ],
-            "core/audits/seo/tap-targets.js | tapTargetHeader": [
-              "audits[tap-targets].details.headings[0].label"
-            ],
-            "core/lib/i18n/i18n.js | columnSize": [
-              "audits[tap-targets].details.headings[1].label"
-            ],
-            "core/audits/seo/tap-targets.js | overlappingTargetHeader": [
-              "audits[tap-targets].details.headings[2].label"
             ],
             "core/audits/seo/plugins.js | title": [
               "audits.plugins.title"
@@ -21611,76 +21469,6 @@
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
-          "tap-targets": {
-            "id": "tap-targets",
-            "title": "Tap targets are not sized appropriately",
-            "description": "Interactive elements like buttons and links should be large enough (48x48px), or have enough space around them, to be easy enough to tap without overlapping onto other elements. [Learn more about tap targets](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/).",
-            "score": 0.67,
-            "scoreDisplayMode": "binary",
-            "displayValue": "75% appropriately sized tap targets",
-            "details": {
-              "type": "table",
-              "headings": [
-                {
-                  "key": "tapTarget",
-                  "valueType": "node",
-                  "label": "Tap Target"
-                },
-                {
-                  "key": "size",
-                  "valueType": "text",
-                  "label": "Size"
-                },
-                {
-                  "key": "overlappingTarget",
-                  "valueType": "node",
-                  "label": "Overlapping Target"
-                }
-              ],
-              "items": [
-                {
-                  "tapTarget": {
-                    "type": "node",
-                    "lhId": "1-11-A",
-                    "path": "1,HTML,1,BODY,0,DIV,0,DIV,5,FOOTER,2,DIV,0,DIV,0,A",
-                    "selector": "footer.w-full > div.w-full > div > a",
-                    "boundingRect": {
-                      "top": 608,
-                      "bottom": 620,
-                      "left": 147,
-                      "right": 213,
-                      "width": 66,
-                      "height": 12
-                    },
-                    "snippet": "<a href=\"/terms\">",
-                    "nodeLabel": "Terms of Service"
-                  },
-                  "overlappingTarget": {
-                    "type": "node",
-                    "lhId": "1-12-A",
-                    "path": "1,HTML,1,BODY,0,DIV,0,DIV,5,FOOTER,2,DIV,1,DIV,0,A",
-                    "selector": "footer.w-full > div.w-full > div > a",
-                    "boundingRect": {
-                      "top": 620,
-                      "bottom": 632,
-                      "left": 153,
-                      "right": 207,
-                      "width": 54,
-                      "height": 12
-                    },
-                    "snippet": "<a href=\"/privacy\">",
-                    "nodeLabel": "Privacy Policy"
-                  },
-                  "tapTargetScore": 552,
-                  "overlappingTargetScore": 552,
-                  "overlapScoreRatio": 1,
-                  "size": "65x11",
-                  "width": 65,
-                  "height": 11
-                }
-              ]
-            }
-          },
           "hreflang": {
             "id": "hreflang",
             "title": "Document has a valid `hreflang`",
@@ -22352,6 +22140,11 @@
                 "group": "a11y-tables-lists"
               },
               {
+                "id": "target-size",
+                "weight": 0,
+                "group": "a11y-best-practices"
+              },
+              {
                 "id": "td-headers-attr",
                 "weight": 0,
                 "group": "a11y-tables-lists"
@@ -22423,11 +22216,6 @@
               },
               {
                 "id": "landmark-one-main",
-                "weight": 0,
-                "group": "hidden"
-              },
-              {
-                "id": "target-size",
                 "weight": 0,
                 "group": "hidden"
               },
@@ -22612,17 +22400,12 @@
                 "group": "seo-content"
               },
               {
-                "id": "tap-targets",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
-              {
                 "id": "structured-data",
                 "weight": 0
               }
             ],
             "id": "seo",
-            "score": 0.89
+            "score": 0.91
           },
           "pwa": {
             "title": "PWA",
@@ -24907,48 +24690,42 @@
             },
             {
               "startTime": 275,
-              "name": "lh:audit:tap-targets",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 276,
               "name": "lh:audit:hreflang",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 277,
+              "startTime": 276,
               "name": "lh:audit:plugins",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 278,
+              "startTime": 277,
               "name": "lh:audit:canonical",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 279,
+              "startTime": 278,
               "name": "lh:audit:structured-data",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 280,
+              "startTime": 279,
               "name": "lh:audit:bf-cache",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 281,
+              "startTime": 280,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 282
+          "total": 281
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -26195,29 +25972,6 @@
             ],
             "core/audits/seo/robots-txt.js | description": [
               "audits[robots-txt].description"
-            ],
-            "core/audits/seo/tap-targets.js | failureTitle": [
-              "audits[tap-targets].title"
-            ],
-            "core/audits/seo/tap-targets.js | description": [
-              "audits[tap-targets].description"
-            ],
-            "core/audits/seo/tap-targets.js | displayValue": [
-              {
-                "values": {
-                  "decimalProportion": 0.75
-                },
-                "path": "audits[tap-targets].displayValue"
-              }
-            ],
-            "core/audits/seo/tap-targets.js | tapTargetHeader": [
-              "audits[tap-targets].details.headings[0].label"
-            ],
-            "core/lib/i18n/i18n.js | columnSize": [
-              "audits[tap-targets].details.headings[1].label"
-            ],
-            "core/audits/seo/tap-targets.js | overlappingTargetHeader": [
-              "audits[tap-targets].details.headings[2].label"
             ],
             "core/audits/seo/hreflang.js | title": [
               "audits.hreflang.title"

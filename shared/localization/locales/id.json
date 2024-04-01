@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "robots.txt valid"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Elemen interaktif seperti tombol dan link harus berukuran cukup besar (48x48 piksel), atau memiliki cukup ruang di sekelilingnya, agar cukup mudah diketuk tanpa tumpang-tindih dengan elemen lain. [Pelajari lebih lanjut target ketuk](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} target ketuk memiliki ukuran yang tepat"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "Target ketuk terlalu kecil karena tidak ada tag meta viewport yang dioptimalkan untuk layar seluler"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "Target ketuk tidak memiliki ukuran yang tepat"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Target Tumpang-Tindih"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Target Ketuk"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "Target ketuk memiliki ukuran yang tepat"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Pertahankan waktu respons server untuk dokumen utama tetap singkat karena semua permintaan lain bergantung padanya. [Pelajari lebih lanjut metrik Time to First Byte](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },

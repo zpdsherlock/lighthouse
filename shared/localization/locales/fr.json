@@ -1499,27 +1499,6 @@
   "core/audits/seo/robots-txt.js | title": {
     "message": "Le fichier robots.txt est valide"
   },
-  "core/audits/seo/tap-targets.js | description": {
-    "message": "Les éléments interactifs comme les boutons et les liens doivent être suffisamment larges (48 x 48 pixels) ou avoir assez d'espace autour d'eux pour que l'utilisateur puisse appuyer facilement dessus sans appuyer en même temps sur d'autres éléments. [En savoir plus sur les éléments tactiles](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)"
-  },
-  "core/audits/seo/tap-targets.js | displayValue": {
-    "message": "{decimalProportion, number, percent} des éléments tactiles sont correctement dimensionnés"
-  },
-  "core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
-    "message": "Les éléments tactiles sont trop petits, car aucune balise Meta de fenêtre d'affichage n'est optimisée pour les écrans mobiles"
-  },
-  "core/audits/seo/tap-targets.js | failureTitle": {
-    "message": "Les éléments tactiles ne sont pas dimensionnés correctement"
-  },
-  "core/audits/seo/tap-targets.js | overlappingTargetHeader": {
-    "message": "Cible en chevauchement"
-  },
-  "core/audits/seo/tap-targets.js | tapTargetHeader": {
-    "message": "Élément tactile"
-  },
-  "core/audits/seo/tap-targets.js | title": {
-    "message": "Les éléments tactiles sont dimensionnés correctement"
-  },
   "core/audits/server-response-time.js | description": {
     "message": "Le temps de réponse du serveur pour le document principal doit rester court, car toutes les autres requêtes en dépendent. [En savoir plus sur la métrique \"Time to First Byte\"](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)"
   },
