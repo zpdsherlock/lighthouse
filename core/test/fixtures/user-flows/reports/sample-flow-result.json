@@ -20912,7 +20912,7 @@
             "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/).",
             "score": 0,
             "scoreDisplayMode": "metricSavings",
-            "numericValue": 300,
+            "numericValue": 330,
             "numericUnit": "millisecond",
             "displayValue": "Potential savings of 67 KiB",
             "warnings": [],
@@ -20970,7 +20970,7 @@
                   "wastedWebpBytes": 65184
                 }
               ],
-              "overallSavingsMs": 300,
+              "overallSavingsMs": 330,
               "overallSavingsBytes": 68889.75,
               "sortedBy": [
                 "wastedBytes"
