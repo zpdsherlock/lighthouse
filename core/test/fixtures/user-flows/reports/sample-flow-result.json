@@ -2701,8 +2701,13 @@
             "id": "target-size",
             "title": "Touch targets have sufficient size and spacing.",
             "description": "Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls to activate the targets. [Learn more about touch targets](https://dequeuniversity.com/rules/axe/4.9/target-size).",
-            "score": null,
-            "scoreDisplayMode": "notApplicable"
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
           },
           "td-has-header": {
             "id": "td-has-header",
@@ -4365,7 +4370,7 @@
               },
               {
                 "id": "target-size",
-                "weight": 0,
+                "weight": 7,
                 "group": "a11y-best-practices"
               },
               {
@@ -14467,8 +14472,13 @@
             "id": "target-size",
             "title": "Touch targets have sufficient size and spacing.",
             "description": "Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls to activate the targets. [Learn more about touch targets](https://dequeuniversity.com/rules/axe/4.9/target-size).",
-            "score": null,
-            "scoreDisplayMode": "notApplicable"
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
           },
           "td-has-header": {
             "id": "td-has-header",
@@ -15253,7 +15263,7 @@
               },
               {
                 "id": "target-size",
-                "weight": 0,
+                "weight": 7,
                 "group": "a11y-best-practices"
               },
               {
@@ -20347,8 +20357,13 @@
             "id": "target-size",
             "title": "Touch targets have sufficient size and spacing.",
             "description": "Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls to activate the targets. [Learn more about touch targets](https://dequeuniversity.com/rules/axe/4.9/target-size).",
-            "score": null,
-            "scoreDisplayMode": "notApplicable"
+            "score": 1,
+            "scoreDisplayMode": "binary",
+            "details": {
+              "type": "table",
+              "headings": [],
+              "items": []
+            }
           },
           "td-has-header": {
             "id": "td-has-header",
@@ -22081,7 +22096,7 @@
               },
               {
                 "id": "target-size",
-                "weight": 0,
+                "weight": 7,
                 "group": "a11y-best-practices"
               },
               {
