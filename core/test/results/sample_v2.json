@@ -5651,18 +5651,6 @@
         "items": []
       }
     },
-    "plugins": {
-      "id": "plugins",
-      "title": "Document avoids plugins",
-      "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://developer.chrome.com/docs/lighthouse/seo/plugins/).",
-      "score": 1,
-      "scoreDisplayMode": "binary",
-      "details": {
-        "type": "table",
-        "headings": [],
-        "items": []
-      }
-    },
     "canonical": {
       "id": "canonical",
       "title": "Document has a valid `rel=canonical`",
@@ -6711,17 +6699,12 @@
           "group": "seo-mobile"
         },
         {
-          "id": "plugins",
-          "weight": 1,
-          "group": "seo-content"
-        },
-        {
           "id": "structured-data",
           "weight": 0
         }
       ],
       "id": "seo",
-      "score": 0.73
+      "score": 0.7
     },
     "pwa": {
       "title": "PWA",
@@ -9218,12 +9201,6 @@
       },
       {
         "startTime": 0,
-        "name": "lh:audit:plugins",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
         "name": "lh:audit:canonical",
         "duration": 100,
         "entryType": "measure"
@@ -10710,12 +10687,6 @@
       ],
       "core/audits/seo/hreflang.js | description": [
         "audits.hreflang.description"
-      ],
-      "core/audits/seo/plugins.js | title": [
-        "audits.plugins.title"
-      ],
-      "core/audits/seo/plugins.js | description": [
-        "audits.plugins.description"
       ],
       "core/audits/seo/canonical.js | title": [
         "audits.canonical.title"

@@ -1466,15 +1466,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "D̂óĉúm̂én̂t́ ĥáŝ á m̂ét̂á d̂éŝćr̂íp̂t́îón̂"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Ŝéâŕĉh́ êńĝín̂éŝ ćâń't̂ ín̂d́êx́ p̂ĺûǵîń ĉón̂t́êńt̂, án̂d́ m̂án̂ý d̂év̂íĉéŝ ŕêśt̂ŕîćt̂ ṕl̂úĝín̂ś ôŕ d̂ón̂'t́ ŝúp̂ṕôŕt̂ t́ĥém̂. [Ĺêár̂ń m̂ór̂é âb́ôút̂ áv̂óîd́îńĝ ṕl̂úĝín̂ś](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "D̂óĉúm̂én̂t́ ûśêś p̂ĺûǵîńŝ"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "D̂óĉúm̂én̂t́ âv́ôíd̂ś p̂ĺûǵîńŝ"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Îf́ ŷóûŕ r̂ób̂ót̂ś.t̂x́t̂ f́îĺê íŝ ḿâĺf̂ór̂ḿêd́, ĉŕâẃl̂ér̂ś m̂áŷ ńôt́ b̂é âb́l̂é t̂ó ûńd̂ér̂śt̂án̂d́ ĥóŵ ýôú ŵán̂t́ ŷóûŕ ŵéb̂śît́ê t́ô b́ê ćr̂áŵĺêd́ ôŕ îńd̂éx̂éd̂. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ŕôb́ôt́ŝ.t́x̂t́](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

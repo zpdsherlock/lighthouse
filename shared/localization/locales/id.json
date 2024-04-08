@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokumen memiliki deskripsi meta"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Mesin telusur tidak dapat mengindeks konten plugin, dan banyak perangkat yang membatasi plugin atau tidak mendukungnya. [Pelajari lebih lanjut cara menghindari plugin](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokumen menggunakan plugin"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokumen menghindari plugin"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Jika file robots.txt Anda salah format, crawler mungkin tidak dapat memahami cara crawling atau pengindeksan situs yang Anda inginkan. [Pelajari lebih lanjut robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

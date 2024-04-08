@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "יש למסמך מטא תיאור"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "מנועי חיפוש לא יכולים להוסיף לאינדקס תוכן של פלאגין, ומכשירים רבים מגבילים יישומי פלאגין או לא תומכים בהם. [למה כדאי להימנע משימוש ביישומי פלאגין](https://developer.chrome.com/docs/lighthouse/seo/plugins/)?"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "במסמך נעשה שימוש ביישומי פלאגין"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "אין במסמך שימוש ביישומי פלאגין"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "אם קובץ robots.txt אינו תקין, ייתכן שסורקים לא יוכלו להבין איך ברצונך שהאתר ייסרק או יתווסף לאינדקס. [למידע נוסף על robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

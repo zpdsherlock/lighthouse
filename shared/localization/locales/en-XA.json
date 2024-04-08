@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "[Ðöçûméñţ ĥåš å méţå ðéšçŕîþţîöñ one two three four five six seven]"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "[Šéåŕçĥ éñĝîñéš çåñ'ţ îñðéx þļûĝîñ çöñţéñţ, åñð måñý ðévîçéš ŕéšţŕîçţ þļûĝîñš öŕ ðöñ'ţ šûþþöŕţ ţĥém. ᐅ[ᐊĻéåŕñ möŕé åбöûţ åvöîðîñĝ þļûĝîñšᐅ](https://developer.chrome.com/docs/lighthouse/seo/plugins/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone]"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "[Ðöçûméñţ ûšéš þļûĝîñš one two three]"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "[Ðöçûméñţ åvöîðš þļûĝîñš one two three]"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "[Îƒ ýöûŕ ŕöбöţš.ţxţ ƒîļé îš måļƒöŕméð, çŕåŵļéŕš måý ñöţ бé åбļé ţö ûñðéŕšţåñð ĥöŵ ýöû ŵåñţ ýöûŕ ŵéбšîţé ţö бé çŕåŵļéð öŕ îñðéxéð. ᐅ[ᐊĻéåŕñ möŕé åбöûţ ŕöбöţš.ţxţᐅ](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)ᐊ. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree]"
   },

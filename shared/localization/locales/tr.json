@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Doküman meta tanım içeriyor"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Arama motorları eklenti içeriğini dizine ekleyemez. Ayrıca birçok cihaz eklentileri kısıtlar veya desteklemez. [Eklentilerden kaçınma hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Doküman, eklenti kullanıyor"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Doküman eklenti içermiyor"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "robots.txt dosyanız yanlış biçimlendirilmişse, tarayıcılar web sitenizin nasıl taranmasını veya dizine eklenmesini istediğinizi anlayamayabilir. [Robots.txt hakkında daha fazla bilgi edinin](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

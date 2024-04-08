@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Document bevat een metabeschrijving"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Zoekmachines kunnen content van plug-ins niet indexeren en veel apparaten beperken plug-ins of ondersteunen deze niet. [Meer informatie over het vermijden van plug-ins](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Document gebruikt plug-ins"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Document vermijdt plug-ins"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Als je robots.txt-bestand niet juist is opgemaakt, begrijpen crawlers mogelijk niet hoe je wilt dat je website wordt gecrawld of geïndexeerd. [Meer informatie over robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

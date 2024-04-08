@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument sadrži metaopis"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Tražilice ne mogu indeksirati sadržaj dodataka, pa mnogi uređaji ograničavaju dodatke ili ih ne podržavaju. [Saznajte više o izbjegavanju dodataka](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument upotrebljava dodatke"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokument izbjegava dodatke"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ako je vaša robots.txt datoteka oštećena, alati za indeksiranje možda neće moći razumjeti kako želite da se vaša web-lokacija pretraži ili indeksira. [Saznajte više o datoteci robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

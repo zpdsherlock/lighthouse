@@ -98,14 +98,6 @@ const expectations = {
           },
         },
       },
-      'plugins': {
-        score: 0,
-        details: {
-          items: {
-            length: 3,
-          },
-        },
-      },
       'canonical': {
         score: 0,
         explanation: 'Multiple conflicting URLs (https://example.com/other, https://example.com/)',

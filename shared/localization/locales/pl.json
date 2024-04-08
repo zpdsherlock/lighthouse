@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument ma metaopis"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Wyszukiwarki nie potrafią indeksować treści z wtyczek, a wiele urządzeń nie obsługuje wtyczek lub ogranicza ich działanie. [Więcej informacji o unikaniu wtyczek](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument używa wtyczek"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokument nie wymaga wtyczek"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Jeśli plik robots.txt ma nieprawidłowy format, roboty indeksujące mogą nie wiedzieć, jak mają indeksować witrynę. [Więcej informacji o plikach robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

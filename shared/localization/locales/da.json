@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokumentet har en metabeskrivelse"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Søgemaskiner kan ikke indeksere indhold i plugins, og mange enheder begrænser plugins eller understøtter dem ikke. [Få flere oplysninger om, hvordan du undgår plugins](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokumentet bruger plugins"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokumentet undgår plugins"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Hvis din robots.txt-fil indeholder fejl, kan crawlere muligvis ikke forstå, hvordan du vil have dit website crawlet eller indekseret. [Få flere oplysninger om robots.txt.](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

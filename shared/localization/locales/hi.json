@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "दस्तावेज़ में संक्षिप्त विवरण है"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "सर्च इंजन, प्लगिन के कॉन्टेंट को इंडेक्स नहीं कर सकते. साथ ही, कई डिवाइस, प्लगिन पर पाबंदी लगाते हैं या उन पर काम नहीं करते. [प्लगिन से बचने के बारे में ज़्यादा जानें](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "दस्तावेज़ प्लग इन का इस्तेमाल करता है"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "दस्तावेज़ प्लग इन से बचता है"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "अगर आपकी robots.txt फ़ाइल सही नहीं है, तो क्रॉलर यह नहीं समझ पाएंगे कि आपको अपनी वेबसाइट को किस तरह क्रॉल या इंडेक्स कराना है. [robots.txt के बारे में ज़्यादा जानें](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Документ има метаопис"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Претраживачи не могу да индексирају садржај додатних компонената, а многи уређаји ограничавају додатне компоненте или их не подржавају. [Сазнајте више о избегавању додатних компоненти](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Документ користи додатне компоненте"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Документ избегава додатне компоненте"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ако фајл robots.txt није правилно направљен, пописивачи можда неће моћи да разумеју како желите да се веб-сајт попише или индексира. [Сазнајте више о фајлу robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

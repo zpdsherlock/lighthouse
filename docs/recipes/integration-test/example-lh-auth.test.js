@@ -107,7 +107,7 @@ describe('my site', () => {
     it('lighthouse', async () => {
       await page.goto(ORIGIN);
       const lhr = await runLighthouse(page.url());
-      expect(lhr).toHaveLighthouseScoreGreaterThanOrEqual('seo', 0.9);
+      expect(lhr).toHaveLighthouseScoreGreaterThanOrEqual('seo', 0.8);
     });
 
     it('login form should exist', async () => {
@@ -124,7 +124,7 @@ describe('my site', () => {
       await login(page, ORIGIN);
       await page.goto(ORIGIN);
       const lhr = await runLighthouse(page.url());
-      expect(lhr).toHaveLighthouseScoreGreaterThanOrEqual('seo', 0.9);
+      expect(lhr).toHaveLighthouseScoreGreaterThanOrEqual('seo', 0.8);
     });
 
     it('login form should not exist', async () => {
@@ -149,7 +149,7 @@ describe('my site', () => {
       await login(page, ORIGIN);
       await page.goto(`${ORIGIN}/dashboard`);
       const lhr = await runLighthouse(page.url());
-      expect(lhr).toHaveLighthouseScoreGreaterThanOrEqual('seo', 0.9);
+      expect(lhr).toHaveLighthouseScoreGreaterThanOrEqual('seo', 0.8);
     });
 
     it('has secrets', async () => {

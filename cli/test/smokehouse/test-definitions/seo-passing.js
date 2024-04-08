@@ -150,9 +150,6 @@ const expectations = {
       'hreflang': {
         score: 1,
       },
-      'plugins': {
-        score: 1,
-      },
       'canonical': {
         score: 1,
       },

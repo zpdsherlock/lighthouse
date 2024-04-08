@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokumente yra metaaprašas"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Paieškos varikliai negali indeksuoti papildinių turinio ir daug įrenginių riboja papildinius arba jų nepalaiko. [Sužinokite daugiau apie tai, kaip išvengti papildinių](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokumente naudojami papildiniai"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokumente vengiama papildinių"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Jei failas „robots.txt“ netinkamai suformatuotas, tikrintuvai gali nesuprasti, kaip norite tikrinti ar indeksuoti svetainę. [Sužinokite daugiau apie failą „robots.txt“](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

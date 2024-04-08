@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "เอกสารมีคำอธิบายเมตา"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "เครื่องมือค้นหาจัดทำดัชนีเนื้อหาปลั๊กอินไม่ได้ และอุปกรณ์จำนวนมากจำกัดการใช้หรือไม่รองรับปลั๊กอิน [ดูข้อมูลเพิ่มเติมเกี่ยวกับการหลีกเลี่ยงปลั๊กอิน](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "เอกสารใช้ปลั๊กอิน"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "เอกสารหลีกเลี่ยงการใช้ปลั๊กอิน"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "หากไฟล์ robots.txt มีรูปแบบไม่ถูกต้อง Crawler อาจไม่เข้าใจวิธีที่คุณต้องการให้ Crawl หรือจัดทำดัชนีเว็บไซต์ [ดูข้อมูลเพิ่มเติมเกี่ยวกับ robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

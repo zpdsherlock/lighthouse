@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "May paglalarawan ng meta ang dokumento"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Hindi nai-index ng mga search engine ang content ng plugin, at maraming device ang naglilimita sa mga plugin o hindi sumusuporta sa mga ito. [Matuto pa tungkol sa pag-iwas sa mga plugin](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Gumagamit ng mga plugin ang dokumento"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Iniiwasan ng dokumento ang mga plugin"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Kung sira ang iyong robots.txt, puwedeng hindi maunawaan ng mga crawler kung paano mo gustong ma-crawl o ma-index ang iyong website. [Matuto pa tungkol sa robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

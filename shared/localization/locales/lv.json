@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokumentā ir metaapraksts"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Meklētājprogrammas nevar indeksēt spraudņu saturu, un daudzās ierīcēs spraudņi ir ierobežoti vai netiek atbalstīti. [Uzziniet vairāk par izvairīšanos no spraudņiem](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokumentā tiek izmantoti spraudņi"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokumentā netiek pieļauti spraudņi"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ja jūsu fails “robots.txt” ir nepareizi veidots, rāpuļprogrammas, iespējams, nevarēs saprast, kā vajadzētu pārmeklēt vai indeksēt vietni atbilstoši jūsu vēlmēm. [Uzziniet vairāk par failu “robots.txt”](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

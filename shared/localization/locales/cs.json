@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument má metaznačku „description“"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Vyhledávače obsah pluginů nedokážou indexovat a na mnoha zařízeních jsou pluginy zakázány nebo nejsou podporovány. [Jak se vyhnout použití pluginů](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument používá pluginy"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "V dokumentu nejsou použity pluginy"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Pokud soubor robots.txt nemá správný formát, prohledávače nemusejí být schopné zjistit, jak váš web mají procházet nebo indexovat. [Další informace o souboru robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "A dokumentum rendelkezik metaleírással"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Sok eszköz korlátozza vagy nem támogatja a beépülő modulokat, a keresőmotorok pedig nem tudják indexelni a modulok által megjelenített tartalmakat. [További információ a beépülő modulok elkerüléséről](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "A dokumentum beépülő modulokat használ"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "A dokumentum nem használ beépülő modulokat"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ha a robots.txt fájl formázása rossz, előfordulhat, hogy a feltérképező robotok nem tudják értelmezni, hogy Ön hogyan szeretné feltérképeztetni vagy indexeltetni a webhelyét. [További információ a robots.txt fájlról](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

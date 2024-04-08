@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "డాక్యుమెంట్‌లో మెటా వివరణ ఉంది"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "ప్లగ్ఇన్ కంటెంట్‌ను సెర్చ్ ఇంజిన్‌లు ఇండెక్స్ చేయలేవు, చాలా వరకు పరికరాలలో ప్లగ్ఇన్‌ల వినియోగం నియంత్రించబడి ఉంటుంది లేదా వాటికి సపోర్ట్ ఉండదు. [ప్లగ్ఇన్‌లను నివారించడం గురించి మరింత తెలుసుకోండి](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "డాక్యుమెంట్‌లో ప్లగ్ఇన్‌లు ఉపయోగించబడుతున్నాయి"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "డాక్యుమెంట్‌లో ప్లగ్ఇన్‌లు నివారించబడ్డాయి"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "మీ robots.txt ఫైల్ ఫార్మాట్ తప్పుగా ఉంటే, మీరు మీ వెబ్‌సైట్‌ను ఎలా క్రాల్ చేయాలనుకుంటున్నారు లేదా ఎలా ఇండెక్స్ చేయాలనుకుంటున్నారు అన్నది క్రాలర్‌లకు అర్థం కాకపోవచ్చు. [robots.txt గురించి మరింత తెలుసుకోండి](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

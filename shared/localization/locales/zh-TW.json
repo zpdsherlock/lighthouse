@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "文件具有中繼說明"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "搜尋引擎無法為外掛程式內容建立索引，而且許多裝置對外掛程式設有限制或不提供支援。[進一步瞭解如何避免使用外掛程式](https://developer.chrome.com/docs/lighthouse/seo/plugins/)。"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "文件使用外掛程式"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "文件盡量不使用外掛程式"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "如果 robots.txt 檔案格式錯誤，檢索器可能無法瞭解你偏好的網站檢索方式或索引建立方式。[進一步瞭解 robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)。"
   },

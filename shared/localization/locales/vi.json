@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Tài liệu có phần mô tả meta"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Các công cụ tìm kiếm không thể lập chỉ mục nội dung trình bổ trợ và nhiều thiết bị hạn chế hoặc không hỗ trợ trình bổ trợ. [Tìm hiểu thêm về cách tránh trình bổ trợ](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Tài liệu sử dụng plugin"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Tài liệu tránh sử dụng plugin"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Nếu định dạng của tệp robots.txt không đúng, thì trình thu thập thông tin có thể không hiểu được cách bạn muốn thu thập thông tin hoặc lập chỉ mục trang web của mình. [Tìm hiểu thêm về tệp robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

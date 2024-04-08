@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument ima metaopis"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Pretraživači ne mogu da indeksiraju sadržaj dodatnih komponenata, a mnogi uređaji ograničavaju dodatne komponente ili ih ne podržavaju. [Saznajte više o izbegavanju dodatnih komponenti](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument koristi dodatne komponente"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokument izbegava dodatne komponente"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ako fajl robots.txt nije pravilno napravljen, popisivači možda neće moći da razumeju kako želite da se veb-sajt popiše ili indeksira. [Saznajte više o fajlu robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

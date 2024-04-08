@@ -25,8 +25,10 @@ describe('swap-locale', () => {
     const lhrDe = swapLocale(lhrEn, 'de').lhr;
 
     // Basic replacement
-    expect(lhrEn.audits.plugins.title).toEqual('Document avoids plugins');
-    expect(lhrDe.audits.plugins.title).toEqual('Dokument verwendet keine Plug-ins');
+    expect(lhrEn.audits['viewport'].title).toEqual(
+      'Has a `<meta name="viewport">` tag with `width` or `initial-scale`');
+    expect(lhrDe.audits['viewport'].title).toEqual(
+      'Hat ein `<meta name="viewport">`-Tag mit `width` oder `initial-scale`');
 
     // With ICU string argument values
     expect(lhrEn.audits['dom-size'].displayValue).toMatchInlineSnapshot(`"153 elements"`);

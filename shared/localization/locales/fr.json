@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Le document contient un attribut \"meta description\""
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Les moteurs de recherche ne peuvent pas indexer le contenu des plug-ins, et de nombreux appareils limitent l'utilisation de ces derniers, voire ne les acceptent pas. [Découvrez comment éviter les plug-ins.](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Le document utilise des plug-ins"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Le document évite les plug-ins"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Si votre fichier robots.txt n'est pas créé correctement, il se peut que les robots d'exploration ne puissent pas comprendre comment votre site Web doit être exploré ou indexé. [En savoir plus sur les fichiers robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

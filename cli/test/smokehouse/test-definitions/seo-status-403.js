@@ -57,9 +57,6 @@ const expectations = {
       'hreflang': {
         score: null,
       },
-      'plugins': {
-        score: null,
-      },
       'canonical': {
         score: null,
       },

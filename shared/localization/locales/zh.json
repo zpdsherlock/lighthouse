@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "文档有 meta 描述"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "搜索引擎无法将插件内容编入索引，而且许多设备都限制或不支持使用插件。[详细了解如何避免使用插件](https://developer.chrome.com/docs/lighthouse/seo/plugins/)。"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "文档使用了插件"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "文档中没有插件"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "如果 robots.txt 文件的格式不正确，抓取工具可能无法理解您希望以何种方式抓取网站内容或将其编入索引。[详细了解 robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)。"
   },

@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "El document té una metadescripció"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Els motors de cerca no poden indexar el contingut dels connectors. A més, molts dispositius restringeixen o no admeten connectors. [Obtén més informació sobre com pots evitar els connectors](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "El document utilitza connectors"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "El document evita els connectors"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Si el format del fitxer robots.txt no és correcte, és possible que els rastrejadors no puguin entendre com vols que rastregin o indexin el lloc web. [Obtén més informació sobre robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

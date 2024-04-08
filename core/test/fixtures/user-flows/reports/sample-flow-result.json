@@ -3715,18 +3715,6 @@
               "items": []
             }
           },
-          "plugins": {
-            "id": "plugins",
-            "title": "Document avoids plugins",
-            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://developer.chrome.com/docs/lighthouse/seo/plugins/).",
-            "score": 1,
-            "scoreDisplayMode": "binary",
-            "details": {
-              "type": "table",
-              "headings": [],
-              "items": []
-            }
-          },
           "canonical": {
             "id": "canonical",
             "title": "Document has a valid `rel=canonical`",
@@ -4622,11 +4610,6 @@
                 "id": "font-size",
                 "weight": 1,
                 "group": "seo-mobile"
-              },
-              {
-                "id": "plugins",
-                "weight": 1,
-                "group": "seo-content"
               },
               {
                 "id": "structured-data",
@@ -6945,36 +6928,30 @@
             },
             {
               "startTime": 278,
-              "name": "lh:audit:plugins",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 279,
               "name": "lh:audit:canonical",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 280,
+              "startTime": 279,
               "name": "lh:audit:structured-data",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 281,
+              "startTime": 280,
               "name": "lh:audit:bf-cache",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 282,
+              "startTime": 281,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 283
+          "total": 282
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -8221,12 +8198,6 @@
             ],
             "core/audits/seo/hreflang.js | description": [
               "audits.hreflang.description"
-            ],
-            "core/audits/seo/plugins.js | title": [
-              "audits.plugins.title"
-            ],
-            "core/audits/seo/plugins.js | description": [
-              "audits.plugins.description"
             ],
             "core/audits/seo/canonical.js | title": [
               "audits.canonical.title"
@@ -14900,18 +14871,6 @@
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
-          "plugins": {
-            "id": "plugins",
-            "title": "Document avoids plugins",
-            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://developer.chrome.com/docs/lighthouse/seo/plugins/).",
-            "score": 1,
-            "scoreDisplayMode": "binary",
-            "details": {
-              "type": "table",
-              "headings": [],
-              "items": []
-            }
-          },
           "structured-data": {
             "id": "structured-data",
             "title": "Structured data is valid",
@@ -15447,17 +15406,12 @@
                 "group": "seo-mobile"
               },
               {
-                "id": "plugins",
-                "weight": 1,
-                "group": "seo-content"
-              },
-              {
                 "id": "structured-data",
                 "weight": 0
               }
             ],
             "id": "seo",
-            "score": 0.88
+            "score": 0.86
           }
         },
         "categoryGroups": {
@@ -16908,24 +16862,18 @@
             },
             {
               "startTime": 111,
-              "name": "lh:audit:plugins",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 112,
               "name": "lh:audit:structured-data",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 113,
+              "startTime": 112,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 114
+          "total": 113
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -17512,12 +17460,6 @@
             ],
             "core/audits/seo/robots-txt.js | description": [
               "audits[robots-txt].description"
-            ],
-            "core/audits/seo/plugins.js | title": [
-              "audits.plugins.title"
-            ],
-            "core/audits/seo/plugins.js | description": [
-              "audits.plugins.description"
             ],
             "core/audits/seo/manual/structured-data.js | title": [
               "audits[structured-data].title"
@@ -21441,18 +21383,6 @@
               "items": []
             }
           },
-          "plugins": {
-            "id": "plugins",
-            "title": "Document avoids plugins",
-            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://developer.chrome.com/docs/lighthouse/seo/plugins/).",
-            "score": 1,
-            "scoreDisplayMode": "binary",
-            "details": {
-              "type": "table",
-              "headings": [],
-              "items": []
-            }
-          },
           "canonical": {
             "id": "canonical",
             "title": "Document has a valid `rel=canonical`",
@@ -22350,17 +22280,12 @@
                 "group": "seo-mobile"
               },
               {
-                "id": "plugins",
-                "weight": 1,
-                "group": "seo-content"
-              },
-              {
                 "id": "structured-data",
                 "weight": 0
               }
             ],
             "id": "seo",
-            "score": 0.91
+            "score": 0.9
           },
           "pwa": {
             "title": "PWA",
@@ -24645,36 +24570,30 @@
             },
             {
               "startTime": 275,
-              "name": "lh:audit:plugins",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 276,
               "name": "lh:audit:canonical",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 277,
+              "startTime": 276,
               "name": "lh:audit:structured-data",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 278,
+              "startTime": 277,
               "name": "lh:audit:bf-cache",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 279,
+              "startTime": 278,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 280
+          "total": 279
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -25921,12 +25840,6 @@
             ],
             "core/audits/seo/hreflang.js | description": [
               "audits.hreflang.description"
-            ],
-            "core/audits/seo/plugins.js | title": [
-              "audits.plugins.title"
-            ],
-            "core/audits/seo/plugins.js | description": [
-              "audits.plugins.description"
             ],
             "core/audits/seo/canonical.js | title": [
               "audits.canonical.title"

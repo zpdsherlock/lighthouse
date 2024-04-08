@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "ドキュメントにメタ ディスクリプションが指定されています"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "検索エンジンはプラグイン コンテンツをインデックスに登録できません。多くのデバイスで、プラグインが制限され、プラグインがサポートされていないこともあります。[プラグインの回避についての詳細](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "ドキュメントでプラグインを使用しています"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "ドキュメントではプラグインを使用できません"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "robots.txt ファイルの形式が間違っていると、ウェブサイトのクロールやインデックス登録について指定した設定をクローラが認識できない可能性があります。[robots.txt についての詳細](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

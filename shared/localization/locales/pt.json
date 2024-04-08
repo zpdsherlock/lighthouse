@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "O documento tem uma metadescrição"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Mecanismos de pesquisa não podem indexar conteúdo de plug-in, e muitos dispositivos restringem plug-ins ou não são compatíveis com eles. [Saiba mais sobre como evitar plug-ins](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "O documento usa plug-ins"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "O documento evita plug-ins"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Se o arquivo robots.txt for inválido, talvez não seja possível aos rastreadores entender como você quer que seu site seja rastreado ou indexado. [Saiba mais sobre o arquivo robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

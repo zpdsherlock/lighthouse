@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokumentet har en metabeskrivelse"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Søkemotorer kan ikke indeksere innholdet i programtillegg, og mange enheter begrenser programtillegg eller støtter dem ikke. [Finn ut mer om hvordan du unngår programtillegg](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokumentet bruker programtillegg"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokumentet bruker ikke programtillegg"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Hvis robots.txt-filen har feil format, kan det hende at søkeroboter ikke forstår hvordan du vil at nettstedet ditt skal gjennomsøkes eller indekseres. [Finn ut mer om robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

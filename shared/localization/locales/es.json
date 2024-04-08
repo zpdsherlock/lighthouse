@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "El documento tiene una metadescripción"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Los buscadores no pueden indexar el contenido de los complementos, y muchos dispositivos limitan el uso de complementos o no los admiten. [Más información sobre cómo evitar complementos](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "El documento usa complementos"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "El documento no usa complementos"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Si el formato del archivo robots.txt no es correcto, es posible que los rastreadores no puedan interpretar cómo quieres que se rastree o indexe tu sitio web. [Más información sobre robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokumentissa on sisällönkuvauskenttä"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Hakukoneet eivät voi indeksoida liitännäisten sisältöä, ja monet laitteet rajoittavat liitännäisten käyttöä tai eivät tue niitä. [Lue lisää liitännäisten välttämisestä](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokumentti käyttää laajennuksia"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokumentti välttää laajennuksia"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Jos robots.txt-tiedostosi on muotoiltu väärin, indeksointirobotit eivät välttämättä ymmärrä, miten haluat sivustosi indeksoitavan. [Lue lisää robots.txt-tiedostoista](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

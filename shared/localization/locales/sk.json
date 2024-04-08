@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument má metapopis"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Vyhľadávače nemôžu indexovať obsah doplnkov a mnoho zariadení obmedzuje doplnky alebo ich nepodporuje. [Ako sa vyhnúť doplnkom](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument používa doplnky"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokument nepoužíva doplnky"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ak máte chybný súbor robots.txt, prehľadávače nemusia pochopiť, akým spôsobom majú váš web prehľadávať alebo indexovať. [Ďalšie informácie o súboroch robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

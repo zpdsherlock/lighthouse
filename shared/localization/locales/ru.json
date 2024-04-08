@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "В документе есть метаописание"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Поисковые системы не могут индексировать содержимое плагинов. К тому же на многих устройствах использование плагинов ограничено или не поддерживается. Подробнее о том, [как отказаться от использования плагинов](https://developer.chrome.com/docs/lighthouse/seo/plugins/)…"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "В документе используются плагины"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "В документе нет плагинов"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Если файл robots.txt поврежден, поисковые роботы могут не распознать ваши инструкции по сканированию или индексации сайта. Подробнее [о файле robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)…"
   },

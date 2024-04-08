@@ -133,7 +133,6 @@ const defaultConfig = {
     {id: 'CSSUsage', gatherer: 'css-usage'},
     {id: 'Doctype', gatherer: 'dobetterweb/doctype'},
     {id: 'DOMStats', gatherer: 'dobetterweb/domstats'},
-    {id: 'EmbeddedContent', gatherer: 'seo/embedded-content'},
     {id: 'FontSize', gatherer: 'seo/font-size'},
     {id: 'Inputs', gatherer: 'inputs'},
     {id: 'IFrameElements', gatherer: 'iframe-elements'},
@@ -329,7 +328,6 @@ const defaultConfig = {
     'seo/is-crawlable',
     'seo/robots-txt',
     'seo/hreflang',
-    'seo/plugins',
     'seo/canonical',
     'seo/manual/structured-data',
     'work-during-interaction',
@@ -615,7 +613,6 @@ const defaultConfig = {
         {id: 'hreflang', weight: 1, group: 'seo-content'},
         {id: 'canonical', weight: 1, group: 'seo-content'},
         {id: 'font-size', weight: 1, group: 'seo-mobile'},
-        {id: 'plugins', weight: 1, group: 'seo-content'},
         // Manual audits
         {id: 'structured-data', weight: 0},
       ],

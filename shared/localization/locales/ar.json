@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "يحتوي المستند على وصف تعريفي"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "لا يمكن لمحركات البحث فهرسة محتوى مكوِّن إضافي، وتحظر العديد من الأجهزة استخدام المكوِّنات الإضافية أو لا تتوافق معها. [مزيد من المعلومات حول تجنُّب استخدام المكوِّنات الإضافية](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "يستخدم المستند مكونات إضافية"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "يتجنّب المستند المكونات الإضافية"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "في حال كان ملف robots.txt مكتوبًا بصيغة غير صحيحة، يمكن أن يتعذّر على برامج الزحف فهم الطريقة المطلوبة للزحف إلى موقعك الإلكتروني أو فهرسته. [مزيد من المعلومات حول ملف robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

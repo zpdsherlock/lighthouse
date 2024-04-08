@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument ima metaopis"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Iskalniki ne morejo indeksirati vsebine vtičnikov in številne naprave vtičnike omejujejo ali jih ne podpirajo. [Preberite več o izogibanju vtičnikom](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument uporablja vtičnike"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokument ne vsebuje vtičnikov"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Če datoteka robots.txt ni pravilno oblikovana, iskalniki po spletni vsebini morda ne bodo razumeli, kako želite, da se išče po spletni vsebini vašega spletnega mesta in se jo indeksira. [Preberite več o datoteki robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },

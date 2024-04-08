@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Dokument enthält eine Meta-Beschreibung"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Suchmaschinen können keine Plug-in-Inhalte indexieren. Außerdem werden Plug-ins auf vielen Geräten eingeschränkt oder nicht unterstützt. [Weitere Informationen zum Vermeiden von Plug-ins.](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Dokument verwendet Plug-ins"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Dokument verwendet keine Plug-ins"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Wenn deine robots.txt-Datei fehlerhaft ist, können Crawler möglicherweise nicht nachvollziehen, wie deine Website gecrawlt oder indexiert werden soll. [Weitere Informationen zu robots.txt.](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

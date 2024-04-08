@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Документ містить метаопис"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Пошукові системи не можуть індексувати вміст плагінів. Багато пристроїв обмежують або не підтримують плагіни. [Докладніше про те, як уникати плагінів.](https://developer.chrome.com/docs/lighthouse/seo/plugins/)"
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "Документ використовує плагіни"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Документ уникає плагінів"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Якщо файл robots.txt недійсний, веб-сканери можуть не зрозуміти, як потрібно індексувати або сканувати ваш веб-сайт. [Докладніше про файл robots.txt.](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)"
   },

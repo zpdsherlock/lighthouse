@@ -119,8 +119,6 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   Doctype: Artifacts.Doctype | null;
   /** Information on the size of all DOM nodes in the page and the most extreme members. */
   DOMStats: Artifacts.DOMStats;
-  /** Relevant attributes and child properties of all <object>s, <embed>s and <applet>s in the page. */
-  EmbeddedContent: Artifacts.EmbeddedContentInfo[];
   /** Information on poorly sized font usage and the text affected by it. */
   FontSize: Artifacts.FontSize;
   /** All the input elements, including associated form and label elements. */
@@ -247,16 +245,6 @@ declare module Artifacts {
     totalBodyElements: number;
     width: NodeDetails & {max: number;};
     depth: NodeDetails & {max: number;};
-  }
-
-  interface EmbeddedContentInfo {
-    tagName: string;
-    type: string | null;
-    src: string | null;
-    data: string | null;
-    code: string | null;
-    params: Array<{name: string; value: string}>;
-    node: Artifacts.NodeDetails;
   }
 
   interface IFrameElement {

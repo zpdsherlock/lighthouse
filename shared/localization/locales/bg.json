@@ -1463,15 +1463,6 @@
   "core/audits/seo/meta-description.js | title": {
     "message": "Документът има мета описание"
   },
-  "core/audits/seo/plugins.js | description": {
-    "message": "Търсещите машини не могат да индексират съдържание с приставки. Много устройства ограничават приставките или не ги поддържат. [Научете повече за избягването на приставки](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
-  },
-  "core/audits/seo/plugins.js | failureTitle": {
-    "message": "В документа се използват приставки"
-  },
-  "core/audits/seo/plugins.js | title": {
-    "message": "Използването на приставки се избягва в документа"
-  },
   "core/audits/seo/robots-txt.js | description": {
     "message": "Ако файлът ви robots.txt не е форматиран правилно, роботите може да не могат да разберат как искате да бъде обходен или индексиран уебсайтът ви. [Научете повече за robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },
