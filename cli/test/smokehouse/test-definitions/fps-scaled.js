@@ -9,6 +9,7 @@ const config = {
   extends: 'lighthouse:default',
   settings: {
     onlyCategories: ['performance'],
+    onlyAudits: ['font-size'],
   },
 };
 
@@ -28,7 +29,20 @@ const expectations = {
   lhr: {
     requestedUrl: 'http://localhost:10200/scaled-content.html',
     finalDisplayedUrl: 'http://localhost:10200/scaled-content.html',
-    audits: {},
+    audits: {
+      'viewport': {
+        score: 0,
+        details: {
+          type: 'debugdata',
+          viewportContent: 'initial-scale=0.5',
+        },
+      },
+      'font-size': {
+        score: 0,
+        explanation:
+          'Text is illegible because there\'s no viewport meta tag optimized for mobile screens.',
+      },
+    },
     fullPageScreenshot: {
       nodes: {
         _includes: [

@@ -33,22 +33,13 @@ const expectations = {
       'http-status-code': {
         score: null,
       },
-      'viewport': {
-        score: null,
-      },
       'document-title': {
         score: null,
       },
       'meta-description': {
         score: null,
       },
-      'font-size': {
-        score: null,
-      },
       'crawlable-anchors': {
-        score: null,
-      },
-      'link-text': {
         score: null,
       },
       'is-crawlable': {

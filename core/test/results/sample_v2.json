@@ -6544,6 +6544,16 @@
           "group": "best-practices-ux"
         },
         {
+          "id": "viewport",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "font-size",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
           "id": "doctype",
           "weight": 1,
           "group": "best-practices-browser-compat"
@@ -6585,7 +6595,7 @@
         }
       ],
       "id": "best-practices",
-      "score": 0.35
+      "score": 0.39
     },
     "seo": {
       "title": "SEO",
@@ -6596,11 +6606,6 @@
         "snapshot"
       ],
       "auditRefs": [
-        {
-          "id": "viewport",
-          "weight": 1,
-          "group": "seo-mobile"
-        },
         {
           "id": "document-title",
           "weight": 1,
@@ -6652,17 +6657,12 @@
           "group": "seo-content"
         },
         {
-          "id": "font-size",
-          "weight": 1,
-          "group": "seo-mobile"
-        },
-        {
           "id": "structured-data",
           "weight": 0
         }
       ],
       "id": "seo",
-      "score": 0.7
+      "score": 0.63
     },
     "pwa": {
       "title": "PWA",

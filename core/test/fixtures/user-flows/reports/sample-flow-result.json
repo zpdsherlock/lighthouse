@@ -4457,6 +4457,16 @@
                 "group": "best-practices-ux"
               },
               {
+                "id": "viewport",
+                "weight": 1,
+                "group": "best-practices-ux"
+              },
+              {
+                "id": "font-size",
+                "weight": 1,
+                "group": "best-practices-ux"
+              },
+              {
                 "id": "doctype",
                 "weight": 1,
                 "group": "best-practices-browser-compat"
@@ -4510,11 +4520,6 @@
             ],
             "auditRefs": [
               {
-                "id": "viewport",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
-              {
                 "id": "document-title",
                 "weight": 1,
                 "group": "seo-content"
@@ -4563,11 +4568,6 @@
                 "id": "canonical",
                 "weight": 0,
                 "group": "seo-content"
-              },
-              {
-                "id": "font-size",
-                "weight": 1,
-                "group": "seo-mobile"
               },
               {
                 "id": "structured-data",
@@ -15209,6 +15209,16 @@
                 "group": "best-practices-ux"
               },
               {
+                "id": "viewport",
+                "weight": 1,
+                "group": "best-practices-ux"
+              },
+              {
+                "id": "font-size",
+                "weight": 1,
+                "group": "best-practices-ux"
+              },
+              {
                 "id": "doctype",
                 "weight": 1,
                 "group": "best-practices-browser-compat"
@@ -15220,7 +15230,7 @@
               }
             ],
             "id": "best-practices",
-            "score": 0.83
+            "score": 0.88
           },
           "seo": {
             "title": "SEO",
@@ -15231,11 +15241,6 @@
               "snapshot"
             ],
             "auditRefs": [
-              {
-                "id": "viewport",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
               {
                 "id": "document-title",
                 "weight": 1,
@@ -15267,17 +15272,12 @@
                 "group": "seo-content"
               },
               {
-                "id": "font-size",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
-              {
                 "id": "structured-data",
                 "weight": 0
               }
             ],
             "id": "seo",
-            "score": 0.86
+            "score": 0.8
           }
         },
         "categoryGroups": {
@@ -22012,6 +22012,16 @@
                 "group": "best-practices-ux"
               },
               {
+                "id": "viewport",
+                "weight": 1,
+                "group": "best-practices-ux"
+              },
+              {
+                "id": "font-size",
+                "weight": 1,
+                "group": "best-practices-ux"
+              },
+              {
                 "id": "doctype",
                 "weight": 1,
                 "group": "best-practices-browser-compat"
@@ -22065,11 +22075,6 @@
             ],
             "auditRefs": [
               {
-                "id": "viewport",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
-              {
                 "id": "document-title",
                 "weight": 1,
                 "group": "seo-content"
@@ -22120,17 +22125,12 @@
                 "group": "seo-content"
               },
               {
-                "id": "font-size",
-                "weight": 1,
-                "group": "seo-mobile"
-              },
-              {
                 "id": "structured-data",
                 "weight": 0
               }
             ],
             "id": "seo",
-            "score": 0.9
+            "score": 0.88
           },
           "pwa": {
             "title": "PWA",
