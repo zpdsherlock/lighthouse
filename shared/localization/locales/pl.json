@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Najwięszy wyrenderowany element"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Wpływ przesunięcia układu"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Przesunięcia układu miały największy wpływ na te elementy DOM. Niektóre przesunięcia układu mogą nie być uwzględnione w wartości danych CLS z powodu [okienkowania](https://web.dev/articles/cls#what_is_cls). [Dowiedz się, jak poprawić wartość CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Unikaj dużych przesunięć układu"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Wynik przesunięcia układu"
   },

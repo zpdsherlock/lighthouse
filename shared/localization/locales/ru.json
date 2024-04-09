@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Элемент \"Отрисовка самого крупного контента\""
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Влияние смещения макета"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Смещения макета больше всего повлияли на эти элементы DOM. Некоторые смещения макета, возможно, не были учтены в показателе CLS, так как использовалась [обработка методом окна](https://web.dev/articles/cls#what_is_cls). Узнайте, [как уменьшить CLS](https://web.dev/articles/optimize-cls)."
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Устраните большие смещения макета"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Показатель смещения макета"
   },

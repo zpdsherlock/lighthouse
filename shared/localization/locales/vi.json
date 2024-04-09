@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Thành phần Thời gian hiển thị nội dung lớn nhất"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Ảnh hưởng của việc thay đổi bố cục"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Các phần tử DOM này là đối tượng chịu ảnh hưởng nhiều nhất của việc thay đổi bố cục. Một số thay đổi về bố cục có thể không được tính vào giá trị chỉ số CLS do phương pháp [chuẩn hoá](https://web.dev/articles/cls#what_is_cls). [Tìm hiểu cách cải thiện CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Tránh các thay đổi lớn về bố cục"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Điểm số về mức thay đổi bố cục"
   },

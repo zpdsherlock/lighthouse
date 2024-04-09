@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Prvok vykreslenia najväčšieho obsahu"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Vplyv zmeny rozloženia"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Tieto prvky DOM boli najviac ovplyvnené zmenami rozloženia. Niektoré zmeny rozloženia nemusia byť zahrnuté v hodnote metriky súhrnu posunov rozloženia stránky, pretože bol použitý [windowing](https://web.dev/articles/cls#what_is_cls). [Ako zlepšiť súhrn posunov rozloženia stránky](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Nepoužívajte veľké posuny rozloženia"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Skóre posunu rozloženia"
   },

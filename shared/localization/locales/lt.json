@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Didžiausio turiningo žymėjimo elementas"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Išdėstymo poslinkio poveikio"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Šiems DOM elementams didžiausią poveikį turėjo išdėstymo poslinkiai. Kai kurie išdėstymo poslinkiai gali būti neįtraukti į KIP metrikos vertę dėl [pateikimo lange](https://web.dev/articles/cls#what_is_cls). [Sužinokite, kaip pagerinti KIP](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Venkite didelių išdėstymo poslinkių"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Išdėstymo poslinkio rezultatas"
   },

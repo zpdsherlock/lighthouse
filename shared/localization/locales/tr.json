@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Largest Contentful Paint öğesi"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Düzen kaymasının etkisi"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Düzen kaymalarından en çok bu DOM öğeleri etkilendi. [Pencereleme](https://web.dev/articles/cls#what_is_cls) nedeniyle CLS metriği değerine bazı düzen kaymaları dahil edilmeyebilir. [CLS'yi nasıl iyileştireceğinizi öğrenin](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Büyük düzen kaymalarından kaçının"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Düzen kayması puanı"
   },

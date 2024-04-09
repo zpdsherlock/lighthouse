@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "最大内容渲染时间元素"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "布局偏移的影响"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "这些 DOM 元素受布局偏移的影响最大。由于[窗口化](https://web.dev/articles/cls#what_is_cls)的原因，某些布局偏移可能未包含在 CLS 指标值中。[了解如何改善 CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "请避免出现大幅度的布局偏移"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "布局偏移分数"
   },

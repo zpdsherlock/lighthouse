@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Element največjega vsebinskega izrisa"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Vpliv spremembe postavitve"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Na te elemente DOM so spremembe postavitve vplivale najbolj. Nekatere spremembe postavitve morda niso vključene v vrednost meritve CLS zaradi [prikaza v oknu](https://web.dev/articles/cls#what_is_cls). [Preberite, kako izboljšate CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Izogibajte se velikim pomikom postavitve"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Rezultat spremembe postavitve"
   },

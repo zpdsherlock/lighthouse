@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "عنصر \"سرعة عرض أكبر جزء من المحتوى على الصفحة\""
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "تأثير متغيّرات التصميم"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "عناصر DOM هذه كانت الأكثر تأثّرًا بمتغيّرات التصميم. قد لا يتم تضمين بعض متغيّرات التصميم في قيمة مقياس متغيّرات التصميم التراكمية (CLS) بسبب [عملية الاستقطاع](https://web.dev/articles/cls#what_is_cls). [التعرُّف على كيفية تحسين متغيّرات التصميم التراكمية](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "تجنُّب متغيّرات التصميم الكبيرة"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "نتيجة متغيّرات التصميم"
   },

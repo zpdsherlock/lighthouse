@@ -1151,15 +1151,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "L̂ár̂ǵêśt̂ Ćôńt̂én̂t́f̂úl̂ Ṕâín̂t́ êĺêḿêńt̂"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "L̂áŷóût́ ŝh́îf́t̂ ím̂ṕâćt̂"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "T̂h́êśê D́ÔḾ êĺêḿêńt̂ś ŵér̂é m̂óŝt́ âf́f̂éĉt́êd́ b̂ý l̂áŷóût́ ŝh́îf́t̂ś. Ŝóm̂é l̂áŷóût́ ŝh́îf́t̂ś m̂áŷ ńôt́ b̂é îńĉĺûd́êd́ îń t̂h́ê ĆL̂Ś m̂ét̂ŕîć v̂ál̂úê d́ûé t̂ó [ŵín̂d́ôẃîńĝ](https://web.dev/articles/cls#what_is_cls). [Ĺêár̂ń ĥóŵ t́ô ím̂ṕr̂óv̂é ĈĹŜ](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Âv́ôíd̂ ĺâŕĝé l̂áŷóût́ ŝh́îf́t̂ś"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "L̂áŷóût́ ŝh́îf́t̂ śĉór̂é"
   },

@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Largest Contentful Paint-Element"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Auswirkung von Layout Shifts"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Diese DOM-Elemente wurden am stärksten von Layout Shifts beeinflusst. Einige Layout Shifts sind aufgrund von [Windowing](https://web.dev/articles/cls#what_is_cls) möglicherweise nicht im CLS-Messwert enthalten. [Informationen zur Verbesserung der CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Umfangreiche Layoutverschiebungen vermeiden"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Layout-Shift-Ergebnis"
   },

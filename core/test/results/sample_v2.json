@@ -2505,43 +2505,6 @@
       },
       "guidanceLevel": 3
     },
-    "layout-shift-elements": {
-      "id": "layout-shift-elements",
-      "title": "Avoid large layout shifts",
-      "description": "These DOM elements were most affected by layout shifts. Some layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)",
-      "score": 0,
-      "scoreDisplayMode": "metricSavings",
-      "displayValue": "5 elements found",
-      "metricSavings": {
-        "CLS": 0.136
-      },
-      "details": {
-        "type": "table",
-        "headings": [
-          {
-            "key": "node",
-            "valueType": "node",
-            "label": "Element"
-          },
-          {
-            "key": "score",
-            "valueType": "numeric",
-            "granularity": 0.001,
-            "label": "Layout shift impact"
-          }
-        ],
-        "items": [
-          {
-            "node": {
-              "type": "code",
-              "value": "Other"
-            },
-            "score": 0.13570762803819444
-          }
-        ]
-      },
-      "guidanceLevel": 2
-    },
     "layout-shifts": {
       "id": "layout-shifts",
       "title": "Avoid large layout shifts",
@@ -6179,11 +6142,6 @@
           "id": "resource-summary",
           "weight": 0,
           "group": "hidden"
-        },
-        {
-          "id": "layout-shift-elements",
-          "weight": 0,
-          "group": "hidden"
         }
       ],
       "id": "performance",
@@ -8361,12 +8319,6 @@
       },
       {
         "startTime": 0,
-        "name": "lh:audit:layout-shift-elements",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
         "name": "lh:audit:layout-shifts",
         "duration": 100,
         "entryType": "measure"
@@ -9756,8 +9708,7 @@
       ],
       "core/lib/i18n/i18n.js | otherResourceType": [
         "audits[performance-budget].details.items[3].label",
-        "audits[resource-summary].details.items[3].label",
-        "audits[layout-shift-elements].details.items[0].node.value"
+        "audits[resource-summary].details.items[3].label"
       ],
       "core/lib/i18n/i18n.js | thirdPartyResourceType": [
         "audits[performance-budget].details.items[4].label",
@@ -9825,7 +9776,6 @@
       ],
       "core/lib/i18n/i18n.js | columnElement": [
         "audits[largest-contentful-paint-element].details.items[0].headings[0].label",
-        "audits[layout-shift-elements].details.headings[0].label",
         "audits[layout-shifts].details.headings[0].label",
         "audits[non-composited-animations].details.headings[0].label",
         "audits[dom-size].details.headings[1].label"
@@ -9856,23 +9806,6 @@
       ],
       "core/audits/lcp-lazy-loaded.js | description": [
         "audits[lcp-lazy-loaded].description"
-      ],
-      "core/audits/layout-shift-elements.js | title": [
-        "audits[layout-shift-elements].title"
-      ],
-      "core/audits/layout-shift-elements.js | description": [
-        "audits[layout-shift-elements].description"
-      ],
-      "core/lib/i18n/i18n.js | displayValueElementsFound": [
-        {
-          "values": {
-            "nodeCount": 5
-          },
-          "path": "audits[layout-shift-elements].displayValue"
-        }
-      ],
-      "core/audits/layout-shift-elements.js | columnContribution": [
-        "audits[layout-shift-elements].details.headings[1].label"
       ],
       "core/audits/layout-shifts.js | title": [
         "audits[layout-shifts].title"

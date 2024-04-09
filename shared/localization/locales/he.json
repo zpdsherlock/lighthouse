@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "רכיב ה-Largest Contentful Paint (‏LCP)"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "ההשפעה של שינוי הפריסה"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "רכיבי ה-DOM האלה הושפעו הכי הרבה משינויים בפריסה. יכול להיות ששינויי פריסה מסוימים לא ייכללו בערך של מדד CLS בגלל [עיבוד החלק הנצפה בלבד](https://web.dev/articles/cls#what_is_cls). [איך לשפר את ה-CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "יש להימנע משינויים משמעותיים בפריסה"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "הציון של שינוי הפריסה"
   },

@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "కంటెంట్ కలిగి ఉండే అతిపెద్ద పెయింట్ మూలకం"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "లేఅవుట్ షిఫ్ట్ ప్రభావం"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "ఈ DOM ఎలిమెంట్‌లు లేఅవుట్ షిఫ్ట్‌ల ద్వారా ఎక్కువగా ప్రభావితమయ్యాయి. [విండో తరహా](https://web.dev/articles/cls#what_is_cls) కారణంగా కొన్ని లేఅవుట్ షిఫ్ట్‌లు CLS మెట్రిక్ విలువలో చేర్చబడకపోవచ్చు. [CLSని మెరుగుపరచడం ఎలాగో తెలుసుకోండి](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "పెద్ద లేఅవుట్ షిఫ్ట్‌లను నివారించండి"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "లేఅవుట్ షిఫ్ట్ స్కోర్"
   },

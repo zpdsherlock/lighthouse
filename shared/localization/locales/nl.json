@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "LCP-element (grootste weergave met content)"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Impact van indelingsverschuiving"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Deze DOM-elementen zijn het meest beïnvloed door indelingsverschuivingen. Sommige indelingsverschuivingen zijn misschien niet opgenomen in de statistiekwaarde CLS vanwege [normalisatie](https://web.dev/articles/cls#what_is_cls). [Meer informatie over hoe je CLS kunt verbeteren](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Grote indelingsverschuivingen vermijden"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Score voor indelingsverschuiving"
   },

@@ -13,7 +13,7 @@ function stall(ms) {
 }
 
 // largest-contentful-paint-element: add the largest element later in page load
-// layout-shift-elements: shift down the `<h1>` in the page
+// layout-shifts: shift down the `<h1>` in the page
 setTimeout(() => {
   const imgEl = document.createElement('img');
   imgEl.src = '../dobetterweb/lighthouse-480x318.jpg';

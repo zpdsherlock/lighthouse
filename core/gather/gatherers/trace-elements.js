@@ -28,7 +28,6 @@ import {TraceEngineResult} from '../../computed/trace-engine-result.js';
 
 /** @typedef {{nodeId: number, animations?: {name?: string, failureReasonsMask?: number, unsupportedProperties?: string[]}[], type?: string}} TraceElementData */
 
-const MAX_LAYOUT_SHIFT_ELEMENTS = 15;
 const MAX_LAYOUT_SHIFTS = 15;
 
 /**
@@ -64,22 +63,6 @@ class TraceElements extends BaseGatherer {
   /** @param {LH.Crdp.Animation.AnimationStartedEvent} args */
   _onAnimationStarted({animation: {id, name}}) {
     if (name) this.animationIdToName.set(id, name);
-  }
-
-  /**
-   * This function finds the top (up to 15) elements that shift on the page.
-   *
-   * @param {LH.Trace} trace
-   * @param {LH.Gatherer.Context} context
-   * @return {Promise<Array<{nodeId: number}>>}
-   */
-  static async getTopLayoutShiftElements(trace, context) {
-    const {impactByNodeId} = await CumulativeLayoutShift.request(trace, context);
-
-    return [...impactByNodeId.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, MAX_LAYOUT_SHIFT_ELEMENTS)
-      .map(([nodeId]) => ({nodeId}));
   }
 
   /**
@@ -338,7 +321,6 @@ class TraceElements extends BaseGatherer {
     const {mainThreadEvents} = processedTrace;
 
     const lcpNodeData = await TraceElements.getLcpElement(trace, context);
-    const shiftElementsNodeData = await TraceElements.getTopLayoutShiftElements(trace, context);
     const shiftsData = await TraceElements.getTopLayoutShifts(
       trace, traceEngineResult, rootCauses, context);
     const animatedElementData = await this.getAnimatedElements(mainThreadEvents);
@@ -347,7 +329,6 @@ class TraceElements extends BaseGatherer {
     /** @type {Map<string, TraceElementData[]>} */
     const backendNodeDataMap = new Map([
       ['largest-contentful-paint', lcpNodeData ? [lcpNodeData] : []],
-      ['layout-shift-element', shiftElementsNodeData],
       ['layout-shift', shiftsData],
       ['animation', animatedElementData],
       ['responsiveness', responsivenessElementData ? [responsivenessElementData] : []],

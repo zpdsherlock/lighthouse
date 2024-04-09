@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "பெரிய பகுதியைக் காண்பிக்கும் நேரத்திற்கான உறுப்பு"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "லே-அவுட் ஷிஃப்ட்டின் பாதிப்பு"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "லே-அவுட் ஷிஃப்ட்களால் இந்த DOM உறுப்புகள் அதிகம் பாதிக்கப்பட்டன. [விண்டோவிங்](https://web.dev/articles/cls#what_is_cls) காரணமாகச் சில லே-அவுட் ஷிஃப்ட்கள் CLS அளவீட்டு மதிப்பில் சேர்க்கப்படாமல் போகலாம். [CLSஸை எப்படி மேம்படுத்துவது என்று தெரிந்துகொள்ளுங்கள்](https://web.dev/articles/optimize-cls)."
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "பெரிய தளவமைப்பு ஷிஃப்ட்களைத் தவிர்த்தல்"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "லே-அவுட் ஷிஃப்ட் ஸ்கோர்"
   },

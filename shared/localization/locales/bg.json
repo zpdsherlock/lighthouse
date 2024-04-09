@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Елемент, рендериран при изобразяване на най-голямото съдържание (LCP)"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Въздействие на структурните промени"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Тези елементи на DOM са засегнати най-много от структурните промени. Някои структурни промени може да не са включени в стойността на показателя за CLS поради [рендериране на текущия прозорец](https://web.dev/articles/cls#what_is_cls). [Научете как да подобрите CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Избягвайте големи промени в оформлението"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Резултат за структурната промяна"
   },

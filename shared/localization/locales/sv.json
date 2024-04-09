@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Element som största uppritningen av innehåll gjordes för"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Effekt av layoutförskjutning"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Dessa DOM-element påverkades mest av layoutförskjutningar. Vissa layoutförskjutningar kanske inte tas med i CLS-mätvärdet på grund av [windowing](https://web.dev/articles/cls#what_is_cls). [Läs mer om hur du kan förbättra CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Undvik större layoutförskjutningar"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Resultat för layoutförskjutning"
   },

@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Element med Largest Contentful Paint"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Effekt af layoutskift"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Disse DOM-elementer blev mest påvirket af layoutskift. Nogle layoutskift medtages muligvis ikke i CLS-metricværdien som følge af [windowing](https://web.dev/articles/cls#what_is_cls). [Se, hvordan du forbedrer CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Undgå store layoutskift"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Resultat for layoutskift"
   },

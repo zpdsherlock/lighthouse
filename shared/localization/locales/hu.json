@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "A legnagyobb vizuális tartalomválasz eleme"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Az elrendezésmozgás hatása"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Ezeket a DOM-elemeket leginkább az elrendezésmozgások érintették. Előfordulhat, hogy a [csak a felhasználó által látható tartalom megjelenítése](https://web.dev/articles/cls#what_is_cls) miatt bizonyos elrendezésmozgások nem szerepelnek a CLS-mutató értékében. [További információ a CLS javításáról](https://web.dev/articles/optimize-cls)."
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Az elrendezés nagy mértékű mozgásának elkerülése"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Elrendezésmozgás pontszáma"
   },

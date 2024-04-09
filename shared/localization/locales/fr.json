@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Élément identifié comme \"Largest Contentful Paint\""
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Impact du décalage de mise en page"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Ces éléments DOM ont été le plus affectés par des décalages de mise en page. Il est possible que certains décalages de mise en page ne soient pas inclus dans la valeur de la métrique CLS en raison du [fenêtrage](https://web.dev/articles/cls#what_is_cls). [Découvrez comment améliorer le CLS.](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Éviter les changements de mise en page importants"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Score de décalage de mise en page"
   },

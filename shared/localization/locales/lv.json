@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Largest Contentful Paint elements"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Izkārtojuma nobīdes ietekme"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Šos DOM elementus visvairāk ietekmēja izkārtojuma nobīdes. Dažas izkārtojuma nobīdes var nebūt iekļautas CLS metrikas vērtībā [logošanas](https://web.dev/articles/cls#what_is_cls) dēļ. [Uzziniet, kā uzlabot CLS](https://web.dev/articles/optimize-cls)."
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Centieties novērst lielas izkārtojuma nobīdes"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Izkārtojuma nobīdes rādītājs"
   },

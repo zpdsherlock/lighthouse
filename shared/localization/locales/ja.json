@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "「最大コンテンツの描画」要素"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "レイアウト シフトの影響"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "これらの DOM 要素は、レイアウト シフトの影響を最も受けています。[ウィンドウ処理](https://web.dev/articles/cls#what_is_cls)が原因で、一部のレイアウト シフトが CLS 指標値に含まれていない場合があります。[CLS を改善する方法について](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "レイアウトが大きく変わらないようにする"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "レイアウト シフトのスコア"
   },

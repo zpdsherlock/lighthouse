@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "‏‮Largest‬‏ ‏‮Contentful‬‏ ‏‮Paint‬‏ ‏‮element‬‏"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "‏‮Layout‬‏ ‏‮shift‬‏ ‏‮impact‬‏"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "‏‮These‬‏ ‏‮DOM‬‏ ‏‮elements‬‏ ‏‮were‬‏ ‏‮most‬‏ ‏‮affected‬‏ ‏‮by‬‏ ‏‮layout‬‏ ‏‮shifts‬‏. ‏‮Some‬‏ ‏‮layout‬‏ ‏‮shifts‬‏ ‏‮may‬‏ ‏‮not‬‏ ‏‮be‬‏ ‏‮included‬‏ ‏‮in‬‏ ‏‮the‬‏ ‏‮CLS‬‏ ‏‮metric‬‏ ‏‮value‬‏ ‏‮due‬‏ ‏‮to‬‏ [‏‮windowing‬‏](https://web.dev/articles/cls#what_is_cls). [‏‮Learn‬‏ ‏‮how‬‏ ‏‮to‬‏ ‏‮improve‬‏ ‏‮CLS‬‏](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "‏‮Avoid‬‏ ‏‮large‬‏ ‏‮layout‬‏ ‏‮shifts‬‏"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "‏‮Layout‬‏ ‏‮shift‬‏ ‏‮score‬‏"
   },

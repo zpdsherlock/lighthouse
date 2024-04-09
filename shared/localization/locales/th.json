@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "องค์ประกอบ Largest Contentful Paint"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "ผลกระทบของการเปลี่ยนเลย์เอาต์"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "องค์ประกอบ DOM เหล่านี้ได้รับผลกระทบมากที่สุดจากการเปลี่ยนเลย์เอาต์ การเปลี่ยนเลย์เอาต์บางอย่างอาจไม่รวมอยู่ในค่าเมตริก CLS อันเนื่องมาจาก[การจัดกรอบเวลา](https://web.dev/articles/cls#what_is_cls) [ดูวิธีเพิ่มประสิทธิภาพ CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "หลีกเลี่ยงการเลื่อนเลย์เอาต์ขนาดใหญ่"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "คะแนนการเปลี่ยนเลย์เอาต์"
   },

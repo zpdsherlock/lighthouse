@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "सबसे बड़ा कॉन्टेंटफ़ुल पेंट वाला एलिमेंट"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "लेआउट शिफ़्ट का असर"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "इन डीओएम एलिमेंट पर, लेआउट शिफ़्ट का सबसे ज़्यादा असर हुआ है. [विंडोविंग](https://web.dev/articles/cls#what_is_cls) की वजह से, हो सकता है कि कुछ लेआउट शिफ़्ट, सीएलएस मेट्रिक की वैल्यू में शामिल न किए जाएं. [सीएलएस को बेहतर बनाने का तरीका जानें](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "बड़े लेआउट शिफ़्ट से बचें"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "लेआउट शिफ़्ट स्कोर"
   },

@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Prvek Largest Contentful Paint"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Dopad změny rozvržení"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Tyto prvky DOM byly změnami rozvržení ovlivněny nejvíce. Některé změny rozvržení do hodnoty metriky CLS vzhledem k [normalizaci ](https://web.dev/articles/cls#what_is_cls) nemusí zahrnuty. [Jak zlepšit CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Zajistěte, aby nedocházelo k velkým změnám rozvržení"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Skóre změny rozvržení"
   },

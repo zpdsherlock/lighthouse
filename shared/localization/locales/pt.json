@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Elemento de Maior exibição de conteúdo"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Impacto da troca de layout"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Esses elementos DOM foram mais afetados pelas trocas de layout. Algumas trocas de layout podem não ser incluídas no valor da métrica de CLS devido ao [janelamento](https://web.dev/articles/cls#what_is_cls). [Aprenda a melhorar o CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Evite grandes mudanças no layout"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Pontuação da troca de layout"
   },

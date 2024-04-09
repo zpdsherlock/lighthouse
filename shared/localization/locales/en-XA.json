@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "[Ļåŕĝéšţ Çöñţéñţƒûļ Þåîñţ éļéméñţ one two three four five six seven]"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "[Ļåýöûţ šĥîƒţ îmþåçţ one two three]"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "[Ţĥéšé ÐÖM éļéméñţš ŵéŕé möšţ åƒƒéçţéð бý ļåýöûţ šĥîƒţš. Šömé ļåýöûţ šĥîƒţš måý ñöţ бé îñçļûðéð îñ ţĥé ÇĻŠ méţŕîç våļûé ðûé ţö ᐅ[ᐊŵîñðöŵîñĝᐅ](https://web.dev/articles/cls#what_is_cls)ᐊ. ᐅ[ᐊĻéåŕñ ĥöŵ ţö îmþŕövé ÇĻŠᐅ](https://web.dev/articles/optimize-cls)ᐊ one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone twentytwo twentythree twentyfour]"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "[Åvöîð ļåŕĝé ļåýöûţ šĥîƒţš one two three four five six]"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "[Ļåýöûţ šĥîƒţ šçöŕé one two three]"
   },

@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Renderizado del mayor elemento con contenido"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Impacto de los cambios de diseño"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Estos elementos DOM son los que se han visto más afectados por los cambios de diseño. Es posible que algunos cambios de diseño no se incluyan en el valor de la métrica CLS debido a la [normalización](https://web.dev/articles/cls#what_is_cls). [Descubre cómo mejorar el CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Evitar cambios de diseño importantes"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Puntuación del cambio de diseño"
   },

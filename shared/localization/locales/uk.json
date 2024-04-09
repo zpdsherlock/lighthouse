@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Елемент візуалізації великого контенту"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Вплив зміщень макета"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Зміщення макета найбільше вплинули на ці елементи DOM. Деякі зміщення можуть не включатися в значення показника CLS через [віконізацію](https://web.dev/articles/cls#what_is_cls). [Дізнайтесь, як покращити показник CLS.](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Уникайте великих зсувів макета"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Показник зміщення макета"
   },

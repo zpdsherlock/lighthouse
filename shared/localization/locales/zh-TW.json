@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "最大內容繪製元素"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "受版面配置位移影響的元素數量"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "版面配置位移對這些 DOM 元素造成的影響最大。由於[執行時間較短](https://web.dev/articles/cls#what_is_cls)，部分版面配置位移可能不會包含在 CLS 指標值中。[瞭解如何改善 CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "避免大量版面配置轉移"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "版面配置位移分數"
   },

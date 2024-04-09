@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Στοιχείο Μεγαλύτερης σχεδίασης με περιεχόμενο"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Αντίκτυπος αλλαγής διάταξης"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Αυτά τα στοιχεία DOM επηρεάστηκαν περισσότερο από τις αλλαγές διάταξης. Ορισμένες αλλαγές στη διάταξη ενδέχεται να μην περιλαμβάνονται στην τιμή της μέτρησης CLS λόγω της [προσαρμογής σε παράθυρο](https://web.dev/articles/cls#what_is_cls). [Μάθετε πώς μπορείτε να βελτιώσετε το CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Αποφύγετε τις μεγάλες μετατοπίσεις διάταξης"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Βαθμολογία αλλαγής διάταξης"
   },

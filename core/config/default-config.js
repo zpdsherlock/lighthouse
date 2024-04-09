@@ -211,7 +211,6 @@ const defaultConfig = {
     'third-party-facades',
     'largest-contentful-paint-element',
     'lcp-lazy-loaded',
-    'layout-shift-elements',
     'layout-shifts',
     'long-tasks',
     'non-composited-animations',
@@ -483,7 +482,6 @@ const defaultConfig = {
         {id: 'final-screenshot', weight: 0, group: 'hidden'},
         {id: 'script-treemap-data', weight: 0, group: 'hidden'},
         {id: 'resource-summary', weight: 0, group: 'hidden'},
-        {id: 'layout-shift-elements', weight: 0, group: 'hidden'},
       ],
     },
     'accessibility': {

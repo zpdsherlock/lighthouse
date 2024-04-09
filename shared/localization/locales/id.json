@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Elemen Largest Contentful Paint (LCP)"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Dampak pergeseran tata letak"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Elemen DOM ini paling dipengaruhi oleh pergeseran tata letak. Beberapa pergeseran tata letak mungkin tidak disertakan dalam nilai metrik CLS karena adanya [windowing](https://web.dev/articles/cls#what_is_cls). [Pelajari cara meningkatkan CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Hindari peralihan tata letak berukuran besar"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Skor pergeseran tata letak"
   },

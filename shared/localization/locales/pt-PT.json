@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Elemento de Maior preenchimento com conteúdo"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Impacto da mudança de esquema"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Estes elementos DOM foram os mais afetados por mudanças de esquema. Algumas mudanças de esquema podem não ser incluídas no valor da métrica CLS devido à [normalização](https://web.dev/articles/cls#what_is_cls). [Saiba como melhorar a CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Evite mudanças de esquemas grandes"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Pontuação da mudança de esquema"
   },

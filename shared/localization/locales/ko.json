@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "콘텐츠가 포함된 최대 페인트 요소"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "레이아웃 변경 영향"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "이러한 DOM 요소는 레이아웃 변경의 영향을 가장 많이 받았습니다. [윈도잉](https://web.dev/articles/cls#what_is_cls)으로 인해 일부 레이아웃 변경은 CLS 측정항목 값에 포함되지 않을 수 있습니다. [CLS 개선 방법 알아보기](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "대규모 레이아웃 변경 피하기"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "레이아웃 변경 점수"
   },

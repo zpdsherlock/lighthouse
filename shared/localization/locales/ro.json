@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Elementul cu cea mai mare redare de conținut"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Impactul schimbării aspectului"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Aceste elemente DOM au fost afectate cel mai mult de schimbările aspectului. Este posibil ca unele schimbări ale aspectului să nu fie incluse în valoarea CLS din cauza practicii de [windowing](https://web.dev/articles/cls#what_is_cls). [Află cum să îmbunătățești CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Evită schimbările majore ale aspectului"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Scorul pentru schimbarea aspectului"
   },

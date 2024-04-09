@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Element sa najvećim prikazivanjem sadržaja"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Uticaj promene rasporeda"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Promene rasporeda su najviše uticale na ove DOM elemente. Neke promene rasporeda možda nisu uvrštene u vrednost CLS pokazatelja zbog [prozorskog prikaza](https://web.dev/articles/cls#what_is_cls). [Saznajte kako da poboljšate CLS](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Izbegavajte velike promene rasporeda"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Rezultat promene rasporeda"
   },

@@ -1148,15 +1148,6 @@
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Elementet med største innholdsrike opptegning (LCP)"
   },
-  "core/audits/layout-shift-elements.js | columnContribution": {
-    "message": "Innvirkning på utseendeforskyvning"
-  },
-  "core/audits/layout-shift-elements.js | description": {
-    "message": "Disse DOM-elementene ble mest påvirket av utseendeforskyvninger. Det kan hende at visse utseendeforskyvninger ikke er tatt med i CLS-beregningsverdien på grunn av [vinduer](https://web.dev/articles/cls#what_is_cls). [Finn ut hvordan du kan gjøre CLS bedre](https://web.dev/articles/optimize-cls)"
-  },
-  "core/audits/layout-shift-elements.js | title": {
-    "message": "Unngå store utseendeforskyvninger"
-  },
   "core/audits/layout-shifts.js | columnScore": {
     "message": "Poengsum for utseendeforskyvning"
   },
