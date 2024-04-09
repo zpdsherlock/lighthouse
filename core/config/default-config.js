@@ -168,6 +168,7 @@ const defaultConfig = {
   ],
   audits: [
     'is-on-https',
+    'redirects-http',
     'viewport',
     'metrics/first-contentful-paint',
     'metrics/largest-contentful-paint',
@@ -574,6 +575,7 @@ const defaultConfig = {
       auditRefs: [
         // Trust & Safety
         {id: 'is-on-https', weight: 5, group: 'best-practices-trust-safety'},
+        {id: 'redirects-http', weight: 1, group: 'best-practices-trust-safety'},
         {id: 'geolocation-on-start', weight: 1, group: 'best-practices-trust-safety'},
         {id: 'notification-on-start', weight: 1, group: 'best-practices-trust-safety'},
         {id: 'csp-xss', weight: 0, group: 'best-practices-trust-safety'},

@@ -20,6 +20,7 @@ const exclusions = {
     'redirects-client-paint-server', 'redirects-multiple-server',
     'redirects-single-server', 'redirects-single-client',
     'redirects-history-push-state', 'redirects-scripts',
+    'redirects-http',
     // Disabled because these tests use settings that cannot be fully configured in
     // DevTools (e.g. throttling method "provided").
     'metrics-tricky-tti', 'metrics-tricky-tti-late-fcp', 'screenshot',
