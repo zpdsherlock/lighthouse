@@ -5,7 +5,7 @@
  */
 
 /**
- * Config file for running PWA smokehouse audits for axe.
+ * Config file for running accessibility smokehouse audits for axe.
  */
 
 /** @type {LH.Config} */

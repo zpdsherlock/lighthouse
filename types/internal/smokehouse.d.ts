@@ -33,7 +33,7 @@ declare global {
     }
 
     export interface TestDfn {
-      /** Identification of test. Can be used for group selection (e.g. `yarn smoke pwa` will run all tests with `id.includes('pwa')`). */
+      /** Identification of test. Can be used for group selection (e.g. `yarn smoke csp` will run all tests with `id.includes('csp')`). */
       id: string;
       /** Expected test results. */
       expectations: ExpectedRunnerResult;

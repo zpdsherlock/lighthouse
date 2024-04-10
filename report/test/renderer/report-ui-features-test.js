@@ -90,7 +90,7 @@ describe('ReportUIFeatures', () => {
   describe('initFeatures', () => {
     it('should init a report', () => {
       const container = render(sampleResults);
-      assert.equal(dom.findAll('.lh-category', container).length, 5);
+      assert.equal(dom.findAll('.lh-category', container).length, 4);
     });
 
     it('should init a report with a single category', () => {
@@ -697,12 +697,18 @@ describe('ReportUIFeatures', () => {
       assert.ok(container.querySelector('.lh-score100'), 'has fireworks treatment');
     });
 
-    it('should show fireworks for all 100s except PWA', () => {
+    it('should show fireworks for all 100s except plugins', () => {
       const lhr = JSON.parse(JSON.stringify(sampleResults));
       Object.values(lhr.categories).forEach(element => {
         element.score = 1;
       });
-      lhr.categories.pwa.score = 0;
+
+      lhr.categories['lighthouse-plugin-someplugin'] = {
+        id: 'lighthouse-plugin-someplugin',
+        title: 'Some Plugin',
+        auditRefs: [],
+        score: 0,
+      };
 
       const container = render(lhr);
       assert.ok(container.querySelector('.lh-score100'), 'has fireworks treatment');

@@ -5,7 +5,7 @@
  */
 
 /**
- * Config for running PWA smokehouse audits for axe.
+ * Config for running accessibility smokehouse audits for axe.
  * @type {LH.Config}
  */
 const config = {

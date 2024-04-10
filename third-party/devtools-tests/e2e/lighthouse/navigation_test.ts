@@ -77,7 +77,6 @@ describe('Navigation', function() {
       'accessibility',
       'best-practices',
       'seo',
-      'pwa',
     ]);
 
     let numNavigations = 0;
@@ -122,13 +121,9 @@ describe('Navigation', function() {
     });
 
     const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, ['max-potential-fid']);
-    assert.strictEqual(auditResults.length, 162);
+    assert.strictEqual(auditResults.length, 154);
     assert.deepStrictEqual(erroredAudits, []);
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
-      'installable-manifest',
-      'splash-screen',
-      'themed-omnibox',
-      'maskable-icon',
       'document-title',
       'html-has-lang',
       'render-blocking-resources',
@@ -204,13 +199,9 @@ describe('Navigation', function() {
     ];
 
     const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr, flakyAudits);
-    assert.strictEqual(auditResults.length, 162);
+    assert.strictEqual(auditResults.length, 154);
     assert.deepStrictEqual(erroredAudits, []);
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
-      'installable-manifest',
-      'splash-screen',
-      'themed-omnibox',
-      'maskable-icon',
       'document-title',
       'html-has-lang',
       'meta-description',

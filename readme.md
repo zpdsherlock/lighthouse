@@ -103,7 +103,7 @@ Configuration:
   --gather-mode, -G              Collect artifacts from a connected browser and save to disk. (Artifacts folder path may optionally be provided). If audit-mode is not also enabled, the run will quit early.
   --audit-mode, -A               Process saved artifacts from disk. (Artifacts folder path may be provided, otherwise defaults to ./latest-run/)
   --only-audits                  Only run the specified audits  [array]
-  --only-categories              Only run the specified categories. Available categories: accessibility, best-practices, performance, pwa, seo  [array]
+  --only-categories              Only run the specified categories. Available categories: accessibility, best-practices, performance, seo  [array]
   --skip-audits                  Run everything except these audits  [array]
   --budget-path                  The path to the budget.json file for LightWallet.  [string]
   --disable-full-page-screenshot Disables collection of the full page screenshot, which can be quite large  [boolean]
@@ -148,7 +148,7 @@ Examples:
   lighthouse <url> --quiet --chrome-flags="--headless"                                             Launch Headless Chrome, turn off logging
   lighthouse <url> --extra-headers "{\"Cookie\":\"monster=blue\", \"x-men\":\"wolverine\"}"        Stringify'd JSON HTTP Header key/value pairs to send in requests
   lighthouse <url> --extra-headers=./path/to/file.json                                             Path to JSON file of HTTP Header key/value pairs to send in requests
-  lighthouse <url> --only-categories=performance,pwa                                               Only run the specified categories. Available categories: accessibility, best-practices, performance, pwa, seo
+  lighthouse <url> --only-categories=performance,seo                                               Only run the specified categories. Available categories: accessibility, best-practices, performance, seo
 
 For more information on Lighthouse, see https://developers.google.com/web/tools/lighthouse/.
 ```

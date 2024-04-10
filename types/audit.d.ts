@@ -117,16 +117,6 @@ declare module Audit {
 
   /** Type returned by Audit.audit(). Only score is required.  */
   type Product = NonNumericProduct | NumericProduct;
-
-  type MultiCheckAuditP1 = Partial<Record<Artifacts.ManifestValueCheckID, boolean>>;
-  type MultiCheckAuditP2 = Partial<Artifacts.ManifestValues>;
-  interface MultiCheckAuditP3 {
-    failures: Array<string>;
-    manifestValues?: undefined;
-    allChecks?: undefined;
-  }
-
-  type MultiCheckAuditDetails = MultiCheckAuditP1 & MultiCheckAuditP2 & MultiCheckAuditP3;
 }
 
 export default Audit;

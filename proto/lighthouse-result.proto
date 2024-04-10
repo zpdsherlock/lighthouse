@@ -276,7 +276,7 @@ message LhrCategory {
   string title = 2;
 
   // A description of what this category is about (e.g. these help you validate
-  // your PWA).
+  // your seo).
   string description = 3;
 
   // The overall score of the category, the weighted average of all its audits,
