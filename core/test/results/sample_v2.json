@@ -4339,7 +4339,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/unknown404.css?delay=200",
-            "totalBytes": 209,
+            "totalBytes": 0,
             "wastedMs": 882
           },
           {
@@ -4348,7 +4348,17 @@
             "wastedMs": 882
           },
           {
+            "url": "http://localhost:10200/dobetterweb/dbw_disabled.css?delay=200&isdisabled",
+            "totalBytes": 1190,
+            "wastedMs": 882
+          },
+          {
             "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=3000&capped",
+            "totalBytes": 903,
+            "wastedMs": 882
+          },
+          {
+            "url": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=3000&async=true",
             "totalBytes": 903,
             "wastedMs": 882
           },
@@ -4359,7 +4369,7 @@
           },
           {
             "url": "http://localhost:10200/dobetterweb/fcp-delayer.js?delay=5000",
-            "totalBytes": 223,
+            "totalBytes": 0,
             "wastedMs": 882
           }
         ],
@@ -8740,6 +8750,12 @@
       {
         "startTime": 0,
         "name": "lh:computed:UnusedCSS",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:computed:NavigationInsights",
         "duration": 100,
         "entryType": "measure"
       },

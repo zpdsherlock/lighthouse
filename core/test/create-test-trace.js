@@ -8,6 +8,7 @@ const pid = 1111;
 const tid = 222;
 const browserPid = 13725;
 const rootFrame = 'ROOT_FRAME';
+const navigationId = 'NAVIGATION_ID';
 const defaultUrl = 'https://example.com/';
 const lcpNodeId = 16;
 const lcpImageUrl = 'http://www.example.com/image.png';
@@ -106,6 +107,7 @@ function createTestTrace(options) {
       data: {
         documentLoaderURL: frameUrl,
         isLoadingMainFrame: true,
+        navigationId,
       },
     },
   }, {
@@ -147,7 +149,7 @@ function createTestTrace(options) {
     ph: 'R',
     cat: 'loading,rail,devtools.timeline',
     dur: 0,
-    args: {frame: rootFrame},
+    args: {frame: rootFrame, data: {navigationId}},
   }, {
     name: 'firstMeaningfulPaint',
     ts: timeOrigin + 15,
@@ -198,6 +200,7 @@ function createTestTrace(options) {
           nodeId: lcpNodeId,
           size: 50,
           type: 'image',
+          navigationId,
         },
       },
     });

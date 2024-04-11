@@ -7,6 +7,7 @@
 // https://docs.google.com/spreadsheets/d/1AaYzpzWnpXQ4JB5IZzOkTO9Zf5Sm0I8dsp7MhBgthMg/edit?usp=sharing
 
 import * as puppeteer from 'puppeteer';
+import {getChromePath} from 'chrome-launcher';
 
 import {LH_ROOT} from '../../../../shared/root.js';
 import {Server} from '../../../../cli/test/fixtures/static-server.js';
@@ -26,7 +27,11 @@ import {saveTrace, saveDevtoolsLog} from '../../../lib/asset-saver.js';
  * @param {CollectMeta} collectMeta
 */
 export async function updateTestFixture(collectMeta) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    executablePath: getChromePath(),
+    ignoreDefaultArgs: ['--enable-automation'],
+  });
   const server = new Server(0);
   const dir = `${LH_ROOT}/core/test/fixtures/artifacts/${collectMeta.name}`;
   server.baseDir = `${dir}/page`;

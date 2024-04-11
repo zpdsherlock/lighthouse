@@ -42,10 +42,10 @@
 <!-- PASS: async stylesheet -->
 <link rel="stylesheet" href="./dbw_tester.css?delay=3000&async=true" disabled onload="this.disabled = false">
 
-<!-- Alternate stylesheets should not show in TagsBlockingFirstPaint artifact -->
+<!-- Alternate stylesheets should not be considered render blocking -->
 <link rel="alternate stylesheet" href="./empty.css">
 
-<!-- Malformed links should not show in TagsBlockingFirstPaint artifact -->
+<!-- Malformed links should not be considered render blocking -->
 <link rel="stylesheet" href="">
 
 <script>
