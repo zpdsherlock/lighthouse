@@ -15,13 +15,15 @@ class CPUNode extends BaseNode {
   /**
    * @param {LH.TraceEvent} parentEvent
    * @param {LH.TraceEvent[]=} childEvents
+   * @param {number=} correctedEndTs
    */
-  constructor(parentEvent, childEvents = []) {
+  constructor(parentEvent, childEvents = [], correctedEndTs) {
     const nodeId = `${parentEvent.tid}.${parentEvent.ts}`;
     super(nodeId);
 
     this._event = parentEvent;
     this._childEvents = childEvents;
+    this._correctedEndTs = correctedEndTs;
   }
 
   get type() {
@@ -39,7 +41,15 @@ class CPUNode extends BaseNode {
    * @return {number}
    */
   get endTime() {
+    if (this._correctedEndTs) return this._correctedEndTs;
     return this._event.ts + this._event.dur;
+  }
+
+  /**
+   * @return {number}
+   */
+  get duration() {
+    return this.endTime - this.startTime;
   }
 
   /**
@@ -83,7 +93,7 @@ class CPUNode extends BaseNode {
    * @return {CPUNode}
    */
   cloneWithoutRelationships() {
-    return new CPUNode(this._event, this._childEvents);
+    return new CPUNode(this._event, this._childEvents, this._correctedEndTs);
   }
 }
 

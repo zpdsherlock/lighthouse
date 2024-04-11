@@ -128,6 +128,9 @@ class PageDependencyGraph {
         continue;
       }
 
+      /** @type {number|undefined} */
+      let correctedEndTs = undefined;
+
       // Capture all events that occurred within the task
       /** @type {Array<LH.TraceEvent>} */
       const children = [];
@@ -136,10 +139,19 @@ class PageDependencyGraph {
         i < mainThreadEvents.length && mainThreadEvents[i].ts < endTime;
         i++
       ) {
+        // Temporary fix for a Chrome bug where some RunTask events can be overlapping.
+        // We correct that here be ensuring each RunTask ends at least 1 microsecond before the next
+        // https://github.com/GoogleChrome/lighthouse/issues/15896
+        // https://issues.chromium.org/issues/329678173
+        if (TraceProcessor.isScheduleableTask(mainThreadEvents[i]) && mainThreadEvents[i].dur) {
+          correctedEndTs = mainThreadEvents[i].ts - 1;
+          break;
+        }
+
         children.push(mainThreadEvents[i]);
       }
 
-      nodes.push(new CPUNode(evt, children));
+      nodes.push(new CPUNode(evt, children, correctedEndTs));
     }
 
     return nodes;
@@ -359,7 +371,7 @@ class PageDependencyGraph {
         isFirst = foundFirstParse = true;
       }
 
-      if (isFirst || node.event.dur >= minimumEvtDur) {
+      if (isFirst || node.duration >= minimumEvtDur) {
         // Don't prune this node. The task is long / important so it will impact simulation.
         continue;
       }

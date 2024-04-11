@@ -160,6 +160,36 @@ describe('PageDependencyGraph computed artifact:', () => {
       assert.equal(node2.childEvents.length, 1);
       assert.equal(node2.childEvents[0].name, 'LaterEvent');
     });
+
+    it('should correct overlapping tasks', () => {
+      addTaskEvents(0, 500, [
+        {name: 'MyCustomEvent'},
+        {name: 'OtherEvent'},
+      ]);
+
+      addTaskEvents(400, 50, [
+        {name: 'OverlappingEvent'},
+      ]);
+
+      assert.equal(traceEvents.length, 5);
+      const nodes = PageDependencyGraph.getCPUNodes(traceEvents);
+      assert.equal(nodes.length, 2);
+
+      const node1 = nodes[0];
+      assert.equal(node1.id, '1.0');
+      assert.equal(node1.type, 'cpu');
+      assert.equal(node1.event, traceEvents[0]);
+      assert.equal(node1.childEvents.length, 2);
+      assert.equal(node1.childEvents[0].name, 'MyCustomEvent');
+      assert.equal(node1.childEvents[1].name, 'OtherEvent');
+
+      const node2 = nodes[1];
+      assert.equal(node2.id, '1.400000');
+      assert.equal(node2.type, 'cpu');
+      assert.equal(node2.event, traceEvents[3]);
+      assert.equal(node2.childEvents.length, 1);
+      assert.equal(node2.childEvents[0].name, 'OverlappingEvent');
+    });
   });
 
   describe('#createGraph', () => {

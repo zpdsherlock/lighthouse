@@ -37,7 +37,7 @@ class Interactive extends Metric {
     return dependencyGraph.cloneWithRelationships(node => {
       // Include everything that might be a long task
       if (node.type === BaseNode.TYPES.CPU) {
-        return node.event.dur > minimumCpuTaskDuration;
+        return node.duration > minimumCpuTaskDuration;
       }
 
       // Include all scripts and high priority requests, exclude all images
