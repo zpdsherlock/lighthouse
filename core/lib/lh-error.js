@@ -76,13 +76,13 @@ const UIStrings = {
   criTimeout: 'Timeout waiting for initial Debugger Protocol connection.',
   /**
    * @description Error message explaining that a resource that was required for testing was never collected. "artifactName" will be replaced with the name of the resource that wasn't collected.
-   * @example {WebAppManifest} artifactName
+   * @example {MainDocumentContent} artifactName
    * */
   missingRequiredArtifact: 'Required {artifactName} gatherer did not run.',
   /**
    * @description Error message explaining that there was an error while trying to collect a resource that was required for testing. "artifactName" will be replaced with the name of the resource that wasn't collected; "errorMessage" will be replaced with a string description of the error that occurred.
-   * @example {WebAppManifest} artifactName
-   * @example {Manifest invalid} errorMessage
+   * @example {MainDocumentContent} artifactName
+   * @example {Could not find main document} errorMessage
    * */
   erroredRequiredArtifact: 'Required {artifactName} gatherer encountered an error: {errorMessage}',
 

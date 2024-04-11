@@ -209,26 +209,26 @@ The primary objective of the audit function is to return a `score` from `0` to `
 
 #### Available Artifacts
 
-The following artifacts are available for use in the audits of Lighthouse plugins. For more detailed information on their usage and purpose, see the [type information](https://github.com/GoogleChrome/lighthouse/blob/623b789497f6c87f85d366b4038deae5dc701c90/types/artifacts.d.ts#L20-L70).
+The following artifacts are available for use in the audits of Lighthouse plugins. For more detailed information on their usage and purpose, see the [type information](https://github.com/GoogleChrome/lighthouse/blob/main/types/artifacts.d.ts#L42-L99).
 
-- `DevtoolsLog`
 - `fetchTime`
-- `settings`
-- `Trace`
 - `BenchmarkIndex`
-- `ConsoleMessages`
+- `settings`
+- `Timing`
+- `HostFormFactor`
 - `HostUserAgent`
+- `HostProduct`
+- `GatherContext`
+- `URL`
+- `ConsoleMessages`
+- `DevtoolsLog`
+- `MainDocumentContent`
 - `ImageElements`
 - `LinkElements`
 - `MetaElements`
-- `NetworkUserAgent`
-- `RuntimeExceptions`
-- `ScriptElements`
-- `Stacks`
-- `Timing`
-- `URL`
+- `Scripts`
+- `Trace`
 - `ViewportDimensions`
-- `WebAppManifest`
 
 While Lighthouse has more artifacts with information about the page than are in this list, those artifacts are considered experimental and their structure or existence could change at any time. Only use artifacts not on the list above if you are comfortable living on the bleeding edge and can tolerate unannounced breaking changes.
 

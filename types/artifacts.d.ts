@@ -80,18 +80,20 @@ interface ContextualBaseArtifacts {
 interface PublicGathererArtifacts {
   /** ConsoleMessages deprecation and intervention warnings, console API calls, and exceptions logged by Chrome during page load. */
   ConsoleMessages: Artifacts.ConsoleMessage[];
-  /** All the iframe elements in the page. */
-  IFrameElements: Artifacts.IFrameElement[];
-  /** The contents of the main HTML document network resource. */
-  MainDocumentContent: string;
+  /** The primary log of devtools protocol activity. */
+  DevtoolsLog: DevtoolsLog;
   /** Information on size and loading for all the images in the page. Natural size information for `picture` and CSS images is only available if the image was one of the largest 50 images. */
   ImageElements: Artifacts.ImageElement[];
   /** All the link elements on the page or equivalently declared in `Link` headers. @see https://html.spec.whatwg.org/multipage/links.html */
   LinkElements: Artifacts.LinkElement[];
+  /** The contents of the main HTML document network resource. */
+  MainDocumentContent: string;
   /** The values of the <meta> elements in the head. */
   MetaElements: Array<{name?: string, content?: string, property?: string, httpEquiv?: string, charset?: string, node: Artifacts.NodeDetails}>;
   /** Information on all scripts in the page. */
   Scripts: Artifacts.Script[];
+  /** The primary trace taken over the entire run. */
+  Trace: Trace;
   /** The dimensions and devicePixelRatio of the loaded viewport. */
   ViewportDimensions: Artifacts.ViewportDimensions;
 }
@@ -111,8 +113,6 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   CacheContents: string[];
   /** CSS coverage information for styles used by page's final state. */
   CSSUsage: {rules: Crdp.CSS.RuleUsage[], stylesheets: Artifacts.CSSStyleSheetInfo[]};
-  /** The primary log of devtools protocol activity. */
-  DevtoolsLog: DevtoolsLog;
   /** The log of devtools protocol activity if there was a page load error and Chrome navigated to a `chrome-error://` page. */
   DevtoolsLogError: DevtoolsLog;
   /** Information on the document's doctype(or null if not present), specifically the name, publicId, and systemId.
@@ -122,12 +122,12 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   DOMStats: Artifacts.DOMStats;
   /** Information on poorly sized font usage and the text affected by it. */
   FontSize: Artifacts.FontSize;
+  /** All the iframe elements in the page. */
+  IFrameElements: Artifacts.IFrameElement[];
   /** All the input elements, including associated form and label elements. */
   Inputs: {inputs: Artifacts.InputElement[]; forms: Artifacts.FormElement[]; labels: Artifacts.LabelElement[]};
   /** Screenshot of the entire page (rather than just the above the fold content). */
   FullPageScreenshot: LHResult.FullPageScreenshot | null;
-  /** Information about event listeners registered on the global object. */
-  GlobalListeners: Array<Artifacts.GlobalListener>;
   /** The issues surfaced in the devtools Issues panel */
   InspectorIssues: Artifacts.InspectorIssues;
   /** JS coverage information for code used during audit. Keyed by script id. */
@@ -149,10 +149,6 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   SourceMaps: Array<Artifacts.SourceMap>;
   /** Information on detected tech stacks (e.g. JS libraries) used by the page. */
   Stacks: Artifacts.DetectedStack[];
-  /** Information about tap targets including their position and size. */
-  TapTargets: Artifacts.TapTarget[];
-  /** The primary trace taken over the entire run. */
-  Trace: Trace;
   /** The trace if there was a page load error and Chrome navigated to a `chrome-error://` page. */
   TraceError: Trace;
   /** Elements associated with metrics (ie: Largest Contentful Paint element). */
@@ -187,6 +183,8 @@ declare module Artifacts {
     /** URL displayed on the page after Lighthouse finishes. */
     finalDisplayedUrl: string;
   }
+
+  type Rect = AuditDetails.Rect;
 
   interface NodeDetails {
     lhId: string,
@@ -291,19 +289,6 @@ declare module Artifacts {
     name: string;
     url: string;
     content?: string;
-  }
-
-  interface ScriptElement {
-    type: string | null
-    src: string | null
-    /** The `id` property of the script element; null if it had no `id` or if `source` is 'network'. */
-    id: string | null
-    async: boolean
-    defer: boolean
-    /** Details for node in DOM for the script element */
-    node: NodeDetails | null
-    /** Where the script was discovered, either in the head, the body, or network records. */
-    source: 'head'|'body'|'network'
   }
 
   /** @see https://sourcemaps.info/spec.html#h.qz3o9nc69um5 */
@@ -516,14 +501,6 @@ declare module Artifacts {
     url: string;
     mimeType: string;
     resourceSize: number;
-  }
-
-  type Rect = AuditDetails.Rect;
-
-  interface TapTarget {
-    node: NodeDetails;
-    href: string;
-    clientRects: Rect[];
   }
 
   interface TraceElement {
@@ -798,18 +775,6 @@ declare module Artifacts {
   interface LabelElement {
     for: string;
     node: NodeDetails;
-  }
-
-  /** Information about an event listener registered on the global object. */
-  interface GlobalListener {
-    /** Event listener type, limited to those events currently of interest. */
-    type: 'pagehide'|'unload'|'visibilitychange';
-    /** The DevTools protocol script identifier. */
-    scriptId: string;
-    /** Line number in the script (0-based). */
-    lineNumber: number;
-    /** Column number in the script (0-based). */
-    columnNumber: number;
   }
 
   /** Describes a generic console message. */
