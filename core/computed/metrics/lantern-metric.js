@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import {LanternError} from '../../lib/lantern/lantern-error.js';
+import {LighthouseError} from '../../lib/lh-error.js';
 import {LoadSimulator} from '../load-simulator.js';
 import {PageDependencyGraph} from '../page-dependency-graph.js';
 import {ProcessedNavigation} from '../processed-navigation.js';
@@ -24,4 +26,24 @@ async function getComputationDataParams(data, context) {
   return {simulator, graph, processedNavigation};
 }
 
-export {getComputationDataParams};
+/**
+ * @param {unknown} err
+ * @return {never}
+ */
+function lanternErrorAdapter(err) {
+  if (!(err instanceof LanternError)) {
+    throw err;
+  }
+
+  const code = /** @type {keyof LighthouseError.errors} */ (err.message);
+  if (LighthouseError.errors[code]) {
+    throw new LighthouseError(LighthouseError.errors[code]);
+  }
+
+  throw err;
+}
+
+export {
+  getComputationDataParams,
+  lanternErrorAdapter,
+};

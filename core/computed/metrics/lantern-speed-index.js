@@ -5,7 +5,7 @@
  */
 
 import {makeComputedArtifact} from '../computed-artifact.js';
-import {getComputationDataParams} from './lantern-metric.js';
+import {getComputationDataParams, lanternErrorAdapter} from './lantern-metric.js';
 import {Speedline} from '../speedline.js';
 import {LanternFirstContentfulPaint} from './lantern-first-contentful-paint.js';
 import {SpeedIndex} from '../../lib/lantern/metrics/speed-index.js';
@@ -20,7 +20,8 @@ class LanternSpeedIndex extends SpeedIndex {
    * @return {Promise<LH.Artifacts.LanternMetric>}
    */
   static async computeMetricWithGraphs(data, context, extras) {
-    return this.compute(await getComputationDataParams(data, context), extras);
+    return this.compute(await getComputationDataParams(data, context), extras)
+      .catch(lanternErrorAdapter);
   }
 
   /**

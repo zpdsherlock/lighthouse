@@ -6,8 +6,6 @@
 
 import * as Lantern from '../types/lantern.js';
 import {Metric} from '../metric.js';
-// TODO(15841): don't use LighthouseError
-import {LighthouseError} from '../../lh-error.js';
 import {FirstContentfulPaint} from './first-contentful-paint.js';
 
 /** @typedef {import('../base-node.js').Node} Node */
@@ -32,7 +30,7 @@ class FirstMeaningfulPaint extends Metric {
   static getOptimisticGraph(dependencyGraph, processedNavigation) {
     const fmp = processedNavigation.timestamps.firstMeaningfulPaint;
     if (!fmp) {
-      throw new LighthouseError(LighthouseError.errors.NO_FMP);
+      throw new Error('NO_FMP');
     }
     return FirstContentfulPaint.getFirstPaintBasedGraph(dependencyGraph, {
       cutoffTimestamp: fmp,
@@ -51,7 +49,7 @@ class FirstMeaningfulPaint extends Metric {
   static getPessimisticGraph(dependencyGraph, processedNavigation) {
     const fmp = processedNavigation.timestamps.firstMeaningfulPaint;
     if (!fmp) {
-      throw new LighthouseError(LighthouseError.errors.NO_FMP);
+      throw new Error('NO_FMP');
     }
 
     return FirstContentfulPaint.getFirstPaintBasedGraph(dependencyGraph, {

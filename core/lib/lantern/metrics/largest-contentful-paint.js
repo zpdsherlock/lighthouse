@@ -6,8 +6,8 @@
 
 import * as Lantern from '../types/lantern.js';
 import {Metric} from '../metric.js';
-import {LighthouseError} from '../../../lib/lh-error.js';
 import {FirstContentfulPaint} from './first-contentful-paint.js';
+import {LanternError} from '../lantern-error.js';
 
 /** @typedef {import('../base-node.js').Node} Node */
 
@@ -45,7 +45,7 @@ class LargestContentfulPaint extends Metric {
   static getOptimisticGraph(dependencyGraph, processedNavigation) {
     const lcp = processedNavigation.timestamps.largestContentfulPaint;
     if (!lcp) {
-      throw new LighthouseError(LighthouseError.errors.NO_LCP);
+      throw new LanternError('NO_LCP');
     }
 
     return FirstContentfulPaint.getFirstPaintBasedGraph(dependencyGraph, {
@@ -62,7 +62,7 @@ class LargestContentfulPaint extends Metric {
   static getPessimisticGraph(dependencyGraph, processedNavigation) {
     const lcp = processedNavigation.timestamps.largestContentfulPaint;
     if (!lcp) {
-      throw new LighthouseError(LighthouseError.errors.NO_LCP);
+      throw new LanternError('NO_LCP');
     }
 
     return FirstContentfulPaint.getFirstPaintBasedGraph(dependencyGraph, {

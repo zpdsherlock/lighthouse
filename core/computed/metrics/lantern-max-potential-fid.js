@@ -6,7 +6,7 @@
 
 import {makeComputedArtifact} from '../computed-artifact.js';
 import {MaxPotentialFID} from '../../lib/lantern/metrics/max-potential-fid.js';
-import {getComputationDataParams} from './lantern-metric.js';
+import {getComputationDataParams, lanternErrorAdapter} from './lantern-metric.js';
 import {LanternFirstContentfulPaint} from './lantern-first-contentful-paint.js';
 
 /** @typedef {import('../../lib/lantern/metric.js').Extras} Extras */
@@ -19,7 +19,8 @@ class LanternMaxPotentialFID extends MaxPotentialFID {
    * @return {Promise<LH.Artifacts.LanternMetric>}
    */
   static async computeMetricWithGraphs(data, context, extras) {
-    return this.compute(await getComputationDataParams(data, context), extras);
+    return this.compute(await getComputationDataParams(data, context), extras)
+      .catch(lanternErrorAdapter);
   }
 
   /**

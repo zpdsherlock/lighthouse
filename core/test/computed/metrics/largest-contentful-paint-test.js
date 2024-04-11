@@ -48,14 +48,19 @@ Object {
     assert.equal(result.timestamp, 713038144775);
   });
 
-  it('should fail to compute an observed value for old trace', async () => {
-    const settings = {throttlingMethod: 'provided'};
-    const context = {settings, computedCache: new Map()};
-    const URL = getURLArtifactFromDevtoolsLog(invalidDevtoolsLog);
-    const resultPromise = LargestContentfulPaint.request(
-      {gatherContext, trace: invalidTrace, devtoolsLog: invalidDevtoolsLog, settings, URL},
-      context
-    );
-    await expect(resultPromise).rejects.toThrow('NO_LCP');
+  ['provided', 'simulate'].forEach(throttlingMethod => {
+    it(`should fail to compute a value for old trace (${throttlingMethod})`, async () => {
+      const settings = {throttlingMethod};
+      const context = {settings, computedCache: new Map()};
+      const URL = getURLArtifactFromDevtoolsLog(invalidDevtoolsLog);
+      const resultPromise = LargestContentfulPaint.request(
+        {gatherContext, trace: invalidTrace, devtoolsLog: invalidDevtoolsLog, settings, URL},
+        context
+      );
+      await expect(resultPromise).rejects.toMatchObject({
+        code: 'NO_LCP',
+        friendlyMessage: expect.toBeDisplayString(/The page did not display content.*NO_LCP/),
+      });
+    });
   });
 });

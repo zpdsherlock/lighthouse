@@ -5,7 +5,7 @@
  */
 
 import {makeComputedArtifact} from '../computed-artifact.js';
-import {getComputationDataParams} from './lantern-metric.js';
+import {getComputationDataParams, lanternErrorAdapter} from './lantern-metric.js';
 import {FirstContentfulPaint} from '../../lib/lantern/metrics/first-contentful-paint.js';
 
 /** @typedef {import('../../lib/lantern/metric.js').Extras} Extras */
@@ -18,7 +18,8 @@ class LanternFirstContentfulPaint extends FirstContentfulPaint {
    * @return {Promise<LH.Artifacts.LanternMetric>}
    */
   static async computeMetricWithGraphs(data, context, extras) {
-    return this.compute(await getComputationDataParams(data, context), extras);
+    return this.compute(await getComputationDataParams(data, context), extras)
+      .catch(lanternErrorAdapter);
   }
 
   /**
