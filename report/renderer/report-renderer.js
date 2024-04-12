@@ -203,7 +203,7 @@ export class ReportRenderer {
    * @return {!DocumentFragment[]}
    */
   _renderScoreGauges(report, categoryRenderer, specificCategoryRenderers) {
-    // Group gauges in this order: default, pwa, plugins.
+    // Group gauges in this order: default, plugins.
     const defaultGauges = [];
     const pluginGauges = [];
 

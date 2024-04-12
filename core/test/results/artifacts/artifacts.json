@@ -12680,10 +12680,6 @@
       }
     }
   },
-  "ServiceWorker": {
-    "versions": [],
-    "registrations": []
-  },
   "Inputs": {
     "inputs": [
       {

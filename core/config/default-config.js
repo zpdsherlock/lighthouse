@@ -133,7 +133,6 @@ const defaultConfig = {
     {id: 'OptimizedImages', gatherer: 'dobetterweb/optimized-images'},
     {id: 'ResponseCompression', gatherer: 'dobetterweb/response-compression'},
     {id: 'RobotsTxt', gatherer: 'seo/robots-txt'},
-    {id: 'ServiceWorker', gatherer: 'service-worker'},
     {id: 'Scripts', gatherer: 'scripts'},
     {id: 'SourceMaps', gatherer: 'source-maps'},
     {id: 'Stacks', gatherer: 'stacks'},

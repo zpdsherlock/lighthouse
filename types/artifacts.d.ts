@@ -141,8 +141,6 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   RobotsTxt: {status: number|null, content: string|null, errorMessage?: string};
   /** The result of calling the shared trace engine root cause analysis. */
   RootCauses: Artifacts.TraceEngineRootCauses;
-  /** Version information for all ServiceWorkers active after the first page load. */
-  ServiceWorker: {versions: Crdp.ServiceWorker.ServiceWorkerVersion[], registrations: Crdp.ServiceWorker.ServiceWorkerRegistration[]};
   /** Source maps of scripts executed in the page. */
   SourceMaps: Array<Artifacts.SourceMap>;
   /** Information on detected tech stacks (e.g. JS libraries) used by the page. */

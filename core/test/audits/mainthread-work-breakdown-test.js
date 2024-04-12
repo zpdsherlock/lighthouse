@@ -54,7 +54,7 @@ describe('Performance: page execution timings audit', () => {
     };
   });
 
-  it('should compute the correct pageExecutionTiming values for the pwa trace', async () => {
+  it('should compute the correct pageExecutionTiming values for the trace', async () => {
     const artifacts = {
       traces: {defaultPass: acceptableTrace},
       devtoolsLogs: {defaultPass: acceptableDevtoolsLog},

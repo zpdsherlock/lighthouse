@@ -35,11 +35,6 @@ await td.replaceEsm('../lib/asset-saver.js', {
   loadArtifacts: loadArtifactsSpy = jestMock.fn((...args) => assetSaver.loadArtifacts(...args)),
 });
 
-await td.replaceEsm('../gather/driver/service-workers.js', {
-  getServiceWorkerVersions: jestMock.fn().mockResolvedValue({versions: []}),
-  getServiceWorkerRegistrations: jestMock.fn().mockResolvedValue({registrations: []}),
-});
-
 // Some imports needs to be done dynamically, so that their dependencies will be mocked.
 // https://github.com/GoogleChrome/lighthouse/blob/main/docs/hacking-tips.md#mocking-modules-with-testdouble
 const {Runner} = await import('../runner.js');
