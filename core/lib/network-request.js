@@ -536,6 +536,7 @@ class NetworkRequest {
       requestMs: requestMs,
       responseMs: responseMs,
     };
+    this.serverResponseTime = responseMs;
   }
 
   /**
@@ -574,8 +575,35 @@ class NetworkRequest {
    * @return {Lantern.NetworkRequest<NetworkRequest>}
    */
   static asLanternNetworkRequest(record) {
+    // In LR, network records are missing connection timing, but we've smuggled it in via headers.
+    let timing = record.timing;
+    let serverResponseTime;
+    if (global.isLightrider && record.lrStatistics) {
+      if (record.protocol.startsWith('h3')) {
+        // @ts-expect-error We don't need all the properties set.
+        timing = {
+          connectStart: 0,
+          connectEnd: record.lrStatistics.TCPMs,
+        };
+      } else {
+        // @ts-expect-error We don't need all the properties set.
+        timing = {
+          connectStart: 0,
+          sslStart: record.lrStatistics.TCPMs / 2,
+          connectEnd: record.lrStatistics.TCPMs,
+          sslEnd: record.lrStatistics.TCPMs,
+        };
+
+        // Lightrider does not have timings for sendEnd, but we do have this timing which should be
+        // close to the response time.
+        serverResponseTime = record.lrStatistics.requestMs;
+      }
+    }
+
     return {
       ...record,
+      timing,
+      serverResponseTime,
       record,
     };
   }

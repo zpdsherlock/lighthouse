@@ -67,9 +67,6 @@ export class NetworkRequest<T = any> {
     resourceSize: number;
     fromDiskCache: boolean;
     fromMemoryCache: boolean;
-    // TODO(15841): remove from lantern.
-    /** Extra timing information available only when run in Lightrider. */
-    lrStatistics: LightriderStatistics | undefined;
     finished: boolean;
     statusCode: number;
     /** The network request that this one redirected to */
@@ -80,6 +77,11 @@ export class NetworkRequest<T = any> {
     /** The chain of network requests that redirected to this one */
     redirects: NetworkRequest[] | undefined;
     timing: LH.Crdp.Network.ResourceTiming | undefined;
+    /**
+     * Optional value for how long the server took to respond to this request.
+     * When not provided, the server response time is derived from the timing object.
+     */
+    serverResponseTime: number | undefined;
     resourceType: LH.Crdp.Network.ResourceType | undefined;
     mimeType: string;
     priority: LH.Crdp.Network.ResourcePriority;

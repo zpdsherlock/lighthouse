@@ -9,6 +9,7 @@ import assert from 'assert/strict';
 import {NetworkAnalyzer} from '../../../../lib/lantern/simulator/network-analyzer.js';
 import {NetworkRecords} from '../../../../computed/network-records.js';
 import {readJson} from '../../../test-utils.js';
+import {NetworkRequest} from '../../../../lib/network-request.js';
 
 const devtoolsLog = readJson('../../../fixtures/traces/progressive-app-m60.devtools.log.json', import.meta);
 const devtoolsLogWithRedirect = readJson('../../../fixtures/artifacts/redirect/devtoolslog.json', import.meta);
@@ -24,7 +25,7 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
     const url = opts.url || 'https://example.com';
     if (opts.networkRequestTime) opts.networkRequestTime *= 1000;
     if (opts.networkEndTime) opts.networkEndTime *= 1000;
-    return Object.assign(
+    const record = Object.assign(
       {
         url,
         requestId: recordId++,
@@ -39,6 +40,7 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
       },
       opts
     );
+    return NetworkRequest.asLanternNetworkRequest(record);
   }
 
   beforeEach(() => {
@@ -332,7 +334,7 @@ describe('DependencyGraph/Simulator/NetworkAnalyzer', () => {
 
     it('should use lrStatistics when needed', () => {
       global.isLightrider = true;
-      const record = createRecord({timing: {}, lrStatistics: {requestMs: 100}});
+      const record = createRecord({timing: {}, lrStatistics: {TCPMs: 1, requestMs: 100}});
       const result = NetworkAnalyzer.estimateServerResponseTimeByOrigin([record]);
       const expected = {min: 100, max: 100, avg: 100, median: 100};
       assert.deepStrictEqual(result.get('https://example.com'), expected);
