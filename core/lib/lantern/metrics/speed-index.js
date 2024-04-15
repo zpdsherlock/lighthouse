@@ -7,8 +7,8 @@
 import * as Lantern from '../types/lantern.js';
 import {Metric} from '../metric.js';
 import {BaseNode} from '../base-node.js';
-// TODO(15841): move this default config value into lib/lantern
-import {throttling as defaultThrottling} from '../../../config/constants.js';
+
+const mobileSlow4GRtt = 150;
 
 /** @typedef {import('../base-node.js').Node} Node */
 
@@ -44,7 +44,7 @@ class SpeedIndex extends Metric {
     //      lantern test data set. See core/scripts/test-lantern.sh for more detail.
     // While the coefficients haven't been analyzed at the interpolated points, it's our current best effort.
     const defaultCoefficients = this.COEFFICIENTS;
-    const defaultRttExcess = defaultThrottling.mobileSlow4G.rttMs - 30;
+    const defaultRttExcess = mobileSlow4GRtt - 30;
     const multiplier = Math.max((rttMs - 30) / defaultRttExcess, 0);
 
     return {
