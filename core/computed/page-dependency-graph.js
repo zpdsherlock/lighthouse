@@ -9,7 +9,6 @@ import {PageDependencyGraph as LanternPageDependencyGraph} from '../lib/lantern/
 import {NetworkRequest} from '../lib/network-request.js';
 import {ProcessedTrace} from './processed-trace.js';
 import {NetworkRecords} from './network-records.js';
-import {DocumentUrls} from './document-urls.js';
 
 /** @typedef {import('../lib/lantern/base-node.js').Node<LH.Artifacts.NetworkRequest>} Node */
 
@@ -20,15 +19,11 @@ class PageDependencyGraph {
    * @return {Promise<Node>}
    */
   static async compute_(data, context) {
-    const {trace, devtoolsLog} = data;
+    const {trace, devtoolsLog, URL} = data;
     const [processedTrace, networkRecords] = await Promise.all([
       ProcessedTrace.request(trace, context),
       NetworkRecords.request(devtoolsLog, context),
     ]);
-
-    // COMPAT: Backport for pre-10.0 clients that don't pass the URL artifact here (e.g. pubads).
-    // Calculates the URL artifact from the processed trace and DT log.
-    const URL = data.URL || await DocumentUrls.request(data, context);
 
     const mainThreadEvents = processedTrace.mainThreadEvents;
     const lanternRequests = networkRecords.map(NetworkRequest.asLanternNetworkRequest);

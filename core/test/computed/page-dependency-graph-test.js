@@ -29,19 +29,5 @@ describe('PageDependencyGraph computed artifact', () => {
         assert.ok(nodeWithNestedDependents, 'did not link initiators');
       });
     });
-
-    it('should compute the dependency graph with URL backport', () => {
-      const context = {computedCache: new Map()};
-      return PageDependencyGraph.request({
-        trace: sampleTrace,
-        devtoolsLog: sampleDevtoolsLog,
-      }, context).then(output => {
-        assert.ok(output instanceof BaseNode, 'did not return a graph');
-
-        const dependents = output.getDependents();
-        const nodeWithNestedDependents = dependents.find(node => node.getDependents().length);
-        assert.ok(nodeWithNestedDependents, 'did not link initiators');
-      });
-    });
   });
 });
