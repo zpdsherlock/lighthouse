@@ -117,7 +117,8 @@ class RenderBlockingResources extends Audit {
       guidanceLevel: 2,
       // TODO: look into adding an `optionalArtifacts` property that captures the non-required nature
       // of CSSUsage
-      requiredArtifacts: ['URL', 'traces', 'devtoolsLogs', 'CSSUsage', 'GatherContext', 'Stacks'],
+      requiredArtifacts:
+        ['URL', 'traces', 'devtoolsLogs', 'Stylesheets', 'CSSUsage', 'GatherContext', 'Stacks'],
     };
   }
 
@@ -263,6 +264,7 @@ class RenderBlockingResources extends Audit {
     const wastedBytesByUrl = new Map();
     try {
       const unusedCssItems = await UnusedCSS.request({
+        Stylesheets: artifacts.Stylesheets,
         CSSUsage: artifacts.CSSUsage,
         devtoolsLog: artifacts.devtoolsLogs[Audit.DEFAULT_PASS],
       }, context);

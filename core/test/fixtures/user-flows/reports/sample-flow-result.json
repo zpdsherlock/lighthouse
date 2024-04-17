@@ -9798,38 +9798,6 @@
             },
             "guidanceLevel": 3
           },
-          "unused-css-rules": {
-            "id": "unused-css-rules",
-            "title": "Reduce unused CSS",
-            "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. [Learn how to reduce unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/).",
-            "score": 1,
-            "scoreDisplayMode": "metricSavings",
-            "numericValue": 0,
-            "numericUnit": "millisecond",
-            "displayValue": "",
-            "metricSavings": {
-              "FCP": 0,
-              "LCP": 0
-            },
-            "details": {
-              "type": "opportunity",
-              "headings": [],
-              "items": [],
-              "overallSavingsMs": 0,
-              "overallSavingsBytes": 0,
-              "sortedBy": [
-                "wastedBytes"
-              ],
-              "debugData": {
-                "type": "debugdata",
-                "metricSavings": {
-                  "FCP": 0,
-                  "LCP": 0
-                }
-              }
-            },
-            "guidanceLevel": 1
-          },
           "unused-javascript": {
             "id": "unused-javascript",
             "title": "Reduce unused JavaScript",
@@ -10421,11 +10389,6 @@
               },
               {
                 "id": "unminified-javascript",
-                "weight": 0,
-                "group": "diagnostics"
-              },
-              {
-                "id": "unused-css-rules",
                 "weight": 0,
                 "group": "diagnostics"
               },
@@ -11392,108 +11355,96 @@
             },
             {
               "startTime": 86,
-              "name": "lh:audit:unused-css-rules",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 87,
-              "name": "lh:computed:UnusedCSS",
-              "duration": 1,
-              "entryType": "measure"
-            },
-            {
-              "startTime": 88,
               "name": "lh:audit:unused-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 89,
+              "startTime": 87,
               "name": "lh:audit:modern-image-formats",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 90,
+              "startTime": 88,
               "name": "lh:audit:uses-optimized-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 91,
+              "startTime": 89,
               "name": "lh:audit:uses-text-compression",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 92,
+              "startTime": 90,
               "name": "lh:audit:uses-responsive-images",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 93,
+              "startTime": 91,
               "name": "lh:computed:ImageRecords",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 94,
+              "startTime": 92,
               "name": "lh:audit:efficient-animated-content",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 95,
+              "startTime": 93,
               "name": "lh:audit:duplicated-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 96,
+              "startTime": 94,
               "name": "lh:audit:legacy-javascript",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 97,
+              "startTime": 95,
               "name": "lh:audit:inspector-issues",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 98,
+              "startTime": 96,
               "name": "lh:audit:no-document-write",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 99,
+              "startTime": 97,
               "name": "lh:audit:uses-passive-event-listeners",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 100,
+              "startTime": 98,
               "name": "lh:audit:work-during-interaction",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 101,
+              "startTime": 99,
               "name": "lh:audit:bf-cache",
               "duration": 1,
               "entryType": "measure"
             },
             {
-              "startTime": 102,
+              "startTime": 100,
               "name": "lh:runner:generate",
               "duration": 1,
               "entryType": "measure"
             }
           ],
-          "total": 103
+          "total": 101
         },
         "i18n": {
           "rendererFormattedStrings": {
@@ -11892,12 +11843,6 @@
             ],
             "core/audits/byte-efficiency/unminified-javascript.js | description": [
               "audits[unminified-javascript].description"
-            ],
-            "core/audits/byte-efficiency/unused-css-rules.js | title": [
-              "audits[unused-css-rules].title"
-            ],
-            "core/audits/byte-efficiency/unused-css-rules.js | description": [
-              "audits[unused-css-rules].description"
             ],
             "core/audits/byte-efficiency/unused-javascript.js | title": [
               "audits[unused-javascript].title"

@@ -16,7 +16,7 @@ describe('Page uses optimized css', () => {
     const auditResult = UnminifiedCssAudit.audit_(
       {
         URL: {finalDisplayedUrl: ''},
-        CSSUsage: {stylesheets: [
+        Stylesheets: [
           {
             header: {sourceURL: 'foo.css'},
             content: `
@@ -41,7 +41,7 @@ describe('Page uses optimized css', () => {
               }
             `.replace(/\n\s+/g, '\n'),
           },
-        ]},
+        ],
       },
       [
         {url: 'foo.css', transferSize: 20 * KB, resourceType},
@@ -62,7 +62,7 @@ describe('Page uses optimized css', () => {
     const auditResult = UnminifiedCssAudit.audit_(
       {
         URL: {finalDisplayedUrl: ''},
-        CSSUsage: {stylesheets: [
+        Stylesheets: [
           {header: {sourceURL: 'foo.css'}, content: '#id{width:100px;}'},
           {
             header: {sourceURL: 'other.css'},
@@ -77,7 +77,7 @@ describe('Page uses optimized css', () => {
             header: {sourceURL: 'invalid.css'},
             content: '/* a broken comment .clasz { width: 0; }',
           },
-        ]},
+        ],
       },
       [
         {url: 'foo.css', transferSize: 20 * KB, resourceType},

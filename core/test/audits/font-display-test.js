@@ -21,7 +21,7 @@ describe('Performance: Font Display audit', () => {
     return {
       devtoolsLogs: {[FontDisplayAudit.DEFAULT_PASS]: networkRecordsToDevtoolsLog(networkRecords)},
       URL: {finalDisplayedUrl: 'https://example.com/foo/bar/page'},
-      CSSUsage: {stylesheets: [stylesheet]},
+      Stylesheets: [stylesheet],
     };
   }
 
@@ -314,7 +314,7 @@ describe('Performance: Font Display audit', () => {
     }];
 
     const artifacts = getArtifacts();
-    artifacts.CSSUsage.stylesheets = [
+    artifacts.Stylesheets = [
       {content: '', header: {}},
       {
         content: `

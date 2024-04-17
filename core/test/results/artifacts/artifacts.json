@@ -575,180 +575,56 @@
     }
   ],
   "PageLoadError": null,
-  "CSSUsage": {
-    "rules": [
-      {
-        "styleSheetId": "31161.1",
-        "startOffset": 1,
-        "endOffset": 52,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.0",
-        "startOffset": 3,
-        "endOffset": 78,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.2",
-        "startOffset": 605,
-        "endOffset": 639,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.4",
-        "startOffset": 605,
-        "endOffset": 639,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.5",
-        "startOffset": 3,
-        "endOffset": 30,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.7",
-        "startOffset": 605,
-        "endOffset": 639,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.8",
-        "startOffset": 605,
-        "endOffset": 639,
-        "used": true
-      },
-      {
-        "styleSheetId": "31161.9",
-        "startOffset": 605,
-        "endOffset": 639,
-        "used": true
-      }
-    ],
-    "stylesheets": [
-      {
-        "header": {
-          "styleSheetId": "31161.1",
-          "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
-          "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.html",
-          "origin": "regular",
-          "title": "",
-          "ownerNode": 26,
-          "disabled": false,
-          "isInline": true,
-          "isMutable": false,
-          "isConstructed": false,
-          "startLine": 229,
-          "startColumn": 7,
-          "length": 53,
-          "endLine": 234,
-          "endColumn": 0
-        },
-        "content": "\n.small-button {\n  display: block;\n  width: 200px;\n}\n"
-      },
-      {
-        "header": {
-          "styleSheetId": "31161.0",
-          "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
-          "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.html",
-          "origin": "regular",
-          "title": "",
-          "ownerNode": 20,
-          "disabled": false,
-          "isInline": true,
-          "isMutable": false,
-          "isConstructed": false,
-          "startLine": 486,
-          "startColumn": 7,
-          "length": 229,
-          "endLine": 503,
-          "endColumn": 0
-        },
-        "content": "\n  #animated-boi {\n    animation: 3s badanim;\n    border: 1px solid black;\n  }\n\n  @keyframes badanim {\n    from {\n      margin-left: 100%;\n      height: 50px;\n    }\n\n    to {\n      margin-left: 0%;\n      height: 200px;\n    }\n  }\n"
-      },
-      {
-        "header": {
-          "styleSheetId": "31161.9",
-          "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
-          "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=2000&async=true",
-          "origin": "regular",
-          "title": "",
-          "ownerNode": 34,
-          "disabled": false,
-          "isInline": false,
-          "isMutable": false,
-          "isConstructed": false,
-          "startLine": 0,
-          "startColumn": 0,
-          "length": 689,
-          "endLine": 12,
-          "endColumn": 0
-        },
-        "content": "/**\n * @license Copyright 2016 Google LLC\n * Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0\n * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\n */\n\nbody {\n  background-color: #eee;\n}\n.doesnotapply {\n  display: flexbox; /* FAIL */\n}\n"
-      },
-      {
-        "header": {
-          "styleSheetId": "31161.3",
-          "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
-          "sourceURL": "",
-          "origin": "regular",
-          "title": "",
-          "ownerNode": 28,
-          "disabled": false,
-          "isInline": false,
-          "isMutable": false,
-          "isConstructed": false,
-          "startLine": 0,
-          "startColumn": 0,
-          "length": 83,
-          "endLine": 4,
-          "endColumn": 2
-        },
-        "content": "\n    body /deep/ div {\n      color: pink; /* FAIL - deprecation warning */\n    }\n  "
-      },
-      {
-        "header": {
-          "styleSheetId": "31161.5",
-          "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
-          "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.html",
-          "origin": "regular",
-          "title": "",
-          "ownerNode": 30,
-          "disabled": false,
-          "isInline": true,
-          "isMutable": false,
-          "isConstructed": false,
-          "startLine": 63,
-          "startColumn": 7,
-          "length": 119,
-          "endLine": 71,
-          "endColumn": 0
-        },
-        "content": "\n  body {\n    color: #000;\n  }\n  .failedselector {\n    -webkit-box-flex: 1; /* FAIL */\n    box-flex: 1; /* FAIL */\n  }\n"
-      },
-      {
-        "header": {
-          "styleSheetId": "31161.6",
-          "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
-          "sourceURL": "http://localhost:10200/dobetterweb/unknown404.css?delay=200",
-          "origin": "regular",
-          "title": "",
-          "ownerNode": 31,
-          "disabled": false,
-          "isInline": false,
-          "isMutable": false,
-          "isConstructed": false,
-          "startLine": 0,
-          "startColumn": 0,
-          "length": 0,
-          "endLine": 0,
-          "endColumn": 0
-        },
-        "content": ""
-      }
-    ]
-  },
+  "CSSUsage": [
+    {
+      "styleSheetId": "31161.1",
+      "startOffset": 1,
+      "endOffset": 52,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.0",
+      "startOffset": 3,
+      "endOffset": 78,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.2",
+      "startOffset": 605,
+      "endOffset": 639,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.4",
+      "startOffset": 605,
+      "endOffset": 639,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.5",
+      "startOffset": 3,
+      "endOffset": 30,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.7",
+      "startOffset": 605,
+      "endOffset": 639,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.8",
+      "startOffset": 605,
+      "endOffset": 639,
+      "used": true
+    },
+    {
+      "styleSheetId": "31161.9",
+      "startOffset": 605,
+      "endOffset": 639,
+      "used": true
+    }
+  ],
   "JsUsage": {
     "10": {
       "scriptId": "10",
@@ -13124,5 +13000,127 @@
         ]
       }
     }
-  }
+  },
+  "Stylesheets": [
+    {
+      "header": {
+        "styleSheetId": "31161.1",
+        "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
+        "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.html",
+        "origin": "regular",
+        "title": "",
+        "ownerNode": 26,
+        "disabled": false,
+        "isInline": true,
+        "isMutable": false,
+        "isConstructed": false,
+        "startLine": 229,
+        "startColumn": 7,
+        "length": 53,
+        "endLine": 234,
+        "endColumn": 0
+      },
+      "content": "\n.small-button {\n  display: block;\n  width: 200px;\n}\n"
+    },
+    {
+      "header": {
+        "styleSheetId": "31161.0",
+        "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
+        "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.html",
+        "origin": "regular",
+        "title": "",
+        "ownerNode": 20,
+        "disabled": false,
+        "isInline": true,
+        "isMutable": false,
+        "isConstructed": false,
+        "startLine": 486,
+        "startColumn": 7,
+        "length": 229,
+        "endLine": 503,
+        "endColumn": 0
+      },
+      "content": "\n  #animated-boi {\n    animation: 3s badanim;\n    border: 1px solid black;\n  }\n\n  @keyframes badanim {\n    from {\n      margin-left: 100%;\n      height: 50px;\n    }\n\n    to {\n      margin-left: 0%;\n      height: 200px;\n    }\n  }\n"
+    },
+    {
+      "header": {
+        "styleSheetId": "31161.9",
+        "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
+        "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.css?delay=2000&async=true",
+        "origin": "regular",
+        "title": "",
+        "ownerNode": 34,
+        "disabled": false,
+        "isInline": false,
+        "isMutable": false,
+        "isConstructed": false,
+        "startLine": 0,
+        "startColumn": 0,
+        "length": 689,
+        "endLine": 12,
+        "endColumn": 0
+      },
+      "content": "/**\n * @license Copyright 2016 Google LLC\n * Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0\n * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\n */\n\nbody {\n  background-color: #eee;\n}\n.doesnotapply {\n  display: flexbox; /* FAIL */\n}\n"
+    },
+    {
+      "header": {
+        "styleSheetId": "31161.3",
+        "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
+        "sourceURL": "",
+        "origin": "regular",
+        "title": "",
+        "ownerNode": 28,
+        "disabled": false,
+        "isInline": false,
+        "isMutable": false,
+        "isConstructed": false,
+        "startLine": 0,
+        "startColumn": 0,
+        "length": 83,
+        "endLine": 4,
+        "endColumn": 2
+      },
+      "content": "\n    body /deep/ div {\n      color: pink; /* FAIL - deprecation warning */\n    }\n  "
+    },
+    {
+      "header": {
+        "styleSheetId": "31161.5",
+        "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
+        "sourceURL": "http://localhost:10200/dobetterweb/dbw_tester.html",
+        "origin": "regular",
+        "title": "",
+        "ownerNode": 30,
+        "disabled": false,
+        "isInline": true,
+        "isMutable": false,
+        "isConstructed": false,
+        "startLine": 63,
+        "startColumn": 7,
+        "length": 119,
+        "endLine": 71,
+        "endColumn": 0
+      },
+      "content": "\n  body {\n    color: #000;\n  }\n  .failedselector {\n    -webkit-box-flex: 1; /* FAIL */\n    box-flex: 1; /* FAIL */\n  }\n"
+    },
+    {
+      "header": {
+        "styleSheetId": "31161.6",
+        "frameId": "537BC44B4EE044D67F9FFE7A76173AB1",
+        "sourceURL": "http://localhost:10200/dobetterweb/unknown404.css?delay=200",
+        "origin": "regular",
+        "title": "",
+        "ownerNode": 31,
+        "disabled": false,
+        "isInline": false,
+        "isMutable": false,
+        "isConstructed": false,
+        "startLine": 0,
+        "startColumn": 0,
+        "length": 0,
+        "endLine": 0,
+        "endColumn": 0
+      },
+      "content": ""
+    }
+  ]
 }

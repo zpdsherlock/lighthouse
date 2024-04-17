@@ -46,13 +46,13 @@ describe('User flow stylesheet tracking', function() {
 
     state.saveTrace(artifacts1.Trace);
 
-    const stylesheets0 = artifacts0.CSSUsage.stylesheets
+    const stylesheets0 = artifacts0.Stylesheets
       .map(s => s.content.trim())
       .sort((a, b) => a.localeCompare(b));
-    const stylesheets1 = artifacts1.CSSUsage.stylesheets
+    const stylesheets1 = artifacts1.Stylesheets
       .map(s => s.content.trim())
       .sort((a, b) => a.localeCompare(b));
-    const stylesheets2 = artifacts2.CSSUsage.stylesheets
+    const stylesheets2 = artifacts2.Stylesheets
       .map(s => s.content.trim())
       .sort((a, b) => a.localeCompare(b));
 

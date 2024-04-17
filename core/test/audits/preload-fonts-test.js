@@ -21,7 +21,7 @@ describe('Preload Fonts Audit', () => {
     return {
       devtoolsLogs: {[PreloadFontsAudit.DEFAULT_PASS]: networkRecordsToDevtoolsLog(networkRecords)},
       URL: {finalDisplayedUrl: 'https://example.com/foo/bar/page'},
-      CSSUsage: {stylesheets: [stylesheet]},
+      Stylesheets: [stylesheet],
     };
   }
 

@@ -110,7 +110,7 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   /** Array of all URLs cached in CacheStorage. */
   CacheContents: string[];
   /** CSS coverage information for styles used by page's final state. */
-  CSSUsage: {rules: Crdp.CSS.RuleUsage[], stylesheets: Artifacts.CSSStyleSheetInfo[]};
+  CSSUsage: Crdp.CSS.RuleUsage[];
   /** The log of devtools protocol activity if there was a page load error and Chrome navigated to a `chrome-error://` page. */
   DevtoolsLogError: DevtoolsLog;
   /** Information on the document's doctype(or null if not present), specifically the name, publicId, and systemId.
@@ -145,6 +145,8 @@ export interface GathererArtifacts extends PublicGathererArtifacts {
   SourceMaps: Array<Artifacts.SourceMap>;
   /** Information on detected tech stacks (e.g. JS libraries) used by the page. */
   Stacks: Artifacts.DetectedStack[];
+  /** CSS stylesheets found on the page. */
+  Stylesheets: Artifacts.CSSStyleSheetInfo[];
   /** The trace if there was a page load error and Chrome navigated to a `chrome-error://` page. */
   TraceError: Trace;
   /** Elements associated with metrics (ie: Largest Contentful Paint element). */

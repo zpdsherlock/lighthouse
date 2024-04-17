@@ -34,7 +34,8 @@ class UnusedCSSRules extends ByteEfficiencyAudit {
       description: str_(UIStrings.description),
       scoreDisplayMode: ByteEfficiencyAudit.SCORING_MODES.METRIC_SAVINGS,
       guidanceLevel: 1,
-      requiredArtifacts: ['CSSUsage', 'URL', 'devtoolsLogs', 'traces', 'GatherContext'],
+      requiredArtifacts:
+        ['Stylesheets', 'CSSUsage', 'URL', 'devtoolsLogs', 'traces', 'GatherContext'],
     };
   }
 
@@ -46,6 +47,7 @@ class UnusedCSSRules extends ByteEfficiencyAudit {
    */
   static async audit_(artifacts, _, context) {
     const unusedCssItems = await UnusedCSS.request({
+      Stylesheets: artifacts.Stylesheets,
       CSSUsage: artifacts.CSSUsage,
       devtoolsLog: artifacts.devtoolsLogs[ByteEfficiencyAudit.DEFAULT_PASS],
     }, context);
