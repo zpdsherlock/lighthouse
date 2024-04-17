@@ -122,7 +122,10 @@ async function gotoURL(driver, requestor, options) {
     throw new Error('Cannot wait for FCP without waiting for page load');
   }
 
-  const waitConditions = await Promise.all(waitConditionPromises);
+  const waitConditions = await Promise.race([
+    driver.fatalRejection.promise,
+    Promise.all(waitConditionPromises),
+  ]);
   const timedOut = waitConditions.some(condition => condition.timedOut);
   const navigationUrls = await networkMonitor.getNavigationUrls();
 

@@ -100,6 +100,7 @@ class ProtocolSession extends CrdpEventEmitter {
     /** @type {NodeJS.Timer|undefined} */
     let timeout;
     const timeoutPromise = new Promise((resolve, reject) => {
+      // Unexpected setTimeout invocation to preserve the error stack. https://github.com/GoogleChrome/lighthouse/issues/13332
       // eslint-disable-next-line max-len
       timeout = setTimeout(reject, timeoutMs, new LighthouseError(LighthouseError.errors.PROTOCOL_TIMEOUT, {
         protocolMethod: method,
@@ -139,7 +140,7 @@ class ProtocolSession extends CrdpEventEmitter {
   async dispose() {
     // @ts-expect-error Puppeteer expects the handler params to be type `unknown`
     this._cdpSession.off('*', this._handleProtocolEvent);
-    await this._cdpSession.detach();
+    await this._cdpSession.detach().catch(e => log.verbose('session', 'detach failed', e.message));
   }
 }
 

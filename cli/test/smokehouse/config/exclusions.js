@@ -26,6 +26,8 @@ const exclusions = {
     'metrics-tricky-tti', 'metrics-tricky-tti-late-fcp', 'screenshot',
     // Disabled because of differences that need further investigation
     'byte-efficiency', 'byte-gzip', 'perf-preload',
+    // Disabled because a renderer crash also breaks devtools frontend
+    'crash',
   ],
 };
 
