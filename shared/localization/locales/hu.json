@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Az effekt nem támogatott időzítési paraméterekkel rendelkezik"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "A hálózati kérések száma és mérete maradjon a megadott teljesítmény-határértékek által beállított célértékek alatt. [További információ a teljesítmény-határértékekről](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 kérés}other{# kérés}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Teljesítménybüdzsé"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Töltse elő az `optional` betűtípusokat, hogy az első alkalommal érkező látogatók is használhassák őket. [További információ a betűtípusok előtöltéséről](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimalizálja a harmadik felektől származó kódok használatát"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Mérés"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Mutató"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Időkeret beállításával könnyebben figyelheti a webhelye teljesítményét. A jól teljesítő webhelyek gyorsan töltődnek be, és gyorsan válaszolnak a felhasználói beviteli eseményekre. [További információ a teljesítmény-határértékekről](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Időkeret"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Adja meg a képelemek pontos szélességét és magasságát, hogy kevésbé csússzon el az elrendezés, és javuljon a CLS. [További információ a képméretek beállításáról](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Felhasználói élmény"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "A teljesítménybüdzsék elvárásokat határoznak meg a webhely teljesítményére vonatkozóan."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Büdzsék"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "További információ alkalmazása teljesítményéről. Ezek a számok [nem befolyásolják közvetlenül](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) a teljesítménypontszámot."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Név"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Büdzsén kívül"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Kérések"

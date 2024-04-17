@@ -37,7 +37,6 @@
     "cli/test/fixtures/**/*.js",
     "core/scripts/legacy-javascript/variants",
     // These test files require further changes before they can be type checked.
-    "core/test/config/budget-test.js",
     "core/test/config/config-helpers-test.js",
     "core/test/config/config-plugin-test.js",
     "core/test/config/default-config-test.js",

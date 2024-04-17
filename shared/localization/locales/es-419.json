@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "El efecto tiene parámetros de tiempo no compatibles"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Asegúrate de que la cantidad y el tamaño de las solicitudes de red sean menores que los valores objetivo establecidos en el presupuesto de rendimiento. [Obtén más información sobre los presupuestos de rendimiento](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 solicitud}other{# solicitudes}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Estimación de rendimiento"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Precarga fuentes `optional` para que los visitantes nuevos puedan usarlas. [Más información sobre la precarga de fuentes](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimiza el uso del código de terceros"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Medición"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Métrica"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Establece un presupuesto de tiempo para controlar el rendimiento de tu sitio. Los sitios con buen rendimiento se cargan sin demora y responden rápido a los eventos de entrada del usuario. [Obtén más información sobre los presupuestos de rendimiento](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Estimación de tiempo"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Establece un atributo explícito de altura y ancho en los elementos de imagen para reducir los cambios de diseño y mejorar la métrica del CLS. [Más información para configurar las dimensiones de las imágenes](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Experiencia del usuario"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Las estimaciones de rendimiento establecen estándares para el rendimiento de tu sitio."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Estimaciones"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Obtén más información sobre el rendimiento de tu app. Estos números no [afectan directamente](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) la medición del rendimiento."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nombre"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Superior a la estimación"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Solicitudes"

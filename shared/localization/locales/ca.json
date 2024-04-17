@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "L'efecte té paràmetres de temps no admesos"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Manté la quantitat i la mida de les sol·licituds de xarxa ajustades als objectius establerts al pressupost de rendiment que s'ha proporcionat. [Obtén més informació sobre els pressupostos de rendiment](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 sol·licitud}other{# sol·licituds}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Pressupost de rendiment"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Precarrega les fonts `optional` perquè els visitants nous puguin utilitzar-les. [Més informació sobre la precàrrega de fonts](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Redueix l'ús de tercers"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Mesurament"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Mètrica"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Defineix un pressupost de temps perquè t'ajudi a fer un seguiment del rendiment del teu lloc web. Els llocs web que funcionen bé es carreguen ràpidament i responen de pressa als esdeveniments d'entrada dels usuaris. [Obtén més informació sobre els pressupostos de rendiment](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Pressupost de temps"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Als elements d'imatge, defineix una amplada i una alçada explícites per reduir els canvis de disseny i millorar el CLS. [Informació sobre com pots definir les dimensions d'imatge](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Experiència d'usuari"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Els pressupostos de rendiment estableixen uns estàndards per al rendiment del teu lloc web."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Pressupostos"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Més informació sobre el rendiment de la teva aplicació. Aquests números no [afecten directament](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) el resultat del rendiment."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nom"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Per sobre del pressupost"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Sol·licituds"

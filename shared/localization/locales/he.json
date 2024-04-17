@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "האפקט כולל פרמטרים של תזמון שאינם נתמכים"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "הכמות והגודל של בקשות ברשת צריכים להיות מתחת ליעדים שהוגדרו בתקציב הביצועים הרלוונטי. [מידע נוסף על תקציבי ביצועים](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{בקשה אחת}one{בקשה אחת}two{# בקשות}other{# בקשות}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "תקציב ביצועים"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "כדאי לטעון מראש גופני `optional` כדי שמבקרים לראשונה יוכלו להשתמש בהם. [מידע נוסף על טעינה מראש של גופנים](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "צמצום השימוש בצדדים שלישיים"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "הערך שנמדד"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "מדד"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "עליך להגדיר תקציב תזמון שיעזור לך לעקוב אחר ביצועי האתר. אתרים עם ביצועים טובים נטענים מהר ומגיבים במהירות לאירועי קלט של משתמשים. [מידע נוסף על תקציבי ביצועים](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "תקציב תזמון"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "כדי להפחית שינויים בפריסה וכדי לשפר את ה-CLS, יש להגדיר רוחב וגובה מפורשים ברכיבי תמונות. [כך מגדירים מידות תמונה](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "חוויית משתמש"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "באמצעות תקציבי ביצועים ניתן להגדיר יעדי ביצועים עבור האתר."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "תקציבים"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "מידע נוסף לגבי ביצועי האפליקציה. למספרים האלה אין [השפעה ישירה](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) על ציון הביצועים."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "שם"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "גובה החריגה מהתקציב"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "בקשות"

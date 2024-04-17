@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Este efecto incluye parámetros de temporización no compatibles"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Mantén la cantidad y el tamaño de las solicitudes de red por debajo de los objetivos definidos en los límites de rendimiento. [Más información sobre los límites de rendimiento](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 solicitud}other{# solicitudes}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Límites de rendimiento"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Precarga las fuentes `optional` para que los usuarios puedan utilizarlas en su primera visita. [Más información sobre cómo precargar fuentes](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Reducir el uso de código de terceros"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Medición"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Métrica"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Establece límites de tiempo para que te ayuden a controlar el rendimiento de tu sitio. Los sitios eficientes cargan su contenido y responden a los eventos de entrada del usuario con rapidez. [Más información sobre los límites de rendimiento](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Límites de tiempo"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "En los elementos de imagen, especifica un ancho y una altura explícitos para reducir los cambios de diseño y mejorar el CLS. [Consulta cómo configurar las dimensiones de una imagen](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Experiencia de usuario"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Los límites de rendimiento definen los estándares de rendimiento de tu sitio web."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Límites"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Consulta más información sobre el rendimiento de tu aplicación. Estos datos no [afectan directamente](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) a la puntuación del rendimiento."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nombre"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Por encima del límite"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Solicitudes"

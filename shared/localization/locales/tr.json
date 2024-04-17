@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efektin desteklenmeyen zamanlama parametreleri var"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Ağ isteklerinin miktarını ve büyüklüğünü, performans bütçesi tarafından belirlenen hedeflerin altında tutun. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 istek}other{# istek}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Performans bütçesi"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Sitenize ilk kez gelen ziyaretçilerin kullanma olasılığına karşı `optional` özelliği olan yazı tiplerini önceden yükleyin. [Yazı tiplerini önceden yükleme hakkında daha fazla bilgi edinin](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Üçüncü taraf kullanımını en aza indirme"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Ölçüm"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metrik"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Sitenizin performansını takip etmenize yardımcı olması için zamanlama bütçesi belirleyin. Performanslı siteler hızlı yüklenir ve kullanıcı giriş etkinliklerine hızlı yanıt verir. [Performans bütçeleri hakkında daha fazla bilgi edinin](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Zamanlama bütçesi"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Düzen kaymalarını azaltıp CLS'yi iyileştirmek için görsel öğelerde genişliği ve yüksekliği açıkça belirtilmiş şekilde ayarlayın. [Resim boyutlarını nasıl belirleyeceğinizi öğrenin](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Kullanıcı Deneyimi"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Performans bütçeleri, sitenizin performansı için standartları belirler."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Bütçeler"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Uygulamanızın performansı hakkında daha fazla bilgi. Bu sayılar Performan skoruna [doğrudan etki](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) etmezler."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Ad"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Bütçe Aşımı"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "İstek Sayısı"

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Tehosteessa on ei-tuettuja ajoitusparametreja"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Pidä verkkopyyntöjen määrä ja koko tehokkuusbudjetissa määritettyjen tavoitteiden rajoissa. [Lue lisää tehokkuusbudjeteista](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 pyyntö}other{# pyyntöä}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Tehokkuusbudjetti"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Esilataa `optional` fonttia ensikertalaisten kävijöiden saataville. [Lue lisää fonttien esilataamisesta](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimoi kolmannen osapuolen käyttö"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Arvo"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Mittari"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Aseta aikabudjetti, niin voit seurata sivustosi nopeutta. Kun sivusto toimii oikein, sen latausaika on lyhyt ja se vastaa käyttäjän syötteisiin nopeasti. [Lue lisää tehokkuusbudjeteista](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Aikabudjetti"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Lisää kuvaelementeille kiinteä leveys ja pituus, jotta asettelu muuttuu vähemmän ja CLS paranee. [Katso, miten voit valita kuvan mitat](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Käyttökokemus"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Tehokkuusbudjetit määrittävät sivuston tehokkuuden standardit."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budjetit"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Lisätietoja sovelluksen toiminnasta. Luvut eivät [suoraan vaikuta](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) tehokkuusprosenttiin."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nimi"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Ylittää budjetin"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Pyynnöt"

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "May mga hindi sinusuportahang parameter ng timing ang effect"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Panatilihin ang dami at laki ng mga kahilingan sa network sa ilalim ng mga target na itinakda ng ibinigay na badyet sa performance. [Matuto pa tungkol sa mga badyet sa performance](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 kahilingan}one{# kahilingan}other{# na kahilingan}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Badyet sa performance"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Mag-preload ng mga `optional` na font para magamit ng mga unang beses na bisita ang mga ito. [Matuto pa tungkol sa pag-preload ng mga font](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Bawasan ang paggamit ng third-party"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Pagsukat"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Sukatan"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Magtakda ng badyet sa timing para matulungan kang subaybayan ang performance ng iyong site. Mabilis na naglo-load ang mga site na maayos na gumagana at mabilis na tumutugon ang mga ito sa mga input event ng user. [Matuto pa tungkol sa mga badyet sa performance](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Badyet sa timing"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Magtakda ng malinaw na lapad at taas sa mga element na larawan para mabawasan ang mga pagbabago sa layout at mapahusay ang CLS. [Alamin kung paano magtakda ng mga dimensyon ng larawan](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Karanasan ng User"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Nagtatakda ng mga pamantayan para sa performance ng iyong site ang mga badyet ng performance."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Mga Badyet"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Higit pang impormasyon tungkol sa performance ng iyong application. Ang mga numerong ito ay hindi [direktang makakaapekto ](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) sa score sa Performance."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Pangalan"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Lampas sa Badyet"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Mga Kahilingan"

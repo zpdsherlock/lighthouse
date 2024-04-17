@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Параметры времени в настройках эффекта не поддерживаются"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Следите за тем, чтобы количество и размер сетевых запросов соответствовали целям, установленным в бюджете производительности. Подробнее [о бюджетах производительности](https://developers.google.com/web/tools/lighthouse/audits/budgets)…"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 запрос}one{# запрос}few{# запроса}many{# запросов}other{# запроса}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Бюджет производительности"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Выполняйте предварительную загрузку шрифтов, задав дескриптору font-display значение `optional`, чтобы новые посетители могли воспользоваться ими. Подробнее [о предзагрузке шрифтов](https://web.dev/articles/preload-optional-fonts)…"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Уменьшение использования стороннего кода"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Единица измерения"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Показатель"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Указав предельное время загрузки страниц сайта, вы сможете отслеживать его производительность. Показателями хорошей производительности являются быстрая загрузка страниц и обработка событий ввода данных пользователем. Подробнее [о бюджетах производительности](https://developers.google.com/web/tools/lighthouse/audits/budgets)…"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Время на загрузку"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Чтобы уменьшить совокупное смещение макета и избежать проблем, связанных со смещением элементов, рекомендуем всегда явным образом задавать ширину и высоту для изображений. Подробнее о том, [как задавать размеры изображений](https://web.dev/articles/optimize-cls#images_without_dimensions)…"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Удобство для пользователей"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "В бюджете производительности устанавливаются нормы для производительности вашего сайта."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Бюджет"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Подробная информация о производительности вашего приложения. Эти цифры не влияют на показатель производительности [напрямую](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Название"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Сверх бюджета"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Запросы"

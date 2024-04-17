@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Effekten har tidsparametere som ikke støttes"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Sørg for at antall nettverksforespørsler og størrelsen på disse er lavere enn målene som er angitt i de aktuelle ytelsesbegrensningene. [Finn ut mer om ytelsesbegrensninger](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 forespørsel}other{# forespørsler}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Ytelsesbudsjett"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Forhåndslast `optional` skrifttyper, slik at førstegangsbesøkende kan bruke dem. [Finn ut mer om forhåndslasting av skrifttyper](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimer bruken av tredjepartskode"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Måling"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Verdi"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Angi et tidsbudsjett, slik at du kan holde øye med ytelsen på nettstedet. Nettsteder med høy ytelse lastes inn raskt og svarer kjapt på brukerinndatahendelser. [Finn ut mer om ytelsesbegrensninger](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Tidsbudsjett"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Angi bredden og høyden på bildeelementer eksplisitt for å redusere utseendeforskyvninger og oppnå bedre CLS. [Finn ut hvordan du angir bildedimensjoner](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Brukeropplevelse"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Ytelsesbudsjetter angir standarder for ytelsen på nettstedet."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budsjetter"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Mer informasjon om ytelsen til appen din. Disse tallene har ingen [direkte innvirkning](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) på ytelsespoengsummen."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Navn"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Over budsjett"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Forespørsler"

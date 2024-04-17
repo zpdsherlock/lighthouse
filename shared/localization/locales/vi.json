@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Hiệu ứng có tham số thời gian không được hỗ trợ"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Đảm bảo số lượng và quy mô của yêu cầu mạng thấp hơn mục tiêu đặt ra của ngân sách hiệu suất đã cung cấp. [Tìm hiểu thêm về ngân sách hiệu suất](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 yêu cầu}other{# yêu cầu}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Ngân sách hiệu suất"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Tải trước phông chữ có `optional` để khách truy cập lần đầu có thể sử dụng. [Tìm hiểu thêm về cách tải trước phông chữ](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Giảm thiểu mức sử dụng của bên thứ ba"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Đo lường"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Chỉ số"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Khi đặt giới hạn về thời gian, bạn sẽ có thể theo dõi được hiệu suất trang web của mình. Các trang có hiệu suất cao sẽ tải và phản hồi nhanh với các sự kiện hoạt động đầu vào của người dùng. [Tìm hiểu thêm về ngân sách hiệu suất](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Giới hạn về thời gian"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Đặt chiều rộng và chiều cao rõ ràng đối với các phần tử hình ảnh để giảm sự thay đổi về bố cục và cải thiện CLS (Điểm số tổng hợp về mức thay đổi bố cục). [Tìm hiểu cách đặt kích thước hình ảnh](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Trải nghiệm người dùng"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Phần Ngân sách hiệu suất đặt ra tiêu chuẩn về hiệu suất của trang web."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Ngân sách"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Thông tin bổ sung về hiệu suất của ứng dụng. Những số liệu này không [trực tiếp ảnh hưởng](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) đến Điểm hiệu suất."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Tên"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Vượt ngân sách"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Số yêu cầu"

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Effekt hat nicht unterstützte Timingparameter"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Die Anzahl und Größe der Netzwerkanfragen sollten unter den Zielvorgaben des Leistungsbudgets liegen. [Weitere Informationen zu Leistungsbudgets.](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 Anfrage}other{# Anfragen}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Leistungsbudget"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Du solltest `optional`-Schriftarten vorab laden, damit sie von Erstbesuchern verwendet werden können. [Weitere Informationen zum Vorabladen von Schriftarten](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Drittanbieternutzung minimieren"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Messung"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Messwert"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Mit einem Zeitbudget lässt sich die Leistung deiner Website besser im Auge behalten. Leistungsstarke Websites werden schnell geladen und reagieren umgehend auf Nutzereingaben. [Weitere Informationen zu Leistungsbudgets.](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Zeitbudget"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Lege eine explizite Breite und Höhe für Bildelemente fest, um Layoutverschiebungen zu reduzieren und den CLS-Wert zu verbessern. [Informationen zum Festlegen von Bildabmessungen](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Nutzererfahrung"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Mithilfe von Leistungsbudgets werden Standards für die Leistung deiner Website definiert."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budgets"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Weitere Informationen zur Leistung deiner App findest du hier. Diese Angaben haben keinen [direkten Einfluss](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) auf die Leistungsbewertung."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Name"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Über dem Budget"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Anfragen"

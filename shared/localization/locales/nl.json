@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Effect heeft niet-ondersteunde tijdparameters"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Houd de hoeveelheid en grootte van netwerkverzoeken onder de targets die in het prestatiebudget zijn ingesteld. [Meer informatie over prestatiebudgetten](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 verzoek}other{# verzoeken}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Prestatiebudget"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Laad lettertypen `optional` vooraf zodat nieuwe bezoekers deze kunnen gebruiken. [Meer informatie over het vooraf laden van lettertypen](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Gebruik door derden minimaliseren"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Meting"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Statistiek"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Stel een timingbudget in om de prestaties van je site in de gaten te houden. Sites die goed presteren, worden snel geladen en reageren snel op gebruikersinvoer. [Meer informatie over prestatiebudgetten](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Timingbudget"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Stel een expliciete breedte en hoogte in voor afbeeldingselementen om opmaakverschuivingen te verminderen en CLS te verbeteren. [Meer informatie over hoe je afbeeldingsafmetingen instelt](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Gebruikerservaring"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Prestatiebudgetten stellen normen in voor de prestaties van je site."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budgetten"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Meer informatie over de prestaties van je app. Deze cijfers hebben geen [directe invloed](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) op de prestatiescore."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Naam"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Over het budget"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Verzoeken"

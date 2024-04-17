@@ -16,39 +16,6 @@ const config = {
     // BF cache will request the page again, initiating additional network requests.
     // Disable the audit so we only detect requests from the normal page load.
     skipAudits: ['bf-cache'],
-
-    // A mixture of under, over, and meeting budget to exercise all paths.
-    budgets: [{
-      path: '/',
-      resourceCounts: [
-        {resourceType: 'total', budget: 8},
-        {resourceType: 'stylesheet', budget: 1}, // meets budget
-        {resourceType: 'image', budget: 1},
-        {resourceType: 'media', budget: 0},
-        {resourceType: 'font', budget: 2}, // meets budget
-        {resourceType: 'script', budget: 1},
-        {resourceType: 'document', budget: 0},
-        {resourceType: 'other', budget: 1},
-        {resourceType: 'third-party', budget: 0},
-      ],
-      resourceSizes: [
-        {resourceType: 'total', budget: 100},
-        {resourceType: 'stylesheet', budget: 0},
-        {resourceType: 'image', budget: 30}, // meets budget
-        {resourceType: 'media', budget: 0},
-        {resourceType: 'font', budget: 75},
-        {resourceType: 'script', budget: 30},
-        {resourceType: 'document', budget: 1},
-        {resourceType: 'other', budget: 2}, // meets budget
-        {resourceType: 'third-party', budget: 0},
-      ],
-      timings: [
-        {metric: 'first-contentful-paint', budget: 2000},
-        {metric: 'interactive', budget: 2000},
-        {metric: 'first-meaningful-paint', budget: 2000},
-        {metric: 'max-potential-fid', budget: 2000},
-      ],
-    }],
   },
 };
 

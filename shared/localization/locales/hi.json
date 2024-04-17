@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "इस इफ़ेक्ट में समय के ऐसे पैरामीटर हैं जो काम नहीं करते"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "नेटवर्क अनुरोधों की संख्या और साइज़, आपको दिए गए परफ़ॉर्मेंस बजट के मुताबिक सेट किए गए टारगेट के हिसाब से होना चाहिए. [परफ़ॉर्मेंस बजट के बारे में ज़्यादा जानें](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{अनुरोध}one{# अनुरोध}other{# अनुरोध}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "परफ़ॉर्मेंस बजट"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "`optional` फ़ॉन्ट पहले से लोड करें, ताकि वेबसाइट पर पहली बार आने वाले उनका इस्तेमाल कर सकें. [पहले से फ़ॉन्ट लोड करने के बारे में ज़्यादा जानें](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "तीसरे पक्ष के इस्तेमाल को कम करें"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "माप"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "मेट्रिक"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "अपनी साइट की परफ़ॉर्मेस पर नज़र रखने के लिए टाइमिंग बजट सेट करें. अच्छा परफ़ॉर्म करने वाली साइटें जल्दी लोड होती हैं और लोगों के इनपुट इवेंट का जल्दी जवाब देती हैं. [परफ़ॉर्मेंस बजट के बारे में ज़्यादा जानें](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "टाइमिंग बजट"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "इमेज एलिमेंट पर, चौड़ाई और ऊंचाई की जानकारी साफ़ तौर पर सेट करें, ताकि लेआउट शिफ़्ट को कम किया जा सके और सीएलएस को बेहतर बनाया जा सके. [इमेज का डाइमेंशन सेट करने का तरीका जानें](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "उपयोगकर्ता का अनुभव"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "परफ़ॉर्मेंस बजट बनाकर आप अपनी साइट की परफ़ॉर्मेंस के मानक तय करते हैं."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "बजट"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "आपके ऐप्लिकेशन के परफ़ॉर्मेंस के बारे में ज़्यादा जानकारी. इन आंकड़ों का परफ़ॉर्मेंस स्कोर पर [सीधा असर](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) नहीं पड़ता."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "नाम"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "बजट से ज़्यादा"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "अनुरोध"

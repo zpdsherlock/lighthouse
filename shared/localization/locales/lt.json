@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efekto laiko parametrai nepalaikomi"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Tinklo užklausų kiekis ir dydis neturi viršyti tikslinių verčių, nustatytų našumo biudžete. [Sužinokite daugiau apie našumo biudžetus](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 užklausa}one{# užklausa}few{# užklausos}many{# užklausos}other{# užklausų}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Našumo biudžetas"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Iš anksto įkelkite „`optional`“ šriftus, kad pirmą kartą apsilankantieji galėtų juos naudoti. [Sužinokite daugiau apie išankstinį šriftų įkėlimą](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Trečiųjų šalių kodo naudojimo sumažinimas"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Matavimas"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metrika"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Nustatykite laiko biudžetą, kad galėtumėte lengviau stebėti svetainės našumą. Našios svetainės įkeliamos sparčiau ir greičiau reaguoja į naudotojų įvesties įvykius. [Sužinokite daugiau apie našumo biudžetus](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Laiko biudžetas"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Nustatykite tikslų vaizdo elementų plotį ir aukštį, kad būtų mažiau išdėstymo poslinkių ir pagerinamas KIP. [Sužinokite, kaip nustatyti vaizdo matmenis](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Naudotojo patirtis"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Nuo kategorijoje „Našumas“ nustatyto biudžeto priklauso svetainės našumas."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Biudžetai"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Daugiau informacijos apie programos našumą. Šie skaičiai [tiesiogiai nepaveikia](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) našumo įvertinimo."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Pavadinimas"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Viršijo biudžetą"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Užklausos"

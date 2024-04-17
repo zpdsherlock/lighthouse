@@ -11,7 +11,7 @@ describe('Performance: Resource summary audit', () => {
   let artifacts;
   let context;
   beforeEach(() => {
-    context = {computedCache: new Map(), settings: {budgets: null}};
+    context = {computedCache: new Map()};
 
     artifacts = {
       devtoolsLogs: {
@@ -63,20 +63,6 @@ describe('Performance: Resource summary audit', () => {
         .find(item => item.resourceType === 'third-party');
       expect(thirdParty.transferSize).toBe(145);
       expect(thirdParty.requestCount).toBe(3);
-    });
-
-    it('uses firstPartyHostnames if provided', async () => {
-      context.settings.budgets = [{
-        path: '/',
-        options: {
-          firstPartyHostnames: ['example.com', 'my-cdn.com'],
-        },
-      }];
-      const result = await ResourceSummaryAudit.audit(artifacts, context);
-      const thirdParty = result.details.items
-        .find(item => item.resourceType === 'third-party');
-      expect(thirdParty.transferSize).toBe(120);
-      expect(thirdParty.requestCount).toBe(2);
     });
   });
 

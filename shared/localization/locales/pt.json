@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "O efeito tem parâmetros de tempo incompatíveis"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Mantenha a quantidade e o tamanho de solicitações de rede de acordo com os destinos definidos pelo montante de desempenho informado. [Saiba mais sobre montantes de desempenho](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 solicitação}one{# solicitação}other{# solicitações}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Orçamento de desempenho"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Pré-carregue fontes `optional` para que visitantes novos possam usá-las. [Saiba mais sobre o pré-carregamento de fontes](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Reduzir o uso de terceiros"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Medição"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Métrica"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Defina um orçamento de tempo para ajudar a monitorar a performance do seu site. Sites com bom desempenho são carregados rapidamente e respondem a eventos de entrada do usuário mais depressa. [Saiba mais sobre montantes de desempenho](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Orçamento de tempo"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Defina uma largura e altura explícitas em elementos de imagem para reduzir mudanças de layout e melhorar a CLS. [Aprenda a definir as dimensões de uma imagem](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Experiência do usuário"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Os orçamentos de desempenho definem padrões para o desempenho do seu site."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Orçamentos"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Mais informações sobre o desempenho do seu aplicativo. Esses números não [afetam diretamente](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) o índice de desempenho."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nome"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Acima do orçamento"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Solicitações"

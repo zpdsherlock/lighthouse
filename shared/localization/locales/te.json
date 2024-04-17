@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "ఎఫెక్ట్‌లో ఉన్న సమయ పారామీటర్‌లకు సపోర్ట్ లేదు"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "నెట్‌వర్క్ రిక్వెస్ట్‌ల పరిమాణాన్ని, ఇంకా సైజును, అందించబడిన పనితీరు బడ్జెట్ సెట్ చేసిన టార్గెట్‌ల కంటే తక్కువకు ఉంచండి. [పనితీరుకు సంబంధించిన బడ్జెట్‌ల గురించి మరింత తెలుసుకోండి](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 రిక్వెస్ట్‌}other{# రిక్వెస్ట్‌లు}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "పనితీరు బడ్జెట్"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "`optional` ఫాంట్‌లను ప్రీ - లోడ్ చేయండి, తద్వారా మొదటిసారిగా వచ్చే సందర్శకులు వాటిని ఉపయోగించగలరు. [ఫాంట్‌లను ప్రీ - లోడ్ చేయడం గురించి మరింత తెలుసుకోండి](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "మూడవ పక్ష వినియోగాన్ని కనీస స్థాయికి తగ్గించండి"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "కొలమానం"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "కొలమానం"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "మీ సైట్ పనితీరును పర్యవేక్షించడంలో మీకు సహాయపడటానికి ఒక టైమింగ్ బడ్జెట్‌ను సెట్ చేయండి. సమర్థవంతమైన సైట్‌లు వేగంగా లోడ్ అవుతాయి, యూజర్ ఇన్‌పుట్ ఈవెంట్‌లకు సత్వరం ప్రతిస్పందిస్తాయి. [పనితీరుకు సంబంధించిన బడ్జెట్‌ల గురించి మరింత తెలుసుకోండి](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "సమయం సంబంధిత బడ్జెట్"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "లేఅవుట్ షిఫ్ట్‌లను తగ్గించడానికి, CLSను మెరుగుపరచడానికి ఇమేజ్ ఎలిమెంట్‌లకు స్పష్టమైన వెడల్పును, ఎత్తును సెట్ చేయండి. [ఇమేజ్ కొలతలను ఎలా సెట్ చేయాలో తెలుసుకోండి](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "యూజర్ అనుభవం"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "పనితీరు బడ్జెట్‌లు అనేవి మీ సైట్ యొక్క పనితీరు ప్రమాణాలను నిర్దేశిస్తాయి."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "బడ్జెట్‌లు"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "మీ అప్లికేషన్ పనితీరు గురించి మరింత సమాచారం. ఈ సంఖ్యలు పనితీరు స్కోర్‌ను [నేరుగా ప్రభావితం చేయవు](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "పేరు"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "బడ్జెట్ దాటిపోయింది"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "రిక్వెస్ట్‌లు"

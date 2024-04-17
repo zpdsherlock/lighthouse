@@ -196,10 +196,6 @@ function getYargsParser(manualArgv) {
         coerce: splitCommaSeparatedValues,
         describe: 'Run everything except these audits',
       },
-      'budget-path': {
-        type: 'string',
-        describe: 'The path to the budget.json file for LightWallet.',
-      },
       'disable-full-page-screenshot': {
         type: 'boolean',
         describe: 'Disables collection of the full page screenshot, which can be quite large',
@@ -213,7 +209,7 @@ function getYargsParser(manualArgv) {
       'save-assets', 'list-all-audits', 'list-locales', 'list-trace-categories', 'additional-trace-categories',
       'config-path', 'preset', 'chrome-flags', 'port', 'hostname', 'form-factor', 'screenEmulation', 'emulatedUserAgent',
       'max-wait-for-load', 'enable-error-reporting', 'gather-mode', 'audit-mode',
-      'only-audits', 'only-categories', 'skip-audits', 'budget-path', 'disable-full-page-screenshot', 'ignore-status-code',
+      'only-audits', 'only-categories', 'skip-audits', 'disable-full-page-screenshot', 'ignore-status-code',
     ], 'Configuration:')
 
     // Output

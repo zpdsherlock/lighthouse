@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Ефектът съдържа неподдържани параметри за време"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Поддържайте количеството и обема на мрежовите заявки под целевите стойности в посочените лимити за показатели с въздействие върху ефективността. [Научете повече за тези лимити](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 заявка}other{# заявки}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Бюджет за ефективността"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Заредете предварително шрифтовете със свойство `optional`, за да могат да се ползват от новите посетители. [Научете повече за предварителното зареждане на шрифтове](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Сведете до минимум използването на код на трети страни"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Измерване"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Показател"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Задайте времеви лимит, за да наблюдавате ефективността на сайта си. Ефективните сайтове се зареждат за кратко време и реагират бързо при входящи данни от действие на потребител. [Научете повече за лимитите за показатели с въздействие върху ефективността](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Времеви бюджет"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Задайте изрично широчина и височина за елементите на изображенията, за да намалите промените в оформлението и подобрите CLS. [Научете как да задавате размери за изображенията](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Практическа работа на потребителите"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Бюджетите за ефективността задават стандарти за ефективността на сайта ви."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Бюджети"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Повече информация за ефективността на приложението ви. Тези стойности не се [отразяват директно](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) върху рейтинга за ефективността."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Име"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Надхвърля бюджета"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Заявки"

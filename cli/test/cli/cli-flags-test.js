@@ -56,11 +56,9 @@ describe('CLI flags', function() {
     const flags = getFlags([
       'http://www.example.com',
       `--cli-flags-path="${LH_ROOT}/cli/test/fixtures/cli-flags-path.json"`,
-      '--budgets-path=path/to/my/budget-from-command-line.json', // this should override the config value
     ].join(' '));
 
     expect(flags).toMatchObject({
-      budgetsPath: 'path/to/my/budget-from-command-line.json',
       onlyCategories: ['performance', 'seo'],
       chromeFlags: '--window-size 800,600',
       extraHeaders: {'X-Men': 'wolverine'},
@@ -70,17 +68,6 @@ describe('CLI flags', function() {
         cpuSlowdownMultiplier: 6,
       },
     });
-    snapshot(flags);
-  });
-
-  it('settings are accepted from a file path (inlined budgets)', () => {
-    const flags = getFlags([
-      'http://www.example.com',
-      // eslint-disable-next-line max-len
-      `--cli-flags-path="${LH_ROOT}/cli/test/fixtures/cli-flags-path-inline-budgets.json"`,
-    ].join(' '));
-
-    expect(flags.budgets).toMatchObject([{'anything': 'works'}]);
     snapshot(flags);
   });
 

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efekt má nepodporované parametre časovania"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Udržujte množstvo a veľkosť žiadostí siete pod cieľovými hodnotami stanovenými poskytnutým rozpočtom výkonnosti. [Ďalšie informácie o výkonnostných rozpočtoch](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 žiadosť}few{# žiadosti}many{# requests}other{# žiadostí}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Rozpočet výkonnosti"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Prednačítajte písma s atribútom `optional`, aby ich mohli používať noví návštevníci. [Ďalšie informácie o prednačítavaní písiem](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimalizujte použitie riešení tretích strán"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Meranie"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metrika"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Nastavte časový rozpočet, ktorý vám pomôže dohliadať na výkonnosť svojho webu. Výkonné stránky sa načítajú rýchlo a okamžite reagujú na udalosti vstupu používateľov. [Ďalšie informácie o výkonnostných rozpočtoch](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Časový rozpočet"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "V prvkoch obrázka nastavte explicitnú šírku aj výšku, aby ste znížili posuny rozloženia a zlepšili kumulatívnu zmenu rozloženia. [Ako nastaviť rozmery obrázkov](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Používateľské prostredie"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Rozpočty výkonnosti sú štandardy výkonnosti vášho webu."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Rozpočty"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Ďalšie informácie o výkonnosti vašej aplikácie. Tieto hodnoty [priamo ovplyvňujú](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) skóre výkonnosti."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Názov"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Cez rozpočet"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Žiadosti"

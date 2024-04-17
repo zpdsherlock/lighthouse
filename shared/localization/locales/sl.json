@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Učinek ima nepodprte časovne parametre"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Količino in velikosti omrežnih zahtev imejte pod cilji, ki so nastavljeni z navedenim proračunom za uspešnost. [Preberite več o proračunih za uspešnost](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 zahteva}one{# zahteva}two{# zahtevi}few{# zahteve}other{# zahtev}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Proračun za uspešnost"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Vnaprej naložite pisave (`optional`), da jih bodo novi obiskovalci lahko uporabili. [Preberite več o vnaprejšnjem nalaganju pisav](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Zmanjšajte uporabo komponent drugih ponudnikov"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Izmerjena vrednost"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Meritev"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Nastavite časovni proračun, da boste laže spremljali uspešnost spletnega mesta. Uspešna spletna mesta se hitro naložijo in naglo odzovejo na dogodke uporabniških vnosov. [Preberite več o proračunih za uspešnost](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Časovni proračun"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Če želite zmanjšati pomike postavitve in izboljšati CLS, za elemente slik nastavite eksplicitno širino in višino. [Preberite, kako nastavite mere slik](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Uporabniška izkušnja"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Proračuni za uspešnost postavljajo standarde za uspešnost spletnega mesta."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Proračuni"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Več informacij o delovanju aplikacije. Te številke [neposredno ne vplivajo](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) na rezultat uspešnosti."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Ime"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Prek proračuna"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Zahteve"

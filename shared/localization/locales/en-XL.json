@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Êf́f̂éĉt́ ĥáŝ ún̂śûṕp̂ór̂t́êd́ t̂ím̂ín̂ǵ p̂ár̂ám̂ét̂ér̂ś"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "K̂éêṕ t̂h́ê q́ûán̂t́ît́ŷ án̂d́ ŝíẑé ôf́ n̂ét̂ẃôŕk̂ ŕêq́ûéŝt́ŝ ún̂d́êŕ t̂h́ê t́âŕĝét̂ś ŝét̂ b́ŷ t́ĥé p̂ŕôv́îd́êd́ p̂ér̂f́ôŕm̂án̂ćê b́ûd́ĝét̂. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ṕêŕf̂ór̂ḿâńĉé b̂úd̂ǵêt́ŝ](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count, plural,\n    =1 {1 r̂éq̂úêśt̂}\n    other {# ŕêq́ûéŝt́ŝ}\n   }"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "P̂ér̂f́ôŕm̂án̂ćê b́ûd́ĝét̂"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "P̂ŕêĺôád̂ `optional` f́ôńt̂ś ŝó f̂ír̂śt̂-t́îḿê v́îśît́ôŕŝ ḿâý ûśê t́ĥém̂. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ṕr̂él̂óâd́îńĝ f́ôńt̂ś](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1412,18 +1403,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "M̂ín̂ím̂íẑé t̂h́îŕd̂-ṕâŕt̂ý ûśâǵê"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "M̂éâśûŕêḿêńt̂"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "M̂ét̂ŕîć"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Ŝét̂ á t̂ím̂ín̂ǵ b̂úd̂ǵêt́ t̂ó ĥél̂ṕ ŷóû ḱêép̂ án̂ éŷé ôń t̂h́ê ṕêŕf̂ór̂ḿâńĉé ôf́ ŷóûŕ ŝít̂é. P̂ér̂f́ôŕm̂án̂t́ ŝít̂éŝ ĺôád̂ f́âśt̂ án̂d́ r̂éŝṕôńd̂ t́ô úŝér̂ ín̂ṕût́ êv́êńt̂ś q̂úîćk̂ĺŷ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ṕêŕf̂ór̂ḿâńĉé b̂úd̂ǵêt́ŝ](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "T̂ím̂ín̂ǵ b̂úd̂ǵêt́"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Ŝét̂ án̂ éx̂ṕl̂íĉít̂ ẃîd́t̂h́ âńd̂ h́êíĝh́t̂ ón̂ ím̂áĝé êĺêḿêńt̂ś t̂ó r̂éd̂úĉé l̂áŷóût́ ŝh́îf́t̂ś âńd̂ ím̂ṕr̂óv̂é ĈĹŜ. [Ĺêár̂ń ĥóŵ t́ô śêt́ îḿâǵê d́îḿêńŝíôńŝ](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1594,12 +1573,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Ûśêŕ Êx́p̂ér̂íêńĉé"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "P̂ér̂f́ôŕm̂án̂ćê b́ûd́ĝét̂ś ŝét̂ śt̂án̂d́âŕd̂ś f̂ór̂ t́ĥé p̂ér̂f́ôŕm̂án̂ćê óf̂ ýôúr̂ śît́ê."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "B̂úd̂ǵêt́ŝ"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "M̂ór̂é îńf̂ór̂ḿât́îón̂ áb̂óût́ t̂h́ê ṕêŕf̂ór̂ḿâńĉé ôf́ ŷóûŕ âṕp̂ĺîćât́îón̂. T́ĥéŝé n̂úm̂b́êŕŝ d́ôń't̂ [d́îŕêćt̂ĺŷ áf̂f́êćt̂](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) t́ĥé P̂ér̂f́ôŕm̂án̂ćê śĉór̂é."
@@ -2293,9 +2266,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "N̂ám̂é"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Ôv́êŕ B̂úd̂ǵêt́"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "R̂éq̂úêśt̂ś"

@@ -35,7 +35,6 @@ import metricsTrickyTti from './test-definitions/metrics-tricky-tti.js';
 import metricsTrickyTtiLateFcp from './test-definitions/metrics-tricky-tti-late-fcp.js';
 import oopifRequests from './test-definitions/oopif-requests.js';
 import oopifScripts from './test-definitions/oopif-scripts.js';
-import perfBudgets from './test-definitions/perf-budgets.js';
 import perfDebug from './test-definitions/perf-debug.js';
 import perfDiagnosticsAnimations from './test-definitions/perf-diagnostics-animations.js';
 import perfDiagnosticsThirdParty from './test-definitions/perf-diagnostics-third-party.js';
@@ -94,7 +93,6 @@ const smokeTests = [
   metricsTrickyTtiLateFcp,
   oopifRequests,
   oopifScripts,
-  perfBudgets,
   perfDebug,
   perfDiagnosticsAnimations,
   perfDiagnosticsThirdParty,

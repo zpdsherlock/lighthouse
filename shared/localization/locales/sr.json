@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Ефекат има неподржане параметре времена"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Захтеве за количину и величину мреже одржавајте испод граница одређених циљевима за учинак. [Сазнајте више о ограничењима учинка](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 захтев}one{# захтев}few{# захтева}other{# захтева}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Циљ за учинак"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Предучитајте `optional` фонтове да би нови посетиоци могли да их користе. [Сазнајте више о предучитавању фонтова](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Смањите коришћење садржаја треће стране"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Мерење"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Показатељ"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Подесите буџет за брзину учитавања да бисте лакше пратили учинак сајта. Сајтови са добрим учинком се учитавају за кратко време и брзо реагују на догађаје уноса корисника. [Сазнајте више о ограничењима учинка](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Буџет за брзину учитавања"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Подесите експлицитну ширину и висину у елементима слика ради смањења прелаза изгледа и побољшања кумулативног помака садржаја странице. [Сазнајте како да подесите димензије слике](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Кориснички доживљај"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Циљевима за учинак одређују се стандарди за учинак сајта."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Циљеви"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Више информација о учинку апликације. Ови бројеви не [утичу директно](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) на оцену учинка."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Назив"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Премашује циљ"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Захтеви"

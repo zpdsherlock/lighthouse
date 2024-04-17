@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "يحتوي \"التأثير\" على مَعلَمات توقيت غير متوافقة"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "يمكنك الحفاظ على كمية طلبات الشبكة وحجمها ضِمن الأهداف المحدَّدة في الميزانية القائمة على الأداء التي تم تقديمها. [مزيد من المعلومات حول الميزانيات القائمة على الأداء](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{طلب واحد}zero{# طلب}two{طلبان (#)}few{# طلبات}many{# طلبًا}other{# طلب}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "ميزانية الأداء"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "يجب تحميل الخطوط `optional` بشكل مسبق حتى يتسنى للزوار الجدد استخدامها. [مزيد من المعلومات عن التحميل المسبَق للخطوط](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "تقليل استخدام الرموز التابعة لجهات خارجية"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "القياسات"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "المقياس"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "يمكنك ضبط ميزانية قائمة على الوقت لتساعدك في مراقبة أداء موقعك الإلكتروني. تتميّز المواقع الإلكترونية ذات الأداء العالي بسرعة التحميل والاستجابة للبيانات التي أدخلها المستخدم. [مزيد من المعلومات حول الميزانيات القائمة على الأداء](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "ميزانية قائمة على الوقت"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "يجب ضبط قيَم واضحة للعرض والارتفاع في عناصر الصور للحدّ من متغيّرات التصميم وتحسين متغيّرات التصميم التراكمية (CLS). تعرَّف على [كيفية ضبط أبعاد الصور](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "انطباع المستخدم"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "تضبط ميزانيات الأداء معايير لأداء موقعك الإلكتروني."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "الميزانيات"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "مزيد من المعلومات حول أداء تطبيقك لا تؤثر هذه الأرقام [ بشكل مباشر في ](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) نتيجة الأداء."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "الاسم"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "تجاوز الميزانية"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "الطلبات"

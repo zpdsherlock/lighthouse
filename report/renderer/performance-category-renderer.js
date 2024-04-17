@@ -303,27 +303,6 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
     const passedElem = this.renderClump('passed', clumpOpts);
     element.append(passedElem);
 
-    // Budgets
-    /** @type {Array<Element>} */
-    const budgetTableEls = [];
-    ['performance-budget', 'timing-budget'].forEach((id) => {
-      const audit = category.auditRefs.find(audit => audit.id === id);
-      if (audit?.result.details) {
-        const table = this.detailsRenderer.render(audit.result.details);
-        if (table) {
-          table.id = id;
-          table.classList.add('lh-details', 'lh-details--budget', 'lh-audit');
-          budgetTableEls.push(table);
-        }
-      }
-    });
-    if (budgetTableEls.length > 0) {
-      const [groupEl, footerEl] = this.renderAuditGroup(groups.budgets);
-      budgetTableEls.forEach(table => groupEl.insertBefore(table, footerEl));
-      groupEl.classList.add('lh-audit-group--budgets');
-      element.append(groupEl);
-    }
-
     const isNavigationMode = !options || options?.gatherMode === 'navigation';
     if (isNavigationMode && category.score !== null) {
       const el = createGauge(this.dom);

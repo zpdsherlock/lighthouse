@@ -6,8 +6,6 @@
 
 import type {Protocol as Crdp} from 'devtools-protocol/types/protocol.js';
 
-import Budget from './budget.js';
-
 export type Locale = 'en-US'|'en'|'en-AU'|'en-GB'|'en-IE'|'en-SG'|'en-ZA'|'en-IN'|'ar-XB'|'ar'|'bg'|'ca'|'cs'|'da'|'de'|'el'|'en-XA'|'en-XL'|'es'|'es-419'|'es-AR'|'es-BO'|'es-BR'|'es-BZ'|'es-CL'|'es-CO'|'es-CR'|'es-CU'|'es-DO'|'es-EC'|'es-GT'|'es-HN'|'es-MX'|'es-NI'|'es-PA'|'es-PE'|'es-PR'|'es-PY'|'es-SV'|'es-US'|'es-UY'|'es-VE'|'fi'|'fil'|'fr'|'he'|'hi'|'hr'|'hu'|'gsw'|'id'|'in'|'it'|'iw'|'ja'|'ko'|'lt'|'lv'|'mo'|'nl'|'nb'|'no'|'pl'|'pt'|'pt-PT'|'ro'|'ru'|'sk'|'sl'|'sr'|'sr-Latn'|'sv'|'ta'|'te'|'th'|'tl'|'tr'|'uk'|'vi'|'zh'|'zh-HK'|'zh-TW';
 
 /** Simulation settings that control the amount of network & cpu throttling in the run. */
@@ -109,8 +107,6 @@ export type ScreenEmulationSettings = {
   channel?: string
   /** Precomputed lantern estimates to use instead of observed analysis. */
   precomputedLanternData?: PrecomputedLanternData | null;
-  /** The budget.json object for LightWallet. */
-  budgets?: Array<Budget> | null;
 
   /** The number of milliseconds to wait after FCP until the page should be considered loaded. */
   pauseAfterFcpMs?: number;

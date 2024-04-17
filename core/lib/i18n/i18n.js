@@ -57,8 +57,6 @@ const UIStrings = {
   columnName: 'Name',
   /** Label for a column in a data table; entries will be the locations of JavaScript or CSS code, e.g. the name of a Javascript package or module. */
   columnSource: 'Source',
-  /** Label for a column in a data table; entries will be how much a predetermined budget has been exeeded by. Depending on the context, this number could represent an excess in quantity or size of network requests, or, an excess in the duration of time that it takes for the page to load.*/
-  columnOverBudget: 'Over Budget',
   /** Label for a column in a data table; entries will be a representation of a DOM element. */
   columnElement: 'Element',
   /** Label for a column in a data table; entries will be the number of milliseconds since the page started loading. */

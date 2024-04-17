@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efekt sadrži parametre tempiranja koji nisu podržani"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Količinu i veličinu mrežnih zahtjeva održavajte ispod ciljeva utvrđenih danim proračunom za izvedbu. [Saznajte više o proračunima za izvedbu](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{Jedan zahtjev}one{Broj zahtjeva: #}few{Broj zahtjeva: #}other{Broj zahtjeva: #}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Proračun za izvedbu"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Predučitajte fontove s opcijom `optional` kako bi ih novi posjetitelji mogli koristiti. [Saznajte više o predučitavanju fontova](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Smanjenje upotrebe koda trećih strana"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Mjerenje"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Mjerni podatak"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Postavite proračun za tempiranje kako biste lakše pratili izvedbu na svojoj web-lokaciji. Web-lokacije koje funkcioniraju dobro brzo se učitavaju i reagiraju na korisničke unose. [Saznajte više o proračunima za izvedbu](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Proračun za tempiranje"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Postavite eksplicitnu širinu i visinu na elementima slika da bi se smanjili pomaci izgleda i poboljšao CLS. [Saznajte kako postaviti dimenzije slika](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Korisnički doživljaj"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Proračuni za izvedbu postavljaju standarde izvedbe vaše stranice."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Proračuni"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Više informacija o izvedbi vaše aplikacije. Ovi brojevi ne [utječu izravno](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) na rezultat izvedbe."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Naziv"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Više od proračuna"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Zahtjevi"

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efektam ir norādīti neatbalstīti laika parametri"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Saglabājiet tīkla pieprasījumu daudzumu un lielumu zem mērķiem, kas noteikti sniegtajā izpildes budžetā. [Uzziniet vairāk par izpildes budžetiem](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 pieprasījums}zero{# pieprasījumi}one{# pieprasījums}other{# pieprasījumi}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Izpildes budžets"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Lai jaunie apmeklētāji varētu izmantot fontus ar atribūtu “`optional`”, ielādējiet tos iepriekš. [Uzziniet vairāk par fontu iepriekšēju ielādi](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Samaziniet trešās puses koda lietojumu"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Mērījums"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metriskā sistēma"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Iestatiet laika budžetu, lai uzraudzītu savas vietnes veiktspēju. Vietnes ar labu veiktspēju tiek ātri ielādētas un ātri reaģē uz lietotāju ievades notikumiem. [Uzziniet vairāk par izpildes budžetiem](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Laika budžets"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Iestatiet konkrētu platumu un augstumu attēlu elementiem, lai samazinātu izkārtojuma nobīdes un uzlabotu CLS. [Uzziniet, kā iestatīt attēlu izmērus](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Lietotāju pieredze"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Izpildes budžets nosaka jūsu vietnes veiktspējas standartus."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budžeti"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Plašāka informācija par jūsu lietojumprogrammas veiktspēju. Šie skaitļi [tieši neietekmē](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) veiktspējas rezultātu"
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nosaukums"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Pārsniegts budžets"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Pieprasījumi"

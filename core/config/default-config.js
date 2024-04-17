@@ -13,10 +13,6 @@ import * as i18n from '../lib/i18n/i18n.js';
 const UIStrings = {
   /** Title of the Performance category of audits. Equivalent to 'Web performance', this term is inclusive of all web page speed and loading optimization topics. Also used as a label of a score gauge; try to limit to 20 characters. */
   performanceCategoryTitle: 'Performance',
-  /** Title of the Budgets section of the Performance Category. 'Budgets' refers to a budget (like a financial budget), but applied to the amount of resources on a page, rather than money. */
-  budgetsGroupTitle: 'Budgets',
-  /** Description of the Budgets section of the Performance category. Within this section the budget results are displayed. */
-  budgetsGroupDescription: 'Performance budgets set standards for the performance of your site.',
   /** Title of the speed metrics section of the Performance category. Within this section are various speed metrics which quantify the pageload performance into values presented in seconds and milliseconds. */
   metricGroupTitle: 'Metrics',
   /** Title of an opportunity sub-section of the Performance category. Within this section are audits with imperative titles that suggest actions the user can take to improve the time of the first initial render of the webpage. */
@@ -183,8 +179,6 @@ const defaultConfig = {
     'network-server-latency',
     'main-thread-tasks',
     'metrics',
-    'performance-budget',
-    'timing-budget',
     'resource-summary',
     'third-party-summary',
     'third-party-facades',
@@ -312,10 +306,6 @@ const defaultConfig = {
     'metrics': {
       title: str_(UIStrings.metricGroupTitle),
     },
-    'budgets': {
-      title: str_(UIStrings.budgetsGroupTitle),
-      description: str_(UIStrings.budgetsGroupDescription),
-    },
     'diagnostics': {
       title: str_(UIStrings.diagnosticsGroupTitle),
       description: str_(UIStrings.diagnosticsGroupDescription),
@@ -436,10 +426,6 @@ const defaultConfig = {
         {id: 'uses-responsive-images-snapshot', weight: 0, group: 'diagnostics'},
         {id: 'work-during-interaction', weight: 0, group: 'diagnostics'},
         {id: 'bf-cache', weight: 0, group: 'diagnostics'},
-
-        // Budget audits.
-        {id: 'performance-budget', weight: 0, group: 'budgets'},
-        {id: 'timing-budget', weight: 0, group: 'budgets'},
 
         // Audits past this point contain useful data but are not displayed with other audits.
         {id: 'network-requests', weight: 0, group: 'hidden'},

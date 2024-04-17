@@ -1998,169 +1998,6 @@
         ]
       }
     },
-    "performance-budget": {
-      "id": "performance-budget",
-      "title": "Performance budget",
-      "description": "Keep the quantity and size of network requests under the targets set by the provided performance budget. [Learn more about performance budgets](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
-      "score": 1,
-      "scoreDisplayMode": "informative",
-      "details": {
-        "type": "table",
-        "headings": [
-          {
-            "key": "label",
-            "valueType": "text",
-            "label": "Resource Type"
-          },
-          {
-            "key": "requestCount",
-            "valueType": "numeric",
-            "label": "Requests"
-          },
-          {
-            "key": "transferSize",
-            "valueType": "bytes",
-            "label": "Transfer Size"
-          },
-          {
-            "key": "countOverBudget",
-            "valueType": "text",
-            "label": ""
-          },
-          {
-            "key": "sizeOverBudget",
-            "valueType": "bytes",
-            "label": "Over Budget"
-          }
-        ],
-        "items": [
-          {
-            "resourceType": "total",
-            "label": "Total",
-            "requestCount": 25,
-            "transferSize": 1437176,
-            "countOverBudget": "15 requests",
-            "sizeOverBudget": 1334776
-          },
-          {
-            "resourceType": "image",
-            "label": "Image",
-            "requestCount": 8,
-            "transferSize": 1196358,
-            "countOverBudget": "6 requests",
-            "sizeOverBudget": 1165638
-          },
-          {
-            "resourceType": "script",
-            "label": "Script",
-            "requestCount": 5,
-            "transferSize": 198392,
-            "countOverBudget": "3 requests",
-            "sizeOverBudget": 167672
-          },
-          {
-            "resourceType": "other",
-            "label": "Other",
-            "requestCount": 2,
-            "transferSize": 17793,
-            "sizeOverBudget": 12673
-          },
-          {
-            "resourceType": "third-party",
-            "label": "Third-party",
-            "requestCount": 1,
-            "transferSize": 30346,
-            "sizeOverBudget": 4746
-          },
-          {
-            "resourceType": "document",
-            "label": "Document",
-            "requestCount": 1,
-            "transferSize": 17609,
-            "sizeOverBudget": 2249
-          },
-          {
-            "resourceType": "stylesheet",
-            "label": "Stylesheet",
-            "requestCount": 9,
-            "transferSize": 7024,
-            "countOverBudget": "7 requests",
-            "sizeOverBudget": 1904
-          },
-          {
-            "resourceType": "media",
-            "label": "Media",
-            "requestCount": 0,
-            "transferSize": 0
-          },
-          {
-            "resourceType": "font",
-            "label": "Font",
-            "requestCount": 0,
-            "transferSize": 0
-          }
-        ],
-        "sortedBy": [
-          "sizeOverBudget"
-        ]
-      }
-    },
-    "timing-budget": {
-      "id": "timing-budget",
-      "title": "Timing budget",
-      "description": "Set a timing budget to help you keep an eye on the performance of your site. Performant sites load fast and respond to user input events quickly. [Learn more about performance budgets](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
-      "score": 1,
-      "scoreDisplayMode": "informative",
-      "details": {
-        "type": "table",
-        "headings": [
-          {
-            "key": "label",
-            "valueType": "text",
-            "label": "Metric"
-          },
-          {
-            "key": "measurement",
-            "valueType": "ms",
-            "label": "Measurement"
-          },
-          {
-            "key": "overBudget",
-            "valueType": "ms",
-            "label": "Over Budget"
-          }
-        ],
-        "items": [
-          {
-            "metric": "interactive",
-            "label": "Time to Interactive",
-            "measurement": 8191,
-            "overBudget": 5291
-          },
-          {
-            "metric": "first-meaningful-paint",
-            "label": "First Meaningful Paint",
-            "measurement": 6844,
-            "overBudget": 4844
-          },
-          {
-            "metric": "first-contentful-paint",
-            "label": "First Contentful Paint",
-            "measurement": 6844,
-            "overBudget": 3844
-          },
-          {
-            "metric": "max-potential-fid",
-            "label": "Max Potential First Input Delay",
-            "measurement": 1175,
-            "overBudget": 1075
-          }
-        ],
-        "sortedBy": [
-          "overBudget"
-        ]
-      }
-    },
     "resource-summary": {
       "id": "resource-summary",
       "title": "Resources Summary",
@@ -5638,105 +5475,6 @@
     "skipAboutBlank": false,
     "blankPage": "about:blank",
     "ignoreStatusCode": false,
-    "budgets": [
-      {
-        "path": "/",
-        "resourceSizes": [
-          {
-            "resourceType": "total",
-            "budget": 100
-          },
-          {
-            "resourceType": "stylesheet",
-            "budget": 5
-          },
-          {
-            "resourceType": "image",
-            "budget": 30
-          },
-          {
-            "resourceType": "media",
-            "budget": 0
-          },
-          {
-            "resourceType": "font",
-            "budget": 20
-          },
-          {
-            "resourceType": "script",
-            "budget": 30
-          },
-          {
-            "resourceType": "document",
-            "budget": 15
-          },
-          {
-            "resourceType": "other",
-            "budget": 5
-          },
-          {
-            "resourceType": "third-party",
-            "budget": 25
-          }
-        ],
-        "resourceCounts": [
-          {
-            "resourceType": "total",
-            "budget": 10
-          },
-          {
-            "resourceType": "stylesheet",
-            "budget": 2
-          },
-          {
-            "resourceType": "image",
-            "budget": 2
-          },
-          {
-            "resourceType": "media",
-            "budget": 0
-          },
-          {
-            "resourceType": "font",
-            "budget": 1
-          },
-          {
-            "resourceType": "script",
-            "budget": 2
-          },
-          {
-            "resourceType": "document",
-            "budget": 1
-          },
-          {
-            "resourceType": "other",
-            "budget": 2
-          },
-          {
-            "resourceType": "third-party",
-            "budget": 1
-          }
-        ],
-        "timings": [
-          {
-            "metric": "first-contentful-paint",
-            "budget": 3000
-          },
-          {
-            "metric": "interactive",
-            "budget": 2900
-          },
-          {
-            "metric": "first-meaningful-paint",
-            "budget": 2000
-          },
-          {
-            "metric": "max-potential-fid",
-            "budget": 100
-          }
-        ]
-      }
-    ],
     "locale": "en-US",
     "blockedUrlPatterns": null,
     "additionalTraceCategories": null,
@@ -5991,16 +5729,6 @@
           "id": "bf-cache",
           "weight": 0,
           "group": "diagnostics"
-        },
-        {
-          "id": "performance-budget",
-          "weight": 0,
-          "group": "budgets"
-        },
-        {
-          "id": "timing-budget",
-          "weight": 0,
-          "group": "budgets"
         },
         {
           "id": "network-requests",
@@ -6582,10 +6310,6 @@
   "categoryGroups": {
     "metrics": {
       "title": "Metrics"
-    },
-    "budgets": {
-      "title": "Budgets",
-      "description": "Performance budgets set standards for the performance of your site."
     },
     "diagnostics": {
       "title": "Diagnostics",
@@ -8095,25 +7819,13 @@
       },
       {
         "startTime": 0,
-        "name": "lh:audit:performance-budget",
+        "name": "lh:audit:resource-summary",
         "duration": 100,
         "entryType": "measure"
       },
       {
         "startTime": 0,
         "name": "lh:computed:ResourceSummary",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
-        "name": "lh:audit:timing-budget",
-        "duration": 100,
-        "entryType": "measure"
-      },
-      {
-        "startTime": 0,
-        "name": "lh:audit:resource-summary",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9088,8 +8800,7 @@
         "audits.viewport.description"
       ],
       "core/lib/i18n/i18n.js | firstContentfulPaintMetric": [
-        "audits[first-contentful-paint].title",
-        "audits[timing-budget].details.items[2].label"
+        "audits[first-contentful-paint].title"
       ],
       "core/audits/metrics/first-contentful-paint.js | description": [
         "audits[first-contentful-paint].description"
@@ -9145,8 +8856,7 @@
         "audits[largest-contentful-paint].description"
       ],
       "core/lib/i18n/i18n.js | firstMeaningfulPaintMetric": [
-        "audits[first-meaningful-paint].title",
-        "audits[timing-budget].details.items[1].label"
+        "audits[first-meaningful-paint].title"
       ],
       "core/audits/metrics/first-meaningful-paint.js | description": [
         "audits[first-meaningful-paint].description"
@@ -9196,8 +8906,7 @@
         }
       ],
       "core/lib/i18n/i18n.js | maxPotentialFIDMetric": [
-        "audits[max-potential-fid].title",
-        "audits[timing-budget].details.items[3].label"
+        "audits[max-potential-fid].title"
       ],
       "core/audits/metrics/max-potential-fid.js | description": [
         "audits[max-potential-fid].description"
@@ -9267,8 +8976,7 @@
         "audits[network-server-latency].details.headings[1].label"
       ],
       "core/lib/i18n/i18n.js | interactiveMetric": [
-        "audits.interactive.title",
-        "audits[timing-budget].details.items[0].label"
+        "audits.interactive.title"
       ],
       "core/audits/metrics/interactive.js | description": [
         "audits.interactive.description"
@@ -9412,22 +9120,13 @@
       "core/audits/network-server-latency.js | description": [
         "audits[network-server-latency].description"
       ],
-      "core/audits/performance-budget.js | title": [
-        "audits[performance-budget].title"
-      ],
-      "core/audits/performance-budget.js | description": [
-        "audits[performance-budget].description"
-      ],
       "core/lib/i18n/i18n.js | columnResourceType": [
-        "audits[performance-budget].details.headings[0].label",
         "audits[resource-summary].details.headings[0].label"
       ],
       "core/lib/i18n/i18n.js | columnRequests": [
-        "audits[performance-budget].details.headings[1].label",
         "audits[resource-summary].details.headings[1].label"
       ],
       "core/lib/i18n/i18n.js | columnTransferSize": [
-        "audits[performance-budget].details.headings[2].label",
         "audits[resource-summary].details.headings[2].label",
         "audits[third-party-summary].details.headings[1].label",
         "audits[uses-long-cache-ttl].details.headings[2].label",
@@ -9437,83 +9136,32 @@
         "audits[unused-javascript].details.headings[1].label",
         "audits[uses-text-compression].details.headings[1].label"
       ],
-      "core/lib/i18n/i18n.js | columnOverBudget": [
-        "audits[performance-budget].details.headings[4].label",
-        "audits[timing-budget].details.headings[2].label"
-      ],
       "core/lib/i18n/i18n.js | totalResourceType": [
-        "audits[performance-budget].details.items[0].label",
         "audits[resource-summary].details.items[0].label"
       ],
-      "core/audits/performance-budget.js | requestCountOverBudget": [
-        {
-          "values": {
-            "count": 15
-          },
-          "path": "audits[performance-budget].details.items[0].countOverBudget"
-        },
-        {
-          "values": {
-            "count": 6
-          },
-          "path": "audits[performance-budget].details.items[1].countOverBudget"
-        },
-        {
-          "values": {
-            "count": 3
-          },
-          "path": "audits[performance-budget].details.items[2].countOverBudget"
-        },
-        {
-          "values": {
-            "count": 7
-          },
-          "path": "audits[performance-budget].details.items[6].countOverBudget"
-        }
-      ],
       "core/lib/i18n/i18n.js | imageResourceType": [
-        "audits[performance-budget].details.items[1].label",
         "audits[resource-summary].details.items[1].label"
       ],
       "core/lib/i18n/i18n.js | scriptResourceType": [
-        "audits[performance-budget].details.items[2].label",
         "audits[resource-summary].details.items[2].label"
       ],
       "core/lib/i18n/i18n.js | otherResourceType": [
-        "audits[performance-budget].details.items[3].label",
         "audits[resource-summary].details.items[3].label"
       ],
-      "core/lib/i18n/i18n.js | thirdPartyResourceType": [
-        "audits[performance-budget].details.items[4].label",
-        "audits[resource-summary].details.items[8].label"
-      ],
       "core/lib/i18n/i18n.js | documentResourceType": [
-        "audits[performance-budget].details.items[5].label",
         "audits[resource-summary].details.items[4].label"
       ],
       "core/lib/i18n/i18n.js | stylesheetResourceType": [
-        "audits[performance-budget].details.items[6].label",
         "audits[resource-summary].details.items[5].label"
       ],
       "core/lib/i18n/i18n.js | mediaResourceType": [
-        "audits[performance-budget].details.items[7].label",
         "audits[resource-summary].details.items[6].label"
       ],
       "core/lib/i18n/i18n.js | fontResourceType": [
-        "audits[performance-budget].details.items[8].label",
         "audits[resource-summary].details.items[7].label"
       ],
-      "core/audits/timing-budget.js | title": [
-        "audits[timing-budget].title"
-      ],
-      "core/audits/timing-budget.js | description": [
-        "audits[timing-budget].description"
-      ],
-      "core/audits/timing-budget.js | columnTimingMetric": [
-        "audits[timing-budget].details.headings[0].label"
-      ],
-      "core/audits/timing-budget.js | columnMeasurement": [
-        "audits[timing-budget].details.headings[1].label"
+      "core/lib/i18n/i18n.js | thirdPartyResourceType": [
+        "audits[resource-summary].details.items[8].label"
       ],
       "core/audits/third-party-summary.js | title": [
         "audits[third-party-summary].title"
@@ -10446,12 +10094,6 @@
       ],
       "core/config/default-config.js | metricGroupTitle": [
         "categoryGroups.metrics.title"
-      ],
-      "core/config/default-config.js | budgetsGroupTitle": [
-        "categoryGroups.budgets.title"
-      ],
-      "core/config/default-config.js | budgetsGroupDescription": [
-        "categoryGroups.budgets.description"
       ],
       "core/config/default-config.js | diagnosticsGroupTitle": [
         "categoryGroups.diagnostics.title"

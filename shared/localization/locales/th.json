@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "เอฟเฟกต์มีพารามิเตอร์การจับเวลาที่ไม่รองรับ"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "ควบคุมให้จำนวนและขนาดของคำขอเครือข่ายอยู่ภายในเป้าหมายที่กำหนดตามงบประมาณด้านประสิทธิภาพที่ให้มา [ดูข้อมูลเพิ่มเติมเกี่ยวกับงบประมาณด้านประสิทธิภาพ](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 คำขอ}other{# คำขอ}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "งบประมาณประสิทธิภาพ"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "โหลดแบบอักษร `optional` ไว้ล่วงหน้าเพื่อให้ผู้เข้าชมครั้งแรกใช้ได้ [ดูข้อมูลเพิ่มเติมเกี่ยวกับการโหลดแบบอักษรล่วงหน้า](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "ลดการใช้ของบุคคลที่สาม"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "การวัด"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "เมตริก"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "ตั้งงบประมาณด้านเวลาเพื่อช่วยดูประสิทธิภาพของเว็บไซต์ เว็บไซต์ที่มีประสิทธิภาพจะโหลดได้เร็วและตอบสนองต่อเหตุการณ์ที่เป็นอินพุตจากผู้ใช้ได้อย่างรวดเร็ว [ดูข้อมูลเพิ่มเติมเกี่ยวกับงบประมาณด้านประสิทธิภาพ](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "งบประมาณด้านเวลา"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "กำหนดความกว้างและความยาวขององค์ประกอบรูปภาพอย่างชัดเจนเพื่อลดการขยับของเลย์เอาต์และปรับปรุง CLS [ดูวิธีตั้งค่าขนาดรูปภาพ](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "ประสบการณ์ของผู้ใช้"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "งบประมาณประสิทธิภาพจะใช้เป็นมาตรฐานสำหรับประสิทธิภาพของเว็บไซต์คุณ"
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "งบประมาณ"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "ข้อมูลเพิ่มเติมเกี่ยวกับประสิทธิภาพของแอปพลิเคชัน ตัวเลขเหล่านี้ไม่[ส่งผลกระทบโดยตรง](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)ต่อคะแนนประสิทธิภาพ"
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "ชื่อ"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "เกินงบประมาณ"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "คำขอ"

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efek memiliki parameter waktu yang tidak didukung"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Pertahankan jumlah dan ukuran permintaan jaringan di bawah target yang ditetapkan oleh anggaran performa yang disediakan. [Pelajari lebih lanjut anggaran performa](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 permintaan}other{# permintaan}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Anggaran performa"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Pramuat font `optional` agar pengunjung kali pertama dapat menggunakannya. [Pelajari lebih lanjut cara pramuat font](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Meminimalkan penggunaan pihak ketiga"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Pengukuran"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metrik"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Setel anggaran waktu untuk membantu memantau performa situs Anda. Situs dengan performa yang baik akan dimuat dengan cepat dan merespons peristiwa input pengguna dengan cepat. [Pelajari lebih lanjut anggaran performa](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Anggaran waktu"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Setel lebar dan tinggi yang jelas pada elemen gambar untuk mengurangi pergeseran tata letak dan memperbaiki CLS. [Pelajari cara menyetel dimensi gambar](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Pengalaman Pengguna"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Anggaran performa menetapkan standar performa situs Anda."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Anggaran"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Informasi selengkapnya tentang performa aplikasi Anda. Angka ini tidak [secara langsung memengaruhi](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) skor Performa."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nama"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Melebihi Anggaran"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Permintaan"

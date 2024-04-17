@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efekt ma nieobsługiwane parametry czasowe"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Liczba ani rozmiar żądań sieciowych nie mogą przekraczać wartości określonych przez podany budżet wydajności. [Więcej informacji o budżetach wydajności](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 żądanie}few{# żądania}many{# żądań}other{# żądania}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Budżet wydajności"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Włącz wstępne wczytywanie czcionek z atrybutem `optional`, aby mogli z nich korzystać nowi użytkownicy. [Więcej informacji o wstępnym wczytywaniu czcionek](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimalizacja wykorzystania kodu zewnętrznego"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Pomiary"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Dane"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Ustaw budżet czasowy, aby łatwiej monitorować wydajność witryny. Wydajne strony szybko się ładują i reagują na zdarzenia wejściowe użytkowników. [Więcej informacji o budżetach wydajności](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Budżet czasowy"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "W elementach graficznych określ wyraźnie szerokość i wysokość, aby ograniczyć przesunięcia układu i ulepszyć CLS. [Jak ustawić wymiary obrazu](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Wygoda użytkowników"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Budżety wydajności są podstawą do określania standardów wydajności witryny."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budżety"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Więcej o wydajności aplikacji. Te liczby nie mają [bezpośredniego wpływu](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) na wyniki w kategorii Wydajność."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nazwa"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Przekroczenie budżetu"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Żądania"

@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "지원되지 않는 타이밍 매개변수가 효과에 포함됨"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "네트워크 요청의 양과 크기는 제공된 성능 예산에 따라 설정된 목표치 아래로 유지하세요. [성능 예산에 관해 자세히 알아보기](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{요청 1건}other{요청 #건}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "성능 예산"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "신규 방문자가 사용할 수 있도록 `optional` 글꼴을 미리 로드하세요 [글꼴 미리 로드에 관해 자세히 알아보기](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "타사 사용량 최소화"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "측정값"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "측정항목"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "시기 예산을 설정하면 사이트 실적을 확인하는 데 도움이 됩니다. 성능 기준에 맞는 사이트는 빠르게 로드되고 사용자 입력 이벤트에 빠르게 응답합니다. [성능 예산에 관해 자세히 알아보기](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "시기 예산"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "이미지 요소에 명시적인 너비 및 높이를 설정하여 레이아웃 변경 횟수를 줄이고 누적 레이아웃 변경을 개선합니다. [이미지 크기 설정 방법 알아보기](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "사용자 환경"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "성능 예산은 사이트 성능의 표준을 설정합니다."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "예산"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "애플리케이션 성능과 관련된 추가 정보입니다. 이러한 숫자는 성능 점수에 [직접적인 영향](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)을 미치지 않습니다."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "이름"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "예산 초과"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "요청"

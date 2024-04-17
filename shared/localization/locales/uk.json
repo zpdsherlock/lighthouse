@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Ефект містить непідтримувані параметри хронометражу"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Стежте, щоб кількість і розмір мережевих запитів не перевищували цільових значень, указаних у бюджеті продуктивності. [Докладніше про бюджети продуктивності.](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 запит}one{# запит}few{# запити}many{# запитів}other{# запиту}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Бюджет ефективності"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Попередньо завантажте шрифти з параметром \"`optional`\", щоб нові відвідувачі могли використовувати їх. [Докладніше про попереднє завантаження шрифтів.](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Зменште використання стороннього коду"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Значення"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Показник"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Установіть обмеження часу, щоб слідкувати за продуктивністю свого сайту. Ефективні сайти швидко завантажуються й миттєво відповідають на ввід користувача. [Докладніше про бюджети продуктивності.](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Обмеження часу"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Явно вказуючи ширину й висоту для зображень, ви зможете зменшити зміщення макета й покращити показник CLS. [Дізнайтесь, як налаштувати розміри зображень.](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Взаємодія з користувачами"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Бюджети визначають стандарти ефективності вашого сайту."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Бюджети"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Докладніше про ефективність додатка. Ці числа не [впливають безпосередньо](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) на значення ефективності."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Назва"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Перевищення бюджету"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Запити"

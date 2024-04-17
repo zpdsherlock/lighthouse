@@ -62,7 +62,7 @@ describe('PerfCategoryRenderer', () => {
   it('renders the sections', () => {
     const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
     const sections = categoryDOM.querySelectorAll('.lh-category > .lh-audit-group');
-    assert.equal(sections.length, 4);
+    assert.equal(sections.length, 3);
   });
 
   it('renders the metrics', () => {
@@ -114,7 +114,7 @@ describe('PerfCategoryRenderer', () => {
     const sections = categoryDOM.querySelectorAll('.lh-category > .lh-audit-group');
     const metricSection = categoryDOM.querySelector('.lh-audit-group--metrics');
     assert.ok(!metricSection);
-    assert.equal(sections.length, 3);
+    assert.equal(sections.length, 2);
   });
 
   it('renders the metrics variance disclaimer as markdown', () => {
@@ -182,51 +182,6 @@ describe('PerfCategoryRenderer', () => {
 
   // Unsupported by perf cat renderer right now.
   it.skip('renders any manual audits', () => {
-  });
-
-  describe('budgets', () => {
-    it('renders the group and header', () => {
-      const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
-
-      const budgetsGroup = categoryDOM.querySelector('.lh-audit-group.lh-audit-group--budgets');
-      assert.ok(budgetsGroup);
-
-      const header = budgetsGroup.querySelector('.lh-audit-group__header');
-      assert.ok(header);
-    });
-
-    it('renders the performance budget table', () => {
-      const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
-      const budgetTable = categoryDOM.querySelector('#performance-budget.lh-table');
-      assert.ok(budgetTable);
-
-      const lhrBudgetEntries = sampleResults.audits['performance-budget'].details.items;
-      const tableRows = budgetTable.querySelectorAll('tbody > tr');
-      assert.strictEqual(tableRows.length, lhrBudgetEntries.length);
-    });
-
-    it('renders the timing budget table', () => {
-      const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
-      const budgetTable = categoryDOM.querySelector('#timing-budget.lh-table');
-      assert.ok(budgetTable);
-
-      const lhrBudgetEntries = sampleResults.audits['timing-budget'].details.items;
-      const tableRows = budgetTable.querySelectorAll('tbody > tr');
-      assert.strictEqual(tableRows.length, lhrBudgetEntries.length);
-    });
-
-    it('does not render the budgets section when all budget audits are notApplicable', () => {
-      const budgetlessCategory = JSON.parse(JSON.stringify(category));
-      ['performance-budget', 'timing-budget'].forEach((id) => {
-        const budgetRef = budgetlessCategory.auditRefs.find(a => a.id === id);
-        budgetRef.result.scoreDisplayMode = 'notApplicable';
-        delete budgetRef.result.details;
-      });
-
-      const categoryDOM = renderer.render(budgetlessCategory, sampleResults.categoryGroups);
-      const budgetsGroup = categoryDOM.querySelector('.lh-audit-group.lh-audit-group--budgets');
-      assert.strictEqual(budgetsGroup, null);
-    });
   });
 
   describe('_getScoringCalculatorHref', () => {

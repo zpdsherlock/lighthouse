@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Το εφέ έχει μη υποστηριζόμενες παραμέτρους χρονισμού."
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Διατηρήστε την ποσότητα και το μέγεθος των αιτημάτων δικτύου εντός των στόχων που ορίζονται από τον παρεχόμενο προϋπολογισμό απόδοσης. [Μάθετε περισσότερα σχετικά με τους προϋπολογισμούς απόδοσης](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 αίτημα}other{# αιτήματα}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Προϋπολογισμός απόδοσης"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Προφορτώστε γραμματοσειρές `optional` για να μπορούν να τις χρησιμοποιούν οι νέοι επισκέπτες. [Μάθετε περισσότερα σχετικά με την προφόρτωση γραμματοσειρών](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Ελαχιστοποίηση χρήσης τρίτων μερών"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Μέτρηση"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Μέτρηση"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Ορίστε έναν προϋπολογισμό χρονισμού που θα σας βοηθήσει με την παρακολούθηση της απόδοσης στον ιστότοπό σας. Οι αποδοτικοί ιστότοποι φορτώνουν και αποκρίνονται με ταχύτητα στα συμβάντα εισαγωγής στοιχείων από τους χρήστες. [Μάθετε περισσότερα σχετικά με τους προϋπολογισμούς απόδοσης](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Προϋπολογισμός χρονισμού"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Ορίστε ένα αποκλειστικό πλάτος και ύψος στα στοιχεία εικόνας, για να μειώσετε τις μετατοπίσεις διάταξης και να βελτιώσετε το CLS. [Μάθετε πώς μπορείτε να ορίσετε τις διαστάσεις εικόνας](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Εμπειρία χρήστη"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Οι προϋπολογισμοί απόδοσης θέτουν τα πρότυπα για την απόδοση του ιστοτόπου σας."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Προϋπολογισμοί"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Περισσότερες πληροφορίες σχετικά με την απόδοση της εφαρμογής σας. Αυτά τα δεδομένα δεν [επηρεάζουν άμεσα](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) τη βαθμολογία απόδοσης."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Όνομα"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Υπέρβαση προϋπολογισμού"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Αιτήματα"

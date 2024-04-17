@@ -105,7 +105,6 @@ Configuration:
   --only-audits                  Only run the specified audits  [array]
   --only-categories              Only run the specified categories. Available categories: accessibility, best-practices, performance, seo  [array]
   --skip-audits                  Run everything except these audits  [array]
-  --budget-path                  The path to the budget.json file for LightWallet.  [string]
   --disable-full-page-screenshot Disables collection of the full page screenshot, which can be quite large  [boolean]
 
 Output:
@@ -242,7 +241,6 @@ Useful documentation, examples, and recipes to get you started.
 - [Developing Plugins](./docs/plugins.md)
 - [Making a New Audit](./docs/new-audits.md)
 - [Testing on a mobile device](./docs/readme.md#testing-on-a-mobile-device)
-- [Setting a performance budget](./docs/performance-budgets.md)
 - [Lighthouse Architecture](./docs/architecture.md)
 
 **Recipes**

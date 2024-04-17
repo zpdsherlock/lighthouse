@@ -7,7 +7,6 @@
 import {ArbitraryEqualityMap as ArbitraryEqualityMap_} from '../core/lib/arbitrary-equality-map.js';
 import * as Artifacts_ from './artifacts.js';
 import Audit_ from './audit.js';
-import Budget_ from './lhr/budget.js';
 import Config_ from './config.js';
 import {Protocol as _Crdp} from 'devtools-protocol/types/protocol.js';
 import {ProtocolMapping as _CrdpMappings} from 'devtools-protocol/types/protocol-mapping.js';
@@ -42,7 +41,6 @@ export import TraceCpuProfile = Artifacts_.TraceCpuProfile;
 export import TraceEvent = Artifacts_.TraceEvent;
 
 export import Audit = Audit_;
-export import Budget = Budget_;
 export import Config = Config_;
 export import Crdp = _Crdp;
 export import CrdpEvents = _CrdpMappings.Events;

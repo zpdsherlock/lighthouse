@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Effekten har timingparametre, der ikke understøttes"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Sørg for, at antallet af og størrelsen på netværksanmodningerne ikke overskrider målene i det angivne budget for ydeevne. [Få flere oplysninger om budgetter for ydeevne](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 anmodning}one{# anmodning}other{# anmodninger}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Budget for ydeevne"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Forudindlæs skrifttyper med `optional`, så førstegangsbesøgende kan bruge dem. [Få flere oplysninger om forudindlæsning af skrifttyper](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimer brugen af tredjeparter"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Måling"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metric"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Angiv et tidsbudget for at følge med i dit websites effektivitet. Effektive websites indlæser hurtigt og reagerer hurtigt på brugerindtastninger. [Få flere oplysninger om budgetter for ydeevne](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Tidsbudget"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Anvend en fast bredde og højde for billedelementer for at reducere layoutskift og forbedre CLS. [Få flere oplysninger om, hvordan du angiver billedmål](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Brugeroplevelse"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Budgetter for ydeevne angiver standarder for dit websites ydeevne."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budgetter"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Få flere oplysninger om din apps ydeevne. Resultatet [påvirkes ikke direkte](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) af disse tal."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Navn"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Over budget"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Anmodninger"

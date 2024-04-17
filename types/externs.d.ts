@@ -57,8 +57,6 @@ export interface CliFlags extends Flags {
   precomputedLanternDataPath?: string;
   /** Path to the file where precomputed lantern data should be written to. */
   lanternDataOutputPath?: string;
-  /** Path to the budget.json file for LightWallet. */
-  budgetPath?: string | null;
 
   // The following are given defaults in cli-flags, so are not optional like in Flags or SharedFlagsSettings.
   output: OutputMode[];

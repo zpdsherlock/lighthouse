@@ -283,32 +283,6 @@ describe('.resolveSettings', () => {
     });
   });
 
-  describe('budgets', () => {
-    it('initializes budgets', () => {
-      const settings = resolveSettings({
-        budgets: [
-          {
-            path: '/',
-            resourceCounts: [{resourceType: 'image', budget: 500}],
-          },
-        ],
-      });
-
-      expect(settings).toMatchObject({
-        budgets: [
-          {
-            path: '/',
-            resourceCounts: [{resourceType: 'image', budget: 500}],
-          },
-        ],
-      });
-    });
-
-    it('validates budgets', () => {
-      expect(() => resolveSettings({budgets: ['invalid']})).toThrow(/Budget file is not/);
-    });
-  });
-
   describe('validation', () => {
     it('formFactor', () => {
       const desktopSettings = {formFactor: 'desktop', screenEmulation: {mobile: false}};

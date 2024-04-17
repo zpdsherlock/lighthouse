@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "效果含有不受支持的时间参数"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "请将网络请求的数量和数据大小保持在提供的性能预算所设定的目标之内。[详细了解性能预算](https://developers.google.com/web/tools/lighthouse/audits/budgets)。"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 条请求}other{# 条请求}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "性能预算"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "请预加载 `optional` 字体以方便初访者使用。[详细了解如何预加载字体](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "尽量减少第三方使用"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "实测值"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "指标"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "设置时间预算有助于您密切关注网站性能。性能出色的网站不仅加载迅速，还能快速响应用户输入事件。[详细了解性能预算](https://developers.google.com/web/tools/lighthouse/audits/budgets)。"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "时间预算"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "请为图片元素设置明确的宽度值和高度值，以减少布局偏移并改善 CLS。[了解如何设置图片尺寸](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "用户体验"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "性能预算为您的网站的性能设置了标准。"
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "预算"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "详细了解您的应用的性能。这些数字不会[直接影响](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)性能得分。"
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "名称"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "超出预算"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "请求"

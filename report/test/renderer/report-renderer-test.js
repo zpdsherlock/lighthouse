@@ -292,8 +292,7 @@ describe('ReportRenderer', () => {
 
     let notApplicableCount = 0;
     Object.values(clonedSampleResult.audits).forEach(audit => {
-      // The performance-budget audit is omitted from the DOM when it is not applicable
-      if (audit.scoreDisplayMode === 'notApplicable' && audit.id !== 'performance-budget') {
+      if (audit.scoreDisplayMode === 'notApplicable') {
         notApplicableCount++;
         // Switch to old-style `not_applicable` to test fallback behavior.
         audit.scoreDisplayMode = 'not_applicable';

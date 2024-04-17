@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Effekten har tidsparametrar som inte stöds"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Håll antal och storlek för nätverksbegäranden under de mål som anges i den angivna prestandabudgeten. [Läs mer om prestandabudgetar](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 begäran}other{# begäranden}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Prestandabudget"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Läs in teckensnitt i förväg med `optional` så att förstagångsbesökare kan använda dem. [Läs mer om att läsa in teckensnitt i förväg](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimera användning av tredjepartskod"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Mått"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Mätvärden"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Ställ in en tidsbudget om du vill hålla ett öga på webbplatsens prestanda. Bra webbplatser läses in och svarar snabbt på användarens indatahändelser. [Läs mer om prestandabudgetar](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Tidsbudget"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Reducera layoutförskjutningarna och förbättra CLS genom att ange explicit bredd och höjd för bildelement. [Läs mer om hur du ställer in bildmått](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Användarupplevelse"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Prestandabudget anger standard för webbplatsens prestanda."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budgetar"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Mer information om appens prestanda. Värdena påverkar inte prestandapoängen [direkt](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Namn"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Över budget"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Begäranden"

@@ -11,7 +11,6 @@ import url from 'url';
 import isDeepEqual from 'lodash/isEqual.js';
 
 import * as constants from './constants.js';
-import {Budget} from './budget.js';
 import ConfigPlugin from './config-plugin.js';
 import {Runner} from '../runner.js';
 import * as i18n from '../lib/i18n/i18n.js';
@@ -347,9 +346,6 @@ function resolveSettings(settingsJson = {}, overrides = undefined) {
     true
   );
 
-  if (settingsWithFlags.budgets) {
-    settingsWithFlags.budgets = Budget.initializeBudget(settingsWithFlags.budgets);
-  }
   // Locale is special and comes only from flags/settings/lookupLocale.
   settingsWithFlags.locale = locale;
 

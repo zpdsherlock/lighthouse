@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import fs from 'fs';
 import {pathToFileURL} from 'url';
 
 import * as td from 'testdouble';
@@ -111,17 +110,6 @@ describe('CLI bin', function() {
       await bin.begin();
 
       expect(getRunLighthouseArgs()[2]).toEqual(actualConfig);
-    });
-  });
-
-  describe('budget', () => {
-    it('should load the config from the path', async () => {
-      const budgetPath = `${LH_ROOT}/core/test/fixtures/simple-budget.json`;
-      cliFlags = {...cliFlags, budgetPath};
-      const budgetFile = JSON.parse(fs.readFileSync(budgetPath, 'utf-8'));
-      await bin.begin();
-
-      expect(getRunLighthouseArgs()[1].budgets).toEqual(budgetFile);
     });
   });
 

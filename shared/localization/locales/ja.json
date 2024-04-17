@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "サポートされていないタイミング パラメータがエフェクトで使用されています"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "ネットワーク リクエストの数とサイズが、指定したパフォーマンス バジェットの設定目標内に収まるよう維持します。[パフォーマンス バジェットの詳細](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 件のリクエスト}other{# 件のリクエスト}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "パフォーマンス予算"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "`optional` のフォントをプリロードすると、初めてのユーザーも使用できます。[フォントのプリロードの詳細](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "第三者の使用の最小化"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "測定値"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "指標"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "タイミング予算を設定すると、サイトのパフォーマンス管理に役立ちます。パフォーマンスが高いサイトは読み込みが早く、ユーザーの入力イベントにすばやく応答できます。[パフォーマンス バジェットの詳細](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "タイミング予算"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "画像要素で幅と高さを明示的に設定すると、レイアウト シフトを減らして、CLS を改善できます。[画像サイズの設定方法の詳細](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "ユーザー エクスペリエンス"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "パフォーマンス予算は、サイトのパフォーマンスに関する基準を設定します。"
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "予算（リソースの上限）"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "アプリケーションのパフォーマンスに関する詳細。これらの数値は、パフォーマンス スコアには[直接影響](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)しません。"
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "名前"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "予算超過"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "リクエスト"

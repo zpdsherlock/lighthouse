@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "效果包含不支援的時間參數"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "讓網路要求的數量和大小低於使用者根據效能預算所設定的目標。[進一步瞭解效能預算](https://developers.google.com/web/tools/lighthouse/audits/budgets)。"
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 個要求}other{# 個要求}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "效能預算"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "請預先載入 `optional` 字型，以便新訪客使用。[進一步瞭解如何預先載入字型](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "盡量減少第三方程式碼的使用量"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "測量值"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "指標"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "設定時間預算可協助你隨時留意網站的效能。效能穩定的網站能快速載入網頁，並迅速回應使用者的輸入操作。[進一步瞭解效能預算](https://developers.google.com/web/tools/lighthouse/audits/budgets)。"
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "時間預算"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "請明確設定圖片元素的寬度和高度，以減少版面配置轉移並改善 CLS。[瞭解如何設定圖片尺寸](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "使用者體驗"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "你可以根據效能預算設定網站效能的標準。"
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "預算"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "進一步瞭解應用程式的效能。這些數字不會[直接影響](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)「效能」分數。"
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "名稱"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "超過預算"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "要求"

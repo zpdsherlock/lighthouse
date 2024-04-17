@@ -8,7 +8,7 @@ import * as cli from '../../cli/run.js';
 import * as cliFlags from '../../cli/cli-flags.js';
 import * as assetSaver from '../lib/asset-saver.js';
 import {Server} from '../../cli/test/fixtures/static-server.js';
-import budgetedConfig from '../test/results/sample-config.js';
+import sampleConfig from '../test/results/sample-config.js';
 
 const artifactPath = 'core/test/results/artifacts';
 // All artifacts must have resources from a consistent port, to ensure reproducibility.
@@ -32,7 +32,7 @@ async function update(artifactNames) {
     url,
   ].join(' ');
   const flags = cliFlags.getFlags(rawFlags);
-  await cli.runLighthouse(url, flags, budgetedConfig);
+  await cli.runLighthouse(url, flags, sampleConfig);
   await server.close();
 
   const newArtifacts = assetSaver.loadArtifacts(artifactPath);

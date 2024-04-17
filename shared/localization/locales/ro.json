@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "Efectul are parametri de temporizare neacceptați"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Păstrează cantitatea și dimensiunea solicitărilor din rețea sub obiectivele stabilite de limita de funcționare solicitată. [Află mai multe despre limitele de funcționare](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{O solicitare}few{# solicitări}other{# de solicitări}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Buget de performanță"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Preîncarcă fonturile `optional` pentru ca vizitatorii noi să le poată folosi. [Află mai multe despre preîncărcarea fonturilor](https://web.dev/articles/preload-optional-fonts)."
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Minimalizează folosirea terțelor părți"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Cuantificare"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Valoare"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Stabilește o limită pentru durată ca să urmărești performanța site-ului. Site-urile performante se încarcă rapid și răspund rapid la evenimentele de intervenție a utilizatorului. [Află mai multe despre limitele de funcționare](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Buget pentru durată"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Setează lățimea și înălțimea explicite pentru elementele imagine, ca să reduci modificările de aspect și să îmbunătățești CLS. [Află cum să setezi dimensiunile imaginii](https://web.dev/articles/optimize-cls#images_without_dimensions)."
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Experiența utilizatorului"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "Bugetele de performanță stabilesc standarde pentru performanța site-ului."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Bugete"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Mai multe informații despre performanța aplicației tale. Numerele nu [influențează direct](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) Scorul de performanță."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nume"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Peste buget"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Solicitări"

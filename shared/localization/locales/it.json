@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "L'effetto ha parametri di timing non supportati"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "Mantieni la quantità e le dimensioni delle richieste di rete al di sotto dei target impostati tramite il budget delle prestazioni fornito. [Scopri di più sui budget delle prestazioni](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 richiesta}other{# richieste}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "Budget per le prestazioni"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "Precarica caratteri `optional` per consentirne l'utilizzo ai visitatori alla prima visita. [Scopri di più sul precaricamento dei caratteri](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "Riduci al minimo l'utilizzo di codice di terze parti"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "Misurazione"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "Metrica"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "Imposta un budget per le tempistiche per tenere sotto controllo le prestazioni del tuo sito. I siti con ottime prestazioni vengono caricati velocemente e rispondono rapidamente agli eventi di input utente. [Scopri di più sui budget delle prestazioni](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "Budget per le tempistiche"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "Imposta larghezza e altezza esplicite negli elementi immagine per ridurre le variazioni di layout e migliorare la metrica CLS. [Scopri come impostare le dimensioni delle immagini](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "Esperienza utente"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "I budget per le prestazioni consentono di stabilire gli standard per le prestazioni del tuo sito."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "Budget"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "Ulteriori informazioni sulle prestazioni della tua applicazione. Questi valori non [incidono direttamente](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) sul punteggio Prestazioni."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "Nome"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "Oltre il budget"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "Richieste"

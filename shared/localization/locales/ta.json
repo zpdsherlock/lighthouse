@@ -1160,15 +1160,6 @@
   "core/audits/non-composited-animations.js | unsupportedTimingParameters": {
     "message": "ஆதரிக்கப்படாத நேர அளவுருக்களை எஃபெக்ட் கொண்டுள்ளது"
   },
-  "core/audits/performance-budget.js | description": {
-    "message": "நெட்வொர்க் கோரிக்கைகளின் அளவையும் எண்ணிக்கையையும் செயல்திறன் பட்ஜெட் இலக்கீடுகளுக்குள் வைத்திருக்கவும். [செயல்திறன் பட்ஜெட்கள் குறித்து மேலும் அறிக](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/performance-budget.js | requestCountOverBudget": {
-    "message": "{count,plural, =1{1 கோரிக்கை}other{# கோரிக்கைகள்}}"
-  },
-  "core/audits/performance-budget.js | title": {
-    "message": "செயல்திறன் பட்ஜெட்"
-  },
   "core/audits/preload-fonts.js | description": {
     "message": "`optional` என அமைக்கப்பட்டுள்ள எழுத்து வடிவங்களை முன்கூட்டியே ஏற்றுவதால் முதல் முறையாக வரும் பயனர்கள் அவற்றைப் பயன்படுத்தக்கூடும். [எழுத்து வடிவங்களை முன்கூட்டியே ஏற்றுவது குறித்து மேலும் அறிக](https://web.dev/articles/preload-optional-fonts)"
   },
@@ -1403,18 +1394,6 @@
   "core/audits/third-party-summary.js | title": {
     "message": "மூன்றாம் தரப்பு உபயோகத்தைக் குறைத்தல்"
   },
-  "core/audits/timing-budget.js | columnMeasurement": {
-    "message": "அளவீடு"
-  },
-  "core/audits/timing-budget.js | columnTimingMetric": {
-    "message": "மெட்ரிக்"
-  },
-  "core/audits/timing-budget.js | description": {
-    "message": "உங்கள் தளத்தின் செயல்திறனைக் கண்காணிக்க டைமிங் பட்ஜெட் ஒன்றை அமையுங்கள். செயல்திறன் மிக்க தளங்கள் வேகமாக ஏற்றப்படுவதோடு பயனர் உள்ளீடுகளுக்கு விரைவாகப் பதிலளிக்கும். [செயல்திறன் பட்ஜெட்கள் குறித்து மேலும் அறிக](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
-  },
-  "core/audits/timing-budget.js | title": {
-    "message": "டைமிங் பட்ஜெட்"
-  },
   "core/audits/unsized-images.js | description": {
     "message": "தளவமைப்பு மாற்றங்களைக் குறைப்பதற்கும் CLSஸை மேம்படுத்துவதற்கும் படத்தின் துல்லியமான அகலத்தையும் உயரத்தையும் அமைக்கவும். [படத்தின் பரிமாணங்களை அமைப்பது எப்படி என அறிக](https://web.dev/articles/optimize-cls#images_without_dimensions)"
   },
@@ -1585,12 +1564,6 @@
   },
   "core/config/default-config.js | bestPracticesUXGroupTitle": {
     "message": "பயனர் அனுபவம்"
-  },
-  "core/config/default-config.js | budgetsGroupDescription": {
-    "message": "செயல்திறன் பட்ஜெட்கள் உங்கள் தளத்தின் செயல்திறனுக்கான தர நிலைகளை அமைக்கும்."
-  },
-  "core/config/default-config.js | budgetsGroupTitle": {
-    "message": "பட்ஜெட்கள்"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
     "message": "உங்கள் ஆப்ஸின் செயல்திறன் பற்றிய மேலும் சில தகவல்கள். இந்த மதிப்புகளானது செயல்திறனின் ஸ்கோரை [நேரடியாகப் பாதிக்காது](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/)."
@@ -2284,9 +2257,6 @@
   },
   "core/lib/i18n/i18n.js | columnName": {
     "message": "பெயர்"
-  },
-  "core/lib/i18n/i18n.js | columnOverBudget": {
-    "message": "பட்ஜெட்டைத் தாண்டிவிட்டது"
   },
   "core/lib/i18n/i18n.js | columnRequests": {
     "message": "கோரிக்கைகள்"
