@@ -6,8 +6,6 @@
 
 /* eslint-env browser */
 
-/** @typedef {HTMLElementTagNameMap & {[id: string]: HTMLElement}} HTMLElementByTagName */
-/** @template {string} T @typedef {import('typed-query-selector/parser').ParseSelector<T, Element>} ParseSelector */
 /** @typedef {import('../../../report/renderer/i18n-formatter').I18nFormatter} I18nFormatter */
 
 const UIStrings = {
@@ -104,52 +102,6 @@ class TreemapUtil {
   static elideSameOrigin(url, fromRelativeUrl) {
     if (url.origin !== fromRelativeUrl.origin) return url.toString();
     return url.toString().replace(fromRelativeUrl.origin, '');
-  }
-
-  /**
-   * @template {string} T
-   * @param {T} name
-   * @param {string=} className
-   * @return {HTMLElementByTagName[T]}
-   */
-  static createElement(name, className) {
-    const element = document.createElement(name);
-    if (className) {
-      element.className = className;
-    }
-    return element;
-  }
-
-  /**
-   * @template {string} T
-   * @param {Element} parentElem
-   * @param {T} elementName
-   * @param {string=} className
-   * @return {HTMLElementByTagName[T]}
-   */
-  static createChildOf(parentElem, elementName, className) {
-    const element = this.createElement(elementName, className);
-    parentElem.append(element);
-    return element;
-  }
-
-  /**
-   * Guaranteed context.querySelector. Always returns an element or throws if
-   * nothing matches query.
-   * @template {string} T
-   * @param {T} query
-   * @param {ParentNode=} context
-   * @return {ParseSelector<T>}
-   */
-  static find(query, context = document) {
-    const result = context.querySelector(query);
-    if (result === null) {
-      throw new Error(`query ${query} not found`);
-    }
-    // Because we control the treemap layout and templates, use the simpler
-    // `typed-query-selector` types that don't require differentiating between
-    // e.g. HTMLAnchorElement and SVGAElement. See https://github.com/GoogleChrome/lighthouse/issues/12011
-    return /** @type {ParseSelector<T>} */ (result);
   }
 
   /**

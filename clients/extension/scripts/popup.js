@@ -5,6 +5,9 @@
  */
 
 import * as SettingsController from './settings-controller.js';
+import {DOM} from '../../../report/renderer/dom.js';
+
+const dom = new DOM(document, document.documentElement);
 
 // Replaced with 'chrome' or 'firefox' in the build script.
 /** @type {string} */
@@ -21,21 +24,6 @@ const FIREFOX_STRINGS = {
 };
 
 const STRINGS = BROWSER_BRAND === 'chrome' ? CHROME_STRINGS : FIREFOX_STRINGS;
-
-/**
- * Guaranteed context.querySelector. Always returns an element or throws if
- * nothing matches query.
- * @template {string} T
- * @param {T} query
- * @param {ParentNode=} context
- */
-function find(query, context = document) {
-  const result = context.querySelector(query);
-  if (result === null) {
-    throw new Error(`query ${query} not found`);
-  }
-  return result;
-}
 
 /**
  * @param {string} text
@@ -129,7 +117,7 @@ function generateCategoryOptionsList(settings) {
     frag.append(createOptionItem(category.title, category.id, isChecked));
   });
 
-  const optionsCategoriesList = find('.options__categories');
+  const optionsCategoriesList = dom.find('.options__categories');
   optionsCategoriesList.append(frag);
 }
 
@@ -146,7 +134,7 @@ function generateBackendOptionsList(settings) {
     frag.append(createRadioItem('backend', backend.title, backend.id, isChecked));
   });
 
-  const optionsCategoriesList = find('.options__backend');
+  const optionsCategoriesList = dom.find('.options__backend');
   optionsCategoriesList.append(frag);
 }
 
@@ -214,7 +202,7 @@ function generateLocaleOptionsList(settings) {
     frag.append(optionEl);
   });
 
-  const optionsLocalesList = find('.options__locales');
+  const optionsLocalesList = dom.find('.options__locales');
   optionsLocalesList.append(frag);
 }
 
@@ -222,12 +210,12 @@ function generateLocaleOptionsList(settings) {
  * @param {SettingsController.Settings} settings
  */
 function configureVisibleSettings(settings) {
-  const optionsCategoriesList = find('.options__categories');
+  const optionsCategoriesList = dom.find('.options__categories');
   optionsCategoriesList.parentElement?.classList.toggle('hidden', settings.backend === 'psi');
 }
 
 function fillDevToolsShortcut() {
-  const el = find('.devtools-shortcut');
+  const el = dom.find('.devtools-shortcut');
   const isMac = /mac/i.test(navigator.platform);
   el.textContent = isMac ? '⌘⌥I (Cmd+Opt+I)' : 'F12';
 }
@@ -237,13 +225,13 @@ function fillDevToolsShortcut() {
  * @return {SettingsController.Settings}
  */
 function readSettingsFromDomAndPersist() {
-  const optionsEl = find('.section--options');
+  const optionsEl = dom.find('.section--options');
   // Save settings when options page is closed.
-  const backend = find('.options__backend input:checked').value;
-  const locale = find('select.options__locales').value;
+  const backend = dom.find('.options__backend input:checked').value;
+  const locale = dom.find('select.options__locales').value;
   const checkboxes = optionsEl.querySelectorAll('.options__categories input:checked');
   const selectedCategories = Array.from(checkboxes).map(input => input.value);
-  const device = find('input[name="device"]:checked').value;
+  const device = dom.find('input[name="device"]:checked').value;
 
   const settings = {
     backend,
@@ -284,13 +272,13 @@ async function initPopup() {
   if (BROWSER_BRAND === 'chrome') {
     fillDevToolsShortcut();
   }
-  const browserBrandEl = find(`.browser-brand--${BROWSER_BRAND}`);
+  const browserBrandEl = dom.find(`.browser-brand--${BROWSER_BRAND}`);
   browserBrandEl.classList.remove('hidden');
 
-  const generateReportButton = find('button.button--generate');
-  const psiDisclaimerEl = find('.psi-disclaimer');
-  const errorMessageEl = find('.errormsg');
-  const optionsFormEl = find('.options__form');
+  const generateReportButton = dom.find('button.button--generate');
+  const psiDisclaimerEl = dom.find('.psi-disclaimer');
+  const errorMessageEl = dom.find('.errormsg');
+  const optionsFormEl = dom.find('.options__form');
 
   /** @type {URL} */
   let siteUrl;
@@ -314,7 +302,7 @@ async function initPopup() {
   generateCategoryOptionsList(settings);
   generateLocaleOptionsList(settings);
   configureVisibleSettings(settings);
-  const selectedDeviceEl = find(`.options__device input[value="${settings.device}"]`);
+  const selectedDeviceEl = dom.find(`.options__device input[value="${settings.device}"]`);
   selectedDeviceEl.checked = true;
 
   generateReportButton.addEventListener('click', () => {
