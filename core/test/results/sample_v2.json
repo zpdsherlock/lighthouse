@@ -2825,6 +2825,30 @@
       "score": null,
       "scoreDisplayMode": "notApplicable"
     },
+    "aria-conditional-attr": {
+      "id": "aria-conditional-attr",
+      "title": "ARIA attributes are used as specified for the element's role",
+      "description": "Some ARIA attributes are only allowed on an element under certain conditions. [Learn more about conditional ARIA attributes](https://dequeuniversity.com/rules/axe/4.9/aria-conditional-attr).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
+    "aria-deprecated-role": {
+      "id": "aria-deprecated-role",
+      "title": "Deprecated ARIA roles were not used",
+      "description": "Deprecated ARIA roles may not be processed correctly by assistive technology. [Learn more about deprecated ARIA roles](https://dequeuniversity.com/rules/axe/4.9/aria-deprecated-role).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
     "aria-dialog-name": {
       "id": "aria-dialog-name",
       "title": "Elements with `role=\"dialog\"` or `role=\"alertdialog\"` have accessible names.",
@@ -2876,6 +2900,18 @@
       "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label `progressbar` elements](https://dequeuniversity.com/rules/axe/4.9/aria-progressbar-name).",
       "score": null,
       "scoreDisplayMode": "notApplicable"
+    },
+    "aria-prohibited-attr": {
+      "id": "aria-prohibited-attr",
+      "title": "Elements use only permitted ARIA attributes",
+      "description": "Using ARIA attributes in roles where they are prohibited can mean that important information is not communicated to users of assistive technologies. [Learn more about prohibited ARIA roles](https://dequeuniversity.com/rules/axe/4.9/aria-prohibited-attr).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
     },
     "aria-required-attr": {
       "id": "aria-required-attr",
@@ -5814,6 +5850,16 @@
           "group": "a11y-aria"
         },
         {
+          "id": "aria-conditional-attr",
+          "weight": 7,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-deprecated-role",
+          "weight": 1,
+          "group": "a11y-aria"
+        },
+        {
           "id": "aria-dialog-name",
           "weight": 7,
           "group": "a11y-aria"
@@ -5841,6 +5887,11 @@
         {
           "id": "aria-progressbar-name",
           "weight": 0,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "weight": 7,
           "group": "a11y-aria"
         },
         {
@@ -6135,7 +6186,7 @@
         }
       ],
       "id": "accessibility",
-      "score": 0.78
+      "score": 0.79
     },
     "best-practices": {
       "title": "Best Practices",
@@ -8041,6 +8092,18 @@
       },
       {
         "startTime": 0,
+        "name": "lh:audit:aria-conditional-attr",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:aria-deprecated-role",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
         "name": "lh:audit:aria-dialog-name",
         "duration": 100,
         "entryType": "measure"
@@ -8072,6 +8135,12 @@
       {
         "startTime": 0,
         "name": "lh:audit:aria-progressbar-name",
+        "duration": 100,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 0,
+        "name": "lh:audit:aria-prohibited-attr",
         "duration": 100,
         "entryType": "measure"
       },
@@ -9366,6 +9435,18 @@
       "core/audits/accessibility/aria-command-name.js | description": [
         "audits[aria-command-name].description"
       ],
+      "core/audits/accessibility/aria-conditional-attr.js | title": [
+        "audits[aria-conditional-attr].title"
+      ],
+      "core/audits/accessibility/aria-conditional-attr.js | description": [
+        "audits[aria-conditional-attr].description"
+      ],
+      "core/audits/accessibility/aria-deprecated-role.js | title": [
+        "audits[aria-deprecated-role].title"
+      ],
+      "core/audits/accessibility/aria-deprecated-role.js | description": [
+        "audits[aria-deprecated-role].description"
+      ],
       "core/audits/accessibility/aria-dialog-name.js | title": [
         "audits[aria-dialog-name].title"
       ],
@@ -9401,6 +9482,12 @@
       ],
       "core/audits/accessibility/aria-progressbar-name.js | description": [
         "audits[aria-progressbar-name].description"
+      ],
+      "core/audits/accessibility/aria-prohibited-attr.js | title": [
+        "audits[aria-prohibited-attr].title"
+      ],
+      "core/audits/accessibility/aria-prohibited-attr.js | description": [
+        "audits[aria-prohibited-attr].description"
       ],
       "core/audits/accessibility/aria-required-attr.js | title": [
         "audits[aria-required-attr].title"

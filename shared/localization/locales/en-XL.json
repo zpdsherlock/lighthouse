@@ -35,6 +35,24 @@
   "core/audits/accessibility/aria-command-name.js | title": {
     "message": "`button`, `link`, âńd̂ `menuitem` él̂ém̂én̂t́ŝ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś"
   },
+  "core/audits/accessibility/aria-conditional-attr.js | description": {
+    "message": "Ŝóm̂é ÂŔÎÁ ât́t̂ŕîb́ût́êś âŕê ón̂ĺŷ ál̂ĺôẃêd́ ôń âń êĺêḿêńt̂ ún̂d́êŕ ĉér̂t́âín̂ ćôńd̂ít̂íôńŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ćôńd̂ít̂íôńâĺ ÂŔÎÁ ât́t̂ŕîb́ût́êś](https://dequeuniversity.com/rules/axe/4.9/aria-conditional-attr)."
+  },
+  "core/audits/accessibility/aria-conditional-attr.js | failureTitle": {
+    "message": "ÂŔÎÁ ât́t̂ŕîb́ût́êś âŕê ńôt́ ûśêd́ âś ŝṕêćîf́îéd̂ f́ôŕ t̂h́ê él̂ém̂én̂t́'ŝ ŕôĺê"
+  },
+  "core/audits/accessibility/aria-conditional-attr.js | title": {
+    "message": "ÂŔÎÁ ât́t̂ŕîb́ût́êś âŕê úŝéd̂ áŝ śp̂éĉíf̂íêd́ f̂ór̂ t́ĥé êĺêḿêńt̂'ś r̂ól̂é"
+  },
+  "core/audits/accessibility/aria-deprecated-role.js | description": {
+    "message": "D̂ép̂ŕêćât́êd́ ÂŔÎÁ r̂ól̂éŝ ḿâý n̂ót̂ b́ê ṕr̂óĉéŝśêd́ ĉór̂ŕêćt̂ĺŷ b́ŷ áŝśîśt̂ív̂é t̂éĉh́n̂ól̂óĝý. [L̂éâŕn̂ ḿôŕê áb̂óût́ d̂ép̂ŕêćât́êd́ ÂŔÎÁ r̂ól̂éŝ](https://dequeuniversity.com/rules/axe/4.9/aria-deprecated-role)."
+  },
+  "core/audits/accessibility/aria-deprecated-role.js | failureTitle": {
+    "message": "D̂ép̂ŕêćât́êd́ ÂŔÎÁ r̂ól̂éŝ ẃêŕê úŝéd̂"
+  },
+  "core/audits/accessibility/aria-deprecated-role.js | title": {
+    "message": "D̂ép̂ŕêćât́êd́ ÂŔÎÁ r̂ól̂éŝ ẃêŕê ńôt́ ûśêd́"
+  },
   "core/audits/accessibility/aria-dialog-name.js | description": {
     "message": "ÂŔÎÁ d̂íâĺôǵ êĺêḿêńt̂ś ŵít̂h́ôút̂ áĉćêśŝíb̂ĺê ńâḿêś m̂áŷ ṕr̂év̂én̂t́ ŝćr̂éêń r̂éâd́êŕŝ úŝér̂ś f̂ŕôḿ d̂íŝćêŕn̂ín̂ǵ t̂h́ê ṕûŕp̂óŝé ôf́ t̂h́êśê él̂ém̂én̂t́ŝ. [Ĺêár̂ń ĥóŵ t́ô ḿâḱê ÁR̂ÍÂ d́îál̂óĝ él̂ém̂én̂t́ŝ ḿôŕê áĉćêśŝíb̂ĺê](https://dequeuniversity.com/rules/axe/4.9/aria-dialog-name)."
   },
@@ -88,6 +106,15 @@
   },
   "core/audits/accessibility/aria-progressbar-name.js | title": {
     "message": "ÂŔÎÁ `progressbar` êĺêḿêńt̂ś ĥáv̂é âćĉéŝśîb́l̂é n̂ám̂éŝ"
+  },
+  "core/audits/accessibility/aria-prohibited-attr.js | description": {
+    "message": "Ûśîńĝ ÁR̂ÍÂ át̂t́r̂íb̂út̂éŝ ín̂ ŕôĺêś ŵh́êŕê t́ĥéŷ ár̂é p̂ŕôh́îb́ît́êd́ ĉán̂ ḿêán̂ t́ĥát̂ ím̂ṕôŕt̂án̂t́ îńf̂ór̂ḿât́îón̂ íŝ ńôt́ ĉóm̂ḿûńîćât́êd́ t̂ó ûśêŕŝ óf̂ áŝśîśt̂ív̂é t̂éĉh́n̂ól̂óĝíêś. [L̂éâŕn̂ ḿôŕê áb̂óût́ p̂ŕôh́îb́ît́êd́ ÂŔÎÁ r̂ól̂éŝ](https://dequeuniversity.com/rules/axe/4.9/aria-prohibited-attr)."
+  },
+  "core/audits/accessibility/aria-prohibited-attr.js | failureTitle": {
+    "message": "Êĺêḿêńt̂ś ûśê ṕr̂óĥíb̂ít̂éd̂ ÁR̂ÍÂ át̂t́r̂íb̂út̂éŝ"
+  },
+  "core/audits/accessibility/aria-prohibited-attr.js | title": {
+    "message": "Êĺêḿêńt̂ś ûśê ón̂ĺŷ ṕêŕm̂ít̂t́êd́ ÂŔÎÁ ât́t̂ŕîb́ût́êś"
   },
   "core/audits/accessibility/aria-required-attr.js | description": {
     "message": "Ŝóm̂é ÂŔÎÁ r̂ól̂éŝ h́âv́ê ŕêq́ûír̂éd̂ át̂t́r̂íb̂út̂éŝ t́ĥát̂ d́êśĉŕîb́ê t́ĥé ŝt́ât́ê óf̂ t́ĥé êĺêḿêńt̂ t́ô śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ ḿôŕê áb̂óût́ r̂ól̂éŝ án̂d́ r̂éq̂úîŕêd́ ât́t̂ŕîb́ût́êś](https://dequeuniversity.com/rules/axe/4.9/aria-required-attr)."

@@ -78,6 +78,22 @@ const expectations = {
           ],
         },
       },
+      'aria-conditional-attr': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > input#aria-conditional-attr',
+                'snippet': '<input id="aria-conditional-attr" type="checkbox" aria-checked="true">',
+                'nodeLabel': 'body > section > input#aria-conditional-attr',
+                'explanation': 'Fix all of the following:\n  Remove aria-checked, or set it to "false" to match the real checkbox state',
+              },
+            },
+          ],
+        },
+      },
       'aria-dialog-name': {
         score: 0,
         details: {
@@ -93,6 +109,22 @@ const expectations = {
                 'snippet': '<div role="alertdialog" id="aria-dialog-name" aria-label="">',
                 'explanation': 'Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute',
                 'nodeLabel': 'body > section > div#aria-dialog-name',
+              },
+            },
+          ],
+        },
+      },
+      'aria-deprecated-role': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > div#aria-deprecated-role',
+                'snippet': '<div role="directory" id="aria-deprecated-role">',
+                'nodeLabel': 'body > section > div#aria-deprecated-role',
+                'explanation': 'Fix all of the following:\n  The role used is deprecated: directory',
               },
             },
           ],
@@ -181,6 +213,22 @@ const expectations = {
                 'snippet': '<div id="aria-progressbar-name" role="progressbar">',
                 'explanation': 'Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute',
                 'nodeLabel': 'text-in-a-box',
+              },
+            },
+          ],
+        },
+      },
+      'aria-prohibited-attr': {
+        score: 0,
+        details: {
+          items: [
+            {
+              node: {
+                'type': 'node',
+                'selector': 'body > section > div#aria-prohibited-attr',
+                'snippet': '<div id="aria-prohibited-attr" role="presentation" aria-label="Label">',
+                'nodeLabel': 'Label',
+                'explanation': 'Fix all of the following:\n  aria-label attribute cannot be used with role "null".',
               },
             },
           ],
@@ -298,7 +346,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#aria-required-attr',
-                'path': '2,HTML,1,BODY,25,SECTION,0,DIV',
                 'snippet': '<div id="aria-required-attr" role="checkbox">',
                 'explanation': 'Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute',
                 'nodeLabel': 'body > section > div#aria-required-attr',
@@ -308,7 +355,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div > div#aria-required-parent',
-                'path': '2,HTML,1,BODY,29,SECTION,0,DIV,0,DIV',
                 'snippet': '<div id="aria-required-parent" role="option">',
                 'nodeLabel': 'body > section > div > div#aria-required-parent',
               },
@@ -317,7 +363,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#aria-valid-attr',
-                'path': '2,HTML,1,BODY,35,SECTION,0,DIV',
                 'snippet': '<div id="aria-valid-attr" role="checkbox" aria-chked="true">',
                 'nodeLabel': 'body > section > div#aria-valid-attr',
               },
@@ -326,7 +371,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#aria-valid-attr-value',
-                'path': '2,HTML,1,BODY,37,SECTION,0,DIV',
                 'snippet': '<div id="aria-valid-attr-value" role="checkbox" aria-checked="0">',
                 'nodeLabel': 'body > section > div#aria-valid-attr-value',
               },
@@ -460,7 +504,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > div#duplicate-id-aria',
-                'path': '2,HTML,1,BODY,47,SECTION,0,DIV',
                 'snippet': '<div id="duplicate-id-aria" class="duplicate-id-aria">',
                 'explanation': 'Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: duplicate-id-aria',
                 'nodeLabel': 'body > section > div#duplicate-id-aria',
@@ -471,7 +514,6 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,47,SECTION,0,DIV,0,DIV',
                       'selector': 'body > section > div#duplicate-id-aria > div#duplicate-id-aria',
                       'snippet': '<div id="duplicate-id-aria">',
                       'nodeLabel': 'body > section > div#duplicate-id-aria > div#duplicate-id-aria',
@@ -508,7 +550,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > input#form-field-multiple-labels',
-                'path': '2,HTML,1,BODY,51,SECTION,2,INPUT',
                 'snippet': '<input type="checkbox" id="form-field-multiple-labels">',
                 'explanation': 'Fix all of the following:\n  Multiple label elements is not widely supported in assistive technologies. Ensure the first label contains all necessary information.',
                 'nodeLabel': 'body > section > input#form-field-multiple-labels',
@@ -519,7 +560,6 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,51,SECTION,0,LABEL',
                       'selector': 'body > section > label#label1',
                       'snippet': '<label for="form-field-multiple-labels" id="label1">',
                       'nodeLabel': 'label1',
@@ -528,7 +568,6 @@ const expectations = {
                   {
                     relatedNode: {
                       'type': 'node',
-                      'path': '2,HTML,1,BODY,51,SECTION,1,LABEL',
                       'selector': 'body > section > label',
                       'snippet': '<label for="form-field-multiple-labels">',
                       'nodeLabel': 'label2',
@@ -564,7 +603,6 @@ const expectations = {
               node: {
                 'type': 'node',
                 'selector': 'body > section > h3',
-                'path': '2,HTML,1,BODY,55,SECTION,1,H3',
                 'snippet': '<h3>',
                 'explanation': 'Fix any of the following:\n  Heading order invalid',
                 'nodeLabel': 'sub-sub-header',
