@@ -304,7 +304,7 @@ describe('CategoryRenderer', () => {
       );
 
       const gauge = categoryDOM.querySelector('.lh-fraction__content');
-      assert.equal(gauge.textContent.trim(), '23/28', 'fraction is included');
+      assert.equal(gauge.textContent.trim(), '16/21', 'fraction is included');
 
       const score = categoryDOM.querySelector('.lh-category-header');
       const title = score.querySelector('.lh-fraction__label');
@@ -434,11 +434,11 @@ describe('CategoryRenderer', () => {
       const manualAudits = elem.querySelectorAll('.lh-clump--manual .lh-audit');
       const naAudits = elem.querySelectorAll('.lh-clump--notapplicable .lh-audit');
 
-      assert.equal(passedAudits.length, 3);
+      assert.equal(passedAudits.length, 4);
       assert.equal(failedAudits.length, 3);
       assert.equal(warningAudits.length, 1);
       assert.equal(manualAudits.length, 1);
-      assert.equal(naAudits.length, 3);
+      assert.equal(naAudits.length, 2);
 
       const allAudits = elem.querySelectorAll('.lh-audit');
       // No unaccounted audits
@@ -455,7 +455,7 @@ describe('CategoryRenderer', () => {
       const failedAudits = elem.querySelectorAll('.lh-clump--failed .lh-audit');
 
       assert.equal(passedAudits.length, 0);
-      assert.equal(failedAudits.length, 8);
+      assert.equal(failedAudits.length, 9);
     });
 
     it('expands warning audit group', () => {

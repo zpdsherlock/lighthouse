@@ -365,16 +365,16 @@ describe('ReportUIFeatures', () => {
           }
 
           const initialExpected = [
-            'cdn.com24.0 KiB8.8 KiB',
-            '/script1.js(www.cdn.com)24.0 KiB8.8 KiB',
+            'cdn.com110.1 KiB8.8 KiB',
+            '/script1.js(www.cdn.com)110.1 KiB8.8 KiB',
             '10.0 KiB0.0 KiB',
             '20.0 KiB0.0 KiB',
-            'example.com 1st party24.0 KiB8.8 KiB',
-            '/script2.js(www.example.com)24.0 KiB8.8 KiB',
+            'example.com 1st party110.1 KiB8.8 KiB',
+            '/script2.js(www.example.com)110.1 KiB8.8 KiB',
             '30.0 KiB0.0 KiB',
             '40.0 KiB0.0 KiB',
-            'notexample.com24.0 KiB8.8 KiB',
-            '/script3.js(www.notexample.com)24.0 KiB8.8 KiB',
+            'notexample.com110.1 KiB8.8 KiB',
+            '/script3.js(www.notexample.com)110.1 KiB8.8 KiB',
             '50.0 KiB0.0 KiB',
             '60.0 KiB0.0 KiB',
           ];
@@ -386,8 +386,8 @@ describe('ReportUIFeatures', () => {
           filterCheckbox.click();
           expect(dom.findAll('tbody .lh-row--even', auditEl).length).toEqual(0);
           expect(getRowIdentifiers()).toEqual([
-            'example.com 1st party24.0 KiB8.8 KiB',
-            '/script2.js(www.example.com)24.0 KiB8.8 KiB',
+            'example.com 1st party110.1 KiB8.8 KiB',
+            '/script2.js(www.example.com)110.1 KiB8.8 KiB',
             '30.0 KiB0.0 KiB',
             '40.0 KiB0.0 KiB',
           ]);
@@ -479,13 +479,13 @@ describe('ReportUIFeatures', () => {
           }
 
           const initialExpected = [
-            '/script1.js(www.cdn.com)24.0 KiB8.8 KiB',
+            '/script1.js(www.cdn.com)110.1 KiB8.8 KiB',
             '10.0 KiB0.0 KiB',
             '20.0 KiB0.0 KiB',
-            '/script2.js(www.example.com)24.0 KiB8.8 KiB',
+            '/script2.js(www.example.com)110.1 KiB8.8 KiB',
             '30.0 KiB0.0 KiB',
             '40.0 KiB0.0 KiB',
-            '/script3.js(www.notexample.com)24.0 KiB8.8 KiB',
+            '/script3.js(www.notexample.com)110.1 KiB8.8 KiB',
             '50.0 KiB0.0 KiB',
             '60.0 KiB0.0 KiB',
           ];
@@ -493,7 +493,7 @@ describe('ReportUIFeatures', () => {
           expect(getRowIdentifiers()).toEqual(initialExpected);
           filterCheckbox.click();
           expect(getRowIdentifiers()).toEqual([
-            '/script2.js(www.example.com)24.0 KiB8.8 KiB',
+            '/script2.js(www.example.com)110.1 KiB8.8 KiB',
             '30.0 KiB0.0 KiB',
             '40.0 KiB0.0 KiB',
           ]);
@@ -607,13 +607,13 @@ describe('ReportUIFeatures', () => {
           }
 
           const initialExpected = [
-            '/script1.js(www.cdn.com)24.0 KiB8.8 KiB',
+            '/script1.js(www.cdn.com)110.1 KiB8.8 KiB',
             '10.0 KiB0.0 KiB',
             '20.0 KiB0.0 KiB',
-            '/script2.js(www.example.com)24.0 KiB8.8 KiB',
+            '/script2.js(www.example.com)110.1 KiB8.8 KiB',
             '30.0 KiB0.0 KiB',
             '40.0 KiB0.0 KiB',
-            '/script3.js(www.notexample.com)24.0 KiB8.8 KiB',
+            '/script3.js(www.notexample.com)110.1 KiB8.8 KiB',
             '50.0 KiB0.0 KiB',
             '60.0 KiB0.0 KiB',
           ];
@@ -621,7 +621,7 @@ describe('ReportUIFeatures', () => {
           expect(getRowIdentifiers()).toEqual(initialExpected);
           filterCheckbox.click();
           expect(getRowIdentifiers()).toEqual([
-            '/script2.js(www.example.com)24.0 KiB8.8 KiB',
+            '/script2.js(www.example.com)110.1 KiB8.8 KiB',
             '30.0 KiB0.0 KiB',
             '40.0 KiB0.0 KiB',
           ]);

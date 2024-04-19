@@ -222,7 +222,7 @@ describe('backward compatibility', () => {
 
     for (const audit of Object.values(clonedSampleResult.audits)) {
       // Keep metric savings explicit on this audit
-      if (audit.id === 'server-response-time') continue;
+      if (audit.id === 'modern-image-formats') continue;
 
       if (audit.metricSavings) {
         delete audit.metricSavings;
@@ -240,8 +240,8 @@ describe('backward compatibility', () => {
       {LCP: 0}
     );
     assert.deepStrictEqual(
-      preparedResult.audits['server-response-time'].metricSavings,
-      {LCP: 450, FCP: 450}
+      preparedResult.audits['modern-image-formats'].metricSavings,
+      {LCP: 1500, FCP: 0}
     );
   });
 });

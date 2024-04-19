@@ -196,13 +196,13 @@ describe('PerfCategoryRenderer', () => {
       const url = new URL(href);
       expect(url.hash.split('&')).toMatchInlineSnapshot(`
 Array [
-  "#FCP=6844",
-  "LCP=13320",
-  "TBT=1221",
+  "#FCP=6815",
+  "LCP=10954",
+  "TBT=1066",
   "CLS=0",
-  "SI=8114",
-  "TTI=8191",
-  "FMP=6844",
+  "SI=8471",
+  "TTI=8126",
+  "FMP=6815",
 ]
 `);
     });
@@ -217,13 +217,13 @@ Array [
       try {
         expect(url.hash.split('&')).toMatchInlineSnapshot(`
 Array [
-  "#FCP=6844",
-  "LCP=13320",
-  "TBT=1221",
-  "CLS=0.14",
-  "SI=8114",
-  "TTI=8191",
-  "FMP=6844",
+  "#FCP=6815",
+  "LCP=10954",
+  "TBT=1066",
+  "CLS=0.1",
+  "SI=8471",
+  "TTI=8126",
+  "FMP=6815",
   "device=mobile",
   "version=6.0.0",
 ]
@@ -320,7 +320,7 @@ Array [
         group: 'diagnostics',
         result: {
           id: 'audit-1',
-          metricSavings: {'LCP': 50, 'FCP': 5},
+          metricSavings: {'LCP': 5000, 'FCP': 1000},
           score: 0,
           ...defaultAuditRef,
         },
@@ -338,7 +338,7 @@ Array [
         result: {
           id: 'audit-3',
           score: 0,
-          metricSavings: {'LCP': 50, 'FCP': 15},
+          metricSavings: {'LCP': 5000, 'FCP': 2000},
           ...defaultAuditRef,
         },
       }, {
@@ -347,7 +347,7 @@ Array [
         result: {
           id: 'audit-4',
           score: 0,
-          metricSavings: {'FCP': 15},
+          metricSavings: {'FCP': 2000},
           ...defaultAuditRef,
         },
       },
@@ -373,7 +373,7 @@ Array [
         group: 'diagnostics',
         result: {
           id: 'audit-1',
-          metricSavings: {'LCP': 50, 'FCP': 5},
+          metricSavings: {'LCP': 5000, 'FCP': 1000},
           score: 0,
           ...defaultAuditRef,
         },
@@ -391,7 +391,7 @@ Array [
         result: {
           id: 'audit-3',
           score: 0,
-          metricSavings: {'LCP': 50, 'FCP': 15},
+          metricSavings: {'LCP': 5000, 'FCP': 2000},
           ...defaultAuditRef,
         },
       }, {
@@ -400,7 +400,7 @@ Array [
         result: {
           id: 'audit-4',
           score: 0,
-          metricSavings: {'FCP': 15},
+          metricSavings: {'FCP': 2000},
           ...defaultAuditRef,
         },
       },
