@@ -239,7 +239,6 @@ export class CategoryRenderer {
 
     for (const auditRef of auditRefs) {
       const groupId = auditRef.group || notAGroup;
-      if (groupId === 'hidden') continue;
       const groupAuditRefs = grouped.get(groupId) || [];
       groupAuditRefs.push(auditRef);
       grouped.set(groupId, groupAuditRefs);
@@ -531,6 +530,7 @@ export class CategoryRenderer {
 
     // Sort audits into clumps.
     for (const auditRef of category.auditRefs) {
+      if (auditRef.group === 'hidden') continue;
       const clumpId = this._getClumpIdForAuditRef(auditRef);
       const clump = /** @type {Array<LH.ReportResult.AuditRef>} */ (clumps.get(clumpId)); // already defined
       clump.push(auditRef);

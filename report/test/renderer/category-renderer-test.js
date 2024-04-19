@@ -223,12 +223,12 @@ describe('CategoryRenderer', () => {
       assert.ok(categoryDOM.querySelector(
         '.lh-clump--notapplicable .lh-audit-group__summary'));
 
-      const notApplicableCount = a11yCategory.auditRefs.reduce((sum, audit) =>
-        sum += audit.result.scoreDisplayMode === 'notApplicable' ? 1 : 0, 0);
+      const notApplicableAudits = a11yCategory.auditRefs.filter(audit => {
+        return audit.result.scoreDisplayMode === 'notApplicable' && audit.group !== 'hidden';
+      });
       assert.equal(
         categoryDOM.querySelectorAll('.lh-clump--notapplicable .lh-audit').length,
-        notApplicableCount,
-        'score shows informative and dash icon'
+        notApplicableAudits.length
       );
     });
 
@@ -351,7 +351,9 @@ describe('CategoryRenderer', () => {
     it('renders the passed audits ungrouped', () => {
       const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
       const passedAudits = category.auditRefs.filter(audit =>
-          audit.result.scoreDisplayMode !== 'notApplicable' && audit.result.score === 1);
+          audit.result.scoreDisplayMode !== 'notApplicable' &&
+          audit.group !== 'hidden' &&
+          audit.result.score === 1);
 
       const passedAuditGroups = categoryDOM.querySelectorAll('.lh-clump--passed .lh-audit-group');
       const passedAuditsElems = categoryDOM.querySelectorAll('.lh-clump--passed .lh-audit');
@@ -363,7 +365,8 @@ describe('CategoryRenderer', () => {
     it('renders all the audits', () => {
       const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
       const auditsElements = categoryDOM.querySelectorAll('.lh-audit');
-      assert.equal(auditsElements.length, category.auditRefs.length);
+      const visibleAudits = category.auditRefs.filter(a => a.group !== 'hidden');
+      assert.equal(auditsElements.length, visibleAudits.length);
     });
 
     it('renders audits without a group before grouped ones', () => {

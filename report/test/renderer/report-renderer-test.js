@@ -280,7 +280,6 @@ describe('ReportRenderer', () => {
       .filter(url => DOCS_ORIGINS.includes(url.origin))
       .map(url => url.searchParams.get('utm_medium'));
 
-    console.log(utmChannels.length);
     assert.ok(utmChannels.length >= 75);
     for (const utmChannel of utmChannels) {
       assert.strictEqual(utmChannel, lhrChannel);
@@ -290,9 +289,18 @@ describe('ReportRenderer', () => {
   it('renders `not_applicable` audits as `notApplicable`', () => {
     const clonedSampleResult = JSON.parse(JSON.stringify(sampleResultsOrig));
 
+    const hiddenAuditIds = new Set();
+    for (const category of Object.values(clonedSampleResult.categories)) {
+      for (const auditRef of category.auditRefs) {
+        if (auditRef.group === 'hidden') {
+          hiddenAuditIds.add(auditRef.id);
+        }
+      }
+    }
+
     let notApplicableCount = 0;
     Object.values(clonedSampleResult.audits).forEach(audit => {
-      if (audit.scoreDisplayMode === 'notApplicable') {
+      if (audit.scoreDisplayMode === 'notApplicable' && !hiddenAuditIds.has(audit.id)) {
         notApplicableCount++;
         // Switch to old-style `not_applicable` to test fallback behavior.
         audit.scoreDisplayMode = 'not_applicable';

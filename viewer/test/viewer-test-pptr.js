@@ -172,17 +172,14 @@ describe('Lighthouse Viewer', () => {
         'work-during-interaction',
       ];
       for (const category of lighthouseCategories) {
-        let expected = getAuditsOfCategory(category);
-        if (category === 'performance') {
-          expected = getAuditsOfCategory(category)
-            .filter(a => a.group !== 'hidden' && !nonNavigationAudits.includes(a.id));
-        }
-        expected = expected.map(audit => audit.id);
+        const expectedAuditIds = getAuditsOfCategory(category)
+          .filter(a => a.group !== 'hidden' && !nonNavigationAudits.includes(a.id))
+          .map(a => a.id);
         const elementIds = await getAuditElementsIds({category, selector: selectors.audits});
 
         assert.deepStrictEqual(
           elementIds.sort(),
-          expected.sort(),
+          expectedAuditIds.sort(),
           `${category} does not have the identical audits`
         );
       }
