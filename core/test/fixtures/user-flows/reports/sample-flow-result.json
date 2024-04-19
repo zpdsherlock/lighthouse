@@ -275,7 +275,7 @@
             "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/).",
             "score": 0.99,
             "scoreDisplayMode": "numeric",
-            "numericValue": 2369.0733999999998,
+            "numericValue": 2369.0734,
             "numericUnit": "millisecond",
             "displayValue": "2.4 s"
           },
@@ -6848,7 +6848,7 @@
               },
               {
                 "values": {
-                  "timeInMs": 2369.0733999999998
+                  "timeInMs": 2369.0734
                 },
                 "path": "audits.interactive.displayValue"
               },
@@ -17539,7 +17539,7 @@
             "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
-            "numericValue": 925.2026,
+            "numericValue": 931.0526,
             "numericUnit": "millisecond",
             "displayValue": "0.9 s"
           },
@@ -18490,7 +18490,7 @@
             "description": "Collects all available metrics.",
             "score": 1,
             "scoreDisplayMode": "informative",
-            "numericValue": 925,
+            "numericValue": 931,
             "numericUnit": "millisecond",
             "details": {
               "type": "debugdata",
@@ -18499,7 +18499,7 @@
                   "firstContentfulPaint": 867,
                   "firstMeaningfulPaint": 867,
                   "largestContentfulPaint": 1803,
-                  "interactive": 925,
+                  "interactive": 931,
                   "speedIndex": 867,
                   "totalBlockingTime": 13,
                   "maxPotentialFID": 76,
@@ -24119,7 +24119,7 @@
               },
               {
                 "values": {
-                  "timeInMs": 925.2026
+                  "timeInMs": 931.0526
                 },
                 "path": "audits.interactive.displayValue"
               },

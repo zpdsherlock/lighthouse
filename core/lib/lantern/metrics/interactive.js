@@ -21,8 +21,8 @@ class Interactive extends Metric {
   static get COEFFICIENTS() {
     return {
       intercept: 0,
-      optimistic: 0.5,
-      pessimistic: 0.5,
+      optimistic: 0.45,
+      pessimistic: 0.55,
     };
   }
 

@@ -101,19 +101,15 @@ class Metric {
     const optimisticGraph = this.getOptimisticGraph(graph, processedNavigation);
     const pessimisticGraph = this.getPessimisticGraph(graph, processedNavigation);
 
-    /** @type {{flexibleOrdering?: boolean, label?: string}} */
     let simulateOptions = {label: `optimistic${metricName}`};
     const optimisticSimulation = simulator.simulate(optimisticGraph, simulateOptions);
-
-    simulateOptions = {label: `optimisticFlex${metricName}`, flexibleOrdering: true};
-    const optimisticFlexSimulation = simulator.simulate(optimisticGraph, simulateOptions);
 
     simulateOptions = {label: `pessimistic${metricName}`};
     const pessimisticSimulation = simulator.simulate(pessimisticGraph, simulateOptions);
 
     const optimisticEstimate = this.getEstimateFromSimulation(
-      optimisticSimulation.timeInMs < optimisticFlexSimulation.timeInMs ?
-        optimisticSimulation : optimisticFlexSimulation, {...extras, optimistic: true}
+      optimisticSimulation,
+      {...extras, optimistic: true}
     );
 
     const pessimisticEstimate = this.getEstimateFromSimulation(

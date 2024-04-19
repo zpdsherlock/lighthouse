@@ -255,7 +255,6 @@ export default {
     'unlabeled',
     // These node timings should be nearly identical to the ones produced for Interactive
     'optimisticSpeedIndex',
-    'optimisticFlexSpeedIndex',
     'pessimisticSpeedIndex',
   ],
   convertNodeTimingsToTrace,

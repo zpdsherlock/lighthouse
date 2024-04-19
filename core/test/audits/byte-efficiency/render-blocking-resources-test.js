@@ -33,8 +33,8 @@ describe('Render blocking resources audit', () => {
     const computedCache = new Map();
     const result = await RenderBlockingResourcesAudit.audit(artifacts, {settings, computedCache});
     assert.equal(result.score, 0);
-    assert.equal(result.numericValue, 316);
-    assert.deepStrictEqual(result.metricSavings, {FCP: 316, LCP: 0});
+    assert.equal(result.numericValue, 304);
+    assert.deepStrictEqual(result.metricSavings, {FCP: 304, LCP: 0});
   });
 
   it('evaluates correct wastedMs when LCP is text', async () => {
@@ -59,7 +59,7 @@ describe('Render blocking resources audit', () => {
     const settings = {throttlingMethod: 'simulate', throttling: mobileSlow4G};
     const computedCache = new Map();
     const result = await RenderBlockingResourcesAudit.audit(artifacts, {settings, computedCache});
-    assert.deepStrictEqual(result.metricSavings, {FCP: 316, LCP: 316});
+    assert.deepStrictEqual(result.metricSavings, {FCP: 304, LCP: 304});
   });
 
   it('evaluates amp page correctly', async () => {
@@ -82,7 +82,7 @@ describe('Render blocking resources audit', () => {
     const settings = {throttlingMethod: 'simulate', throttling: mobileSlow4G};
     const computedCache = new Map();
     const result = await RenderBlockingResourcesAudit.audit(artifacts, {settings, computedCache});
-    expect(result.numericValue).toEqual(316);
+    expect(result.numericValue).toEqual(0);
     expect(result.details.items).toEqual([
       {
         totalBytes: 389629,
@@ -96,7 +96,7 @@ describe('Render blocking resources audit', () => {
         wastedMs: 311,
       },
     ]);
-    expect(result.metricSavings).toEqual({FCP: 316, LCP: 0});
+    expect(result.metricSavings).toEqual({FCP: 0, LCP: 0});
   });
 
   describe('#estimateSavingsWithGraphs', () => {
@@ -155,8 +155,8 @@ describe('Render blocking resources audit', () => {
       documentNode.addDependent(styleNode);
 
       const result = estimate(simulator, documentNode, deferredIds, wastedBytesMap, Stacks);
-      // Saving 1000 + 1000 + 100ms for TCP handshake + 1 RT savings + server response time
-      assert.equal(result, 2100);
+      // Saving 1000 + 100ms for 1 RT savings + server response time
+      assert.equal(result, 1100);
     });
 
     it('does not report savings from AMP-stack when document already exceeds 2.1s', () => {
