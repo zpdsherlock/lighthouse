@@ -10,6 +10,7 @@ import {NetworkNode} from './network-node.js';
 import {CPUNode} from './cpu-node.js';
 import {TraceProcessor} from '../tracehouse/trace-processor.js';
 import {NetworkAnalyzer} from './simulator/network-analyzer.js';
+import {RESOURCE_TYPES} from '../network-request.js';
 
 /** @typedef {import('./base-node.js').Node} Node */
 /** @typedef {Omit<LH.Artifacts['URL'], 'finalDisplayedUrl'>} URLArtifact */
@@ -75,7 +76,7 @@ class PageDependencyGraph {
 
     networkRecords.forEach(record => {
       if (IGNORED_MIME_TYPES_REGEX.test(record.mimeType)) return;
-      if (record.sessionTargetType === 'worker') return;
+      if (record.fromWorker) return;
 
       // Network record requestIds can be duplicated for an unknown reason
       // Suffix all subsequent records with `:duplicate` until it's unique
@@ -405,12 +406,115 @@ class PageDependencyGraph {
   }
 
   /**
+   * TODO(15841): remove when CDT backend is gone. until then, this is a useful debugging tool
+   * to find delta between using CDP or the trace to create the network requests.
+   *
+   * When a test fails using the trace backend, I enabled this debug method and copied the network
+   * requests when CDP was used, then when trace is used, and diff'd them. This method helped
+   * remove non-logical differences from the comparison (order of properties, slight rounding
+   * discrepancies, removing object cycles, etc).
+   *
+   * When using for a unit test, make sure to do `.only` so you are getting what you expect.
+   * @param {Lantern.NetworkRequest[]} lanternRequests
+   * @return {never}
+   */
+  static _debugNormalizeRequests(lanternRequests) {
+    for (const request of lanternRequests) {
+      request.rendererStartTime = Math.round(request.rendererStartTime * 1000) / 1000;
+      request.networkRequestTime = Math.round(request.networkRequestTime * 1000) / 1000;
+      request.responseHeadersEndTime = Math.round(request.responseHeadersEndTime * 1000) / 1000;
+      request.networkEndTime = Math.round(request.networkEndTime * 1000) / 1000;
+    }
+
+    for (const r of lanternRequests) {
+      delete r.record;
+      if (r.initiatorRequest) {
+        // @ts-expect-error
+        r.initiatorRequest = {id: r.initiatorRequest.requestId};
+      }
+      if (r.redirectDestination) {
+        // @ts-expect-error
+        r.redirectDestination = {id: r.redirectDestination.requestId};
+      }
+      if (r.redirectSource) {
+        // @ts-expect-error
+        r.redirectSource = {id: r.redirectSource.requestId};
+      }
+      if (r.redirects) {
+        // @ts-expect-error
+        r.redirects = r.redirects.map(r2 => r2.requestId);
+      }
+    }
+    /** @type {Lantern.NetworkRequest[]} */
+    const requests = lanternRequests.map(r => ({
+      requestId: r.requestId,
+      connectionId: r.connectionId,
+      connectionReused: r.connectionReused,
+      url: r.url,
+      protocol: r.protocol,
+      parsedURL: r.parsedURL,
+      documentURL: r.documentURL,
+      rendererStartTime: r.rendererStartTime,
+      networkRequestTime: r.networkRequestTime,
+      responseHeadersEndTime: r.responseHeadersEndTime,
+      networkEndTime: r.networkEndTime,
+      transferSize: r.transferSize,
+      resourceSize: r.resourceSize,
+      fromDiskCache: r.fromDiskCache,
+      fromMemoryCache: r.fromMemoryCache,
+      finished: r.finished,
+      statusCode: r.statusCode,
+      redirectSource: r.redirectSource,
+      redirectDestination: r.redirectDestination,
+      redirects: r.redirects,
+      failed: r.failed,
+      initiator: r.initiator,
+      timing: r.timing ? {
+        requestTime: r.timing.requestTime,
+        proxyStart: r.timing.proxyStart,
+        proxyEnd: r.timing.proxyEnd,
+        dnsStart: r.timing.dnsStart,
+        dnsEnd: r.timing.dnsEnd,
+        connectStart: r.timing.connectStart,
+        connectEnd: r.timing.connectEnd,
+        sslStart: r.timing.sslStart,
+        sslEnd: r.timing.sslEnd,
+        workerStart: r.timing.workerStart,
+        workerReady: r.timing.workerReady,
+        workerFetchStart: r.timing.workerFetchStart,
+        workerRespondWithSettled: r.timing.workerRespondWithSettled,
+        sendStart: r.timing.sendStart,
+        sendEnd: r.timing.sendEnd,
+        pushStart: r.timing.pushStart,
+        pushEnd: r.timing.pushEnd,
+        receiveHeadersStart: r.timing.receiveHeadersStart,
+        receiveHeadersEnd: r.timing.receiveHeadersEnd,
+      } : r.timing,
+      resourceType: r.resourceType,
+      mimeType: r.mimeType,
+      priority: r.priority,
+      initiatorRequest: r.initiatorRequest,
+      frameId: r.frameId,
+      fromWorker: r.fromWorker,
+      isLinkPreload: r.isLinkPreload,
+      serverResponseTime: r.serverResponseTime,
+    })).filter(r => !r.fromWorker);
+    // eslint-disable-next-line no-unused-vars
+    const debug = requests;
+    // Set breakpoint here.
+    // Copy `debug` and compare with https://www.diffchecker.com/text-compare/
+    process.exit(1);
+  }
+
+  /**
    * @param {LH.TraceEvent[]} mainThreadEvents
    * @param {Array<Lantern.NetworkRequest>} networkRecords
    * @param {URLArtifact} URL
    * @return {Node}
    */
   static createGraph(mainThreadEvents, networkRecords, URL) {
+    // This is for debugging trace/devtoolslog network records.
+    // const debug = PageDependencyGraph._debugNormalizeRequests(networkRecords);
     const networkNodeOutput = PageDependencyGraph.getNetworkNodeOutput(networkRecords);
     const cpuNodes = PageDependencyGraph.getCPUNodes(mainThreadEvents);
     const {requestedUrl, mainDocumentUrl} = URL;
@@ -421,7 +525,6 @@ class PageDependencyGraph {
     if (!rootRequest) throw new Error('rootRequest not found');
     const rootNode = networkNodeOutput.idToNodeMap.get(rootRequest.requestId);
     if (!rootNode) throw new Error('rootNode not found');
-
     const mainDocumentRequest =
       NetworkAnalyzer.findLastDocumentForUrl(networkRecords, mainDocumentUrl);
     if (!mainDocumentRequest) throw new Error('mainDocumentRequest not found');
@@ -437,6 +540,314 @@ class PageDependencyGraph {
     }
 
     return rootNode;
+  }
+
+  /**
+   * @param {Lantern.NetworkRequest} record The record to find the initiator of
+   * @param {Map<string, Lantern.NetworkRequest[]>} recordsByURL
+   * @return {Lantern.NetworkRequest|null}
+   */
+  static chooseInitiatorRequest(record, recordsByURL) {
+    if (record.redirectSource) {
+      return record.redirectSource;
+    }
+
+    const initiatorURL = PageDependencyGraph.getNetworkInitiators(record)[0];
+    let candidates = recordsByURL.get(initiatorURL) || [];
+    // The (valid) initiator must come before the initiated request.
+    candidates = candidates.filter(c => {
+      return c.responseHeadersEndTime <= record.rendererStartTime &&
+          c.finished && !c.failed;
+    });
+    if (candidates.length > 1) {
+      // Disambiguate based on prefetch. Prefetch requests have type 'Other' and cannot
+      // initiate requests, so we drop them here.
+      const nonPrefetchCandidates = candidates.filter(
+          cand => cand.resourceType !== RESOURCE_TYPES.Other);
+      if (nonPrefetchCandidates.length) {
+        candidates = nonPrefetchCandidates;
+      }
+    }
+    if (candidates.length > 1) {
+      // Disambiguate based on frame. It's likely that the initiator comes from the same frame.
+      const sameFrameCandidates = candidates.filter(cand => cand.frameId === record.frameId);
+      if (sameFrameCandidates.length) {
+        candidates = sameFrameCandidates;
+      }
+    }
+    if (candidates.length > 1 && record.initiator.type === 'parser') {
+      // Filter to just Documents when initiator type is parser.
+      const documentCandidates = candidates.filter(cand =>
+        cand.resourceType === RESOURCE_TYPES.Document);
+      if (documentCandidates.length) {
+        candidates = documentCandidates;
+      }
+    }
+    if (candidates.length > 1) {
+      // If all real loads came from successful preloads (url preloaded and
+      // loads came from the cache), filter to link rel=preload request(s).
+      const linkPreloadCandidates = candidates.filter(c => c.isLinkPreload);
+      if (linkPreloadCandidates.length) {
+        const nonPreloadCandidates = candidates.filter(c => !c.isLinkPreload);
+        const allPreloaded = nonPreloadCandidates.every(c => c.fromDiskCache || c.fromMemoryCache);
+        if (nonPreloadCandidates.length && allPreloaded) {
+          candidates = linkPreloadCandidates;
+        }
+      }
+    }
+
+    // Only return an initiator if the result is unambiguous.
+    return candidates.length === 1 ? candidates[0] : null;
+  }
+
+  /**
+   * Returns a map of `pid` -> `tid[]`.
+   * @param {LH.Trace} trace
+   * @return {Map<number, number[]>}
+   */
+  static _findWorkerThreads(trace) {
+    // TODO: WorkersHandler in TraceEngine needs to be updated to also include `pid` (only had `tid`).
+    const workerThreads = new Map();
+    const workerCreationEvents = ['ServiceWorker thread', 'DedicatedWorker thread'];
+
+    for (const event of trace.traceEvents) {
+      if (event.name !== 'thread_name' || !event.args.name) {
+        continue;
+      }
+      if (!workerCreationEvents.includes(event.args.name)) {
+        continue;
+      }
+
+      const tids = workerThreads.get(event.pid);
+      if (tids) {
+        tids.push(event.tid);
+      } else {
+        workerThreads.set(event.pid, [event.tid]);
+      }
+    }
+
+    return workerThreads;
+  }
+
+  /**
+   * @param {URL|string} url
+   */
+  static _createParsedUrl(url) {
+    if (typeof url === 'string') {
+      url = new URL(url);
+    }
+    return {
+      scheme: url.protocol.split(':')[0],
+      // Intentional, DevTools uses different terminology
+      host: url.hostname,
+      securityOrigin: url.origin,
+    };
+  }
+
+  /**
+   * @param {LH.Artifacts.TraceEngineResult} traceEngineResult
+   * @param {Map<number, number[]>} workerThreads
+   * @param {import('@paulirish/trace_engine/models/trace/types/TraceEvents.js').SyntheticNetworkRequest} request
+   * @return {Lantern.NetworkRequest=}
+   */
+  static _createLanternRequest(traceEngineResult, workerThreads, request) {
+    if (request.args.data.connectionId === undefined ||
+        request.args.data.connectionReused === undefined) {
+      throw new Error('Trace is too old');
+    }
+
+    let url;
+    try {
+      url = new URL(request.args.data.url);
+    } catch (e) {
+      return;
+    }
+
+    const timing = request.args.data.timing ? {
+      // These two timings are not included in the trace.
+      workerFetchStart: -1,
+      workerRespondWithSettled: -1,
+      ...request.args.data.timing,
+    } : undefined;
+
+    const networkRequestTime = timing ?
+      timing.requestTime * 1000 :
+      request.args.data.syntheticData.downloadStart / 1000;
+
+    let fromWorker = false;
+    const tids = workerThreads.get(request.pid);
+    if (tids?.includes(request.tid)) {
+      fromWorker = true;
+    }
+
+    // TraceEngine collects worker thread ids in a different manner than `workerThreads` does.
+    // AFAIK these should be equivalent, but in case they are not let's also check this for now.
+    if (traceEngineResult.data.Workers.workerIdByThread.has(request.tid)) {
+      fromWorker = true;
+    }
+
+    // `initiator` in the trace does not contain the stack trace for JS-initiated
+    // requests. Instead, that is stored in the `stackTrace` property of the SyntheticNetworkRequest.
+    // There are some minor differences in the fields, accounted for here.
+    // Most importantly, there seems to be fewer frames in the trace than the equivalent
+    // events over the CDP. This results in less accuracy in determining the initiator request,
+    // which means less edges in the graph, which mean worse results.
+    // TODO: Should fix in Chromium.
+    /** @type {Lantern.NetworkRequest['initiator']} */
+    const initiator = request.args.data.initiator ?? {type: 'other'};
+    if (request.args.data.stackTrace) {
+      const callFrames = request.args.data.stackTrace.map(f => {
+        return {
+          scriptId: String(f.scriptId),
+          url: f.url,
+          lineNumber: f.lineNumber - 1,
+          columnNumber: f.columnNumber - 1,
+          functionName: f.functionName,
+        };
+      });
+      initiator.stack = {callFrames};
+    }
+
+    let resourceType = request.args.data.resourceType;
+    if (request.args.data.initiator?.fetchType === 'xmlhttprequest') {
+      // @ts-expect-error yes XHR is a valid ResourceType. TypeScript const enums are so unhelpful.
+      resourceType = 'XHR';
+    }
+
+    return {
+      requestId: request.args.data.requestId,
+      connectionId: request.args.data.connectionId,
+      connectionReused: request.args.data.connectionReused,
+      url: request.args.data.url,
+      protocol: request.args.data.protocol,
+      parsedURL: this._createParsedUrl(url),
+      documentURL: request.args.data.requestingFrameUrl,
+      rendererStartTime: request.ts / 1000,
+      networkRequestTime,
+      responseHeadersEndTime: request.args.data.syntheticData.downloadStart / 1000,
+      networkEndTime: request.args.data.syntheticData.finishTime / 1000,
+      transferSize: request.args.data.encodedDataLength,
+      resourceSize: request.args.data.decodedBodyLength,
+      fromDiskCache: request.args.data.syntheticData.isDiskCached,
+      fromMemoryCache: request.args.data.syntheticData.isMemoryCached,
+      isLinkPreload: request.args.data.isLinkPreload,
+      finished: request.args.data.finished,
+      failed: request.args.data.failed,
+      statusCode: request.args.data.statusCode,
+      initiator,
+      timing,
+      resourceType,
+      mimeType: request.args.data.mimeType,
+      priority: request.args.data.priority,
+      frameId: request.args.data.frame,
+      fromWorker,
+      record: request,
+      // Set later.
+      redirects: undefined,
+      redirectSource: undefined,
+      redirectDestination: undefined,
+      initiatorRequest: undefined,
+    };
+  }
+
+  /**
+   *
+   * @param {Lantern.NetworkRequest[]} lanternRequests
+   */
+  static _linkInitiators(lanternRequests) {
+    /** @type {Map<string, Lantern.NetworkRequest[]>} */
+    const requestsByURL = new Map();
+    for (const request of lanternRequests) {
+      const requests = requestsByURL.get(request.url) || [];
+      requests.push(request);
+      requestsByURL.set(request.url, requests);
+    }
+
+    for (const request of lanternRequests) {
+      const initiatorRequest = PageDependencyGraph.chooseInitiatorRequest(request, requestsByURL);
+      if (initiatorRequest) {
+        request.initiatorRequest = initiatorRequest;
+      }
+    }
+  }
+
+  /**
+   * @param {LH.TraceEvent[]} mainThreadEvents
+   * @param {LH.Trace} trace
+   * @param {LH.Artifacts.TraceEngineResult} traceEngineResult
+   * @param {LH.Artifacts.URL} URL
+   */
+  static async createGraphFromTrace(mainThreadEvents, trace, traceEngineResult, URL) {
+    const workerThreads = this._findWorkerThreads(trace);
+
+    /** @type {Lantern.NetworkRequest[]} */
+    const lanternRequests = [];
+    for (const request of traceEngineResult.data.NetworkRequests.byTime) {
+      const lanternRequest = this._createLanternRequest(traceEngineResult, workerThreads, request);
+      if (lanternRequest) {
+        lanternRequests.push(lanternRequest);
+      }
+    }
+
+    // TraceEngine consolidates all redirects into a single request object, but lantern needs
+    // an entry for each redirected request.
+    for (const request of [...lanternRequests]) {
+      if (!request.record) continue;
+
+      const redirects = request.record.args.data.redirects;
+      if (!redirects.length) continue;
+
+      const requestChain = [];
+      for (const redirect of redirects) {
+        const redirectedRequest = structuredClone(request);
+        if (redirectedRequest.timing) {
+          // TODO: These are surely wrong for when there is more than one redirect. Would be
+          // simpler if each redirect remembered it's `timing` object in this `redirects` array.
+          redirectedRequest.timing.requestTime = redirect.ts / 1000 / 1000;
+          redirectedRequest.timing.receiveHeadersStart -= redirect.dur / 1000 / 1000;
+          redirectedRequest.timing.receiveHeadersEnd -= redirect.dur / 1000 / 1000;
+          redirectedRequest.rendererStartTime = redirect.ts / 1000;
+          redirectedRequest.networkRequestTime = redirect.ts / 1000;
+          redirectedRequest.networkEndTime = (redirect.ts + redirect.dur) / 1000;
+          redirectedRequest.responseHeadersEndTime =
+            redirectedRequest.timing.requestTime * 1000 +
+            redirectedRequest.timing.receiveHeadersEnd;
+        }
+        redirectedRequest.url = redirect.url;
+        redirectedRequest.parsedURL = this._createParsedUrl(redirect.url);
+        // TODO: TraceEngine is not retaining the actual status code.
+        redirectedRequest.statusCode = 302;
+        requestChain.push(redirectedRequest);
+        lanternRequests.push(redirectedRequest);
+      }
+      requestChain.push(request);
+
+      for (let i = 0; i < requestChain.length; i++) {
+        const request = requestChain[i];
+        if (i > 0) {
+          request.redirectSource = requestChain[i - 1];
+          request.redirects = requestChain.slice(0, i);
+        }
+        if (i !== requestChain.length - 1) {
+          request.redirectDestination = requestChain[i + 1];
+        }
+      }
+
+      // Apply the `:redirect` requestId convention: only redirects[0].requestId is the actual
+      // requestId, all the rest have n occurences of `:redirect` as a suffix.
+      for (let i = 1; i < requestChain.length; i++) {
+        requestChain[i].requestId = `${requestChain[i - 1].requestId}:redirect`;
+      }
+    }
+
+    this._linkInitiators(lanternRequests);
+
+    // This would already be sorted by rendererStartTime, if not for the redirect unwrapping done
+    // above.
+    lanternRequests.sort((a, b) => a.rendererStartTime - b.rendererStartTime);
+
+    const graph = PageDependencyGraph.createGraph(mainThreadEvents, lanternRequests, URL);
+    return {graph, records: lanternRequests};
   }
 
   /**

@@ -16,6 +16,11 @@ const scriptUrl = 'http://www.example.com/script.js';
 const imageUrl = 'http://www.example.com/image.png';
 
 describe('Performance: prioritize-lcp-image audit', () => {
+  // TODO(15841): fix createTestTrace, cycles
+  if (process.env.INTERNAL_LANTERN_USE_TRACE !== undefined) {
+    return;
+  }
+
   const mockArtifacts = (networkRecords, URL) => {
     return {
       GatherContext: {gatherMode: 'navigation'},
@@ -23,6 +28,7 @@ describe('Performance: prioritize-lcp-image audit', () => {
         [PrioritizeLcpImage.DEFAULT_PASS]: createTestTrace({
           traceEnd: 6000,
           largestContentfulPaint: 4500,
+          networkRecords,
         }),
       },
       devtoolsLogs: {

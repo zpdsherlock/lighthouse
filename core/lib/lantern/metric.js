@@ -6,7 +6,7 @@
 
 import * as Lantern from './types/lantern.js';
 import {BaseNode} from '../../lib/lantern/base-node.js';
-import {NetworkRequest} from '../../lib/network-request.js';
+import {RESOURCE_TYPES} from '../../lib/network-request.js';
 
 /** @typedef {import('./base-node.js').Node} Node */
 /** @typedef {import('./network-node.js').NetworkNode} NetworkNode */
@@ -33,9 +33,9 @@ class Metric {
 
     dependencyGraph.traverse(node => {
       if (node.type !== BaseNode.TYPES.NETWORK) return;
-      if (node.record.resourceType !== NetworkRequest.TYPES.Script) return;
+      if (node.request.resourceType !== RESOURCE_TYPES.Script) return;
       if (treatNodeAsRenderBlocking?.(node)) {
-        scriptUrls.add(node.record.url);
+        scriptUrls.add(node.request.url);
       }
     });
 

@@ -27,6 +27,7 @@ function mockData(networkRecords) {
     trace: createTestTrace({
       traceEnd: 6000,
       largestContentfulPaint: 4500,
+      networkRecords,
     }),
     devtoolsLog: networkRecordsToDevtoolsLog(networkRecords),
     URL: {
@@ -92,6 +93,11 @@ function mockNetworkRecords() {
 
 describe('LCPBreakdown', () => {
   it('returns breakdown for a real trace with image LCP', async () => {
+    // TODO(15841): trace needs updating.
+    if (process.env.INTERNAL_LANTERN_USE_TRACE !== undefined) {
+      return;
+    }
+
     const data = {
       settings: JSON.parse(JSON.stringify(defaultSettings)),
       trace: imageLcpTrace,
@@ -124,6 +130,11 @@ describe('LCPBreakdown', () => {
   });
 
   it('returns breakdown for image LCP', async () => {
+    // TODO(15841): fix createTestTrace, cycles
+    if (process.env.INTERNAL_LANTERN_USE_TRACE !== undefined) {
+      return;
+    }
+
     const networkRecords = mockNetworkRecords();
     const data = mockData(networkRecords);
 

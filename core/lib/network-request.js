@@ -180,6 +180,7 @@ class NetworkRequest {
     this.sessionId = undefined;
     /** @type {LH.Protocol.TargetType|undefined} */
     this.sessionTargetType = undefined;
+    this.fromWorker = false;
     this.isLinkPreload = false;
   }
 
@@ -600,6 +601,8 @@ class NetworkRequest {
       }
     }
 
+    record.fromWorker = record.sessionTargetType === 'worker';
+
     return {
       ...record,
       timing,
@@ -691,4 +694,4 @@ NetworkRequest.HEADER_TOTAL = HEADER_TOTAL;
 NetworkRequest.HEADER_FETCHED_SIZE = HEADER_FETCHED_SIZE;
 NetworkRequest.HEADER_PROTOCOL_IS_H2 = HEADER_PROTOCOL_IS_H2;
 
-export {NetworkRequest};
+export {NetworkRequest, RESOURCE_TYPES};
