@@ -712,6 +712,19 @@ class PageDependencyGraph {
     if (request.args.data.initiator?.fetchType === 'xmlhttprequest') {
       // @ts-expect-error yes XHR is a valid ResourceType. TypeScript const enums are so unhelpful.
       resourceType = 'XHR';
+    } else if (request.args.data.initiator?.fetchType === 'fetch') {
+      // @ts-expect-error yes Fetch is a valid ResourceType. TypeScript const enums are so unhelpful.
+      resourceType = 'Fetch';
+    }
+
+    // TODO: set decodedBodyLength for data urls in Trace Engine.
+    let resourceSize = request.args.data.decodedBodyLength ?? 0;
+    if (url.protocol === 'data:' && resourceSize === 0) {
+      const needle = 'base64,';
+      const index = url.pathname.indexOf(needle);
+      if (index !== -1) {
+        resourceSize = atob(url.pathname.substring(index + needle.length)).length;
+      }
     }
 
     return {
@@ -727,7 +740,7 @@ class PageDependencyGraph {
       responseHeadersEndTime: request.args.data.syntheticData.downloadStart / 1000,
       networkEndTime: request.args.data.syntheticData.finishTime / 1000,
       transferSize: request.args.data.encodedDataLength,
-      resourceSize: request.args.data.decodedBodyLength,
+      resourceSize,
       fromDiskCache: request.args.data.syntheticData.isDiskCached,
       fromMemoryCache: request.args.data.syntheticData.isMemoryCached,
       isLinkPreload: request.args.data.isLinkPreload,
@@ -800,23 +813,42 @@ class PageDependencyGraph {
       const requestChain = [];
       for (const redirect of redirects) {
         const redirectedRequest = structuredClone(request);
-        if (redirectedRequest.timing) {
-          // TODO: These are surely wrong for when there is more than one redirect. Would be
-          // simpler if each redirect remembered it's `timing` object in this `redirects` array.
-          redirectedRequest.timing.requestTime = redirect.ts / 1000 / 1000;
-          redirectedRequest.timing.receiveHeadersStart -= redirect.dur / 1000 / 1000;
-          redirectedRequest.timing.receiveHeadersEnd -= redirect.dur / 1000 / 1000;
-          redirectedRequest.rendererStartTime = redirect.ts / 1000;
-          redirectedRequest.networkRequestTime = redirect.ts / 1000;
-          redirectedRequest.networkEndTime = (redirect.ts + redirect.dur) / 1000;
-          redirectedRequest.responseHeadersEndTime =
-            redirectedRequest.timing.requestTime * 1000 +
-            redirectedRequest.timing.receiveHeadersEnd;
-        }
+
+        redirectedRequest.networkRequestTime = redirect.ts / 1000;
+        redirectedRequest.rendererStartTime = redirectedRequest.networkRequestTime;
+
+        redirectedRequest.networkEndTime = (redirect.ts + redirect.dur) / 1000;
+        redirectedRequest.responseHeadersEndTime = redirectedRequest.networkEndTime;
+
+        redirectedRequest.timing = {
+          requestTime: redirectedRequest.networkRequestTime / 1000,
+          receiveHeadersStart: redirectedRequest.responseHeadersEndTime,
+          receiveHeadersEnd: redirectedRequest.responseHeadersEndTime,
+          proxyStart: -1,
+          proxyEnd: -1,
+          dnsStart: -1,
+          dnsEnd: -1,
+          connectStart: -1,
+          connectEnd: -1,
+          sslStart: -1,
+          sslEnd: -1,
+          sendStart: -1,
+          sendEnd: -1,
+          workerStart: -1,
+          workerReady: -1,
+          workerFetchStart: -1,
+          workerRespondWithSettled: -1,
+          pushStart: -1,
+          pushEnd: -1,
+        };
+
         redirectedRequest.url = redirect.url;
         redirectedRequest.parsedURL = this._createParsedUrl(redirect.url);
         // TODO: TraceEngine is not retaining the actual status code.
         redirectedRequest.statusCode = 302;
+        redirectedRequest.resourceType = undefined;
+        // TODO: TraceEngine is not retaining transfer size of redirected request.
+        redirectedRequest.transferSize = 400;
         requestChain.push(redirectedRequest);
         lanternRequests.push(redirectedRequest);
       }
