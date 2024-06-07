@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {ProcessedNavigation} from '../../../../computed/processed-navigation.js';
 import {ProcessedTrace} from '../../../../computed/processed-trace.js';
 import {TraceEngineResult} from '../../../../computed/trace-engine-result.js';
+import {createProcessedNavigation} from '../../../../lib/lantern/lantern.js';
 import {PageDependencyGraph} from '../../../../lib/lantern/page-dependency-graph.js';
 import {NetworkAnalyzer} from '../../../../lib/lantern/simulator/network-analyzer.js';
 import {Simulator} from '../../../../lib/lantern/simulator/simulator.js';
@@ -18,13 +18,13 @@ import {getURLArtifactFromDevtoolsLog} from '../../../test-utils.js';
 // TODO(15841): remove usage of Lighthouse code to create test data
 
 /**
+ * @param {LH.Artifacts.TraceEngineResult} traceEngineResult
  * @param {LH.Artifacts.URL} theURL
  * @param {LH.Trace} trace
  * @param {LH.Artifacts.ComputedContext} context
  */
-async function createGraph(theURL, trace, context) {
+async function createGraph(traceEngineResult, theURL, trace, context) {
   const {mainThreadEvents} = await ProcessedTrace.request(trace, context);
-  const traceEngineResult = await TraceEngineResult.request({trace}, context);
   return PageDependencyGraph.createGraphFromTrace(
     mainThreadEvents, trace, traceEngineResult, theURL);
 }
@@ -38,8 +38,9 @@ async function getComputationDataFromFixture({trace, devtoolsLog, settings, URL}
   if (!URL) URL = getURLArtifactFromDevtoolsLog(devtoolsLog);
 
   const context = {settings, computedCache: new Map()};
-  const {graph, records} = await createGraph(URL, trace, context);
-  const processedNavigation = await ProcessedNavigation.request(trace, context);
+  const traceEngineResult = await TraceEngineResult.request({trace}, context);
+  const {graph, records} = await createGraph(traceEngineResult, URL, trace, context);
+  const processedNavigation = createProcessedNavigation(traceEngineResult);
   const networkAnalysis = NetworkAnalyzer.analyze(records);
   const simulator = Simulator.createSimulator({...settings, networkAnalysis});
 

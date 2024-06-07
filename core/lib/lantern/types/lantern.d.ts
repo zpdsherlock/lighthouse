@@ -169,9 +169,16 @@ export namespace Simulation {
         nodeTimings: Map<GraphNode<T>, NodeTiming>;
     }
 
+    interface ProcessedNavigation {
+        timestamps: {
+            firstContentfulPaint: number;
+            largestContentfulPaint?: number;
+        };
+    }
+
     interface MetricComputationDataInput {
         simulator: Simulator<any>;
         graph: GraphNode<any>;
-        processedNavigation: LH.Artifacts.ProcessedNavigation;
+        processedNavigation: ProcessedNavigation;
     }
 }
