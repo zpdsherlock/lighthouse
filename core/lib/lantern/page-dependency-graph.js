@@ -785,12 +785,52 @@ class PageDependencyGraph {
   }
 
   /**
-   * @param {LH.TraceEvent[]} mainThreadEvents
+   * @param {LH.Trace} trace
+   * @param {LH.Artifacts.TraceEngineResult} traceEngineResult
+   * @return {LH.TraceEvent[]}
+   */
+  static _collectMainThreadEvents(trace, traceEngineResult) {
+    const Meta = traceEngineResult.data.Meta;
+    const mainFramePids = Meta.mainFrameNavigations.length
+      ? new Set(Meta.mainFrameNavigations.map(nav => nav.pid))
+      : Meta.topLevelRendererIds;
+
+    const rendererPidToTid = new Map();
+    for (const pid of mainFramePids) {
+      const threads = Meta.threadsInProcess.get(pid) ?? [];
+
+      let found = false;
+      for (const [tid, thread] of threads) {
+        if (thread.args.name === 'CrRendererMain') {
+          rendererPidToTid.set(pid, tid);
+          found = true;
+          break;
+        }
+      }
+
+      if (found) continue;
+
+      // `CrRendererMain` can be missing if chrome is launched with the `--single-process` flag.
+      // In this case, page tasks will be run in the browser thread.
+      for (const [tid, thread] of threads) {
+        if (thread.args.name === 'CrBrowserMain') {
+          rendererPidToTid.set(pid, tid);
+          found = true;
+          break;
+        }
+      }
+    }
+
+    return trace.traceEvents.filter(e => rendererPidToTid.get(e.pid) === e.tid);
+  }
+
+  /**
    * @param {LH.Trace} trace
    * @param {LH.Artifacts.TraceEngineResult} traceEngineResult
    * @param {LH.Artifacts.URL} URL
    */
-  static async createGraphFromTrace(mainThreadEvents, trace, traceEngineResult, URL) {
+  static async createGraphFromTrace(trace, traceEngineResult, URL) {
+    const mainThreadEvents = this._collectMainThreadEvents(trace, traceEngineResult);
     const workerThreads = this._findWorkerThreads(trace);
 
     /** @type {Lantern.NetworkRequest[]} */
