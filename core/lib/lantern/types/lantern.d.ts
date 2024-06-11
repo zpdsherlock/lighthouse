@@ -4,7 +4,58 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as LH from '../../../../types/lh.js';
+import * as Protocol from '@paulirish/trace_engine/generated/protocol.js';
+
+declare module Util {
+    /** An object with the keys in the union K mapped to themselves as values. */
+    type SelfMap<K extends string> = {
+        [P in K]: P;
+    };
+}
+
+type TraceEvent = {
+    name: string;
+    cat: string;
+    args: {
+        name?: string;
+        fileName?: string;
+        snapshot?: string;
+        sync_id?: string;
+        beginData?: {
+            frame?: string;
+            startLine?: number;
+            url?: string;
+        };
+        data?: {
+            frame?: string;
+            readyState?: number;
+            stackTrace?: {
+                url: string
+            }[];
+            url?: string;
+        };
+    };
+    pid: number;
+    tid: number;
+    /** Timestamp of the event in microseconds. */
+    ts: number;
+    dur: number;
+}
+type Trace = {traceEvents: TraceEvent[]};
+type ResourcePriority = ('VeryLow' | 'Low' | 'Medium' | 'High' | 'VeryHigh');
+type ResourceType = ('Document' | 'Stylesheet' | 'Image' | 'Media' | 'Font' | 'Script' | 'TextTrack' | 'XHR' | 'Fetch' | 'Prefetch' | 'EventSource' | 'WebSocket' | 'Manifest' | 'SignedExchange' | 'Ping' | 'CSPViolationReport' | 'Preflight' | 'Other');
+type InitiatorType = ('parser' | 'script' | 'preload' | 'SignedExchange' | 'preflight' | 'other');
+type ResourceTiming = Protocol.Network.ResourceTiming;
+type CallStack = {
+    callFrames: Array<{
+        scriptId: string;
+        url: string;
+        lineNumber: number;
+        columnNumber: number;
+        functionName: string;
+    }>;
+    parent?: CallStack;
+}
 
 type ParsedURL = {
     /**
@@ -80,24 +131,45 @@ export class NetworkRequest<T = any> {
     redirectSource: NetworkRequest<T> | undefined;
     /** The network request that this one redirected to */
     redirectDestination: NetworkRequest<T> | undefined;
-    initiator: LH.Crdp.Network.Initiator;
+    // TODO: can't use Protocol.Network.Initiator because of type mismatch in Lighthouse initiator.
+    initiator: {
+        type: InitiatorType;
+        url?: string;
+        stack?: CallStack;
+    };
     initiatorRequest: NetworkRequest<T> | undefined;
     /** The chain of network requests that redirected to this one */
     redirects: NetworkRequest[] | undefined;
-    timing: LH.Crdp.Network.ResourceTiming | undefined;
+    timing: Protocol.Network.ResourceTiming | undefined;
     /**
      * Optional value for how long the server took to respond to this request.
      * When not provided, the server response time is derived from the timing object.
      */
     serverResponseTime?: number;
-    resourceType: LH.Crdp.Network.ResourceType | undefined;
+    resourceType: ResourceType | undefined;
     mimeType: string;
-    priority: LH.Crdp.Network.ResourcePriority;
+    priority: ResourcePriority;
     frameId: string | undefined;
     fromWorker: boolean;
 }
 
+interface Metric<T = any> {
+    timing: number;
+    timestamp?: never;
+    optimisticEstimate: Simulation.Result<T>;
+    pessimisticEstimate: Simulation.Result<T>;
+    optimisticGraph: Simulation.GraphNode<T>;
+    pessimisticGraph: Simulation.GraphNode<T>;
+}
+
 export namespace Simulation {
+    type URL = {
+        /** URL of the initially requested URL */
+        requestedUrl?: string;
+        /** URL of the last document request */
+        mainDocumentUrl?: string;
+    };
+
     type GraphNode<T> = import('../base-node.js').Node<T>;
     type GraphNetworkNode<T> = import('../network-node.js').NetworkNode<T>;
     type GraphCPUNode = import('../cpu-node.js').CPUNode;
