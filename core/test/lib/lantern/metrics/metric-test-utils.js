@@ -10,6 +10,9 @@ import * as Lantern from '../../../../lib/lantern/types/lantern.js';
 import {NetworkAnalyzer} from '../../../../lib/lantern/simulator/network-analyzer.js';
 import {Simulator} from '../../../../lib/lantern/simulator/simulator.js';
 import * as TraceEngineComputationData from '../../../../lib/lantern/trace-engine-computation-data.js';
+import {polyfillDOMRect} from '../../../../lib/polyfill-dom-rect.js';
+
+polyfillDOMRect();
 
 /**
  * @param {TraceEngine.Types.TraceEvents.TraceEventData[]} traceEvents
@@ -40,4 +43,7 @@ async function getComputationDataFromFixture({trace, settings, URL}) {
   };
 }
 
-export {getComputationDataFromFixture};
+export {
+  runTraceEngine,
+  getComputationDataFromFixture,
+};
