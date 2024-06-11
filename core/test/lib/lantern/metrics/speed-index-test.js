@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as constants from '../../../../config/constants.js';
 import {readJson} from '../../../test-utils.js';
 import {SpeedIndex} from '../../../../lib/lantern/metrics/speed-index.js';
 import {FirstContentfulPaint} from '../../../../lib/lantern/metrics/first-contentful-paint.js';
 import {getComputationDataFromFixture} from './metric-test-utils.js';
+import {constants} from '../../../../lib/lantern/lantern.js';
 
 const trace = readJson('../../../fixtures/artifacts/progressive-app/trace.json', import.meta);
 
