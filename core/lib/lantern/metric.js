@@ -5,8 +5,8 @@
  */
 
 import * as Lantern from './types/lantern.js';
-import {BaseNode} from '../../lib/lantern/base-node.js';
-import {RESOURCE_TYPES} from '../../lib/network-request.js';
+import {BaseNode} from './base-node.js';
+import {RESOURCE_TYPES} from '../network-request.js';
 
 /** @typedef {import('./base-node.js').Node} Node */
 /** @typedef {import('./network-node.js').NetworkNode} NetworkNode */
