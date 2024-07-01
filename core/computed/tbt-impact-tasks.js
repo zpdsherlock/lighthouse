@@ -12,7 +12,7 @@ import {Interactive} from './metrics/interactive.js';
 import {TotalBlockingTime} from './metrics/total-blocking-time.js';
 import {ProcessedTrace} from './processed-trace.js';
 
-const {calculateTbtImpactForEvent} = Lantern.TBTUtils;
+const {calculateTbtImpactForEvent} = Lantern.Metrics.TBTUtils;
 
 class TBTImpactTasks {
   /**
@@ -134,7 +134,7 @@ class TBTImpactTasks {
     /** @type {Map<LH.Artifacts.TaskNode, {start: number, end: number, duration: number}>} */
     const topLevelTaskToEvent = new Map();
 
-    /** @type {Map<Lantern.TraceEvent, LH.Artifacts.TaskNode>} */
+    /** @type {Map<Lantern.Types.TraceEvent, LH.Artifacts.TaskNode>} */
     const traceEventToTask = new Map();
     for (const task of tasks) {
       traceEventToTask.set(task.event, task);

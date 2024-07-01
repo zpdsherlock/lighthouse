@@ -565,7 +565,7 @@ declare module Artifacts {
     trace: Trace;
     settings: Audit.Context['settings'];
     gatherContext: Artifacts['GatherContext'];
-    simulator?: InstanceType<typeof Lantern.Simulation.Simulator>;
+    simulator?: Gatherer.Simulation.Simulator;
     URL: Artifacts['URL'];
   }
 
@@ -591,7 +591,7 @@ declare module Artifacts {
     throughput: number;
   }
 
-  type LanternMetric = Lantern.Metrics.Result<Artifacts.NetworkRequest>;
+  type LanternMetric = Lantern.Metrics.MetricResult<Artifacts.NetworkRequest>;
 
   type Speedline = speedline.Output<'speedIndex'>;
 
