@@ -1377,7 +1377,7 @@
     "message": "Initial server response time was short"
   },
   "core/audits/third-party-cookies.js | description": {
-    "message": "Support for third-party cookies will be removed in a future version of Chrome. [Learn more about phasing out third-party cookies](https://developer.chrome.com/en/docs/privacy-sandbox/third-party-cookie-phase-out/)."
+    "message": "Chrome is moving towards a new experience that lets people make an informed choice with respect to third-party cookies. [Learn more about third-party cookies](https://developers.google.com/privacy-sandbox/cookies)."
   },
   "core/audits/third-party-cookies.js | displayValue": {
     "message": "{itemCount, plural,\n    =1 {1 cookie found}\n    other {# cookies found}\n    }"
